@@ -29,6 +29,20 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
+  <component name="RunManager" selected="PHP Script.main.php">
+    <configuration name="EPersonaggio.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Cicero/Progetto Cicerone 2020/EPersonaggio.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="main.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/main.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.main.php" />
+        <item itemvalue="JavaScript Debug.EPersonaggio.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -47,6 +61,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="989" y="291" key="#PHP" timestamp="1587817129104">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="989" y="291" key="#PHP/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817129104" />
     <state x="585" y="134" key="CommitChangelistDialog2" timestamp="1587816442829">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -55,6 +73,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1152" y="369" key="FileChooserDialogImpl/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587811855372" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1587817154249">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1587817154249">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.center/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1587817154249">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.left/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1587817154249">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.right/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
     <state x="788" y="331" key="NewPhpClassDialog" timestamp="1587816400771">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
