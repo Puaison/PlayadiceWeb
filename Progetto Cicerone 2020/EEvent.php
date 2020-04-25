@@ -3,8 +3,6 @@
 
 class EEvent
 {
-  //Ci/
-    asdqwe
-sadff
-eew
+  //Ci////
+    //Cose a caso//
 }
