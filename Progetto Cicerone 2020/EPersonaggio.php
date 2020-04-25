@@ -3,10 +3,10 @@
 
 class EPersonaggio
 {
-    private String $ID;
-    private String $Nome;
-    private String $Livello;
-    private String $Razza;
-    private String $Classe;
-    private String $Inventario;
+    private string $ID;
+    private string $Nome;
+    private string $Livello;
+    private string $Razza;
+    private string $Classe;
+    private string $Inventario;
 }

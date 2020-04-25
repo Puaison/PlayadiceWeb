@@ -38,7 +38,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587810936043</updated>
-      <workItem from="1587810941070" duration="512000" />
+      <workItem from="1587810941070" duration="784000" />
     </task>
     <servers />
   </component>
@@ -46,14 +46,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1152" y="369" key="FileChooserDialogImpl" timestamp="1587811855372">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1152" y="369" key="FileChooserDialogImpl/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587811855372" />
     <state x="1050" y="429" key="NewPhpClassDialog" timestamp="1587810992096">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1050" y="429" key="NewPhpClassDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587810992096" />
-    <state x="872" y="257" key="SettingsEditor" timestamp="1587811455755">
+    <state x="903" y="282" key="SettingsEditor" timestamp="1587811959006">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="257" key="SettingsEditor/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587811455755" />
+    <state x="903" y="282" key="SettingsEditor/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587811959006" />
     <state x="966" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1587810941671">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
