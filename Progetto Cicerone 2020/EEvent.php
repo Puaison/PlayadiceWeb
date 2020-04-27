@@ -13,5 +13,11 @@ class EEvent
   public array $listofDate;
   public array $listofBooked;
 
+  public function __construct(){}
+  public function deleteEvent()
+  public function mod Event()
+  public function newBooking(User $EUser)
+
+
 
 }
