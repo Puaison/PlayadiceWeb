@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/EDate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/EPlace.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/EPlace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/EDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/EDate.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +33,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../codfisc" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager" selected="PHP Script.main.php">
+  <component name="RunManager" selected="PHP Script.EDate.php">
+    <configuration name="EDate.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/playadice/Progetto Cicerone 2020/EDate.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="EPersonaggio.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Cicero/Progetto Cicerone 2020/EPersonaggio.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="EDate.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/EDate.php">
       <method v="2" />
     </configuration>
     <configuration name="main.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/main.php">
@@ -43,6 +48,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.EDate.php" />
+        <item itemvalue="JavaScript Debug.EDate.php" />
         <item itemvalue="PHP Script.main.php" />
         <item itemvalue="JavaScript Debug.EPersonaggio.php" />
       </list>
@@ -75,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587990634585</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added EDate.php">
+      <created>1587992754531</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587992754531</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,39 +100,44 @@
     <MESSAGE value="add variables" />
     <MESSAGE value="added variables event" />
     <MESSAGE value="added method EEvent.php + create EPlace.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="added method EEvent.php + create EPlace.php" />
+    <MESSAGE value="added EDate.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="added EDate.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="989" y="291" key="#PHP" timestamp="1587817129104">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="989" y="291" key="#PHP/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817129104" />
-    <state x="585" y="134" width="923" height="836" key="CommitChangelistDialog2" timestamp="1587990631414">
+    <state x="585" y="134" width="923" height="836" key="CommitChangelistDialog2" timestamp="1587996246031">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587817832174" />
-    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1587990631414" />
+    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1587996246031" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817361536" />
     <state x="864" y="285" key="FileChooserDialogImpl" timestamp="1587986747295">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="864" y="285" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1587986747295" />
     <state x="1152" y="369" key="FileChooserDialogImpl/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587811855372" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1587817154249">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1587995809502">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1587995809502" />
     <state width="2517" height="401" key="GridCell.Tab.0.bottom/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1587817154249">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1587995809501">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1587995809501" />
     <state width="2517" height="401" key="GridCell.Tab.0.center/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1587817154249">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1587995809501">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1587995809501" />
     <state width="2517" height="401" key="GridCell.Tab.0.left/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1587817154249">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1587995809502">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1587995809502" />
     <state width="2517" height="401" key="GridCell.Tab.0.right/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
     <state x="788" y="331" key="NewPhpClassDialog" timestamp="1587991114759">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -129,21 +148,21 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="903" y="282" key="SettingsEditor/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587811959006" />
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1587990650790">
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1587992757263">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1587990650790" />
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1587992757263" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817235655" />
     <state x="725" y="360" key="com.intellij.ide.util.TipDialog" timestamp="1587817726903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="725" y="360" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587817726903" />
     <state x="966" y="484" key="com.intellij.ide.util.TipDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587810941671" />
-    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587986717210">
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587992767716">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587817894461" />
-    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1587986717210" />
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1587992767716" />
     <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817425648" />
   </component>
 </project>
