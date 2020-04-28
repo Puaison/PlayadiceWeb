@@ -8,25 +8,31 @@ class EEvent
   public string $eventCategory;
   public bool $flagBooking;
   public EPlace $eventPlace;
-  public EDate $endTime;
-  public EDate $startTime;
   public array $listofDate;
   public array $listofBooked;
 
-  public function __construct(int $lastEventId, string $name, string $category, string $flag, EDate $startTIme, EDate $endTime, EPlace $location){
-      $this->startTime=$startTIme;
-      $this->endTime=$endTime;
+  public function __construct(int $lastEventId, string $name, string $category, string $flag, DateTime $startTime,
+                              DateTime $endTime, DateTime ...$dates, EPlace $location, EUser ...$users){
       $this->eventPlace=$location;
       $this->eventId=$lastEventId+1;
       $this->eventName=$name;
       $this->eventCategory=$category;
       $this->flagBooking=$flag;
-
+      if ($this->flagBooking){
+          array_push($this->listofBooked,"$users");
+      }
+      array_push($this->listofDate,"$startTime","$endTime","$dates");
 
   }
-  public function deleteEvent()
+  public function deleteEvent(EEvent $event){
+      //elimina evento
+  }
   public function mod Event()
-  public function newBooking(User $EUser)
+  public function newBooking(User $EUser){
+      if ()
+      array_push($this->listofBooked,"$users");
+  }
+  private function __destruct()
 
 
 

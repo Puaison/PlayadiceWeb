@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 class EDate
 {
-    public array $listofDay=array("Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato","Domenica");
-    public array $listofMonth=array("Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre");
     public string $thisDayName;
     public string $thisDayNumb;
     public string $thisMonth;
@@ -13,11 +11,13 @@ class EDate
     public DateTime $thisDate;
 
     public function __construct(string $inputDate,string $inputMonth,string $inputYear, string $inputHour, string $inputMinutes){
+        array $listofDay=array("Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato","Domenica");
+        array $listofMonth=array("Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre");
         $this->thisDate= date_create("$inputYear-$inputMonth-$inputDate"."$inputHour:$inputMinutes");
         $this->positionDate=EDate::getDistance($today=date_create());
-        $this->thisMonth=$this->listofMonth[$inputMonth-1];
+        $this->thisMonth=$listofMonth[$inputMonth-1];
         $this->thisDayNumb=date_format($this->thisDate, "j");
-        $this->thisDayName=$this->listofDay[date_format($this->thisDate,"N")-1];
+        $this->thisDayName=$listofDay[date_format($this->thisDate,"N")-1];
         $this->thisYear=$inputYear;
     }
     public function getDistance($date){
