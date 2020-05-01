@@ -24,12 +24,14 @@ class EBooking
     public function getState(){return $this->bookState;}
     public function __toString()
     {
-        if ($this->bookState)
-            $state = "APPROVATA";
-        else
-            $state ="NON APPROVATA";
-       return $print= "NOME:" . $this->getName() . "| COGNOME:" . $this->getSurname() . "| DATA DI PRENOTAZIONE:". $this->getDate() . "| STATO PRENOTAZIONE:" . $state;
+        if ($this->bookState){
+            $state = "APPROVATA";}
+        else{
+            $state ="NON APPROVATA";}
+
+        return $print= "NOME:" . $this->getName() . " | COGNOME:" . $this->getSurname() . " | DATA DI PRENOTAZIONE:". $this->getDate() . " | STATO PRENOTAZIONE:" . $state;
     }
 
 
 }
+
