@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="EDate v0.5">
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/EBooking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/EBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/EBooking.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +118,7 @@
       <workItem from="1588056243639" duration="12685000" />
       <workItem from="1588159908158" duration="1238000" />
       <workItem from="1588348556781" duration="2326000" />
+      <workItem from="1588351146986" duration="366000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <created>1587817231703</created>
@@ -187,7 +187,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
