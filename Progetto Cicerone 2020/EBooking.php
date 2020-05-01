@@ -18,6 +18,11 @@ class EBooking
     public function setSurname($surname){$this->userSurname=$surname;}
     public function validateState(){$this->bookState=true;}
     public function setDate(EDate $date){$this->dateBooking=$date;}
+    public function getName(){return $this->userName;}
+    public function getSurname(){return $this->userSurname;}
+    public function getDate(){return $this->dateBooking;}
+    public function getState(){return $this->bookState;}
+
 
 
 }
