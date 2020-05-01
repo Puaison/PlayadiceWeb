@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="EDate v0.5">
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="ebooking 0.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/EBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/EBooking.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +119,7 @@
       <workItem from="1588056243639" duration="12685000" />
       <workItem from="1588159908158" duration="1238000" />
       <workItem from="1588348556781" duration="2326000" />
-      <workItem from="1588351146986" duration="366000" />
+      <workItem from="1588351146986" duration="972000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <created>1587817231703</created>
@@ -176,7 +177,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588065505341</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ebooking 0.1">
+      <created>1588351532223</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1588351532223</updated>
+    </task>
+    <task id="LOCAL-00010" summary="ebooking 0.1">
+      <created>1588351633644</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588351633644</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,18 +221,19 @@
     <MESSAGE value="EDate v0.3" />
     <MESSAGE value="EDate v0.4" />
     <MESSAGE value="EDate v0.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="EDate v0.5" />
+    <MESSAGE value="ebooking 0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="ebooking 0.1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="989" y="291" key="#PHP" timestamp="1587817129104">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="989" y="291" key="#PHP/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817129104" />
-    <state x="585" y="134" width="923" height="836" key="CommitChangelistDialog2" timestamp="1588351530548">
+    <state x="585" y="134" width="923" height="836" key="CommitChangelistDialog2" timestamp="1588352135430">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587817832174" />
-    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1588351530548" />
+    <state x="585" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1588352135430" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817361536" />
     <state x="864" y="285" key="FileChooserDialogImpl" timestamp="1587986747295">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -269,10 +285,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="903" y="282" key="SettingsEditor/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587811959006" />
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1588351534311">
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1588352127072">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1588351534311" />
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1588352127072" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817235655" />
     <state x="725" y="374" key="com.intellij.ide.util.TipDialog" timestamp="1588348693467">
       <screen x="0" y="0" width="1920" height="1080" />

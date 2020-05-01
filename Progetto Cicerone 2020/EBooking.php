@@ -22,7 +22,14 @@ class EBooking
     public function getSurname(){return $this->userSurname;}
     public function getDate(){return $this->dateBooking;}
     public function getState(){return $this->bookState;}
-
+    public function __toString()
+    {
+        if ($this->bookState)
+            $state = "APPROVATA";
+        else
+            $state ="NON APPROVATA";
+       return $print= "NOME:" . $this->getName() . "| COGNOME:" . $this->getSurname() . "| DATA DI PRENOTAZIONE:". $this->getDate() . "| STATO PRENOTAZIONE:" . $state;
+    }
 
 
 }
