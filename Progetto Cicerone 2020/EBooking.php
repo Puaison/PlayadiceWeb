@@ -29,7 +29,7 @@ class EBooking
         else{
             $state ="NON APPROVATA";}
 
-        return $print= "NOME:" . $this->getName() . " | COGNOME:" . $this->getSurname() . " | DATA DI PRENOTAZIONE:". $this->getDate() . " | STATO PRENOTAZIONE:" . $state;
+        return $print= "NOME: " . $this->getName() . " | COGNOME :" . $this->getSurname() . " | DATA DI PRENOTAZIONE :". $this->getDate() . " | STATO PRENOTAZIONE :" . $state;
     }
 
 
