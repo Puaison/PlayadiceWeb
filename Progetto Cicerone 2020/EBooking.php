@@ -3,6 +3,7 @@
 
 class EBooking
 {
+    //public int $id;
     public EDate $dateBooking;
     public string $userName;
     public string $userSurname;
