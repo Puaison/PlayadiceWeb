@@ -9,6 +9,4 @@ class EPersonaggio
     private string $Razza;
     private string $Classe;
     private string $Inventario;
-    ////////////
-
 }
