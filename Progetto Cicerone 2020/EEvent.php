@@ -9,7 +9,6 @@ class EEvent
   public bool $flagBooking;
   public EPlace $eventPlace;
   public array $listofDate;
-  public array $listofBooked;
 
   public function __construct(int $lastEventId, string $name, string $category, bool $flag, EDate $startTime,
                               EDate $endTime, EPlace $location, EDate ...$dates){
@@ -25,11 +24,7 @@ class EEvent
   public function deleteEvent(EEvent $event){
       //elimina evento
   }
-  public function newBooking(EBooking $booking){
-      if ($this->flagBooking){
-          array_push($this->listofBooked,"$booking");
-      }
-  }
+
 
 
     public function setId(int $id){$this->eventId=$id;}
@@ -60,6 +55,7 @@ class EEvent
       foreach ($this->listofBooked as $value){
           $booked.= $booked." ".$value->__toString()."\n";
       }
+
         foreach ($this->listofDate as $value){
             $date.= " ".$value->__toString()."\n";
         }

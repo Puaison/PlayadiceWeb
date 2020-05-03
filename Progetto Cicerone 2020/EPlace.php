@@ -7,7 +7,7 @@ class EPlace
     public string $placeCity;
     public string $placeCap;
 
-    public function __construct($placeAddress, string $placeCity, string $placeCap)
+    public function __construct(string $placeAddress, string $placeCity, string $placeCap)
     {
         $this->placeAddress=$placeAddress;
         $this->placeCity=$placeCity;
