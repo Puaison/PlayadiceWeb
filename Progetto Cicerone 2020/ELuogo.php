@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class EPlace
+class ELuogo
 {
     public string $placeAddress;
     public string $placeCity;
