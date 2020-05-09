@@ -1,7 +1,7 @@
 <?php
 require('EBooking.php');
 require('EDate.php');
-require('EPlace.php');
+require('ELuogo.php');
 echo "\n";
 print ("Hello");
 echo "\n";
@@ -17,7 +17,9 @@ echo($booking->__toString());
 echo "\n";
 $booking->validateState("true");
 echo($booking->__toString());
-$place= new EPlace ("Via Brasile, 4", "L'Aquila", "67100");
+$place= new ELuogo ("Via Brasile, 4", "L'Aquila", "67100");
 echo "\n";
 echo ($place->__toString());
+
+var_dump($date->getDistanza());
 ?>
