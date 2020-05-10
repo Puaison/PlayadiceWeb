@@ -3,64 +3,53 @@ declare(strict_types=1);
 
 class EEvento
 {
-  public int $eventId;
-  public string $eventName;
-  public string $eventCategory;
-  public bool $flagBooking;
-  public ELuogo $eventPlace;
-  public array $listofDate;
-  public array $listofBooked;
+  public int $id;
+  public string $nomeEvento;
+  public string $categoria;
+  public bool $flagPrenotazione;
+  public ELuogo $luogoEvento;
+  public array $listaFasce;
+  public array $listaPrenotazioni;
 
-  public function __construct(int $lastEventId, string $name, string $category, bool $flag, EDate $startTime,
-                              EDate $endTime, ELuogo $location, EDate ...$dates){
-      $this->eventPlace=$location;
-      $this->eventId=$lastEventId+1;
-      $this->eventName=$name;
-      $this->eventCategory=$category;
-      $this->flagBooking=$flag;
-
-      array_push($this->listofDate,"$startTime","$dates","$endTime");
+  public function __construct(int $eventId, string $name, string $category, bool $flag, EFascia ...$fascia){
+      $this->luogoEvento=$location;
+      $this->id=$eventId;
+      $this->nomeEvento=$name;
+      $this->categoria=$category;
+      $this->flagPrenotazione=$flag;
+      array_push($this->listaFasce,"$fascia");
 
   }
-  public function deleteEvent(EEvent $event){
-      //elimina evento
-  }
-
-
-
-    public function setId(int $id){$this->eventId=$id;}
-    public function setName(string $name){$this->eventName=$name;}
-    public function setCategory(string $category){$this->eventCategory=$category;}
+    public function setId(int $id){$this->id=$id;}
+    public function setNome(string $name){$this->nomeEvento=$name;}
+    public function setCategoria(string $category){$this->categoria=$category;}
     public function setFlag(bool $flag){
-      $this->flagBooking=$flag;
-      if ($this->flagBooking!=true)
-          $this->listofBooked=array();
+      $this->flagPrenotazione=$flag;
+      if ($this->flagPrenotazione!=true)
+          $this->listaPrenotazioni=array();
   }
-    public function setPlace(ELuogo $place){$this->eventPlace=$place;}
-    public function setMinutes(string $minutes){$this->thisMinutes=$minutes;}
-    public function setDate(EDate $day){array_splice($this->listofDate,-1 ,0,"$day");}
-    public function setStartDate(EDate $day){array_splice($this->listofDate,0 ,1,"$day");}
-    public function setEndDate(EDate $day){array_splice($this->listofDate,count($this->listofDate)-1 ,1,"$day");}
-    public function getId(){return $this->eventId;}
-    public function getName(){return $this->eventName;}
-    public function getCategory(){return $this->eventCategory;}
-    public function getFlag(){return $this->flagBooking;}
-    public function getPlace(){return $this->eventPlace;}
-    public function getStartDate(){return $this->listofDate[0];}
-    public function getEndDate(){return $this->listofDate[count($this->listofDate)-1];}
-    public function getDate(){return $this->listofDate;}
-    public function getBooking(){return $this->listofBooked;}
+    public function setLuogo(ELuogo $place){$this->luogoEvento=$place;}
+    public function newFascia(EFascia $fascia){array_push($this->listaFasce,"$fascia");}
+    public function newPrenotazione(EPrenotazione $prenotazione){array_push($this->listaPrenotazioni,"$prenotazione");}
+    public function getId(){return $this->id;}
+    public function getNome(){return $this->nomeEvento;}
+    public function getCategory(){return $this->categoria;}
+    public function getFlag(){return $this->flagPrenotazione;}
+    public function getLuogo(){return $this->luogoEvento;}
+    public function getStartDate(){return $this->listaFasce[0];}
+    public function getEndDate(){return $this->listaFasce[count($this->listaFasce)-1];}
+    public function getFasce(){return $this->listaFasce;}
+    public function getPrenotazioni(){return $this->listaPrenotazioni;}
     public function __toString(){
-      $booked="";
+      $prenotazioni="";
       $date="";
-      foreach ($this->listofBooked as $value){
-          $booked.= $booked." ".$value->__toString()."\n";
+      foreach ($this->getPrenotazioni() as $value){
+          $prenotazioni.= $prenotazioni." ".$value->__toString()."\n";
       }
-
-        foreach ($this->listofDate as $value){
-            $date.= " ".$value->__toString()."\n";
+      foreach ($this->getFasce() as $value){
+          $date.= " ".$value->__toString()."\n";
         }
-      return $print= "NOME: " . $this->getName() . " | CATEGORIA: " . $this->getCategory() . " | DATA DI INIZIO: ". $this->getStartDate() . " | DATA DI FINE: " . $this->getEndDate().
-        " | DATE: ". $date . " | PRENOTATI: ". $booked ;}
-
+      return $print= "NOME: " . $this->getNome() . " | CATEGORIA: " . $this->getCategory() . " | DATA DI INIZIO: ". $this->getStartDate() . " | DATA DI FINE: " . $this->getEndDate().
+        " | FASCE ORARIE: ". $date . " | PRENOTATI: ". $prenotazioni ;
+  }
 }
