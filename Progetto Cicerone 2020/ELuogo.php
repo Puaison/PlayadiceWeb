@@ -24,6 +24,7 @@ class ELuogo extends EObject
      */
     public function __construct()
     {
+        parent::__construct();
         $this->via='';
         $this->citta='';
         $this->cap='';
