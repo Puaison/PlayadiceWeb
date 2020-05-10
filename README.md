@@ -5,3 +5,6 @@ Progetto per Esame Univaq
 
 #Link UML e Relazioni
 #https://drive.google.com/file/d/1SxFitIuu2EDUP5yk3LXU4f0Mbimxgxak/view?usp=sharing
+
+Domande:
+1) Gli oggetti entity possono (e/o devono) comunicare con il persistant manager (Esempio gioco cerca le sue recensioni)
