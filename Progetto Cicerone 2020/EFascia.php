@@ -21,8 +21,6 @@ class EFascia extends EObject
      */
     public function __construct(){
         parent::__construct();
-        $this->inizio=new EData();
-        $this->durata = $inizio->getIntervallo();
 
     }
 
@@ -61,6 +59,6 @@ class EFascia extends EObject
      * @return string
      */
     public function __toString(){
-        $string="DATA DI INIZIO: ". $this->inizio->__toString()." | DURATA: ". $this->durata->format("%Y%M%d%H%i%s");
-        return $string;}
+        return $string="DATA DI INIZIO: ". $this->inizio->__toString()." | DURATA: ". $this->durata->format("%Y%M%d%H%i%s");
+        }
 }

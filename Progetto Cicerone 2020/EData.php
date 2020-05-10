@@ -47,14 +47,7 @@ class EData extends EObject
      */
     function  __construct(){
         parent::__construct();
-        $this->dateTime= date_create();
-        $this->posizioneOdierna=EData::newPosizione(date_create());
-        $this->nomeMese='';
-        $this->numGiorno='';
-        $this->nomeGiorno='';
-        $this->anno='';
-        $this->ore='';
-        $this->minuti='';
+
     }
 
     /**
@@ -184,8 +177,8 @@ class EData extends EObject
      * @return DateInterval intervallo tra le due date
      */
     function getIntervallo(EData $date):DateInterval{
-        $intervallo=date_diff($date->getDateTime(),$this->dateTime);
-        return $intervallo;
+        return $intervallo=date_diff($date->getDateTime(),$this->dateTime);
+
     }
 
     /**
@@ -204,7 +197,6 @@ class EData extends EObject
      * @return string
      */
     function __toString(){
-        $print=$this->getNumGiorno()."-".$this->getMese()."-".$this->getAnno()."-".$this->getOra().":".$this->getMinuti();
-        return $print;}
+        return $string=$this->getNumGiorno()."-".$this->getMese()."-".$this->getAnno()."-".$this->getOra().":".$this->getMinuti();}
 
 }
