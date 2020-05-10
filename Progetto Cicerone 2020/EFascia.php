@@ -2,7 +2,7 @@
 
 
 /**
- * Class EFascia che rappresenta la durata di un Evento.
+ * Class EFascia Rappresenta la durata di un Evento.
  */
 class EFascia extends EObject
 {
@@ -34,7 +34,7 @@ class EFascia extends EObject
      */
     public function setDate(EData $date){$this->inizio=$date;}
     /**
-     * Metodo per Impostare la durata dell'evento
+     * Metodo per impostare la durata dell'evento
      * @param EData $date data di fine dell'evento per il calcolo della durata
      */
     public function setDurata(EData $date){$this->durata=date_diff($date->getDateTime(),$this->inizio->getDateTime());}
