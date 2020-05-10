@@ -3,25 +3,25 @@ declare(strict_types=1);
 
 class ELuogo
 {
-    public string $placeAddress;
-    public string $placeCity;
-    public string $placeCap;
+    public string $via;
+    public string $citta;
+    public string $cap; //controllo 5 numeri
 
     public function __construct(string $placeAddress, string $placeCity, string $placeCap)
     {
-        $this->placeAddress=$placeAddress;
-        $this->placeCity=$placeCity;
-        $this->placeCap=$placeCap;
+        $this->via=$placeAddress;
+        $this->citta=$placeCity;
+        $this->cap=$placeCap;
     }
-    public function setAddress($address){$this->placeAddress=$address;}
-    public function setCity($city){$this->placeCity=$city;}
-    public function setCap($cap){$this->placeCap=$cap;}
-    public function getAddress(){return $this->placeAddress;}
-    public function getCity(){return $this->placeCity;}
-    public function getCap(){return $this->placeCap;}
+    public function setVia($address){$this->via=$address;}
+    public function setCitta($city){$this->citta=$city;}
+    public function setCap($cap){$this->cap=$cap;}
+    public function getVia(){return $this->via;}
+    public function getCitta(){return $this->citta;}
+    public function getCap(){return $this->cap;}
     public function __toString()
     {
-        return $print= "VIA: " . $this->getAddress() . " | CITTA': " . $this->getCity() . " | CAP: ". $this->getCap();
+        return $print= "VIA: " . $this->getVia() . " | CITTA': " . $this->getCitta() . " | CAP: ". $this->getCap();
     }
 
 }
