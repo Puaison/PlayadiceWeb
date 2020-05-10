@@ -8,3 +8,4 @@ Progetto per Esame Univaq
 
 Domande:
 1) Gli oggetti entity possono (e/o devono) comunicare con il persistant manager (Esempio gioco cerca le sue recensioni)
+2) Chiedere a Davide il DeclareStrictTypes
