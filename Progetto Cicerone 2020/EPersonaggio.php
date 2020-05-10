@@ -1,7 +1,7 @@
 <?php
 
 
-class EPersonaggio
+class EPersonaggio extends EObject
 {
     private string $ID;
     private string $Nome;

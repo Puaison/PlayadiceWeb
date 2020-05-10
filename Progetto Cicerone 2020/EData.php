@@ -3,7 +3,7 @@ declare(strict_types=1);
 const LIST_DATE=array("Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato","Domenica"); //non va qui
 CONST LIST_MONTH=array("Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre");// non va qui  (andrebbe nella view)
 
-class EData
+class EData extends EObject
 {
     public string $nomeGiorno;
     public string $numGiorno;
@@ -14,7 +14,19 @@ class EData
     public string $minuti;
     public DateTime $dateTime;
 
-    public function __construct(string $inputDate,string $inputMonth,string $inputYear, string $inputHour, string $inputMinutes){
+
+    public function __construct(){
+        $this->dateTime= date_create();
+        $this->posizioneOdierna=EData::newPosizione(date_create());
+        $this->nomeMese='';
+        $this->numGiorno='';
+        $this->nomeGiorno='';
+        $this->anno='';
+        $this->ore='';
+        $this->minuti='';
+    }
+
+    public function setData(string $inputDate,string $inputMonth,string $inputYear, string $inputHour, string $inputMinutes){
         $this->dateTime= date_create("$inputYear-$inputMonth-$inputDate"."$inputHour:$inputMinutes");
         $this->posizioneOdierna=EData::newPosizione($today=date_create());
         $this->nomeMese=LIST_MONTH[$inputMonth-1];

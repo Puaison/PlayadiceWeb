@@ -1,7 +1,7 @@
 <?php
 
 
-class EFascia
+class EFascia extends EObject
 {
     public EData $inizio;
     public DateInterval $durata;
