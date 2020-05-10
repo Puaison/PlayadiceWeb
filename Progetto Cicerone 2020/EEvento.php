@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 
-class EEvent
+class EEvento
 {
   public int $eventId;
   public string $eventName;
   public string $eventCategory;
   public bool $flagBooking;
-  public EPlace $eventPlace;
+  public ELuogo $eventPlace;
   public array $listofDate;
   public array $listofBooked;
 
   public function __construct(int $lastEventId, string $name, string $category, bool $flag, EDate $startTime,
-                              EDate $endTime, EPlace $location, EDate ...$dates){
+                              EDate $endTime, ELuogo $location, EDate ...$dates){
       $this->eventPlace=$location;
       $this->eventId=$lastEventId+1;
       $this->eventName=$name;
@@ -25,11 +25,7 @@ class EEvent
   public function deleteEvent(EEvent $event){
       //elimina evento
   }
-  public function newBooking(EBooking $booking){
-      if ($this->flagBooking){
-          array_push($this->listofBooked,"$booking");
-      }
-  }
+
 
 
     public function setId(int $id){$this->eventId=$id;}
@@ -40,7 +36,7 @@ class EEvent
       if ($this->flagBooking!=true)
           $this->listofBooked=array();
   }
-    public function setPlace(EPlace $place){$this->eventPlace=$place;}
+    public function setPlace(ELuogo $place){$this->eventPlace=$place;}
     public function setMinutes(string $minutes){$this->thisMinutes=$minutes;}
     public function setDate(EDate $day){array_splice($this->listofDate,-1 ,0,"$day");}
     public function setStartDate(EDate $day){array_splice($this->listofDate,0 ,1,"$day");}
@@ -60,6 +56,7 @@ class EEvent
       foreach ($this->listofBooked as $value){
           $booked.= $booked." ".$value->__toString()."\n";
       }
+
         foreach ($this->listofDate as $value){
             $date.= " ".$value->__toString()."\n";
         }
