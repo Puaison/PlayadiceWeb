@@ -21,8 +21,6 @@ class EPrenotazione extends EObject
     function __construct()
     {
         parent::__construct();
-        $this->giornoPrenotazione= new EData();
-        $this->utente= new EUtente();
     }
 
 

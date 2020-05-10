@@ -25,9 +25,6 @@ class ELuogo extends EObject
     public function __construct()
     {
         parent::__construct();
-        $this->via='';
-        $this->citta='';
-        $this->cap='';
     }
 
     /**                                               METODI SET
@@ -40,13 +37,13 @@ class ELuogo extends EObject
 
     /**
      * Metodo che imposta la città dove si terrà l'evento
-     * @param $city La Città
+     * @param string $city la Città
      */
     public function setCitta($city){$this->citta=$city;}
 
     /**
      * Metodo che imposta il CAP della Cittò
-     * @param $cap Il Cap
+     * @param string  $cap il Cap
      */
     public function setCap($cap){$this->cap=$cap;}
 
@@ -79,8 +76,7 @@ class ELuogo extends EObject
      */
     public function __toString() : string
     {
-        $string= "VIA: " . $this->getVia() . " | CITTA': " . $this->getCitta() . " | CAP: ". $this->getCap();
-        return $string;
+        return $string= "VIA: " . $this->getVia() . " | CITTA': " . $this->getCitta() . " | CAP: ". $this->getCap();
     }
 
 }
