@@ -3,7 +3,7 @@ declare(strict_types=1);
 const LIST_DATE=array("Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato","Domenica"); //non va qui
 CONST LIST_MONTH=array("Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre");// non va qui  (andrebbe nella view)
 
-class EDate
+class EData
 {
     public string $nomeGiorno;
     public string $numGiorno;
@@ -16,7 +16,7 @@ class EDate
 
     public function __construct(string $inputDate,string $inputMonth,string $inputYear, string $inputHour, string $inputMinutes){
         $this->dateTime= date_create("$inputYear-$inputMonth-$inputDate"."$inputHour:$inputMinutes");
-        $this->posizioneOdierna=EDate::newPosizione($today=date_create());
+        $this->posizioneOdierna=EData::newPosizione($today=date_create());
         $this->nomeMese=LIST_MONTH[$inputMonth-1];
         $this->numGiorno=date_format($this->dateTime, "j");
         $this->nomeGiorno=LIST_DATE[date_format($this->dateTime,"N")-1];
@@ -40,7 +40,7 @@ class EDate
     public function getMinuti(){return $this->minuti;}
     public function getPosizione(){return $this->posizioneOdierna;}
     public function getDateTime(){return $this->dateTime;}
-    public function getIntervallo(EDate $date){
+    public function getIntervallo(EData $date){
         $intervallo=date_diff($date->getDateTime(),$this->dateTime);
         return $intervallo;
     }
