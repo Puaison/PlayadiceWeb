@@ -14,7 +14,6 @@ class EFascia
     public function setDate(EDate $date){$this->inizio=$date;}
     public function getDate(){return $this->inizio;}
     public function getIntervallo(){return $this->durata;}
-    public function setIntervallo(EDate $date){$this->durata=date_diff($date,$this->inizio);}
-    public function __toString(){return $print= $this->getNumGiorno()."-".$this->getMese()."-".$this->getAnno()."-".$this->getOra().":".$this->getMinuti();}
-
+    public function setIntervallo(EDate $date){$this->durata=date_diff($date->getDateTime(),$this->inizio->getDateTime());}
+    public function __toString(){return $print="DATA DI INIZIO: ". $this->inizio->__toString()." | DURATA: ". $this->durata->format("%Y%M%d%H%i%s");}
 }
