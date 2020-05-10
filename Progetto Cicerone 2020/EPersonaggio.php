@@ -9,6 +9,4 @@ class EPersonaggio extends EObject
     private string $Razza;
     private string $Classe;
     private string $Inventario;
-    ////////////
-
 }
