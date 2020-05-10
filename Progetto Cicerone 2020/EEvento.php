@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class EEvento
+class EEvento extends EObject
 {
   public int $id;
   public string $nomeEvento;
