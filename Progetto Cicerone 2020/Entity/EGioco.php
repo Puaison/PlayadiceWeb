@@ -100,6 +100,19 @@ class EGioco extends EObject
         $this->Recensioni= clone $recensioni;
     }
     /********************************************** ALTRE FUNZIONI ************************************************/
-    
+
+    function addRecensione(ERecensione $rec) {
+        $this->Recensioni[]=$rec;
+    }
+
+    function CalcolaVotoMedio() {
+
+        foreach ($this->Recensioni as $rec)
+        {
+            $rec->
+        }
+    }
+
+
 
 }
