@@ -42,6 +42,7 @@ echo "\n";
 
 $evento= new EEvento();
 $evento->setEvento("1","Playadice","Fallimento","True",$luogo,  $fascia);
-echo ($evento->__toString());
+$evento->newFascia($fascia);
+print_r($evento->__toString());
 
 
