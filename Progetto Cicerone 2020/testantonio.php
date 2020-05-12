@@ -19,20 +19,29 @@ $User->setUsername("Pantaleone");
 $User->setPassword("1234");
 
 $data= new EData();
-echo ("prova");
-$data=$data->setData("12","05","2020","17","41");
-echo var_dump($data);
+$data2= new EData();
+$data2->setData("13","05","2020","20","00");
+$data->setData("12","05","2020","20","00");
+echo "\n";
+echo "\n";
 $luogo= new ELuogo();
 $luogo->setCap("67100");
 $luogo->setCitta("L'Aquila");
 $luogo->setVia("Via Brasile, 4");
 
+echo "\n";
 $fascia = new EFascia();
-$fascia-> setDate("$data");
-$fascia -> setDurata("$data");
+
+$fascia->setDate($data);
+$fascia ->setDurata($data2);
+echo "\n";
+echo "\n";
+echo "\n";
+echo "\n";
+echo "\n";
 
 $evento= new EEvento();
-$evento->setEvento("1","Playadice","Fallimento","True","$fascia");
-echo ("$evento->__toString()");
+$evento->setEvento("1","Playadice","Fallimento","True",$luogo,  $fascia);
+echo ($evento->__toString());
 
 
