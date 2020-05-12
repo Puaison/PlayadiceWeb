@@ -93,7 +93,7 @@ class EGioco extends EObject
     }
 
     /**
-     * @param ERecensione ...$recensioni Recensioni che devono essere aggiunte al gioco
+     * @param ERecensione ...$recensioni Recensioni che devono essere aggiunte al gioc
      */
     function setRecensioni(ERecensione ...$recensioni) {
 
