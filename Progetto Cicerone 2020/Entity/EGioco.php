@@ -105,12 +105,18 @@ class EGioco extends EObject
         $this->Recensioni[]=$rec;
     }
 
-    function CalcolaVotoMedio() {
+    function CalcolaVotoMedio() :float {
+        $somma=0;
 
         foreach ($this->Recensioni as $rec)
         {
-            $rec->
+            $voto=$rec->getVoto();
+            $somma=$somma+$voto;
         }
+        $numerorec=count($this->Recensioni);
+        $votomedio=$voto/$numerorec;
+        return $votomedio;
+
     }
 
 
