@@ -4,9 +4,17 @@ require('Entity/EGioco.php');
 require('Entity/EGiocoCategoria.php');
 require('Entity/ERecensione.php');
 require('Entity/EUtente.php');
+require('Entity/EGiocoInfo.php');
 $s= new EGioco();
 $s->setCategoria( EGiocoCategoria::Party);
 $s->setNome("Monopoly");
+$info=new EGiocoInfo();
+$info->setMin(1);
+$info->setMax(4);
+$info->setCasaEditrice("Cranium");
+$info->setDescrizione("Gioco basato sull'economia");
+$s->setInfo($info);
+
 $rectot=array();
 $rec1= new ERecensione();
 $rec1->setVoto(65);
@@ -34,6 +42,8 @@ $rec3->setEUtente($utente3);
 
 $prova=$s->PossibileNuovaRecensione($rec3);
 var_dump($s);
+$gg=$s->getRecensioni();
+var_dump($gg);
 
 //$votomedio=$s->CalcolaVotoMedio();
 //$s->setVotoMedio($votomedio);
