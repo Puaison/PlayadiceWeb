@@ -1,8 +1,10 @@
 <?php
-class EGiocoCategoria extends SplEnum {
+
+class EGiocoCategoria  {
     //const __default = self::January;
 
     const Strategia = "Strategia";
+    const Party= "Party";
 
 }
 
