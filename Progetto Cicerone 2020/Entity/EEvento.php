@@ -52,7 +52,7 @@ class EEvento extends EObject
      * @param bool $flag
      * @param EFascia ...$fascia
      */
-    function setEvento(int $eventId, string $name, string $category, bool $flag,ELuogo $location, EFascia ...$fascia)
+    function setEvento(int $eventId, string $name, string $category, bool $flag,ELuogo $location, EFascia $fascia)
     {
         $this ->luogoEvento = $location;
         $this -> id = $eventId;
@@ -87,7 +87,7 @@ class EEvento extends EObject
      * Metodo per inserire una nuova fascia oraria nell'array
      * @param EFascia $fascia
      */
-    function newFascia(EFascia $fascia){array_push($this->listaFasce,"$fascia");}
+    function newFascia(EFascia $fascia){array_push($this->listaFasce,$fascia);}
 
     /**
      * Metodo per inserire una prenotazione nell'array
@@ -185,9 +185,8 @@ class EEvento extends EObject
             $prenotazioni .= $prenotazioni . " " . $value -> __toString() . "\n";
         }
         foreach ($this -> getFasce() as $value) {
-            $valore=$value[0];
-            $valore=$valore->getData();
-            $date .= " " . $valore. "\n";
+
+            $date .= " " . $value->getData(). "\n";
         }
         return $print = "NOME: " . $this -> getNome() . " | CATEGORIA: " . $this -> getCategory() . " | DATA DI INIZIO: " . $this -> getStartDate() . " | DATA DI FINE: " . $this -> getEndDate() .
             " | FASCE ORARIE: " . $date . " | PRENOTATI: " . $prenotazioni;
