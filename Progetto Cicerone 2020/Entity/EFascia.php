@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Class EFascia Rappresenta la durata di un Evento.
  */
@@ -21,7 +19,6 @@ class EFascia extends EObject
      */
     public function __construct(){
         parent::__construct();
-
     }
 
     /**
@@ -30,7 +27,8 @@ class EFascia extends EObject
      * Metodo per impostare la data di inizio
      * @param EData $date
      */
-    public function setDate(EData $date){$this->inizio=$date;}
+    public function setDate(EData $date){
+        $this->inizio=$date;}
     /**
      * Metodo per impostare la durata dell'evento
      * @param EData $date data di fine dell'evento per il calcolo della durata

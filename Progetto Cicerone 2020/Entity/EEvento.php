@@ -1,5 +1,5 @@
 <?php
-require ("entity/EObject.php");
+require ("Entity/EObject.php");
 
 /**
  * Class EEvento CLasse utilizzata per realizzare gli Eventi
@@ -26,12 +26,12 @@ class EEvento extends EObject
     /**
      * @var array lista delle fasce orarie dell'evento
      */
-    private $listaFasce;
+    private $listaFasce=array();
 
     /**
      * @var array lista delle prenotazioni all'evento
      */
-    private $listaPrenotazioni;
+    private $listaPrenotazioni=array();
 
     /**
      * EEvento constructor. Inizializza un oggetto Evento Vuoto
@@ -39,7 +39,6 @@ class EEvento extends EObject
     function __construct()
     {
         parent ::__construct();
-
     }
 
 
@@ -53,14 +52,14 @@ class EEvento extends EObject
      * @param bool $flag
      * @param EFascia ...$fascia
      */
-    function setEvento(int $eventId, string $name, string $category, bool $flag, EFascia ...$fascia)
+    function setEvento(int $eventId, string $name, string $category, bool $flag,ELuogo $location, EFascia ...$fascia)
     {
         $this ->luogoEvento = $location;
         $this -> id = $eventId;
         $this -> nomeEvento = $name;
         $this -> categoria = $category;
         $this -> flagPrenotazione = $flag;
-        array_push($this -> listaFasce, "$fascia");
+        array_push($this->listaFasce, $fascia);
     }
 
     /**
@@ -128,7 +127,8 @@ class EEvento extends EObject
      * @return EData
      */
     function getStartDate():EData{
-        $fascia=$this->listaFasce[0];
+        $fascia=$this->listaFasce;
+        $fascia=$fascia[0];
         return $fascia->getData();
     }
 
@@ -185,7 +185,9 @@ class EEvento extends EObject
             $prenotazioni .= $prenotazioni . " " . $value -> __toString() . "\n";
         }
         foreach ($this -> getFasce() as $value) {
-            $date .= " " . $value -> __toString() . "\n";
+            $valore=$value[0];
+            $valore=$valore->getData();
+            $date .= " " . $valore. "\n";
         }
         return $print = "NOME: " . $this -> getNome() . " | CATEGORIA: " . $this -> getCategory() . " | DATA DI INIZIO: " . $this -> getStartDate() . " | DATA DI FINE: " . $this -> getEndDate() .
             " | FASCE ORARIE: " . $date . " | PRENOTATI: " . $prenotazioni;
