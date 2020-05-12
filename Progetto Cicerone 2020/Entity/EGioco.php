@@ -46,9 +46,9 @@ class EGioco extends EObject
     }
 
     /**
-     * @return EGiocoCategoria La categoria del Gioco
+     * @return string La categoria del Gioco
      */
-    function getCategoria() : EGiocoCategoria {
+    function getCategoria() : string {
         return $this->Categoria;
     }
 
@@ -87,9 +87,9 @@ class EGioco extends EObject
 
 
     /**
-     * @param EGiocoCategoria $categoria il valore del voto medio del gioco
+     * @param string $categoria il valore del voto medio del gioco
      */
-    function setCategoria(EGiocoCategoria $categoria) {
+    function setCategoria(string $categoria) {
         $this->Categoria=$categoria;
     }
 
@@ -111,21 +111,52 @@ class EGioco extends EObject
     }
     /********************************************** ALTRE FUNZIONI ************************************************/
 
+    /**
+     * Metodo che aggiunge una recensione al Gioco
+     * @param ERecensione $rec La recensione da aggiungere
+     */
     function addRecensione(ERecensione $rec) {
         $this->Recensioni[]=$rec;
     }
 
+    /**
+     * Metodo che calcola il voto medio riprendendo tutte le recensioni
+     * @return float Il VotoMedio calcolato sulle recensioni del Gioco
+     */
     function CalcolaVotoMedio() :float {
         $somma=0;
+        $array=array();
+        $array=$this->Recensioni;
 
-        foreach ($this->Recensioni as $rec)
+        foreach ($array as $rec)
         {
             $voto=$rec->getVoto();
             $somma=$somma+$voto;
         }
-        $numerorec=count($this->Recensioni);
-        $votomedio=$voto/$numerorec;
+        $numerorec=count($array);
+        $votomedio=$somma/$numerorec;
         return $votomedio;
+
+    }
+
+    /**
+     * Metodo che controlla se la recensione può essere effettuata
+     * @param ERecensione $nuovarec La Nuova Recensione che devo controllare che
+     * @return bool
+     */
+    function PossibileNuovaRecensione(ERecensione $nuovarec):bool {
+        $array=array();
+        $array=$this->Recensioni;
+        foreach ($array as $rec)
+        {
+            $commentatore=$rec->getEUtente()->getUsername();
+            if($commentatore==$nuovarec->getEUtente()->getUsername())
+                return false;
+        }
+        //Aggiungo direttamente la recensione oppure controllavo soltanto?
+        $this->addRecensione($nuovarec);
+        return true;
+
 
     }
 
