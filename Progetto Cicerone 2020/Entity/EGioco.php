@@ -19,6 +19,16 @@ class EGioco extends EObject
     /** Lista di ERecensioni effettuate sul EGioco */
     private $Recensioni=array();
 
+    /****************************************** COSTRUTTORE **************************************************/
+
+    /**
+     * Default constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     /****************************************** GETTER **************************************************/
 
     /**

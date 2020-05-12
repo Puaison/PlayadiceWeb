@@ -19,6 +19,15 @@ class ERecensione Extends EObject
     private $Commento;
 
 
+    /****************************************** COSTRUTTORE **************************************************/
+
+    /**
+     * Default constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     /********************************************** GETTER ************************************************/
 
