@@ -68,7 +68,7 @@ class EProposta extends EObject {
     /****************************************** SETTER **************************************************/
 
     /**
-     * Imposta il livello dell'avatar
+     * Imposta Il personaggio che presumibilmente andrà modificato
      * @param EAvatar $Mod livello dell'avatar
      */
     public function setModificato(EAvatar $Mod)
@@ -79,7 +79,7 @@ class EProposta extends EObject {
     }
 
     /**
-     * Imposta il livello dell'avatar
+     * Imposta Il personaggio che viene proposto
      * @param EAvatar $Prop livello dell'avatar
      */
     public function setProposto(EAvatar $Prop)
@@ -90,7 +90,7 @@ class EProposta extends EObject {
     }
 
     /**
-     * Imposta il livello dell'avatar
+     * Imposta Il tipo di proposta
      * @param string $TipoProposta livello dell'avatar
      */
     public function setTipoProposta(string $TipoProposta)
@@ -103,10 +103,16 @@ class EProposta extends EObject {
 
     /**
      */
-    public function ApprovaAvatar()
+    public function approvaProposta()
     {
-        unset($this->Modificato);
+        $this->Modificato=$this->Proposto;  //Codice di prova per test nel main
+        //TODO: CODICE PER SALVARE L'AVATAR NELLA FOUNDATION
+        $this->cancellaProposta();
+    }
 
+    public function cancellaProposta()
+    {
+        //TODO: CODICE PER CANCELLARE LA PROPOSTA DAL DB
     }
 
 }

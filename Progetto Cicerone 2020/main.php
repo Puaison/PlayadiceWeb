@@ -1,25 +1,45 @@
 <?php
-require('EBooking.php');
-require('EDate.php');
-require('ELuogo.php');
+require('Entity/EObject.php');
+require('Entity/EAvatar.php');
+require('Entity/EProposta.php');
+require('Entity/EUtente.php');
 echo "\n";
 print ("Hello");
 echo "\n";
-$date=new EDate("03","05","2020","16","30");
-echo ($date->__toString());
-echo "\n";
-echo ($date->getOra()." ".$date->getMinuti());
-echo "\n";
-echo ($date->getPosizione());
-echo "\n";
-$booking=new EBooking($date, "Antonio Maria", "Marottoli");
-echo($booking->__toString());
-echo "\n";
-$booking->validateState("true");
-echo($booking->__toString());
-$place= new ELuogo ("Via Brasile, 4", "L'Aquila", "67100");
-echo "\n";
-echo ($place->__toString());
 
-var_dump($date->getDistanza());
+$User=new EUtente();
+
+$User->setNome("Alessio");
+$User->setCognome("Perozzi");
+$User->setEmail("Test@Gmail.com");
+$User->setUsername("Pantaleone");
+$User->setPassword("1234");
+
+$Avatar=new EAvatar();
+$Avatar->setProprietario($User);
+
+$Avatar2=new EAvatar();
+$Avatar2= clone $Avatar;
+$Avatar2->setNome("Vellista");
+
+$Pippo=new EProposta();
+$Pippo->setTipoProposta("Modifica");
+$Pippo->setModificato($Avatar);
+$Pippo->setProposto($Avatar2);
+
+
+echo "\n\n\n";
+echo "\n\n\n";
+
+var_dump($Pippo);
+
+
+$Pippo->approvaProposta();
+echo "\n\n\n";
+echo "\n\n\n";
+
+var_dump($Pippo);
+
+
+
 ?>

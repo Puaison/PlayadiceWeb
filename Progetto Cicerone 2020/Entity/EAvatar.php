@@ -29,6 +29,7 @@ class EAvatar extends EObject {
      */
     private EUtente $Proprietario;
 
+    /****************************************** CONSTRUCTORS **************************************************/
     /**
      * Default constructor
      */
