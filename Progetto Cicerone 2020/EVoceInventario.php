@@ -15,6 +15,8 @@ class EVoceInventario extends EObject {
      */
     private string $Quantita;
 
+    /****************************************** COSTRUTTORE **************************************************/
+
     /**
      * Default constructor
      */
