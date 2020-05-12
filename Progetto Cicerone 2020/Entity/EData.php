@@ -1,8 +1,6 @@
 <?php
-
 const LIST_DATE=array("Lunedì","Martedì","Mercoledì","Giovedì","Venerdì","Sabato","Domenica"); //non va qui
 CONST LIST_MONTH=array("Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre");// non va qui  (andrebbe nella view)
-
 /**
  * Class EData Classe utilizzata per realizzare le date da usare negli eventi e nelle prenotazioni
  */
@@ -40,16 +38,12 @@ class EData extends EObject
      * @var DateTime Classe DateTime corrispondente alla classe giorno creata
      */
     private $dateTime;
-
-
     /**
      * EData constructor. Inizializza un oggetto EData vuoto
      */
     function  __construct(){
         parent::__construct();
-
     }
-
     /**
      *                                                    METODI SET
      *
@@ -75,7 +69,7 @@ class EData extends EObject
      * Metodo per impostare il nome del giorno
      * @param int $day Numero da 0 a 6 che rappresenta il giorno della settimana
      */
-    function setNomeGiorno(int $day){$this->nomeGiorno=LIST_DATE[$day];}
+    function setNomeGiorno(int $day){$this->nomeGiorno=LIST_DATE[$day-1];}
 
     /**
      * Metodo per impostare l'anno
@@ -158,29 +152,31 @@ class EData extends EObject
      * @return string i minuti
      */
     function getMinuti():string {return $this->minuti;}
-
     /**
      *  Metodo che restituisce la distanza di questa data dal momento di creazione dell'oggetto.
      * @return string la distanza
      */
     function getPosizione():string {return $this->posizioneOdierna;}
-
     /**
      * Metodo che restituisce la data come oggetto DateTime
      * @return DateTime la data
      */
     function getDateTime():DateTime {return $this->dateTime;}
-
     /**
      * Funzione per calcolare la differenza tra questa data e un'altro oggetto EData sotto forma di oggetto DateInterval
      * @param EData $date data con cui fare la differenza
      * @return DateInterval intervallo tra le due date
      */
     function getIntervallo(EData $date):DateInterval{
-        return $intervallo=date_diff($date->getDateTime(),$this->dateTime);
-
+        if (is_a($date, "EData")){
+            $diff=date_diff($date->getDateTime(),$this->dateTime);
+            return $diff;
+        }
+        elseif (is_a($date, "DateTime")) {
+            $diff=date_diff($date,$this->dateTime);
+            return $diff;
+        }
     }
-
     /**
      * Metodo per calcolare la differenza tra questa data e un'altro oggetto EData sotto forma di stringa
      * @param $date
@@ -196,7 +192,6 @@ class EData extends EObject
              $diff=date_diff($date,$this->dateTime);
              $diff=$diff->format("%Y%M%d%H%i%s");
              return $diff;
-
          }
     }
 

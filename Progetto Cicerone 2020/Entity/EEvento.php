@@ -1,12 +1,10 @@
 <?php
 require ("Entity/EObject.php");
-
 /**
  * Class EEvento CLasse utilizzata per realizzare gli Eventi
  */
 class EEvento extends EObject
 {
-
     /**
      * @var string Nome dell'evento
      */
@@ -27,12 +25,10 @@ class EEvento extends EObject
      * @var array lista delle fasce orarie dell'evento
      */
     private $listaFasce=array();
-
     /**
      * @var array lista delle prenotazioni all'evento
      */
     private $listaPrenotazioni=array();
-
     /**
      * EEvento constructor. Inizializza un oggetto Evento Vuoto
      */
@@ -40,8 +36,6 @@ class EEvento extends EObject
     {
         parent ::__construct();
     }
-
-
     /**
      *                                                    METODI SET
      *
@@ -52,23 +46,21 @@ class EEvento extends EObject
      * @param bool $flag
      * @param EFascia ...$fascia
      */
-    function setEvento(int $eventId, string $name, string $category, bool $flag,ELuogo $location, EFascia $fascia)
+    function setEvento(int $eventId, string $name, string $category, bool $flag,ELuogo $location, array $fascia)
     {
         $this ->luogoEvento = $location;
         $this -> id = $eventId;
         $this -> nomeEvento = $name;
         $this -> categoria = $category;
         $this -> flagPrenotazione = $flag;
-        array_push($this->listaFasce, $fascia);
+        $this->listaFasce=$fascia;
     }
-
     /**
      *
      * Metodo per impostare la categoria
      * @param string $category
      */
     function setCategoria(string $category){$this->categoria=$category;}
-
     /**
      * Metodo per impostare la possibilità di prenotazione
      * @param bool $flag
@@ -76,25 +68,20 @@ class EEvento extends EObject
    function setFlag(bool $flag){
         $this->flagPrenotazione=$flag;
     }
-
     /**
      * Metodo per impostare il luogo dell'evento
      * @param ELuogo $place
      */
     function setLuogo(ELuogo $place){$this->luogoEvento=$place;}
-
     /**
      * Metodo per inserire una nuova fascia oraria nell'array
      * @param EFascia $fascia
      */
     function newFascia(EFascia $fascia){array_push($this->listaFasce,$fascia);}
-
     /**
      * Metodo per inserire una prenotazione nell'array
      * @param EPrenotazione $prenotazione
      */function newPrenotazione(EPrenotazione $prenotazione){array_push($this->listaPrenotazioni,"$prenotazione");}
-
-
     /**
      *                                                       METODI GET
      *
