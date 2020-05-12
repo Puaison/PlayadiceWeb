@@ -103,6 +103,7 @@ class EGioco extends EObject
     }
 
     /**
+     * //TODO Problemi con questo metodo perchè gli passo un array
      * @param ERecensione ...$recensioni Recensioni che devono essere aggiunte al gioc
      */
     function setRecensioni(ERecensione ...$recensioni) {
@@ -120,7 +121,7 @@ class EGioco extends EObject
     }
 
     /**
-     * Metodo che calcola il voto medio riprendendo tutte le recensioni
+     * Metodo che calcola il vgoto medio riprendendo tutte le recensioni
      * @return float Il VotoMedio calcolato sulle recensioni del Gioco
      */
     function CalcolaVotoMedio() :float {
@@ -140,6 +141,7 @@ class EGioco extends EObject
     }
 
     /**
+     * //TODO vedere come fare uscire la descrizione della funzione
      * Metodo che controlla se la recensione può essere effettuata
      * @param ERecensione $nuovarec La Nuova Recensione che devo controllare che
      * @return bool
@@ -153,7 +155,7 @@ class EGioco extends EObject
             if($commentatore==$nuovarec->getEUtente()->getUsername())
                 return false;
         }
-        //Aggiungo direttamente la recensione oppure controllavo soltanto?
+        //TODO Aggiungo direttamente la recensione oppure controllavo soltanto?
         $this->addRecensione($nuovarec);
         return true;
 

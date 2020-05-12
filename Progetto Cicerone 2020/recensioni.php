@@ -22,7 +22,7 @@ $utente2=new EUtente();
 $utente2->setUsername("pluto");
 $rec2->setEUtente($utente2);
 $rectot[]=$rec2;
-$s->
+$s->setRecensioni($rectot);
 
 
 $rec3=new ERecensione();
@@ -30,6 +30,7 @@ $rec3->setVoto(13);
 $utente3=new EUtente();
 $utente3->setUsername("papero");
 $rec3->setEUtente($utente3);
+
 
 $prova=$s->PossibileNuovaRecensione($rec3);
 var_dump($s);
