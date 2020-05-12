@@ -62,7 +62,7 @@ class EData extends EObject
      */
     function setData(string $inputDate, string $inputMonth, string $inputYear, string $inputHour, string $inputMinutes){
         $this->dateTime= date_create("$inputYear-$inputMonth-$inputDate"."$inputHour:$inputMinutes");
-        $this->posizioneOdierna=EData::newPosizione($today=date_create());
+        $this->posizioneOdierna=EData::getIntervalloStr($today=date_create());
         $this->nomeMese=LIST_MONTH[$inputMonth-1];
         $this->numGiorno=date_format($this->dateTime, "j");
         $this->nomeGiorno=LIST_DATE[date_format($this->dateTime,"N")-1];
@@ -186,10 +186,18 @@ class EData extends EObject
      * @param $date
      * @return string
      */
-     function getIntervalloStr(EData $date):string {
-         $diff=date_diff($date->getDateTime(),$this->dateTime);
-         $diff=$diff->format("%Y%M%d%H%i%s");
-         return $diff;
+     function getIntervalloStr($date):string {
+         if (is_a($date, "EData")){
+             $diff=date_diff($date->getDateTime(),$this->dateTime);
+             $diff=$diff->format("%Y%M%d%H%i%s");
+             return $diff;
+         }
+         elseif (is_a($date, "DateTime")) {
+             $diff=date_diff($date,$this->dateTime);
+             $diff=$diff->format("%Y%M%d%H%i%s");
+             return $diff;
+
+         }
     }
 
     /**
