@@ -1,5 +1,5 @@
 <?php
-
+require ("entity/EObject.php");
 
 /**
  * Class EEvento CLasse utilizzata per realizzare gli Eventi
