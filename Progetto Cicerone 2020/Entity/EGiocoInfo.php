@@ -21,6 +21,11 @@ class EGiocoInfo extends EObject
     /** La Casa Editrice che ha prodotto/pubblicato quel Gioco */
     private $CasaEditrice;
 
+    function __construct()
+    {
+        parent::__construct();
+    }
+
 
     /****************************************** GETTER **************************************************/
     /**
@@ -90,7 +95,7 @@ class EGiocoInfo extends EObject
      */
     public function setMin(int $min)  {
 
-        $this->NumeroMax=$min;
+        $this->NumeroMin=$min;
 
     }
     /**

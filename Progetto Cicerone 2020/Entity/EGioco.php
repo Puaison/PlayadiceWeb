@@ -106,9 +106,9 @@ class EGioco extends EObject
      * //TODO Problemi con questo metodo perchè gli passo un array
      * @param ERecensione ...$recensioni Recensioni che devono essere aggiunte al gioc
      */
-    function setRecensioni(ERecensione ...$recensioni) {
+    function setRecensioni($recensioni) {
 
-        $this->Recensioni= clone $recensioni;
+        $this->Recensioni=  $recensioni;
     }
     /********************************************** ALTRE FUNZIONI ************************************************/
 
