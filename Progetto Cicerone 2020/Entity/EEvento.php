@@ -1,5 +1,4 @@
 <?php
-require ("Entity/EObject.php");
 /**
  * Class EEvento CLasse utilizzata per realizzare gli Eventi
  */
@@ -154,9 +153,9 @@ class EEvento extends EObject
      * @param $b
      * @return int
      */
-    function eventSorter($a, $b){
-        if ($a==$b) return 0;
-        return ($a<$b)?-1:1;
+    function eventSorter(EEvento $a, EEvento $b){
+        if ($a->getPosizione()==$b->getPosizione()) return 0;
+        return ($a->getPosizione()<$b->getCategory())?-1:1;
     }
     /**
      * Metodo che restituisce l'informazioni dell'evento in forma di stringa

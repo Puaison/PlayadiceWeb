@@ -1,8 +1,5 @@
 <?php
-require('Entity/EObject.php');
-require('Entity/EAvatar.php');
-require('Entity/EProposta.php');
-require('Entity/EUtente.php');
+require('autoload.php');
 echo "\n";
 print ("Hello");
 echo "\n";

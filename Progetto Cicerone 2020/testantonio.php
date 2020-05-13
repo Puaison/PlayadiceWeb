@@ -1,9 +1,5 @@
 <?php
-require ("entity/EEvento.php");
-require ("entity/ELuogo.php");
-require ("entity/EFascia.php");
-require ("entity/EData.php");
-require ("entity/EUtente.php");
+require ("autoload.php");
 
 
 echo "\n";
