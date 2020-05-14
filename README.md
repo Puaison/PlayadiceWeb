@@ -9,3 +9,5 @@ Progetto per Esame Univaq
 Domande:
 1) Dove sta il db?
 2) Chiedere a Davide il DeclareStrictTypes
+3) Come comportarsi con il declarestricttypes
+4) Il PDO restituisce sempre stringhe?
