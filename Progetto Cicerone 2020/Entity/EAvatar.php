@@ -150,6 +150,9 @@ class EAvatar extends EObject {
             $this->Proprietario=$User;
         }
     }
-
+    /********************************************** ALTRO ************************************************/
+    /**
+     * Tostring manuale per semplice comprensione
+     */
 
 }

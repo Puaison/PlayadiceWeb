@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="PORCODIO&#10;4\">
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/autoload.php" afterDir="false" />
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="EPrenotazione.php 1.0 con php docs">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/Entity/EEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Entity/EEvento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/Entity/EAvatar.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Entity/EAvatar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/Entity/EUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Entity/EUtente.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/testantonio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/testantonio.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,16 +69,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FillSpaceWEB" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../php/php.exe" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
-  <component name="RunManager" selected="PHP Script.testantonio.php">
+  <component name="RunManager" selected="PHP Script.main.php">
     <configuration name="EBooking.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/EBooking.php">
       <method v="2" />
     </configuration>
@@ -118,8 +118,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.testantonio.php" />
         <item itemvalue="PHP Script.main.php" />
+        <item itemvalue="PHP Script.testantonio.php" />
         <item itemvalue="PHP Script.recensioni.php" />
         <item itemvalue="PHP Script.EBooking.php" />
         <item itemvalue="PHP Script.EDate.php" />
@@ -157,6 +157,8 @@
       <workItem from="1589296921171" duration="317000" />
       <workItem from="1589297254079" duration="7097000" />
       <workItem from="1589352734483" duration="989000" />
+      <workItem from="1589463722192" duration="163000" />
+      <workItem from="1589463986165" duration="3975000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <created>1587817231703</created>
@@ -403,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589303612765</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="EPrenotazione.php 1.0 con php docs">
+      <created>1589466416987</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1589466416988</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,16 +452,17 @@
     <MESSAGE value="cambio nome EData.php ed aggiornamenti" />
     <MESSAGE value="ELuogo.php EFascia.php 1.0 con phpdocs" />
     <MESSAGE value="EData.php EFascia.php 1.0 con phpdocs" />
-    <MESSAGE value="EPrenotazione.php 1.0 con php docs" />
     <MESSAGE value="Prove sulle recensioni e i giochi" />
     <MESSAGE value="PORCODIO&#10;4\" />
-    <option name="LAST_COMMIT_MESSAGE" value="PORCODIO&#10;4\" />
+    <MESSAGE value="EPrenotazione.php 1.0 con php docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="EPrenotazione.php 1.0 con php docs" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="540" y="175" key="#CLI_Interpreters" timestamp="1589295841609">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="540" y="175" key="#CLI_Interpreters/0.0.1920.1040@0.0.1920.1040" timestamp="1589295841609" />
+    <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589463768748" />
     <state x="742" y="224" key="#PHP" timestamp="1589353066950">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -486,41 +496,41 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1589309287060">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="780" y="174" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1589466415662">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589303611704" />
     <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1589309287060" />
-    <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817361536" />
-    <state x="864" y="285" key="FileChooserDialogImpl" timestamp="1588525269838">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589466415662" />
+    <state x="1152" y="369" key="FileChooserDialogImpl" timestamp="1589463765290">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="864" y="285" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1588525269838" />
-    <state x="1152" y="369" key="FileChooserDialogImpl/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587811855372" />
-    <state width="1921" height="428" key="GridCell.Tab.0.bottom" timestamp="1589353418438">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="1152" y="369" key="FileChooserDialogImpl/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589463765290" />
+    <state width="2517" height="404" key="GridCell.Tab.0.bottom" timestamp="1589467383148">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589305219450" />
     <state width="1921" height="428" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418438" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
-    <state width="1921" height="428" key="GridCell.Tab.0.center" timestamp="1589353418436">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2517" height="404" key="GridCell.Tab.0.bottom/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589467383148" />
+    <state width="2517" height="404" key="GridCell.Tab.0.center" timestamp="1589467383148">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589305219450" />
     <state width="1921" height="428" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418436" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
-    <state width="1921" height="428" key="GridCell.Tab.0.left" timestamp="1589353418436">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2517" height="404" key="GridCell.Tab.0.center/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589467383148" />
+    <state width="2517" height="404" key="GridCell.Tab.0.left" timestamp="1589467383148">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589305219450" />
     <state width="1921" height="428" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418436" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
-    <state width="1921" height="428" key="GridCell.Tab.0.right" timestamp="1589353418438">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2517" height="404" key="GridCell.Tab.0.left/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589467383148" />
+    <state width="2517" height="404" key="GridCell.Tab.0.right" timestamp="1589467383148">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589305219450" />
     <state width="1921" height="428" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418438" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817154249" />
+    <state width="2517" height="404" key="GridCell.Tab.0.right/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589467383148" />
     <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1588058395039">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -552,10 +562,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="795" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589295141490" />
-    <state x="903" y="282" key="SettingsEditor" timestamp="1587811959006">
+    <state x="818" y="286" width="1229" height="714" key="SettingsEditor" timestamp="1589463770401">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="903" y="282" key="SettingsEditor/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587811959006" />
+    <state x="818" y="286" width="1229" height="714" key="SettingsEditor/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589463770401" />
     <state x="747" y="236" key="VCS.ChangeListViewerDialog" timestamp="1589295051761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -564,28 +574,28 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1589309291535">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="873" y="434" key="Vcs.Push.Dialog.v2" timestamp="1589466421790">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589303614352" />
     <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1589309291535" />
-    <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817235655" />
+    <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589466421790" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588407242850" />
-    <state x="725" y="374" key="com.intellij.ide.util.TipDialog" timestamp="1589352751088">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="966" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1589463986113">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="725" y="360" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589297255331" />
     <state x="725" y="374" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352751088" />
-    <state x="966" y="484" key="com.intellij.ide.util.TipDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587810941671" />
-    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589309281713">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="966" y="484" key="com.intellij.ide.util.TipDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589463986113" />
+    <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589466438478">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589304116806" />
     <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1589309281713" />
-    <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817425648" />
+    <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589466438478" />
     <state x="649" y="311" key="git4idea.merge.GitPullDialog" timestamp="1589295097279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -10,7 +10,7 @@ class EUtente extends EObject
     protected string $Cognome;
 
     /** La Mail dell'utente */
-    protected  string $Mail;
+    protected string $Mail;
 
     /** La password dell'utente */
     protected string $Password;

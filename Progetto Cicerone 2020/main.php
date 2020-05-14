@@ -49,6 +49,11 @@ var_dump($Pippo);
         exit;
     }
 
+    $stmt = $pdo->query("SELECT * FROM user");
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    var_dump($rows);
+
 
 
 
