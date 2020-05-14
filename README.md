@@ -11,3 +11,4 @@ Domande:
 2) Chiedere a Davide il DeclareStrictTypes
 3) Come comportarsi con il declarestricttypes
 4) Il PDO restituisce sempre stringhe?
+5) Dobbiamo fare il persistant manager?
