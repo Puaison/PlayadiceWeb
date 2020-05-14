@@ -38,5 +38,20 @@ echo "\n\n\n";
 var_dump($Pippo);
 
 
+    try
+    {
+        $pdo = new PDO ("mysql:host=127.0.0.1;dbname=testphp", "root");
+    }
+    catch ( PDOException $e)
+    {
+        print $e->getMessage() . "\n";
+        print ("Non ha funzionato rip");
+        exit;
+    }
+
+
+
+
+
 
 ?>
