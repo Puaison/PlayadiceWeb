@@ -7,5 +7,5 @@ Progetto per Esame Univaq
 #https://drive.google.com/file/d/1SxFitIuu2EDUP5yk3LXU4f0Mbimxgxak/view?usp=sharing
 
 Domande:
-1) Gli oggetti entity possono (e/o devono) comunicare con il persistant manager (Esempio gioco cerca le sue recensioni)
+1) Dove sta il db?
 2) Chiedere a Davide il DeclareStrictTypes
