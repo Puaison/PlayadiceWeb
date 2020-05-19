@@ -1,0 +1,353 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `playadice`
+--
+
+-- --------------------------------------------------------
+-- //////////////////////////////CREAZIONE TABELLE////////////////////////////////////////
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `avatar`
+--
+
+CREATE TABLE IF NOT EXISTS `avatar` (
+  `UsernameUtente` varchar(20) NOT NULL,
+  `IdAvatar` smallint(6) NOT NULL,
+  `Classe` varchar(20) NOT NULL,
+  `Livello` tinyint(4) NOT NULL,
+  `Razza` varchar(20) NOT NULL,
+  `Nome` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `evento`
+--
+
+CREATE TABLE IF NOT EXISTS `evento` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `Nome` varchar(45) NOT NULL,
+  `Flag` tinyint(1) NOT NULL,
+  `Id_Luogo` int(5) UNSIGNED NOT NULL,
+  `Categoria` varchar(45) NOT NULL,
+  `Id_Fascia` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `fascia`
+--
+
+CREATE TABLE IF NOT EXISTS `fascia` (
+  `id` int(5) NOT NULL,
+  `evento_id` int(5) UNSIGNED NOT NULL,
+  `intervallo` int(5) UNSIGNED NOT NULL,
+  `data` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `gioco`
+--
+
+CREATE TABLE IF NOT EXISTS `gioco` (
+  `Id` smallint(5) UNSIGNED NOT NULL,
+  `Nome` varchar(40) NOT NULL,
+  `VotoMedio` float DEFAULT NULL,
+  `Categoria` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `gioco_info`
+--
+
+CREATE TABLE IF NOT EXISTS `gioco_info` (
+  `Id_Gioco` smallint(5) UNSIGNED NOT NULL,
+  `Descrizione` varchar(3000) NOT NULL,
+  `NumeroMin` int(2) UNSIGNED NOT NULL,
+  `NumeroMax` int(2) UNSIGNED NOT NULL,
+  `CasaEditrice` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `inventario`
+--
+
+CREATE TABLE IF NOT EXISTS `inventario` (
+  `NomeOggetto` varchar(30) NOT NULL,
+  `IdAvatar` smallint(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `luogo`
+--
+
+CREATE TABLE IF NOT EXISTS `luogo` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `città` varchar(45) NOT NULL,
+  `via` varchar(45) NOT NULL,
+  `cap` int(6) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `prenotazione`
+--
+
+CREATE TABLE IF NOT EXISTS `prenotazione` (
+  `id` int(5) UNSIGNED NOT NULL,
+  `utente_id` varchar(20) NOT NULL,
+  `evento_id` int(5) UNSIGNED NOT NULL,
+  `data` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `proposta`
+--
+
+CREATE TABLE IF NOT EXISTS `proposta` (
+  `Id` smallint(6) NOT NULL,
+  `IDModificato` smallint(6) NOT NULL,
+  `IDProposto` smallint(6) NOT NULL,
+  `Tipo proposta` enum('Creazione','Modifica','Cancellazione') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `recensione`
+--
+
+CREATE TABLE IF NOT EXISTS `recensione` (
+  `Creatore` varchar(20) NOT NULL,
+  `Id_Gioco` smallint(5) UNSIGNED NOT NULL,
+  `Voto` int(10) UNSIGNED NOT NULL,
+  `Commento` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `utente`
+--
+
+CREATE TABLE IF NOT EXISTS `utente` (
+  `UserName` varchar(20) NOT NULL,
+  `Nome` varchar(20) NOT NULL,
+  `Cognome` varchar(30) NOT NULL,
+  `Password` varchar(20) NOT NULL,
+  `Email` varchar(40) NOT NULL,
+  `Moderatore` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+-- //////////////////////////////AGGIUNTA INDICI E CHIAVI PRIMARIE////////////////////////////////////////
+-- --------------------------------------------------------
+
+
+--
+-- Indici per le tabelle scaricate
+--
+
+--
+-- Indici per le tabelle `avatar`
+--
+ALTER TABLE `avatar`
+  ADD PRIMARY KEY (`IdAvatar`),
+  ADD KEY `UsernameUtente` (`UsernameUtente`);
+
+--
+-- Indici per le tabelle `evento`
+--
+ALTER TABLE `evento`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `Id_Luogo` (`Id_Luogo`),
+  ADD KEY `Id_Fascia` (`Id_Fascia`);
+
+--
+-- Indici per le tabelle `fascia`
+--
+ALTER TABLE `fascia`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `evento_id` (`evento_id`);
+
+--
+-- Indici per le tabelle `gioco`
+--
+ALTER TABLE `gioco`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indici per le tabelle `gioco_info`
+--
+ALTER TABLE `gioco_info`
+  ADD PRIMARY KEY (`Id_Gioco`);
+
+--
+-- Indici per le tabelle `inventario`
+--
+ALTER TABLE `inventario`
+  ADD PRIMARY KEY (`NomeOggetto`,`IdAvatar`),
+  ADD KEY `IdAvatar` (`IdAvatar`);
+
+--
+-- Indici per le tabelle `luogo`
+--
+ALTER TABLE `luogo`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
+
+--
+-- Indici per le tabelle `prenotazione`
+--
+ALTER TABLE `prenotazione`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `evento_id` (`evento_id`),
+  ADD KEY `utente_id` (`utente_id`);
+
+--
+-- Indici per le tabelle `proposta`
+--
+ALTER TABLE `proposta`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `IDModificato` (`IDModificato`,`IDProposto`),
+  ADD KEY `IDProposto` (`IDProposto`);
+
+--
+-- Indici per le tabelle `recensione`
+--
+ALTER TABLE `recensione`
+  ADD PRIMARY KEY (`Creatore`,`Id_Gioco`),
+  ADD KEY `Id_Gioco` (`Id_Gioco`);
+
+--
+-- Indici per le tabelle `utente`
+--
+ALTER TABLE `utente`
+  ADD PRIMARY KEY (`UserName`);
+
+-- --------------------------------------------------------
+-- //////////////////////////////AGGIUNTA AUTO INCREMENT////////////////////////////////////////
+-- --------------------------------------------------------
+
+--
+-- AUTO_INCREMENT per la tabella `avatar`
+--
+ALTER TABLE `avatar`
+  MODIFY `IdAvatar` smallint(6) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `evento`
+--
+ALTER TABLE `evento`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `fascia`
+--
+ALTER TABLE `fascia`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `gioco`
+--
+ALTER TABLE `gioco`
+  MODIFY `Id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `luogo`
+--
+ALTER TABLE `luogo`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `prenotazione`
+--
+ALTER TABLE `prenotazione`
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT per la tabella `proposta`
+--
+ALTER TABLE `proposta`
+  MODIFY `Id` smallint(6) NOT NULL AUTO_INCREMENT;
+-- --------------------------------------------------------
+-- //////////////////////////////AGGIUNTA CHIAVI ESTERNE////////////////////////////////////////
+-- --------------------------------------------------------
+--
+-- Limiti per la tabella `avatar`
+--
+ALTER TABLE `avatar`
+  ADD CONSTRAINT `avatar_ibfk_1` FOREIGN KEY (`UsernameUtente`) REFERENCES `utente` (`UserName`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limiti per la tabella `evento`
+--
+ALTER TABLE `evento`
+  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`Id_Luogo`) REFERENCES `luogo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `evento_ibfk_2` FOREIGN KEY (`Id_Fascia`) REFERENCES `fascia` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limiti per la tabella `gioco_info`
+--
+ALTER TABLE `gioco_info`
+  ADD CONSTRAINT `gioco_info_ibfk_1` FOREIGN KEY (`Id_Gioco`) REFERENCES `gioco` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limiti per la tabella `inventario`
+--
+ALTER TABLE `inventario`
+  ADD CONSTRAINT `inventario_ibfk_1` FOREIGN KEY (`IdAvatar`) REFERENCES `avatar` (`IdAvatar`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limiti per la tabella `prenotazione`
+--
+ALTER TABLE `prenotazione`
+  ADD CONSTRAINT `prenotazione_ibfk_1` FOREIGN KEY (`evento_id`) REFERENCES `evento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `prenotazione_ibfk_2` FOREIGN KEY (`utente_id`) REFERENCES `utente` (`UserName`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limiti per la tabella `proposta`
+--
+ALTER TABLE `proposta`
+  ADD CONSTRAINT `proposta_ibfk_1` FOREIGN KEY (`IDModificato`) REFERENCES `avatar` (`IdAvatar`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `proposta_ibfk_2` FOREIGN KEY (`IDProposto`) REFERENCES `avatar` (`IdAvatar`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limiti per la tabella `recensione`
+--
+ALTER TABLE `recensione`
+  ADD CONSTRAINT `recensione_ibfk_1` FOREIGN KEY (`Creatore`) REFERENCES `utente` (`UserName`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `recensione_ibfk_2` FOREIGN KEY (`Id_Gioco`) REFERENCES `gioco` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+-- --------------------------------------------------------
+-- //////////////////////////////Inserimento Ennuple Standard////////////////////////////////////////
+-- --------------------------------------------------------
+INSERT INTO `utente` (`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`) VALUES
+('Ospite', '', '', '', '', 0);
+
+COMMIT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
