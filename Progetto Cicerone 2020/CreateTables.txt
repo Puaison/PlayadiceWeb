@@ -101,6 +101,7 @@ CREATE TABLE IF NOT EXISTS `inventario` (
 
 CREATE TABLE IF NOT EXISTS `luogo` (
   `id` int(5) UNSIGNED NOT NULL,
+  `nome` varchar(45) NOT NULL,
   `città` varchar(45) NOT NULL,
   `via` varchar(45) NOT NULL,
   `cap` int(6) UNSIGNED NOT NULL
