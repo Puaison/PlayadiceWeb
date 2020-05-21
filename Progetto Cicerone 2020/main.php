@@ -3,7 +3,7 @@ require('autoload.php');
 echo "\n";
 print ("Hello");
 echo "\n";
-
+/*
 $User=new EUtente();
 
 $User->setNome("Alessio");
@@ -53,9 +53,16 @@ var_dump($Pippo);
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     var_dump($rows);
+*/
 
 
 
+$Colonna= "Nome";
+$Valore= "Alessio";
+$Pippo = FPersistantManager::getInstance()->search("Utente","Nome","Alessio");
+
+
+echo ($Pippo[0]->getUsername());
 
 
 

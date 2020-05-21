@@ -1,7 +1,7 @@
 <?php
 
 
-class EUtente extends EObject
+class EUtente
 {
     /** Il Nome dell'utente */
     protected string $Nome;
@@ -25,7 +25,6 @@ class EUtente extends EObject
      */
     public function __construct()
     {
-        parent::__construct();
     }
 
     /****************************************** GETTER **************************************************/

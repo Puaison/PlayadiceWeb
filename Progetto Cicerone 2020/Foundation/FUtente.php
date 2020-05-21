@@ -11,7 +11,7 @@ class FUtente
     static function searchUtenteByNome() : string
     {
         return "SELECT *
-                FROM users
+                FROM Utente
                 WHERE LOCATE( :Nome , Nome ) > 0;";
     }
 
@@ -21,7 +21,7 @@ class FUtente
         $stmt->bindValue(':Username', $user->getUsername(), PDO::PARAM_STR);
         $stmt->bindValue(':Nome', $user->getNome(), PDO::PARAM_STR);
         $stmt->bindValue(':Cognome', $user->getCognome(), PDO::PARAM_STR);
-        $stmt->bindValue(':EMail', $user->getMail(), PDO::PARAM_STR);
+        $stmt->bindValue(':Email', $user->getMail(), PDO::PARAM_STR);
         $stmt->bindValue(':Password', $user->getPassword(), PDO::PARAM_STR);
     }
 
@@ -33,9 +33,6 @@ class FUtente
     static function createObjectFromRow($row)
     {
 
-        if ( ($row['UserName']) == "Ospite" )
-            return new EOspite();
-
         if(  ($row['Moderatore']) == true )
             $user = new EAdmin();
         else
@@ -44,7 +41,7 @@ class FUtente
         $user->setNome($row['Nome']);
         $user->setCognome($row['Cognome']);
         $user->setPassword($row['Password']);
-        $user->setEmail($row['EMail']);
+        $user->setEmail($row['Email']);
         $user->setUsername($row['UserName']);
 
         return $user;

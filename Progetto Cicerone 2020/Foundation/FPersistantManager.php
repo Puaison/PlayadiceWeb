@@ -8,11 +8,6 @@
  * @package Foundation
  */
 
-if(file_exists('config.inc.php'))
-    require_once 'config.inc.php';
-
-require_once 'inc.php';
-
 class FPersistantManager
 {
 
@@ -32,7 +27,7 @@ class FPersistantManager
         try {
             global $address, $admin, $pass, $database;
             //$this->db = new PDO ("mysql:host=$address;dbname=$database", $admin, $pass); //TODO  MODIFY
-            $this->db = new PDO ("mysql:host=$address;dbname=$database", $admin, $pass); //TODO  MODIFY
+            $this->db = new PDO ("mysql:host=127.0.0.1;dbname=playadice", "root"); //TODO  MODIFY
 
         } catch (PDOException $e) {
             echo "Errore : " . $e->getMessage();
@@ -102,7 +97,7 @@ class FPersistantManager
         try
         {
             $stmt = $this->db->prepare($sql); // creo PDOStatement
-            $stmt->bindValue(":".$value, $str, PDO::PARAM_STR); //si associa l'id al campo della query
+            $stmt->bindValue(":".$value, $str, PDO::PARAM_STR);
             $stmt->execute();   //viene eseguita la query
             $stmt->setFetchMode(PDO::FETCH_ASSOC); // i risultati del db verranno salvati in un array con indici le colonne della table
 
@@ -110,6 +105,8 @@ class FPersistantManager
 
             while($row = $stmt->fetch())
             { // per ogni tupla restituita dal db...
+
+
                 $obj[] = FPersistantManager::createObjectFromRow($className, $row); //...istanzio l'oggetto
             }
             $this->__destruct(); // chiude la connessione
