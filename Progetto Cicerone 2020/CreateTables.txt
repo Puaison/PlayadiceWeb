@@ -334,8 +334,13 @@ ALTER TABLE `recensione`
 -- --------------------------------------------------------
 -- //////////////////////////////Inserimento Ennuple Standard////////////////////////////////////////
 -- --------------------------------------------------------
+
 INSERT INTO `utente` (`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`) VALUES
-('Ospite', '', '', '', '', 0);
+('Esperozzi', 'Alessio', 'bbb', 'ccc', 'ddd', 0);
+
+INSERT INTO `utente` (`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`) VALUES
+('Pantaleone', 'Alessandro', 'bbb', 'ccc', 'ddd', 0);
+
 
 COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
