@@ -40,8 +40,7 @@ CREATE TABLE IF NOT EXISTS `evento` (
   `Nome` varchar(45) NOT NULL,
   `Flag` tinyint(1) NOT NULL,
   `Id_Luogo` int(5) UNSIGNED NOT NULL,
-  `Categoria` varchar(45) NOT NULL,
-  `Id_Fascia` int(5) NOT NULL
+  `Categoria` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -51,10 +50,9 @@ CREATE TABLE IF NOT EXISTS `evento` (
 --
 
 CREATE TABLE IF NOT EXISTS `fascia` (
-  `id` int(5) NOT NULL,
   `evento_id` int(5) UNSIGNED NOT NULL,
   `intervallo` int(5) UNSIGNED NOT NULL,
-  `data` date NOT NULL
+  `data_inizio` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -103,6 +101,7 @@ CREATE TABLE IF NOT EXISTS `inventario` (
 
 CREATE TABLE IF NOT EXISTS `luogo` (
   `id` int(5) UNSIGNED NOT NULL,
+  `nome` varchar(45) NOT NULL,
   `città` varchar(45) NOT NULL,
   `via` varchar(45) NOT NULL,
   `cap` int(6) UNSIGNED NOT NULL
@@ -115,7 +114,6 @@ CREATE TABLE IF NOT EXISTS `luogo` (
 --
 
 CREATE TABLE IF NOT EXISTS `prenotazione` (
-  `id` int(5) UNSIGNED NOT NULL,
   `utente_id` varchar(20) NOT NULL,
   `evento_id` int(5) UNSIGNED NOT NULL,
   `data` date NOT NULL
@@ -183,15 +181,13 @@ ALTER TABLE `avatar`
 --
 ALTER TABLE `evento`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Id_Luogo` (`Id_Luogo`),
-  ADD KEY `Id_Fascia` (`Id_Fascia`);
+  ADD KEY `Id_Luogo` (`Id_Luogo`);
 
 --
 -- Indici per le tabelle `fascia`
 --
 ALTER TABLE `fascia`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `evento_id` (`evento_id`);
+  ADD PRIMARY KEY (`evento_id`,`data_inizio`);
 
 --
 -- Indici per le tabelle `gioco`
@@ -223,9 +219,8 @@ ALTER TABLE `luogo`
 -- Indici per le tabelle `prenotazione`
 --
 ALTER TABLE `prenotazione`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `evento_id` (`evento_id`),
-  ADD KEY `utente_id` (`utente_id`);
+  ADD PRIMARY KEY (`evento_id`,`utente_id`);
+
 
 --
 -- Indici per le tabelle `proposta`
@@ -264,11 +259,7 @@ ALTER TABLE `avatar`
 ALTER TABLE `evento`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT per la tabella `fascia`
---
-ALTER TABLE `fascia`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+
 
 --
 -- AUTO_INCREMENT per la tabella `gioco`
@@ -280,12 +271,6 @@ ALTER TABLE `gioco`
 -- AUTO_INCREMENT per la tabella `luogo`
 --
 ALTER TABLE `luogo`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT per la tabella `prenotazione`
---
-ALTER TABLE `prenotazione`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -306,8 +291,13 @@ ALTER TABLE `avatar`
 -- Limiti per la tabella `evento`
 --
 ALTER TABLE `evento`
-  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`Id_Luogo`) REFERENCES `luogo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `evento_ibfk_2` FOREIGN KEY (`Id_Fascia`) REFERENCES `fascia` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`Id_Luogo`) REFERENCES `luogo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limiti per la tabella 'fascia'
+--
+ALTER TABLE `fascia`
+  ADD CONSTRAINT `fascia_ibfk_1` FOREIGN KEY (`evento_id`) REFERENCES `evento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `gioco_info`
