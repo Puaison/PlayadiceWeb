@@ -120,6 +120,88 @@ class FPersistantManager
         }
     }
 
+    /****************************************** STORE ********************************************/
+
+    /**
+     * Metodo che permette di salvare informazioni contenute in un oggetto
+     * Entity sul database.
+     * @param object $obj l'oggetto da salvare
+     * @return bool $result il risultato dell'elaborazione
+     */
+    function store(&$obj) : bool
+    {
+        $result = false;
+        $sql = '';
+        $class = '';
+        if(is_a($obj, EAdmin::class) ) // se l'oggetto e' una tipologia Utente
+            $class = get_parent_class($obj); // si considera la classe padre, EUtente
+        else
+            $class = get_class($obj); // restituisce il nome della classe dall'oggetto
+
+        $resource = substr($class,1); // nome della risorsa (Utente, Avatar, Gioco ...)
+        $foundClass = 'F'.$resource; // nome della rispettiva classe Foundation
+        $method = 'store'.$resource; // nome del metodo store+nome_risorsa
+
+        if(class_exists($foundClass) && method_exists($foundClass, $method))  // se la classe esiste e il metodo pure...
+            $sql = $foundClass::$method(); //ottieni la stringa sql
+
+        if($sql) //se la stringa sql esiste...
+            $result = $this->execStore($obj, $sql); // ... esegui la query
+
+        return $result;
+    }
+
+    /**
+     * Esegue una INSERT sul database
+     *
+     * @param mixed $obj
+     *            l'oggetto da salvare
+     * @param string $sql
+     *            la stringa contenente il comando SQL
+     * @return boolean l'esito della transazione
+     */
+    private function execStore(&$obj, string $sql)
+    {
+        $this->db->beginTransaction(); // inizio della transazione
+
+        $stmt = $this->db->prepare($sql);
+
+        // si prepara la query facendo un bind tra parametri e variabili dell'oggetto
+        try
+        {
+            FPersistantManager::bindValues($stmt, $obj); // si associano i valori dell'oggetto alle entry della query
+
+            $stmt->execute();
+            if ($stmt->rowCount()) // si esegue la query
+            {
+                if (method_exists($obj, 'getId') && $obj->getId() == 0){ // ...se il valore e' di default si assegna l'id
+                    $obj->setId($this->db->lastInsertId()); // assegna all'oggetto l'ultimo id dato dal dbms
+                }
+                $commit = $this->db->commit(); // effettua il commit
+
+                $this->__destruct(); // chiude la connessione
+
+                return $commit; // ritorna il risultato del commit
+            }
+            else
+            {
+                // ...altrimenti si effettua il rollback e si ritorna false
+                $this->db->rollBack();
+                $this->__destruct(); // chiude la connessione
+
+                return false;
+            }
+        }
+        catch (PDOException $e)
+        {  // errore: rollback e return false
+
+            $this->db->rollBack();
+            $this->__destruct(); // chiude la connessione
+
+            return false;
+        }
+    }
+
 
     /*****************************   ASSOCIAZIONI ENTITY - DB    *********************************/
 
@@ -130,6 +212,9 @@ class FPersistantManager
     private function bindValues(PDOStatement &$stmt, &$obj)
     {
         $class = '';
+        if(is_a($obj, EAdmin::class))
+            $class = get_parent_class($obj);
+        else
             $class = get_class($obj); // restituisce il nome della classe dall'oggetto
 
         $resource = substr($class,1); // nome della risorsa (User, Song, UserInfo, ...)

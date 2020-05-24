@@ -4,6 +4,12 @@
 class EAdmin extends EUtente
 {
 
-    //Corpo di mille balene, ma è vuota questa classe??
+    /**
+     * @return bool 1 poichè è moderatore
+     */
+    function getModeratore() : bool
+    {
+        return false;
+    }
 
 }

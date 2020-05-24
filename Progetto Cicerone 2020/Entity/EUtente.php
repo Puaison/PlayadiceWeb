@@ -67,6 +67,15 @@ class EUtente
     {
         return $this->Username;
     }
+
+    /**
+     * @return bool 0 poichè non è moderatore
+     */
+    function getModeratore() : bool
+    {
+        return false;
+    }
+
     /****************************************** SETTER **************************************************/
 
     /**

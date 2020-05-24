@@ -53,7 +53,7 @@ var_dump($Pippo);
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     var_dump($rows);
-*/
+
 
 
 
@@ -63,6 +63,22 @@ $Pippo = FPersistantManager::getInstance()->search("Utente","Nome","Alessio");
 
 
 echo ($Pippo[0]->getUsername());
+*/
+
+$User=new EUtente();
+
+$User->setNome("Alessio");
+$User->setCognome("Perozzi");
+$User->setEmail("Test@Gmail.com");
+$User->setUsername("Pantaleone");
+$User->setPassword("1234");
+
+$Pippo = FPersistantManager::getInstance()->store($User);
+
+if ($Pippo)
+    echo ("si");
+else
+    echo ("no");
 
 
 

@@ -15,6 +15,12 @@ class FUtente
                 WHERE LOCATE( :Nome , Nome ) > 0;";
     }
 
+    static function storeUtente() : string
+    {
+        return "INSERT INTO utente(UserName, Nome , Cognome, Password, Email, Moderatore)
+				VALUES(:Username, :Nome, :Cognome, :Password, :Email,  :Moderatore)";
+    }
+
 
     static function bindValues(PDOStatement &$stmt, EUtente &$user)
     {
@@ -23,6 +29,7 @@ class FUtente
         $stmt->bindValue(':Cognome', $user->getCognome(), PDO::PARAM_STR);
         $stmt->bindValue(':Email', $user->getMail(), PDO::PARAM_STR);
         $stmt->bindValue(':Password', $user->getPassword(), PDO::PARAM_STR);
+        $stmt->bindValue(':Moderatore', $user->getModeratore(), PDO::PARAM_STR);
     }
 
     /**
