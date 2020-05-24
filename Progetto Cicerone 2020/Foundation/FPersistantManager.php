@@ -162,7 +162,6 @@ class FPersistantManager
      */
     private function execStore(&$obj, string $sql)
     {
-        $this->db->beginTransaction(); // inizio della transazione
 
         $stmt = $this->db->prepare($sql);
 
@@ -268,6 +267,66 @@ class FPersistantManager
             $this->__destruct(); // chiude la connessione
 
             return false;
+        }
+    }
+    /************************************** REMOVE ************************************************/
+
+    /**
+     * Metodo che cancella dal database una entry di un particolare
+     * oggetto Entity.
+     * @param string $class il nome della classe (ottenibile tramite EClass::name )
+     * @return bool se l'operazione ha avuto successo o meno.
+     */
+    function remove($obj) : bool
+    {
+        $class='';
+        $sql = '';
+        if(is_a($obj, EAdmin::class) ) // se l'oggetto e' una tipologia Utente
+            $class = get_parent_class($obj); // si considera la classe padre, EUtente
+        else
+            $class = get_class($obj); // restituisce il nome della classe dall'oggetto
+        {
+            $resource = substr($class, 1);
+            $foundClass = 'F' . $resource;
+            $method = 'remove' . $resource;
+
+            $sql = $foundClass::$method();
+        }
+        if ($sql)
+        {
+            return $result = $this->execRemove($obj, $sql); // ... esegui la query
+        }
+        else
+            return NULL;
+
+    }
+
+    /**
+     * Rimuove una entry dal database.
+     * @param int $id della entry da eliminare
+     * @param int $id2 opzionale se l'entry ha due primary key
+     * @return bool l'esito dell'operazione
+     */
+    private function execRemove(&$obj, string $sql) : bool {
+
+        $this->db->beginTransaction(); //inizio della transazione
+        $stmt = $this->db->prepare($sql); //a partire dalla stringa sql viene creato uno statement
+
+        try
+        {
+            FPersistantManager::bindValues($stmt, $obj); //si associano i valori dell'oggetto alle entry della query
+
+            $result = $stmt->execute(); //esegue lo statement
+
+            $this->__destruct(); // chiude la connessione
+
+            return $result; //ritorna il risultato
+
+        }
+        catch (PDOException $e)
+        {
+            $this->__destruct(); // chiude la connessione
+            return FALSE; //ritorna false se ci sono errori
         }
     }
 

@@ -73,18 +73,25 @@ $User->setEmail("Test@gmail.com");
 $User->setUsername("Esperozzi");
 $User->setPassword("1234");
 
-$Pippo = FPersistantManager::getInstance()->update($User);
+var_dump($User);
+/**$Pippo = FPersistantManager::getInstance()->update($User);
 if ($Pippo)
     echo ("si");
 else
-    echo ("no");
+    echo ("no");**/
 /**$Pippo = FPersistantManager::getInstance()->store($User);
 
 if ($Pippo)
     echo ("si");
 else
+    echo ("no");**/
+$Pippo = FPersistantManager::getInstance()->remove($User);
+
+if ($Pippo)
+    echo ("si");
+else
     echo ("no");
-**/
+
 
 
 ?>

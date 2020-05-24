@@ -30,6 +30,16 @@ class FUtente
                 SET  Nome = :Nome, Cognome = :Cognome, Password = :Password, Email = :Email, Moderatore = :Moderatore
                 WHERE UserName = :Username ;";
     }
+    /**
+     * Elimina un utente dal db .
+     *
+     */
+    static function removeUtente() : string
+    {
+        return " DELETE
+                 FROM utente
+                 WHERE UserName = :Username ,Nome = :Nome, Cognome = :Cognome, Password = :Password, Email = :Email, Moderatore = :Moderatore ;"; //query sql
+    }
 
 
     static function bindValues(PDOStatement &$stmt, EUtente &$user)
