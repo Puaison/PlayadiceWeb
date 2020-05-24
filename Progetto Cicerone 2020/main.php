@@ -68,12 +68,12 @@ echo ($Pippo[0]->getUsername());
 $User=new EAdmin();
 
 $User->setNome("Alessio");
-$User->setCognome("oaudygvowya");
-$User->setEmail("fqiubhiqpu");
-$User->setUsername("Admino1");
-$User->setPassword("dafowuhnfa");
+$User->setCognome("");
+$User->setEmail("");
+$User->setUsername("");
+$User->setPassword("");
 
-$Pippo = FPersistantManager::getInstance()->exists("Utente","Nome","Aless");
+$Pippo = FPersistantManager::getInstance()->exists("Utente","Nome","Luca");
 
 if ($Pippo)
 echo ("Esisteeee");

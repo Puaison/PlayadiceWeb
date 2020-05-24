@@ -159,7 +159,7 @@ class FPersistantManager
             $stmt->setFetchMode(PDO::FETCH_ASSOC); // i risultati del db verranno salvati in un array con indici le colonne della table
 
             $found = false;
-            while($row = $stmt->fetch())
+            if( $stmt->fetch())
             { // per ogni tupla restituita dal db...
                 $found = true;
             }
@@ -367,7 +367,6 @@ class FPersistantManager
         {
             //$Nick="badibba";
             //$stmt->bindValue(":Username", $Nick, PDO::PARAM_STR);
-            FUtente::removeUtente();
             FPersistantManager::bindValues($stmt, $obj); //si associano i valori dell'oggetto alle entry della query
             $result = $stmt->execute(); //esegue lo statement
             $this->__destruct(); // chiude la connessione
