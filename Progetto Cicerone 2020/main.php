@@ -80,7 +80,6 @@ if ($Pippo)
 else
     echo ("no");**/
 $Pippo = FPersistantManager::getInstance()->store($User);
-
 if ($Pippo)
     echo ("si");
 else
