@@ -120,6 +120,61 @@ class FPersistantManager
         }
     }
 
+    /****************************************** Exists(?) **************************************************/
+
+    /**
+     * Effettua una ricerca sul database secondo vari parametri. Tale metodo e' scaturito a seguito
+     * di una ricerca da parte dell'utente, puo' essere relativa a canzoni o musicisti secondo diversi
+     * parametri, come nome o genere musicale.
+     * @param string $key la table da cui prelevare i dati
+     * @param string $value il valore per cui cercare i valori
+     * @param string $str il dato richiesto dall'utente
+     * @return boolean i risultati ottenuti dalla ricerca. Se la richiesta non ha match, ritorna false.
+     */
+    function exists(string $key, string $value, string $str)
+    {
+        $sql = '';
+        $className = 'F'.$key;
+
+        if(class_exists($className))
+        {
+            $method = 'search'.$key.'By'.$value;
+            if(method_exists($className, $method))
+                $sql = $className::$method();
+        }
+
+
+        if($sql)
+            return $this->execExists('F'.$key, $value, $str, $sql);
+        else return NULL;
+    }
+
+    private function execExists(string $className, string $value, string $str, string $sql)
+    {
+        try
+        {
+            $stmt = $this->db->prepare($sql); // creo PDOStatement
+            $stmt->bindValue(":".$value, $str, PDO::PARAM_STR);
+            $stmt->execute();   //viene eseguita la query
+            $stmt->setFetchMode(PDO::FETCH_ASSOC); // i risultati del db verranno salvati in un array con indici le colonne della table
+
+            $found = false;
+            while($row = $stmt->fetch())
+            { // per ogni tupla restituita dal db...
+                $found = true;
+            }
+
+            $this->__destruct(); // chiude la connessione
+
+            return $found;
+        }
+        catch (PDOException $e)
+        {
+            $this->__destruct(); // chiude la connessione
+            return null; // ritorna null se ci sono errori
+        }
+    }
+
     /****************************************** STORE ********************************************/
 
     /**

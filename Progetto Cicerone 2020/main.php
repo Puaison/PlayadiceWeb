@@ -67,32 +67,42 @@ echo ($Pippo[0]->getUsername());
 
 $User=new EAdmin();
 
-//$User->setNome("");
-//$User->setCognome("");
-//$User->setEmail("");
+$User->setNome("Alessio");
+$User->setCognome("oaudygvowya");
+$User->setEmail("fqiubhiqpu");
 $User->setUsername("Admino1");
-//$User->setPassword("");
+$User->setPassword("dafowuhnfa");
 
-var_dump($User);
-/**$Pippo = FPersistantManager::getInstance()->update($User);
+$Pippo = FPersistantManager::getInstance()->exists("Utente","Nome","Aless");
+
 if ($Pippo)
-    echo ("si");
+echo ("Esisteeee");
+
+
+/*
+$Pippo = FPersistantManager::getInstance()->store($User);
+if ($Pippo)
+    echo ("si store");
 else
-    echo ("no");**/
+    echo ("no store");
+echo "\n";
+
+
+$User->setEmail("Email2");
+$Pippo = FPersistantManager::getInstance()->update($User);
+if ($Pippo)
+    echo ("si update");
+else
+    echo ("no update");
+echo "\n";
+
+
 $Pippo = FPersistantManager::getInstance()->remove($User);
 if ($Pippo)
-    echo ("si");
+    echo ("si remove");
 else
-    echo ("no");
+    echo ("no remove");
 echo "\n";
-/*$Pippo = FPersistantManager::getInstance()->remove($User);
-
-if ($Pippo)
-    echo ("si");
-else
-    echo ("no");
 */
-
-
 
 ?>
