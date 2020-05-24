@@ -309,11 +309,11 @@ class FPersistantManager
      */
     private function execRemove(&$obj, string $sql) : bool {
 
-        $this->db->beginTransaction(); //inizio della transazione
-        $stmt = $this->db->prepare($sql); //a partire dalla stringa sql viene creato uno statement
+
 
         try
         {
+            $stmt = $this->db->prepare($sql); //a partire dalla stringa sql viene creato uno statement
             FPersistantManager::bindValues($stmt, $obj); //si associano i valori dell'oggetto alle entry della query
 
             $result = $stmt->execute(); //esegue lo statement
@@ -325,8 +325,9 @@ class FPersistantManager
         }
         catch (PDOException $e)
         {
-            $this->__destruct(); // chiude la connessione
-            return FALSE; //ritorna false se ci sono errori
+            $this->__destruct();// chiude la connessione
+            return FALSE;
+            //ritorna false se ci sono errori
         }
     }
 

@@ -67,11 +67,11 @@ echo ($Pippo[0]->getUsername());
 
 $User=new EUtente();
 
-$User->setNome("Alessio");
-$User->setCognome("Perozzi");
-$User->setEmail("Test@gmail.com");
-$User->setUsername("Esperozzi");
-$User->setPassword("1234");
+$User->setNome("asd");
+$User->setCognome("Peadzi");
+$User->setEmail("Test@qwdl.com");
+$User->setUsername("Pqwdne");
+$User->setPassword("1dw34");
 
 var_dump($User);
 /**$Pippo = FPersistantManager::getInstance()->update($User);
