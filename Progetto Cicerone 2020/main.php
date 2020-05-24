@@ -70,8 +70,9 @@ $User=new EUtente();
 $User->setNome("Alessio");
 $User->setCognome("Perozzi");
 $User->setEmail("Test@gmail.com");
-$User->setUsername("Pqwdne");
+$User->setUsername("Esperozzi");
 $User->setPassword("1234");
+
 $Pippo = FPersistantManager::getInstance()->update($User);
 if ($Pippo)
     echo ("si");

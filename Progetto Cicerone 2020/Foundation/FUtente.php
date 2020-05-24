@@ -27,8 +27,8 @@ class FUtente
     static function updateUtente() : string
     {
         return "UPDATE utente
-                SET  Nome = :Nome, Cognome = :Cognome, Password = :Password, Email = :Email, Moderatore = :Moderatore)
-                WHERE UserName = :Username;";
+                SET  Nome = :Nome, Cognome = :Cognome, Password = :Password, Email = :Email, Moderatore = :Moderatore
+                WHERE UserName = :Username ;";
     }
 
 
