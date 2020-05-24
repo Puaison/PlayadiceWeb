@@ -9,7 +9,7 @@ class EAdmin extends EUtente
      */
     function getModeratore() : bool
     {
-        return false;
+        return true;
     }
 
 }

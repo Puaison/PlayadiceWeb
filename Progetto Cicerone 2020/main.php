@@ -19,6 +19,7 @@ $Avatar2=new EAvatar();
 $Avatar2= clone $Avatar;
 $Avatar2->setNome("Vellista");
 
+
 $Pippo=new EProposta();
 $Pippo->setTipoProposta("Modifica");
 $Pippo->setModificato($Avatar);
@@ -65,12 +66,12 @@ $Pippo = FPersistantManager::getInstance()->search("Utente","Nome","Alessio");
 echo ($Pippo[0]->getUsername());
 */
 
-$User=new EUtente();
+$User=new EAdmin();
 
 $User->setNome("Alessio");
 $User->setCognome("Perozzi");
 $User->setEmail("Test@Gmail.com");
-$User->setUsername("Pantaleone");
+$User->setUsername("Admino");
 $User->setPassword("1234");
 
 $Pippo = FPersistantManager::getInstance()->store($User);
