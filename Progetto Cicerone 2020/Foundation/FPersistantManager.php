@@ -145,11 +145,11 @@ class FPersistantManager
 
 
         if($sql)
-            return $this->execExists('F'.$key, $value, $str, $sql);
+            return $this->execExists($value, $str, $sql);
         else return NULL;
     }
 
-    private function execExists(string $className, string $value, string $str, string $sql)
+    private function execExists(string $value, string $str, string $sql)
     {
         try
         {
@@ -158,10 +158,10 @@ class FPersistantManager
             $stmt->execute();   //viene eseguita la query
             $stmt->setFetchMode(PDO::FETCH_ASSOC); // i risultati del db verranno salvati in un array con indici le colonne della table
 
-            $found = false;
+            $found = 0;
             while($row = $stmt->fetch())
             { // per ogni tupla restituita dal db...
-                $found = true;
+                $found = $found + 1;
             }
 
             $this->__destruct(); // chiude la connessione
