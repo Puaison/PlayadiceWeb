@@ -36,7 +36,7 @@ class FUtente
      */
     static function removeUtente() : string
     {
-        return "DELETE
+        return "DELETE 
                 FROM utente
                 WHERE UserName = :Username, Nome = :Nome, Cognome = :Cognome, Password = :Password, Email = :Email, Moderatore = :Moderatore ;"; //query sql
     }

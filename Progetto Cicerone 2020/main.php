@@ -79,12 +79,13 @@ if ($Pippo)
     echo ("si");
 else
     echo ("no");**/
-/**$Pippo = FPersistantManager::getInstance()->store($User);
+$Pippo = FPersistantManager::getInstance()->store($User);
 
 if ($Pippo)
     echo ("si");
 else
-    echo ("no");**/
+    echo ("no");
+echo "\n";
 $Pippo = FPersistantManager::getInstance()->remove($User);
 
 if ($Pippo)
