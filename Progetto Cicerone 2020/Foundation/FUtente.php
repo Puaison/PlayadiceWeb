@@ -20,6 +20,16 @@ class FUtente
         return "INSERT INTO utente(UserName, Nome , Cognome, Password, Email, Moderatore)
 				VALUES(:Username, :Nome, :Cognome, :Password, :Email,  :Moderatore)";
     }
+    /**
+     * Query che effettua l'aggiornamento di un utente nella table users
+     * @return string contenente la query sql
+     */
+    static function updateUtente() : string
+    {
+        return "UPDATE utente
+                SET  Nome = :Nome, Cognome = :Cognome, Password = :Password, Email = :Email, Moderatore = :Moderatore)
+                WHERE UserName = :Username;";
+    }
 
 
     static function bindValues(PDOStatement &$stmt, EUtente &$user)

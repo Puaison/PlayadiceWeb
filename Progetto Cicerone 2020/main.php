@@ -69,17 +69,21 @@ $User=new EUtente();
 
 $User->setNome("Alessio");
 $User->setCognome("Perozzi");
-$User->setEmail("Test@Gmail.com");
-$User->setUsername("Pantaleone");
+$User->setEmail("Test@gmail.com");
+$User->setUsername("Pqwdne");
 $User->setPassword("1234");
-
-$Pippo = FPersistantManager::getInstance()->store($User);
+$Pippo = FPersistantManager::getInstance()->update($User);
+if ($Pippo)
+    echo ("si");
+else
+    echo ("no");
+/**$Pippo = FPersistantManager::getInstance()->store($User);
 
 if ($Pippo)
     echo ("si");
 else
     echo ("no");
-
+**/
 
 
 ?>

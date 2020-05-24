@@ -170,7 +170,6 @@ class FPersistantManager
         try
         {
             FPersistantManager::bindValues($stmt, $obj); // si associano i valori dell'oggetto alle entry della query
-
             $stmt->execute();
             if ($stmt->rowCount()) // si esegue la query
             {
@@ -201,7 +200,76 @@ class FPersistantManager
             return false;
         }
     }
+    /******************************************* UPDATE *******************************************/
+    /**
+     * Metodo che permette di aggiornare informazioni sul database, relative
+     * ad una singola ennupla.
+     * @param $obj l'oggetto da aggiornare
+     * @bool true se l'update ha avuto successo, false altrimenti
+     */
+    function update($obj) : bool
+    {
+        $sql='';
+        $class = '';
+        if(is_a($obj, EAdmin::class) ) // se l'oggetto e' una tipologia Utente
+            $class = get_parent_class($obj); // si considera la classe padre, EUtente
+        else
+            $class = get_class($obj); // restituisce il nome della classe dall'oggetto
 
+        $resource = substr($class,1); // nome della risorsa (User, Song, UserInfo, ...)
+        $foundClass = 'F'.$resource; // nome della rispettiva classe Foundation
+        $method = 'update'.$resource; // nome del metodo update+nome_risorsa
+
+        $sql = $foundClass::$method();
+
+        $result = $this->execUpdate($obj, $sql); // ... esegui la query
+
+        return $result;
+    }
+
+    /**
+     * Esegue una UPDATE sul database
+     * @param mixed $obj l'oggetto da salvare
+     * @param string $sql la stringa contenente il comando SQL
+     * @return bool l'esito della transazione
+     */
+    private function execUpdate(&$obj, string $sql) : bool
+    {
+        $this->db->beginTransaction(); //inizio della transazione
+
+        $stmt = $this->db->prepare($sql);
+
+        //si prepara la query facendo un bind tra parametri e variabili dell'oggetto
+        try
+        {
+            FPersistantManager::bindValues($stmt, $obj); //si associano i valori dell'oggetto alle entry della query
+
+            if($stmt->execute()) //se la tupla e' alterata...
+            {
+                $commit = $this->db->commit(); // effettua il commit
+
+                $this->__destruct(); // chiude la connessione
+
+                return $commit; //...ritorna il risultato del commit
+            }
+            else //altrimenti l'update non ha avuto successo...
+            {
+                $this->db->rollBack();
+                $this->__destruct(); // chiude la connessione
+
+                return false; //...annulla la transazione e ritorna false
+            }
+        }
+        catch (PDOException $e)
+        {
+            echo('Errore: '.$e->getMessage());
+
+            $this->db->rollBack();
+            $this->__destruct(); // chiude la connessione
+
+            return false;
+        }
+    }
 
     /*****************************   ASSOCIAZIONI ENTITY - DB    *********************************/
 
