@@ -71,7 +71,7 @@ class EUtente
     /**
      * @return bool 0 poichè non è moderatore
      */
-    function getModeratore() : bool
+    static function getModeratore() : bool
     {
         return false;
     }

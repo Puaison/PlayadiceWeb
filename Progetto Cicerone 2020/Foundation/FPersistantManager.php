@@ -200,12 +200,12 @@ class FPersistantManager
         }
     }
     /******************************************* UPDATE *******************************************/
-    /**
+    /*
      * Metodo che permette di aggiornare informazioni sul database, relative
      * ad una singola ennupla.
      * @param $obj l'oggetto da aggiornare
      * @bool true se l'update ha avuto successo, false altrimenti
-     */
+     **/
     function update($obj) : bool
     {
         $sql='';
@@ -274,7 +274,6 @@ class FPersistantManager
     /**
      * Metodo che cancella dal database una entry di un particolare
      * oggetto Entity.
-     * @param string $class il nome della classe (ottenibile tramite EClass::name )
      * @return bool se l'operazione ha avuto successo o meno.
      */
     function remove($obj) : bool
@@ -303,16 +302,17 @@ class FPersistantManager
 
     /**
      * Rimuove una entry dal database.
-     * @param int $id della entry da eliminare
-     * @param int $id2 opzionale se l'entry ha due primary key
      * @return bool l'esito dell'operazione
      */
     private function execRemove(&$obj, string $sql) : bool {
-        $this->db->beginTransaction(); //inizio della transazione
+        //$this->db->beginTransaction(); //inizio della transazione: TODO SE CE LO METTO NON FUNZIONA
         $stmt = $this->db->prepare($sql); //a partire dalla stringa sql viene creato uno statement
 
         try
         {
+            //$Nick="badibba";
+            //$stmt->bindValue(":Username", $Nick, PDO::PARAM_STR);
+            FUtente::removeUtente();
             FPersistantManager::bindValues($stmt, $obj); //si associano i valori dell'oggetto alle entry della query
             $result = $stmt->execute(); //esegue lo statement
             $this->__destruct(); // chiude la connessione

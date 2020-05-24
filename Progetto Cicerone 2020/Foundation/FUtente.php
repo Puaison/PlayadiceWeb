@@ -38,18 +38,26 @@ class FUtente
     {
         return "DELETE 
                 FROM utente
-                WHERE UserName = :Username, Nome = :Nome, Cognome = :Cognome, Password = :Password, Email = :Email, Moderatore = :Moderatore ;"; //query sql
+                WHERE UserName = :Username;"; //query sql
+
     }
 
 
     static function bindValues(PDOStatement &$stmt, EUtente &$user)
     {
-        $stmt->bindValue(':Username', $user->getUsername(), PDO::PARAM_STR);
-        $stmt->bindValue(':Nome', $user->getNome(), PDO::PARAM_STR);
-        $stmt->bindValue(':Cognome', $user->getCognome(), PDO::PARAM_STR);
-        $stmt->bindValue(':Email', $user->getMail(), PDO::PARAM_STR);
-        $stmt->bindValue(':Password', $user->getPassword(), PDO::PARAM_STR);
-        $stmt->bindValue(':Moderatore', $user->getModeratore(), PDO::PARAM_STR);
+        $result = var_export($stmt, true);
+        if( strpos( $result, ":Username" ) !== false)
+            $stmt->bindValue(':Username', $user->getUsername(), PDO::PARAM_STR);
+        if( strpos( $result, ":Nome" ) !== false)
+            $stmt->bindValue(':Nome', $user->getNome(), PDO::PARAM_STR);
+        if( strpos( $result, ":Cognome" ) !== false)
+            $stmt->bindValue(':Cognome', $user->getCognome(), PDO::PARAM_STR);
+        if( strpos( $result, ":Email" ) !== false)
+            $stmt->bindValue(':Email', $user->getMail(), PDO::PARAM_STR);
+        if( strpos( $result, ":Password" ) !== false)
+            $stmt->bindValue(':Password', $user->getPassword(), PDO::PARAM_STR);
+        if( strpos( $result, ":Moderatore" ) !== false)
+            $stmt->bindValue(':Moderatore', $user->getModeratore(), PDO::PARAM_BOOL);
     }
 
     /**

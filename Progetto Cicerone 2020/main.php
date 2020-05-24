@@ -65,13 +65,13 @@ $Pippo = FPersistantManager::getInstance()->search("Utente","Nome","Alessio");
 echo ($Pippo[0]->getUsername());
 */
 
-$User=new EUtente();
+$User=new EAdmin();
 
-$User->setNome("asd");
-$User->setCognome("Peadzi");
-$User->setEmail("Test@qwdl.com");
-$User->setUsername("Pqwdne");
-$User->setPassword("1dw34");
+//$User->setNome("");
+//$User->setCognome("");
+//$User->setEmail("");
+$User->setUsername("Admino1");
+//$User->setPassword("");
 
 var_dump($User);
 /**$Pippo = FPersistantManager::getInstance()->update($User);
@@ -79,18 +79,19 @@ if ($Pippo)
     echo ("si");
 else
     echo ("no");**/
-$Pippo = FPersistantManager::getInstance()->store($User);
+$Pippo = FPersistantManager::getInstance()->remove($User);
 if ($Pippo)
     echo ("si");
 else
     echo ("no");
 echo "\n";
-$Pippo = FPersistantManager::getInstance()->remove($User);
+/*$Pippo = FPersistantManager::getInstance()->remove($User);
 
 if ($Pippo)
     echo ("si");
 else
     echo ("no");
+*/
 
 
 
