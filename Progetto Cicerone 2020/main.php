@@ -67,19 +67,13 @@ echo ($Pippo[0]->getUsername());
 
 $User=new EAdmin();
 
-$User->setNome("Alessio");
-$User->setCognome("");
-$User->setEmail("");
-$User->setUsername("");
-$User->setPassword("");
-
-$Pippo = FPersistantManager::getInstance()->exists("Utente","Nome","Luca");
-
-if ($Pippo)
-echo ("Esisteeee");
+$User->setNome("Alessandrone");
+$User->setCognome("oaudygvowya");
+$User->setEmail("fqiubhiqpu");
+$User->setUsername("AdminoK");
+$User->setPassword("dafowuhnfa");
 
 
-/*
 $Pippo = FPersistantManager::getInstance()->store($User);
 if ($Pippo)
     echo ("si store");
@@ -88,6 +82,21 @@ else
 echo "\n";
 
 
+$Pippo = FPersistantManager::getInstance()->exists("Utente","Nome","Alessio");
+
+echo ($Pippo);
+
+
+/*
+$Pippo = FPersistantManager::getInstance()->store($User);
+if ($Pippo)
+    echo ("si store");
+else
+    echo ("no store");
+echo "\n";/*
+
+
+/*
 $User->setEmail("Email2");
 $Pippo = FPersistantManager::getInstance()->update($User);
 if ($Pippo)
