@@ -15,11 +15,11 @@ class FAvatar
                 WHERE LOCATE( :Nome , Nome ) > 0;";
     }
 
-    static function searchAvatarByClasse() : string
+    static function searchAvatarByIdAvatar() : string
     {
         return "SELECT *
                 FROM avatar
-                WHERE LOCATE( :Classe , Classe ) > 0;";
+                WHERE IdAvatar = :IdAvatar;";
     }
 
     static function storeAvatar() : string
@@ -58,7 +58,10 @@ class FAvatar
         if( strpos( $result, ":Nome" ) !== false)
             $stmt->bindValue(':Nome', $Avatar->getNome(), PDO::PARAM_STR);
         if( strpos( $result, ":Proprietario" ) !== false)
-            $stmt->bindValue(':Proprietario', $Avatar->getProprietario()->getUsername(), PDO::PARAM_STR);
+            if ($Avatar->getProprietario() != null)
+               $stmt->bindValue(':Proprietario', $Avatar->getProprietario()->getUsername(), PDO::PARAM_STR);
+            else
+               $stmt->bindValue(':Proprietario', null, PDO::PARAM_STR);
         if( strpos( $result, ":Classe" ) !== false)
             $stmt->bindValue(':Classe', $Avatar->getClasse(), PDO::PARAM_STR);
         if( strpos( $result, ":Razza" ) !== false)
@@ -80,8 +83,11 @@ class FAvatar
         $Avatar->setLivello($row['Livello']);
         $Avatar->setNome($row['Nome']);
 
-        $Pippo = FPersistantManager::getInstance()->search("Utente","UserName","Pantaleone");
+        if ( ($row['UsernameUtente']) != null )
+        {
+        $Pippo = FPersistantManager::getInstance()->search("Utente","UserName",($row['UsernameUtente']));
         $Avatar->setProprietario($Pippo[0]);
+        }
 
         $Avatar->setClasse($row['Classe']);
         $Avatar->setRazza($row['Razza']);

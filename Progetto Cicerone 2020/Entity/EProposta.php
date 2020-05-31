@@ -100,19 +100,24 @@ class EProposta extends EObject {
         }
     }
 
-
     /**
      */
     public function approvaProposta()
     {
-        $this->Modificato=$this->Proposto;  //Codice di prova per test nel main
-        //TODO: CODICE PER SALVARE L'AVATAR NELLA FOUNDATION
-        $this->cancellaProposta();
+        $this->Modificato=$this->Proposto;
     }
 
-    public function cancellaProposta()
+    public function tostring() :string
     {
-        //TODO: CODICE PER CANCELLARE LA PROPOSTA DAL DB
+        $s= "";
+        if (isset($this->id))
+            $s= $s. "ID:" . $this->id . "\n";
+        if (isset($this->Modificato))
+            $s= $s. "Modificato:" . $this->getModificato()->tostring() . "\n";
+        if (isset($this->Proposto))
+            $s= $s. "Proposto:" . $this->getProposto()->tostring() . "\n";
+        $s= $s. "Tipo:" . $this->getTipoProposta() . "\n";
+        return $s;
     }
 
 }

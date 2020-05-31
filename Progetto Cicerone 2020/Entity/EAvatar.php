@@ -93,7 +93,7 @@ class EAvatar extends EObject {
      *
      * @return EUtente
      */
-    public function getProprietario() : EUtente
+    public function getProprietario() : ?EUtente
     {
         {
             return $this->Proprietario;
@@ -157,8 +157,18 @@ class EAvatar extends EObject {
         }
     }
     /********************************************** ALTRO ************************************************/
-    /**
-     * Tostring manuale per semplice comprensione
-     */
+    public function tostring() :string
+    {
+        $s= "";
+        if (isset($this->id))
+            $s= $s. "ID:" . $this->id . "\n";
+        if (isset($this->Proprietario))
+            $s= $s. "Username Proprietario:" . $this->getProprietario()->getUsername() . "\n";
+        $s= $s. "Classe:" . $this->getClasse() . "\n";
+        $s= $s. "Razza:" . $this->getRazza(). "\n";
+        $s= $s. "Nome:" . $this->getNome() . "\n";
+        $s= $s. "Livello:" . $this->getLivello() . "\n";
+        return $s;
+    }
 
 }
