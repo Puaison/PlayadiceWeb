@@ -12,4 +12,4 @@ Domande:
 
 TODO:
 1) UsernameUtente di avatar è foreign key che puù essere null
-
+2) Tipo Proposta di proposta è adesso Tipo
