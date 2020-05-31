@@ -7,7 +7,9 @@ Progetto per Esame Univaq
 #https://drive.google.com/file/d/1SxFitIuu2EDUP5yk3LXU4f0Mbimxgxak/view?usp=sharing
 
 Domande:
-1) ERecensione in Model ha un Id. Ma poi nel DB non serve quell'id per avere una chiave primaria perchè le vengono date dalle foreign key. Serve tenerlo nel model l'id?. 
-2) Chiedere a Davide il DeclareStrictTypes
-3) Come comportarsi con il declarestricttypes
+1) 
+
+
+TODO:
+1) UsernameUtente di avatar è foreign key che puù essere null
 
