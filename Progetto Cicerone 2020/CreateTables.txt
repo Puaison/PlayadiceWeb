@@ -71,10 +71,10 @@ CREATE TABLE IF NOT EXISTS `gioco` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `gioco_info`
+-- Struttura della tabella `giocoinfo`
 --
 
-CREATE TABLE IF NOT EXISTS `gioco_info` (
+CREATE TABLE IF NOT EXISTS `giocoinfo` (
   `Id_Gioco` smallint(5) UNSIGNED NOT NULL,
   `Descrizione` varchar(3000) NOT NULL,
   `NumeroMin` int(2) UNSIGNED NOT NULL,
@@ -196,9 +196,9 @@ ALTER TABLE `gioco`
   ADD PRIMARY KEY (`Id`);
 
 --
--- Indici per le tabelle `gioco_info`
+-- Indici per le tabelle `giocoinfo`
 --
-ALTER TABLE `gioco_info`
+ALTER TABLE `giocoinfo`
   ADD PRIMARY KEY (`Id_Gioco`);
 
 --
@@ -300,10 +300,10 @@ ALTER TABLE `fascia`
   ADD CONSTRAINT `fascia_ibfk_1` FOREIGN KEY (`evento_id`) REFERENCES `evento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Limiti per la tabella `gioco_info`
+-- Limiti per la tabella `giocoinfo`
 --
-ALTER TABLE `gioco_info`
-  ADD CONSTRAINT `gioco_info_ibfk_1` FOREIGN KEY (`Id_Gioco`) REFERENCES `gioco` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `giocoinfo`
+  ADD CONSTRAINT `giocoinfo_ibfk_1` FOREIGN KEY (`Id_Gioco`) REFERENCES `gioco` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `inventario`

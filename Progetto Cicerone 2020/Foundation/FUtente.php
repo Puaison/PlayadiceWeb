@@ -1,8 +1,7 @@
 <?php
 
 /**
- * La classe FUser fornisce query per gli oggetti EUser
- * @author gruppo2
+ * La classe FUtente fornisce query per gli oggetti EUtente
  * @package Foundation
  */
 class FUtente
