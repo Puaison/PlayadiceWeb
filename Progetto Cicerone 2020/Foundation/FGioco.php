@@ -35,6 +35,27 @@ class FGioco
                 ORDER BY Id DESC limit 1;";
     }
 
+    static function searchGiocoByBestRate() : string
+    {
+        return "SELECT *
+                FROM gioco
+                ORDER BY VotoMedio DESC;";
+    }
+
+    static function searchGiocoByBest5Rate() : string
+    {
+        return "SELECT *
+                FROM gioco
+                ORDER BY VotoMedio DESC limit 5;";
+    }
+
+    static function searchGiocoByAlphabeticOrder() : string
+    {
+        return "SELECT *
+                FROM gioco
+                ORDER BY Nome;";
+    }
+
     static function removeGioco() : string
     {
         return "DELETE 
@@ -73,6 +94,10 @@ class FGioco
         $gioco->setNome($row['Nome']);
         $gioco->setCategoria($row['Categoria']);
         $gioco->setId($row["Id"]);
+        if($row['VotoMedio']!=null)
+            $gioco->setVotoMedio($row['VotoMedio']);
+        else
+            $gioco->setVotoMedio(0);
 
         return $gioco;
     }

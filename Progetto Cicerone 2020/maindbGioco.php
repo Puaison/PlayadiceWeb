@@ -29,9 +29,9 @@ $Pippo = FPersistantManager::getInstance()->store($newGioco);
 
 
 //Riprendo il gioco appena inserito nel db per caricare l'id
-$newGioco=FPersistantManager::getInstance()->search("gioco","Last","")[0];
-$newGioco->setVotoMedio(1.55);
-FPersistantManager::getInstance()->update($newGioco);
+$recensioni=FPersistantManager::getInstance()->search("Recensione","IdGioco","6");
+var_dump($recensioni);
+
 
 
 //var_dump($newGioco);

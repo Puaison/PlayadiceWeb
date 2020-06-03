@@ -9,6 +9,18 @@ class FGiocoInfo
         return "INSERT INTO giocoinfo(Id,Descrizione,NumeroMin,NumeroMax,CasaEditrice)
 				VALUES( :IdGioco, :Descrizione, :NumeroMin, :NumeroMax, :CasaEditrice);";
     }
+    static function searchGiocoInfoByIdGioco() : string
+    {
+        return "SELECT *
+                FROM giocoinfo
+                WHERE Id=:IdGioco;";
+    }
+    static function updateGiocoInfo() : string
+    {
+        return "UPDATE giocoinfo
+                SET  Descrizione = :Descrizione, NumeroMin = :NumeroMin, NumeroMax=:NumeroMax,CasaEditrice=:CasaEditrice
+                WHERE Id = :IdGioco ;";
+    }
 
 
 
@@ -33,9 +45,14 @@ class FGiocoInfo
     {
 
 
-        $gioco = new EGiocoInfo();
+        $giocoinfo = new EGiocoInfo();
+        $giocoinfo->setId($row['Id']);
+        $giocoinfo->setDescrizione($row['Descrizione']);
+        $giocoinfo->setMin($row['NumeroMin']);
+        $giocoinfo->setMax($row['NumeroMax']);
+        $giocoinfo->setCasaEditrice($row['CasaEditrice']);
 
 
-        return $gioco;
+        return $giocoinfo;
     }
 }
