@@ -225,6 +225,7 @@ class FPersistantManager
         {
             FPersistantManager::bindValues($stmt, $obj); // si associano i valori dell'oggetto alle entry della query
             $stmt->execute();
+
             if ($stmt->rowCount()) // si esegue la query
             {
                 if (method_exists($obj, 'getId') && $obj->getId() == 0){ // ...se il valore e' di default si assegna l'id

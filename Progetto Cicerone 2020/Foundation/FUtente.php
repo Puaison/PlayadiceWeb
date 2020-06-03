@@ -15,6 +15,13 @@ class FUtente
                 WHERE LOCATE( :Nome , Nome ) > 0;";
     }
 
+    static function searchUtenteByUserName() : string
+    {
+        return "SELECT *
+                FROM Utente
+                WHERE :UserName = UserName";
+    }
+
     static function storeUtente() : string
     {
         return "INSERT INTO utente(UserName, Nome , Cognome, Password, Email, Moderatore)

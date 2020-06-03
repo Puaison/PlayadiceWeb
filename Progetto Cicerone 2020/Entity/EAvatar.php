@@ -7,27 +7,27 @@ class EAvatar extends EObject {
     /**
      * Stringa con nome dell'avatar
      */
-    private string $Nome;
+    private $Nome;
 
     /**
      * Intero con il livello dell'avatar
      */
-    private int $Livello;
+    private $Livello;
 
     /**
      * Stringa con la classe dell'avatar
      */
-    private string $Classe;
+    private $Classe;
 
     /**
      * Array rappresentante l'inventario con oggetti di tipo VoceInventario
      */
-    private array $Inventario;
+    private $Razza;
 
     /**
      * EUser rappresentante la persona associata a questo avatar
      */
-    private EUtente $Proprietario;
+    private $Proprietario;
 
     /****************************************** CONSTRUCTORS **************************************************/
     /**
@@ -36,6 +36,12 @@ class EAvatar extends EObject {
     public function __construct()
     {
         parent::__construct();
+        $this->Nome="Default";
+        $this->Livello=-1;
+        $this->Classe="Default";
+        $this->Razza="Default";
+        $this->Proprietario=null;
+
     }
 
     /****************************************** GETTER **************************************************/
@@ -76,10 +82,10 @@ class EAvatar extends EObject {
      *
      * @return array
      */
-    public function getInventario() : array
+    public function getRazza() : string
     {
         {
-            return $this->Inventario;
+            return $this->Razza;
         }
     }
 
@@ -87,7 +93,7 @@ class EAvatar extends EObject {
      *
      * @return EUtente
      */
-    public function getProprietario() : EUtente
+    public function getProprietario() : ?EUtente
     {
         {
             return $this->Proprietario;
@@ -131,12 +137,12 @@ class EAvatar extends EObject {
 
     /**
      * Imposta l'inventario dell'avatar
-     * @param array $Inv array contenente oggetti di tipo VoceInventario
+     * @param string raz array contenente oggetti di tipo VoceInventario
      */
-    public function setInventario(array $Inv)
+    public function setRazza(string $raz)
     {
         {
-            $this->Inventario=$Inv;
+            $this->Razza=$raz;
         }
     }
 
@@ -151,8 +157,18 @@ class EAvatar extends EObject {
         }
     }
     /********************************************** ALTRO ************************************************/
-    /**
-     * Tostring manuale per semplice comprensione
-     */
+    public function tostring() :string
+    {
+        $s= "";
+        if (isset($this->id))
+            $s= $s. "ID:" . $this->id . "\n";
+        if (isset($this->Proprietario))
+            $s= $s. "Username Proprietario:" . $this->getProprietario()->getUsername() . "\n";
+        $s= $s. "Classe:" . $this->getClasse() . "\n";
+        $s= $s. "Razza:" . $this->getRazza(). "\n";
+        $s= $s. "Nome:" . $this->getNome() . "\n";
+        $s= $s. "Livello:" . $this->getLivello() . "\n";
+        return $s;
+    }
 
 }
