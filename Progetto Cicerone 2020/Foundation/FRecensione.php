@@ -3,11 +3,12 @@
 
 class FRecensione
 {
+    
     static function searchRecensioneByIdGioco() : string
     {
         return "SELECT *
                 FROM recensione
-                WHERE Id_Gioco=:Id_Gioco;";
+                WHERE IdGioco=:IdGioco;";
     }
 
 
@@ -17,8 +18,8 @@ class FRecensione
 
         if( strpos( $result, ":Creatore" ) !== false)
             $stmt->bindValue(':Creatore', $giocoInfo->getId(), PDO::PARAM_STR);
-        if( strpos( $result, ":Id_Gioco" ) !== false)
-            $stmt->bindValue(':Id_Gioco', $giocoInfo->getDescrizione(), PDO::PARAM_INT);
+        if( strpos( $result, ":IdGioco" ) !== false)
+            $stmt->bindValue(':IdGioco', $giocoInfo->getDescrizione(), PDO::PARAM_INT);
         if( strpos( $result, ":Voto" ) !== false)
             $stmt->bindValue(':Voto', $giocoInfo->getMin(), PDO::PARAM_STR);
         if( strpos( $result, ":Commento" ) !== false)

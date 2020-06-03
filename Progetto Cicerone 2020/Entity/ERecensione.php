@@ -7,7 +7,7 @@
  * @package Entity
  */
 
-class ERecensione Extends EObject
+class ERecensione
 {
     /** L'Oggetto EUtente che ha recensito */
     private $Utente;

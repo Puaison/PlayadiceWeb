@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `proposta` (
 
 CREATE TABLE IF NOT EXISTS `recensione` (
   `Creatore` varchar(20) NOT NULL,
-  `Id_Gioco` smallint(5) UNSIGNED NOT NULL,
+  `IdGioco` smallint(5) UNSIGNED NOT NULL,
   `Voto` int(10) UNSIGNED NOT NULL,
   `Commento` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -234,8 +234,8 @@ ALTER TABLE `proposta`
 -- Indici per le tabelle `recensione`
 --
 ALTER TABLE `recensione`
-  ADD PRIMARY KEY (`Creatore`,`Id_Gioco`),
-  ADD KEY `Id_Gioco` (`Id_Gioco`);
+  ADD PRIMARY KEY (`Creatore`,`IdGioco`),
+  ADD KEY `IdGioco` (`IdGioco`);
 
 --
 -- Indici per le tabelle `utente`
@@ -330,7 +330,7 @@ ALTER TABLE `proposta`
 --
 ALTER TABLE `recensione`
   ADD CONSTRAINT `recensione_ibfk_1` FOREIGN KEY (`Creatore`) REFERENCES `utente` (`UserName`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `recensione_ibfk_2` FOREIGN KEY (`Id_Gioco`) REFERENCES `gioco` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `recensione_ibfk_2` FOREIGN KEY (`IdGioco`) REFERENCES `gioco` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 -- --------------------------------------------------------
 -- //////////////////////////////Inserimento Ennuple Standard////////////////////////////////////////
 -- --------------------------------------------------------
