@@ -1,4 +1,4 @@
-<?php
+\<?php
 
 /**
  * Lo scopo di questa classe e' quello di fornire un accesso unico al DBMS, incapsulando

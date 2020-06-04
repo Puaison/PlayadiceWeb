@@ -50,8 +50,8 @@ CREATE TABLE IF NOT EXISTS `evento` (
 --
 
 CREATE TABLE IF NOT EXISTS `fascia` (
-  `evento_id` int(5) UNSIGNED NOT NULL,
-  `intervallo` int(5) UNSIGNED NOT NULL,
+  `IdEvento` int(5) UNSIGNED NOT NULL,
+  `durata` int(5) UNSIGNED NOT NULL,
   `data_inizio` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `inventario` (
 --
 
 CREATE TABLE IF NOT EXISTS `luogo` (
-  `id` int(5) UNSIGNED NOT NULL,
+  `Id` int(5) UNSIGNED NOT NULL,
   `nome` varchar(45) NOT NULL,
   `città` varchar(45) NOT NULL,
   `via` varchar(45) NOT NULL,
@@ -114,8 +114,8 @@ CREATE TABLE IF NOT EXISTS `luogo` (
 --
 
 CREATE TABLE IF NOT EXISTS `prenotazione` (
-  `utente_id` varchar(20) NOT NULL,
-  `evento_id` int(5) UNSIGNED NOT NULL,
+  `IdUtente` varchar(20) NOT NULL,
+  `IdEvento` int(5) UNSIGNED NOT NULL,
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -187,7 +187,7 @@ ALTER TABLE `evento`
 -- Indici per le tabelle `fascia`
 --
 ALTER TABLE `fascia`
-  ADD PRIMARY KEY (`evento_id`,`data_inizio`);
+  ADD PRIMARY KEY (`IdEvento`,`data_inizio`);
 
 --
 -- Indici per le tabelle `gioco`
@@ -219,7 +219,7 @@ ALTER TABLE `luogo`
 -- Indici per le tabelle `prenotazione`
 --
 ALTER TABLE `prenotazione`
-  ADD PRIMARY KEY (`evento_id`,`utente_id`);
+  ADD PRIMARY KEY (`IdEvento`,`IdUtente`);
 
 
 --
@@ -291,13 +291,13 @@ ALTER TABLE `avatar`
 -- Limiti per la tabella `evento`
 --
 ALTER TABLE `evento`
-  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`Id_Luogo`) REFERENCES `luogo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`Id_Luogo`) REFERENCES `luogo` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella 'fascia'
 --
 ALTER TABLE `fascia`
-  ADD CONSTRAINT `fascia_ibfk_1` FOREIGN KEY (`evento_id`) REFERENCES `evento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fascia_ibfk_1` FOREIGN KEY (`IdEvento`) REFERENCES `evento` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `gioco_info`
@@ -315,8 +315,8 @@ ALTER TABLE `inventario`
 -- Limiti per la tabella `prenotazione`
 --
 ALTER TABLE `prenotazione`
-  ADD CONSTRAINT `prenotazione_ibfk_1` FOREIGN KEY (`evento_id`) REFERENCES `evento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `prenotazione_ibfk_2` FOREIGN KEY (`utente_id`) REFERENCES `utente` (`UserName`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `prenotazione_ibfk_1` FOREIGN KEY (`IdEvento`) REFERENCES `evento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `prenotazione_ibfk_2` FOREIGN KEY (`IdUtente`) REFERENCES `utente` (`UserName`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `proposta`
