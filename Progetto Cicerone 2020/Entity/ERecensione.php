@@ -18,6 +18,9 @@ class ERecensione
     /** Il Commento associato*/
     private $Commento;
 
+    /** Il Gioco associato(deve essere passato solo per riferimento)*/
+    private $Gioco;
+
 
     /****************************************** COSTRUTTORE **************************************************/
 
@@ -26,7 +29,7 @@ class ERecensione
      */
     public function __construct()
     {
-        parent::__construct();
+        //parent::__construct();
     }
 
     /********************************************** GETTER ************************************************/
@@ -38,6 +41,16 @@ class ERecensione
     public function getEUtente() : EUtente {
 
         return $this->Utente;
+
+    }
+
+    /**
+     *
+     * @return EGioco Il gioco a cui la recensione è associata
+     */
+    public function getEGioco() : EGioco {
+
+        return $this->Gioco;
 
     }
 
@@ -57,7 +70,7 @@ class ERecensione
      */
     public function getCommento() : string {
 
-        return $this->NumeroMin;
+        return $this->Commento;
 
     }
     /****************************************** SETTER **************************************************/
@@ -65,9 +78,19 @@ class ERecensione
      *
      * @param  EUtente l'Utente che ha recensito
      */
-    public function setEUtente(EUtente $user) {
+    public function setEUtente(EUtente &$user) {
 
         $this->Utente=$user;
+
+    }
+
+    /**
+     *
+     * @param  EGioco Il Gioco a cui la recensione è associata
+     */
+    public function setEGioco(EGioco &$gioco) {
+
+        $this->Gioco=$gioco;
 
     }
 

@@ -21,6 +21,13 @@ class FGioco
                 WHERE LOCATE( :Nome , Nome ) > 0;";
     }
 
+    static function searchGiocoById() : string
+    {
+        return "SELECT *
+                FROM gioco
+                WHERE LOCATE( :Id , Id ) > 0;";
+    }
+
     static function searchGiocoByCategoria() : string
     {
         return "SELECT *

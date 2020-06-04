@@ -29,8 +29,19 @@ $Pippo = FPersistantManager::getInstance()->store($newGioco);
 
 
 //Riprendo il gioco appena inserito nel db per caricare l'id
-$recensioni=FPersistantManager::getInstance()->search("Recensione","IdGioco","6");
-var_dump($recensioni);
+$gioco=FPersistantManager::getInstance()->search("gioco", "Id","9")[0];
+
+
+$utente=FPersistantManager::getInstance()->search("utente", "UserName", "Puaison")[0];
+$newrecensione=new ERecensione();
+$newrecensione->setEUtente($utente);
+$newrecensione->setEGioco($gioco);
+//$newrecensione->setVoto(0);
+//$newrecensione->setCommento("Gioco per capitalisti");
+//$recensioni=FPersistantManager::getInstance()->search("Recensione","IdGioco","16");
+//var_dump($recensioni);
+FPersistantManager::getInstance()->remove($newrecensione);
+
 
 
 
