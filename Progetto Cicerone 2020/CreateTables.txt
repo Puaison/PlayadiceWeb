@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `avatar` (
 --
 
 CREATE TABLE IF NOT EXISTS `evento` (
-  `id` int(5) UNSIGNED NOT NULL,
+  `Id` int(5) UNSIGNED NOT NULL,
   `Nome` varchar(45) NOT NULL,
   `Flag` tinyint(1) NOT NULL,
   `Id_Luogo` int(5) UNSIGNED NOT NULL,
