@@ -118,6 +118,7 @@ class EGioco extends EObject
      */
     function addRecensione(ERecensione $rec) {
         $this->Recensioni[]=$rec;
+        FPersistantManager::getInstance()->store($rec);
     }
 
     /**
