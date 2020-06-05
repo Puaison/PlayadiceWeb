@@ -19,6 +19,8 @@ class ELuogo extends EObject
      */
     private $cap; //controllo 5 numeri
 
+    private $nome;
+
     /**
      * ELuogo constructor. Instanzia un oggetto ELuogo vuoto
      */
@@ -33,8 +35,9 @@ class ELuogo extends EObject
      * Metodo che imposta la Via dove si terrà l'Evento
      * @param String $address L'indirizzo
      */
-    public function setVia(string $address){$this->via=$address;}
 
+    public function setVia(string $address){$this->via=$address;}
+    public function setNome(string $nome){$this->nome=$nome;}
     /**
      * Metodo che imposta la città dove si terrà l'evento
      * @param string $city la Città
@@ -56,7 +59,7 @@ class ELuogo extends EObject
      * @return string la via
      */
     function getVia():string {return $this->via;}
-
+    public function getNome():string {return $this->nome;}
     /**
      * Metodo che fornisce la città del Luogo
      * @return string la cittò
@@ -76,7 +79,7 @@ class ELuogo extends EObject
      */
     public function __toString() : string
     {
-        return $string= "VIA: " . $this->getVia() . " | CITTA': " . $this->getCitta() . " | CAP: ". $this->getCap();
+        return $string= $this->getNome(). " VIA: " . $this->getVia() . " | CITTA': " . $this->getCitta() . " | CAP: ". $this->getCap();
     }
 
 }

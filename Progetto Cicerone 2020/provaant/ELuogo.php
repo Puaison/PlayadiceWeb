@@ -79,7 +79,7 @@ class ELuogo extends EObject
      */
     public function __toString() : string
     {
-        return $string= "VIA: " . $this->getVia() . " | CITTA': " . $this->getCitta() . " | CAP: ". $this->getCap();
+        return $string= $this->getNome(). " VIA: " . $this->getVia() . " | CITTA': " . $this->getCitta() . " | CAP: ". $this->getCap();
     }
 
 }

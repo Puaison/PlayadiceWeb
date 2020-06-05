@@ -6,6 +6,7 @@ require('FPersistantManager.php');
 require('EEvento.php');
 require('ELuogo.php');
 require('FLuogo.php');
+require('FUtente.php');
 echo "\n";
 print ("Hello");
 echo "\n";
@@ -94,14 +95,34 @@ $luogo->setCap(67100);
 $luogo->setCitta("L'Aquila");
 $luogo->setVia("Via Brasile, 4");
 $luogo->setNome("Grande Inverno");
-var_dump($luogo);
+$luogo->setId(8);
 
-$Pippo = FPersistantManager::getInstance()->store($luogo);
+$luogo2=new Eluogo();
+$luogo2->setCap(20130);
+$luogo2->setCitta("Teramo");
+$luogo2->setVia("Via Giasod");
+$luogo2->setNome("Crossover");
+$luogo3=new Eluogo();
+$luogo3->setCap(20130);
+$luogo3->setCitta("Teramo");
+$luogo3->setVia("Via Giasod");
+$luogo3->setNome("Grande Inverno");
+
+/*$Pippo = FPersistantManager::getInstance()->store($luogo);
+$Pippo = FPersistantManager::getInstance()->store($luogo2);
+$Pippo = FPersistantManager::getInstance()->store($luogo3);
+$Pippo = FPersistantManager::getInstance()->remove($luogo);*/
+
+$Pippo=FPersistantManager::getInstance()->search("Luogo","Nome","Grande Inverno");
+$luogo5=$Pippo[0];
+$luogo5->setCitta("Avezzano");
+$Pippo=FPersistantManager::getInstance()->update($luogo5);
 if ($Pippo)
     echo ("si store user");
 else
     echo ("no store user");
 echo "\n";
+
 
 
 
