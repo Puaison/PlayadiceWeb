@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `evento` (
   `Id` int(5) UNSIGNED NOT NULL,
   `Nome` varchar(45) NOT NULL,
   `Flag` tinyint(1) NOT NULL,
-  `Id_Luogo` int(5) UNSIGNED NOT NULL,
+  `IdLuogo` int(5) UNSIGNED NOT NULL,
   `Categoria` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS `evento` (
 
 CREATE TABLE IF NOT EXISTS `fascia` (
   `IdEvento` int(5) UNSIGNED NOT NULL,
-  `durata` int(5) UNSIGNED NOT NULL,
-  `data_inizio` date NOT NULL
+  `Durata` int(5) UNSIGNED NOT NULL,
+  `DataInizio` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `gioco` (
 --
 
 CREATE TABLE IF NOT EXISTS `giocoinfo` (
-  `Id_Gioco` smallint(5) UNSIGNED NOT NULL,
+  `IdGioco` smallint(5) UNSIGNED NOT NULL,
   `Descrizione` varchar(3000) NOT NULL,
   `NumeroMin` int(2) UNSIGNED NOT NULL,
   `NumeroMax` int(2) UNSIGNED NOT NULL,
@@ -101,10 +101,10 @@ CREATE TABLE IF NOT EXISTS `inventario` (
 
 CREATE TABLE IF NOT EXISTS `luogo` (
   `Id` int(5) UNSIGNED NOT NULL,
-  `nome` varchar(45) NOT NULL,
-  `città` varchar(45) NOT NULL,
-  `via` varchar(45) NOT NULL,
-  `cap` int(6) UNSIGNED NOT NULL
+  `Nome` varchar(45) NOT NULL,
+  `Citta` varchar(45) NOT NULL,
+  `Via` varchar(45) NOT NULL,
+  `Cap` int(6) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `luogo` (
 CREATE TABLE IF NOT EXISTS `prenotazione` (
   `IdUtente` varchar(20) NOT NULL,
   `IdEvento` int(5) UNSIGNED NOT NULL,
-  `data` date NOT NULL
+  `Data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -180,14 +180,14 @@ ALTER TABLE `avatar`
 -- Indici per le tabelle `evento`
 --
 ALTER TABLE `evento`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `Id_Luogo` (`Id_Luogo`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `IdLuogo` (`IdLuogo`);
 
 --
 -- Indici per le tabelle `fascia`
 --
 ALTER TABLE `fascia`
-  ADD PRIMARY KEY (`IdEvento`,`data_inizio`);
+  ADD PRIMARY KEY (`IdEvento`,`DataInizio`);
 
 --
 -- Indici per le tabelle `gioco`
@@ -199,7 +199,7 @@ ALTER TABLE `gioco`
 -- Indici per le tabelle `giocoinfo`
 --
 ALTER TABLE `giocoinfo`
-  ADD PRIMARY KEY (`Id_Gioco`);
+  ADD PRIMARY KEY (`IdGioco`);
 
 --
 -- Indici per le tabelle `inventario`
@@ -212,8 +212,8 @@ ALTER TABLE `inventario`
 -- Indici per le tabelle `luogo`
 --
 ALTER TABLE `luogo`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `Id` (`Id`);
 
 --
 -- Indici per le tabelle `prenotazione`
@@ -257,7 +257,7 @@ ALTER TABLE `avatar`
 -- AUTO_INCREMENT per la tabella `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 
 
@@ -271,7 +271,7 @@ ALTER TABLE `gioco`
 -- AUTO_INCREMENT per la tabella `luogo`
 --
 ALTER TABLE `luogo`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `proposta`
@@ -291,7 +291,7 @@ ALTER TABLE `avatar`
 -- Limiti per la tabella `evento`
 --
 ALTER TABLE `evento`
-  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`Id_Luogo`) REFERENCES `luogo` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`IdLuogo`) REFERENCES `luogo` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella 'fascia'
@@ -303,7 +303,7 @@ ALTER TABLE `fascia`
 -- Limiti per la tabella `giocoinfo`
 --
 ALTER TABLE `giocoinfo`
-  ADD CONSTRAINT `giocoinfo_ibfk_1` FOREIGN KEY (`Id_Gioco`) REFERENCES `gioco` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `giocoinfo_ibfk_1` FOREIGN KEY (`IdGioco`) REFERENCES `gioco` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `inventario`
@@ -315,7 +315,7 @@ ALTER TABLE `inventario`
 -- Limiti per la tabella `prenotazione`
 --
 ALTER TABLE `prenotazione`
-  ADD CONSTRAINT `prenotazione_ibfk_1` FOREIGN KEY (`IdEvento`) REFERENCES `evento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `prenotazione_ibfk_1` FOREIGN KEY (`IdEvento`) REFERENCES `evento` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `prenotazione_ibfk_2` FOREIGN KEY (`IdUtente`) REFERENCES `utente` (`UserName`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

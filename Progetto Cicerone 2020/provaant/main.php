@@ -97,7 +97,7 @@ $luogo->setNome("Grande Inverno");
 var_dump($luogo);
 
 $Pippo = FPersistantManager::getInstance()->store($luogo);
-if ($luogo)
+if ($Pippo)
     echo ("si store user");
 else
     echo ("no store user");

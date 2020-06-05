@@ -30,7 +30,7 @@ class FLuogo
     {
         $result = var_export($stmt, true);
         if (strpos($result, ":id") !== false)
-            $stmt -> bindValue(':id', null, PDO::PARAM_INT);
+            $stmt -> bindValue(':id', $luogo->getId(), PDO::PARAM_STR);
         if (strpos($result, ":nome") !== false)
             $stmt -> bindValue(':nome',$luogo->getNome(), PDO::PARAM_STR);
         if (strpos($result, ":città") !== false)
@@ -38,7 +38,7 @@ class FLuogo
         if (strpos($result, ":via") !== false)
             $stmt -> bindValue(':via', $luogo->getVia(),PDO::PARAM_STR);
         if (strpos($result, ":cap") !== false)
-            $stmt -> bindValue(':cap',$luogo->getCap(),PDO::PARAM_INT);
+            $stmt -> bindValue(':cap',$luogo->getCap(),PDO::PARAM_STR);
 
     }
     /**
