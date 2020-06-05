@@ -2,7 +2,7 @@
 /**
  * Class EFascia Rappresenta la durata di un Evento.
  */
-class EFascia
+class EFascia extends EObject
 {
     /**
      * @var DateTime Data di Inizio dell'Evento
@@ -17,6 +17,7 @@ class EFascia
      *
      */
     public function __construct(){
+        parent::__construct();
 
     }
 

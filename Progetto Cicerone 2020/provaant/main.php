@@ -1,7 +1,11 @@
 <?php
+require('EObject.php');
 require('EFascia.php');
 require('FFascia.php');
 require('FPersistantManager.php');
+require('EEvento.php');
+require('ELuogo.php');
+require('FLuogo.php');
 echo "\n";
 print ("Hello");
 echo "\n";
@@ -66,7 +70,7 @@ $Avatar = FPersistantManager::getInstance()->search("Avatar", "Nome", "Pippo" )[
 
 $Proposta = FPersistantManager::getInstance()->search("Proposta", "IDModificato", $Avatar->getId() )[0];
 echo ($Proposta->tostring());*/
-
+/*
 $fascia = new EFascia();
 $data = "2012-05-31 15:00:00";
 $data2 = "2012-05-31 16:00:00";
@@ -74,13 +78,31 @@ $data = date_create($data);
 $data2 = date_create($data2);
 $fascia->setData($data);
 $fascia->setDurata($data2);
-echo $fascia->__toString();
-$Pippo = FPersistantManager::getInstance()->store($fascia);
-if ($fascia)
+echo "\n";
+$evento=new EEvento();
+$luogo=new ELuogo();
+$luogo->setCap(67100);
+$luogo->setCitta("L'Aquila");
+$luogo->setVia("Via Brasile, 4");
+$evento->setCategoria("Torneo");
+$evento->setFlag(true);
+$evento->setLuogo($luogo);
+$evento->newFascia($fascia);
+*/
+$luogo=new ELuogo();
+$luogo->setCap(67100);
+$luogo->setCitta("L'Aquila");
+$luogo->setVia("Via Brasile, 4");
+$luogo->setNome("Grande Inverno");
+var_dump($luogo);
+
+$Pippo = FPersistantManager::getInstance()->store($luogo);
+if ($luogo)
     echo ("si store user");
 else
     echo ("no store user");
-echo "\n"
+echo "\n";
+
 
 
 

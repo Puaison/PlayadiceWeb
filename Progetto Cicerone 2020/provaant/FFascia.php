@@ -13,10 +13,10 @@ class FFascia
                 FROM fascia
                 WHERE IdEvento = :IdEvento;";
     }
-    static function storeFascia($id) : string
+    static function storeFascia() : string
     {
-        return "INSERT INTO fascia(durata, data_inizio)
-				VALUES(:durata, :data_inizio, IdEvento= $id)";
+        return "INSERT INTO fascia(IdEvento, durata, data_inizio)
+				VALUES(:IdEvento, :durata, :data_inizio);";
     }
     /**
      * Query che effettua l'aggiornamento di un utente nella table users
@@ -44,12 +44,13 @@ class FFascia
     static function bindValues(PDOStatement &$stmt, EFascia &$fascia)
     {
         $result = var_export($stmt, true);
-        if (strpos($result, ":durata") !== false)
-            $stmt -> bindValue(':durata', $fascia -> getDurata(), PDO::PARAM_INT);
-        if (strpos($result, ":data_inizio") !== false)
-            $stmt -> bindValue(':data_inizio', $fascia -> getData());
         if (strpos($result, ":IdEvento") !== false)
-            $stmt -> bindValue(':IdEvento', null, PDO::PARAM_STR);
+            $stmt -> bindValue(':IdEvento', null, PDO::PARAM_INT);
+        if (strpos($result, ":durata") !== false)
+            $stmt -> bindValue(':durata', date_interval_format($fascia -> getDurata(),"%Y%M%d%H%i%s"), PDO::PARAM_INT);
+        if (strpos($result, ":data_inizio") !== false)
+            $stmt -> bindValue(':data_inizio', date_format($fascia -> getData(),"d/m/Y H:i:s"),PDO::PARAM_STR);
+
     }
     /**
      * Crea una Entity da una row del database

@@ -12,14 +12,14 @@ class FEvento
     static function searchEventoById() : string
     {
         return "SELECT *
-                FROM Utente
-                WHERE LOCATE( :Nome , Nome ) > 0;";
+                FROM evento
+                WHERE LOCATE( :id , id ) > 0;";
     }
 
-    static function storeUtente() : string
+    static function storeEvento() : string
     {
-        return "INSERT INTO utente(UserName, Nome , Cognome, Password, Email, Moderatore)
-				VALUES(:Username, :Nome, :Cognome, :Password, :Email,  :Moderatore)";
+        return "INSERT INTO evento(id,Nome,Flag,id_Luogo,Categoria)
+				VALUES(:id,:Nome,:Flag,:id_Luogo,:Categoria)";
     }
     /**
      * Query che effettua l'aggiornamento di un utente nella table users
