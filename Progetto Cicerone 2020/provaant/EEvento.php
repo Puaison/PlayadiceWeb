@@ -110,9 +110,9 @@ class EEvento extends EObject
 
     /**
      * Metodo che restituisce la data di inizio dell'evento
-     * @return EData
+     * @return DateTime
      */
-    function getStartDate():EData{
+    function getStartDate():DateTime{
         $fascia=$this->listaFasce;
         $fascia=$fascia[0];
         return $fascia->getData();
@@ -120,9 +120,9 @@ class EEvento extends EObject
 
     /**
      * Metodo che resstituisce la data di fine dell'evento
-     * @return EData
+     * @return DataTime
      */
-    function getEndDate():EData{
+    function getEndDate():DateTime{
         $fascia=$this->listaFasce[count($this->listaFasce)-1];
         return $fascia->getData();}
 

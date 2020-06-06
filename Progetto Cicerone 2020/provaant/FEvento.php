@@ -12,51 +12,63 @@ class FEvento
     static function searchEventoById() : string
     {
         return "SELECT *
-                FROM Utente
-                WHERE LOCATE( :Nome , Nome ) > 0;";
+                FROM evento
+                WHERE LOCATE( :Id, Id ) > 0;";
+    }
+    static function searchEventoByNome() : string
+    {
+        return "SELECT *
+                FROM evento
+                WHERE LOCATE( :Nome, Nome ) > 0;";
+    }
+    static function searchEventoByCategoria() : string
+    {
+        return "SELECT *
+                FROM evento
+                WHERE LOCATE( :Categoria, Categoria ) > 0;";
     }
 
-    static function storeUtente() : string
+    static function storeEvento() : string
     {
-        return "INSERT INTO utente(UserName, Nome , Cognome, Password, Email, Moderatore)
-				VALUES(:Username, :Nome, :Cognome, :Password, :Email,  :Moderatore)";
+        return "INSERT INTO evento(Id, Nome, Flag, IdLuogo, Categoria)
+				VALUES(:Id, :Nome, :Flag, :IdLuogo, :Categoria)";
     }
     /**
      * Query che effettua l'aggiornamento di un utente nella table users
      * @return string contenente la query sql
      */
-    static function updateUtente() : string
+    static function updateEvento() : string
     {
-        return "UPDATE utente
-                SET  Nome = :Nome, Cognome = :Cognome, Password = :Password, Email = :Email, Moderatore = :Moderatore
-                WHERE UserName = :Username ;";
+        return "UPDATE evento
+                SET  Nome = :Nome, Flag = :Flag, IdLuogo = :IdLuogo, Categoria = :Categoria
+                WHERE Id = :Id ;";
     }
     /**
      * Elimina un utente dal db .
      *
      */
-    static function removeUtente() : string
+    static function removeEvento() : string
     {
         return "DELETE 
-                FROM utente
-                WHERE UserName = :Username;"; //query sql
+                FROM evento
+                WHERE Id = :Id;"; //query sql
 
     }
 
 
-    static function bindValues(PDOStatement &$stmt, EUtente &$user)
+    static function bindValues(PDOStatement &$stmt, EUtente &$evento)
     {
         $result = var_export($stmt, true);
         if( strpos( $result, ":Id" ) !== false)
-            $stmt->bindValue(':Id', $user->getUsername(), PDO::PARAM_INT);
+            $stmt->bindValue(':Id', $evento->getId(), PDO::PARAM_INT);
         if( strpos( $result, ":Nome" ) !== false)
-            $stmt->bindValue(':Nome', $user->getNome(), PDO::PARAM_STR);
+            $stmt->bindValue(':Nome', $evento->getNome(), PDO::PARAM_STR);
         if( strpos( $result, ":Flag" ) !== false)
-            $stmt->bindValue(':Flag', $user->getCognome(), PDO::PARAM_BOOL);
-        if( strpos( $result, ":Id_Luogo" ) !== false)
-            $stmt->bindValue(':Id_Luogo', $user->getMail(), PDO::PARAM_STR);
+            $stmt->bindValue(':Flag', $evento->getFlag(), PDO::PARAM_BOOL);
+        if( strpos( $result, ":IdLuogo" ) !== false)
+            $stmt->bindValue(':IdLuogo', $evento->getLuogo(), PDO::PARAM_STR);
         if( strpos( $result, ":Categoria" ) !== false)
-            $stmt->bindValue(':Categoria', $user->getModeratore(), PDO::PARAM_STR);
+            $stmt->bindValue(':Categoria', $evento->getCategoriae(), PDO::PARAM_STR);
     }
 
     /**
@@ -67,19 +79,21 @@ class FEvento
     static function createObjectFromRow($row)
     {
         $evento= new EEvento();
-
-
-        if(  ($row['Moderatore']) == true )
-            $evento = new EAdmin();
-        else
-            $evento = new EUtente();
-
         $evento->setId($row['Id']);
         $evento->setNome($row['Nome']);
         $evento->setFlag($row['Flag']);
-        $evento->setId($row['Id_Luogo']);
+        $evento->setLuogo(FPersistantManager::getInstance()->search("Luogo","Id",($row['IdLuogo'])));
         $evento->setCategoria($row['Categoria']);
-
+        $fasce=FPersistantManager::getInstance()->search("Fascia","Id",($row['Id']))
+        foreach($fasce as $value){
+            $evento->newFascia($value);
+        }
+        if ($evento->getFlag!==false){
+            $prenotazioni= FPersistantManager::getInstance()->search("Prenotazioni","IdEvento",($row['Id']));
+            foreach ($prenotazioni as $value){
+                $evento->newPrenotazione($value);
+            }
+        }
         return $evento;
     }
 

@@ -7,7 +7,7 @@
 class EPrenotazione extends EObject
 {
     /**
-     * @var EData Giorno in cui è stata effettuata la prenotazione
+     * @var DateTime Giorno in cui è stata effettuata la prenotazione
      */
     private $giornoPrenotazione;
     /**
@@ -36,7 +36,7 @@ class EPrenotazione extends EObject
      * Metodo per impostare la data di creazione della prenotazione
      * @param EData $date la data della prenotazione
      */
-    function setDate(EData $date){$this->giornoPrenotazione=$date;}
+    function setData(DateTime $date){$this->giornoPrenotazione=$date;}
 
     /**
      * Metodo che restituisce l'utente che ha fatto la prenotazione
@@ -48,7 +48,7 @@ class EPrenotazione extends EObject
      * Metodo che restituisce la data di creazione della prenotazione
      * @return EData
      */
-    function getDate(){return $this->giornoPrenotazione;}
+    function getData(){return $this->giornoPrenotazione;}
 
     /**
      * Metodo che restituisce le informazioni della prenotazione in forma di stringa

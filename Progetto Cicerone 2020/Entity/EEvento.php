@@ -81,6 +81,8 @@ class EEvento extends EObject
      * Metodo per inserire una prenotazione nell'array
      * @param EPrenotazione $prenotazione
      */function newPrenotazione(EPrenotazione $prenotazione){array_push($this->listaPrenotazioni,"$prenotazione");}
+
+
     /**
      *                                                       METODI GET
      *
