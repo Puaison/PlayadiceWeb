@@ -2,7 +2,7 @@
 <?php
 
 /**
- * La classe FUtente fornisce query per gli oggetti EEvento
+ * La classe FEvento fornisce query per gli oggetti EEvento
  * @author Del Signore-Perozzi-Marottoli
  * @package Foundation
  */
@@ -56,7 +56,7 @@ class FEvento
     }
 
 
-    static function bindValues(PDOStatement &$stmt, EUtente &$evento)
+    static function bindValues(PDOStatement &$stmt, EEvento &$evento)
     {
         $result = var_export($stmt, true);
         if( strpos( $result, ":Id" ) !== false)
