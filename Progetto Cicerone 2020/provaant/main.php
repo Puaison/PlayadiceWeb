@@ -99,7 +99,7 @@ $luogo->setNome("Grande Inverno");
 
 $fascia = new EFascia();
 $data = "2012-05-31 15:00:00";
-$data2 = "2012-05-31 16:00:00";
+$data2 = "2012-10-02 14:00:00";
 $data = date_create($data);
 $data2 = date_create($data2);
 $fascia->setData($data);
@@ -126,9 +126,9 @@ if ($Pippo)
 else
     echo ("no store evento");
 echo "\n";
-$Pippo = FPersistantManager::getInstance()->lastInsertId("evento");
+
 echo ($Pippo."\n");
-$fascia->setId($Pippo);
+
 
 $Pippo = FPersistantManager::getInstance()->store($fascia);
 if ($Pippo)

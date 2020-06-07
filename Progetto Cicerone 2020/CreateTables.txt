@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `evento` (
 CREATE TABLE IF NOT EXISTS `fascia` (
   `IdEvento` int(5) UNSIGNED NOT NULL,
   `Durata` int(5) UNSIGNED NOT NULL,
-  `DataInizio` date NOT NULL
+  `DataInizio` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `prenotazione` (
   `Id` int(5) UNSIGNED NOT NULL,
   `UserName` varchar(20) NOT NULL,
   `IdEvento` int(5) UNSIGNED NOT NULL,
-  `Data` date NOT NULL
+  `Data` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

@@ -55,6 +55,7 @@ class FFascia
 
     static function bindValues(PDOStatement &$stmt, EFascia &$fascia)
     {
+
         $result = var_export($stmt, true);
         if (strpos($result, ":IdEvento") !== false)
             $stmt -> bindValue(':IdEvento', $fascia->getId(), PDO::PARAM_INT);

@@ -231,6 +231,12 @@ class FPersistantManager
                 if (method_exists($obj, 'getId') && $obj->getId() == 0){ // ...se il valore e' di default si assegna l'id
                     $obj->setId($this->db->lastInsertId()); // assegna all'oggetto l'ultimo id dato dal dbms
                 }
+                if (is_a($obj,EEvento::class)){
+                    $fascia=$obj->getFasce();
+                    foreach ($fascia as $value){
+                        $value->setId($this->db->lastInsertId());
+                    }
+                }
                 $commit = $this->db->commit(); // effettua il commit
 
                 $this->__destruct(); // chiude la connessione
