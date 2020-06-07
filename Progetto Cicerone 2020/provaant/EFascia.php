@@ -7,6 +7,7 @@ class EFascia extends EObject
     /**
      * @var DateTime Data di Inizio dell'Evento
      */
+
     private $inizio;
     /**
      * @var DateInterval Durata dell'Evento

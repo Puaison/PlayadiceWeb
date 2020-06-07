@@ -61,6 +61,11 @@ class EEvento extends EObject
      */
     function setCategoria(string $category){$this->categoria=$category;}
     /**
+     * Metodo per impostare il nome dell'evento
+     * @param strin $nome
+     */
+    function setNome(string $nome){$this->nomeEvento=$nome;}
+    /**
      * Metodo per impostare la possibilità di prenotazione
      * @param bool $flag
      */
@@ -94,7 +99,7 @@ class EEvento extends EObject
      *  Metodo che restituisce la categoria dell'evento
      * @return string
      */
-    function getCategory(): string {return $this->categoria;}
+    function getCategoria(): string {return $this->categoria;}
 
     /**
      * Metodo che restituiscei il valore del flag di prenotazione
@@ -172,9 +177,10 @@ class EEvento extends EObject
         }
         foreach ($this -> getFasce() as $value) {
 
-            $date .= " " . $value->getData(). "\n";
+            $date .= " " . date_format($value->getData(),"d/m/Y H:i:s"). "\n";
         }
-        return $print = "NOME: " . $this -> getNome() . " | CATEGORIA: " . $this -> getCategory() . " | DATA DI INIZIO: " . $this -> getStartDate() . " | DATA DI FINE: " . $this -> getEndDate() .
+        return $print = "NOME: " . $this -> getNome() . " | CATEGORIA: " . $this -> getCategoria() . " | DATA DI INIZIO: " .  date_format($this -> getStartDate(),"d/m/Y H:i:s") .
+            " | DATA DI FINE: " .date_format($this -> getEndDate(),"d/m/Y H:i:s")  .
             " | FASCE ORARIE: " . $date . " | PRENOTATI: " . $prenotazioni;
     }
 }

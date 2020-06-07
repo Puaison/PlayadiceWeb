@@ -64,11 +64,11 @@ class FEvento
         if( strpos( $result, ":Nome" ) !== false)
             $stmt->bindValue(':Nome', $evento->getNome(), PDO::PARAM_STR);
         if( strpos( $result, ":Flag" ) !== false)
-            $stmt->bindValue(':Flag', $evento->getFlag(), PDO::PARAM_BOOL);
+            $stmt->bindValue(':Flag', $evento->getFlag(), PDO::PARAM_INT);
         if( strpos( $result, ":IdLuogo" ) !== false)
-            $stmt->bindValue(':IdLuogo', $evento->getLuogo(), PDO::PARAM_STR);
+            $stmt->bindValue(':IdLuogo', $evento->getLuogo()->getId(), PDO::PARAM_STR);
         if( strpos( $result, ":Categoria" ) !== false)
-            $stmt->bindValue(':Categoria', $evento->getCategoriae(), PDO::PARAM_STR);
+            $stmt->bindValue(':Categoria', $evento->getCategoria(), PDO::PARAM_STR);
     }
 
     /**
@@ -82,13 +82,13 @@ class FEvento
         $evento->setId($row['Id']);
         $evento->setNome($row['Nome']);
         $evento->setFlag($row['Flag']);
-        $evento->setLuogo(FPersistantManager::getInstance()->search("Luogo","Id",($row['IdLuogo'])));
+        $evento->setLuogo(FPersistantManager::getInstance()->search("Luogo","Id",($row['IdLuogo']))[0]);
         $evento->setCategoria($row['Categoria']);
-        $fasce=FPersistantManager::getInstance()->search("Fascia","Id",($row['Id']))
+        $fasce=FPersistantManager::getInstance()->search("Fascia","Id",($row['Id']));
         foreach($fasce as $value){
             $evento->newFascia($value);
         }
-        if ($evento->getFlag!==false){
+        if ($evento->getFlag()!==false){
             $prenotazioni= FPersistantManager::getInstance()->search("Prenotazioni","IdEvento",($row['Id']));
             foreach ($prenotazioni as $value){
                 $evento->newPrenotazione($value);

@@ -422,5 +422,7 @@ class FPersistantManager
 
         return $obj;
     }
-
+    public function lastInsertId ($table) {
+        return $this->db->lastInsertId($table);
+    }
 }

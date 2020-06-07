@@ -57,7 +57,7 @@ class FFascia
     {
         $result = var_export($stmt, true);
         if (strpos($result, ":IdEvento") !== false)
-            $stmt -> bindValue(':IdEvento', null, PDO::PARAM_INT);
+            $stmt -> bindValue(':IdEvento', $fascia->getId(), PDO::PARAM_INT);
         if (strpos($result, ":Durata") !== false)
             $stmt -> bindValue(':Durata', date_interval_format($fascia -> getDurata(),"%Y%M%d%H%i%s"), PDO::PARAM_INT);
         if (strpos($result, ":DataInizio") !== false)
