@@ -7,7 +7,7 @@ class EFascia extends EObject
     /**
      * @var DateTime Data di Inizio dell'Evento
      */
-
+    private $idEvento;
     private $inizio;
     /**
      * @var DateInterval Durata dell'Evento
@@ -34,12 +34,16 @@ class EFascia extends EObject
      * Metodo per impostare la durata dell'evento
      * @param DateTime $date data di fine dell'evento per il calcolo della durata
      */
-    public function setDurata(DateTime $date){$this->durata=date_diff($date,$this->inizio);}
+    public function setDuratafromDate(DateTime $date){$this->durata=date_diff($date,$this->inizio);}
+    public function setDurata(DateInterval $dateinterval){$this->durata=$dateinterval;}
+    public function setIdEvento($idevento){$this->idEvento=$idevento;}
     /**                                        METODI GET
      *
      * Metodo che restituisce la data di inizio
      * @return DateTime La data di inizio
      */
+
+    public function getIdEvento(): string {return $this->idEvento;}
     public function getData() : DateTime {return $this->inizio;}
     /**
      *
@@ -54,6 +58,6 @@ class EFascia extends EObject
      * @return string
      */
     public function __toString(){
-        return $string="DATA DI INIZIO: ". date_format($this->inizio,"d/m/Y H:i:s")." | DURATA: ". $this->durata->format("%Y%M%d%H%i%s");
+        return $string="DATA DI INIZIO: ". date_format($this->inizio,"d/m/Y H:i:s")." | DURATA: ". $this->durata->format("%Y,%M,%d,%H,%i,%s");
         }
 }

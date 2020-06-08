@@ -91,27 +91,41 @@ $evento->setFlag(true);
 $evento->setLuogo($luogo);
 $evento->newFascia($fascia);
 */
+/**
 $luogo=new ELuogo();
 $luogo->setCap(67100);
-$luogo->setCitta("L'Aquila");
+$luogo->setCitta("Teramo");
 $luogo->setVia("Via Brasile, 4");
-$luogo->setNome("Grande Inverno");
+$luogo->setNome("Crossover");
+
 
 $fascia = new EFascia();
-$data = "2012-05-31 15:00:00";
-$data2 = "2012-10-02 14:00:00";
+$data = "2020-07-12 21:00:00";
+$data2 = "2020-07-13 03:00:00";
 $data = date_create($data);
 $data2 = date_create($data2);
 $fascia->setData($data);
-$fascia->setDurata($data2);
+$fascia->setDuratafromDate($data2);
+
+$fascia2 = new EFascia();
+$data = "2020-10-17 21:00:00";
+$data2 = "2020-10-18 03:00:00";
+$data = date_create($data);
+$data2 = date_create($data2);
+$fascia2->setData($data);
+$fascia2->setDuratafromDate($data2);
+
 
 $evento = new EEvento();
 $evento->setLuogo($luogo);
-$evento->setCategoria("torneo");
+$evento->setCategoria("Torneo");
 $evento->setFlag(0);
-$evento->setNome("Dragon Ball z");
+$evento->setNome("Torneo Heartstone");
 $evento->newFascia($fascia);
+$evento->newFascia($fascia2);
+
 echo"\n";
+
 
 $Pippo = FPersistantManager::getInstance()->store($luogo);
 if ($Pippo)
@@ -127,21 +141,23 @@ else
     echo ("no store evento");
 echo "\n";
 
-echo ($Pippo."\n");
+
+foreach ($evento->getFasce() as $value){
+    $Pippo = FPersistantManager::getInstance()->store($value);
+    if ($Pippo)
+        echo ("si store fascia");
+    else
+        echo ("no store fascia");
+    echo "\n";
 
 
-$Pippo = FPersistantManager::getInstance()->store($fascia);
-if ($Pippo)
-    echo ("si store fascia");
-else
-    echo ("no store fascia");
-echo "\n";
+}
+**/
 
 
 
-/*$Pippo=FPersistantManager::getInstance()->search("Luogo","Nome","Grande Inverno");
-$luogo5=$Pippo[0];
-$luogo5->setCitta("Avezzano");
-$Pippo=FPersistantManager::getInstance()->update($luogo5);*/
+$Pippo = FPersistantManager::getInstance()->remove("luogo","Citta","Teramo")[0];
+
+
 
 ?>

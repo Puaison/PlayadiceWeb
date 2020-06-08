@@ -50,8 +50,9 @@ CREATE TABLE IF NOT EXISTS `evento` (
 --
 
 CREATE TABLE IF NOT EXISTS `fascia` (
+  `Id` int(5) UNSIGNED NOT NULL,
   `IdEvento` int(5) UNSIGNED NOT NULL,
-  `Durata` int(5) UNSIGNED NOT NULL,
+  `Durata` varchar(45)  NOT NULL,
   `DataInizio` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -188,7 +189,8 @@ ALTER TABLE `evento`
 -- Indici per le tabelle `fascia`
 --
 ALTER TABLE `fascia`
-  ADD PRIMARY KEY (`IdEvento`,`DataInizio`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `IdEvento` (`IdEvento`);
 
 --
 -- Indici per le tabelle `gioco`
@@ -268,7 +270,11 @@ ALTER TABLE `evento`
 ALTER TABLE `prenotazione`
   MODIFY `Id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
-
+--
+-- AUTO_INCREMENT per la tabella `fascia`
+--
+ALTER TABLE `fascia`
+  MODIFY `Id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `gioco`
@@ -300,7 +306,7 @@ ALTER TABLE `avatar`
 -- Limiti per la tabella `evento`
 --
 ALTER TABLE `evento`
-  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`IdLuogo`) REFERENCES `luogo` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`IdLuogo`) REFERENCES `luogo` (`Id`)  ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella 'fascia'

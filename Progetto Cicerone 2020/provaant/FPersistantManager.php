@@ -234,7 +234,7 @@ class FPersistantManager
                 if (is_a($obj,EEvento::class)){
                     $fascia=$obj->getFasce();
                     foreach ($fascia as $value){
-                        $value->setId($this->db->lastInsertId());
+                        $value->setIdEvento($this->db->lastInsertId());
                     }
                 }
                 $commit = $this->db->commit(); // effettua il commit

@@ -84,7 +84,7 @@ class FEvento
         $evento->setFlag($row['Flag']);
         $evento->setLuogo(FPersistantManager::getInstance()->search("Luogo","Id",($row['IdLuogo']))[0]);
         $evento->setCategoria($row['Categoria']);
-        $fasce=FPersistantManager::getInstance()->search("Fascia","Id",($row['Id']));
+        $fasce=FPersistantManager::getInstance()->search("Fascia","IdEvento",($row['Id']));
         foreach($fasce as $value){
             $evento->newFascia($value);
         }
