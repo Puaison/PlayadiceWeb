@@ -4,9 +4,12 @@ require('EFascia.php');
 require('FFascia.php');
 require('FPersistantManager.php');
 require('EEvento.php');
+require('EPrenotazione.php');
+require('FPrenotazione.php');
 require('ELuogo.php');
 require('FLuogo.php');
 require('FUtente.php');
+require('EUtente.php');
 require('FEvento.php');
 echo "\n";
 print ("Hello");
@@ -93,23 +96,23 @@ $evento->newFascia($fascia);
 */
 /**
 $luogo=new ELuogo();
-$luogo->setCap(67100);
-$luogo->setCitta("Teramo");
-$luogo->setVia("Via Brasile, 4");
-$luogo->setNome("Crossover");
+$luogo->setCap(20013);
+$luogo->setCitta("Milano");
+$luogo->setVia("Via del Colle, 4");
+$luogo->setNome("Comix aveneur");
 
 
 $fascia = new EFascia();
-$data = "2020-07-12 21:00:00";
-$data2 = "2020-07-13 03:00:00";
+$data = "2019-07-12 21:00:00";
+$data2 = "2019-07-13 03:00:00";
 $data = date_create($data);
 $data2 = date_create($data2);
 $fascia->setData($data);
 $fascia->setDuratafromDate($data2);
 
 $fascia2 = new EFascia();
-$data = "2020-10-17 21:00:00";
-$data2 = "2020-10-18 03:00:00";
+$data = "2019-10-17 21:00:00";
+$data2 = "2019-10-18 03:00:00";
 $data = date_create($data);
 $data2 = date_create($data2);
 $fascia2->setData($data);
@@ -118,9 +121,9 @@ $fascia2->setDuratafromDate($data2);
 
 $evento = new EEvento();
 $evento->setLuogo($luogo);
-$evento->setCategoria("Torneo");
-$evento->setFlag(0);
-$evento->setNome("Torneo Heartstone");
+$evento->setCategoria("Lan Party");
+$evento->setFlag(1);
+$evento->setNome("Valorant");
 $evento->newFascia($fascia);
 $evento->newFascia($fascia2);
 
@@ -150,13 +153,19 @@ foreach ($evento->getFasce() as $value){
         echo ("no store fascia");
     echo "\n";
 
-
-}
 **/
 
 
 
-$Pippo = FPersistantManager::getInstance()->remove("luogo","Citta","Teramo")[0];
+
+
+$evento = FPersistantManager::getInstance()->search("evento","Nome", "Valorant")[0];
+$evento = FPersistantManager::getInstance()->remove($evento);
+var_dump($evento);
+
+
+
+
 
 
 

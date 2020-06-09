@@ -236,6 +236,12 @@ class FPersistantManager
                     foreach ($fascia as $value){
                         $value->setIdEvento($this->db->lastInsertId());
                     }
+                    if ($obj->getFlag()!==false){
+                        $prenotazione =$obj->getPrenotazioni();
+                        foreach ($prenotazione as $value){
+                            $value->setIdEvento($this->db->lastInsertId());
+                        }
+                    }
                 }
                 $commit = $this->db->commit(); // effettua il commit
 

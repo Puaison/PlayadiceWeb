@@ -7,7 +7,7 @@
  */
 class FPrenotazione
 {
-    static function searchPrenotazionebyEvento() : string
+    static function searchPrenotazionebyIdEvento() : string
     {
         return "SELECT *
                 FROM prenotazione
@@ -30,7 +30,7 @@ class FPrenotazione
 
     static function storePrenotazione() : string
     {
-        return "INSERT INTO luogo(UserName, IdEvento, Data)
+        return "INSERT INTO prenotazione(UserName, IdEvento, Data)
 				VALUES(:UserName, :IdEvento, :Data);";
     }
     static function removePrenotazione() : string
@@ -58,10 +58,10 @@ class FPrenotazione
     static function bindValues(PDOStatement &$stmt, EPrenotazione &$prenotazione)
     {
         $result = var_export($stmt, true);
-        if (strpos($result, ":Id") !== false)
-            $stmt -> bindValue(':Id',$prenotazione->getId(), PDO::PARAM_INT);
         if (strpos($result, ":UserName") !== false)
             $stmt -> bindValue(':UserName',$prenotazione->getUtente()->getUsername(), PDO::PARAM_STR);
+        if (strpos($result, ":IdEvento") !== false)
+            $stmt -> bindValue(':IdEvento',$prenotazione->getIdEvento(), PDO::PARAM_INT);
         if (strpos($result, ":Data") !== false)
             $stmt -> bindValue(':Data', date_format($prenotazione -> getData(),"d/m/Y H:i:s"),PDO::PARAM_STR);
 
@@ -75,8 +75,9 @@ class FPrenotazione
     {
         $prenotazione = new EPrenotazione();
         $prenotazione->setId($row['Id']);
-        $prenotazione->setUserName($row['UserName']);
-        $prenotazione->setData((date_create($row['Data']));
+        $prenotazione->setUtente(FPersistantManager::getInstance()->search("Utente","UserName",($row['UserName']))[0]);
+        $prenotazione->setData(date_create_from_format("d/m/Y H:i:s",$row['Data']));
+        $prenotazione->setIdEvento(($row['IdEvento']));
         return $prenotazione;
     }
 

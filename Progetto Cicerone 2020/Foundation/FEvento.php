@@ -89,7 +89,7 @@ class FEvento
             $evento->newFascia($value);
         }
         if ($evento->getFlag()!==false){
-            $prenotazioni= FPersistantManager::getInstance()->search("Prenotazioni","IdEvento",($row['Id']));
+            $prenotazioni= FPersistantManager::getInstance()->search("prenotazione","IdEvento",($row['Id']));
             foreach ($prenotazioni as $value){
                 $evento->newPrenotazione($value);
             }

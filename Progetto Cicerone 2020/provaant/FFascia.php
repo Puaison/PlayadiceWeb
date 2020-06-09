@@ -63,8 +63,6 @@ class FFascia
     {
 
         $result = var_export($stmt, true);
-        if (strpos($result, ":Id") !== false)
-            $stmt -> bindValue(':Id', $fascia->getId(), PDO::PARAM_INT);
         if (strpos($result, ":IdEvento") !== false)
             $stmt -> bindValue(':IdEvento', $fascia->getIdEvento(), PDO::PARAM_INT);
         if (strpos($result, ":Durata") !== false)

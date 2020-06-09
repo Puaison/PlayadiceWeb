@@ -36,14 +36,14 @@ class EFascia extends EObject
      */
     public function setDuratafromDate(DateTime $date){$this->durata=date_diff($date,$this->inizio);}
     public function setDurata(DateInterval $dateinterval){$this->durata=$dateinterval;}
-    public function setIdEvento($idevento){$this->idEvento=$idevento;}
+    public function setIdEvento(int $idevento){$this->idEvento=$idevento;}
     /**                                        METODI GET
      *
      * Metodo che restituisce la data di inizio
      * @return DateTime La data di inizio
      */
 
-    public function getIdEvento(): string {return $this->idEvento;}
+    public function getIdEvento(): int {return $this->idEvento;}
     public function getData() : DateTime {return $this->inizio;}
     /**
      *
