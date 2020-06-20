@@ -60,24 +60,26 @@ echo "\n";
 echo ("------------------\n");
 
 
-$Avatar = FPersistantManager::getInstance()->search("Avatar", "Nome", "Pippo" )[0];
+require_once ('./Smarty/libs/Smarty.class.php');
 
-$Proposta = FPersistantManager::getInstance()->search("Proposta", "IDModificato", $Avatar->getId() )[0];
-echo ($Proposta->tostring());
-
-
-
+$smarty = new Smarty;
+$smarty -> caching= true;
+$smarty -> cache_lifetime = 120;
 
 
+$smarty -> setCompileDir('templates_c');
+$smarty -> setTemplateDir('templates');
 
 
+$msg = 'Messaggio accattivante';
+$title = 'Hello titolo';
+$array = [1,2,3,4,5,6,7,8];
 
+$smarty ->assign('cipolle',$array);
+$smarty ->assign('title',$title);
+$smarty ->assign('message',$msg);
 
-
-
-
-
-
+$smarty->display('Test.tpl');
 
 
 

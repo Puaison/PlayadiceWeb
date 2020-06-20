@@ -1,7 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="La funzione Exists adesso restituisce un intero con il numero di ricorrenze">
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/COMPOSER_RELEASE_NOTES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/INHERITANCE_RELEASE_NOTES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/NEW_FEATURES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/SMARTY_2_BC_NOTES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/SMARTY_3.0_BC_NOTES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/SMARTY_3.1_NOTES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/change_log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/configs/test.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/plugins/cacheresource.apc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/plugins/cacheresource.memcache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/plugins/cacheresource.mysql.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/plugins/cacheresource.pdo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/plugins/cacheresource.pdo_gzip.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/plugins/resource.extendsall.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/plugins/resource.mysql.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/plugins/resource.mysqls.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/templates/footer.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/templates/header.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/demo/templates/index.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/error_reporting.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/Autoloader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/Smarty.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/SmartyBC.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/debug.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/block.textformat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.counter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.cycle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.fetch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.html_checkboxes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.html_image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.html_options.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.html_radios.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.html_select_date.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.html_select_time.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.html_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.mailto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/function.math.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifier.capitalize.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifier.date_format.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifier.debug_print_var.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifier.escape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifier.mb_wordwrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifier.regex_replace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifier.replace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifier.spacify.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifier.truncate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.cat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.count_characters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.count_paragraphs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.count_sentences.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.count_words.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.default.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.escape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.from_charset.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.indent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.lower.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.noprint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.string_format.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.strip.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.strip_tags.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.to_charset.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.unescape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.upper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/modifiercompiler.wordwrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/outputfilter.trimwhitespace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/shared.escape_special_chars.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/shared.literal_compiler_param.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/shared.make_timestamp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/shared.mb_str_replace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/shared.mb_unicode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/plugins/variablefilter.htmlspecialchars.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_cacheresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_cacheresource_custom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_cacheresource_keyvaluestore.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_cacheresource_file.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_append.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_assign.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_block_child.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_block_parent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_break.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_call.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_capture.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_child.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_config_load.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_continue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_debug.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_eval.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_extends.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_for.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_foreach.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_function.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_if.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_include.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_include_php.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_insert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_ldelim.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_make_nocache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_nocache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_parent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_block_plugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_foreachsection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_function_plugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_modifier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_object_block_function.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_object_function.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_php.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_print_expression.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_registered_block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_registered_function.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_private_special_variable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_rdelim.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_section.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_setfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_shared_inheritance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compile_while.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_compilebase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_config_file_compiler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_configfilelexer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_configfileparser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_debug.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_errorhandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_extension_handler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_addautoloadfilters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_adddefaultmodifiers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_append.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_appendbyref.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_assignbyref.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_assignglobal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_clearallassign.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_clearallcache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_clearassign.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_clearcache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_clearcompiledtemplate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_clearconfig.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_compileallconfig.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_compilealltemplates.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_configload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_createdata.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_getautoloadfilters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_getconfigvariable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_getconfigvars.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_getdebugtemplate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_getdefaultmodifiers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_getglobal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_getregisteredobject.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_getstreamvariable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_gettags.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_gettemplatevars.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_literals.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_loadfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_loadplugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_mustcompile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_registercacheresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_registerclass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_registerdefaultconfighandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_registerdefaultpluginhandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_registerdefaulttemplatehandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_registerfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_registerobject.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_registerplugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_registerresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_setautoloadfilters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_setdebugtemplate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_setdefaultmodifiers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_unloadfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_unregistercacheresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_unregisterfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_unregisterobject.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_unregisterplugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_method_unregisterresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_nocache_insert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_parsetree.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_parsetree_code.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_parsetree_dq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_parsetree_dqcontent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_parsetree_tag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_parsetree_template.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_parsetree_text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_resource_eval.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_resource_extends.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_resource_file.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_resource_php.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_resource_registered.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_resource_stream.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_resource_string.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_cachemodify.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_cacheresourcefile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_capture.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_codeframe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_filterhandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_foreach.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_getincludepath.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_inheritance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_make_nocache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_tplfunction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_updatecache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_updatescope.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_runtime_writefile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_smartytemplatecompiler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_template.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_templatebase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_templatecompilerbase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_templatelexer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_templateparser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_testinstall.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_internal_undefined.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_resource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_resource_custom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_resource_recompiled.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_resource_uncompiled.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_security.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_template_cached.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_template_compiled.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_template_config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_template_resource_base.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_template_source.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_undefined_variable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smarty_variable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smartycompilerexception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Smarty/libs/sysplugins/smartyexception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/Test.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/Test2.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" afterDir="false" />
     </list>
@@ -14,6 +246,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="playadice" />
@@ -75,16 +321,10 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RunManager" selected="PHP Script.main.php">
-    <configuration name="EBooking.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/EBooking.php">
-      <method v="2" />
-    </configuration>
-    <configuration name="EDate.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/EDate.php">
-      <method v="2" />
-    </configuration>
     <configuration name="main.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/main.php">
       <CommandLine>
         <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.4" />
+          <option name="interpreterName" value="PHP" />
         </PhpTestInterpreterSettings>
       </CommandLine>
       <method v="2" />
@@ -106,8 +346,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHP Script.EBooking.php" />
-      <item itemvalue="PHP Script.EDate.php" />
       <item itemvalue="PHP Script.main.php" />
       <item itemvalue="PHP Script.recensioni.php" />
       <item itemvalue="PHP Script.testantonio.php" />
@@ -117,8 +355,6 @@
         <item itemvalue="PHP Script.main.php" />
         <item itemvalue="PHP Script.testantonio.php" />
         <item itemvalue="PHP Script.recensioni.php" />
-        <item itemvalue="PHP Script.EBooking.php" />
-        <item itemvalue="PHP Script.EDate.php" />
       </list>
     </recent_temporary>
   </component>
@@ -159,6 +395,12 @@
       <workItem from="1589725355434" duration="1181000" />
       <workItem from="1590068824202" duration="6732000" />
       <workItem from="1590078296405" duration="2409000" />
+      <workItem from="1590678832362" duration="4564000" />
+      <workItem from="1590929539797" duration="5508000" />
+      <workItem from="1590949343535" duration="4505000" />
+      <workItem from="1591185075411" duration="1216000" />
+      <workItem from="1592644682957" duration="48000" />
+      <workItem from="1592645036931" duration="2924000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <created>1587817231703</created>
@@ -419,7 +661,35 @@
       <option name="project" value="LOCAL" />
       <updated>1590078526964</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Exists PersistantManager">
+      <created>1590334215029</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1590334215029</updated>
+    </task>
+    <task id="LOCAL-00039" summary="La funzione Exists adesso restituisce un intero con il numero di ricorrenze">
+      <created>1590335291792</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1590335291792</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Aggiunta di FAvatar.php e modifiche su EAvatar.php">
+      <created>1590683179597</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1590683179597</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Aggiunta Foundation di FProposta.php, Piccole modifiche alle entity, piccoli cambiamenti in FAvatar.php">
+      <created>1590953805388</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1590953805388</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,8 +710,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Prova" />
-    <MESSAGE value="add variables" />
     <MESSAGE value="added variables event" />
     <MESSAGE value="added method EEvent.php + create EPlace.php" />
     <MESSAGE value="added EDate.php" />
@@ -463,7 +731,11 @@
     <MESSAGE value="PORCODIO&#10;4\" />
     <MESSAGE value="EPrenotazione.php 1.0 con php docs" />
     <MESSAGE value="Alter Create tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alter Create tables" />
+    <MESSAGE value="Exists PersistantManager" />
+    <MESSAGE value="La funzione Exists adesso restituisce un intero con il numero di ricorrenze" />
+    <MESSAGE value="Aggiunta di FAvatar.php e modifiche su EAvatar.php" />
+    <MESSAGE value="Aggiunta Foundation di FProposta.php, Piccole modifiche alle entity, piccoli cambiamenti in FAvatar.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta Foundation di FProposta.php, Piccole modifiche alle entity, piccoli cambiamenti in FAvatar.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -471,12 +743,24 @@
     </state>
     <state x="540" y="175" key="#CLI_Interpreters/0.0.1920.1040@0.0.1920.1040" timestamp="1589295841609" />
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589463768748" />
+    <state x="873" y="359" key="#Notifications" timestamp="1590953839775">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="873" y="359" key="#Notifications/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590953839775" />
     <state x="742" y="224" key="#PHP" timestamp="1589353066950">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="742" y="216" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1589295705696" />
     <state x="742" y="224" key="#PHP/0.0.1920.1080@0.0.1920.1080" timestamp="1589353066950" />
     <state x="989" y="291" key="#PHP/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817129104" />
+    <state x="873" y="359" key="#SQL_Dialects" timestamp="1590328750852">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="873" y="359" key="#SQL_Dialects/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590328750852" />
+    <state x="873" y="359" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592645194682">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="873" y="359" key="#com.intellij.execution.impl.EditConfigurationsDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592645194682" />
     <state x="765" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1589124552819">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -493,11 +777,12 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="761" y="416" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1/0.0.1920.1080@0.0.1920.1080" timestamp="1589100413640" />
-    <state x="679" y="208" key="#main.php" timestamp="1590317419921">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="905" y="280" key="#main.php" timestamp="1590327787851">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="679" y="208" key="#main.php/0.0.1920.1040@0.0.1920.1040" timestamp="1590317419921" />
     <state x="679" y="216" key="#main.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353343298" />
+    <state x="905" y="280" key="#main.php/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590327787851" />
     <state x="679" y="216" key="#recensioni.php" timestamp="1589353079657">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -508,41 +793,41 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="780" y="174" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1590078525910">
+    <state x="780" y="174" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1590953803068">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589303611704" />
     <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1589309287060" />
-    <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590078525910" />
-    <state x="1152" y="369" key="FileChooserDialogImpl" timestamp="1589463765290">
+    <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590953803068" />
+    <state x="1152" y="369" key="FileChooserDialogImpl" timestamp="1590683093706">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="864" y="285" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1588525269838" />
-    <state x="1152" y="369" key="FileChooserDialogImpl/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589463765290" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1590317746365">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1152" y="369" key="FileChooserDialogImpl/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590683093706" />
+    <state width="2142" height="360" key="GridCell.Tab.0.bottom" timestamp="1592647976728">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590317746365" />
     <state width="1921" height="428" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418438" />
-    <state width="2517" height="404" key="GridCell.Tab.0.bottom/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590080572629" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1590317746365">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2142" height="360" key="GridCell.Tab.0.bottom/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592647976728" />
+    <state width="2142" height="360" key="GridCell.Tab.0.center" timestamp="1592647976728">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590317746365" />
     <state width="1921" height="428" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418436" />
-    <state width="2517" height="404" key="GridCell.Tab.0.center/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590080572629" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1590317746365">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2142" height="360" key="GridCell.Tab.0.center/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592647976728" />
+    <state width="2142" height="360" key="GridCell.Tab.0.left" timestamp="1592647976728">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590317746365" />
     <state width="1921" height="428" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418436" />
-    <state width="2517" height="404" key="GridCell.Tab.0.left/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590080572629" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1590317746365">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2142" height="360" key="GridCell.Tab.0.left/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592647976728" />
+    <state width="2142" height="360" key="GridCell.Tab.0.right" timestamp="1592647976728">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590317746365" />
     <state width="1921" height="428" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418438" />
-    <state width="2517" height="404" key="GridCell.Tab.0.right/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590080572629" />
+    <state width="2142" height="360" key="GridCell.Tab.0.right/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592647976728" />
     <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1588058395039">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -559,12 +844,16 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1588058395039" />
-    <state x="788" y="331" key="NewPhpClassDialog" timestamp="1589352773357">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="994" y="417" key="MultipleFileMergeDialog" timestamp="1590332299164">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="994" y="417" key="MultipleFileMergeDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590332299164" />
+    <state x="1050" y="429" key="NewPhpClassDialog" timestamp="1590935158938">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="788" y="319" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589117821960" />
     <state x="788" y="331" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352773357" />
-    <state x="1050" y="429" key="NewPhpClassDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587810992096" />
+    <state x="1050" y="429" key="NewPhpClassDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590935158938" />
     <state x="794" y="460" key="NewPhpFileDialog" timestamp="1589352792870">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -586,28 +875,32 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="873" y="434" key="Vcs.Push.Dialog.v2" timestamp="1590078568525">
+    <state x="873" y="434" key="Vcs.Push.Dialog.v2" timestamp="1590953807975">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1589303614352" />
     <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1589309291535" />
-    <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590078568525" />
+    <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590953807975" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588407242850" />
-    <state x="966" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1589463986113">
+    <state x="966" y="484" key="com.intellij.ide.util.TipDialog" timestamp="1592644682954">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="725" y="360" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589297255331" />
     <state x="725" y="374" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352751088" />
-    <state x="966" y="484" key="com.intellij.ide.util.TipDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1589463986113" />
-    <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590317043650">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="966" y="484" key="com.intellij.ide.util.TipDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592644682954" />
+    <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592644693475">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590317043650" />
     <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1590068948544" />
-    <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590078559260" />
+    <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592644693475" />
+    <state x="3840" y="613" width="1936" height="1085" maximized="true" key="dock-window-1" timestamp="1590929747423">
+      <screen x="3840" y="591" width="1920" height="1020" />
+    </state>
+    <state x="3840" y="613" width="1936" height="1085" maximized="true" key="dock-window-1/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590929747423" />
     <state x="649" y="311" key="git4idea.merge.GitPullDialog" timestamp="1589295097279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
