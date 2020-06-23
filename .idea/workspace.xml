@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/cache/048667a11657f337e81991805860976dd905a90d.TVGAvatarModify.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/cache/1a720a297f99a6f078630763992414e3b9815d11.TVGAvatarDetails.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/cache/7efcd4f6351a48ac519992b79d9028d6b16c4620.TVGAvatarApprovazione.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/cache/9bf8f9095ffa6b719a4ae27487d43232b23151a6.home.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/cache/f0f66d103c71da5a9c3a5505bfcb17c4ce834c0e.TVGMainPage.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/now-ui-kit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/2508dd4911513de8971c3298c2d99559ff14c05a_0.file.TVGAvatarDetails.tpl.cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/5bb4ea13f163d4a365ad6745aee58b23384ba8b6_0.file.home.tpl.cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/68119b6ba005341cc948d40431e5deb141e8d7c9_0.file.TVGAvatarModify.tpl.cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/9b2f3adad6653a54ebbc324db5235662b8afe304_0.file.navbar.tpl.cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/cd28d25a1a532af33445ca3ee434f4963f456846_0.file.TVGMainPage.tpl.cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/ffbb07bb6fa374d94565d929bd5d390d94473b1d_0.file.TVGAvatarApprovazione.tpl.cache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/235c56e9055ecde7c2ed04be7b7690a38d20a3a6_0.file.home.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/766fac2c6e8e732be684b74568ce1d424f38792e_0.file.navbar.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/TVGAvatarApprovazione.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/TVGAvatarApprovazione.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +67,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="1b1sSlXwN45z6KDdWDtA6oy4m8U" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -102,14 +90,14 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto Web\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto Web\Pld" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.main.php">
@@ -569,10 +557,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="873" y="359" key="#Notifications/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590953839775" />
-    <state x="742" y="224" key="#PHP" timestamp="1589353066950">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="742" y="216" key="#PHP" timestamp="1592923542464">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="742" y="216" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1589295705696" />
+    <state x="742" y="216" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1592923542464" />
     <state x="742" y="224" key="#PHP/0.0.1920.1080@0.0.1920.1080" timestamp="1589353066950" />
     <state x="989" y="291" key="#PHP/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817129104" />
     <state x="873" y="359" key="#SQL_Dialects" timestamp="1590328750852">
