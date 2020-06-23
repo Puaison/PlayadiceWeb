@@ -95,7 +95,11 @@ $smarty ->assign('results',$array);
 $smarty ->assign('title',$title);
 $smarty ->assign('message',$msg);
 
-$smarty->display('Test.tpl');
+$smarty->display('home.tpl');
+$smarty->display('TVGMainPage.tpl');
+$smarty->display('TVGAvatarDetails.tpl');
+$smarty->display('TVGAvatarModify.tpl');
+$smarty->display('TVGAvatarApprovazione.tpl');
 
 
 
