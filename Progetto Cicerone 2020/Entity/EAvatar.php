@@ -20,7 +20,7 @@ class EAvatar extends EObject {
     private $Classe;
 
     /**
-     * Array rappresentante l'inventario con oggetti di tipo VoceInventario
+     *
      */
     private $Razza;
 

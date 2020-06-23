@@ -1,8 +1,6 @@
 <?php
 require('autoload.php');
-echo "\n";
-print ("Hello");
-echo "\n";
+
 
 
 ////////////////////////////SEEDER///////////////////////////////
@@ -57,7 +55,6 @@ else
 echo "\n";
 */
 /// ///////////////////////////SEEDER////////////////////////////////
-echo ("------------------\n");
 
 
 require_once ('./Smarty/libs/Smarty.class.php');
@@ -98,7 +95,11 @@ $smarty ->assign('results',$array);
 $smarty ->assign('title',$title);
 $smarty ->assign('message',$msg);
 
-$smarty->display('Test.tpl');
+$smarty->display('home.tpl');
+$smarty->display('TVGMainPage.tpl');
+$smarty->display('TVGAvatarDetails.tpl');
+$smarty->display('TVGAvatarModify.tpl');
+$smarty->display('TVGAvatarApprovazione.tpl');
 
 
 
