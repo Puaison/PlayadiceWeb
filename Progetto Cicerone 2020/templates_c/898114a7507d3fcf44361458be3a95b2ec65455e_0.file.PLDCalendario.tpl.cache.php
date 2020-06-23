@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 17:27:30
+/* Smarty version 3.1.34-dev-7, created on 2020-06-23 17:54:38
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef21f62985db0_46257989',
+  'unifunc' => 'content_5ef225beaf6138_76699924',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '898114a7507d3fcf44361458be3a95b2ec65455e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDCalendario.tpl',
-      1 => 1592926049,
+      1 => 1592927676,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef21f62985db0_46257989 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '17277168985ef21f62848745_52698748';
+function content_5ef225beaf6138_76699924 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '17026701215ef225bea74209_79177732';
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +31,7 @@ $_smarty_tpl->compiled->nocache_hash = '17277168985ef21f62848745_52698748';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
     <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
     <title>Playadice - Home</title>
@@ -82,10 +82,12 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
                 <div class="row">
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
                     <div class="row justify-item-center" style="">
-                        <div class="col" style="text-align:center"> <?php echo $_smarty_tpl->tpl_vars['result']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
- </div>
+                        <div class="col 5 my-auto text-center" > <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
+</div>
                     </div>
+
                 </div>
+
             </div>
             <?php
 }
