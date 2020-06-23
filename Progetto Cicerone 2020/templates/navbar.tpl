@@ -2,11 +2,11 @@
         <div class="container">
                 <ul class="navbar-nav">
                         <ul class="navbar-nav">
-                                <a class="nav-link" href="#download"> &nbsp;Benvenuto NomeUtente</a>
+                                <a class="nav-link" href=""> &nbsp;Benvenuto NomeUtente</a>
                                 <a class="nav-link space" href=""> &nbsp;Spazio43</a>
                                 <a class="nav-link" href="#download"> &nbsp;Eventi</a>
                                 <a class="nav-link" href="#download"> &nbsp;Giochi</a>
-                                <a class="nav-link" href="#download"> &nbsp;AreaTWG</a>
+                                <a class="nav-link" href="#../main.php"> &nbsp;AreaTWG</a>
                         </ul>
                 </ul>
         </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 16:47:31
+/* Smarty version 3.1.34-dev-7, created on 2020-06-23 17:31:35
   from 'C:\xampp\htdocs\Progetto Web\Progetto Cicerone 2020\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef216034a1058_36944763',
+  'unifunc' => 'content_5ef220572abda4_02442870',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '766fac2c6e8e732be684b74568ce1d424f38792e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto Web\\Progetto Cicerone 2020\\templates\\navbar.tpl',
-      1 => 1592921699,
+      1 => 1592926294,
       2 => 'file',
     ),
   ),
@@ -20,16 +20,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef216034a1058_36944763 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef220572abda4_02442870 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container">
                 <ul class="navbar-nav">
                         <ul class="navbar-nav">
-                                <a class="nav-link" href="#download"> &nbsp;Benvenuto NomeUtente</a>
+                                <a class="nav-link" href=""> &nbsp;Benvenuto NomeUtente</a>
                                 <a class="nav-link space" href=""> &nbsp;Spazio43</a>
                                 <a class="nav-link" href="#download"> &nbsp;Eventi</a>
                                 <a class="nav-link" href="#download"> &nbsp;Giochi</a>
-                                <a class="nav-link" href="#download"> &nbsp;AreaTWG</a>
+                                <a class="nav-link" href="#../main.php"> &nbsp;AreaTWG</a>
                         </ul>
                 </ul>
         </div>

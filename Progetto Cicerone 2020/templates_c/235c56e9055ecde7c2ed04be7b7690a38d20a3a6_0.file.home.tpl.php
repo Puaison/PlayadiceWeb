@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 16:47:31
+/* Smarty version 3.1.34-dev-7, created on 2020-06-23 17:31:35
   from 'C:\xampp\htdocs\Progetto Web\Progetto Cicerone 2020\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef21603498b35_53034264',
+  'unifunc' => 'content_5ef22057295081_40515819',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '235c56e9055ecde7c2ed04be7b7690a38d20a3a6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto Web\\Progetto Cicerone 2020\\templates\\home.tpl',
-      1 => 1592923183,
+      1 => 1592926238,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5ef21603498b35_53034264 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef22057295081_40515819 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -38,6 +38,7 @@ function content_5ef21603498b35_53034264 (Smarty_Internal_Template $_smarty_tpl)
 <body>
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
 </body>
 </html><?php }
 }
