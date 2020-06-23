@@ -13,5 +13,6 @@
 </head>
 <body>
 {include file="navbar.tpl"}
+
 </body>
 </html>
