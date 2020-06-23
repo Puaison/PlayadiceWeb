@@ -7,7 +7,7 @@
 // Color system
  
 $theme-colors: (
-  primary: #f96332,
+  primary: #A5BFE3,
   secondary: #888,
   light: #FFFFFF,
   dark: #2c2c2c,
@@ -262,7 +262,7 @@ $progress-height:   1px;
 }
 
 
-.navbar  {  
+.navbar {  
   transition: all 0.5s;
   transition-delay: 0.25s;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
@@ -540,7 +540,7 @@ form {
 }
 
 
-.pagination{
+.pagination {
     .page-item {
      		background-color:transparent !important;
     }
@@ -864,4 +864,8 @@ html,body {
 }
 .shadow-none {
   box-shadow: none !important;
+}
+
+.space {
+   visibility: hidden;
 }
