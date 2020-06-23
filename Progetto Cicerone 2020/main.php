@@ -1,8 +1,6 @@
 <?php
 require('autoload.php');
-echo "\n";
-print ("Hello");
-echo "\n";
+
 
 
 ////////////////////////////SEEDER///////////////////////////////
@@ -57,7 +55,6 @@ else
 echo "\n";
 */
 /// ///////////////////////////SEEDER////////////////////////////////
-echo ("------------------\n");
 
 
 require_once ('./Smarty/libs/Smarty.class.php');
