@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 18:00:37
+/* Smarty version 3.1.34-dev-7, created on 2020-06-23 18:25:12
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef227256d3da1_92242216',
+  'unifunc' => 'content_5ef22ce848bf26_73814688',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '898114a7507d3fcf44361458be3a95b2ec65455e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDCalendario.tpl',
-      1 => 1592927676,
+      1 => 1592929510,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5ef227256d3da1_92242216 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef22ce848bf26_73814688 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -70,9 +70,12 @@ function content_5ef227256d3da1_92242216 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="col-md-12">
                 <div class="row">
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
-                    <div class="row justify-item-center" style="">
-                        <div class="col 5 my-auto text-center" > PRova1</div>
-                    </div>
+
+                    <div class="my-auto text-center">
+                            <div class="px-5">
+
+                            PRova1</div></div>
+
 
                 </div>
 
@@ -80,9 +83,12 @@ function content_5ef227256d3da1_92242216 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="col-md-12">
                 <div class="row">
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
-                    <div class="row justify-item-center" style="">
-                        <div class="col 5 my-auto text-center" > Prova2</div>
-                    </div>
+
+                    <div class="my-auto text-center">
+                            <div class="px-5">
+
+                            Prova2</div></div>
+
 
                 </div>
 

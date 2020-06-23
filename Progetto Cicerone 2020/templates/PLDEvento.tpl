@@ -1,28 +1,3 @@
-<?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 18:25:12
-  from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDCalendario.tpl' */
-
-/* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef22ce847f473_69390126',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '898114a7507d3fcf44361458be3a95b2ec65455e' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDCalendario.tpl',
-      1 => 1592929510,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5ef22ce847f473_69390126 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '15644627625ef22ce842e501_19332020';
-?>
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +6,7 @@ $_smarty_tpl->compiled->nocache_hash = '15644627625ef22ce842e501_19332020';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
     <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
     <title>Playadice - Home</title>
@@ -69,36 +44,20 @@ $_smarty_tpl->compiled->nocache_hash = '15644627625ef22ce842e501_19332020';
 </nav>
 <div class="py-5">
     <div class="container">
-        <div class="row ">
-            <div class="col-md-12 " > Ultimi Eventi</div>
-            <?php
-$__section_k_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['results']->value) ? count($_loop) : max(0, (int) $_loop));
-$__section_k_0_total = $__section_k_0_loop;
-$_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
-if ($__section_k_0_total !== 0) {
-for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_0_iteration <= $__section_k_0_total; $__section_k_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
-?>
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
-
-                    <div class="my-auto text-center">
-                            <div class="px-5">
-
-                            <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
-</div></div>
-
-
+        <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 p-0"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg"> </div>
+            <div class=" col-sm flex-column align-items-start justify-content-center order-1 order-lg-2">
+                <div class="card">
+                    <div class="card-body" >
+                        <h5 class="card-title"><b>Nome Evento </b></h5>
+                        <h6 class="card-subtitle my-2 text-muted">Luogo</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="text-right">
+                            <a class="btn btn-primary pi-draggable" href="#" draggable="true">Button</a></div>
+                    </div>
                 </div>
-
             </div>
-            <?php
-}
-}
-?>
         </div>
     </div>
 </div>
 </body>
-</html><?php }
-}

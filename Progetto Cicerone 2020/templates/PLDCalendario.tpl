@@ -50,9 +50,12 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
-                    <div class="row justify-item-center" style="">
-                        <div class="col 5 my-auto text-center" > {$results[k]->getNome()}</div>
-                    </div>
+
+                    <div class="my-auto text-center">
+                            <div class="px-5">
+
+                            {$results[k]->getNome()}</div></div>
+
 
                 </div>
 
