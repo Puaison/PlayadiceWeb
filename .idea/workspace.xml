@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/235c56e9055ecde7c2ed04be7b7690a38d20a3a6_0.file.home.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/766fac2c6e8e732be684b74568ce1d424f38792e_0.file.navbar.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/cache/5e61225d933cf0da000324a49617b27b1bec9e33.PLDCalendario.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/cache/5e61225d933cf0da000324a49617b27b1bec9e33.PLDCalendario.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/PLDCalendario.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/PLDCalendario.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/898114a7507d3fcf44361458be3a95b2ec65455e_0.file.PLDCalendario.tpl.cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/898114a7507d3fcf44361458be3a95b2ec65455e_0.file.PLDCalendario.tpl.cache.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -29,9 +28,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="playadice" />
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -67,7 +63,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1b1sSlXwN45z6KDdWDtA6oy4m8U" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -91,22 +87,22 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates" />
+      <recent name="C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates" />
+      <recent name="C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020" />
       <recent name="C:\xampp\htdocs\Progetto Web\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto Web\Pld" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates" />
-    </key>
   </component>
-  <component name="RunManager" selected="PHP Script.main.php">
+  <component name="RunManager" selected="PHP Script.mainviewant.php">
     <configuration name="main.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/main.php">
       <CommandLine>
         <PhpTestInterpreterSettings>
           <option name="interpreterName" value="PHP" />
         </PhpTestInterpreterSettings>
       </CommandLine>
+      <method v="2" />
+    </configuration>
+    <configuration name="mainviewant.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/mainviewant.php">
       <method v="2" />
     </configuration>
     <configuration name="recensioni.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Progetto Cicerone 2020/recensioni.php">
@@ -129,9 +125,11 @@
       <item itemvalue="PHP Script.main.php" />
       <item itemvalue="PHP Script.recensioni.php" />
       <item itemvalue="PHP Script.testantonio.php" />
+      <item itemvalue="PHP Script.mainviewant.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.mainviewant.php" />
         <item itemvalue="PHP Script.main.php" />
         <item itemvalue="PHP Script.testantonio.php" />
         <item itemvalue="PHP Script.recensioni.php" />
@@ -492,12 +490,12 @@
       <option name="project" value="LOCAL" />
       <updated>1592921708062</updated>
     </task>
-    <task id="LOCAL-00045" summary="Alcune view">
-      <created>1592923104070</created>
+    <task id="LOCAL-00045" summary="Navbar Aggiunta">
+      <created>1592926135026</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1592923104070</updated>
+      <updated>1592926135026</updated>
     </task>
     <option name="localTasksCounter" value="46" />
     <servers />
@@ -510,16 +508,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added EDate.php" />
     <MESSAGE value="working on EDate.php" />
     <MESSAGE value="EDate v0.2" />
     <MESSAGE value="EDate v0.3" />
@@ -544,8 +542,7 @@
     <MESSAGE value="Aggiunta Foundation di FProposta.php, Piccole modifiche alle entity, piccoli cambiamenti in FAvatar.php" />
     <MESSAGE value="Primi test Smarty" />
     <MESSAGE value="Navbar Aggiunta" />
-    <MESSAGE value="Alcune view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alcune view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Navbar Aggiunta" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -557,10 +554,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="873" y="359" key="#Notifications/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590953839775" />
-    <state x="742" y="216" key="#PHP" timestamp="1592923542464">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="742" y="224" key="#PHP" timestamp="1589353066950">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="742" y="216" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1592923542464" />
+    <state x="742" y="216" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1589295705696" />
     <state x="742" y="224" key="#PHP/0.0.1920.1080@0.0.1920.1080" timestamp="1589353066950" />
     <state x="989" y="291" key="#PHP/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817129104" />
     <state x="873" y="359" key="#SQL_Dialects" timestamp="1590328750852">
@@ -603,40 +600,40 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="780" y="174" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1592923102634">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1592926132510">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921707426" />
-    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1589309287060" />
-    <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592923102634" />
+    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1592926132510" />
+    <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592898690067" />
     <state x="1152" y="369" key="FileChooserDialogImpl" timestamp="1590683093706">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="864" y="285" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1588525269838" />
     <state x="1152" y="369" key="FileChooserDialogImpl/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590683093706" />
-    <state width="2142" height="360" key="GridCell.Tab.0.bottom" timestamp="1592649385227">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1921" height="437" key="GridCell.Tab.0.bottom" timestamp="1592926006894">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590317746365" />
-    <state width="1921" height="428" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418438" />
+    <state width="1921" height="437" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1592926006894" />
     <state width="2142" height="360" key="GridCell.Tab.0.bottom/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592649385227" />
-    <state width="2142" height="360" key="GridCell.Tab.0.center" timestamp="1592649385227">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1921" height="437" key="GridCell.Tab.0.center" timestamp="1592926006894">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590317746365" />
-    <state width="1921" height="428" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418436" />
+    <state width="1921" height="437" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1592926006894" />
     <state width="2142" height="360" key="GridCell.Tab.0.center/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592649385227" />
-    <state width="2142" height="360" key="GridCell.Tab.0.left" timestamp="1592649385227">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1921" height="437" key="GridCell.Tab.0.left" timestamp="1592926006894">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590317746365" />
-    <state width="1921" height="428" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418436" />
+    <state width="1921" height="437" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1592926006894" />
     <state width="2142" height="360" key="GridCell.Tab.0.left/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592649385227" />
-    <state width="2142" height="360" key="GridCell.Tab.0.right" timestamp="1592649385227">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1921" height="437" key="GridCell.Tab.0.right" timestamp="1592926006894">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590317746365" />
-    <state width="1921" height="428" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1589353418438" />
+    <state width="1921" height="437" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1592926006894" />
     <state width="2142" height="360" key="GridCell.Tab.0.right/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592649385227" />
     <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1588058395039">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -685,12 +682,12 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="873" y="434" key="Vcs.Push.Dialog.v2" timestamp="1592923105849">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1592926139882">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921712667" />
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1589309291535" />
-    <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592923105849" />
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1592926139882" />
+    <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592648035592" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -719,10 +716,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="701" y="173" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589112701555" />
-    <state x="616" y="250" key="run.anything.popup" timestamp="1588356278427">
+    <state x="616" y="250" key="run.anything.popup" timestamp="1592925104183">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1588356278427" />
+    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1592925104183" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1588355440912">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
