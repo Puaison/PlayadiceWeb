@@ -5,12 +5,22 @@
     <body>
     <br>
         {$message}
+    <br>
 
-    {section name=nr loop=$results}
-        <option value="{$results[nr]}">
-            {$results[nr]}
-        </option>
-    {/section}
+
+        {section name=k loop=$results}
+             {$results[k]->getNome()}
+
+             {$results[k]->getCognome()}
+
+             {$results[k]->getUsername()}
+
+             {$results[k]->getPassword()}
+
+             <br>
+        {/section}
+    <br>
+         {$message}
 
     </body>
 </html>

@@ -73,9 +73,28 @@ $smarty -> setTemplateDir('templates');
 
 $msg = 'Messaggio accattivante';
 $title = 'Hello titolo';
-$array = [1,2,3,4,5,6,7,8];
 
-$smarty ->assign('cipolle',$array);
+$User=new EUtente();
+
+$User->setNome("Alessio");
+$User->setCognome("Perozzi");
+$User->setEmail("Test@Gmail.com");
+$User->setUsername("Pantaleone");
+$User->setPassword("1234");
+
+$User2=new EUtente();
+
+$User2->setNome("Luchino");
+$User2->setCognome("Del presidentissimo");
+$User2->setEmail("Test@Gmail.com");
+$User2->setUsername("Puaison");
+$User2->setPassword("ScemoChiLegge");
+
+
+
+$array = array($User,$User2);
+
+$smarty ->assign('results',$array);
 $smarty ->assign('title',$title);
 $smarty ->assign('message',$msg);
 
