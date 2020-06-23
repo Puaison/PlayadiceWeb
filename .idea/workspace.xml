@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Pld/navbar.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/navbar.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/provaviewluca.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pld/MainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pld/MainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pld/now-ui-kit.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pld/now-ui-kit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pld/now-ui-kit.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Pld/now-ui-kit.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Pld" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Progetto Cicerone 2020/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -93,6 +92,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Progetto Web\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto Web\Pld" />
     </key>
   </component>
@@ -178,7 +178,7 @@
       <workItem from="1592644682957" duration="48000" />
       <workItem from="1592645036931" duration="4344000" />
       <workItem from="1592898359245" duration="329000" />
-      <workItem from="1592919545834" duration="1953000" />
+      <workItem from="1592919545834" duration="3261000" />
     </task>
     <task id="LOCAL-00001" summary="Prova">
       <created>1587817231703</created>
@@ -474,7 +474,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592648033120</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Navbar Aggiunta">
+      <created>1592921541901</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1592921541901</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Navbar Aggiunta">
+      <created>1592921708062</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1592921708062</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,10 +592,10 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1592921541204">
+    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1592921707426">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921541204" />
+    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921707426" />
     <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1589309287060" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592898690067" />
     <state x="1152" y="369" key="FileChooserDialogImpl" timestamp="1590683093706">
@@ -639,10 +653,10 @@
     <state x="788" y="319" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589117821960" />
     <state x="788" y="331" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352773357" />
     <state x="1050" y="429" key="NewPhpClassDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590935158938" />
-    <state x="794" y="460" key="NewPhpFileDialog" timestamp="1589352792870">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1592922591040">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589295680247" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592922591040" />
     <state x="794" y="460" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352792870" />
     <state x="795" y="231" key="RollbackChangesDialog" timestamp="1589295141490">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -660,10 +674,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1592921551316">
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1592921712667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921551316" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921712667" />
     <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1589309291535" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592648035592" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
