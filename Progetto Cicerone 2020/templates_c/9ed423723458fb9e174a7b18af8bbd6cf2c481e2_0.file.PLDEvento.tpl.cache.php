@@ -1,3 +1,28 @@
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-06-24 13:47:59
+  from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDEvento.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5ef33d6f0906b9_07420458',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '9ed423723458fb9e174a7b18af8bbd6cf2c481e2' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDEvento.tpl',
+      1 => 1592999277,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5ef33d6f0906b9_07420458 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '20906621665ef33d6f055133_86205622';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -48,26 +73,38 @@
             <div class="px-5 col-lg-6 d-flex flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><b>{$results[0]->getNome()}</b></h5>
-                        <h6 class="card-subtitle my-2 text-muted">{$results[0]->getCategoria()}</h6>
-                        <h6 class="card-subtitle my-2 text-">{$results[0]->getLuogo()}</h6>
+                        <h5 class="card-title"><b><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getNome();?>
+</b></h5>
+                        <h6 class="card-subtitle my-2 text-muted"><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getCategoria();?>
+</h6>
+                        <h6 class="card-subtitle my-2 text-"><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getLuogo();?>
+</h6>
                         <div class="row">
                             <div class="col-xl-11 text-center mb-sm-3 "><b>orari</b></div>
 
-                            {$fasce=$results[0]->getFasce()}
+                            <?php $_smarty_tpl->_assignInScope('fasce', $_smarty_tpl->tpl_vars['results']->value[0]->getFasce());?>
 
                             <!----inizio selezione fasce---->
                             <!----Data Inizio--->
-                            {foreach from=$fasce item=$fascia}
+                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['fasce']->value, 'fascia');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['fascia']->value) {
+?>
 
 
 
 
-                            <div class="col-xl-6 text-center "><b>{$fascia->getData()} </b></div>
+                            <div class="col-xl-6 text-center "><b><?php echo $_smarty_tpl->tpl_vars['fascia']->value->getData();?>
+ </b></div>
 
-                                <div class="col-xl-6 text-center "><b>{$fascia->getFine()} </b></div>
+                                <div class="col-xl-6 text-center "><b><?php echo $_smarty_tpl->tpl_vars['fascia']->value->getFine();?>
+ </b></div>
 
-                            {/foreach}
+                            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
 
 
@@ -75,7 +112,6 @@
                             Some quick example text to build on the card title and make up the bulk of the card's content.
                             Some quick example text to build on the card title and make up the bulk of the card's content.
                             Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
                         <div class="text-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
                             <button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>
                     </div>
@@ -88,3 +124,5 @@
 
 </html>
 
+<?php }
+}

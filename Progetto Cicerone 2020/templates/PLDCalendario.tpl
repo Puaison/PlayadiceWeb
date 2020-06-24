@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
-    <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+
     <title>Playadice - Home</title>
 </head>
 

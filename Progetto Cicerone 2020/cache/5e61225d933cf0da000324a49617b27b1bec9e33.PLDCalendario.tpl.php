@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 18:25:12
+/* Smarty version 3.1.34-dev-7, created on 2020-06-24 14:16:16
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef22ce848bf26_73814688',
+  'unifunc' => 'content_5ef344102716a9_28273130',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '898114a7507d3fcf44361458be3a95b2ec65455e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDCalendario.tpl',
-      1 => 1592929510,
+      1 => 1593000805,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5ef22ce848bf26_73814688 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef344102716a9_28273130 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -29,7 +29,7 @@ function content_5ef22ce848bf26_73814688 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
-    <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+
     <title>Playadice - Home</title>
 </head>
 
