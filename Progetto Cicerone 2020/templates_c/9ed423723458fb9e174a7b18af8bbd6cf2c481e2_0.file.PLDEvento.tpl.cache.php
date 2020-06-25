@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-24 13:47:59
+/* Smarty version 3.1.34-dev-7, created on 2020-06-24 15:38:22
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef33d6f0906b9_07420458',
+  'unifunc' => 'content_5ef3574e318376_01455484',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9ed423723458fb9e174a7b18af8bbd6cf2c481e2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDEvento.tpl',
-      1 => 1592999277,
+      1 => 1593005901,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef33d6f0906b9_07420458 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '20906621665ef33d6f055133_86205622';
+function content_5ef3574e318376_01455484 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '4817433995ef3574e24bb28_85291373';
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,8 +79,13 @@ $_smarty_tpl->compiled->nocache_hash = '20906621665ef33d6f055133_86205622';
 </h6>
                         <h6 class="card-subtitle my-2 text-"><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getLuogo();?>
 </h6>
+
                         <div class="row">
-                            <div class="col-xl-11 text-center mb-sm-3 "><b>orari</b></div>
+
+                            <div class="col-xl-12 text-center border-secondary"><b>orari</b></div>
+                            <div class="col-xl-6 text-center "><b>Inizio </b></div>
+
+                            <div class="col-xl-6 text-center "><b>Fine </b></div>
 
                             <?php $_smarty_tpl->_assignInScope('fasce', $_smarty_tpl->tpl_vars['results']->value[0]->getFasce());?>
 
@@ -95,7 +100,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['fascia']->value) {
 
 
 
-                            <div class="col-xl-6 text-center "><b><?php echo $_smarty_tpl->tpl_vars['fascia']->value->getData();?>
+                            <div class="col-xl-6 text-center  " ><b><?php echo $_smarty_tpl->tpl_vars['fascia']->value->getData();?>
  </b></div>
 
                                 <div class="col-xl-6 text-center "><b><?php echo $_smarty_tpl->tpl_vars['fascia']->value->getFine();?>
@@ -106,12 +111,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['fascia']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
+                        </span>
 
 
                         <p class="card-text mt-sm-3">Some quick example text to build on the card title and make up the bulk of the card's content.
                             Some quick example text to build on the card title and make up the bulk of the card's content.
                             Some quick example text to build on the card title and make up the bulk of the card's content.
                             Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
                         <div class="text-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
                             <button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>
                     </div>

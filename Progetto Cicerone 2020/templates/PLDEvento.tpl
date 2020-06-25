@@ -51,8 +51,13 @@
                         <h5 class="card-title"><b>{$results[0]->getNome()}</b></h5>
                         <h6 class="card-subtitle my-2 text-muted">{$results[0]->getCategoria()}</h6>
                         <h6 class="card-subtitle my-2 text-">{$results[0]->getLuogo()}</h6>
+
                         <div class="row">
-                            <div class="col-xl-11 text-center mb-sm-3 "><b>orari</b></div>
+
+                            <div class="col-xl-12 text-center border-secondary  "><b>orari</b></div>
+                            <div class="col-xl-6 text-center "><b>Inizio </b></div>
+
+                            <div class="col-xl-6 text-center "><b>Fine </b></div>
 
                             {$fasce=$results[0]->getFasce()}
 
@@ -63,19 +68,20 @@
 
 
 
-                            <div class="col-xl-6 text-center "><b>{$fascia->getData()} </b></div>
+                            <div class="col-xl-6 text-center  " ><b>{$fascia->getData()} </b></div>
 
                                 <div class="col-xl-6 text-center "><b>{$fascia->getFine()} </b></div>
 
                             {/foreach}
                         </div>
+                        </span>
 
 
                         <p class="card-text mt-sm-3">Some quick example text to build on the card title and make up the bulk of the card's content.
                             Some quick example text to build on the card title and make up the bulk of the card's content.
                             Some quick example text to build on the card title and make up the bulk of the card's content.
                             Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
+
                         <div class="text-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
                             <button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>
                     </div>

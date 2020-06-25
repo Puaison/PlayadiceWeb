@@ -126,7 +126,7 @@ $smarty ->assign('message',$msg);
 
 
 
-$smarty->display('PLDCalendario.tpl');
+$smarty->display('PLDEvento.tpl');
 
 
 
