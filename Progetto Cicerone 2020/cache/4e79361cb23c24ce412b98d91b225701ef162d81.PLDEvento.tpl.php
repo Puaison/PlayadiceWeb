@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-24 15:38:22
+/* Smarty version 3.1.34-dev-7, created on 2020-06-25 20:57:03
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef3574e34a3a1_52826088',
+  'unifunc' => 'content_5ef4f37f6a7879_85335316',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9ed423723458fb9e174a7b18af8bbd6cf2c481e2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDEvento.tpl',
-      1 => 1593005901,
+      1 => 1593005929,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5ef3574e34a3a1_52826088 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef4f37f6a7879_85335316 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -75,7 +75,7 @@ function content_5ef3574e34a3a1_52826088 (Smarty_Internal_Template $_smarty_tpl)
 
                         <div class="row">
 
-                            <div class="col-xl-12 text-center border-secondary"><b>orari</b></div>
+                            <div class="col-xl-12 text-center border-secondary  "><b>orari</b></div>
                             <div class="col-xl-6 text-center "><b>Inizio </b></div>
 
                             <div class="col-xl-6 text-center "><b>Fine </b></div>

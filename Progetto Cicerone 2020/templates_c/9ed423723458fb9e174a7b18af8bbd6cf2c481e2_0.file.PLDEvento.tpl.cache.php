@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-24 15:38:22
+/* Smarty version 3.1.34-dev-7, created on 2020-06-25 20:57:03
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef3574e318376_01455484',
+  'unifunc' => 'content_5ef4f37f6943d4_55934889',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9ed423723458fb9e174a7b18af8bbd6cf2c481e2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDEvento.tpl',
-      1 => 1593005901,
+      1 => 1593005929,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef3574e318376_01455484 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '4817433995ef3574e24bb28_85291373';
+function content_5ef4f37f6943d4_55934889 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '20386865685ef4f37f61b2e4_32668961';
 ?>
 <!DOCTYPE html>
 <html>
@@ -82,7 +82,7 @@ $_smarty_tpl->compiled->nocache_hash = '4817433995ef3574e24bb28_85291373';
 
                         <div class="row">
 
-                            <div class="col-xl-12 text-center border-secondary"><b>orari</b></div>
+                            <div class="col-xl-12 text-center border-secondary  "><b>orari</b></div>
                             <div class="col-xl-6 text-center "><b>Inizio </b></div>
 
                             <div class="col-xl-6 text-center "><b>Fine </b></div>

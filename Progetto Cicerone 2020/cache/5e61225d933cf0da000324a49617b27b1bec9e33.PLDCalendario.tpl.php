@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-24 14:26:31
+/* Smarty version 3.1.34-dev-7, created on 2020-06-25 21:16:31
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef3467794ab96_17526879',
+  'unifunc' => 'content_5ef4f80f7bfe44_90268486',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '898114a7507d3fcf44361458be3a95b2ec65455e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDCalendario.tpl',
-      1 => 1593000805,
+      1 => 1593112590,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5ef3467794ab96_17526879 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef4f80f7bfe44_90268486 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -95,6 +95,8 @@ function content_5ef3467794ab96_17526879 (Smarty_Internal_Template $_smarty_tpl)
             </div>
                     </div>
     </div>
+</div>
+
 </div>
 </body>
 </html><?php }
