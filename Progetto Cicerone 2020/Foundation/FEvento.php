@@ -30,8 +30,8 @@ class FEvento
 
     static function storeEvento() : string
     {
-        return "INSERT INTO evento(Id, Nome, Flag, IdLuogo, Categoria)
-				VALUES(:Id, :Nome, :Flag, :IdLuogo, :Categoria)";
+        return "INSERT INTO evento(Id, Nome, Flag, IdLuogo, Categoria, Testo)
+				VALUES(:Id, :Nome, :Flag, :IdLuogo, :Categoria, :Testo)";
     }
     /**
      * Query che effettua l'aggiornamento di un utente nella table users
@@ -40,7 +40,7 @@ class FEvento
     static function updateEvento() : string
     {
         return "UPDATE evento
-                SET  Nome = :Nome, Flag = :Flag, IdLuogo = :IdLuogo, Categoria = :Categoria
+                SET  Nome = :Nome, Flag = :Flag, IdLuogo = :IdLuogo, Categoria = :Categoria, Testo = :Testo
                 WHERE Id = :Id ;";
     }
     /**
