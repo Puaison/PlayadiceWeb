@@ -69,6 +69,8 @@ class FEvento
             $stmt->bindValue(':IdLuogo', $evento->getLuogo()->getId(), PDO::PARAM_STR);
         if( strpos( $result, ":Categoria" ) !== false)
             $stmt->bindValue(':Categoria', $evento->getCategoria(), PDO::PARAM_STR);
+        if( strpos( $result, ":Testo" ) !== false)
+            $stmt->bindValue(':Testo', $evento->getTesto(), PDO::PARAM_STR);
     }
 
     /**
@@ -84,6 +86,7 @@ class FEvento
         $evento->setFlag($row['Flag']);
         $evento->setLuogo(FPersistantManager::getInstance()->search("Luogo","Id",($row['IdLuogo']))[0]);
         $evento->setCategoria($row['Categoria']);
+        $evento->setTesto(($rom['Testo']));
         $fasce=FPersistantManager::getInstance()->search("Fascia","IdEvento",($row['Id']));
         foreach($fasce as $value){
             $evento->newFascia($value);
