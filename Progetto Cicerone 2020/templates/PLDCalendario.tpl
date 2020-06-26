@@ -45,7 +45,7 @@
 <div class="py-5">
     <div class="container">
         <div class="row ">
-            <div class="col-md-12 " > Ultimi Eventi</div>
+            <div class="col-md-12 pb-3" > Ultimi Eventi</div>
             {section name=k loop=$results}
             <div class="col-md-12">
                 <div class="row">

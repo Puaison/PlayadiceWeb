@@ -42,53 +42,76 @@
         </li>
     </ul>
 </nav>
-<div class="card">
-
-<div class="py-5">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-12">
-
-                <form id="c_form-h" class="">
-
-                    <div class="form-group row"> <label for="name-input" class="col-2 col-form-label">Nome Evento</label>
+<div class="card ">
+    <form id="c_form-h" class="">
+        <div class="py-5">
+            <div class="container ">
+                <div class="col-md-12">
+                    <div class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
                         <div class="col-10">
                             <input type="text" class="form-control" placeholder="Inserisci qui il Testo"> </div>
                     </div>
-                    <div class="form-group row"> <label for="category-input" class="col-2 col-form-label">Categoria</label>
-                        <div class="col-10">
-                    <select class="form-control " id="inlineFormCustomSelect">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                    </div>
-                    </div>
-                    <div class="form-group row"> <label for="category-input" class="col-2 col-form-label">Categoria</label>
-                        <div class="col-10">
-                            <input type="text" class="form-control" placeholder="Testo" id="category-input"> </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="example-date-input" class="col-2 col-form-label">Giorno</label>
-                        <div class="col-10">
-                            <input type="date" class="form-control" id="example-date-input" value="2011-08-19" >
+                    <div class="form-group row"> <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
+                        <div class="col-10 ">
+                            <select class="form-control " id="inlineFormCustomSelect">
+                                <option selected="" value="Choose...">Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="example-time-input" class="col-2 col-form-label">Ora</label>
+                        <div class="col " for="category-input">
+                            <div class="pb-3">
+                                <b>Luogo</b></div>
+                            <div class=" form-group row">
+                                <label for="name-input " class="my-auto px-4 "><b>Nome</b></label>
+                                <div class="col-4 ">
+                                    <input type="text" class="form-control" placeholder="Nome del LUogo">
+                                </div>
+                                <label for="name-input " class="my-auto"><b>Via</b></label>
+                                <div class="col ">
+                                    <input type="text" class="form-control" placeholder="Via xxxxxx, #civico"> </div>
+                            </div>
+                            <div class=" form-group row ">
+                                <label for="name-input " class="my-auto px-4 "><b>Città</b></label>
+                                <div class="col-5  px-4 ">
+                                    <input type="text" class="form-control" placeholder="Città">
+                                </div>
+                                <label for="name-input " class="my-auto"><b>CAP</b></label>
+                                <div class="col  ">
+                                    <input type="text" class="form-control" placeholder="CAP"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
+                        <div class="col-10">
+                            <input type="date" class="form-control" id="example-date-input" value="2011-08-19">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-time-input" class="col-2 col-form-label"><b>Ora</b></label>
                         <div class="col-10">
                             <input type="time" class="form-control" id="example-date-input" value="13:45:00">
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="checkbox input" class="col-2 col-form-label"><b>Prenotazione</b></label>
+                        <div class="pl-4 col-form-label align-content-center pt-3">
+                            <input type="checkbox" class="custo-checkbox" id="checkbox input" ></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"><b>Descrizione</b></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
                     <div class="text-right">
-                    <button type="submit" class="btn btn-primary ">Submit</button></div>
-                </form>
+                        <button type="submit" class="btn btn-primary " >Submit</button></div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </form>
 </div>
 </body>
 </html>
