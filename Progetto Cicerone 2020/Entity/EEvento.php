@@ -28,10 +28,11 @@ class EEvento extends EObject
      * @var array lista delle prenotazioni all'evento
      */
     private $listaPrenotazioni=array();
+    private $testo;
     /**
      * EEvento constructor. Inizializza un oggetto Evento Vuoto
      */
-    private $testo;
+
     function __construct()
     {
         parent ::__construct();

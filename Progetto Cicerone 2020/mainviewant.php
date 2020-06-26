@@ -106,18 +106,45 @@ $luogo->setNome("GrandeInverno");
 $fascia = new EFascia();
 $fascia2 = new EFascia();
 $fascia3 = new EFascia();
+$fascia->setData($data);
+$fascia->setFine($data2);
 $fascia2->setData($data);
 $fascia2 ->setFine($data2);
 $fascia3->setData($data);
 $fascia3 ->setFine($data2);
+
+$fascia->setDuratafromDate($data2);
+$fascia2->setDuratafromDate($data2);
+$fascia3->setDuratafromDate($data2);
 
 $fascia->setData($data);
 $fascia ->setFine($data2);
 $Evento->newFascia($fascia);
 $Evento->newFascia($fascia2);
 $Evento->newFascia($fascia3);
+
+$luogo->setId(1);
 $Evento->setLuogo($luogo);
+$prova= "qwdqwd";
+$Evento->setTesto($prova);
+$Evento->setFlag(true);
 $array = array($Evento,$evento2);
+
+
+$Pippo= FPersistantManager::getInstance()->store($luogo);
+$Pippo = FPersistantManager::getInstance()->store($Evento);
+foreach ($Evento->getFasce() as $value){
+    var_dump ($value);
+    $Pippo = FPersistantManager::getInstance()->store($value);
+    if ($Pippo)
+        echo ("si store avatar2");
+    else
+        echo ("no store avatar2");
+    echo "\n";
+
+}
+
+
 
 
 $smarty ->assign('results',$array);

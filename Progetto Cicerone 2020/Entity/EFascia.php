@@ -48,7 +48,8 @@ class EFascia extends EObject
      */
 
     public function getIdEvento(): int {return $this->idEvento;}
-    public function getData() : String {return date_format($this->inizio,"d/m/Y H:i:s");}
+    public function getDataStr() : String {return date_format($this->inizio,"d/m/Y H:i:s");}
+    public function getData() : DateTime {return $this->inizio;}
     public function getFine() : String {return date_format($this->fine,"d/m/Y H:i:s");}
     public function getDataFine(): String{
         $inizio=$this->inizio;

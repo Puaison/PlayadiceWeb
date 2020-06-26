@@ -29,7 +29,7 @@ $Pippo = FPersistantManager::getInstance()->store($newGioco);
 
 
 //Riprendo il gioco appena inserito nel db per caricare l'id
-$gioco=FPersistantManager::getInstance()->search("gioco", "Id","9")[0];
+/*$gioco=FPersistantManager::getInstance()->search("gioco", "Id","9")[0];
 
 
 $utente=FPersistantManager::getInstance()->search("utente", "UserName", "Puaison")[0];
@@ -54,4 +54,8 @@ FPersistantManager::getInstance()->remove($newrecensione);
 
 
 
-//$gioco=FPersistantManager::getInstance()->search("gioco","Nome","Lupus");
+//$gioco=FPersistantManager::getInstance()->search("gioco","Nome","Lupus");*/
+$newGioco=new EGioco();
+$newGioco->setNome("Happy Salmon");
+$newGioco->setCategoria(EGiocoCategoria::Party);
+$Pippo = FPersistantManager::getInstance()->store($newGioco);

@@ -30,6 +30,7 @@ class FEvento
 
     static function storeEvento() : string
     {
+
         return "INSERT INTO evento(Id, Nome, Flag, IdLuogo, Categoria, Testo)
 				VALUES(:Id, :Nome, :Flag, :IdLuogo, :Categoria, :Testo)";
     }
