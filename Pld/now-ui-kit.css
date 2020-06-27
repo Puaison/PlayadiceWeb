@@ -2121,8 +2121,9 @@ input[type="button"].btn-block {
 
 .collapse {
   display: none; }
-  .collapse.show {
-    display: block; }
+
+.collapse.in {
+  display: block; }
 
 tr.collapse.show {
   display: table-row; }
@@ -7495,3 +7496,4 @@ html, body {
 
 .space {
   visibility: hidden; }
+

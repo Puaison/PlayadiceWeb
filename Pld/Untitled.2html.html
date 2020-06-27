@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
   <link rel="stylesheet" href="now-ui-kit.css" type="text/css">
   <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
-  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
   <title>Playadice - Home</title>
 </head>
 
@@ -43,8 +42,6 @@
     </ul>
   </nav>
   <div class="card ">
-    <button data-toggle="collapse" data-target="#demo">Collapsible</button>
-    <div id="demo" class="collapse"> Lorem ipsum dolor text.... </div>
     <form id="c_form-h" class="">
       <div class="py-5">
         <div class="container ">
@@ -70,7 +67,7 @@
                 <div class=" form-group row">
                   <label for="name-input " class="my-auto px-4 "><b>Nome</b></label>
                   <div class="col-4 ">
-                    <input type="text" class="form-control" placeholder="Nome del LUogo">
+                    <input type="text" class="form-control" placeholder="Nome del Luogo">
                   </div>
                   <label for="name-input " class="my-auto"><b>Via</b></label>
                   <div class="col ">
@@ -87,34 +84,56 @@
                 </div>
               </div>
             </div>
-            <div class="form-group row">
-              <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
-              <div class="col-10">
-                <input type="date" class="form-control" id="example-date-input" value="2011-08-19">
+            <div>
+              <div class="form-group row">
+                <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
+                <div class="col-10">
+                  <input type="date" class="form-control" id="example-date-input" value="2011-08-19">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="example-time-input" class="col-2 col-form-label"><b>Ora</b></label>
+                <div class="col-10">
+                  <input type="time" class="form-control" id="example-date-input" value="13:45:00">
+                </div>
+              </div>
+              <button class="btn btn-primary" data-toggle="collapse" href="#secondo" role="button" aria-expanded="false" aria-controls="secondo"> + </button>
+              <div class="collapse" id="secondo">
+                <div class="form-group row">
+                  <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
+                  <div class="col-10">
+                    <input type="date" class="form-control" id="example-date-input" value="2011-08-19">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="example-time-input" class="col-2 col-form-label"><b>Ora</b></label>
+                  <div class="col-10">
+                    <input type="time" class="form-control" id="example-date-input" value="13:45:00">
+                  </div>
+                </div>
+                <button class="btn btn-primary" id="add2">+</button>
               </div>
             </div>
             <div class="form-group row">
-              <label for="example-time-input" class="col-2 col-form-label"><b>Ora</b></label>
-              <div class="col-10">
-                <input type="time" class="form-control" id="example-date-input" value="13:45:00">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="checkbox input" class="col-form-label"><b>Prenotazione</b></label>
+              <label for="checkbox input" class="col-2 col-form-label"><b>Prenotazione</b></label>
               <div class="pl-4 col-form-label align-content-center pt-3">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="checkbox input"></div>
-              </div>
+                <input type="checkbox" class="custo-checkbox" id="checkbox input"></div>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1"><b>Descrizione</b></label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <div class="text-right">
-              <button type="submit" class="btn btn-primary " style="text-align:left">Submit</button></div>
+              <button type="submit" class="btn btn-primary ">Submit</button></div>
           </div>
         </div>
       </div>
     </form>
   </div>
-  <button data-toggle="collapse" data-target="#demo">Collapsible</button>
-  <div id="demo" class="collapse"> Lorem ipsum dolor text.... </div>
+  <div>
+    <button data-toggle="collapse" data-target="#demo">Collapsible</button>
+    <div id="demo" class="collapse"> Lorem ipsum dolor text.... </div>
+  </div>
   <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 </body>
 

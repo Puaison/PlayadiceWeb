@@ -130,6 +130,9 @@ $Evento->setTesto($prova);
 $Evento->setFlag(true);
 $array = array($Evento,$evento2);
 
+/*
+ *
+ * PERSISTANT MANAGER
 
 $Pippo= FPersistantManager::getInstance()->store($luogo);
 $Pippo = FPersistantManager::getInstance()->store($Evento);
@@ -142,7 +145,7 @@ foreach ($Evento->getFasce() as $value){
         echo ("no store avatar2");
     echo "\n";
 
-}
+}*/
 
 
 

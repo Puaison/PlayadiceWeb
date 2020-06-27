@@ -4,15 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script src="bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
+
 
     <title>Playadice - Home</title>
 </head>
 
 <body>
+
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
     <div class="container">
         <ul class="navbar-nav">
@@ -42,7 +46,9 @@
         </li>
     </ul>
 </nav>
+
 <div class="card ">
+
     <form id="c_form-h" class="">
         <div class="py-5">
             <div class="container ">
@@ -68,7 +74,7 @@
                             <div class=" form-group row">
                                 <label for="name-input " class="my-auto px-4 "><b>Nome</b></label>
                                 <div class="col-4 ">
-                                    <input type="text" class="form-control" placeholder="Nome del LUogo">
+                                    <input type="text" class="form-control" placeholder="Nome del Luogo">
                                 </div>
                                 <label for="name-input " class="my-auto"><b>Via</b></label>
                                 <div class="col ">
@@ -85,18 +91,40 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
-                        <div class="col-10">
-                            <input type="date" class="form-control" id="example-date-input" value="2011-08-19">
+
+
+
+                    <div>
+                        <div class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Aggiungi una Fascia</b></label>
+
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="example-time-input" class="col-2 col-form-label"><b>Ora</b></label>
-                        <div class="col-10">
-                            <input type="time" class="form-control" id="example-date-input" value="13:45:00">
+
+                        {for $foo=1 to 10}
+                            <a class="btn    btn-primary" data-toggle="collapse" href="#{$foo}" role="button" aria-expanded="false" aria-controls="#{$foo}">
+                                +
+                            </a>
+
+                        <div class="collapse" id="{$foo}">
+                            <div class="form-group row">
+                                <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
+                                <div class="col-10">
+                                    <input type="date" class="form-control" id="example-date-input" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-time-input" class="col-2 col-form-label"><b>Ora</b></label>
+                                <div class="col-10">
+                                    <input type="time" class="form-control" id="example-date-input"  >
+                                </div>
+                            </div>
+
                         </div>
+                         {/for}
+
                     </div>
+
+
+
                     <div class="form-group row">
                         <label for="checkbox input" class="col-2 col-form-label"><b>Prenotazione</b></label>
                         <div class="pl-4 col-form-label align-content-center pt-3">
@@ -112,6 +140,8 @@
             </div>
         </div>
     </form>
+
 </div>
+
 </body>
 </html>

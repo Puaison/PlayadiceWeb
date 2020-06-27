@@ -64,11 +64,7 @@
                             <!----inizio selezione fasce---->
                             <!----Data Inizio--->
                             {foreach from=$fasce item=$fascia}
-
-
-
-
-                            <div class="col-xl-6 text-center  " ><b>{$fascia->getData()} </b></div>
+                            <div class="col-xl-6 text-center  " ><b>{$fascia->getDataStr()} </b></div>
 
                                 <div class="col-xl-6 text-center "><b>{$fascia->getFine()} </b></div>
 
@@ -77,10 +73,7 @@
                         </span>
 
 
-                        <p class="card-text mt-sm-3">Some quick example text to build on the card title and make up the bulk of the card's content.
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                            Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
 
                         <div class="text-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
                             <button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>
