@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 16:43:42
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 10:47:08
   from 'D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates\TVGAvatarModify.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef2151e7d0984_91061305',
+  'unifunc' => 'content_5efafc0cdd59b8_33473342',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68119b6ba005341cc948d40431e5deb141e8d7c9' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\Cicero\\Progetto Cicerone 2020\\templates\\TVGAvatarModify.tpl',
-      1 => 1592922576,
+      1 => 1592923866,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5ef2151e7d0984_91061305 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efafc0cdd59b8_33473342 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -35,7 +35,35 @@ function content_5ef2151e7d0984_91061305 (Smarty_Internal_Template $_smarty_tpl)
 
 <body class="">
   <!-- Navbar here -->
-  <!-- Sezione Ricerca here -->
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+        <div class="container">
+                <ul class="navbar-nav">
+                        <ul class="navbar-nav">
+                                <a class="nav-link" href=""> &nbsp;Benvenuto NomeUtente</a>
+                                <a class="nav-link space" href=""> &nbsp;Spazio43</a>
+                                <a class="nav-link" href="#download"> &nbsp;Eventi</a>
+                                <a class="nav-link" href="#download"> &nbsp;Giochi</a>
+                                <a class="nav-link" href="#../main.php"> &nbsp;AreaTWG</a>
+                        </ul>
+                </ul>
+        </div>
+        <div class="container">
+        </div>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark">Login/Logout</a>
+        <a href="" class="nav-link space"> &nbsp;Spazio</a>
+        <ul class="navbar-nav flex-row justify-content-center mt-2 mt-md-0">
+                <li class="nav-item mx-3 mx-md-1">
+                        <a class="nav-link" href="https://www.facebook.com/Playadice/?epa=SEARCH_BOX" data-placement="bottom" data-toggle="tooltip" title="Like us on Facebook">
+                                <i class="fa fa-fw fa-facebook-official fa-2x"></i>
+                        </a>
+                </li>
+                <li class="nav-item ml-1">
+                        <a class="nav-link" href="https://www.instagram.com/playadiceofficial/?hl=it" data-placement="bottom" data-toggle="tooltip" title="Follow us on Instagram">
+                                <i class="fa fa-fw fa-instagram fa-2x"></i>
+                        </a>
+                </li>
+        </ul>
+</nav>  <!-- Sezione Ricerca here -->
   <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
     <!-- Sezionee -->
     <form method="post" id="ModifyAvatarForm">

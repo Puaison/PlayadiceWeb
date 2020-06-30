@@ -14,6 +14,7 @@
 
 <body class="">
   <!-- Navbar here -->
+  {include file="navbar.tpl"}
   <!-- Sezione Ricerca here -->
   <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
     <!-- Sezione I miei PG here -->

@@ -1,30 +1,30 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 16:43:42
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 10:47:08
   from 'D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef2151e7b91c9_35709468',
+  'unifunc' => 'content_5efafc0cdbc308_79137016',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5bb4ea13f163d4a365ad6745aee58b23384ba8b6' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\Cicero\\Progetto Cicerone 2020\\templates\\home.tpl',
-      1 => 1592922858,
+      1 => 1592923769,
       2 => 'file',
     ),
     '9b2f3adad6653a54ebbc324db5235662b8afe304' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\Cicero\\Progetto Cicerone 2020\\templates\\navbar.tpl',
-      1 => 1592922858,
+      1 => 1593506033,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5ef2151e7b91c9_35709468 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efafc0cdbc308_79137016 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -33,8 +33,8 @@ function content_5ef2151e7b91c9_35709468 (Smarty_Internal_Template $_smarty_tpl)
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-        <link rel="stylesheet" href="now-ui-kit.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
+        <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
+        <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
         <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
         <title>Playadice - Home</title>
 </head>
@@ -43,11 +43,11 @@ function content_5ef2151e7b91c9_35709468 (Smarty_Internal_Template $_smarty_tpl)
         <div class="container">
                 <ul class="navbar-nav">
                         <ul class="navbar-nav">
-                                <a class="nav-link" href="#download"> &nbsp;Benvenuto NomeUtente</a>
+                                <a class="nav-link" href=""> &nbsp;Benvenuto NomeUtente</a>
                                 <a class="nav-link space" href=""> &nbsp;Spazio43</a>
                                 <a class="nav-link" href="#download"> &nbsp;Eventi</a>
                                 <a class="nav-link" href="#download"> &nbsp;Giochi</a>
-                                <a class="nav-link" href="#download"> &nbsp;AreaTWG</a>
+                                <a class="nav-link" href="#../main.php"> &nbsp;AreaTWG</a>
                         </ul>
                 </ul>
         </div>

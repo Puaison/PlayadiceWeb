@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 16:39:46
+/* Smarty version 3.1.34-dev-7, created on 2020-06-23 16:51:07
   from 'D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates\TVGAvatarModify.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef214321a4e17_31758458',
+  'unifunc' => 'content_5ef216db0d5795_89674206',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68119b6ba005341cc948d40431e5deb141e8d7c9' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\Cicero\\Progetto Cicerone 2020\\templates\\TVGAvatarModify.tpl',
-      1 => 1592922576,
+      1 => 1592923866,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5ef214321a4e17_31758458 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '12002134875ef214321a44d8_55510486';
+function content_5ef216db0d5795_89674206 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '6804171345ef216db0d4709_05280009';
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,6 +40,8 @@ $_smarty_tpl->compiled->nocache_hash = '12002134875ef214321a44d8_55510486';
 
 <body class="">
   <!-- Navbar here -->
+  <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
   <!-- Sezione Ricerca here -->
   <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
     <!-- Sezionee -->

@@ -1,4 +1,7 @@
 <?php
+
+
+
 require('autoload.php');
 
 
@@ -55,7 +58,38 @@ else
 echo "\n";
 */
 /// ///////////////////////////SEEDER////////////////////////////////
+$msg = 'Messaggio accattivante';
+$title = 'Hello titolo';
 
+$User=new EAdmin();
+
+$User->setNome("Alessio");
+$User->setCognome("Perozzi");
+$User->setEmail("Test@Gmail.com");
+$User->setUsername("Pantaleone");
+$User->setPassword("1234");
+
+/*
+CSession::startSession($User);
+*/
+
+$test=CSession::getUserFromSession();
+var_dump($test);
+
+
+echo ($_SESSION['Name'] );
+echo ($_SESSION['Username'] );
+echo ($_SESSION['type'] );
+echo ("Fine")
+
+/*
+$User2=new EUtente();
+
+$User2->setNome("Luchino");
+$User2->setCognome("Del presidentissimo");
+$User2->setEmail("Test@Gmail.com");
+$User2->setUsername("Puaison");
+$User2->setPassword("ScemoChiLegge");
 
 require_once ('./Smarty/libs/Smarty.class.php');
 
@@ -66,28 +100,6 @@ $smarty -> cache_lifetime = 120;
 
 $smarty -> setCompileDir('templates_c');
 $smarty -> setTemplateDir('templates');
-
-
-$msg = 'Messaggio accattivante';
-$title = 'Hello titolo';
-
-$User=new EUtente();
-
-$User->setNome("Alessio");
-$User->setCognome("Perozzi");
-$User->setEmail("Test@Gmail.com");
-$User->setUsername("Pantaleone");
-$User->setPassword("1234");
-
-$User2=new EUtente();
-
-$User2->setNome("Luchino");
-$User2->setCognome("Del presidentissimo");
-$User2->setEmail("Test@Gmail.com");
-$User2->setUsername("Puaison");
-$User2->setPassword("ScemoChiLegge");
-
-
 
 $array = array($User,$User2);
 
@@ -100,7 +112,7 @@ $smarty->display('TVGMainPage.tpl');
 $smarty->display('TVGAvatarDetails.tpl');
 $smarty->display('TVGAvatarModify.tpl');
 $smarty->display('TVGAvatarApprovazione.tpl');
-
+*/
 
 
 ?>
