@@ -8,6 +8,10 @@
  * @package Foundation
  */
 
+if(file_exists('config.inc.php')) //TODO CAPIRE SE LO TROVA
+    require_once 'config.inc.php';
+
+
 class FPersistantManager
 {
 
@@ -25,7 +29,7 @@ class FPersistantManager
     private function __construct()
     {
         try {
-            global $address, $admin, $pass, $database;
+            global $address, $admin, $pass, $database; //TODO  Prendere info da config.inc.php
             //$this->db = new PDO ("mysql:host=$address;dbname=$database", $admin, $pass); //TODO  MODIFY
             $this->db = new PDO ("mysql:host=127.0.0.1;dbname=playadice", "root"); //TODO  MODIFY
 

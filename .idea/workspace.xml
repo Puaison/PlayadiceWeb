@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/index.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/Foundation/FPersistantManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Foundation/FPersistantManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,14 +195,7 @@
       <workItem from="1593182936334" duration="10540000" />
       <workItem from="1593202933578" duration="12263000" />
       <workItem from="1593506058881" duration="3127000" />
-      <workItem from="1593522209998" duration="327000" />
-    </task>
-    <task id="LOCAL-00007" summary="EDate v0.3">
-      <created>1588061850863</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1588061850863</updated>
+      <workItem from="1593522209998" duration="568000" />
     </task>
     <task id="LOCAL-00008" summary="EDate v0.4">
       <created>1588065505341</created>
@@ -543,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593508373005</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Index.php, rinominazione mainpage">
+      <created>1593522564131</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1593522564131</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="booking 1.0&#10;Date 1.0" />
     <MESSAGE value="event 0.1" />
     <MESSAGE value="Dates classes modified" />
     <MESSAGE value="ulteriori modifiche" />
@@ -589,7 +585,8 @@
     <MESSAGE value="Navbar Aggiunta" />
     <MESSAGE value="Terminata PLDNewEvento.tpl" />
     <MESSAGE value="CSession e test" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSession e test" />
+    <MESSAGE value="Index.php, rinominazione mainpage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Index.php, rinominazione mainpage" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -647,12 +644,12 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="780" y="174" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1593508370757">
+    <state x="780" y="174" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1593522562435">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921707426" />
     <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593218018482" />
-    <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593508370757" />
+    <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593522562435" />
     <state x="1152" y="369" key="FileChooserDialogImpl" timestamp="1590683093706">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -730,12 +727,12 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="873" y="434" key="Vcs.Push.Dialog.v2" timestamp="1593508376015">
+    <state x="873" y="434" key="Vcs.Push.Dialog.v2" timestamp="1593522566259">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921712667" />
     <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593218021736" />
-    <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593508376015" />
+    <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593522566259" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
