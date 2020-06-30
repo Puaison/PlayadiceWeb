@@ -1,23 +1,79 @@
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 17:10:58
+  from 'D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates\PLDNewEvento.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5efb56026b1701_12981424',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '042258a804d5a5f86a623345a22550825eb64adf' => 
+    array (
+      0 => 'D:\\XAMPP2\\htdocs\\Cicero\\Progetto Cicerone 2020\\templates\\PLDNewEvento.tpl',
+      1 => 1593527319,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5efb56026b1701_12981424 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '5653061445efb5602657e55_03175908';
+?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="bootstrap.min.js"></script>
+    <?php echo '<script'; ?>
+ src="//code.jquery.com/jquery-1.11.0.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="bootstrap.min.js"><?php echo '</script'; ?>
+>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
+
+
     <title>Playadice - Home</title>
 </head>
 
 <body>
-{user->getUsername assign='Username'}
 
-
-<!-- Navbar here -->
-{include file="navbar.tpl"}
-
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+    <div class="container">
+        <ul class="navbar-nav">
+            <ul class="navbar-nav">
+                <a class="nav-link" href="#download"> &nbsp;Benvenuto NomeUtente</a>
+                <a class="nav-link space" href=""> &nbsp;Spazio43</a>
+                <a class="nav-link" href="#download"> &nbsp;Eventi</a>
+                <a class="nav-link" href="#download"> &nbsp;Giochi</a>
+                <a class="nav-link" href="#download"> &nbsp;AreaTWG</a>
+            </ul>
+        </ul>
+    </div>
+    <div class="container">
+    </div>
+    <a class="btn navbar-btn ml-md-2 btn-light text-dark">Login/Logout</a>
+    <a href="" class="nav-link space"> &nbsp;Spazio</a>
+    <ul class="navbar-nav flex-row justify-content-center mt-2 mt-md-0">
+        <li class="nav-item mx-3 mx-md-1">
+            <a class="nav-link" href="https://www.facebook.com/Playadice/?epa=SEARCH_BOX" data-placement="bottom" data-toggle="tooltip" title="Like us on Facebook">
+                <i class="fa fa-fw fa-facebook-official fa-2x"></i>
+            </a>
+        </li>
+        <li class="nav-item ml-1">
+            <a class="nav-link" href="https://www.instagram.com/playadiceofficial/?hl=it" data-placement="bottom" data-toggle="tooltip" title="Follow us on Instagram">
+                <i class="fa fa-fw fa-instagram fa-2x"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
 
 <div class="card ">
 
@@ -71,12 +127,19 @@
 
                         </div>
 
-                        {for $foo=1 to 10}
-                            <a class="btn    btn-primary" data-toggle="collapse" href="#{$foo}" role="button" aria-expanded="false" aria-controls="#{$foo}">
+                        <?php
+$_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['foo']->step = 1;$_smarty_tpl->tpl_vars['foo']->total = (int) ceil(($_smarty_tpl->tpl_vars['foo']->step > 0 ? 10+1 - (1) : 1-(10)+1)/abs($_smarty_tpl->tpl_vars['foo']->step));
+if ($_smarty_tpl->tpl_vars['foo']->total > 0) {
+for ($_smarty_tpl->tpl_vars['foo']->value = 1, $_smarty_tpl->tpl_vars['foo']->iteration = 1;$_smarty_tpl->tpl_vars['foo']->iteration <= $_smarty_tpl->tpl_vars['foo']->total;$_smarty_tpl->tpl_vars['foo']->value += $_smarty_tpl->tpl_vars['foo']->step, $_smarty_tpl->tpl_vars['foo']->iteration++) {
+$_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration === 1;$_smarty_tpl->tpl_vars['foo']->last = $_smarty_tpl->tpl_vars['foo']->iteration === $_smarty_tpl->tpl_vars['foo']->total;?>
+                            <a class="btn    btn-primary" data-toggle="collapse" href="#<?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
+" role="button" aria-expanded="false" aria-controls="#<?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
+">
                                 +
                             </a>
 
-                        <div class="collapse" id="{$foo}">
+                        <div class="collapse" id="<?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
+">
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
                                 <div class="col-10">
@@ -91,7 +154,9 @@
                             </div>
 
                         </div>
-                         {/for}
+                         <?php }
+}
+?>
 
                     </div>
 
@@ -116,4 +181,5 @@
 </div>
 
 </body>
-</html>
+</html><?php }
+}

@@ -1,31 +1,29 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-30 16:12:12
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 17:11:06
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDNewEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efb483c756ca8_52146140',
+  'unifunc' => 'content_5efb560a6f09d7_62166450',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6bf16f776f50a3b19723c5089fdadf59c5e04188' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDNewEvento.tpl',
-      1 => 1593526332,
+      1 => 1593529858,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efb483c756ca8_52146140 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '17280672155efb483c71c331_51846229';
-?>
-<!DOCTYPE html>
+function content_5efb560a6f09d7_62166450 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,42 +36,18 @@ $_smarty_tpl->compiled->nocache_hash = '17280672155efb483c71c331_51846229';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
-
-
     <title>Playadice - Home</title>
 </head>
 
 <body>
+<?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
 
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
-    <div class="container">
-        <ul class="navbar-nav">
-            <ul class="navbar-nav">
-                <a class="nav-link" href="#download"> &nbsp;Benvenuto NomeUtente</a>
-                <a class="nav-link space" href=""> &nbsp;Spazio43</a>
-                <a class="nav-link" href="#download"> &nbsp;Eventi</a>
-                <a class="nav-link" href="#download"> &nbsp;Giochi</a>
-                <a class="nav-link" href="#download"> &nbsp;AreaTWG</a>
-            </ul>
-        </ul>
-    </div>
-    <div class="container">
-    </div>
-    <a class="btn navbar-btn ml-md-2 btn-light text-dark">Login/Logout</a>
-    <a href="" class="nav-link space"> &nbsp;Spazio</a>
-    <ul class="navbar-nav flex-row justify-content-center mt-2 mt-md-0">
-        <li class="nav-item mx-3 mx-md-1">
-            <a class="nav-link" href="https://www.facebook.com/Playadice/?epa=SEARCH_BOX" data-placement="bottom" data-toggle="tooltip" title="Like us on Facebook">
-                <i class="fa fa-fw fa-facebook-official fa-2x"></i>
-            </a>
-        </li>
-        <li class="nav-item ml-1">
-            <a class="nav-link" href="https://www.instagram.com/playadiceofficial/?hl=it" data-placement="bottom" data-toggle="tooltip" title="Follow us on Instagram">
-                <i class="fa fa-fw fa-instagram fa-2x"></i>
-            </a>
-        </li>
-    </ul>
-</nav>
+
+
+<!-- Navbar here -->
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 
 <div class="card ">
 
@@ -126,7 +100,7 @@ $_smarty_tpl->compiled->nocache_hash = '17280672155efb483c71c331_51846229';
                         <div class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Aggiungi una Fascia</b></label>
 
                         </div>
-                        
+
                         <?php
 $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['foo']->step = 1;$_smarty_tpl->tpl_vars['foo']->total = (int) ceil(($_smarty_tpl->tpl_vars['foo']->step > 0 ? 10+1 - (1) : 1-(10)+1)/abs($_smarty_tpl->tpl_vars['foo']->step));
 if ($_smarty_tpl->tpl_vars['foo']->total > 0) {

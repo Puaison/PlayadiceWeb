@@ -36,7 +36,7 @@ class CSession
         {
             $uType= 'E'.ucfirst($_SESSION['type']); // determina la entity della tipologia di utente
 
-            echo ($uType);
+
 
             $user = new $uType();
 
