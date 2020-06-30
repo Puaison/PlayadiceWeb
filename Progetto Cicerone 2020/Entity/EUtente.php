@@ -115,13 +115,40 @@ class EUtente
 
     /********************************************** ALTRE FUNZIONI ************************************************/
 
-    /**
-     * Funzione che controlla se tutti i parametri dell'utente registrato sono istanziati e validi
-     */
-    function isValid() : bool
+
+    function validateMail() : bool
     {
-        //TODO CODE
-        return true;
+        if($this->Mail && filter_var($this->Mail, FILTER_VALIDATE_EMAIL))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    /**
+     * Metodo che verifica se l'email dell'istanza sia corretta. Una password corretta
+     * deve contenere almeno un numero, almeno una lettera minuscola e almeno una lettera maiuscola
+     * @return bool true se la password e' corretta, false altrimenti
+     */
+    function validatePassword() : bool
+    {
+        if($this->Password && preg_match('/^[[:alnum:]]{6,20}$/', $this->Password)) // solo numeri-lettere da 6 a 20
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    function validateUsername() : bool
+    {
+        if ($this->Username && preg_match('/^[a-zA-Z0-9_-]{6,15}$/', $this->Username))
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
 }
