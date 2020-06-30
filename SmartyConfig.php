@@ -4,7 +4,7 @@ class SmartyConfig
 
     static function configure() : Smarty
     {
-        require_once ('./Smarty/libs/Smarty.class.php');
+        require_once('./Smarty/libs/Smarty.class.php');
 
         $smarty = new Smarty();
 
