@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 18:40:23
+  from 'D:\XAMPP2\htdocs\playadice\templates\index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5efb6af7769a43_67178256',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '80e694158c926402402e2a101a97be8543158e97' => 
+    array (
+      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\index.tpl',
+      1 => 1593535222,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:navbar.tpl' => 1,
+  ),
+),false)) {
+function content_5efb6af7769a43_67178256 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -19,11 +43,13 @@
 
 <body class="">
 
-{user->getUsername assign='Username'}
+<?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
+
 
 
 <!-- Navbar here -->
-{include file="navbar.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 <!-- Sezione immagini here -->
 <div class="column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;" draggable="true">
         <div class="container py-5">
@@ -99,4 +125,5 @@
 
 </body>
 
-</html>
+</html><?php }
+}
