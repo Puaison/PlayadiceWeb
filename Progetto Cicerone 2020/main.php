@@ -76,12 +76,6 @@ CSession::startSession($User);
 $test=CSession::getUserFromSession();
 var_dump($test);
 
-
-echo ($_SESSION['Name'] );
-echo ($_SESSION['Username'] );
-echo ($_SESSION['type'] );
-echo ("Fine")
-
 /*
 $User2=new EUtente();
 
