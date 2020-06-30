@@ -8,6 +8,12 @@
  */
 class FEvento
 {
+    static function searchEventoByAll() : string
+    {
+        return "SELECT *
+                FROM evento";
+
+    }
 
     static function searchEventoById() : string
     {
@@ -87,9 +93,9 @@ class FEvento
         $evento->setFlag($row['Flag']);
         $evento->setLuogo(FPersistantManager::getInstance()->search("Luogo","Id",($row['IdLuogo']))[0]);
         $evento->setCategoria($row['Categoria']);
-        $evento->setTesto(($rom['Testo']));
+        $evento->setTesto(($row['Testo']));
         $fasce=FPersistantManager::getInstance()->search("Fascia","IdEvento",($row['Id']));
-        foreach($fasce as $value){
+         foreach($fasce as $value){
             $evento->newFascia($value);
         }
         if ($evento->getFlag()!==false){

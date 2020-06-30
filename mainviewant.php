@@ -2,6 +2,8 @@
 require('autoload.php');
 
 
+if(file_exists('config.php'))
+    require_once 'config.php';
 
 ////////////////////////////SEEDER///////////////////////////////
 /*
@@ -146,15 +148,18 @@ foreach ($Evento->getFasce() as $value){
     echo "\n";
 
 }*/
-
+/*
 $smarty = SmartyConfig::configure();
 $user = CSession::getUserFromSession();
 
 $smarty->assign('error', false);
 $smarty->registerObject('user', $user);
 
-$smarty->display('Login.tpl');
+$smarty->display('PLDCalendario.tpl');
 
+*/
 
+$pippo=FPersistantManager::getInstance()->search("Evento","All",'');
+var_dump($pippo);
 
 ?>

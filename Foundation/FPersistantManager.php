@@ -84,6 +84,7 @@ class FPersistantManager
             $method = 'search'.$key.'By'.$value;
             if(method_exists($className, $method))
                 $sql = $className::$method();
+
         }
 
 

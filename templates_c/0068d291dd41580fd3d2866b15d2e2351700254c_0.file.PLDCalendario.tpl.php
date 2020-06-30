@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 22:11:09
+  from 'C:\xampp\htdocs\playadice\templates\PLDCalendario.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5efb9c5debe415_73014372',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '0068d291dd41580fd3d2866b15d2e2351700254c' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDCalendario.tpl',
+      1 => 1593547869,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:navbar.tpl' => 1,
+  ),
+),false)) {
+function content_5efb9c5debe415_73014372 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -18,18 +42,26 @@
 </head>
 
 <body>
-{user->getUsername assign='Username'}
+<?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
+
 
 
 <!-- Navbar here -->
 
-{include file="navbar.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <div class="py-5">
     <div class="container">
         <div class="row ">
             <div class="col-md-12 pb-3" > Ultimi Eventi</div>
-            {section name=k loop=$results}
+            <?php
+$__section_k_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['results']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_k_0_total = $__section_k_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
+if ($__section_k_0_total !== 0) {
+for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_0_iteration <= $__section_k_0_total; $__section_k_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
+?>
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
@@ -37,16 +69,21 @@
                     <div class="my-auto text-center">
                             <div class="px-5">
 
-                            {$results[k]->getNome()}</div></div>
+                            <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
+</div></div>
 
 
                 </div>
 
             </div>
-            {/section}
+            <?php
+}
+}
+?>
         </div>
     </div>
 </div>
 
 </body>
-</html>
+</html><?php }
+}
