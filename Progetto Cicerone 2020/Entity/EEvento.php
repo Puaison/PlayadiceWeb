@@ -28,9 +28,11 @@ class EEvento extends EObject
      * @var array lista delle prenotazioni all'evento
      */
     private $listaPrenotazioni=array();
+    private $testo;
     /**
      * EEvento constructor. Inizializza un oggetto Evento Vuoto
      */
+
     function __construct()
     {
         parent ::__construct();
@@ -45,7 +47,7 @@ class EEvento extends EObject
      * @param bool $flag
      * @param EFascia ...$fascia
      */
-    function setEvento(int $eventId, string $name, string $category, bool $flag,ELuogo $location, array $fascia)
+    function setEvento(int $eventId, string $name, string $category, bool $flag,ELuogo $location, array $fascia, String $testo)
     {
         $this ->luogoEvento = $location;
         $this -> id = $eventId;
@@ -53,7 +55,13 @@ class EEvento extends EObject
         $this -> categoria = $category;
         $this -> flagPrenotazione = $flag;
         $this->listaFasce=$fascia;
+        $this->testo=$testo;
     }
+    /**
+     * Metodo per impostare il testo dell'evento
+     *
+     */
+    function setTesto(string $testo){$this->testo=$testo;}
     /**
      *
      * Metodo per impostare la categoria
@@ -95,10 +103,17 @@ class EEvento extends EObject
     function getNome(): string {return $this->nomeEvento;}
 
     /**
+     * Metodo che restituisce il testo dell'evento
+     * @return string
+     */
+    function getTesto(): string {return $this->testo;}
+
+    /**
      *
      *  Metodo che restituisce la categoria dell'evento
      * @return string
      */
+
     function getCategoria(): string {return $this->categoria;}
 
     /**

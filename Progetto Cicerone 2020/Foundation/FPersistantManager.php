@@ -185,6 +185,7 @@ class FPersistantManager
      */
     function store(&$obj) : bool
     {
+
         $result = false;
         $sql = '';
         $class = '';
@@ -198,7 +199,7 @@ class FPersistantManager
         $method = 'store'.$resource; // nome del metodo store+nome_risorsa
 
         if(class_exists($foundClass) && method_exists($foundClass, $method))  // se la classe esiste e il metodo pure...
-            $sql = $foundClass::$method(); //ottieni la stringa sql
+            $sql = $foundClass::$method($obj); //ottieni la stringa sql
 
         if($sql) //se la stringa sql esiste...
             $result = $this->execStore($obj, $sql); // ... esegui la query
@@ -217,13 +218,16 @@ class FPersistantManager
      */
     private function execStore(&$obj, string $sql)
     {
+
         $this->db->beginTransaction(); //inizio della transazione
         $stmt = $this->db->prepare($sql);
+
 
         // si prepara la query facendo un bind tra parametri e variabili dell'oggetto
         try
         {
             FPersistantManager::bindValues($stmt, $obj); // si associano i valori dell'oggetto alle entry della query
+
             $stmt->execute();
 
             if ($stmt->rowCount()) // si esegue la query
@@ -235,6 +239,7 @@ class FPersistantManager
                     $fascia=$obj->getFasce();
                     foreach ($fascia as $value){
                         $value->setIdEvento($this->db->lastInsertId());
+
                     }
                     if ($obj->getFlag()!==false){
                         $prenotazione =$obj->getPrenotazioni();

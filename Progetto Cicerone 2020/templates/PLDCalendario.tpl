@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
-    <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+
     <title>Playadice - Home</title>
 </head>
 
@@ -45,19 +45,25 @@
 <div class="py-5">
     <div class="container">
         <div class="row ">
-            <div class="col-md-12 " > Ultimi Eventi</div>
+            <div class="col-md-12 pb-3" > Ultimi Eventi</div>
             {section name=k loop=$results}
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
-                    <div class="row justify-item-center" style="">
-                        <div class="col" style="text-align:center"> {$result[k]->getNome()} </div>
-                    </div>
+
+                    <div class="my-auto text-center">
+                            <div class="px-5">
+
+                            {$results[k]->getNome()}</div></div>
+
+
                 </div>
+
             </div>
             {/section}
         </div>
     </div>
 </div>
+
 </body>
 </html>

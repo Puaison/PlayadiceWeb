@@ -30,8 +30,9 @@ class FEvento
 
     static function storeEvento() : string
     {
-        return "INSERT INTO evento(Id, Nome, Flag, IdLuogo, Categoria)
-				VALUES(:Id, :Nome, :Flag, :IdLuogo, :Categoria)";
+
+        return "INSERT INTO evento(Id, Nome, Flag, IdLuogo, Categoria, Testo)
+				VALUES(:Id, :Nome, :Flag, :IdLuogo, :Categoria, :Testo)";
     }
     /**
      * Query che effettua l'aggiornamento di un utente nella table users
@@ -40,7 +41,7 @@ class FEvento
     static function updateEvento() : string
     {
         return "UPDATE evento
-                SET  Nome = :Nome, Flag = :Flag, IdLuogo = :IdLuogo, Categoria = :Categoria
+                SET  Nome = :Nome, Flag = :Flag, IdLuogo = :IdLuogo, Categoria = :Categoria, Testo = :Testo
                 WHERE Id = :Id ;";
     }
     /**
@@ -69,6 +70,8 @@ class FEvento
             $stmt->bindValue(':IdLuogo', $evento->getLuogo()->getId(), PDO::PARAM_STR);
         if( strpos( $result, ":Categoria" ) !== false)
             $stmt->bindValue(':Categoria', $evento->getCategoria(), PDO::PARAM_STR);
+        if( strpos( $result, ":Testo" ) !== false)
+            $stmt->bindValue(':Testo', $evento->getTesto(), PDO::PARAM_STR);
     }
 
     /**
@@ -84,6 +87,7 @@ class FEvento
         $evento->setFlag($row['Flag']);
         $evento->setLuogo(FPersistantManager::getInstance()->search("Luogo","Id",($row['IdLuogo']))[0]);
         $evento->setCategoria($row['Categoria']);
+        $evento->setTesto(($rom['Testo']));
         $fasce=FPersistantManager::getInstance()->search("Fascia","IdEvento",($row['Id']));
         foreach($fasce as $value){
             $evento->newFascia($value);

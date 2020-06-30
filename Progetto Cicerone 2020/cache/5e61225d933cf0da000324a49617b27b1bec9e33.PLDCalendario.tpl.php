@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 17:24:38
+/* Smarty version 3.1.34-dev-7, created on 2020-06-25 21:16:31
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef21eb62b24b8_16908815',
+  'unifunc' => 'content_5ef4f80f7bfe44_90268486',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '898114a7507d3fcf44361458be3a95b2ec65455e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDCalendario.tpl',
-      1 => 1592925876,
+      1 => 1593112590,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5ef21eb62b24b8_16908815 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef4f80f7bfe44_90268486 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -27,9 +27,9 @@ function content_5ef21eb62b24b8_16908815 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
-    <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+
     <title>Playadice - Home</title>
 </head>
 
@@ -63,7 +63,6 @@ function content_5ef21eb62b24b8_16908815 (Smarty_Internal_Template $_smarty_tpl)
         </li>
     </ul>
 </nav>
-Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 <div class="py-5">
     <div class="container">
         <div class="row ">
@@ -71,21 +70,33 @@ Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pi
                         <div class="col-md-12">
                 <div class="row">
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
-                    <div class="row justify-item-center" style="">
-                        <div class="col" style="text-align:center"> $result[k]-&gt;getNome() </div>
-                    </div>
+
+                    <div class="my-auto text-center">
+                            <div class="px-5">
+
+                            PRova1</div></div>
+
+
                 </div>
+
             </div>
                         <div class="col-md-12">
                 <div class="row">
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
-                    <div class="row justify-item-center" style="">
-                        <div class="col" style="text-align:center"> $result[k]-&gt;getNome() </div>
-                    </div>
+
+                    <div class="my-auto text-center">
+                            <div class="px-5">
+
+                            Prova2</div></div>
+
+
                 </div>
+
             </div>
                     </div>
     </div>
+</div>
+
 </div>
 </body>
 </html><?php }

@@ -1,28 +1,3 @@
-<?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-25 21:16:31
-  from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDCalendario.tpl' */
-
-/* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef4f80f7b06e3_10761514',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '898114a7507d3fcf44361458be3a95b2ec65455e' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDCalendario.tpl',
-      1 => 1593112590,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5ef4f80f7b06e3_10761514 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '10975982395ef4f80f764850_57913590';
-?>
 <!DOCTYPE html>
 <html>
 
@@ -33,7 +8,6 @@ $_smarty_tpl->compiled->nocache_hash = '10975982395ef4f80f764850_57913590';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="/Progetto-PW/Pld/now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
-
     <title>Playadice - Home</title>
 </head>
 
@@ -69,38 +43,47 @@ $_smarty_tpl->compiled->nocache_hash = '10975982395ef4f80f764850_57913590';
 </nav>
 <div class="py-5">
     <div class="container">
-        <div class="row ">
-            <div class="col-md-12 " > Ultimi Eventi</div>
-            <?php
-$__section_k_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['results']->value) ? count($_loop) : max(0, (int) $_loop));
-$__section_k_0_total = $__section_k_0_loop;
-$_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
-if ($__section_k_0_total !== 0) {
-for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_0_iteration <= $__section_k_0_total; $__section_k_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
-?>
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
+        <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 p-0"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg" style="" h="100" w="100"> </div>
+            <div class="px-5 col-lg-6 d-flex flex-column align-items-start justify-content-center order-1 order-lg-2" >
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>{$results[0]->getNome()}</b></h5>
+                        <h6 class="card-subtitle my-2 text-muted">{$results[0]->getCategoria()}</h6>
+                        <h6 class="card-subtitle my-2 text-">{$results[0]->getLuogo()}</h6>
 
-                    <div class="my-auto text-center">
-                            <div class="px-5">
+                        <div class="row">
 
-                            <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
-</div></div>
+                            <div class="col-xl-12 text-center border-secondary  "><b>orari</b></div>
+                            <div class="col-xl-6 text-center "><b>Inizio </b></div>
+
+                            <div class="col-xl-6 text-center "><b>Fine </b></div>
+
+                            {$fasce=$results[0]->getFasce()}
+
+                            <!----inizio selezione fasce---->
+                            <!----Data Inizio--->
+                            {foreach from=$fasce item=$fascia}
+                            <div class="col-xl-6 text-center  " ><b>{$fascia->getDataStr()} </b></div>
+
+                                <div class="col-xl-6 text-center "><b>{$fascia->getFine()} </b></div>
+
+                            {/foreach}
+                        </div>
+                        </span>
 
 
+                        <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
+
+                        <div class="text-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
+                            <button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>
+                    </div>
                 </div>
-
             </div>
-            <?php
-}
-}
-?>
         </div>
     </div>
 </div>
-
-</div>
 </body>
-</html><?php }
-}
+
+</html>
+
