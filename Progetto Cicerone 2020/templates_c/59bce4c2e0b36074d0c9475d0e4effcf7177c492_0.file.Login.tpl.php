@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-30 16:58:01
-  from 'D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates\Login.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 17:11:18
+  from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efb52f9e417c2_11716520',
+  'unifunc' => 'content_5efb56168ccaa3_31175429',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '96c97fa5953d056cdd3d9a4efddb9d2f3a52080b' => 
+    '59bce4c2e0b36074d0c9475d0e4effcf7177c492' => 
     array (
-      0 => 'D:\\XAMPP2\\htdocs\\Cicero\\Progetto Cicerone 2020\\templates\\Login.tpl',
-      1 => 1593529081,
+      0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\Login.tpl',
+      1 => 1593529401,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efb52f9e417c2_11716520 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb56168ccaa3_31175429 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

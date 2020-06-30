@@ -1,9 +1,9 @@
 <?php
-
 /**
  * La classe VObject contiene gli attributi e le funzioni base adoperati in tutto il package View.
  * Oltre ad un metodo per la visualizzazione di una pagina di errore, il costruttore istanzia l'oggetto
  * Smarty adoperato alla visualizzazione dei template .tpl.
+ * @author gruppo2
  * @package View
  *
  */
@@ -24,13 +24,13 @@ class VObject
     /**
      * Mostra una pagina di errore, funzione da richiamare se un utente sta visualizzando una pagina
      * che non risulta essere di sua competenza
-     * @param EUtente $user l'utente della sessione
+     * @param EUtente $utente l'utente della sessione
      * @param string $error il messaggio di errore da visualizzare
      */
-    function showErrorPage(EUtente &$user, string $error)
+    function showErrorPage(EUtente &$utente, string $error)
     {
-        $this->smarty->registerObject('user', $user);
-        $this->smarty->assign('uType', lcfirst(substr(get_class($user), 1)));
+        $this->smarty->registerObject('utente', $utente);
+        $this->smarty->assign('uType', lcfirst(substr(get_class($utente), 1)));
         $this->smarty->assign('error', $error);
         $this->smarty->display('errorPage.tpl');
     }

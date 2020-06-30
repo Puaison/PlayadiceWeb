@@ -57,7 +57,7 @@ echo "\n";
 /// ///////////////////////////SEEDER////////////////////////////////
 
 
-require_once ('./Smarty/libs/Smarty.class.php');
+/*require_once ('./Smarty/libs/Smarty.class.php');
 
 $smarty = new Smarty;
 $smarty -> caching= true;
@@ -128,7 +128,7 @@ $Evento->setLuogo($luogo);
 $prova= "qwdqwd";
 $Evento->setTesto($prova);
 $Evento->setFlag(true);
-$array = array($Evento,$evento2);
+$array = array($Evento,$evento2);*/
 
 /*
  *
@@ -147,17 +147,13 @@ foreach ($Evento->getFasce() as $value){
 
 }*/
 
+$smarty = SmartyConfig::configure();
+$user = CSession::getUserFromSession();
 
+$smarty->assign('error', false);
+$smarty->registerObject('user', $user);
 
-
-$smarty ->assign('results',$array);
-$smarty ->assign('title',$title);
-$smarty ->assign('message',$msg);
-
-
-
-$smarty->display('PLDNewEvento.tpl');
-
+$smarty->display('Login.tpl');
 
 
 
