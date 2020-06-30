@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-25 20:57:03
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 16:09:59
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef4f37f6a7879_85335316',
+  'unifunc' => 'content_5efb47b7d98aa8_97190989',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9ed423723458fb9e174a7b18af8bbd6cf2c481e2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDEvento.tpl',
-      1 => 1593005929,
+      1 => 1593203253,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5ef4f37f6a7879_85335316 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb47b7d98aa8_97190989 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -83,27 +83,15 @@ function content_5ef4f37f6a7879_85335316 (Smarty_Internal_Template $_smarty_tpl)
                             
                             <!----inizio selezione fasce---->
                             <!----Data Inizio--->
-                            
-
-
-
-                            <div class="col-xl-6 text-center  " ><b>12/05/2020 20:00:00 </b></div>
+                                                        <div class="col-xl-6 text-center  " ><b>12/05/2020 20:00:00 </b></div>
 
                                 <div class="col-xl-6 text-center "><b>13/05/2020 20:00:00 </b></div>
 
-                            
-
-
-
-                            <div class="col-xl-6 text-center  " ><b>12/05/2020 20:00:00 </b></div>
+                                                        <div class="col-xl-6 text-center  " ><b>12/05/2020 20:00:00 </b></div>
 
                                 <div class="col-xl-6 text-center "><b>13/05/2020 20:00:00 </b></div>
 
-                            
-
-
-
-                            <div class="col-xl-6 text-center  " ><b>12/05/2020 20:00:00 </b></div>
+                                                        <div class="col-xl-6 text-center  " ><b>12/05/2020 20:00:00 </b></div>
 
                                 <div class="col-xl-6 text-center "><b>13/05/2020 20:00:00 </b></div>
 
@@ -111,10 +99,7 @@ function content_5ef4f37f6a7879_85335316 (Smarty_Internal_Template $_smarty_tpl)
                         </span>
 
 
-                        <p class="card-text mt-sm-3">Some quick example text to build on the card title and make up the bulk of the card's content.
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                            Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text mt-sm-3">qwdqwd</p>
 
                         <div class="text-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
                             <button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-23 16:41:59
-  from 'C:\xampp\htdocs\Progetto Web\Progetto Cicerone 2020\templates\home.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 16:11:09
+  from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef214b77d8b37_89753101',
+  'unifunc' => 'content_5efb47fd2e71e6_29325815',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '235c56e9055ecde7c2ed04be7b7690a38d20a3a6' => 
+    '4ddb166f3c86108a039abbb0a2a69384964407a8' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Progetto Web\\Progetto Cicerone 2020\\templates\\home.tpl',
-      1 => 1592923183,
+      0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\index.tpl',
+      1 => 1593523186,
       2 => 'file',
     ),
   ),
@@ -21,10 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5ef214b77d8b37_89753101 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '20125488515ef214b76f83a5_94049243';
-?>
-<!DOCTYPE html>
+function content_5efb47fd2e71e6_29325815 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -38,8 +36,9 @@ $_smarty_tpl->compiled->nocache_hash = '20125488515ef214b76f83a5_94049243';
         <title>Playadice - Home</title>
 </head>
 <body>
-<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array(), 0, false);
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
 </body>
 </html><?php }
 }

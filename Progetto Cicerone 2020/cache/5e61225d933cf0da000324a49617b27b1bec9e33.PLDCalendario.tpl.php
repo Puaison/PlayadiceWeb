@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-25 21:16:31
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 16:11:19
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef4f80f7bfe44_90268486',
+  'unifunc' => 'content_5efb480796e4b9_14039694',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '898114a7507d3fcf44361458be3a95b2ec65455e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDCalendario.tpl',
-      1 => 1593112590,
+      1 => 1593166689,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5ef4f80f7bfe44_90268486 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb480796e4b9_14039694 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -66,7 +66,7 @@ function content_5ef4f80f7bfe44_90268486 (Smarty_Internal_Template $_smarty_tpl)
 <div class="py-5">
     <div class="container">
         <div class="row ">
-            <div class="col-md-12 " > Ultimi Eventi</div>
+            <div class="col-md-12 pb-3" > Ultimi Eventi</div>
                         <div class="col-md-12">
                 <div class="row">
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
@@ -97,7 +97,6 @@ function content_5ef4f80f7bfe44_90268486 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 </div>
 
-</div>
 </body>
 </html><?php }
 }

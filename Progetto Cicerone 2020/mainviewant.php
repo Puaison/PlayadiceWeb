@@ -156,7 +156,7 @@ $smarty ->assign('message',$msg);
 
 
 
-$smarty->display('PLDEvento.tpl');
+$smarty->display('PLDNewEvento.tpl');
 
 
 
