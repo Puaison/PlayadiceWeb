@@ -47,7 +47,7 @@ class FrontController
                 $user = CSession::getUserFromSession();
                 $smarty = SmartyConfig::configure();
                 $smarty->registerObject('user', $user);
-                $smarty->assign('uType', lcfirst(substr(get_class($user),1)));
+                //$smarty->assign('uType', lcfirst(substr(get_class($user),1)));
                 $smarty->display('index.tpl');
             }
         }
@@ -56,7 +56,7 @@ class FrontController
             $user = CSession::getUserFromSession();
             $smarty = SmartyConfig::configure();
             $smarty->registerObject('user', $user);
-            $smarty->assign('uType', lcfirst(substr(get_class($user),1)));
+            //$smarty->assign('uType', lcfirst(substr(get_class($user),1)));
 
             $smarty->display('index.tpl');
         }

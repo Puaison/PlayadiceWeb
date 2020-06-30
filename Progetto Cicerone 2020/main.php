@@ -68,16 +68,10 @@ $User->setUsername("Pantaleone3");
 $User->setPassword("12342");
 
 
-$Pippo = FPersistantManager::getInstance()->store($User);
-if ($Pippo)
-    echo ("si store user");
-else
-    echo ("no store user");
-echo "\n";
 
-/*
 CSession::startSession($User);
 
+/*
 $test=CSession::getUserFromSession();
 var_dump($test);
 */
