@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="Primo template funzionante per il progetto wooooo">
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/Login.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/96c97fa5953d056cdd3d9a4efddb9d2f3a52080b_0.file.Login.tpl.php" afterDir="false" />
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/5bfcc2d29a7e99596cdd8b0938237367f9fda53d_0.file.Login.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates_c/766fac2c6e8e732be684b74568ce1d424f38792e_0.file.navbar.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/Controller/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Controller/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/Login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/templates/Login.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4" />
   <component name="ProjectId" id="1b1sSlXwN45z6KDdWDtA6oy4m8U" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -132,9 +131,9 @@
     <list>
       <item itemvalue="JavaScript Debug.PLDEvento.tpl" />
       <item itemvalue="PHP Script.main.php" />
-      <item itemvalue="PHP Script.testantonio.php" />
-      <item itemvalue="PHP Script.mainviewant.php" />
       <item itemvalue="PHP Script.maindbGioco.php" />
+      <item itemvalue="PHP Script.mainviewant.php" />
+      <item itemvalue="PHP Script.testantonio.php" />
     </list>
     <recent_temporary>
       <list>
@@ -604,10 +603,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="873" y="359" key="#Notifications/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590953839775" />
-    <state x="742" y="224" key="#PHP" timestamp="1589353066950">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="742" y="216" key="#PHP" timestamp="1593529557447">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="742" y="216" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1589295705696" />
+    <state x="742" y="216" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1593529557447" />
     <state x="742" y="224" key="#PHP/0.0.1920.1080@0.0.1920.1080" timestamp="1589353066950" />
     <state x="989" y="291" key="#PHP/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1587817129104" />
     <state x="873" y="359" key="#SQL_Dialects" timestamp="1590328750852">
