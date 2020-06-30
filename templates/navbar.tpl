@@ -13,7 +13,7 @@
         <div class="container">
         </div>
 
-        <li><a href="/playadice/user/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+        <li><a href="/playadice/utente/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
 
         <a class="btn navbar-btn ml-md-2 btn-light text-dark">Login/Logout</a>
 

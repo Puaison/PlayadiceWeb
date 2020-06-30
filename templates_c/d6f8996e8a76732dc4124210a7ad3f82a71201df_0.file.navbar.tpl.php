@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-30 18:38:49
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 18:46:19
   from 'D:\XAMPP2\htdocs\playadice\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efb6a99ae9ce7_23213469',
+  'unifunc' => 'content_5efb6c5b5d3c06_88810433',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd6f8996e8a76732dc4124210a7ad3f82a71201df' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\navbar.tpl',
-      1 => 1593534567,
+      1 => 1593535566,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5efb6a99ae9ce7_23213469 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb6c5b5d3c06_88810433 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container">
                 <ul class="navbar-nav">
@@ -37,7 +37,7 @@ function content_5efb6a99ae9ce7_23213469 (Smarty_Internal_Template $_smarty_tpl)
         <div class="container">
         </div>
 
-        <li><a href="/playadice/user/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+        <li><a href="/playadice/utente/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
 
         <a class="btn navbar-btn ml-md-2 btn-light text-dark">Login/Logout</a>
 

@@ -1,5 +1,4 @@
 <?php
-require_once 'inc.php';
 include_once 'View/VObject.php';
 
 /**
@@ -98,7 +97,7 @@ class VUtente extends VObject
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('error', $error);
 
-        $this->smarty->display('user/login.tpl');
+        $this->smarty->display('Login.tpl');
     }
 
     /**
