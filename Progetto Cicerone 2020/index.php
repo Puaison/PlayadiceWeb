@@ -1,5 +1,8 @@
 <?php
+
 require('autoload.php');
+if(file_exists('config.php'))
+    require_once 'config.php';
 
 /*
 if(CSession::checkPopulateApplication())
@@ -11,7 +14,7 @@ if(CSession::checkPopulateApplication())
 }
 else*/
 
-if(file_exists('config.inc.php'))
+if(file_exists('config.php'))
 {
     $controller = new FrontController();
     $controller->run();

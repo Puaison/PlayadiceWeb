@@ -1,10 +1,8 @@
 <?php
 
-
-
 require('autoload.php');
-
-
+if(file_exists('config.php'))
+    require_once 'config.php';
 
 ////////////////////////////SEEDER///////////////////////////////
 /*
@@ -63,18 +61,26 @@ $title = 'Hello titolo';
 
 $User=new EAdmin();
 
-$User->setNome("Alessio");
-$User->setCognome("Perozzi");
-$User->setEmail("Test@Gmail.com");
-$User->setUsername("Pantaleone");
-$User->setPassword("1234");
+$User->setNome("Alessio2");
+$User->setCognome("Perozzi2");
+$User->setEmail("Test@Gmail.com2");
+$User->setUsername("Pantaleone3");
+$User->setPassword("12342");
+
+
+$Pippo = FPersistantManager::getInstance()->store($User);
+if ($Pippo)
+    echo ("si store user");
+else
+    echo ("no store user");
+echo "\n";
 
 /*
 CSession::startSession($User);
-*/
 
 $test=CSession::getUserFromSession();
 var_dump($test);
+*/
 
 /*
 $User2=new EUtente();
