@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -23,7 +22,9 @@
 
 
 <!-- Navbar here -->
+
 {include file="navbar.tpl"}
+
 <!-- Sezione immagini here -->
 <div class="column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;" draggable="true">
         <div class="container py-5">

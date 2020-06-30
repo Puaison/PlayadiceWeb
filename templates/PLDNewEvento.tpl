@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +13,8 @@
 </head>
 
 <body>
+
+
 {user->getUsername assign='Username'}
 
 

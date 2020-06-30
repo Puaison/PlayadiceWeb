@@ -1,6 +1,4 @@
 <?php
-
-
 class VEvento extends VObject
 {
     function __construct()

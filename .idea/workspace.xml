@@ -2,21 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Controller/CEvento.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/VEvento.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/79d64fdf98811e552203bc6b99bf52046ec6e9df_0.file.errorPage.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/f7cde22e67172b46f639058d00963c373408923f_0.file.Login.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FEvento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FPersistantManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistantManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainviewant.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainviewant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/PLDCalendario.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDCalendario.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CEvento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VEvento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PLDEvento.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDEvento.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PLDNewEvento.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDNewEvento.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/navbar.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/042258a804d5a5f86a623345a22550825eb64adf_0.file.PLDNewEvento.tpl.cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/4ddb166f3c86108a039abbb0a2a69384964407a8_0.file.index.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/59bce4c2e0b36074d0c9475d0e4effcf7177c492_0.file.Login.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/602044d27ac35b23d44cb351465000a2f20dad41_0.file.Register.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/6523d482590db283637248c07c9b8544ea7c78b2_0.file.errorPage.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/66d47dfe177e5ef79d428c929d0329102330b59a_0.file.Login.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/6bf16f776f50a3b19723c5089fdadf59c5e04188_0.file.PLDNewEvento.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/79d64fdf98811e552203bc6b99bf52046ec6e9df_0.file.errorPage.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/80e694158c926402402e2a101a97be8543158e97_0.file.index.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/899effc6617f7fc08632056dc065473418b12703_0.file.index.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/96c97fa5953d056cdd3d9a4efddb9d2f3a52080b_0.file.Login.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/9a4808d39d2aeb2e256d4b8f732c5de6dadaedcd_0.file.navbar.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/9b2f3adad6653a54ebbc324db5235662b8afe304_0.file.navbar.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/d6f8996e8a76732dc4124210a7ad3f82a71201df_0.file.navbar.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/f7cde22e67172b46f639058d00963c373408923f_0.file.Login.tpl.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,14 +224,7 @@
       <workItem from="1593506058881" duration="3127000" />
       <workItem from="1593522209998" duration="2635000" />
       <workItem from="1593534572536" duration="2662000" />
-      <workItem from="1593540959995" duration="6913000" />
-    </task>
-    <task id="LOCAL-00014" summary="booking 1.0&#10;Date 1.0">
-      <created>1588355994888</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1588355994888</updated>
+      <workItem from="1593540959995" duration="7852000" />
     </task>
     <task id="LOCAL-00015" summary="booking 1.0&#10;Date 1.0">
       <created>1588356609802</created>
@@ -557,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593535958801</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Update Evento">
+      <created>1593547934853</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1593547934854</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +599,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="EData.php EFascia.php 1.0 con phpdocs" />
     <MESSAGE value="Prove sulle recensioni e i giochi" />
     <MESSAGE value="PORCODIO&#10;4\" />
     <MESSAGE value="EPrenotazione.php 1.0 con php docs" />
@@ -612,7 +623,8 @@
     <MESSAGE value="Spostamento Cartelle" />
     <MESSAGE value="Cambi ai riferimenti" />
     <MESSAGE value="Login.tpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login.tpl" />
+    <MESSAGE value="Update Evento" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Evento" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -675,11 +687,11 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="780" y="174" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1593535957183">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1593547933609">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921707426" />
-    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593218018482" />
+    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593547933609" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593535957183" />
     <state x="1152" y="369" key="FileChooserDialogImpl" timestamp="1590683093706">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -758,11 +770,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="873" y="434" key="Vcs.Push.Dialog.v2" timestamp="1593535961348">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1593547937111">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921712667" />
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593529863386" />
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593547937111" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593535961348" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -784,10 +796,10 @@
       <screen x="3840" y="591" width="1920" height="1020" />
     </state>
     <state x="3840" y="613" width="1936" height="1085" maximized="true" key="dock-window-1/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590929747423" />
-    <state x="667" y="273" width="585" height="534" key="find.popup" timestamp="1593547144674">
+    <state x="667" y="273" width="585" height="534" key="find.popup" timestamp="1593548755804">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="667" y="273" width="585" height="534" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593547144674" />
+    <state x="667" y="273" width="585" height="534" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593548755804" />
     <state x="649" y="311" key="git4idea.merge.GitPullDialog" timestamp="1589295097279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

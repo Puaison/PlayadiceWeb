@@ -19,7 +19,7 @@ if(file_exists('config.php'))
     $controller = new FrontController();
     $controller->run();
 }
-
+prova
 /*
 elseif(Installation::makeInstallation()){
     CSession::populateApplication();

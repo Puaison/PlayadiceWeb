@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
     <title>Playadice - Home</title>
 </head>
-
 <body>
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
     <div class="container">
