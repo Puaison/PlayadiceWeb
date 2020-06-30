@@ -56,8 +56,7 @@ else
 echo "\n";
 */
 /// ///////////////////////////SEEDER////////////////////////////////
-$msg = 'Messaggio accattivante';
-$title = 'Hello titolo';
+/*
 
 $User=new EAdmin();
 
@@ -71,7 +70,7 @@ $User->setPassword("12342");
 
 CSession::startSession($User);
 
-/*
+
 $test=CSession::getUserFromSession();
 var_dump($test);
 */
@@ -86,27 +85,16 @@ $User2->setUsername("Puaison");
 $User2->setPassword("ScemoChiLegge");
 
 require_once ('./Smarty/libs/Smarty.class.php');
-
-$smarty = new Smarty;
-$smarty -> caching= true;
-$smarty -> cache_lifetime = 120;
-
-
-$smarty -> setCompileDir('templates_c');
-$smarty -> setTemplateDir('templates');
-
-$array = array($User,$User2);
-
-$smarty ->assign('results',$array);
-$smarty ->assign('title',$title);
-$smarty ->assign('message',$msg);
-
-$smarty->display('home.tpl');
-$smarty->display('TVGMainPage.tpl');
-$smarty->display('TVGAvatarDetails.tpl');
-$smarty->display('TVGAvatarModify.tpl');
-$smarty->display('TVGAvatarApprovazione.tpl');
 */
+
+$smarty = SmartyConfig::configure();
+$user = CSession::getUserFromSession();
+
+$smarty->assign('error', false);
+$smarty->registerObject('user', $user);
+
+$smarty->display('Login.tpl');
+
 
 
 ?>
