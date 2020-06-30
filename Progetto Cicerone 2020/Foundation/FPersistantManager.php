@@ -7,6 +7,9 @@
  * @author gruppo 2
  * @package Foundation
  */
+//TODO Capire se il config.inc.php lo vede anche se non ho detto tutto il path
+if(file_exists('config.inc.php'))
+    require_once 'config.inc.php';
 
 class FPersistantManager
 {
@@ -26,8 +29,8 @@ class FPersistantManager
     {
         try {
             global $address, $admin, $pass, $database;
-            //$this->db = new PDO ("mysql:host=$address;dbname=$database", $admin, $pass); //TODO  MODIFY
-            $this->db = new PDO ("mysql:host=127.0.0.1;dbname=playadice", "root"); //TODO  MODIFY
+            $this->db = new PDO ("mysql:host=$address;dbname=$database", $admin, $pass); //TODO  MODIFY
+            //$this->db = new PDO ("mysql:host=127.0.0.1;dbname=playadice", "root"); //TODO  MODIFY
 
         } catch (PDOException $e) {
             echo "Errore : " . $e->getMessage();
