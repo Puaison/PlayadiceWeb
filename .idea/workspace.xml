@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/Foundation/FPersistantManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/Foundation/FPersistantManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto Cicerone 2020/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.inc.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -711,10 +706,10 @@
     <state x="788" y="319" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589117821960" />
     <state x="788" y="331" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352773357" />
     <state x="1050" y="429" key="NewPhpClassDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590935158938" />
-    <state x="1059" y="596" key="NewPhpFileDialog" timestamp="1593522426474">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1593525071337">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592922591040" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593525071337" />
     <state x="794" y="460" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352792870" />
     <state x="1059" y="596" key="NewPhpFileDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593522426474" />
     <state x="795" y="231" key="RollbackChangesDialog" timestamp="1589295141490">
