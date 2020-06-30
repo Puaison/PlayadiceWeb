@@ -63,7 +63,6 @@ class VUtente extends VObject
         {
             return false;
         }
-
     }
 
     /**

@@ -96,8 +96,6 @@ $smarty->registerObject('user', $user);
 $smarty->display('Login.tpl');
 */
 
-$Pippo = FPersistantManager::getInstance()->search("utente", "UserName", "Pantaleone"); // si verifica che l'utente inserito matchi una entry nel db
-var_dump($Pippo[0]);
 
 
 ?>

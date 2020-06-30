@@ -13,9 +13,11 @@
         <div class="container">
         </div>
 
-        <li><a href="/playadice/utente/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
-
-        <a class="btn navbar-btn ml-md-2 btn-light text-dark">Login/Logout</a>
+        {if $Username eq "Ospite"}
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/utente/login">Login/Sign Up</a>
+        {else}
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/utente/logout">Logout</a>
+        {/if}
 
         <a href="" class="nav-link space"> &nbsp;Spazio</a>
         <ul class="navbar-nav flex-row justify-content-center mt-2 mt-md-0">

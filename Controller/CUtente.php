@@ -71,13 +71,8 @@ class CUtente
         $vUser = new VUtente();
         $loggedUser = $vUser->createUser();
 
-        var_dump($loggedUser);
-
         if($vUser->validateLogin($loggedUser))
         {
-
-            echo ("ciao");
-
             $authenticated = false; // bool per l'autenticazione
             $userExists = FPersistantManager::getInstance()->exists("utente", "UserName", $loggedUser->getUsername()); // si verifica che l'utente inserito matchi una entry nel db
             if($userExists) // se esiste
@@ -91,6 +86,8 @@ class CUtente
                     $authenticated = true; // l'utente e' autenticato
 
                     CSession::startSession($user[0]);
+
+                    header('Location: /playadice/index');
                 }
             }
             if(!$authenticated)
