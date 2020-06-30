@@ -17,7 +17,6 @@ class EOspite extends EUtente
         unset($this->Nome);
         unset($this->Password);
 
-        $this->id=0;
         $this->Username="Ospite";
     }
 }
