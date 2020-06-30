@@ -58,7 +58,7 @@ class CUtente
     static function logout()
     {
         CSession::destroySession();
-        header('Location: /deepmusic/home');
+        header('Location: /playadice/home');
     }
 
     /**
@@ -71,12 +71,15 @@ class CUtente
         $vUser = new VUtente();
         $loggedUser = $vUser->createUser();
 
+        var_dump($loggedUser);
+
         if($vUser->validateLogin($loggedUser))
         {
+
+            echo ("ciao");
+
             $authenticated = false; // bool per l'autenticazione
-
             $userExists = FPersistantManager::getInstance()->exists("utente", "UserName", $loggedUser->getUsername()); // si verifica che l'utente inserito matchi una entry nel db
-
             if($userExists) // se esiste
             {
                 $user = FPersistantManager::getInstance()->search("utente", "UserName", $loggedUser->getUsername());

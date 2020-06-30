@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-30 18:41:32
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 19:02:45
   from 'D:\XAMPP2\htdocs\playadice\templates\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efb6b3c82fef5_71002143',
+  'unifunc' => 'content_5efb70358470f9_78569891',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '66d47dfe177e5ef79d428c929d0329102330b59a' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\Login.tpl',
-      1 => 1593535291,
+      1 => 1593536563,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efb6b3c82fef5_71002143 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb70358470f9_78569891 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,14 +34,13 @@ function content_5efb6b3c82fef5_71002143 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="Pld/now-ui-kit.css" type="text/css">
-    <link rel="stylesheet" href="Pld/assets/css/nucleo-icons.css" type="text/css">
+    <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
     <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-    <title>Log In</title>
+    <title>Html Test</title>
 </head>
-<body>
 
-
+<body class="">
 
 <?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
 

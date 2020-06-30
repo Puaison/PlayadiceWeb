@@ -29,6 +29,7 @@ class VUtente extends VObject
      */
     function createUser() : EUtente
     {
+
         $user = null;
         if(isset($_POST['type']))
         {
