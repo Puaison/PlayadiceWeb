@@ -4,7 +4,7 @@
                         <ul class="navbar-nav">
                                 <a class="nav-link" href=""> &nbsp;Benvenuto {$Username} </a>
                                 <a class="nav-link space" href=""> &nbsp;Spazio43</a>
-                                <a class="nav-link" href="#download"> &nbsp;Eventi</a>
+                                <a class="nav-link" href="mainviewant.php"> &nbsp;Eventi</a>
                                 <a class="nav-link" href="#download"> &nbsp;Giochi</a>
                                 <a class="nav-link" href="#../main.php"> &nbsp;AreaTWG</a>
                         </ul>

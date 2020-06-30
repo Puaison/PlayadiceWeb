@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-30 16:12:12
+/* Smarty version 3.1.34-dev-7, created on 2020-06-30 17:02:29
   from 'C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates\PLDNewEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efb483c75f641_12500087',
+  'unifunc' => 'content_5efb5405d1ca66_05008476',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6bf16f776f50a3b19723c5089fdadf59c5e04188' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Progetto-PW\\Progetto Cicerone 2020\\templates\\PLDNewEvento.tpl',
-      1 => 1593526332,
+      1 => 1593526339,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5efb483c75f641_12500087 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb5405d1ca66_05008476 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -118,7 +118,7 @@ function content_5efb483c75f641_12500087 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Aggiungi una Fascia</b></label>
 
                         </div>
-                        
+
                                                     <a class="btn    btn-primary" data-toggle="collapse" href="#1" role="button" aria-expanded="false" aria-controls="#1">
                                 +
                             </a>
