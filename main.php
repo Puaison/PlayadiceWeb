@@ -98,4 +98,10 @@ $smarty->display('Login.tpl');
 
 
 
+$pippo = FPersistantManager::getInstance()->search("Avatar", "UsernameUtente", "Pantaleone");
+
+var_dump($pippo);
+
+echo ("hello world");
+
 ?>

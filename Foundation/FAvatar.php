@@ -22,6 +22,13 @@ class FAvatar
                 WHERE IdAvatar = :IdAvatar;";
     }
 
+    static function searchAvatarByUsernameUtente() : string
+    {
+        return "SELECT *
+                FROM avatar
+                WHERE UsernameUtente = :UsernameUtente;";
+    }
+
     static function storeAvatar() : string
     {
         return "INSERT INTO avatar(Livello, Nome , UsernameUtente, Classe, Razza)
