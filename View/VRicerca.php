@@ -31,12 +31,6 @@ class VRicerca extends VObject
     }
 
     /**
-     * Mostra i risultati della ricerca
-     * @param EUtente $user l'utente della sessione
-     * @param array $array contenente i risultati della ricerca | NULL se nessun oggetto e' stato costruito
-     * @param string $key la chiave di ricerca adoperata
-     * @param string $value il valore di ricerca adoperato
-     * @param string $string il dato ricercato dall'utente
      */
     function showSearchResult(EUtente &$user, $array)
     {

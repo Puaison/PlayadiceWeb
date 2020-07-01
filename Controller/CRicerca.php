@@ -22,7 +22,7 @@ class CRicerca
      * Questo metodo implementa il caso d'uso 'Ricerca Semplice' e fornisce una ricerca delle
      * canzoni rispetto al genere musicale. Tale ricerca puo' essere effettuata da qualunque tipologia
      * di utente.
-     */
+
     static function simple()
     {
         $vSearch = new VSearch();
@@ -31,7 +31,7 @@ class CRicerca
 
         $string = $vSearch->getSearchValue();
 
-        if($string /*&& $vSearch->validateSearch()*/)
+        if($string)
         { // se l'utente ha inviato tramite GET un valore, si cerca nel DB
             $objects = FPersistantManager::getInstance()->search(CSearch::KEY_DEFAULT, CSearch::VALUE_DEFAULT, $string);
             $vSearch->showSearchResult($user, $objects, CSearch::KEY_DEFAULT, CSearch::VALUE_DEFAULT, $string);
@@ -40,6 +40,7 @@ class CRicerca
             header('Location: /deepmusic/index');
 
     }
+     */
 
     /**
      * Questo metodo implementa il caso d'uso 'Ricerca Avanzata'. Un utente puo' infatti ricercare

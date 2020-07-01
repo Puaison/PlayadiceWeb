@@ -4,16 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
   <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
   <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <title>TVG Home</title>
 </head>
 
@@ -48,13 +42,13 @@
 
     <div class="row pi-draggable">
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">Nome</p>
+        <p style="color:red;">Nome</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">Classe</p>
+        <p style="color:red;">Classe</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">Livello</p>
+        <p style="color:red;">Livello</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
         <button> Dettagli </button>
@@ -70,22 +64,22 @@
     {section name=k loop=$results}
     <div class="row pi-draggable">
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">{$results[k]->getNome()}</p>
+        <p style="color:red;">{$results[k]->getNome()}</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">{$results[k]->getClasse()}</p>
+        <p style="color:red;">{$results[k]->getClasse()}</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">{$results[k]->getLivello()}</p>
+        <p style="color:red;">{$results[k]->getLivello()}</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <button> Dettagli </button>
+        <button href="/playadice/avatar/details"> {$results[k]->getId()} Dettagli </button>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <button> Modifica </button>
+        <button href="/playadice/avatar/modify"> {$results[k]->getId()} Modifica </button>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <button> Elimina </button>
+        <button> {$results[k]->getId()} Elimina </button>
       </div>
     </div>
     {/section}
@@ -94,19 +88,19 @@
     <!-- Fine Sezione -->
     <br>
     <div style="Text-align:center">
-      <p style="color:White;">Personaggi in attesa di approvazione:</p>
+      <p style="color:red;">Personaggi in attesa di approvazione:</p>
     </div>
     <br>
     <!-- Sezione PG In attesa di approvazione here -->
     <div class="row pi-draggable">
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Nome</p>
+        <p style="color:red;">Nome</p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Classe</p>
+        <p style="color:red;">Classe</p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Livello</p>
+        <p style="color:red;">Livello</p>
       </div>
       <div class="col-md-3" style="Text-align:center">
         <button> Dettagli Approvazione </button>

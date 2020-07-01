@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 12:23:54
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 13:43:09
   from 'D:\XAMPP2\htdocs\playadice\templates\TVGMainpage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc643ad0c992_61032838',
+  'unifunc' => 'content_5efc76cd4da5d9_07998898',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f1dfeea3ed8ab6ec6e238b115eac11f4284d015' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGMainpage.tpl',
-      1 => 1593599032,
+      1 => 1593603789,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc643ad0c992_61032838 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efc76cd4da5d9_07998898 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
   <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
   <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <title>TVG Home</title>
 </head>
 
@@ -74,13 +68,13 @@ function content_5efc643ad0c992_61032838 (Smarty_Internal_Template $_smarty_tpl)
 
     <div class="row pi-draggable">
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">Nome</p>
+        <p style="color:red;">Nome</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">Classe</p>
+        <p style="color:red;">Classe</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">Livello</p>
+        <p style="color:red;">Livello</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
         <button> Dettagli </button>
@@ -102,25 +96,28 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 ?>
     <div class="row pi-draggable">
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
+        <p style="color:red;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
 </p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getClasse();?>
+        <p style="color:red;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getClasse();?>
 </p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getLivello();?>
+        <p style="color:red;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getLivello();?>
 </p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <button> Dettagli </button>
+        <button href="/playadice/avatar/details"> <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+ Dettagli </button>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <button> Modifica </button>
+        <button href="/playadice/avatar/modify"> <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+ Modifica </button>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <button> Elimina </button>
+        <button> <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+ Elimina </button>
       </div>
     </div>
     <?php
@@ -132,19 +129,19 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
     <!-- Fine Sezione -->
     <br>
     <div style="Text-align:center">
-      <p style="color:White;">Personaggi in attesa di approvazione:</p>
+      <p style="color:red;">Personaggi in attesa di approvazione:</p>
     </div>
     <br>
     <!-- Sezione PG In attesa di approvazione here -->
     <div class="row pi-draggable">
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Nome</p>
+        <p style="color:red;">Nome</p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Classe</p>
+        <p style="color:red;">Classe</p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Livello</p>
+        <p style="color:red;">Livello</p>
       </div>
       <div class="col-md-3" style="Text-align:center">
         <button> Dettagli Approvazione </button>

@@ -85,23 +85,15 @@ $User2->setUsername("Puaison");
 $User2->setPassword("ScemoChiLegge");
 
 require_once ('./Smarty/libs/Smarty.class.php');
-
+*/
 
 $smarty = SmartyConfig::configure();
 $user = CSession::getUserFromSession();
 
-$smarty->assign('error', false);
 $smarty->registerObject('user', $user);
 
-$smarty->display('Login.tpl');
-*/
+$smarty->display('Test2.tpl');
 
 
-
-$pippo = FPersistantManager::getInstance()->search("Avatar", "UsernameUtente", "Pantaleone");
-
-var_dump($pippo);
-
-echo ("hello world");
 
 ?>
