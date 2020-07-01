@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 11:41:24
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 11:58:02
   from 'C:\xampp\htdocs\playadice\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc5a44ba8578_62190034',
+  'unifunc' => 'content_5efc5e2a2cb736_46385601',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0068d291dd41580fd3d2866b15d2e2351700254c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDCalendario.tpl',
-      1 => 1593596190,
+      1 => 1593597480,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc5a44ba8578_62190034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efc5e2a2cb736_46385601 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -66,10 +66,11 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
 
                     <div class="my-auto text-center">
-                            <div class="px-5">
+                            <a class="px-5" href="../evento/show/<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+">
 
                             <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
-</div></div>
+</a></div>
 
 
                 </div>
