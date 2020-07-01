@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="Pld/now-ui-kit.css" type="text/css">
         <link rel="stylesheet" href="Pld/assets/css/nucleo-icons.css" type="text/css">
         <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-        <title>Html Test</title>
+        <title>Playadice - Home</title>
 </head>
 
 <body class="">

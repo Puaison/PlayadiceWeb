@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 08:34:51
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 09:39:26
   from 'C:\xampp\htdocs\playadice\templates\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc2e8bf364e0_36995087',
+  'unifunc' => 'content_5efc3dae6af917_30460870',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7cde22e67172b46f639058d00963c373408923f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\Login.tpl',
-      1 => 1593585207,
+      1 => 1593589163,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc2e8bf364e0_36995087 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efc3dae6af917_30460870 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +37,7 @@ function content_5efc2e8bf364e0_36995087 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
     <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-    <title>Login</title>
+    <title>Login/SignUp</title>
 </head>
 
 <body class="">
@@ -60,14 +60,14 @@ function content_5efc2e8bf364e0_36995087 (Smarty_Internal_Template $_smarty_tpl)
             <div class="form-group row">
                 <label for="user" class="col-md-2 col-form-label">Username:</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control border-primary" id="user" name="name" placeholder="Username">
+                    <input type="text" class="form-control border-primary" id="user" name="Username" placeholder="Username">
                 </div>
             </div>
             <div class="form-group row">
                 <!-- Campo password -->
                 <label for="inputPassword" class="col-sm-2 col-form-label col">Password:</label>
                 <div class="col-lg-7">
-                    <input type="password" class="form-control border-primary" id="inputPassword" name="pwd" placeholder="Password">
+                    <input type="password" class="form-control border-primary" id="inputPassword" name="Password" placeholder="Password">
                 </div>
             </div>
             <div class="form-group">

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
     <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-    <title>Login</title>
+    <title>Login/SignUp</title>
 </head>
 
 <body class="">
@@ -34,14 +34,14 @@
             <div class="form-group row">
                 <label for="user" class="col-md-2 col-form-label">Username:</label>
                 <div class="col-md-7">
-                    <input type="text" class="form-control border-primary" id="user" name="name" placeholder="Username">
+                    <input type="text" class="form-control border-primary" id="user" name="Username" placeholder="Username">
                 </div>
             </div>
             <div class="form-group row">
                 <!-- Campo password -->
                 <label for="inputPassword" class="col-sm-2 col-form-label col">Password:</label>
                 <div class="col-lg-7">
-                    <input type="password" class="form-control border-primary" id="inputPassword" name="pwd" placeholder="Password">
+                    <input type="password" class="form-control border-primary" id="inputPassword" name="Password" placeholder="Password">
                 </div>
             </div>
             <div class="form-group">

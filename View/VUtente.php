@@ -29,7 +29,6 @@ class VUtente extends VObject
     function createUser() : EUtente
     {
 
-        $user = null;
             $user = new EUtente();
 
         if(isset($_POST['Username']))
@@ -109,7 +108,7 @@ class VUtente extends VObject
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('error', $error);
 
-        $this->smarty->display('user/register.tpl');
+        $this->smarty->display('Register.tpl');
     }
 
     /**
