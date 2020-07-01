@@ -56,14 +56,14 @@
             <div class="form-group row">
                 <label for="nome" class="col-sm-5 col-form-label ">Nome:</label>
                 <div class="col-lg-5">
-                    <input type="text" class="form-control " id="mail" name="Name" placeholder="Insert Name...">
+                    <input type="text" class="form-control " id="mail" name="Nome" placeholder="Insert Name...">
                 </div>
 
             </div>
             <div class="form-group row">
                 <label for="cognome" class="col-sm-5 col-form-label ">Cognome:</label>
                 <div class="col-lg-5">
-                    <input type="text" class="form-control " id="mail" name="Surname" placeholder="Insert Surname...">
+                    <input type="text" class="form-control " id="mail" name="Cognome" placeholder="Insert Surname...">
                 </div>
 
             </div>

@@ -151,4 +151,30 @@ class EUtente
             return false;
     }
 
+    function validateNome() : bool
+    {
+        if (ctype_alpha($this->Nome))
+        {
+            strtolower($this->Nome);
+            ucfirst($this->Nome);
+            return true;
+        }
+        else
+            return false;
+    }
+
+    function validateCognome() : bool
+    {
+        if (ctype_alpha($this->Cognome))
+        {
+            strtolower($this->Cognome);
+            ucfirst($this->Cognome);
+            return true;
+        }
+        else
+            return false;
+    }
+
+
+
 }
