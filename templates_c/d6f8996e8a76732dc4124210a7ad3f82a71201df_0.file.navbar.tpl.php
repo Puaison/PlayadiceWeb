@@ -1,8 +1,32 @@
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 11:14:00
+  from 'D:\XAMPP2\htdocs\playadice\templates\navbar.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5efc53d8c92461_81407484',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'd6f8996e8a76732dc4124210a7ad3f82a71201df' => 
+    array (
+      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\navbar.tpl',
+      1 => 1593594836,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5efc53d8c92461_81407484 (Smarty_Internal_Template $_smarty_tpl) {
+?><nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container">
                 <ul class="navbar-nav">
                         <ul class="navbar-nav">
-                                <a class="nav-link" href="/playadice"> &nbsp;Benvenuto {$Username} </a>
+                                <a class="nav-link" href=""> &nbsp;Benvenuto <?php echo $_smarty_tpl->tpl_vars['Username']->value;?>
+ </a>
                                 <a class="nav-link space" href=""> &nbsp;Spazio43</a>
                                 <a class="nav-link" href="/playadice/evento/showAll"> &nbsp;Eventi</a>
                                 <a class="nav-link" href="#download"> &nbsp;Giochi</a>
@@ -12,11 +36,11 @@
         </div>
         <div class="container">
         </div>
-        {if $Username eq "Ospite"}
+        <?php if ($_smarty_tpl->tpl_vars['Username']->value == "Ospite") {?>
         <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/utente/login">Login/Sign Up</a>
-        {else}
+        <?php } else { ?>
         <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/utente/logout">Logout</a>
-        {/if}
+        <?php }?>
 
         <a href="" class="nav-link space"> &nbsp;Spazio</a>
         <ul class="navbar-nav flex-row justify-content-center mt-2 mt-md-0">
@@ -31,4 +55,5 @@
                         </a>
                 </li>
         </ul>
-</nav>
+</nav><?php }
+}

@@ -114,32 +114,4 @@ class VUtente extends VObject
 
         $this->smarty->display('Register.tpl');
     }
-
-    /**
-     * Mostra la pagina che consente la rimozione di un utente
-     *
-     * @param EUser $user
-     *            l'utente della sessione
-     * @param EUser $removed
-     *            se l'utente che ha richiesto la rimozione e' un moderatore
-
-    function showRemoveForm(EUser &$user, EUser &$removed = null)
-    {
-        $this->smarty->registerObject('user', $user);
-        $this->smarty->assign('uType', lcfirst(substr(get_class($user), 1)));
-        if($removed)
-        {
-            $setRemovedUser = true;
-            $this->smarty->assign('rName', $removed->getNickName());
-            $this->smarty->assign('rId', $removed->getId());
-        }
-        else
-        {
-            $this->smarty->assign('rName', NULL);
-            $this->smarty->assign('rId', NULL);
-        }
-
-        $this->smarty->display('user/removeUser.tpl');
-    }
-     * */
 }
