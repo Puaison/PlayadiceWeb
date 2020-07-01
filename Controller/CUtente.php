@@ -51,6 +51,12 @@ class CUtente
         else
             header('Location: Invalid HTTP method detected');
     }
+    static function register(){
+        $vUser = new VUtente();
+        $registeredUser = $vUser->createUser();
+        FPersistantManager::getInstance()->store($registeredUser);
+
+    }
 
     /**
      * Effettua il logout.

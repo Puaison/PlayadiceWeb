@@ -148,18 +148,18 @@ foreach ($Evento->getFasce() as $value){
     echo "\n";
 
 }*/
-/*
+
 $smarty = SmartyConfig::configure();
 $user = CSession::getUserFromSession();
 
 $smarty->assign('error', false);
 $smarty->registerObject('user', $user);
 
-$smarty->display('PLDCalendario.tpl');
+$smarty->display('Register.tpl');
 
-*/
 
-$pippo=FPersistantManager::getInstance()->search("Evento","All",'');
-var_dump($pippo);
+
+//$pippo=FPersistantManager::getInstance()->search("Evento","All",'');
+//var_dump($pippo);
 
 ?>

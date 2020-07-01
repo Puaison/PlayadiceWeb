@@ -7497,3 +7497,8 @@ html, body {
 .space {
   visibility: hidden; }
 
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}

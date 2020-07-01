@@ -37,6 +37,10 @@ class VUtente extends VObject
             $user->setEmail($_POST['Mail']);
         if(isset($_POST['Password']))
             $user->setPassword($_POST['Password']);
+        if(isset($_POST['Name']));
+            $user->setNome($_POST['Name']);
+        if(isset($_POST['Surname']));
+            $user->setNome($_POST['Surname']);
 
         return $user;
     }

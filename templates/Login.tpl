@@ -22,35 +22,42 @@
 
 {include file="navbar.tpl"}
 
-<div class="container text-center">
+<div class="container text-center ">
     <div class="col-sm-3">
     </div>
-    <div class="col-sm-7 well">
+
         <h2>Login</h2>
-        <hr> {if $error} <div class="alert alert-warning">
+        <hr> {if $error}
+        <div class="alert alert-warning">
             <!-- Errore form-->
-            <strong>Warning!</strong><br>Wrong combination of user and password. <br>Please retry. </div> {/if} <form class="form-horizontal" method="post" action="login">
+            <strong>Warning!</strong><br>Wrong combination of user and password. <br>Please retry. </div> {/if}
+    <form class="form-horizontal" method="post" action="login">
             <!-- Nickname -->
             <div class="form-group row">
-                <label for="user" class="col-md-2 col-form-label">Username:</label>
-                <div class="col-md-7">
+                <label for="user" class="col-md-5 col-form-label">Username:</label>
+                <div class="col-lg-5">
                     <input type="text" class="form-control border-primary" id="user" name="Username" placeholder="Username">
                 </div>
             </div>
             <div class="form-group row">
                 <!-- Campo password -->
-                <label for="inputPassword" class="col-sm-2 col-form-label col">Password:</label>
-                <div class="col-lg-7">
+                <label for="inputPassword" class="col-sm-5 col-form-label col">Password:</label>
+                <div class="col-lg-5">
                     <input type="password" class="form-control border-primary" id="inputPassword" name="Password" placeholder="Password">
                 </div>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
+
+
         </form>
-    </div>
-    <div class="col-sm-3">
-    </div>
+
+        <a href="/playadice/utente/signup">
+            Clicca qui per registrarti
+        </a>
+
+</div>
 </div>
 </body>
 </html>
