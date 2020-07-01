@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-30 22:17:20
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 11:45:51
   from 'D:\XAMPP2\htdocs\playadice\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efb9dd0477894_63032009',
+  'unifunc' => 'content_5efc5b4fd79598_71780131',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22dda89389f6b3e88cee0ceb7ba9ae9241998192' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\PLDCalendario.tpl',
-      1 => 1593548142,
+      1 => 1593596212,
       2 => 'file',
     ),
   ),
@@ -21,10 +21,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efb9dd0477894_63032009 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efc5b4fd79598_71780131 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

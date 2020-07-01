@@ -16,17 +16,18 @@ class VRicerca extends VObject
      */
     function getStringAndKey(): array
     {
-        $string = "";
-        $key = "";
+        $string =($_POST['Parametro']);
+        $key =($_POST['TipoRicerca']);
 
-       /* if ($_GET['value'] == 'name' || $_GET['value'] == 'genre')
-            $value = ucfirst($_GET['value']);
-        if ($_GET['key'] == 'song' || $_GET['key'] == 'user')
-            $key = ucfirst($_GET['key']);
+        if ($key=="Autore")
+            $key="UsernameUtente";
+        if ($key=="Nome")
+            $key="Nome";
 
-        return array($key, $value);*/ //TODO FARE LA RICERCA VERA
+        if (($_POST['Parametro'])=="")
+            $string="Default";
 
-        return array("Nome", "Ci");
+        return array($string,$key);
     }
 
     /**
