@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 17:02:49
+/* Smarty version 3.1.34-dev-7, created on 2020-07-02 00:10:22
   from 'C:\xampp\htdocs\playadice\templates\PLDNewEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efca5995383e8_11345403',
+  'unifunc' => 'content_5efd09cea545f2_84584889',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4ec4e6d97ce13de9465c62027cc1b678ec160042' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDNewEvento.tpl',
-      1 => 1593615767,
+      1 => 1593641338,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efca5995383e8_11345403 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efd09cea545f2_84584889 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,21 +54,23 @@ function content_5efca5995383e8_11345403 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class="card ">
 
-    <form id="c_form-h" class="">
+    <form method="post" id="c_form-h" class="" action="store">
         <div class="py-5">
             <div class="container ">
                 <div class="col-md-12">
-                    <div class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
+                    <div class="form-group row">
+                        <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
                         <div class="col-10">
-                            <input type="text" class="form-control" placeholder="Inserisci qui il Testo"> </div>
+                            <input type="text" name="nome" class="form-control" placeholder="Inserisci qui il Testo"> </div>
                     </div>
-                    <div class="form-group row"> <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
+                    <div class="form-group row">
+                        <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
                         <div class="col-10 ">
-                            <select class="form-control " id="inlineFormCustomSelect">
+                            <select class="form-control " name="categoria" id="inlineFormCustomSelect">
                                 <option selected="" value="Choose...">Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="Torneo">Torneo</option>
+                                <option value="Free Play">Free Play</option>
+
                             </select>
                         </div>
                     </div>
@@ -79,20 +81,20 @@ function content_5efca5995383e8_11345403 (Smarty_Internal_Template $_smarty_tpl)
                             <div class=" form-group row">
                                 <label for="name-input " class="my-auto px-4 "><b>Nome</b></label>
                                 <div class="col-4 ">
-                                    <input type="text" class="form-control" placeholder="Nome del Luogo">
+                                    <input type="text" name="nomeluogo" class="form-control" placeholder="Nome del Luogo">
                                 </div>
                                 <label for="name-input " class="my-auto"><b>Via</b></label>
                                 <div class="col ">
-                                    <input type="text" class="form-control" placeholder="Via xxxxxx, #civico"> </div>
+                                    <input type="text" name="via" class="form-control" placeholder="Via xxxxxx, #civico"> </div>
                             </div>
                             <div class=" form-group row ">
                                 <label for="name-input " class="my-auto px-4 "><b>Città</b></label>
                                 <div class="col-5  px-4 ">
-                                    <input type="text" class="form-control" placeholder="Città">
+                                    <input type="text" name="citta" class="form-control" placeholder="Città">
                                 </div>
                                 <label for="name-input " class="my-auto"><b>CAP</b></label>
                                 <div class="col  ">
-                                    <input type="text" class="form-control" placeholder="CAP"> </div>
+                                    <input type="text" name="cap" class="form-control" placeholder="CAP"> </div>
                             </div>
                         </div>
                     </div>
@@ -118,17 +120,19 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
                         <div class="collapse" id="<?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
 ">
                             <div class="form-group row">
-                                <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
+                                <label  class="col-2 col-form-label"><b>Giorno di Inizio</b></label>
                                 <div class="col-10">
-                                    <input type="date" class="form-control" id="example-date-input" >
+
+                                    <input type="text" name="<?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
+" class="form-control" id="example-date-input" placeholder="gg/mm/aaaa HH:mm:ss" >
+                                </div>
+                                <label  class="col-2 col-form-label"><b>Giorno di Fine</b></label>
+                                <div class="col-10">
+                                    <input type="text" name="<?php echo $_smarty_tpl->tpl_vars['foo']->value+11;?>
+" class="form-control" id="example-date-input" placeholder="gg/mm/aaaa HH:mm:ss" >
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="example-time-input" class="col-2 col-form-label"><b>Ora</b></label>
-                                <div class="col-10">
-                                    <input type="time" class="form-control" id="example-date-input"  >
-                                </div>
-                            </div>
+
 
                         </div>
                          <?php }
@@ -142,11 +146,11 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
                     <div class="form-group row">
                         <label for="checkbox input" class="col-2 col-form-label"><b>Prenotazione</b></label>
                         <div class="pl-4 col-form-label align-content-center pt-3">
-                            <input type="checkbox" class="custo-checkbox" id="checkbox input" ></div>
+                            <input type="checkbox" class="custom-checkbox" id="checkbox input" value="1" name="prenotazione"></div>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"><b>Descrizione</b></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="testo" rows="3"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary " >Submit</button></div>

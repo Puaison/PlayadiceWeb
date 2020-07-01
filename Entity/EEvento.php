@@ -44,7 +44,7 @@ class EEvento extends EObject
      * @param int $eventId
      * @param string $name
      * @param string $category
-     * @param bool $flag
+     * @param int $flag
      * @param EFascia ...$fascia
      */
     function setEvento(int $eventId, string $name, string $category, bool $flag,ELuogo $location, array $fascia, String $testo)
@@ -77,7 +77,7 @@ class EEvento extends EObject
      * Metodo per impostare la possibilità di prenotazione
      * @param bool $flag
      */
-   function setFlag(bool $flag){
+   function setFlag(int $flag){
         $this->flagPrenotazione=$flag;
     }
     /**
@@ -120,7 +120,7 @@ class EEvento extends EObject
      * Metodo che restituiscei il valore del flag di prenotazione
      * @return bool
      */
-    function getFlag():bool{return $this->flagPrenotazione;}
+    function getFlag():int{return $this->flagPrenotazione;}
 
     /**
      * Metodo che restituisce il luogo dell'evento

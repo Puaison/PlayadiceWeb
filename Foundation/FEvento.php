@@ -98,7 +98,7 @@ class FEvento
          foreach($fasce as $value){
             $evento->newFascia($value);
         }
-        if ($evento->getFlag()!==false){
+        if ($evento->getFlag()!==0){
             $prenotazioni= FPersistantManager::getInstance()->search("prenotazione","IdEvento",($row['Id']));
             foreach ($prenotazioni as $value){
                 $evento->newPrenotazione($value);

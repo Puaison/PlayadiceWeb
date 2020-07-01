@@ -24,21 +24,23 @@
 
 <div class="card ">
 
-    <form id="c_form-h" class="">
+    <form method="post" id="c_form-h" class="" action="store">
         <div class="py-5">
             <div class="container ">
                 <div class="col-md-12">
-                    <div class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
+                    <div class="form-group row">
+                        <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
                         <div class="col-10">
-                            <input type="text" class="form-control" placeholder="Inserisci qui il Testo"> </div>
+                            <input type="text" name="nome" class="form-control" placeholder="Inserisci qui il Testo"> </div>
                     </div>
-                    <div class="form-group row"> <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
+                    <div class="form-group row">
+                        <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
                         <div class="col-10 ">
-                            <select class="form-control " id="inlineFormCustomSelect">
+                            <select class="form-control " name="categoria" id="inlineFormCustomSelect">
                                 <option selected="" value="Choose...">Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="Torneo">Torneo</option>
+                                <option value="Free Play">Free Play</option>
+
                             </select>
                         </div>
                     </div>
@@ -49,20 +51,20 @@
                             <div class=" form-group row">
                                 <label for="name-input " class="my-auto px-4 "><b>Nome</b></label>
                                 <div class="col-4 ">
-                                    <input type="text" class="form-control" placeholder="Nome del Luogo">
+                                    <input type="text" name="nomeluogo" class="form-control" placeholder="Nome del Luogo">
                                 </div>
                                 <label for="name-input " class="my-auto"><b>Via</b></label>
                                 <div class="col ">
-                                    <input type="text" class="form-control" placeholder="Via xxxxxx, #civico"> </div>
+                                    <input type="text" name="via" class="form-control" placeholder="Via xxxxxx, #civico"> </div>
                             </div>
                             <div class=" form-group row ">
                                 <label for="name-input " class="my-auto px-4 "><b>Città</b></label>
                                 <div class="col-5  px-4 ">
-                                    <input type="text" class="form-control" placeholder="Città">
+                                    <input type="text" name="citta" class="form-control" placeholder="Città">
                                 </div>
                                 <label for="name-input " class="my-auto"><b>CAP</b></label>
                                 <div class="col  ">
-                                    <input type="text" class="form-control" placeholder="CAP"> </div>
+                                    <input type="text" name="cap" class="form-control" placeholder="CAP"> </div>
                             </div>
                         </div>
                     </div>
@@ -81,17 +83,17 @@
 
                         <div class="collapse" id="{$foo}">
                             <div class="form-group row">
-                                <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
+                                <label  class="col-2 col-form-label"><b>Giorno di Inizio</b></label>
                                 <div class="col-10">
-                                    <input type="date" class="form-control" id="example-date-input" >
+
+                                    <input type="text" name="{$foo}" class="form-control" id="example-date-input" placeholder="gg/mm/aaaa HH:mm:ss" >
+                                </div>
+                                <label  class="col-2 col-form-label"><b>Giorno di Fine</b></label>
+                                <div class="col-10">
+                                    <input type="text" name="{$foo+11}" class="form-control" id="example-date-input" placeholder="gg/mm/aaaa HH:mm:ss" >
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="example-time-input" class="col-2 col-form-label"><b>Ora</b></label>
-                                <div class="col-10">
-                                    <input type="time" class="form-control" id="example-date-input"  >
-                                </div>
-                            </div>
+
 
                         </div>
                          {/for}
@@ -103,11 +105,11 @@
                     <div class="form-group row">
                         <label for="checkbox input" class="col-2 col-form-label"><b>Prenotazione</b></label>
                         <div class="pl-4 col-form-label align-content-center pt-3">
-                            <input type="checkbox" class="custo-checkbox" id="checkbox input" ></div>
+                            <input type="checkbox" class="custom-checkbox" id="checkbox input" value="1" name="prenotazione"></div>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"><b>Descrizione</b></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="testo" rows="3"></textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary " >Submit</button></div>

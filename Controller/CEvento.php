@@ -29,6 +29,21 @@ class CEvento
         $vEvento=new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         $vEvento->create($user);
-}
+    }
+
+    static function store(){
+        $vEvento=new VEvento();
+        $evento=$vEvento->createEvento();
+        $luogo=$evento->getLuogo();
+        FPersistantManager::getInstance()->store($luogo);
+        FPersistantManager::getInstance()->store($evento);
+        $fasce=$evento->getFasce();
+        foreach ($fasce as $value ){
+
+            FPersistantManager::getInstance()->store($value);
+
+        }
+
+    }
 
 }
