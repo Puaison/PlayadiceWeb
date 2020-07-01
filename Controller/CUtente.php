@@ -55,6 +55,7 @@ class CUtente
         $vUser = new VUtente();
         $registeredUser = $vUser->createUser();
         FPersistantManager::getInstance()->store($registeredUser);
+        header('Location: /playadice/index');
 
     }
 

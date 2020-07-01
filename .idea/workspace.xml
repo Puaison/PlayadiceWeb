@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates_c/555686cb53629661b8cfc5ce0458ede07659ee4d_0.file.Register.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/79d64fdf98811e552203bc6b99bf52046ec6e9df_0.file.errorPage.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pld/now-ui-kit.css" beforeDir="false" afterPath="$PROJECT_DIR$/Pld/now-ui-kit.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/VUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainviewant.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainviewant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Login.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Login.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/PLDCalendario.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDCalendario.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Register.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Register.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/f7cde22e67172b46f639058d00963c373408923f_0.file.Login.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/f7cde22e67172b46f639058d00963c373408923f_0.file.Login.tpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +66,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1b1sSlXwN45z6KDdWDtA6oy4m8U" />
@@ -140,9 +133,9 @@
     <list>
       <item itemvalue="JavaScript Debug.PLDEvento.tpl" />
       <item itemvalue="PHP Script.main.php" />
-      <item itemvalue="PHP Script.testantonio.php" />
-      <item itemvalue="PHP Script.mainviewant.php" />
       <item itemvalue="PHP Script.maindbGioco.php" />
+      <item itemvalue="PHP Script.mainviewant.php" />
+      <item itemvalue="PHP Script.testantonio.php" />
     </list>
     <recent_temporary>
       <list>
@@ -212,13 +205,6 @@
       <workItem from="1593522209998" duration="2635000" />
       <workItem from="1593534572536" duration="2662000" />
       <workItem from="1593540959995" duration="7852000" />
-    </task>
-    <task id="LOCAL-00015" summary="booking 1.0&#10;Date 1.0">
-      <created>1588356609802</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1588356609802</updated>
     </task>
     <task id="LOCAL-00016" summary="booking 1.0&#10;Date 1.0">
       <created>1588359158490</created>
@@ -556,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593547934854</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Inserita la registrazione">
+      <created>1593595741454</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1593595741454</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +579,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Prove sulle recensioni e i giochi" />
     <MESSAGE value="PORCODIO&#10;4\" />
     <MESSAGE value="EPrenotazione.php 1.0 con php docs" />
     <MESSAGE value="Alter Create tables" />
@@ -611,7 +603,8 @@
     <MESSAGE value="Cambi ai riferimenti" />
     <MESSAGE value="Login.tpl" />
     <MESSAGE value="Update Evento" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Evento" />
+    <MESSAGE value="Inserita la registrazione" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inserita la registrazione" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -674,11 +667,11 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1593547933609">
+    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1593595739869">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921707426" />
-    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593547933609" />
+    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593595739869" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593535957183" />
     <state x="1152" y="369" key="FileChooserDialogImpl" timestamp="1590683093706">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -757,11 +750,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1593547937111">
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1593596176406">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921712667" />
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593547937111" />
+    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593596176406" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593535961348" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
       <screen x="0" y="0" width="1920" height="1080" />

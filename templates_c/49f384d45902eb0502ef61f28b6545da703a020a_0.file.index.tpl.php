@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 11:08:02
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 11:38:13
   from 'C:\xampp\htdocs\playadice\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc5272bbda11_09461879',
+  'unifunc' => 'content_5efc59859e9b95_71494571',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49f384d45902eb0502ef61f28b6545da703a020a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\index.tpl',
-      1 => 1593592254,
+      1 => 1593596190,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc5272bbda11_09461879 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efc59859e9b95_71494571 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +37,7 @@ function content_5efc5272bbda11_09461879 (Smarty_Internal_Template $_smarty_tpl)
         <link rel="stylesheet" href="Pld/now-ui-kit.css" type="text/css">
         <link rel="stylesheet" href="Pld/assets/css/nucleo-icons.css" type="text/css">
         <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-        <title>Playadice - Home</title>
+        <title>Playadice Home</title>
 </head>
 
 <body class="">
@@ -45,9 +45,7 @@ function content_5efc5272bbda11_09461879 (Smarty_Internal_Template $_smarty_tpl)
 <?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
 
 
-
 <!-- Navbar here -->
-
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
