@@ -85,6 +85,10 @@ class FFascia
         $fascia->setData($data);
         list($years,$month, $days, $hours, $minutes, $seconds) = sscanf($row['Durata'], '%d,%d,%d,%d,%d,%d');
         $interval = new DateInterval(sprintf('P%dY%dM%dDT%dH%dM%dS', $years,$month, $days, $hours, $minutes, $seconds));
+        $iniziocopy= clone $data;
+        $iniziocopy->add($interval);
+        $fascia->setFine($iniziocopy);
+
         $fascia->setDurata($interval);
         return $fascia;
     }

@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="./Pld/now-ui-kit.css" type="text/css">
-    <link rel="stylesheet" href="./Pld/assets/css/nucleo-icons.css" type="text/css">
+    <link rel="stylesheet" href="Pld/now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="Pld/assets/css/nucleo-icons.css" type="text/css">
+
     <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
     <title>{$results[0]->getNome()}</title>
 </head>
@@ -52,7 +53,6 @@
 
                             {/foreach}
                         </div>
-                        </span>
 
 
                         <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
@@ -65,6 +65,7 @@
         </div>
     </div>
 </div>
+
 </body>
 
 </html>
