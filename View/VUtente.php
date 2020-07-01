@@ -19,6 +19,8 @@ class VUtente extends VObject
             'Username' => true,
             'Mail' => true,
             'Password' => true,
+            'Nome' => true,
+            'Cognome' => true,
         );
     }
 
@@ -37,10 +39,10 @@ class VUtente extends VObject
             $user->setEmail($_POST['Mail']);
         if(isset($_POST['Password']))
             $user->setPassword($_POST['Password']);
-        if(isset($_POST['Name']))
-            $user->setNome($_POST['Name']);
-        if(isset($_POST['Surname']))
-            $user->setCognome($_POST['Surname']);
+        if(isset($_POST['Nome']))
+            $user->setNome($_POST['Nome']);
+        if(isset($_POST['Cognome']))
+            $user->setCognome($_POST['Cognome']);
 
         return $user;
     }
@@ -68,7 +70,9 @@ class VUtente extends VObject
      */
     function validateSignUp(EUtente $user): bool
     {
-        if($this->check['Username']=$user->validateUsername() && $this->check['Password']=$user->validatePassword() && $this->check['Mail']=$user->validateMail())
+        if($this->check['Username']=$user->validateUsername() && $this->check['Password']=$user->validatePassword() &&
+                $this->check['Mail']=$user->validateMail() && $this->check['Nome']=$user->validateNome()
+                        && $this->check['Cognome']=$user->validateCognome())
         {
             return true;
         }

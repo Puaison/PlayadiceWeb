@@ -142,9 +142,9 @@
     <list>
       <item itemvalue="JavaScript Debug.PLDEvento.tpl" />
       <item itemvalue="PHP Script.main.php" />
-      <item itemvalue="PHP Script.testantonio.php" />
-      <item itemvalue="PHP Script.mainviewant.php" />
       <item itemvalue="PHP Script.maindbGioco.php" />
+      <item itemvalue="PHP Script.mainviewant.php" />
+      <item itemvalue="PHP Script.testantonio.php" />
     </list>
     <recent_temporary>
       <list>
