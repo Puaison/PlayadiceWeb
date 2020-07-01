@@ -18,5 +18,12 @@ class CEvento
         $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
 
     }
+    static function show($id){
+        $vEvento= new VEvento(); // crea la view
+        $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
+        $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
+        $vEvento->show($user, $evento);
+
+    }
 
 }

@@ -20,6 +20,12 @@ class VEvento extends VObject
         $this->smarty->display('PLDCalendario.tpl');
 
     }
+    function show(EUtente &$user, $evento){
+        $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('results', $evento);
+        $this->smarty->display('PLDEvento.tpl');
+
+    }
 
 
 }

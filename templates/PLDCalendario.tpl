@@ -34,9 +34,9 @@
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
 
                     <div class="my-auto text-center">
-                            <div class="px-5">
+                            <a class="px-5" href="../evento/show/{$results[k]->getId()}">
 
-                            {$results[k]->getNome()}</div></div>
+                            {$results[k]->getNome()}</a></div>
 
 
                 </div>
