@@ -25,5 +25,10 @@ class CEvento
         $vEvento->show($user, $evento);
 
     }
+    static function create(){
+        $vEvento=new VEvento();
+        $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
+        $vEvento->create($user);
+}
 
 }

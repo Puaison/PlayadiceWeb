@@ -27,7 +27,9 @@
 <div class="py-5">
     <div class="container">
         <div class="row ">
-            <div class="col-md-12 pb-3" > Ultimi Eventi</div>
+            <div class="col pb-3" > Ultimi Eventi</div>
+            <a class="col pb-3" href="../evento/create"> Crea un Evento</a>
+
             {section name=k loop=$results}
             <div class="col-md-12">
                 <div class="row">
@@ -35,12 +37,9 @@
 
                     <div class="my-auto text-center">
                             <a class="px-5" href="../evento/show/{$results[k]->getId()}">
-
-                            {$results[k]->getNome()}</a></div>
-
-
+                            {$results[k]->getNome()}</a>
+                    </div>
                 </div>
-
             </div>
             {/section}
         </div>

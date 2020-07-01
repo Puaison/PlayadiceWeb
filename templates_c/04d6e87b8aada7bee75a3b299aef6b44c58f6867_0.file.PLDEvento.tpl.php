@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 12:48:04
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 17:07:25
   from 'C:\xampp\htdocs\playadice\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc69e47fb797_02604854',
+  'unifunc' => 'content_5efca6ad9a3bc7_00441804',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04d6e87b8aada7bee75a3b299aef6b44c58f6867' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEvento.tpl',
-      1 => 1593600482,
+      1 => 1593616040,
       2 => 'file',
     ),
   ),
@@ -21,23 +21,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc69e47fb797_02604854 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efca6ad9a3bc7_00441804 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <?php echo '<script'; ?>
+ src="//code.jquery.com/jquery-1.11.0.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../bootstrap.min.js"><?php echo '</script'; ?>
+>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="playadice/Pld/now-ui-kit.css" type="text/css">
-    <link rel="stylesheet" href="Pld/assets/css/nucleo-icons.css" type="text/css">
+    <link rel="stylesheet" href="../../Pld/now-ui-kit.css" type="text/css">
 
-    <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
     <title><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getNome();?>
 </title>
 </head>

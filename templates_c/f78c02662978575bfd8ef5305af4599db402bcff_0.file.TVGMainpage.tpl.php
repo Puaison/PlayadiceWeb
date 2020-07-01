@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 11:26:37
-  from 'D:\XAMPP2\htdocs\playadice\templates\TVGMainpage.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 17:05:27
+  from 'C:\xampp\htdocs\playadice\templates\TVGMainpage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc56cdeae863_14340833',
+  'unifunc' => 'content_5efca6371bb472_62788199',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '0f1dfeea3ed8ab6ec6e238b115eac11f4284d015' => 
+    'f78c02662978575bfd8ef5305af4599db402bcff' => 
     array (
-      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGMainpage.tpl',
-      1 => 1593595597,
+      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\TVGMainpage.tpl',
+      1 => 1593600944,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc56cdeae863_14340833 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efca6371bb472_62788199 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -52,21 +52,26 @@ function content_5efc56cdeae863_14340833 (Smarty_Internal_Template $_smarty_tpl)
   <!-- Sezione Ricerca here -->
   <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
     <div class="container" style="background-color:#E3E3E3">
-      <form method="post" id="Ricercaform">
+
+      <!-- FORM -->
+      <form method="post" id="Ricercaform" action="search">
         <div class="row">
           <label for="Parametro">Parametro:</label><br>
           <input type="text" id="Parametro" name="Parametro">
           <label for="Tipo">Scegli un tipo di ricerca:</label>
-          <select id="Tipo" name="TipoRicerca" form="carform">
+          <select id="Tipo" name="TipoRicerca" form="Ricercaform">
             <option value="Nome">Nome</option>
             <option value="Autore">Autore</option>
-            <option value="Altro">Altro</option>
           </select>
-          <button> Cerca </button>
+          <button href="/playadice/ricerca/Search" > Cerca </button>
         </div>
-      </form>
+      </form
+
     </div>
     <!-- Sezione I miei PG here -->
+
+    <?php if ($_smarty_tpl->tpl_vars['results']->value) {?>
+
     <div class="row pi-draggable">
       <div class="col-md-2" style="Text-align:center">
         <p style="color:White;">Nome</p>
@@ -122,6 +127,8 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 }
 }
 ?>
+
+    <?php }?>
     <!-- Fine Sezione -->
     <br>
     <div style="Text-align:center">
@@ -146,7 +153,7 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
     <!-- Fine Sezione -->
   </div>
   <!-- Sezione Our Team -->
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+
 </body>
 
 </html><?php }

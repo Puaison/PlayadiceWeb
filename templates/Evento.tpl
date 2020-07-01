@@ -3,14 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="../bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="../../Pld/now-ui-kit.css" type="text/css">
-
+    <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
+    <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
     <title>{$results[0]->getNome()}</title>
 </head>
+
+
+
 <body>
 
 {user->getUsername assign='Username'}
@@ -22,7 +23,7 @@
 <div class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 p-0"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg" style="" h="100" w="100"> </div>
+            <div class="col-lg-6 order-2 order-lg-1 p-0"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg" style="" h="100" w="100" alt=""> </div>
             <div class="px-5 col-lg-6 d-flex flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card">
                     <div class="card-body">
@@ -42,7 +43,7 @@
                             <!----inizio selezione fasce---->
                             <!----Data Inizio--->
                             {foreach from=$fasce item=$fascia}
-                            <div class="col-xl-6 text-center  " ><b>{$fascia->getDataStr()} </b></div>
+                                <div class="col-xl-6 text-center  " ><b>{$fascia->getDataStr()} </b></div>
 
                                 <div class="col-xl-6 text-center "><b>{$fascia->getFine()} </b></div>
 
@@ -54,7 +55,6 @@
 
                         <div class="text-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
                             <button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -64,4 +64,3 @@
 </body>
 
 </html>
-

@@ -1,11 +1,39 @@
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 17:02:49
+  from 'C:\xampp\htdocs\playadice\templates\PLDNewEvento.tpl' */
 
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5efca5995383e8_11345403',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '4ec4e6d97ce13de9465c62027cc1b678ec160042' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDNewEvento.tpl',
+      1 => 1593615767,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:navbar.tpl' => 1,
+  ),
+),false)) {
+function content_5efca5995383e8_11345403 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="../bootstrap.min.js"></script>
+    <?php echo '<script'; ?>
+ src="//code.jquery.com/jquery-1.11.0.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="../bootstrap.min.js"><?php echo '</script'; ?>
+>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
@@ -15,11 +43,13 @@
 <body>
 
 
-{user->getUsername assign='Username'}
+<?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
+
 
 
 <!-- Navbar here -->
-{include file="navbar.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 
 <div class="card ">
@@ -74,12 +104,19 @@
 
                         </div>
 
-                        {for $foo=1 to 10}
-                            <a class="btn    btn-primary" data-toggle="collapse" href="#{$foo}" role="button" aria-expanded="false" aria-controls="#{$foo}">
+                        <?php
+$_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['foo']->step = 1;$_smarty_tpl->tpl_vars['foo']->total = (int) ceil(($_smarty_tpl->tpl_vars['foo']->step > 0 ? 10+1 - (1) : 1-(10)+1)/abs($_smarty_tpl->tpl_vars['foo']->step));
+if ($_smarty_tpl->tpl_vars['foo']->total > 0) {
+for ($_smarty_tpl->tpl_vars['foo']->value = 1, $_smarty_tpl->tpl_vars['foo']->iteration = 1;$_smarty_tpl->tpl_vars['foo']->iteration <= $_smarty_tpl->tpl_vars['foo']->total;$_smarty_tpl->tpl_vars['foo']->value += $_smarty_tpl->tpl_vars['foo']->step, $_smarty_tpl->tpl_vars['foo']->iteration++) {
+$_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration === 1;$_smarty_tpl->tpl_vars['foo']->last = $_smarty_tpl->tpl_vars['foo']->iteration === $_smarty_tpl->tpl_vars['foo']->total;?>
+                            <a class="btn    btn-primary" data-toggle="collapse" href="#<?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
+" role="button" aria-expanded="false" aria-controls="#<?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
+">
                                 +
                             </a>
 
-                        <div class="collapse" id="{$foo}">
+                        <div class="collapse" id="<?php echo $_smarty_tpl->tpl_vars['foo']->value;?>
+">
                             <div class="form-group row">
                                 <label for="example-date-input" class="col-2 col-form-label"><b>Giorno</b></label>
                                 <div class="col-10">
@@ -94,7 +131,9 @@
                             </div>
 
                         </div>
-                         {/for}
+                         <?php }
+}
+?>
 
                     </div>
 
@@ -119,4 +158,5 @@
 </div>
 
 </body>
-</html>
+</html><?php }
+}
