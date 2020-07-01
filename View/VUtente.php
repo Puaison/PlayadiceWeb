@@ -16,10 +16,9 @@ class VUtente extends VObject
         parent::__construct();
 
         $this->check = array(
-            'name' => true,
-            'mail' => true,
-            'pwd' => true,
-            'type' => true
+            'Username' => true,
+            'Mail' => true,
+            'Password' => true,
         );
     }
 
@@ -31,20 +30,14 @@ class VUtente extends VObject
     {
 
         $user = null;
-        if(isset($_POST['type']))
-        {
-            $type = 'E'.ucfirst($_POST['type']);
-            $user = new $type();
-        }
-        else
-            $user = new Eutente();
+            $user = new EUtente();
 
-        if(isset($_POST['name']))
-            $user->setUsername($_POST['name']);
-        if(isset($_POST['mail']))
-            $user->setEmail($_POST['mail']);
-        if(isset($_POST['pwd']))
-            $user->setPassword($_POST['pwd']);
+        if(isset($_POST['Username']))
+            $user->setUsername($_POST['Username']);
+        if(isset($_POST['Mail']))
+            $user->setEmail($_POST['Mail']);
+        if(isset($_POST['Password']))
+            $user->setPassword($_POST['Password']);
 
         return $user;
     }
@@ -55,7 +48,7 @@ class VUtente extends VObject
      */
     function validateLogin(EUtente $user): bool
     {
-        if($this->check['name']=$user->validateUsername() && $this->check['pwd']=$user->validatePassword())
+        if($this->check['Username']=$user->validateUsername() && $this->check['Password']=$user->validatePassword())
         {
             return true;
         }
@@ -72,7 +65,7 @@ class VUtente extends VObject
      */
     function validateSignUp(EUtente $user): bool
     {
-        if($this->check['name']=$user->validateUsername() && $this->check['pwd']=$user->validatePassword() && $this->check['mail']=$user->validateMail())
+        if($this->check['Username']=$user->validateUsername() && $this->check['Password']=$user->validatePassword() && $this->check['Mail']=$user->validateMail())
         {
             return true;
         }
