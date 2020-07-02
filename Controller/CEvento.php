@@ -38,11 +38,29 @@ class CEvento
         FPersistantManager::getInstance()->store($luogo);
         FPersistantManager::getInstance()->store($evento);
         $fasce=$evento->getFasce();
-        foreach ($fasce as $value ){
 
+        foreach ($fasce as $value ){
             FPersistantManager::getInstance()->store($value);
 
         }
+        header('Location: /playadice/evento/showAll');
+
+    }
+    static function delete($id)
+    {
+
+
+        if(is_numeric($id)){
+            $evento= FPersistantManager::getInstance()->search("Evento", "Id", $id);
+            $luogo=$evento[0]->getLuogo();
+            FPersistantManager::getInstance()->remove($evento[0]);
+            FPersistantManager::getInstance()->remove($luogo);
+
+
+        }
+        else
+            header('Location: /playadice/evento/showAll');
+
 
     }
 
