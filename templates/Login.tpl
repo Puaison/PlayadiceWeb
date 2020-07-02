@@ -30,7 +30,7 @@
         <hr> {if $error}
         <div class="alert alert-warning">
             <!-- Errore-->
-            <strong>Attenzione!</strong><br>Username o Password errati. <br>Please retry. </div> {/if}
+            <strong>Attenzione!</strong><br>Username o Password errati. <br>Per favore riprova. </div> {/if}
 
         <!-- FORM -->
         <form class="form-horizontal" method="post" action="login">
