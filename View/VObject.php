@@ -27,10 +27,13 @@ class VObject
      * @param EUtente $utente l'utente della sessione
      * @param string $error il messaggio di errore da visualizzare
      */
-    function showErrorPage(EUtente &$utente, string $error)
+    function showErrorPage(EUtente &$utente=null, string $error)
     {
-        $this->smarty->registerObject('user', $utente);
-        $this->smarty->assign('uType', lcfirst(substr(get_class($utente), 1)));
+        if($utente)
+        {
+            $this->smarty->registerObject('user', $utente);
+            $this->smarty->assign('uType', lcfirst(substr(get_class($utente), 1)));
+        }
         $this->smarty->assign('error', $error);
         $this->smarty->display('errorPage.tpl');
     }

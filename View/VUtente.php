@@ -64,7 +64,7 @@ class VUtente extends VObject
     }
 
     /**
-     * Verifica che un utente abbia inserito i
+     * Verifica che un utente abbia inserito valori validi per nomi e cognomi
      *
      * @return true se non si sono commessi errori, false altrimenti
      */
@@ -115,7 +115,7 @@ class VUtente extends VObject
 
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('error', $error);
-
+        $this->smarty->assign('check', $this->check);
         $this->smarty->display('Register.tpl');
     }
 }

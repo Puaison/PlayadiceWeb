@@ -26,7 +26,10 @@
 
     </div>
         <h2>Register</h2>
-        <hr>
+        <hr>{if $error}
+        <div class="alert alert-warning">
+            <!-- Errore form-->
+            <strong>Warning!</strong><br>Wrong combination of data. <br>Please retry. </div> {/if}
         <form method="post" enctype="multipart/form-data" action="signup">
 
             <div class="form-group row">
@@ -51,6 +54,13 @@
                 <div class="col-lg-5">
                     <input type="text" class="form-control " id="mail" name="Mail" placeholder="Insert email...">
                 </div>
+                {if ! $check.Mail}
+                    <div class="alert alert-warning">
+                        <small >
+                            Must be an email.
+                        </small>
+                    </div>
+                {/if}
 
             </div>
             <div class="form-group row">
