@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 16:56:20
+/* Smarty version 3.1.34-dev-7, created on 2020-07-02 11:52:25
   from 'C:\xampp\htdocs\playadice\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efca4141054e7_61570296',
+  'unifunc' => 'content_5efdae59132684_35371226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efca4141054e7_61570296 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efdae59132684_35371226 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>

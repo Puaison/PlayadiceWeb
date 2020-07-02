@@ -52,9 +52,10 @@ class EFascia extends EObject
     public function getData() : DateTime {return $this->inizio;}
     public function getFine() : String {return date_format($this->fine,"d/m/Y H:i:s");}
     public function getDataFine(): String{
-        $inizio=$this->inizio;
-        $durata=$this->durata;
-        $diff=date_format(date_sub($inizio,$durata),"d/m/Y H:i:s");
+        $inizio=clone $this->inizio;
+        $durata=clone $this->durata;
+        $diff=date_format(date_add($inizio,$durata),"d/m/Y H:i:s");
+
 
 
         return $diff;

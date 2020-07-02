@@ -52,10 +52,12 @@
 
                         <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
                         <div class='row'>
-                            <div class="col pl-3"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete/{$results[0]->getId()}">Annulla</a></div>
+                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete/{$results[0]->getId()}">Annulla</a></div>
+                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify/{$results[0]->getId()}">Modifica</a></div>
 
-                        <div class="pull-right pr-3"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
-                            <button class="btn btn-primary " type="submit" style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div></div>
+                        <div class="pull-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
+                            <button class="btn btn-primary " type="submit" style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>
+                    </div>
                     </div>
                 </div>
             </div>

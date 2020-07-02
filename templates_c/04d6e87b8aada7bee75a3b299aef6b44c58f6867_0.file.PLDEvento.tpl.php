@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-02 09:30:45
+/* Smarty version 3.1.34-dev-7, created on 2020-07-02 11:52:51
   from 'C:\xampp\htdocs\playadice\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efd8d25ae5d65_73329423',
+  'unifunc' => 'content_5efdae730e3912_93476881',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04d6e87b8aada7bee75a3b299aef6b44c58f6867' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEvento.tpl',
-      1 => 1593675045,
+      1 => 1593676539,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efd8d25ae5d65_73329423 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efdae730e3912_93476881 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -96,11 +96,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <p class="card-text mt-sm-3"><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getTesto();?>
 </p>
                         <div class='row'>
-                            <div class="col pl-3"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete/<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
+                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete/<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
 ">Annulla</a></div>
+                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify/<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
+">Modifica</a></div>
 
-                        <div class="pull-right pr-3"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
-                            <button class="btn btn-primary " type="submit" style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div></div>
+                        <div class="pull-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
+                            <button class="btn btn-primary " type="submit" style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>
+                    </div>
                     </div>
                 </div>
             </div>

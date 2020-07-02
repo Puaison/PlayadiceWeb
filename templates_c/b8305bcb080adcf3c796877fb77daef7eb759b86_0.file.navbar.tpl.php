@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 16:48:25
+/* Smarty version 3.1.34-dev-7, created on 2020-07-02 11:17:27
   from 'C:\xampp\htdocs\playadice\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efca239a400c5_59110488',
+  'unifunc' => 'content_5efda627da4347_33664259',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5efca239a400c5_59110488 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efda627da4347_33664259 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container">
                 <ul class="navbar-nav">

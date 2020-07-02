@@ -30,8 +30,45 @@ class CEvento
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         $vEvento->create($user);
     }
+    static function modify($id){
+        $vEvento=new VEvento();
+        $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
+        $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
+        $vEvento->modify($user, $evento);
+    }
+    static function updateevento($id){
+        $vEvento=new VEvento();
+        $evento=$vEvento->createEvento();
+        $fasce=$evento->getFasce();
+        $luogo=$evento->getLuogo();
+        $eventoOld=FPersistantManager::getInstance()->search("Evento", "Id", $id);
+        $luogoOld=$eventoOld[0]->getLuogo();
+        $luogo->setId($luogoOld->getId());
+        $evento->setId($eventoOld[0]->getId());
+        FPersistantManager::getInstance()->update($luogo);
+        FPersistantManager::getInstance()->update($evento);
+        $fasceOld=$eventoOld[0]->getFasce();
+        for($i=0;$i<count($fasce);$i++){
+            if(isset($fasceOld[$i])) {
+                $fasce[$i] -> setId($fasceOld[$i] -> getId());
+                $fasce[$i] -> setIdEvento($fasceOld[$i] -> getIdEvento());
+                FPersistantManager::getInstance()->update($fasce[$i]);
+            }
+
+            else{
+                $fasce[$i]->setIdEvento($eventoOld[0]->getId());
+                FPersistantManager::getInstance()->store($fasce[$i]);
+            }
+
+
+
+        }
+
+        header('Location: /playadice/evento/showAll');
+    }
 
     static function store(){
+        echo("son qua");
         $vEvento=new VEvento();
         $evento=$vEvento->createEvento();
         $luogo=$evento->getLuogo();
@@ -48,8 +85,6 @@ class CEvento
     }
     static function delete($id)
     {
-
-
         if(is_numeric($id)){
             $evento= FPersistantManager::getInstance()->search("Evento", "Id", $id);
             $luogo=$evento[0]->getLuogo();
