@@ -29,9 +29,11 @@
         <h2>Login</h2>
         <hr> {if $error}
         <div class="alert alert-warning">
-            <!-- Errore form-->
+            <!-- Errore-->
             <strong>Warning!</strong><br>Wrong combination of user and password. <br>Please retry. </div> {/if}
-    <form class="form-horizontal" method="post" action="login">
+
+        <!-- FORM -->
+        <form class="form-horizontal" method="post" action="login">
             <!-- Nickname -->
             <div class="form-group row">
                 <label for="user" class="col-md-5 col-form-label">Username:</label>
@@ -49,8 +51,6 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
-
-
         </form>
 
         <a href="/playadice/utente/signup">

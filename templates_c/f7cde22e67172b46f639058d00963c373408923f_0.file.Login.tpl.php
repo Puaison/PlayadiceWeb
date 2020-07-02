@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 11:18:25
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 18:20:31
   from 'C:\xampp\htdocs\playadice\templates\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc54e12426b8_92232746',
+  'unifunc' => 'content_5efcb7cf1f1e79_73593625',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7cde22e67172b46f639058d00963c373408923f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\Login.tpl',
-      1 => 1593595092,
+      1 => 1593600944,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc54e12426b8_92232746 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efcb7cf1f1e79_73593625 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -55,9 +55,11 @@ function content_5efc54e12426b8_92232746 (Smarty_Internal_Template $_smarty_tpl)
         <h2>Login</h2>
         <hr> <?php if ($_smarty_tpl->tpl_vars['error']->value) {?>
         <div class="alert alert-warning">
-            <!-- Errore form-->
+            <!-- Errore-->
             <strong>Warning!</strong><br>Wrong combination of user and password. <br>Please retry. </div> <?php }?>
-    <form class="form-horizontal" method="post" action="login">
+
+        <!-- FORM -->
+        <form class="form-horizontal" method="post" action="login">
             <!-- Nickname -->
             <div class="form-group row">
                 <label for="user" class="col-md-5 col-form-label">Username:</label>
@@ -75,8 +77,6 @@ function content_5efc54e12426b8_92232746 (Smarty_Internal_Template $_smarty_tpl)
             <div class="form-group">
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
-
-
         </form>
 
         <a href="/playadice/utente/signup">

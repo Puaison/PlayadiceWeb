@@ -58,7 +58,7 @@ class ELuogo extends EObject
      * Metodo che fornisce la Via del Luogo
      * @return string la via
      */
-    function getVia():string {return $this->via;}
+    public  function getVia():string {return $this->via;}
     public function getNome():string {return $this->nome;}
     /**
      * Metodo che fornisce la città del Luogo

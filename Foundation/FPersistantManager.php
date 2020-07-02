@@ -87,7 +87,6 @@ class FPersistantManager
 
         }
 
-
         if($sql)
             return $this->execSearch('F'.$key, $value, $str, $sql);
         else return NULL;
@@ -106,8 +105,6 @@ class FPersistantManager
 
             while($row = $stmt->fetch())
             { // per ogni tupla restituita dal db...
-
-
                 $obj[] = FPersistantManager::createObjectFromRow($className, $row); //...istanzio l'oggetto
             }
             $this->__destruct(); // chiude la connessione

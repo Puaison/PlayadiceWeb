@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 12:31:43
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 18:23:09
   from 'C:\xampp\htdocs\playadice\templates\Register.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc660f3a2f22_86685226',
+  'unifunc' => 'content_5efcb86d653a32_20659928',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '555686cb53629661b8cfc5ce0458ede07659ee4d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\Register.tpl',
-      1 => 1593599502,
+      1 => 1593600944,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc660f3a2f22_86685226 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efcb86d653a32_20659928 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -52,10 +52,7 @@ function content_5efc660f3a2f22_86685226 (Smarty_Internal_Template $_smarty_tpl)
 
     </div>
         <h2>Register</h2>
-        <hr><?php if ($_smarty_tpl->tpl_vars['error']->value) {?>
-        <div class="alert alert-warning">
-            <!-- Errore form-->
-            <strong>Warning!</strong><br>Wrong combination of data. <br>Please retry. </div> <?php }?>
+        <hr>
         <form method="post" enctype="multipart/form-data" action="signup">
 
             <div class="form-group row">
@@ -80,13 +77,6 @@ function content_5efc660f3a2f22_86685226 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="col-lg-5">
                     <input type="text" class="form-control " id="mail" name="Mail" placeholder="Insert email...">
                 </div>
-                <?php if (!$_smarty_tpl->tpl_vars['check']->value['Mail']) {?>
-                    <div class="alert alert-warning">
-                        <small >
-                            Must be an email.
-                        </small>
-                    </div>
-                <?php }?>
 
             </div>
             <div class="form-group row">
