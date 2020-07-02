@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/PLDEventoModifica.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/e94b790a107fc4ac5fbc7f406219f2a064a521ec_0.file.PLDEventoModifica.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/CEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CEvento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EFascia.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EFascia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FFascia.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FFascia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VEvento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainviewant.php" beforeDir="false" afterPath="$PROJECT_DIR$/mainviewant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/PLDEvento.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDEvento.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/PLDNewEvento.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDNewEvento.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/4ec4e6d97ce13de9465c62027cc1b678ec160042_0.file.PLDNewEvento.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/4ec4e6d97ce13de9465c62027cc1b678ec160042_0.file.PLDNewEvento.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/555686cb53629661b8cfc5ce0458ede07659ee4d_0.file.Register.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/f78c02662978575bfd8ef5305af4599db402bcff_0.file.TVGMainpage.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/f7cde22e67172b46f639058d00963c373408923f_0.file.Login.tpl.php" beforeDir="false" />
-    </list>
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,14 +194,7 @@
       <workItem from="1593540959995" duration="7852000" />
       <workItem from="1593616684220" duration="632000" />
       <workItem from="1593629525099" duration="11240000" />
-      <workItem from="1593672626829" duration="14561000" />
-    </task>
-    <task id="LOCAL-00022" summary="Dates classes modified">
-      <created>1589025598478</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1589025598478</updated>
+      <workItem from="1593672626829" duration="15326000" />
     </task>
     <task id="LOCAL-00023" summary="ulteriori modifiche">
       <created>1589102119005</created>
@@ -558,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593675548207</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Aggiunta bozza &quot;Modifica Evento&quot;">
+      <created>1593687367804</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1593687367804</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunta Foundation di FProposta.php, Piccole modifiche alle entity, piccoli cambiamenti in FAvatar.php" />
     <MESSAGE value="Primi test Smarty" />
     <MESSAGE value="Aggiunto PLDEvento.tpl&#10;modifiche apportate a ELuogo.php EFascia.php" />
     <MESSAGE value="Inizio PLDNewEvento.tpl" />
@@ -613,7 +593,8 @@
     <MESSAGE value="PLDEvento.tpl ora funzionante.&#10;Aggiunta funzionalità di creazione da terminare" />
     <MESSAGE value="Terminata bozza &quot;Creazione Evento&quot;" />
     <MESSAGE value="Aggiunta bozza &quot;Rimozione Evento&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta bozza &quot;Rimozione Evento&quot;" />
+    <MESSAGE value="Aggiunta bozza &quot;Modifica Evento&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta bozza &quot;Modifica Evento&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -676,11 +657,11 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1593675545875">
+    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1593687366646">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921707426" />
-    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593675545875" />
+    <state x="585" y="134" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593687366646" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593535957183" />
     <state x="744" y="353" key="EditFileWatcherDialog" timestamp="1593614981790">
       <screen x="0" y="0" width="1920" height="1080" />

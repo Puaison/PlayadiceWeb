@@ -90,6 +90,7 @@ class CEvento
             $luogo=$evento[0]->getLuogo();
             FPersistantManager::getInstance()->remove($evento[0]);
             FPersistantManager::getInstance()->remove($luogo);
+            header('Location: /playadice/evento/showAll');
 
 
         }
