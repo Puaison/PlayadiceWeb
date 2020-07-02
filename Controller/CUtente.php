@@ -58,14 +58,8 @@ class CUtente
 
         $vUser = new VUtente();
         $loggedUser = $vUser->createUser(); // viene creato un utente con i parametri della form
-        $alreadyexists=new EUtente();
-        $alreadyexists=FPersistantManager::getInstance()->exists("utente", "UserName", $loggedUser->getUsername())[0];
-        if(isset($alreadyexists))
-        {
-            // se il nickname è già stato usato, lo mando alla schermata di errore
-            $vUser->showErrorPage(null, 'Utente già esistente');
-        }
-        elseif($vUser->validateSignUp($loggedUser))
+
+        if($vUser->validateSignUp($loggedUser))
         {
             FPersistantManager::getInstance()->store($loggedUser); // si salva l'utente
             CSession::startSession($loggedUser);

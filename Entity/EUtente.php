@@ -116,9 +116,19 @@ class EUtente
     /********************************************** ALTRE FUNZIONI ************************************************/
 
 
+    function validateEsistenza() : bool
+    {
+        if (!FPersistantManager::getInstance()->exists("utente", "UserName", $this->getUsername()))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
     function validateMail() : bool
     {
-        if($this->Mail && filter_var($this->Mail, FILTER_VALIDATE_EMAIL))
+        if($this->Mail && filter_var($this->Mail, FILTER_VALIDATE_EMAIL) && strlen($this->Mail)<=40)
         {
             return true;
         }
@@ -143,7 +153,7 @@ class EUtente
 
     function validateUsername() : bool
     {
-        if ($this->Username && preg_match('/^[a-zA-Z0-9_-]{6,15}$/', $this->Username))
+        if ($this->Username && preg_match('/^[a-zA-Z0-9_-]{6,20}$/', $this->Username))
         {
             return true;
         }
@@ -153,7 +163,7 @@ class EUtente
 
     function validateNome() : bool
     {
-        if (ctype_alpha($this->Nome))
+        if (ctype_alpha($this->Nome) && strlen($this->Nome)<=20)
         {
             strtolower($this->Nome);
             ucfirst($this->Nome);
@@ -165,7 +175,7 @@ class EUtente
 
     function validateCognome() : bool
     {
-        if (ctype_alpha($this->Cognome))
+        if (ctype_alpha($this->Cognome) && strlen($this->Cognome)<=30)
         {
             strtolower($this->Cognome);
             ucfirst($this->Cognome);

@@ -27,7 +27,7 @@ class VObject
      * @param EUtente $utente l'utente della sessione
      * @param string $error il messaggio di errore da visualizzare
      */
-    function showErrorPage(EUtente &$utente=null, string $error)
+    function showErrorPage(EUtente $utente=null, string $error)
     {
         if($utente)
         {
