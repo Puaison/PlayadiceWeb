@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-02 20:03:40
+/* Smarty version 3.1.34-dev-7, created on 2020-07-03 09:40:58
   from 'C:\xampp\htdocs\playadice\templates\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efe217c0bbd81_87734850',
+  'unifunc' => 'content_5efee10a475fd0_84118524',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7cde22e67172b46f639058d00963c373408923f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\Login.tpl',
-      1 => 1593681927,
+      1 => 1593762051,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efe217c0bbd81_87734850 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efee10a475fd0_84118524 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +56,7 @@ function content_5efe217c0bbd81_87734850 (Smarty_Internal_Template $_smarty_tpl)
         <hr> <?php if ($_smarty_tpl->tpl_vars['error']->value) {?>
         <div class="alert alert-warning">
             <!-- Errore-->
-            <strong>Warning!</strong><br>Wrong combination of user and password. <br>Please retry. </div> <?php }?>
+            <strong>Attenzione!</strong><br>Username o Password errati. <br>Per favore riprova. </div> <?php }?>
 
         <!-- FORM -->
         <form class="form-horizontal" method="post" action="login">
@@ -64,7 +64,7 @@ function content_5efe217c0bbd81_87734850 (Smarty_Internal_Template $_smarty_tpl)
             <div class="form-group row">
                 <label for="user" class="col-md-5 col-form-label">Username:</label>
                 <div class="col-lg-5">
-                    <input type="text" class="form-control border-primary" id="user" name="Username" placeholder="Username">
+                    <input type="text" class="form-control border-primary" id="user" name="Username" placeholder="Username" maxlength="20" minlength="6">
                 </div>
             </div>
             <div class="form-group row">

@@ -38,14 +38,14 @@
             <div class="form-group row">
                 <label for="user" class="col-md-5 col-form-label">Username:</label>
                 <div class="col-lg-5">
-                    <input type="text" class="form-control border-primary" id="user" name="Username" placeholder="Username">
+                    <input type="text" class="form-control border-primary" id="user" name="Username" placeholder="Username" maxlength="20">
                 </div>
             </div>
             <div class="form-group row">
                 <!-- Campo password -->
                 <label for="inputPassword" class="col-sm-5 col-form-label col">Password:</label>
                 <div class="col-lg-5">
-                    <input type="password" class="form-control border-primary" id="inputPassword" name="Password" placeholder="Password">
+                    <input type="password" class="form-control border-primary" id="inputPassword" name="Password" placeholder="Password" maxlength="20">
                 </div>
             </div>
             <div class="form-group">
