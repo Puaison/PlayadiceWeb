@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-02 11:17:27
+/* Smarty version 3.1.34-dev-7, created on 2020-07-03 14:13:34
   from 'C:\xampp\htdocs\playadice\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efda627da4347_33664259',
+  'unifunc' => 'content_5eff20ee8b9f91_11521669',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b8305bcb080adcf3c796877fb77daef7eb759b86' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\navbar.tpl',
-      1 => 1593596780,
+      1 => 1593778397,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5efda627da4347_33664259 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eff20ee8b9f91_11521669 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container">
                 <ul class="navbar-nav">
@@ -29,7 +29,7 @@ function content_5efda627da4347_33664259 (Smarty_Internal_Template $_smarty_tpl)
  </a>
                                 <a class="nav-link space" href=""> &nbsp;Spazio43</a>
                                 <a class="nav-link" href="/playadice/evento/showAll"> &nbsp;Eventi</a>
-                                <a class="nav-link" href="#download"> &nbsp;Giochi</a>
+                                <a class="nav-link" href="/playadice/catalogo/catalogo"> &nbsp;Giochi</a>
                                 <a class="nav-link" href="/playadice/ricerca/ShowPersonal"> &nbsp;AreaTWG</a>
                         </ul>
                 </ul>
