@@ -47,7 +47,7 @@
     {if $results}
 
     <div class="row pi-draggable">
-      <div class="col-md-2" style="Text-align:center">
+      <div class="col-md-2 " style="Text-align:center">
         <p style="color:White;">Nome</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
@@ -55,15 +55,6 @@
       </div>
       <div class="col-md-2" style="Text-align:center">
         <p style="color:White;">Livello</p>
-      </div>
-      <div class="col-md-2" style="Text-align:center">
-        <button> Dettagli </button>
-      </div>
-      <div class="col-md-2" style="Text-align:center">
-        <button> Modifica </button>
-      </div>
-      <div class="col-md-2" style="Text-align:center">
-        <button> Elimina </button>
       </div>
     </div>
 

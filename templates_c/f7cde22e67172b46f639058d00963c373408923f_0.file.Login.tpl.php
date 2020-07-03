@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-03 09:40:58
+/* Smarty version 3.1.34-dev-7, created on 2020-07-03 10:13:25
   from 'C:\xampp\htdocs\playadice\templates\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efee10a475fd0_84118524',
+  'unifunc' => 'content_5efee8a5146344_59450747',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7cde22e67172b46f639058d00963c373408923f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\Login.tpl',
-      1 => 1593762051,
+      1 => 1593762103,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efee10a475fd0_84118524 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efee8a5146344_59450747 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -64,14 +64,14 @@ function content_5efee10a475fd0_84118524 (Smarty_Internal_Template $_smarty_tpl)
             <div class="form-group row">
                 <label for="user" class="col-md-5 col-form-label">Username:</label>
                 <div class="col-lg-5">
-                    <input type="text" class="form-control border-primary" id="user" name="Username" placeholder="Username" maxlength="20" minlength="6">
+                    <input type="text" class="form-control border-primary" id="user" name="Username" placeholder="Username" maxlength="20">
                 </div>
             </div>
             <div class="form-group row">
                 <!-- Campo password -->
                 <label for="inputPassword" class="col-sm-5 col-form-label col">Password:</label>
                 <div class="col-lg-5">
-                    <input type="password" class="form-control border-primary" id="inputPassword" name="Password" placeholder="Password">
+                    <input type="password" class="form-control border-primary" id="inputPassword" name="Password" placeholder="Password" maxlength="20">
                 </div>
             </div>
             <div class="form-group">
