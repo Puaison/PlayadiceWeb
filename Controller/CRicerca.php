@@ -62,16 +62,15 @@ class CRicerca
             $vRicerca->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 
-    static function ShowPersonal()
+    static function ShowPersonal(string $notify = NULL)
     {
         $vRicerca = new VRicerca();
         $user = CSession::getUserFromSession();
-
         if (get_class($user) != EOspite::class) // se l'utente non e' ospite
         {
             $string=$user->getUsername();
             $objects = FPersistantManager::getInstance()->search("Avatar", "UsernameUtente" , $string);
-            $vRicerca->showSearchResult($user, $objects);
+            $vRicerca->showSearchResult($user, $objects,$notify);
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
             $vRicerca->showErrorPage($user, 'Devi essere loggato per entrare in questa area');

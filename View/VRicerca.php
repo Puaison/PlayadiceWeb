@@ -32,11 +32,15 @@ class VRicerca extends VObject
 
     /**
      */
-    function showSearchResult(EUtente &$user, $array)
+    function showSearchResult(EUtente &$user, $array, $Notify)
     {
+        if(!$Notify)
+            $Notify = "NoNotify";
+
         $this->smarty->registerObject('user', $user);
 
         $this->smarty->assign('results', $array);
+        $this->smarty->assign('notify', $Notify);
 
         //mostro il contenuto della pagine
         $this->smarty->display('TVGMainpage.tpl');

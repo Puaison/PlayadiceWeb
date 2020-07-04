@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 13:05:48
+  from 'D:\XAMPP2\htdocs\playadice\templates\TVGMainpage.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f00628c4b9e83_57367774',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '0f1dfeea3ed8ab6ec6e238b115eac11f4284d015' => 
+    array (
+      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGMainpage.tpl',
+      1 => 1593860734,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:navbar.tpl' => 1,
+  ),
+),false)) {
+function content_5f00628c4b9e83_57367774 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -19,16 +43,19 @@
 
 <body class="">
 
-{user->getUsername assign='Username'}
+<?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
+
 
   <!-- Navbar here -->
-  {include file="navbar.tpl"}
+  <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <!-- Alert-->
-{if $notify != "NoNotify" }
+<?php if ($_smarty_tpl->tpl_vars['notify']->value != "NoNotify") {?>
   <div class="alert alert-warning">
-    <strong>Attenzione!</strong><br> {$notify} </div>
-{/if}
+    <strong>Attenzione!</strong><br> <?php echo $_smarty_tpl->tpl_vars['notify']->value;?>
+ </div>
+<?php }?>
 
   <!-- Sezione Ricerca here -->
   <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
@@ -51,7 +78,7 @@
     </div>
     <!-- Sezione I miei PG here -->
 
-    {if $results}
+    <?php if ($_smarty_tpl->tpl_vars['results']->value) {?>
 
     <div class="row pi-draggable">
       <div class="col-md-2 " style="Text-align:center">
@@ -65,30 +92,45 @@
       </div>
     </div>
 
-    {section name=k loop=$results}
+    <?php
+$__section_k_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['results']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_k_0_total = $__section_k_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
+if ($__section_k_0_total !== 0) {
+for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_0_iteration <= $__section_k_0_total; $__section_k_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
+?>
     <div class="row pi-draggable">
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">{$results[k]->getNome()}</p>
+        <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
+</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">{$results[k]->getClasse()}</p>
+        <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getClasse();?>
+</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">{$results[k]->getLivello()}</p>
+        <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getLivello();?>
+</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/details?{$results[k]->getId()}">Details</a>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/details?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+">Details</a>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/modify?{$results[k]->getId()}">Modifica</a>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/modify?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+">Modifica</a>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/delete?{$results[k]->getId()}">Elimina</a>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/delete?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+">Elimina</a>
       </div>
     </div>
-    {/section}
+    <?php
+}
+}
+?>
 
-    {/if}
+    <?php }?>
     <!-- Fine Sezione -->
     <br>
     <div style="Text-align:center">
@@ -116,4 +158,5 @@
 
 </body>
 
-</html>
+</html><?php }
+}

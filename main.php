@@ -85,7 +85,7 @@ $User2->setUsername("Puaison");
 $User2->setPassword("ScemoChiLegge");
 
 require_once ('./Smarty/libs/Smarty.class.php');
-*/
+
 
 $smarty = SmartyConfig::configure();
 $user = CSession::getUserFromSession();
@@ -93,7 +93,7 @@ $user = CSession::getUserFromSession();
 $smarty->registerObject('user', $user);
 
 $smarty->display('Test2.tpl');
-
+*/
 
 
 ?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 13:49:59
+/* Smarty version 3.1.34-dev-7, created on 2020-07-01 13:54:19
   from 'D:\XAMPP2\htdocs\playadice\templates\TVGAvatarModify.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc786787e1d9_25771386',
+  'unifunc' => 'content_5efc796b54d189_38482765',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef10af9caf3bd4cb697ebb0fdf71d897f3cd1867' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGAvatarModify.tpl',
-      1 => 1593604199,
+      1 => 1593604387,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc786787e1d9_25771386 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efc796b54d189_38482765 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -41,9 +41,9 @@ function content_5efc786787e1d9_25771386 (Smarty_Internal_Template $_smarty_tpl)
   <!-- Navbar here -->
   <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-  <!-- Sezione Ricerca here -->
+
   <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
-    <!-- Sezionee -->
+    <!-- Sezione FORM -->
     <form method="post" id="ModifyAvatarForm">
       <div class="row pi-draggable" draggable="true">
         <div class="col-md-2" style="Text-align:center">

@@ -8,12 +8,12 @@ class EProposta extends EObject {
     /**
      * Riferimento all'avatar della proposta
      */
-    private EAvatar $Modificato;
+    private ?EAvatar $Modificato;
 
     /**
      * Riferimento all'avatar proposto
      */
-    private EAvatar $Proposto;
+    private ?EAvatar $Proposto;
 
     /**
      * Tipo della proposta descritto da una stringa
@@ -36,7 +36,7 @@ class EProposta extends EObject {
      *
      * @return EAvatar
      */
-    public function getModificato() : EAvatar
+    public function getModificato() : ?EAvatar
     {
         {
             return $this->Modificato;
@@ -47,7 +47,7 @@ class EProposta extends EObject {
      *
      * @return EAvatar
      */
-    public function getProposto() : EAvatar
+    public function getProposto() : ?EAvatar
     {
         {
             return $this->Proposto;
@@ -71,7 +71,7 @@ class EProposta extends EObject {
      * Imposta Il personaggio che presumibilmente andrà modificato
      * @param EAvatar $Mod livello dell'avatar
      */
-    public function setModificato(EAvatar $Mod)
+    public function setModificato(?EAvatar $Mod)
     {
         {
             $this->Modificato=$Mod;
@@ -82,7 +82,7 @@ class EProposta extends EObject {
      * Imposta Il personaggio che viene proposto
      * @param EAvatar $Prop livello dell'avatar
      */
-    public function setProposto(EAvatar $Prop)
+    public function setProposto(?EAvatar $Prop)
     {
         {
             $this->Proposto=$Prop;
@@ -91,7 +91,7 @@ class EProposta extends EObject {
 
     /**
      * Imposta Il tipo di proposta
-     * @param string $TipoProposta livello dell'avatar
+     * @param string $TipoProposta Stringa del tipo: "Creazione" "Modifica" "Cancellazione"
      */
     public function setTipoProposta(string $TipoProposta)
     {

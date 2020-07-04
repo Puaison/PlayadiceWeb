@@ -1,18 +1,22 @@
+<!DOCTYPE html>
 <html>
-<body>
-<h2> Codice dei comuni della provincia dell'Aquila </h2>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<br>
+        <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
+        <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
+        <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+        <title>Test</title>
+</head>
 
-<b>Risultati in forma di Select: </b> <br>
+<body class="">
 
-<select name="mys">
-    {section name=nr loop=$results}
-        <option value="{$results[nr]->getCodice()}">
-            {$results[nr]->getComune()} | {$results[nr]->getProvincia()}
-        </option>
-    {/section}
-</select>
+{user->getUsername assign='Username'}
+
+<!-- Navbar here -->
+{include file="navbar.tpl"}
 
 </body>
+
 </html>
