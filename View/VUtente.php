@@ -49,14 +49,15 @@ class VUtente extends VObject
     }
     /**
      * Verifica che un utente abbia rispettato i vincoli per l'inserimento dei parametri di login
-     *
+     * @param EUtente $user l'oggetto Utente da controllare
      * @return true se non si sono commessi errori, false altrimenti
      */
     function validateLogin(EUtente $user): bool
     {
+        $this->check['Esistente']=$user->validateEsistenza();
         $this->check['Username']=$user->validateUsername();
         $this->check['Password']=$user->validatePassword();
-        if($this->check['Username'] && $this->check['Password'])
+        if($this->check['Username'] && $this->check['Password'] && $this->check['Esistente'])
         {
             return true;
         }

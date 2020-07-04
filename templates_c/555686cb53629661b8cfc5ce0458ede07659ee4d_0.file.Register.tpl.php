@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-02 21:58:23
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 15:28:08
   from 'C:\xampp\htdocs\playadice\templates\Register.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efe3c5fe8a615_46798915',
+  'unifunc' => 'content_5f0083e8f39bd0_30426625',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '555686cb53629661b8cfc5ce0458ede07659ee4d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\Register.tpl',
-      1 => 1593719900,
+      1 => 1593720027,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efe3c5fe8a615_46798915 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0083e8f39bd0_30426625 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -94,7 +94,7 @@ function content_5efe3c5fe8a615_46798915 (Smarty_Internal_Template $_smarty_tpl)
             <div class="form-group row">
                 <label for="mail" class="col-sm-5 col-form-label ">Email:</label>
                 <div class="col-lg-5">
-                    <input type="text" class="form-control " id="mail" name="Mail" placeholder="Insert email..." maxlength="45">
+                    <input type="text" class="form-control " id="mail" name="Mail" placeholder="Insert email..." maxlength="40">
                 </div>
                 <?php if (!$_smarty_tpl->tpl_vars['check']->value['Mail']) {?>
                     <div class="alert alert-warning">

@@ -126,6 +126,33 @@ class EGioco extends EObject
     }
 
     /**
+     * Metodo che controlla se il nome del gioco inserito è lungo meno di 40  caratteri e ha solo numeri, lettere e spazi
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateNome() : bool
+    {
+        if ($this->Nome && strlen($this->Nome)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Nome))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    /**
+     * Metodo che controlla se la categoria del gioco inserito esiste tra quelle predefinite inizialmente nell'applicazione
+     * @return bool true se la categoria esiste, false altrimenti
+     */
+    function validateCategoria() : bool
+    {
+        if($this->Categoria== EGiocoCategoria::Strategia && $this->Categoria== EGiocoCategoria::Party )
+            return true;
+        else
+            return false;
+
+    }
+
+    /**
      * Metodo che aggiunge una recensione al Gioco
      * @param ERecensione $rec La recensione da aggiungere
      */
