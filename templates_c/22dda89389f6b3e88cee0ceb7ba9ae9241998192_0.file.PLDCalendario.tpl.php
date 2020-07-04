@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 11:24:59
-  from 'C:\xampp\htdocs\playadice\templates\PLDCalendario.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 10:43:21
+  from 'D:\XAMPP2\htdocs\playadice\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f004aebd8ffc9_37302862',
+  'unifunc' => 'content_5f004129c2e5a1_29117843',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '0068d291dd41580fd3d2866b15d2e2351700254c' => 
+    '22dda89389f6b3e88cee0ceb7ba9ae9241998192' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDCalendario.tpl',
-      1 => 1593854697,
+      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\PLDCalendario.tpl',
+      1 => 1593852039,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f004aebd8ffc9_37302862 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f004129c2e5a1_29117843 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -44,8 +44,6 @@ function content_5f004aebd8ffc9_37302862 (Smarty_Internal_Template $_smarty_tpl)
 
 <?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
 
-<?php $_smarty_tpl->assign('Tipo',$_smarty_tpl->smarty->registered_objects['user'][0]->getModeratore(array(),$_smarty_tpl));?>
-
 
 <!-- Navbar here -->
 
@@ -56,8 +54,7 @@ function content_5f004aebd8ffc9_37302862 (Smarty_Internal_Template $_smarty_tpl)
     <div class="container">
         <div class="row ">
             <div class="col pb-3" > Ultimi Eventi</div>
-            <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
-            <a class="col pb-3" href="../evento/create"> Crea un Evento</a><?php }?>
+            <a class="col pb-3" href="../evento/create"> Crea un Evento</a>
 
             <?php
 $__section_k_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['results']->value) ? count($_loop) : max(0, (int) $_loop));
@@ -71,7 +68,7 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
 
                     <div class="my-auto text-center">
-                            <a class="px-5" href="../evento/show?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+                            <a class="px-5" href="../evento/show/<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
 ">
                             <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
 </a>

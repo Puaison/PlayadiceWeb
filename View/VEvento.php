@@ -20,9 +20,12 @@ class VEvento extends VObject
         $this->smarty->display('PLDCalendario.tpl');
 
     }
-    function show(EUtente &$user, $evento){
+    function show(EUtente &$user, $evento, $error = null, $check){
+
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('results', $evento);
+        $this->smarty->assign('error', $error);
+        $this->smarty->assign('check', $check);
         $this->smarty->display('PLDEvento.tpl');
 
     }
@@ -35,6 +38,12 @@ class VEvento extends VObject
         $this->smarty->registerObject('user', $user);
         $this->smarty->display('PLDNewEvento.tpl');
 
+
+    }
+    function booking(EUtente &$user, $evento){
+        $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('results', $evento);
+        $this->smarty->display('PLDEventoModifica.tpl');
 
     }
     function modify(EUtente &$user, $evento){

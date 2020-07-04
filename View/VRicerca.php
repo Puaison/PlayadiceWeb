@@ -31,18 +31,16 @@ class VRicerca extends VObject
     }
 
     /**
-     * Mostra i risultati della ricerca
-     * @param EUtente $user l'utente della sessione
-     * @param array $array contenente i risultati della ricerca | NULL se nessun oggetto e' stato costruito
-     * @param string $key la chiave di ricerca adoperata
-     * @param string $value il valore di ricerca adoperato
-     * @param string $string il dato ricercato dall'utente
      */
-    function showSearchResult(EUtente &$user, $array)
+    function showSearchResult(EUtente &$user, $array, $Notify)
     {
+        if(!$Notify)
+            $Notify = "NoNotify";
+
         $this->smarty->registerObject('user', $user);
 
         $this->smarty->assign('results', $array);
+        $this->smarty->assign('notify', $Notify);
 
         //mostro il contenuto della pagine
         $this->smarty->display('TVGMainpage.tpl');

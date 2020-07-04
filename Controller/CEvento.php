@@ -22,7 +22,20 @@ class CEvento
         $vEvento= new VEvento(); // crea la view
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
-        $vEvento->show($user, $evento);
+        $prenotazioni=$evento[0]->getPrenotazioni();
+        $check=false;
+        if (!empty($prenotazioni)) {
+
+            foreach ($prenotazioni as $value) {
+                $nome = $value -> getUtente() -> getUsername();
+
+
+                if ($nome == $user -> getUsername()) {
+                    $check = true;
+                }
+            }
+        }
+        $vEvento->show($user, $evento,null,$check);
 
     }
     static function create(){
@@ -35,6 +48,23 @@ class CEvento
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
         $vEvento->modify($user, $evento);
+    }
+    static function booking($id){
+        $vEvento=new VEvento();
+        $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
+        $prenotazione= new EPrenotazione();
+        $prenotazione->setUtente($user);
+        $prenotazione->setIdEvento($id);
+        $fp=FPersistantManager::getInstance()->store($prenotazione);
+        $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
+        $evento[0]->newPrenotazione($prenotazione);
+
+        $vEvento->show($user,$evento,$fp,true);
+
+
+
+
+
     }
     static function updateevento($id){
         $vEvento=new VEvento();
@@ -68,7 +98,6 @@ class CEvento
     }
 
     static function store(){
-        echo("son qua");
         $vEvento=new VEvento();
         $evento=$vEvento->createEvento();
         $luogo=$evento->getLuogo();
