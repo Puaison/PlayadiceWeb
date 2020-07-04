@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `avatar` (
-  `UsernameUtente` varchar(20) NOT NULL,
+  `UsernameUtente` varchar(20),
   `IdAvatar` smallint(6) NOT NULL,
   `Classe` varchar(20) NOT NULL,
   `Livello` tinyint(4) NOT NULL,
@@ -130,9 +130,9 @@ CREATE TABLE IF NOT EXISTS `prenotazione` (
 
 CREATE TABLE IF NOT EXISTS `proposta` (
   `Id` smallint(6) NOT NULL,
-  `IDModificato` smallint(6) NOT NULL,
-  `IDProposto` smallint(6) NOT NULL,
-  `Tipo proposta` enum('Creazione','Modifica','Cancellazione') NOT NULL
+  `IDModificato` smallint(6),
+  `IDProposto` smallint(6),
+  `Tipo` enum('Creazione','Modifica','Cancellazione') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

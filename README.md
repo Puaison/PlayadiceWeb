@@ -11,6 +11,6 @@ Domande:
 
 
 TODO:
-1) UsernameUtente di avatar è foreign key che puù essere null
-1bis) EMod e EProp di Proposta è foreign key che puù essere null
-2) Tipo Proposta di proposta è adesso Tipo
+1) UsernameUtente di avatar è foreign key che puù essere null  //FATTO
+1bis) EMod e EProp di Proposta è foreign key che puù essere null  //FATTO
+2) Tipo Proposta di proposta è adesso Tipo  //FATTO
