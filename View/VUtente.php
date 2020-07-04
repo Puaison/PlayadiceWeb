@@ -16,6 +16,7 @@ class VUtente extends VObject
         parent::__construct();
 
         $this->check = array(
+            'Esistente' => true,
             'Username' => true,
             'Mail' => true,
             'Password' => true,
@@ -53,7 +54,9 @@ class VUtente extends VObject
      */
     function validateLogin(EUtente $user): bool
     {
-        if($this->check['Username']=$user->validateUsername() && $this->check['Password']=$user->validatePassword())
+        $this->check['Username']=$user->validateUsername();
+        $this->check['Password']=$user->validatePassword();
+        if($this->check['Username'] && $this->check['Password'])
         {
             return true;
         }
@@ -64,15 +67,21 @@ class VUtente extends VObject
     }
 
     /**
-     * Verifica che un utente abbia inserito i
+     * Verifica che un utente abbia inserito valori validi per nomi e cognomi
      *
      * @return true se non si sono commessi errori, false altrimenti
      */
     function validateSignUp(EUtente $user): bool
     {
-        if($this->check['Username']=$user->validateUsername() && $this->check['Password']=$user->validatePassword() &&
-                $this->check['Mail']=$user->validateMail() && $this->check['Nome']=$user->validateNome()
-                        && $this->check['Cognome']=$user->validateCognome())
+        $this->check['Esistente']=$user->validateEsistenza();
+        $this->check['Username']=$user->validateUsername();
+        $this->check['Password']=$user->validatePassword();
+        $this->check['Mail']=$user->validateMail();
+        $this->check['Nome']=$user->validateNome();
+        $this->check['Cognome']=$user->validateCognome();
+        if($this->check['Username'] && $this->check['Password'] &&
+            $this->check['Mail'] && $this->check['Nome']
+            && $this->check['Cognome'] && $this->check['Esistente'])
         {
             return true;
         }
@@ -114,8 +123,8 @@ class VUtente extends VObject
         $user = new EOspite();
 
         $this->smarty->registerObject('user', $user);
-        $this->smarty->assign('error', $error);
-
+        //TODO DA LEVARE $this->smarty->assign('error', $error);
+        $this->smarty->assign('check', $this->check);
         $this->smarty->display('Register.tpl');
     }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 12:32:25
+/* Smarty version 3.1.34-dev-7, created on 2020-07-02 11:52:25
   from 'C:\xampp\htdocs\playadice\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc6639422097_18685333',
+  'unifunc' => 'content_5efdae59132684_35371226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0068d291dd41580fd3d2866b15d2e2351700254c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDCalendario.tpl',
-      1 => 1593597480,
+      1 => 1593615373,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc6639422097_18685333 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efdae59132684_35371226 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +53,9 @@ function content_5efc6639422097_18685333 (Smarty_Internal_Template $_smarty_tpl)
 <div class="py-5">
     <div class="container">
         <div class="row ">
-            <div class="col-md-12 pb-3" > Ultimi Eventi</div>
+            <div class="col pb-3" > Ultimi Eventi</div>
+            <a class="col pb-3" href="../evento/create"> Crea un Evento</a>
+
             <?php
 $__section_k_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['results']->value) ? count($_loop) : max(0, (int) $_loop));
 $__section_k_0_total = $__section_k_0_loop;
@@ -68,13 +70,10 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
                     <div class="my-auto text-center">
                             <a class="px-5" href="../evento/show/<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
 ">
-
                             <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
-</a></div>
-
-
+</a>
+                    </div>
                 </div>
-
             </div>
             <?php
 }

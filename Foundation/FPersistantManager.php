@@ -383,7 +383,7 @@ class FPersistantManager
         {
             //$Nick="badibba";
             //$stmt->bindValue(":Username", $Nick, PDO::PARAM_STR);
-            FUtente::removeUtente();
+            //FUtente::removeUtente();
             FPersistantManager::bindValues($stmt, $obj); //si associano i valori dell'oggetto alle entry della query
             $result = $stmt->execute(); //esegue lo statement
             $this->__destruct(); // chiude la connessione

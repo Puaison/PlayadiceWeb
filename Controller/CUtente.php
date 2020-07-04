@@ -51,12 +51,22 @@ class CUtente
         else
             header('Location: Invalid HTTP method detected');
     }
-    static function register(){
-        $vUser = new VUtente();
-        $registeredUser = $vUser->createUser();
-        FPersistantManager::getInstance()->store($registeredUser);
-        header('Location: /playadice/index');
 
+
+    static function register()
+    {
+
+        $vUser = new VUtente();
+        $loggedUser = $vUser->createUser(); // viene creato un utente con i parametri della form
+
+        if($vUser->validateSignUp($loggedUser))
+        {
+            FPersistantManager::getInstance()->store($loggedUser); // si salva l'utente
+            CSession::startSession($loggedUser);
+            header('Location: /playadice/index');
+        }
+        else
+            $vUser->showSignUp();
     }
 
     /**

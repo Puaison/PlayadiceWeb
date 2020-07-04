@@ -149,17 +149,18 @@ foreach ($Evento->getFasce() as $value){
 
 }*/
 
-$smarty = SmartyConfig::configure();
+/*$smarty = SmartyConfig::configure();
 $user = CSession::getUserFromSession();
 
 $smarty->assign('error', false);
 $smarty->registerObject('user', $user);
 
-$smarty->display('Register.tpl');
+$smarty->display('Register.tpl');*/
 
 
 
-//$pippo=FPersistantManager::getInstance()->search("Evento","All",'');
-//var_dump($pippo);
+$pippo=FPersistantManager::getInstance()->exists("Fascia","Id",14);
+var_dump($pippo);
+echo($pippo);
 
 ?>
