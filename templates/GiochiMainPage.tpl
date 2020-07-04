@@ -80,7 +80,7 @@
         </div>
         {if $Tipo}
         <div class="col-md-2">
-          <a class="btn-primary btn" href="/playadice/catalogo/remove/{$results[k]->getId()}">Elimina</a>
+          <a class="btn-primary btn" href="/playadice/catalogo/remove?{$results[k]->getId()}">Elimina</a>
         </div>
         {/if}
       </div>

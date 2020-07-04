@@ -3,7 +3,7 @@
 
 class CCatalogo
 {
-    static function catalogo()
+    static function catalogocompleto()
     {
         $vCatalogo = new VCatalogo();
         $user = CSession::getUserFromSession();
@@ -17,13 +17,15 @@ class CCatalogo
         $user = CSession::getUserFromSession();
         if($user->getModeratore())
         {
-            $gioco=new EGioco();
-            $gioco->setId($id);
-            if($gioco->validateEsistenza())
+            $giocoExists = FPersistantManager::getInstance()->exists("gioco", "Id", $id); // si verifica che l'utente inserito matchi una entry nel db
+
+            //$gioco=new EGioco();
+            //$gioco->setId($id);
+            if($giocoExists)
             {
                 $gioco = FPersistantManager::getInstance()->search("gioco", "Id" ,"$id")[0];
                 FPersistantManager::getInstance()->remove($gioco);
-                header('Location: /playadice/index/catalogo');
+                header('Location: /playadice/catalogo/catalogocompleto');
             }
             else
                 $vCatalogo->showErrorPage($user,'Il gioco che vuoi eliminare non esiste');

@@ -30,7 +30,9 @@ class CSession
      */
     static function getUserFromSession() : EUtente
     {
-        session_start();
+        //if (session_status() == PHP_SESSION_NONE) {//controlla se non è già stata recuperata una sessione nella stessa chiamata
+            session_start();
+        //}
         
         if(isset($_SESSION['Username']))
         {
