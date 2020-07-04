@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 13:05:48
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 16:33:52
   from 'D:\XAMPP2\htdocs\playadice\templates\TVGMainpage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f00628c4b9e83_57367774',
+  'unifunc' => 'content_5f009350536729_80978112',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f1dfeea3ed8ab6ec6e238b115eac11f4284d015' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGMainpage.tpl',
-      1 => 1593860734,
+      1 => 1593873232,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f00628c4b9e83_57367774 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f009350536729_80978112 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -74,6 +74,9 @@ function content_5f00628c4b9e83_57367774 (Smarty_Internal_Template $_smarty_tpl)
           <button href="/playadice/ricerca/Search" > Cerca </button>
         </div>
       </form
+
+      <!-- Sezione I miei PG here -->
+      <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/create"> New </a>
 
     </div>
     <!-- Sezione I miei PG here -->
@@ -129,15 +132,10 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 }
 }
 ?>
-
     <?php }?>
-    <!-- Fine Sezione -->
-    <br>
-    <div style="Text-align:center">
-      <p style="color:White;">Personaggi in attesa di approvazione:</p>
-    </div>
-    <br>
+
     <!-- Sezione PG In attesa di approvazione here -->
+    <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == 'admin') {?>
     <div class="row pi-draggable">
       <div class="col-md-3" style="Text-align:center">
         <p style="color:White;">Nome</p>
@@ -152,6 +150,7 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
         <button> Dettagli Approvazione </button>
       </div>
     </div>
+    <?php }?>
     <!-- Fine Sezione -->
   </div>
   <!-- Sezione Our Team -->

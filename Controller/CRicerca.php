@@ -56,7 +56,7 @@ class CRicerca
         {
                 list($string,$key)=$vRicerca->getStringAndKey();
                 $objects = FPersistantManager::getInstance()->search("Avatar", $key , $string);
-                $vRicerca->showSearchResult($user, $objects);
+                $vRicerca->showSearchResult($user, $objects,null);
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
             $vRicerca->showErrorPage($user, 'Devi essere loggato per entrare in questa area');

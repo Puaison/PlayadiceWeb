@@ -38,6 +38,7 @@ class VRicerca extends VObject
             $Notify = "NoNotify";
 
         $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
 
         $this->smarty->assign('results', $array);
         $this->smarty->assign('notify', $Notify);
