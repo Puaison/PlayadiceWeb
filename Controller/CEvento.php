@@ -25,11 +25,8 @@ class CEvento
         $prenotazioni=$evento[0]->getPrenotazioni();
         $check=false;
         if (!empty($prenotazioni)) {
-
             foreach ($prenotazioni as $value) {
                 $nome = $value -> getUtente() -> getUsername();
-
-
                 if ($nome == $user -> getUsername()) {
                     $check = true;
                 }
@@ -58,7 +55,6 @@ class CEvento
         $fp=FPersistantManager::getInstance()->store($prenotazione);
         $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
         $evento[0]->newPrenotazione($prenotazione);
-
         $vEvento->show($user,$evento,$fp,true);
 
 

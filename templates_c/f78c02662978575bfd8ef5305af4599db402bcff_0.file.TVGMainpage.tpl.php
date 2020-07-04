@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-03 16:58:32
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 16:34:01
   from 'C:\xampp\htdocs\playadice\templates\TVGMainpage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eff47980a2535_29551253',
+  'unifunc' => 'content_5f00935905e135_82895420',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f78c02662978575bfd8ef5305af4599db402bcff' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\TVGMainpage.tpl',
-      1 => 1593777164,
+      1 => 1593865546,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5eff47980a2535_29551253 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f00935905e135_82895420 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -49,6 +49,14 @@ function content_5eff47980a2535_29551253 (Smarty_Internal_Template $_smarty_tpl)
   <!-- Navbar here -->
   <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
+<!-- Alert-->
+<?php if ($_smarty_tpl->tpl_vars['notify']->value != "NoNotify") {?>
+  <div class="alert alert-warning">
+    <strong>Attenzione!</strong><br> <?php echo $_smarty_tpl->tpl_vars['notify']->value;?>
+ </div>
+<?php }?>
+
   <!-- Sezione Ricerca here -->
   <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
     <div class="container" style="background-color:#E3E3E3">
@@ -105,13 +113,16 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 </p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <button> Dettagli </button>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/details?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+">Details</a>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <button> Modifica </button>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/modify?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+">Modifica</a>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <button> Elimina </button>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/delete?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+">Elimina</a>
       </div>
     </div>
     <?php

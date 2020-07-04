@@ -18,6 +18,7 @@
 {user->getModeratore assign='Tipo'}
 
 
+
 <!-- Navbar here -->
 
 {include file="navbar.tpl"}
@@ -39,26 +40,32 @@
                         <h6 class="card-subtitle my-2 text-">{$results[0]->getLuogo()}</h6>
 
                         <div class="row">
+                            {$fasce=$results[0]->getFasce()}
+                            {if !empty(($fasce))}
 
                             <div class="col-xl-12 text-center border-secondary  "><b>orari</b></div>
                             <div class="col-xl-6 text-center "><b>Inizio </b></div>
 
                             <div class="col-xl-6 text-center "><b>Fine </b></div>
 
-                            {$fasce=$results[0]->getFasce()}
+
 
                             <!----inizio selezione fasce---->
                             <!----Data Inizio--->
+
                             {foreach from=$fasce item=$fascia}
                             <div class="col-xl-6 text-center  " ><b>{$fascia->getDataStr()} </b></div>
 
                                 <div class="col-xl-6 text-center "><b>{$fascia->getFine()} </b></div>
 
                             {/foreach}
+                            {/if}
                         </div>
 
 
+
                         <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
+
                         <div class='row'>
                             {if $Tipo}
                             <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete?{$results[0]->getId()}">Annulla</a></div>
@@ -67,12 +74,13 @@
                             {if boolval($results[0]->getFlag()) }
                             {if !$check}
 
-                        <div class="float-right">
+                        <div class="col">
                             <!-- Button trigger modal -->
+                            <div class="text-right">
                             <button type="button" class="btn btn-primary" data-toggle="modal" href="#prenotati">
                                 Prenotati
                             </button>
-
+                            </div>
                             <!-- Modal -->
                             <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -86,9 +94,16 @@
                                         <div class="modal-body">
                                             Vuoi prenotarti a questo evento?
                                         </div>
+                                        {if $Username = "Ospite"}
+                                        <div class="modal-body">
+                                            Devi aver effettuato il Login per farlo!
+                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <a type="submit" href="../utente/login" class="btn btn-primary">Login</a>
+                                                {else}
                                             <a type="submit" href="../evento/booking?{$results[0]->getId()}" class="btn btn-primary">Si</a>
+                                            {/if}
                                         </div>
                                     </div>
                                 </div>
@@ -100,8 +115,10 @@
 
                         {/if}
                         {/if}
+
                     </div>
                     </div>
+
                 </div>
             </div>
 

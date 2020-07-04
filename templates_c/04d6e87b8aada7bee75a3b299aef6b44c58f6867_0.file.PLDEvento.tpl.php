@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 14:06:49
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 16:38:46
   from 'C:\xampp\htdocs\playadice\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0070d924da42_37421239',
+  'unifunc' => 'content_5f009476f00a96_42060221',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04d6e87b8aada7bee75a3b299aef6b44c58f6867' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEvento.tpl',
-      1 => 1593864408,
+      1 => 1593873524,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0070d924da42_37421239 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f009476f00a96_42060221 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -46,6 +46,7 @@ function content_5f0070d924da42_37421239 (Smarty_Internal_Template $_smarty_tpl)
 <?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
 
 <?php $_smarty_tpl->assign('Tipo',$_smarty_tpl->smarty->registered_objects['user'][0]->getModeratore(array(),$_smarty_tpl));?>
+
 
 
 
@@ -74,16 +75,19 @@ function content_5f0070d924da42_37421239 (Smarty_Internal_Template $_smarty_tpl)
 </h6>
 
                         <div class="row">
+                            <?php $_smarty_tpl->_assignInScope('fasce', $_smarty_tpl->tpl_vars['results']->value[0]->getFasce());?>
+                            <?php if (!empty(($_smarty_tpl->tpl_vars['fasce']->value))) {?>
 
                             <div class="col-xl-12 text-center border-secondary  "><b>orari</b></div>
                             <div class="col-xl-6 text-center "><b>Inizio </b></div>
 
                             <div class="col-xl-6 text-center "><b>Fine </b></div>
 
-                            <?php $_smarty_tpl->_assignInScope('fasce', $_smarty_tpl->tpl_vars['results']->value[0]->getFasce());?>
+
 
                             <!----inizio selezione fasce---->
                             <!----Data Inizio--->
+
                             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['fasce']->value, 'fascia');
 if ($_from !== null) {
@@ -99,11 +103,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['fascia']->value) {
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                            <?php }?>
                         </div>
+
 
 
                         <p class="card-text mt-sm-3"><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getTesto();?>
 </p>
+
                         <div class='row'>
                             <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
                             <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete?<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
@@ -114,12 +121,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <?php if (boolval($_smarty_tpl->tpl_vars['results']->value[0]->getFlag())) {?>
                             <?php if (!$_smarty_tpl->tpl_vars['check']->value) {?>
 
-                        <div class="float-right">
+                        <div class="col">
                             <!-- Button trigger modal -->
+                            <div class="text-right">
                             <button type="button" class="btn btn-primary" data-toggle="modal" href="#prenotati">
                                 Prenotati
                             </button>
-
+                            </div>
                             <!-- Modal -->
                             <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -134,10 +142,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                         <div class="modal-body">
                                             Vuoi prenotarti a questo evento?
                                         </div>
+                                        <?php $_prefixVariable1 = "Ospite";
+$_smarty_tpl->_assignInScope('Username', $_prefixVariable1);
+if ($_prefixVariable1) {?>
+                                        <div class="modal-body">
+                                            Devi aver effettuato il Login per farlo!
+                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <a type="submit" href="../utente/login" class="btn btn-primary">Login</a>
+                                                <?php } else { ?>
                                             <a type="submit" href="../evento/booking?<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
 " class="btn btn-primary">Si</a>
+                                            <?php }?>
                                         </div>
                                     </div>
                                 </div>
@@ -149,8 +166,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                         <?php }?>
                         <?php }?>
+
                     </div>
                     </div>
+
                 </div>
             </div>
 
