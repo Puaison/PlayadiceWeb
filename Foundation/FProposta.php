@@ -22,6 +22,13 @@ class FProposta
                 WHERE IDModificato = :IDModificato;";
     }
 
+    static function searchPropostaByIDProposto() : string
+    {
+        return "SELECT *
+                FROM proposta
+                WHERE IDProposto = :IDProposto;";
+    }
+
     static function storeProposta() : string
     {
         return "INSERT INTO proposta(Tipo, Id , IDModificato,IDProposto)
