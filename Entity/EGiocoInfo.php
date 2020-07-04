@@ -110,5 +110,60 @@ class EGiocoInfo extends EObject
     /********************************************** ALTRE FUNZIONI ************************************************/
 
 
+    /**
+     * Metodo che controlla se la descrizione del gioco inserito è lungo meno di 3000 caratteri,
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateDescrizione() : bool
+    {
+        if ($this->Descrizione && strlen($this->Descrizione)<=3000 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Descrizione))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    /**
+     * Metodo che controlla se il numero massimo di giocatori è minore di 100,
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateNumMax() : bool
+    {
+
+        if ($this->NumeroMax<=99)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    /**
+     * Metodo che controlla se il numero massimo di giocatori è maggiore di 0,
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateNumMin() : bool
+    {
+
+        if ($this->NumeroMax>=1)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    /**
+     * Metodo che controlla se la casa editrice inserita sia lungo meno di 40 caratteri,
+     * e che contenga solo lettere, numeri e spazi
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateCasaEditrice() : bool
+    {
+        if ($this->CasaEditrice && strlen($this->CasaEditrice)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->CasaEditrice))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
 
 }
