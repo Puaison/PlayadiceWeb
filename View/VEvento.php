@@ -56,8 +56,6 @@ class VEvento extends VObject
     {
 
         $evento= new EEvento();
-
-
         if(isset($_POST['nome']))
             $evento->setNome($_POST['nome']);
         if(isset($_POST['categoria']))
@@ -86,7 +84,6 @@ class VEvento extends VObject
 
             if(!empty($_POST["$foo"]) and !empty($_POST["$finale"]))
             {
-
                 $fascia=new EFascia();
                 $inizio=(date_create_from_format("d/m/Y H:i:s",$_POST["$foo"]));
                 $fine=(date_create_from_format("d/m/Y H:i:s",$_POST["$finale"]));

@@ -56,11 +56,6 @@ class CEvento
         $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
         $evento[0]->newPrenotazione($prenotazione);
         $vEvento->show($user,$evento,$fp,true);
-
-
-
-
-
     }
     static function updateevento($id){
         $vEvento=new VEvento();

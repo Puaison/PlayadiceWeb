@@ -23,7 +23,7 @@
 
 {include file="navbar.tpl"}
 <hr> {if $error}
-    <div class="alert alert-warning">
+    <div class="alert alert-warning text-center">
 
         <br>Prenotazione avvenuta con successo <br></div> {/if}
 
@@ -61,12 +61,9 @@
                             {/foreach}
                             {/if}
                         </div>
-
-
-
                         <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
 
-                        <div class='row'>
+                        <div class='row '>
                             {if $Tipo}
                             <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete?{$results[0]->getId()}">Annulla</a></div>
                             <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify?{$results[0]->getId()}">Modifica</a></div>{/if}
@@ -82,6 +79,7 @@
                             </button>
                             </div>
                             <!-- Modal -->
+                            <div class="text-center">
                             <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -94,31 +92,39 @@
                                         <div class="modal-body">
                                             Vuoi prenotarti a questo evento?
                                         </div>
-                                        {if $Username = "Ospite"}
+                                        {if $Username eq "Ospite"}
                                         <div class="modal-body">
                                             Devi aver effettuato il Login per farlo!
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <a type="submit" href="../utente/login" class="btn btn-primary">Login</a>
-                                                {else}
-                                            <a type="submit" href="../evento/booking?{$results[0]->getId()}" class="btn btn-primary">Si</a>
-                                            {/if}
+                                            <a type="submit" href="../utente/login" class="btn btn-primary">Login</a></div>
+                                            {else}
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <a type="submit" href="../evento/booking?{$results[0]->getId()}" class="btn btn-primary">Si
+                                            </a>
+                                        </div>
+
                                         </div>
                                     </div>
                                 </div>
+
+
+                            {/if}
                             </div>
 
                             {else}
-                            <div class="float-right">
-                            <button class="btn btn-primary float"  style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div>
+                            <div class="col text-right">
+                            <a type="button" class="btn btn-primary "   href="#" draggable="true" disabled>Già Prenotato</a>
+                            </div>
 
-                        {/if}
-                        {/if}
 
+                        </div>
                     </div>
                     </div>
-
+                    {/if}
+                    {/if}
                 </div>
             </div>
 
