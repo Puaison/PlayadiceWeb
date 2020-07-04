@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-03 10:13:25
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 18:06:42
   from 'C:\xampp\htdocs\playadice\templates\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efee8a5146344_59450747',
+  'unifunc' => 'content_5f00a912d03273_09899103',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7cde22e67172b46f639058d00963c373408923f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\Login.tpl',
-      1 => 1593762103,
+      1 => 1593852169,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efee8a5146344_59450747 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f00a912d03273_09899103 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>

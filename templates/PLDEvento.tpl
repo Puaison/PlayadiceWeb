@@ -19,26 +19,36 @@
 
 
 
+
 <!-- Navbar here -->
 
 {include file="navbar.tpl"}
 <hr> {if $error}
     <div class="alert alert-warning text-center">
-
         <br>Prenotazione avvenuta con successo <br></div> {/if}
+
+{$prenotazioni=$results[0]->getPrenotazioni()}
+{$check=false}
+{foreach from=$prenotazioni item=$value}
+    {$nome=$value->getUtente()->getUsername()}
+    {if ($nome == $Username)}
+        {$check=true}
+    {/if}
+{/foreach}
 
 
 <div class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 p-0"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg" style="" h="100" w="100"> </div>
+            <div class="col-lg-6 order-2 order-lg-1 p-0">
+                <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg" style="" h="100" w="100">
+            </div>
             <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card ">
                     <div class="card-body">
                         <h5 class="card-title"><b>{$results[0]->getNome()}</b></h5>
                         <h6 class="card-subtitle my-2 text-muted">{$results[0]->getCategoria()}</h6>
                         <h6 class="card-subtitle my-2 text-">{$results[0]->getLuogo()}</h6>
-
                         <div class="row">
                             {$fasce=$results[0]->getFasce()}
                             {if !empty(($fasce))}
@@ -62,69 +72,68 @@
                             {/if}
                         </div>
                         <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
-
                         <div class='row '>
-                            {if $Tipo}
+                            {if $UtenteType == "admin"}
                             <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete?{$results[0]->getId()}">Annulla</a></div>
-                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify?{$results[0]->getId()}">Modifica</a></div>{/if}
-
-                            {if boolval($results[0]->getFlag()) }
-                            {if !$check}
-
-                        <div class="col">
-                            <!-- Button trigger modal -->
-                            <div class="text-right">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" href="#prenotati">
-                                Prenotati
-                            </button>
-                            </div>
-                            <!-- Modal -->
-                            <div class="text-center">
-                            <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="prenotati">Ciao {user->getUsername}</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Vuoi prenotarti a questo evento?
-                                        </div>
-                                        {if $Username eq "Ospite"}
-                                        <div class="modal-body">
-                                            Devi aver effettuato il Login per farlo!
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <a type="submit" href="../utente/login" class="btn btn-primary">Login</a></div>
-                                            {else}
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <a type="submit" href="../evento/booking?{$results[0]->getId()}" class="btn btn-primary">Si
-                                            </a>
-                                        </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
+                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify?{$results[0]->getId()}">Modifica</a></div>
                             {/if}
-                            </div>
+                            {if boolval($results[0]->getFlag())}
+                                    {if !$check}
+                                        <div class="col">
+                                            <!-- Button trigger modal -->
+                                            <div class="text-right">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" href="#prenotati">
+                                                Prenotati
+                                            </button>
+                                            </div>
+                                            <!-- Modal -->
+                                            <div class="text-center">
 
-                            {else}
-                            <div class="col text-right">
-                            <a type="button" class="btn btn-primary "   href="#" draggable="true" disabled>Già Prenotato</a>
-                            </div>
-
+                                                <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="prenotati">Ciao {user->getUsername}</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Vuoi prenotarti a questo evento?
+                                                            </div>
+                                                            {if $UtenteType == "ospite"}
+                                                            <div class="modal-body">
+                                                                Devi aver effettuato il Login per farlo!
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <a type="submit" href="../utente/login" class="btn btn-primary">Login</a>
+                                                            </div>
+                                                                {else}
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <a type="submit" href="../evento/booking?{$results[0]->getId()}" class="btn btn-primary">Si
+                                                                </a>
+                                                            </div>
+                                                            {/if}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {else}
+                                        <div class="col text-right">
+                                            <a type="button" class="btn btn-primary "   href="#" draggable="true" disabled>Già Prenotato</a>
+                                        </div>
+                                        </div>
+                                    {/if}
+                            {/if}
 
                         </div>
+
+
                     </div>
-                    </div>
-                    {/if}
-                    {/if}
+
+
                 </div>
             </div>
 
