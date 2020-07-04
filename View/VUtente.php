@@ -54,10 +54,10 @@ class VUtente extends VObject
      */
     function validateLogin(EUtente $user): bool
     {
-        //$this->check['Esistente']=$user->validateEsistenza();
+        $this->check['Esistente']=$user->validateEsistenza();
         $this->check['Username']=$user->validateUsername();
         $this->check['Password']=$user->validatePassword();
-        if($this->check['Username'] && $this->check['Password'])
+        if($this->check['Username'] && $this->check['Password'] && $this->check['Esistente'])
         {
             return true;
         }
@@ -74,7 +74,7 @@ class VUtente extends VObject
      */
     function validateSignUp(EUtente $user): bool
     {
-        $this->check['Esistente']=$user->validateEsistenza();
+        $this->check['Esistente']=!($user->validateEsistenza());
         $this->check['Username']=$user->validateUsername();
         $this->check['Password']=$user->validatePassword();
         $this->check['Mail']=$user->validateMail();

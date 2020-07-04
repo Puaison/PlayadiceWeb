@@ -116,9 +116,12 @@ class EUtente
     /********************************************** ALTRE FUNZIONI ************************************************/
 
 
+    /**Funzione che verifica se un dato Username è nel db
+     * @return bool true se si è trovato
+     */
     function validateEsistenza() : bool
     {
-        if (!FPersistantManager::getInstance()->exists("utente", "UserName", $this->getUsername()))
+        if (FPersistantManager::getInstance()->exists("utente", "UserName", $this->getUsername()))
         {
             return true;
         }
