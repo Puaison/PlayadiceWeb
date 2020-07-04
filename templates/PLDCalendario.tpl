@@ -19,6 +19,7 @@
 <body>
 
 {user->getUsername assign='Username'}
+{user->getModeratore assign='Tipo'}
 
 <!-- Navbar here -->
 
@@ -28,7 +29,8 @@
     <div class="container">
         <div class="row ">
             <div class="col pb-3" > Ultimi Eventi</div>
-            <a class="col pb-3" href="../evento/create"> Crea un Evento</a>
+            {if $Tipo}
+            <a class="col pb-3" href="../evento/create"> Crea un Evento</a>{/if}
 
             {section name=k loop=$results}
             <div class="col-md-12">
@@ -36,7 +38,7 @@
                     <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
 
                     <div class="my-auto text-center">
-                            <a class="px-5" href="../evento/show/{$results[k]->getId()}">
+                            <a class="px-5" href="../evento/show?{$results[k]->getId()}">
                             {$results[k]->getNome()}</a>
                     </div>
                 </div>
