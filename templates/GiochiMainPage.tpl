@@ -41,9 +41,11 @@
         <button href="/playadice/ricerca/Search" > Cerca </button>
       </div>
     </form>
+    {if $Tipo}
     <div class="col-md-2">
       <a class="btn-primary btn" href="">Crea Nuovo</a>
     </div>
+    {/if}
 
   </div>
   <!-- Catalogo -->

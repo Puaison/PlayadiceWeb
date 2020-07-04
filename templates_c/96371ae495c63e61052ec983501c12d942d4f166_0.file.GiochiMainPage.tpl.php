@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-03 16:58:16
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 11:21:17
   from 'C:\xampp\htdocs\playadice\templates\GiochiMainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eff4788872ec8_26809993',
+  'unifunc' => 'content_5f004a0d6ed004_33389377',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '96371ae495c63e61052ec983501c12d942d4f166' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\GiochiMainPage.tpl',
-      1 => 1593788292,
+      1 => 1593853732,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5eff4788872ec8_26809993 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f004a0d6ed004_33389377 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -38,7 +38,7 @@ function content_5eff4788872ec8_26809993 (Smarty_Internal_Template $_smarty_tpl)
   <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
   <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-  <title>TVG Home</title>
+  <title>Catalogo</title>
 </head>
 
 <body class="">
@@ -68,9 +68,11 @@ function content_5eff4788872ec8_26809993 (Smarty_Internal_Template $_smarty_tpl)
         <button href="/playadice/ricerca/Search" > Cerca </button>
       </div>
     </form>
+    <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
     <div class="col-md-2">
       <a class="btn-primary btn" href="">Crea Nuovo</a>
     </div>
+    <?php }?>
 
   </div>
   <!-- Catalogo -->
@@ -114,7 +116,8 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
         </div>
         <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
         <div class="col-md-2">
-          <a class="btn-primary btn" href="">Elimina</a>
+          <a class="btn-primary btn" href="/playadice/catalogo/remove/<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+">Elimina</a>
         </div>
         <?php }?>
       </div>
@@ -122,6 +125,11 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 }
 }
 ?>
+    <?php } else { ?>
+    <div class="col-md-2" style="Text-align:center">
+      <p style="color:White;">NESSUN RISULTATO</p>
+    </div>
+
 
   <?php }?>
   <!-- Fine Sezione -->

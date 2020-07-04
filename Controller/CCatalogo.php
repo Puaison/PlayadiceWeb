@@ -11,17 +11,26 @@ class CCatalogo
         $vCatalogo->showCatalogo($user,$objects);
     }
 
-    static function remove()
+    static function remove(int $id)
     {
         $vCatalogo = new VCatalogo();
         $user = CSession::getUserFromSession();
         if($user->getModeratore())
         {
-            $giocodaeliminare = FPersistantManager::getInstance()->search("gioco", "Id" ,"")[0];
-            if(isset($giocodaeliminare))
-                FPersistantManager::getInstance()->remove($giocodaeliminare);
+            $gioco=new EGioco();
+            $gioco->setId($id);
+            if($gioco->validateEsistenza())
+            {
+                $gioco = FPersistantManager::getInstance()->search("gioco", "Id" ,"$id")[0];
+                FPersistantManager::getInstance()->remove($gioco);
+                header('Location: /playadice/index/catalogo');
+            }
+            else
+                $vCatalogo->showErrorPage($user,'Il gioco che vuoi eliminare non esiste');
         }
-
-        CCatalogo::catalogo();
+        else
+        {
+            $vCatalogo->showErrorPage($user, 'Non hai diritti per esguire questo comando');
+        }
     }
 }
