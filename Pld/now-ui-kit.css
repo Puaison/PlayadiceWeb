@@ -3735,9 +3735,7 @@ button.close {
   display: none;
   overflow: hidden;
   outline: 0; }
-  .modal-open .modal {
-    overflow-x: hidden;
-    overflow-y: auto; }
+
 
 .modal-dialog {
   position: relative;

@@ -112,6 +112,19 @@ class EGioco extends EObject
     }
     /********************************************** ALTRE FUNZIONI ************************************************/
 
+    /**TODO IMPLEMENTARE QUESTA FUNZIONE NEL LOGIN
+     * @return bool
+     */
+    function validateEsistenza() : bool
+    {
+        if (!FPersistantManager::getInstance()->exists("gioco", "Id", $this->getId()))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
     /**
      * Metodo che aggiunge una recensione al Gioco
      * @param ERecensione $rec La recensione da aggiungere

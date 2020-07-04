@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-02 11:37:30
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 11:26:42
   from 'C:\xampp\htdocs\playadice\templates\PLDEventoModifica.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efdaada7f68e6_55683948',
+  'unifunc' => 'content_5f004b52565f17_25678681',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e94b790a107fc4ac5fbc7f406219f2a064a521ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEventoModifica.tpl',
-      1 => 1593682645,
+      1 => 1593854789,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efdaada7f68e6_55683948 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f004b52565f17_25678681 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +35,7 @@ function content_5efdaada7f68e6_55683948 (Smarty_Internal_Template $_smarty_tpl)
 >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="../../Pld/now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
     <title>Modifica</title>
 </head>
 

@@ -30,14 +30,15 @@ class CSession
      */
     static function getUserFromSession() : EUtente
     {
-        if (session_status() == PHP_SESSION_NONE)
-        {
+        //if (session_status() == PHP_SESSION_NONE) {//controlla se non è già stata recuperata una sessione nella stessa chiamata
             session_start();
-        }
+        //}
         
         if(isset($_SESSION['Username']))
         {
             $uType= 'E'.ucfirst($_SESSION['type']); // determina la entity della tipologia di utente
+
+
 
             $user = new $uType();
 

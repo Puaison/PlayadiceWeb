@@ -4,27 +4,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="../bootstrap.min.js"></script>
+    <script src="../bootstrap.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="../../Pld/now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
+
 
     <title>{$results[0]->getNome()}</title>
 </head>
 <body>
 
 {user->getUsername assign='Username'}
+{user->getModeratore assign='Tipo'}
+
 
 <!-- Navbar here -->
 
 {include file="navbar.tpl"}
+<hr> {if $error}
+    <div class="alert alert-warning">
+
+        <br>Prenotazione avvenuta con successo <br></div> {/if}
+
 
 <div class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 order-2 order-lg-1 p-0"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg" style="" h="100" w="100"> </div>
-            <div class="px-5 col-lg-6 d-flex flex-column align-items-start justify-content-center order-1 order-lg-2" >
-                <div class="card">
+            <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
+                <div class="card ">
                     <div class="card-body">
                         <h5 class="card-title"><b>{$results[0]->getNome()}</b></h5>
                         <h6 class="card-subtitle my-2 text-muted">{$results[0]->getCategoria()}</h6>
@@ -52,18 +60,55 @@
 
                         <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
                         <div class='row'>
-                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete/{$results[0]->getId()}">Annulla</a></div>
-                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify/{$results[0]->getId()}">Modifica</a></div>
+                            {if $Tipo}
+                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete?{$results[0]->getId()}">Annulla</a></div>
+                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify?{$results[0]->getId()}">Modifica</a></div>{/if}
 
-                        <div class="pull-right"><button class="btn btn-primary pi-draggable" type="submit"style="text-end" href="#" draggable="true">Prenotati</button>
-                            <button class="btn btn-primary " type="submit" style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div></div>
+                            {if boolval($results[0]->getFlag()) }
+                            {if !$check}
+
+                        <div class="float-right">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" href="#prenotati">
+                                Prenotati
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="prenotati">Ciao {user->getUsername}</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Vuoi prenotarti a questo evento?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <a type="submit" href="../evento/booking?{$results[0]->getId()}" class="btn btn-primary">Si</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {else}
+                            <div class="float-right">
+                            <button class="btn btn-primary float"  style="text-end" href="#" draggable="true" disabled>Già Prenotato</button></div>
+
+                        {/if}
+                        {/if}
                     </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
+
 
 </body>
 
