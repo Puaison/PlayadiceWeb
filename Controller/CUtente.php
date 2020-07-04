@@ -91,12 +91,10 @@ class CUtente
         if($vUser->validateLogin($loggedUser))
         {
             $authenticated = false; // bool per l'autenticazione
-            $userExists = FPersistantManager::getInstance()->exists("utente", "UserName", $loggedUser->getUsername()); // si verifica che l'utente inserito matchi una entry nel db
-            if($userExists) // se esiste
-            {
-                $user = FPersistantManager::getInstance()->search("utente", "UserName", $loggedUser->getUsername());
 
-                if($loggedUser->getPassword() == $user[0]->getPassword() ) // se la password e' corretta
+            $user = FPersistantManager::getInstance()->search("utente", "UserName", $loggedUser->getUsername());
+
+            if($loggedUser->getPassword() == $user[0]->getPassword() ) // se la password e' corretta
                 {
                     unset($loggedUser); // l'istanza utilizzata per il login viene rimossa
 
@@ -106,7 +104,6 @@ class CUtente
 
                     header('Location: /playadice/index');
                 }
-            }
             if(!$authenticated)
                 $vUser->showLogin(true);
         }

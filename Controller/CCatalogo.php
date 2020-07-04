@@ -11,6 +11,45 @@ class CCatalogo
         $vCatalogo->showCatalogo($user,$objects);
     }
 
+    /**
+     * Metodo che implementa il caso d'uso di inserimento di un nuovo gioco. Se richiamato tramite GET, fornisce
+     * la form, se richiamato tramite POST si verifica che le informazioni inserite siano giuste e lo si
+     * salva nel catalogo
+     */
+    static function newgioco()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') // se il metodo e' get...
+        { //...carica la pagina per l'inserimento di un nuovo gioco(verificando che sia un admin)
+            $vCatalogo = new VCatalogo();
+            $user = CSession::getUserFromSession();
+            if($user->getModeratore()) // se l'utente non è un Admin, non puo accedere a questa funzionalità
+            {
+                $vCatalogo->showFormNewGioco($user);
+            }
+            else
+                $vCatalogo->showErrorPage($user, 'Non hai i permessi per accedere a questa sezione!');
+        }
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST')
+            CCatalogo::insertnewgioco();
+        else
+            header('Location: HTTP/1.1 Invalid HTTP method detected');
+    }
+
+    private function insertnewgioco()
+    {
+        $user=CSession::getUserFromSession();
+        $vCatalogo = new VCatalogo();
+        $newgioco = $vCatalogo->createGioco();
+
+        if($vCatalogo->validateNuovoGioco($newgioco))
+        {
+            FPersistantManager::getInstance()->store($newgioco);
+            header('Location: /playadice/catalogo/catalogocompleto');
+        }
+        else
+            $vCatalogo->showFormNewGioco($user,$newgioco);
+    }
+
     static function remove(int $id)
     {
         $vCatalogo = new VCatalogo();
