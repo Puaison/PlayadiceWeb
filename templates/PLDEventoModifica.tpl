@@ -7,7 +7,7 @@
     <script src="../../bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-    <link rel="stylesheet" href="../../Pld/now-ui-kit.css" type="text/css">
+    <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
     <title>Modifica</title>
 </head>
 
