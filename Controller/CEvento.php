@@ -29,24 +29,41 @@ class CEvento
     static function create(){
         $vEvento=new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
-        $vEvento->create($user);
+        if (get_class($user) == EAdmin::class) // se l'utente non e' ospite
+            $vEvento->create($user);
+        else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
+            $vEvento->showErrorPage($user, 'Non puoi accedere in questa area');
     }
     static function modify($id){
         $vEvento=new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
-        $vEvento->modify($user, $evento);
+        if (get_class($user) == EAdmin::class) // se l'utente non e' ospite
+            $vEvento->modify($user, $evento);
+        else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
+            $vEvento->showErrorPage($user, 'Non puoi accedere in questa area');
+
     }
     static function booking($id){
         $vEvento=new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
-        $prenotazione= new EPrenotazione();
-        $prenotazione->setUtente($user);
-        $prenotazione->setIdEvento($id);
-        $fp=FPersistantManager::getInstance()->store($prenotazione);
-        $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
-        $evento[0]->newPrenotazione($prenotazione);
-        $vEvento->show($user,$evento,$fp,true);
+
+        if ($_SERVER['REQUEST_METHOD'] == 'GET')
+        {
+            $vEvento->showErrorPage($user, 'Non puoi accedere in questa area');
+        }
+
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+
+            $prenotazione= new EPrenotazione();
+            $prenotazione->setUtente($user);
+            $prenotazione->setIdEvento($id);
+            $fp=FPersistantManager::getInstance()->store($prenotazione);
+            $evento=FPersistantManager::getInstance()->search("Evento","Id",$id);
+            $evento[0]->newPrenotazione($prenotazione);
+            $vEvento->show($user,$evento,$fp,true);
+        }
     }
     static function updateevento($id){
         $vEvento=new VEvento();
@@ -112,3 +129,12 @@ class CEvento
     }
 
 }
+
+/*if(! $SelectedAvatar=FPersistantManager::getInstance()->exists("Avatar","IdAvatar","$id"))
+    $vAvatar->showErrorPage($user, 'Stai smanettando con le url eh? Birichino!');
+else
+{
+    $SelectedAvatar=FPersistantManager::getInstance()->search("Avatar","IdAvatar","$id");
+    $vAvatar->showdetails($user, $SelectedAvatar[0]);
+}
+}*/

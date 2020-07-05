@@ -27,6 +27,7 @@ class EGioco extends EObject
     public function __construct()
     {
         parent::__construct();
+        $this->GiocoInfo=new EGiocoInfo();
     }
 
     /****************************************** GETTER **************************************************/

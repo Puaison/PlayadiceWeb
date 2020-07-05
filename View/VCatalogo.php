@@ -29,16 +29,18 @@ class VCatalogo extends VObject
         if(isset($_POST['Categoria']))
             $gioco->setCategoria($_POST['Categoria']);
 
-        $gioco->setInfo(new EGiocoInfo());
+        $giocoinfo=new EGiocoInfo();
+
 
         if(isset($_POST['Descrizione']))
-            $gioco->getInfo()->setDescrizione($_POST['Descrizione']);
+            $giocoinfo->setDescrizione($_POST['Descrizione']);
         if(isset($_POST['NumeroMax']))
-            $gioco->getInfo()->setMax((int)$_POST['NumeroMax']);
+            $giocoinfo->setMax((int)$_POST['NumeroMax']);
         if(isset($_POST['NumeroMin']))
-            $gioco->getInfo()->setMin((int)$_POST['NumeroMin']);
+            $giocoinfo->setMin((int)$_POST['NumeroMin']);
         if(isset($_POST['CasaEditrice']))
-            $gioco->getInfo()->setCasaEditrice($_POST['CasaEditrice']);
+            $giocoinfo->setCasaEditrice($_POST['CasaEditrice']);
+        $gioco->setInfo($giocoinfo);
 
         return $gioco;
     }
@@ -84,11 +86,12 @@ class VCatalogo extends VObject
 
     function showFormNewGioco(EUtente $user, EGioco $gioco=null)
     {
-        //if(!$gioco) {
+        //if() {
           //  $gioco = new EGioco();
         //}
-        $gioco = new EGioco();
+
         //$gioco->setNome("aaggagaga");
+            $this->smarty->assign('prec', $_POST);
         $this->smarty->assign('gioco', $gioco);
         $this->smarty->assign('check', $this->check);
         $this->smarty->registerObject('user', $user);
