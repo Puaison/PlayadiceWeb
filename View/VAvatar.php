@@ -70,8 +70,6 @@ class VAvatar extends VObject
 
         $user = CSession::getUserFromSession();
 
-        var_dump($_POST);
-
         if(isset($_POST['nome']))
             $avatar->setNome($_POST['nome']);
         if(isset($_POST['classe']))
