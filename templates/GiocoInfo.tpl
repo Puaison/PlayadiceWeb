@@ -28,7 +28,7 @@
 
 <div class="py-5">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card ">
                     <div class="card-body">
@@ -56,6 +56,7 @@
 
                         </div>
                         <p class="card-text mt-sm-3">{$gioco->getInfo()->getDescrizione()}</p>
+
                         <!--
                         <div class='row '>
                             {if $UtenteType == "admin"}
@@ -73,8 +74,28 @@
             </div>
 
         </div>
+
     </div>
+
 </div>
+<div class="container py-4">
+<div class="card">
+    <div class="px-5 col-lg-6 flex-column  order-1 order-lg-2" >
+        <div class="row justify-content-center">
+            <b> <h4>Prima riga</h4></b></div>
+        <div class="row"> commento molto lungo ma da provare per vedere come viene quindi adesso inizerò a scrivere conse insensate giusto per vedere come reagisce il div mi piacciono le rane morte ciao
+        </div>
+        <div class="row">
+            <div class="col-12"/>
+            <div class="col"> Utente</div>
+        </div>
+
+    </div></div></div>
+
+<div class="container py-4">
+    <div class="card">
+        <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
+            <div class="row justify-content-center">Prova</div></div></div></div>
 
 
 </body>

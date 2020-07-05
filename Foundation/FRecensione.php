@@ -11,6 +11,7 @@ class FRecensione
                 WHERE IdGioco=:IdGioco;";
     }
 
+    //TODO funzione da eliminare perchè le stringhe non hanno gli id
     static function searchRecensioneById() : string
     {
         return "SELECT *
@@ -20,15 +21,15 @@ class FRecensione
 
     static function storeRecensione() : string
     {
-        return "INSERT INTO recensione(Id,Creatore, IdGioco,Voto,Commento)
-				VALUES(:Id, :Creatore, :IdGioco, :Voto, :Commento);";
+        return "INSERT INTO recensione(Creatore, IdGioco,Voto,Commento)
+				VALUES(:Creatore, :IdGioco, :Voto, :Commento);";
     }
 
     static function removeRecensione() : string
     {
         return "DELETE 
                 FROM recensione
-                WHERE Id = :Id";
+                WHERE IdGioco = :IdGioco AND Creatore=:Creatore";
 
     }
 

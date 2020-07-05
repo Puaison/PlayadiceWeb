@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-05 15:01:26
+/* Smarty version 3.1.34-dev-7, created on 2020-07-05 21:22:53
   from 'C:\xampp\htdocs\playadice\templates\GiocoInfo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f01cf262714c3_59952705',
+  'unifunc' => 'content_5f02288d0fa6d9_86042119',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cd8d22795db6450e0f289afbd273285f33572649' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\GiocoInfo.tpl',
-      1 => 1593954084,
+      1 => 1593976971,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f01cf262714c3_59952705 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f02288d0fa6d9_86042119 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +60,7 @@ function content_5f01cf262714c3_59952705 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class="py-5">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card ">
                     <div class="card-body">
@@ -95,6 +95,7 @@ function content_5f01cf262714c3_59952705 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                         <p class="card-text mt-sm-3"><?php echo $_smarty_tpl->tpl_vars['gioco']->value->getInfo()->getDescrizione();?>
 </p>
+
                         <!--
                         <div class='row '>
                             <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "admin") {?>
@@ -112,8 +113,28 @@ function content_5f01cf262714c3_59952705 (Smarty_Internal_Template $_smarty_tpl)
             </div>
 
         </div>
+
     </div>
+
 </div>
+<div class="container py-4">
+<div class="card">
+    <div class="px-5 col-lg-6 flex-column  order-1 order-lg-2" >
+        <div class="row justify-content-center">
+            <b> <h4>Prima riga</h4></b></div>
+        <div class="row"> commento molto lungo ma da provare per vedere come viene quindi adesso inizerò a scrivere conse insensate giusto per vedere come reagisce il div mi piacciono le rane morte ciao
+        </div>
+        <div class="row">
+            <div class="col-12"/>
+            <div class="col"> Utente</div>
+        </div>
+
+    </div></div></div>
+
+<div class="container py-4">
+    <div class="card">
+        <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
+            <div class="row justify-content-center">Prova</div></div></div></div>
 
 
 </body>
