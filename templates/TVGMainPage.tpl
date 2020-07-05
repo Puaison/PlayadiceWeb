@@ -31,133 +31,156 @@
 {/if}
 
   <!-- Sezione Ricerca here -->
-  <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
-    <div class="container" style="background-color:#E3E3E3">
+<div class="container-fluid" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
 
-      <!-- FORM -->
-      <form method="post" id="Ricercaform" action="search">
-        <div class="row">
-          <label for="Parametro">Parametro:</label><br>
-          <input type="text" id="Parametro" name="Parametro">
-          <label for="Tipo">Scegli un tipo di ricerca:</label>
-          <select id="Tipo" name="TipoRicerca" form="Ricercaform">
-            <option value="Nome">Nome</option>
-            <option value="Autore">Autore</option>
-          </select>
-          <button href="/playadice/ricerca/Search" > Cerca </button>
-        </div>
-      </form
+  <div class="container-fluid">
+    <div class="row justify-content-center" style=" margin-top: 15px; margin-bottom: 15px ">
+      <div class="col-sm-8 align-self-center" >
+        <!-- FORM -->
+        <form method="post" id="Ricercaform" action="search">
+          <div class="row">
+            <label for="Parametro" style="color: white; margin-left: 4px; margin-right: 4px">Parametro:</label><br>
+            <input type="text" id="Parametro" name="Parametro">
+            <label for="Tipo" style="color: white; margin-left: 8px; margin-right: 4px">Scegli un tipo di ricerca:</label>
+            <select id="Tipo" name="TipoRicerca" form="Ricercaform">
+              <option value="Nome">Nome</option>
+              <option value="Autore">Autore</option>
+            </select>
+            <button class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/ricerca/Search" style="margin-left: 4px; margin-right: 4px" > Cerca </button>
+          </div>
+        </form>
+      </div>
 
-      <!-- Sezione I miei PG here -->
-      <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/create"> New </a>
-
+      <div class="col-sm-4">
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/create" style=" margin-top: 5px; margin-bottom: 5px "> Crea un Nuovo Personaggio </a>
+      </div>
     </div>
-    <!-- Sezione I miei PG here -->
+  </div>
 
-    {if $results}
+  <!-- Sezione I miei PG here -->
+  {if $results}
+  <div class="container-fluid">
 
-    <div class="row pi-draggable">
-      <div class="col-md-2 " style="Text-align:center">
-        <p style="color:White;">Nome</p>
+    <div class="container-fluid" style="background: black;height: 2px"></div>
+
+    <div class="row justify-content-around" style=" margin-bottom: 5px">
+      <div class="col justify-content-center align-self-center text-center">
+        <span class="align-middle" style="color: whitesmoke">Proprietario:</span>
       </div>
-      <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">Classe</p>
+      <div class="col justify-content-center align-self-center text-center">
+        <span class="align-middle" style="color: whitesmoke">Nome:</span>
       </div>
-      <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">Livello</p>
+      <div class="col justify-content-center align-self-center text-center">
+        <span class="align-middle" style="color: whitesmoke">Classe:</span>
       </div>
+      <div class="col justify-content-center align-self-center text-center">
+        <span class="align-middle" style="color: whitesmoke">Livello:</span>
+      </div>
+      <div class="col" style="Text-align:center"></div>
+      <div class="col" style="Text-align:center"></div>
+      <div class="col" style="Text-align:center"></div>
     </div>
 
     {section name=k loop=$results}
-    <div class="row pi-draggable">
-      <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">{$results[k]->getNome()}</p>
+    <div class="container-fluid" style="background: black;height: 2px"></div>
+
+    <div class="row justify-content-around" style=" margin-top: 15px; margin-bottom: 15px ">
+      <div class="col justify-content-center align-self-center text-center">
+        <span class="align-middle" style="color: whitesmoke">{$results[k]->GetProprietario()->GetUsername()}</span>
       </div>
-      <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">{$results[k]->getClasse()}</p>
+      <div class="col justify-content-center align-self-center text-center">
+        <span class="align-middle" style="color: whitesmoke">{$results[k]->getNome()}</span>
       </div>
-      <div class="col-md-2" style="Text-align:center">
-        <p style="color:White;">{$results[k]->getLivello()}</p>
+      <div class="col justify-content-center align-self-center text-center">
+        <span class="align-middle" style="color: whitesmoke">{$results[k]->getClasse()}</span>
       </div>
-      <div class="col-md-2" style="Text-align:center">
-        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/details?{$results[k]->getId()}">Dettagli</a>
+      <div class="col justify-content-center align-self-center text-center">
+        <span class="align-middle" style="color: whitesmoke">{$results[k]->getLivello()}</span>
       </div>
-      <div class="col-md-2" style="Text-align:center">
-        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/modify?{$results[k]->getId()}">Modifica</a>
+      <div class="col" style="Text-align:center">        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/details?{$results[k]->getId()}">Dettagli</a></div>
+      <div class="col" style="Text-align:center">
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark {if $Username != $results[k]->GetProprietario()->GetUsername() && $UtenteType != 'admin'}disabled{/if}" href="/playadice/avatar/modify?{$results[k]->getId()}">Modifica</a>
       </div>
-      <div class="col-md-2" style="Text-align:center">
-        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/delete?{$results[k]->getId()}">Elimina</a>
+      <div class="col" style="Text-align:center">
+          <a class="btn navbar-btn ml-md-2 btn-light text-dark {if $Username != $results[k]->GetProprietario()->GetUsername() && $UtenteType != 'admin'}disabled"{/if} href="/playadice/avatar/delete?{$results[k]->getId()}">Elimina</a>
       </div>
     </div>
     {/section}
-    {/if}
+    <div class="container-fluid" style="background: black;height: 2px"></div>
+  </div>
+  {/if}
 
     <br>
     <br>
     <!-- Sezione PG In attesa di approvazione per admin here -->
     {if $UtenteType eq 'admin'}
-    <div class="row pi-draggable">
+    <div class="container-fluid">
 
       {foreach from=$proposte item=proposta}
 
         {if $proposta->getTipoProposta() == "Creazione"}
-
-      <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;"> Creazione </p>
-      </div>
-      <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;"> {$proposta->getProposto()->GetProprietario()->GetUsername()} </p>
-      </div>
-      <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;"> {$proposta->getProposto()->getNome()} </p>
-      </div>
-      <div class="col-md-3" style="Text-align:center">
-        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?{$proposta->getId()}"> Dettagli Approvazione </a>
+      <div class="row justify-content-around" style=" margin-bottom: 5px">
+        <div class="col justify-content-center align-self-center text-center">
+          <span class="align-middle" style="color: whitesmoke"> Creazione </span>
+        </div>
+        <div class="col justify-content-center align-self-center text-center">
+          <span class="align-middle" style="color: whitesmoke"> {$proposta->getProposto()->GetProprietario()->GetUsername()} </span>
+        </div>
+        <div class="col justify-content-center align-self-center text-center">
+          <span class="align-middle" style="color: whitesmoke"> {$proposta->getProposto()->getNome()} </span>
+        </div>
+        <div class="col justify-content-center align-self-center text-center">
+          <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?{$proposta->getId()}"> Dettagli Approvazione </a>
+        </div>
       </div>
 
         {/if}
 
         {if $proposta->getTipoProposta() == "Modifica"}
 
-          <div class="col-md-3" style="Text-align:center">
-            <p style="color:White;"> Modifica </p>
-          </div>
-          <div class="col-md-3" style="Text-align:center">
-            <p style="color:White;">{$proposta->getModificato()->GetProprietario()->GetUsername()}</p>
-          </div>
-          <div class="col-md-3" style="Text-align:center">
-            <p style="color:White;">{$proposta->getModificato()->getNome()}</p>
-          </div>
-          <div class="col-md-3" style="Text-align:center">
+      <div class="row justify-content-around" style=" margin-bottom: 5px">
+        <div class="col justify-content-center align-self-center text-center">
+            <span class="align-middle" style="color: whitesmoke"> Modifica </span>
+        </div>
+        <div class="col justify-content-center align-self-center text-center">
+            <span class="align-middle" style="color: whitesmoke">{$proposta->getModificato()->GetProprietario()->GetUsername()}</span>
+        </div>
+        <div class="col justify-content-center align-self-center text-center">
+            <span class="align-middle" style="color: whitesmoke">{$proposta->getModificato()->getNome()}</span>
+        </div>
+        <div class="col justify-content-center align-self-center text-center">
             <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?{$proposta->getId()}"> Dettagli Approvazione </a>
-          </div>
+        </div>
+      </div>
 
         {/if}
 
         {if $proposta->getTipoProposta() == "Cancellazione"}
-
-          <div class="col-md-3" style="Text-align:center">
-            <p style="color:White;"> Cancellazione </p>
-          </div>
-          <div class="col-md-3" style="Text-align:center">
-            <p style="color:White;">{$proposta->getModificato()->GetProprietario()->GetUsername()}</p>
-          </div>
-          <div class="col-md-3" style="Text-align:center">
-            <p style="color:White;">{$proposta->getModificato()->getNome()}</p>
-          </div>
-          <div class="col-md-3" style="Text-align:center">
+      <div class="row justify-content-around" style=" margin-bottom: 5px">
+        <div class="col justify-content-center align-self-center text-center">
+             <span class="align-middle" style="color: whitesmoke"> Cancellazione </span>
+        </div>
+        <div class="col justify-content-center align-self-center text-center">
+             <span class="align-middle" style="color: whitesmoke">{$proposta->getModificato()->GetProprietario()->GetUsername()}</span>
+        </div>
+        <div class="col justify-content-center align-self-center text-center">
+             <span class="align-middle" style="color: whitesmoke">{$proposta->getModificato()->getNome()}</span>
+        </div>
+        <div class="col justify-content-center align-self-center text-center">
             <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?{$proposta->getId()}"> Dettagli Approvazione </a>
-          </div>
+        </div>
+      </div>
 
         {/if}
-
       {/foreach}
 
     </div>
     {/if}
     <!-- Fine Sezione -->
-  </div>
-  <!-- Sezione Our Team -->
+  <br>
+  <br>
+  <br>
+</div>
 
 </body>
 

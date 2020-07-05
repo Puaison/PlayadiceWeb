@@ -20,7 +20,7 @@ class VRicerca extends VObject
         $key =($_POST['TipoRicerca']);
 
         if ($key=="Autore")
-            $key="UsernameUtente";
+            $key="OrderingUsernameUtente";
         if ($key=="Nome")
             $key="Nome";
 
