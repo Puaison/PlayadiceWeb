@@ -104,7 +104,10 @@ class EProposta extends EObject {
      */
     public function approvaProposta()
     {
-        $this->Modificato=$this->Proposto;
+        $this->Modificato->setNome($this->Proposto->getNome());
+        $this->Modificato->setClasse($this->Proposto->getClasse());
+        $this->Modificato->setLivello($this->Proposto->getLivello());
+        $this->Modificato->setRazza($this->Proposto->getRazza());
     }
 
     public function tostring() :string

@@ -80,7 +80,7 @@
         <p style="color:White;">{$results[k]->getLivello()}</p>
       </div>
       <div class="col-md-2" style="Text-align:center">
-        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/details?{$results[k]->getId()}">Details</a>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/details?{$results[k]->getId()}">Dettagli</a>
       </div>
       <div class="col-md-2" style="Text-align:center">
         <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/modify?{$results[k]->getId()}">Modifica</a>
@@ -92,21 +92,67 @@
     {/section}
     {/if}
 
-    <!-- Sezione PG In attesa di approvazione here -->
+    <br>
+    <br>
+    <!-- Sezione PG In attesa di approvazione per admin here -->
     {if $UtenteType eq 'admin'}
     <div class="row pi-draggable">
+
+      {foreach from=$proposte item=proposta}
+
+        {if $proposta->getTipoProposta() == "Creazione"}
+
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Nome</p>
+        <p style="color:White;"> Creazione </p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Classe</p>
+        <p style="color:White;"> {$proposta->getProposto()->GetProprietario()->GetUsername()} </p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Livello</p>
+        <p style="color:White;"> {$proposta->getProposto()->getNome()} </p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <button> Dettagli Approvazione </button>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?{$proposta->getId()}"> Dettagli Approvazione </a>
       </div>
+
+        {/if}
+
+        {if $proposta->getTipoProposta() == "Modifica"}
+
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;"> Modifica </p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;">{$proposta->getModificato()->GetProprietario()->GetUsername()}</p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;">{$proposta->getModificato()->getNome()}</p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?{$proposta->getId()}"> Dettagli Approvazione </a>
+          </div>
+
+        {/if}
+
+        {if $proposta->getTipoProposta() == "Cancellazione"}
+
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;"> Cancellazione </p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;">{$proposta->getModificato()->GetProprietario()->GetUsername()}</p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;">{$proposta->getModificato()->getNome()}</p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?{$proposta->getId()}"> Dettagli Approvazione </a>
+          </div>
+
+        {/if}
+
+      {/foreach}
+
     </div>
     {/if}
     <!-- Fine Sezione -->

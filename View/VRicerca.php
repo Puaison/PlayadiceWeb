@@ -32,7 +32,7 @@ class VRicerca extends VObject
 
     /**
      */
-    function showSearchResult(EUtente &$user, $array, $Notify)
+    function showSearchResult(EUtente &$user, $array, $array2, $Notify)
     {
         if(!$Notify)
             $Notify = "NoNotify";
@@ -41,6 +41,9 @@ class VRicerca extends VObject
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
 
         $this->smarty->assign('results', $array);
+
+        $this->smarty->assign('proposte', $array2);
+
         $this->smarty->assign('notify', $Notify);
 
         //mostro il contenuto della pagine

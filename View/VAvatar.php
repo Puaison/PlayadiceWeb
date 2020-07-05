@@ -35,9 +35,37 @@ class VAvatar extends VObject
         $this->smarty->display('TVGAvatarCreate.tpl');
     }
 
+    function showproposta(EUtente $user, $proposta )
+    {
+        $this->smarty->registerObject('user', $user);
+
+        $this->smarty->assign('proposta', $proposta);
+
+        $this->smarty->display('TVGAvatarApprovazione.tpl');
+    }
+
     function CreateFromForm() : EAvatar
     {
 
+        $avatar= new EAvatar();
+
+        $user = CSession::getUserFromSession();
+
+        if(isset($_POST['nome']))
+            $avatar->setNome($_POST['nome']);
+        if(isset($_POST['classe']))
+            $avatar->setClasse($_POST['classe']);
+        if(isset($_POST['razza']))
+            $avatar->setRazza($_POST['razza']);
+        if(isset($_POST['livello']))
+            $avatar->setLivello($_POST['livello']);
+        $avatar->setProprietario($user);
+
+        return $avatar;
+    }
+
+    function CreateFromModifyForm() : EAvatar
+    {
         $avatar= new EAvatar();
 
         $user = CSession::getUserFromSession();

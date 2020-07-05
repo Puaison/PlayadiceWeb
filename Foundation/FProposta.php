@@ -8,6 +8,13 @@
 class FProposta
 {
 
+    static function searchPropostaByAll() : string
+    {
+        return "SELECT *
+                FROM proposta
+                ORDER BY Tipo";
+    }
+
     static function searchPropostaById() : string
     {
         return "SELECT *
@@ -94,7 +101,7 @@ class FProposta
             $Proposta->setModificato($Pippo[0]);
         }
 
-        if ( ($row['IDModificato']) != null )
+        if ( ($row['IDProposto']) != null )
         {
             $Pippo = FPersistantManager::getInstance()->search("Avatar","IdAvatar",($row['IDProposto']));
             $Proposta->setProposto($Pippo[0]);

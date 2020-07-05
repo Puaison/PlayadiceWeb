@@ -18,7 +18,7 @@
 
   <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
     <!-- Sezione FORM -->
-    <form method="post" id="ModifyAvatarForm">
+    <form method="post" id="ModifyAvatarForm" action="submitchanges?{$avatar->getId()}">
       <div class="row pi-draggable" draggable="true">
         <div class="col-md-2" style="Text-align:center">
           <p style="color:White;">Old Nome:{$avatar->getNome()}</p>
@@ -27,7 +27,7 @@
           <p style="color:White;">New Nome:</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <input type="text" id="Nome" name="Nome">
+          <input type="text" id="nome" name="nome">
         </div>
       </div>
       <div class="row pi-draggable" draggable="true">
@@ -38,7 +38,7 @@
           <p style="color:White;">New Razza:</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <input type="text" id="Razza" name="Razza">
+          <input type="text" id="razza" name="razza">
         </div>
       </div>
       <div class="row pi-draggable" draggable="true">
@@ -49,7 +49,7 @@
           <p style="color:White;">New Classe:</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <input type="text" id="Classe" name="Classe">
+          <input type="text" id="classe" name="classe">
         </div>
       </div>
       <div class="row pi-draggable" draggable="true">
@@ -60,10 +60,10 @@
           <p style="color:White;">New Livello:</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <input type="text" id="Nome" name="Nome">
+          <input type="text" id="livello" name="livello">
         </div>
       </div>
-      <button> Invia dati </button>
+      <button type="submit" href="/playadice/avatar/submitchanges?{$avatar->getId()}"> Modifica </button>
     </form>
   </div>
 </body>
