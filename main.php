@@ -95,5 +95,8 @@ $smarty->registerObject('user', $user);
 $smarty->display('Test2.tpl');
 */
 
+$proposte= FPersistantManager::getInstance()->search("Proposta", "All" , "");
+var_dump($proposte);
+
 
 ?>

@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 19:43:14
+  from 'D:\XAMPP2\htdocs\playadice\templates\TVGAvatarApprovazione.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f00bfb2315f00_60337856',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '59bcf369642f961a0eda253af0ea3f018d20f8f1' => 
+    array (
+      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGAvatarApprovazione.tpl',
+      1 => 1593884217,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:navbar.tpl' => 1,
+  ),
+),false)) {
+function content_5f00bfb2315f00_60337856 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -19,44 +43,52 @@
 
 <body class="">
 
-{user->getUsername assign='Username'}
+<?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
+
 
 <!-- Navbar here -->
-{include file="navbar.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
   <!-- Sezione Proposta -->
 <div style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
-  {if $proposta->getTipoProposta() == "Creazione"}
+  <?php if ($_smarty_tpl->tpl_vars['proposta']->value->getTipoProposta() == "Creazione") {?>
 
     <div class="col-md-3" style="Text-align:center">
       <p style="color:White;">Proposta di Creazione di questo Avatar: </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> Proprietario : {$proposta->getProposto()->GetProprietario()->GetUsername()} </p>
+      <p style="color:White;"> Proprietario : <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->GetProprietario()->GetUsername();?>
+ </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> {$proposta->getProposto()->getNome()} </p>
+      <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->getNome();?>
+ </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> {$proposta->getProposto()->getClasse()} </p>
+      <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->getClasse();?>
+ </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> {$proposta->getProposto()->getRazza()} </p>
+      <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->getRazza();?>
+ </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> {$proposta->getProposto()->getLivello()} </p>
+      <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->getLivello();?>
+ </p>
     </div>
 
-  {/if}
+  <?php }?>
 
-  {if $proposta->getTipoProposta() == "Modifica"}
+  <?php if ($_smarty_tpl->tpl_vars['proposta']->value->getTipoProposta() == "Modifica") {?>
 
       <div class="col-md-3" style="Text-align:center">
           <p style="color:White;">Proposta di Modifica di questo Avatar: </p>
       </div>
 
       <div class="col-md-3" style="Text-align:center">
-          <p style="color:White;">Proprietario : {$proposta->getModificato()->GetProprietario()->GetUsername()}</p>
+          <p style="color:White;">Proprietario : <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->GetProprietario()->GetUsername();?>
+</p>
       </div>
 
       <div class="row" align="center">
@@ -76,16 +108,20 @@
           </div>
           <div>
               <div class="col-md-3" style="Text-align:center">
-                  <p style="color:White;">{$proposta->getModificato()->getNome()}</p>
+                  <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getNome();?>
+</p>
               </div>
               <div class="col-md-3" style="Text-align:center">
-                  <p style="color:White;">{$proposta->getModificato()->getClasse()}</p>
+                  <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getClasse();?>
+</p>
               </div>
               <div class="col-md-3" style="Text-align:center">
-                  <p style="color:White;">{$proposta->getModificato()->getRazza()}</p>
+                  <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getRazza();?>
+</p>
               </div>
               <div class="col-md-3" style="Text-align:center">
-                  <p style="color:White;">{$proposta->getModificato()->getLivello()}</p>
+                  <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getLivello();?>
+</p>
               </div>
           </div>
           <div>
@@ -104,50 +140,62 @@
           </div>
           <div>
               <div class="col-md-3" style="Text-align:center">
-                  <p style="color:White;">{$proposta->getProposto()->getNome()}</p>
+                  <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->getNome();?>
+</p>
               </div>
               <div class="col-md-3" style="Text-align:center">
-                  <p style="color:White;">{$proposta->getProposto()->getClasse()}</p>
+                  <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->getClasse();?>
+</p>
               </div>
               <div class="col-md-3" style="Text-align:center">
-                  <p style="color:White;">{$proposta->getProposto()->getRazza()}</p>
+                  <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->getRazza();?>
+</p>
               </div>
               <div class="col-md-3" style="Text-align:center">
-                  <p style="color:White;">{$proposta->getProposto()->getLivello()}</p>
+                  <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->getLivello();?>
+</p>
               </div>
           </div>
       </div>
 
-  {/if}
+  <?php }?>
 
-  {if $proposta->getTipoProposta() == "Cancellazione"}
+  <?php if ($_smarty_tpl->tpl_vars['proposta']->value->getTipoProposta() == "Cancellazione") {?>
 
     <div class="col-md-3" style="Text-align:center">
       <p style="color:White;">Proposta di Cancellazione di questo Avatar: </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> Proprietario : {$proposta->getModificato()->GetProprietario()->GetUsername()} </p>
+      <p style="color:White;"> Proprietario : <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->GetProprietario()->GetUsername();?>
+ </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> {$proposta->getModificato()->getNome()} </p>
+      <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getNome();?>
+ </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> {$proposta->getModificato()->getClasse()} </p>
+      <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getClasse();?>
+ </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> {$proposta->getModificato()->getRazza()} </p>
+      <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getRazza();?>
+ </p>
     </div>
     <div class="col-md-3" style="Text-align:center">
-      <p style="color:White;"> {$proposta->getModificato()->getLivello()} </p>
+      <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getLivello();?>
+ </p>
     </div>
 
-  {/if}
+  <?php }?>
 
-  <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/proposta/approva?{$proposta->getId()}"> Approva </a>
-  <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/proposta/rifiuta?{$proposta->getId()}"> Rifiuta </a>
+  <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/proposta/approva?<?php echo $_smarty_tpl->tpl_vars['proposta']->value->getId();?>
+"> Approva </a>
+  <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/proposta/rifiuta?<?php echo $_smarty_tpl->tpl_vars['proposta']->value->getId();?>
+"> Rifiuta </a>
 
 </div>
 <!-- Sezione Our Team -->
 </body>
 
-</html>
+</html><?php }
+}

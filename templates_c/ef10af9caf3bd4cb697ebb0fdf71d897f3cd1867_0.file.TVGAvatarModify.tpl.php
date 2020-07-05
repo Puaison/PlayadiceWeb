@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-01 13:54:19
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 22:24:58
   from 'D:\XAMPP2\htdocs\playadice\templates\TVGAvatarModify.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5efc796b54d189_38482765',
+  'unifunc' => 'content_5f00e59a08f0e1_15809589',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef10af9caf3bd4cb697ebb0fdf71d897f3cd1867' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGAvatarModify.tpl',
-      1 => 1593604387,
+      1 => 1593894289,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5efc796b54d189_38482765 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f00e59a08f0e1_15809589 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -44,7 +44,8 @@ function content_5efc796b54d189_38482765 (Smarty_Internal_Template $_smarty_tpl)
 
   <div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
     <!-- Sezione FORM -->
-    <form method="post" id="ModifyAvatarForm">
+    <form method="post" id="ModifyAvatarForm" action="submitchanges?<?php echo $_smarty_tpl->tpl_vars['avatar']->value->getId();?>
+">
       <div class="row pi-draggable" draggable="true">
         <div class="col-md-2" style="Text-align:center">
           <p style="color:White;">Old Nome:<?php echo $_smarty_tpl->tpl_vars['avatar']->value->getNome();?>
@@ -54,7 +55,7 @@ function content_5efc796b54d189_38482765 (Smarty_Internal_Template $_smarty_tpl)
           <p style="color:White;">New Nome:</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <input type="text" id="Nome" name="Nome">
+          <input type="text" id="nome" name="nome">
         </div>
       </div>
       <div class="row pi-draggable" draggable="true">
@@ -66,7 +67,7 @@ function content_5efc796b54d189_38482765 (Smarty_Internal_Template $_smarty_tpl)
           <p style="color:White;">New Razza:</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <input type="text" id="Razza" name="Razza">
+          <input type="text" id="razza" name="razza">
         </div>
       </div>
       <div class="row pi-draggable" draggable="true">
@@ -78,7 +79,7 @@ function content_5efc796b54d189_38482765 (Smarty_Internal_Template $_smarty_tpl)
           <p style="color:White;">New Classe:</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <input type="text" id="Classe" name="Classe">
+          <input type="text" id="classe" name="classe">
         </div>
       </div>
       <div class="row pi-draggable" draggable="true">
@@ -90,10 +91,11 @@ function content_5efc796b54d189_38482765 (Smarty_Internal_Template $_smarty_tpl)
           <p style="color:White;">New Livello:</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <input type="text" id="Nome" name="Nome">
+          <input type="text" id="livello" name="livello">
         </div>
       </div>
-      <button> Invia dati </button>
+      <button type="submit" href="/playadice/avatar/submitchanges?<?php echo $_smarty_tpl->tpl_vars['avatar']->value->getId();?>
+"> Modifica </button>
     </form>
   </div>
 </body>

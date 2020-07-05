@@ -70,22 +70,24 @@ class CAvatar
             $vAvatar->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 
-    static function submitchanges($id = 0)
+    static function submitchanges($id)
     {
         $vAvatar = new VAvatar();
         $user = CSession::getUserFromSession();
 
         if (get_class($user) != EOspite::class) // se l'utente non e' ospite
         {
+            $Modificato=(FPersistantManager::getInstance()->search("Avatar","IdAvatar",$id))[0];
             $SubmittedAvatar=$vAvatar->CreateFromModifyForm();
             $Proposta = new EProposta();
+
             $Proposta->setTipoProposta("Modifica");
             $Proposta->setProposto($SubmittedAvatar);
-            $Proposta->setModificato(null);
+            $Proposta->setModificato($Modificato);
 
             FPersistantManager::getInstance()->store($SubmittedAvatar);
             FPersistantManager::getInstance()->store($Proposta);
-
+            CRicerca::ShowPersonal("Proposta di modifica salvata con successo");
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
             $vAvatar->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
@@ -119,6 +121,7 @@ class CAvatar
 
             FPersistantManager::getInstance()->store($SubmittedAvatar);
             FPersistantManager::getInstance()->store($Proposta);
+            CRicerca::ShowPersonal("Proposta di creazione salvata con successo");
 
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
@@ -135,9 +138,20 @@ class CAvatar
             {
                 if($SelectedAvatar=FPersistantManager::getInstance()->exists("Avatar","IdAvatar","$id")) //Se l'avatar esiste
                 {
-                    $SelectedAvatar=FPersistantManager::getInstance()->search("Avatar","IdAvatar","$id");
-                    //FPersistantManager::getInstance()->remove($SelectedAvatar[0]);  //TODO RIMUOVERE ANCHE I SUOI RIFERIMENTI NELLE PROPOSTE (O CASCADE?)
-                    header('Location: /playadice/ricerca/ShowPersonal');
+                    if ( !(FPersistantManager::getInstance()->exists("Proposta","IDModificato","$id") ) && !(FPersistantManager::getInstance()->exists("Proposta","IDProposto","$id") ) ) //Se l'avatar non è in una proposta
+                    {
+                        $Proposta = new EProposta();
+                        $Proposta->setTipoProposta("Cancellazione");
+                        $SelectedAvatar=FPersistantManager::getInstance()->search("Avatar","IdAvatar","$id");
+                        $Proposta->setModificato($SelectedAvatar[0]);
+                        $Proposta->setProposto(null);
+                        FPersistantManager::getInstance()->store($Proposta);
+                        CRicerca::ShowPersonal("Proposta salvata con successo");
+                    }
+                    else
+                    {
+                        $vAvatar->showErrorPage($user, "Ehi! C'è già un'azione in sospeso per questo Avatar!");
+                    }
                 }
                 else
                 {
@@ -178,6 +192,20 @@ class CAvatar
         }
         else // se l'utente e' ospite, viene reindirizzato ad una pagina di errore
             $vAvatar->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
+    }
+
+    static function vediproposta($id = 0)
+    {
+        $vAvatar = new VAvatar();
+        $user = CSession::getUserFromSession();
+
+        if (get_class($user) == EAdmin::class) // se l'utente non e' ospite
+        {
+            $proposta=FPersistantManager::getInstance()->search("Proposta","Id","$id");
+            $vAvatar->showproposta($user,$proposta[0]);
+        }
+        else
+            $vAvatar->showErrorPage($user, 'Non hai i permessi necessari per fare questa azione');
     }
 
 }
