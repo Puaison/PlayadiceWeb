@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 11:26:42
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 18:25:42
   from 'C:\xampp\htdocs\playadice\templates\PLDEventoModifica.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f004b52565f17_25678681',
+  'unifunc' => 'content_5f00ad86239e17_66778208',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f004b52565f17_25678681 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f00ad86239e17_66778208 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>

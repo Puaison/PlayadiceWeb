@@ -34,10 +34,10 @@
         </div>
 
         <div class="col-md-2">
-          <button> Modifica </button>
+          <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/modify?{$avatar->getId()}">Modifica</a>
         </div>
         <div class="col-md-2">
-          <button> Elimina </button>
+          <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/delete?{$avatar->getId()}">Elimina</a>
         </div>
 
       </div>

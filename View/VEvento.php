@@ -20,12 +20,11 @@ class VEvento extends VObject
         $this->smarty->display('PLDCalendario.tpl');
 
     }
-    function show(EUtente &$user, $evento, $error = null, $check){
-
+    function show(EUtente &$user, $evento, $error = null){
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('results', $evento);
         $this->smarty->assign('error', $error);
-        $this->smarty->assign('check', $check);
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->display('PLDEvento.tpl');
 
     }
@@ -56,8 +55,6 @@ class VEvento extends VObject
     {
 
         $evento= new EEvento();
-
-
         if(isset($_POST['nome']))
             $evento->setNome($_POST['nome']);
         if(isset($_POST['categoria']))
@@ -86,7 +83,6 @@ class VEvento extends VObject
 
             if(!empty($_POST["$foo"]) and !empty($_POST["$finale"]))
             {
-
                 $fascia=new EFascia();
                 $inizio=(date_create_from_format("d/m/Y H:i:s",$_POST["$foo"]));
                 $fine=(date_create_from_format("d/m/Y H:i:s",$_POST["$finale"]));

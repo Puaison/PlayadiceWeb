@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 10:43:18
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 14:22:57
   from 'D:\XAMPP2\htdocs\playadice\templates\GiochiMainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f004126959bf3_78767851',
+  'unifunc' => 'content_5f0074a14f3c46_38098168',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a47f36a33e0f9adae1422ac40fa067552ff08b45' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\GiochiMainPage.tpl',
-      1 => 1593852039,
+      1 => 1593865291,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f004126959bf3_78767851 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0074a14f3c46_38098168 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -68,9 +68,11 @@ function content_5f004126959bf3_78767851 (Smarty_Internal_Template $_smarty_tpl)
         <button href="/playadice/ricerca/Search" > Cerca </button>
       </div>
     </form>
+    <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
     <div class="col-md-2">
       <a class="btn-primary btn" href="">Crea Nuovo</a>
     </div>
+    <?php }?>
 
   </div>
   <!-- Catalogo -->
@@ -114,7 +116,7 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
         </div>
         <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
         <div class="col-md-2">
-          <a class="btn-primary btn" href="/playadice/catalogo/remove/<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+          <a class="btn-primary btn" href="/playadice/catalogo/remove?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
 ">Elimina</a>
         </div>
         <?php }?>

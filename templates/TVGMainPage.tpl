@@ -48,6 +48,9 @@
         </div>
       </form
 
+      <!-- Sezione I miei PG here -->
+      <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/create"> New </a>
+
     </div>
     <!-- Sezione I miei PG here -->
 
@@ -87,15 +90,10 @@
       </div>
     </div>
     {/section}
-
     {/if}
-    <!-- Fine Sezione -->
-    <br>
-    <div style="Text-align:center">
-      <p style="color:White;">Personaggi in attesa di approvazione:</p>
-    </div>
-    <br>
+
     <!-- Sezione PG In attesa di approvazione here -->
+    {if $UtenteType eq 'admin'}
     <div class="row pi-draggable">
       <div class="col-md-3" style="Text-align:center">
         <p style="color:White;">Nome</p>
@@ -110,6 +108,7 @@
         <button> Dettagli Approvazione </button>
       </div>
     </div>
+    {/if}
     <!-- Fine Sezione -->
   </div>
   <!-- Sezione Our Team -->
