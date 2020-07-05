@@ -44,6 +44,7 @@ class CCatalogo
         $vCatalogo = new VCatalogo();
         $newgioco = $vCatalogo->createGioco();
 
+        // TODO  SERVE CONTROLLARE queSTO? if($user->getModeratore())
         if($vCatalogo->validateNuovoGioco($newgioco))
         {
             FPersistantManager::getInstance()->store($newgioco);
@@ -68,7 +69,7 @@ class CCatalogo
             //$gioco->setId($id);
             if($giocoExists)
             {
-                $gioco = FPersistantManager::getInstance()->search("gioco", "Id" ,"$id")[0];
+                $gioco = FPersistantManager::getInstance()->search("gioco", "Id" ,$id)[0];
                 FPersistantManager::getInstance()->remove($gioco);
                 header('Location: /playadice/catalogo/catalogocompleto');
             }

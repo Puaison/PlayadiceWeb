@@ -76,7 +76,7 @@
           <p style="color:White;">{$results[k]->getCategoria()}</p>
         </div>
         <div class="col-md-2">
-          <a class="btn-primary btn" href="">Visualizza dettagli</a>
+          <a class="btn-primary btn" href="/playadice/giocoinfo/showgiocoinfo?{$results[k]->getId()}">Visualizza dettagli</a>
         </div>
         {if $Tipo}
         <div class="col-md-2">
