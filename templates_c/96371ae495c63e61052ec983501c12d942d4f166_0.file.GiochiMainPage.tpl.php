@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 12:07:55
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 19:15:32
   from 'C:\xampp\htdocs\playadice\templates\GiochiMainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0054fb5b92a3_25450342',
+  'unifunc' => 'content_5f00b934485b25_72944221',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '96371ae495c63e61052ec983501c12d942d4f166' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\GiochiMainPage.tpl',
-      1 => 1593857238,
+      1 => 1593882908,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0054fb5b92a3_25450342 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f00b934485b25_72944221 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -70,7 +70,7 @@ function content_5f0054fb5b92a3_25450342 (Smarty_Internal_Template $_smarty_tpl)
     </form>
     <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
     <div class="col-md-2">
-      <a class="btn-primary btn" href="">Crea Nuovo</a>
+      <a class="btn-primary btn" href="/playadice/catalogo/newgioco">Crea Nuovo</a>
     </div>
     <?php }?>
 

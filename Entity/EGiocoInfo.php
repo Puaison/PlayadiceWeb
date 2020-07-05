@@ -130,7 +130,7 @@ class EGiocoInfo extends EObject
     function validateNumMax() : bool
     {
 
-        if ($this->NumeroMax<=99)
+        if ($this->NumeroMax && $this->NumeroMax<=99)
         {
             return true;
         }
@@ -144,7 +144,7 @@ class EGiocoInfo extends EObject
     function validateNumMin() : bool
     {
 
-        if ($this->NumeroMax>=1)
+        if ($this->NumeroMin && $this->NumeroMin>=1)
         {
             return true;
         }

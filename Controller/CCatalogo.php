@@ -24,7 +24,10 @@ class CCatalogo
             $user = CSession::getUserFromSession();
             if($user->getModeratore()) // se l'utente non è un Admin, non puo accedere a questa funzionalità
             {
-                $vCatalogo->showFormNewGioco($user);
+                //Da cancellare
+                $gioco=new EGioco();
+                $gioco->setNome("agagaga");
+                $vCatalogo->showFormNewGioco($user,$gioco);
             }
             else
                 $vCatalogo->showErrorPage($user, 'Non hai i permessi per accedere a questa sezione!');
@@ -44,6 +47,9 @@ class CCatalogo
         if($vCatalogo->validateNuovoGioco($newgioco))
         {
             FPersistantManager::getInstance()->store($newgioco);
+            $newGioco2=FPersistantManager::getInstance()->search("gioco","Last","")[0];
+            $newgioco->getInfo()->setId($newGioco2->getId());
+            FPersistantManager::getInstance()->store($newgioco->getInfo());
             header('Location: /playadice/catalogo/catalogocompleto');
         }
         else

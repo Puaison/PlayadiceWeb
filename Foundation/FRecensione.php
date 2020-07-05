@@ -11,17 +11,24 @@ class FRecensione
                 WHERE IdGioco=:IdGioco;";
     }
 
+    static function searchRecensioneById() : string
+    {
+        return "SELECT *
+                FROM recensione
+                WHERE Id=:Id;";
+    }
+
     static function storeRecensione() : string
     {
-        return "INSERT INTO recensione(Creatore, IdGioco,Voto,Commento)
-				VALUES(:Creatore, :IdGioco, :Voto, :Commento);";
+        return "INSERT INTO recensione(Id,Creatore, IdGioco,Voto,Commento)
+				VALUES(:Id, :Creatore, :IdGioco, :Voto, :Commento);";
     }
 
     static function removeRecensione() : string
     {
         return "DELETE 
                 FROM recensione
-                WHERE IdGioco = :IdGioco AND Creatore=:Creatore;";
+                WHERE Id = :Id";
 
     }
 
