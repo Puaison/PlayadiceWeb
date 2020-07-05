@@ -25,9 +25,9 @@ class CCatalogo
             if($user->getModeratore()) // se l'utente non è un Admin, non puo accedere a questa funzionalità
             {
                 //Da cancellare
-                $gioco=new EGioco();
-                $gioco->setNome("agagaga");
-                $vCatalogo->showFormNewGioco($user,$gioco);
+                //$gioco=new EGioco();
+                //$gioco->setNome("agagaga");
+                $vCatalogo->showFormNewGioco($user);
             }
             else
                 $vCatalogo->showErrorPage($user, 'Non hai i permessi per accedere a questa sezione!');

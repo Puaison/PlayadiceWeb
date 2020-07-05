@@ -82,11 +82,13 @@ class VCatalogo extends VObject
         $this->smarty->display('GiochiMainPage.tpl');
     }
 
-    function showFormNewGioco(EUtente $user, EGioco $gioco)
+    function showFormNewGioco(EUtente $user, EGioco $gioco=null)
     {
-        //if($gioco==null) {
+        //if(!$gioco) {
           //  $gioco = new EGioco();
         //}
+        $gioco = new EGioco();
+        //$gioco->setNome("aaggagaga");
         $this->smarty->assign('gioco', $gioco);
         $this->smarty->assign('check', $this->check);
         $this->smarty->registerObject('user', $user);

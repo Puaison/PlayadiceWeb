@@ -33,7 +33,7 @@
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Gioco</b></label>
                         <div class="col-10">
                             <input type="text" name="Nome" class="form-control" maxlength="40" size="40"
-                                    {if isset($Gioco->getNome())}
+                                    {if isset($gioco->getNome())}
                                         value="{$gioco->getNome()}"
                                     {/if}
                                    placeholder="Inserisci qui il Nome"></div>
@@ -106,7 +106,8 @@
                         <div class="form-group row">
                                 <label for="name-input " class="my-auto"><b>Casa Editrice</b></label>
                                 <div class="col  ">
-                                    <input type="text" name="CasaEditrice" class="form-control" placeholder="CasaEditrice" maxlength="40" size="40"> </div>
+                                    <input type="text" name="CasaEditrice" class="form-control" placeholder="CasaEditrice" maxlength="40" size="40"
+                                            > </div>
                                 {if ! $check.CasaEditrice}
                                     <div class="alert alert-warning">
                                         <small >
