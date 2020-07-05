@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 16:33:52
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 19:15:40
   from 'D:\XAMPP2\htdocs\playadice\templates\TVGMainpage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f009350536729_80978112',
+  'unifunc' => 'content_5f00b93cf10df0_57658369',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f1dfeea3ed8ab6ec6e238b115eac11f4284d015' => 
     array (
       0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGMainpage.tpl',
-      1 => 1593873232,
+      1 => 1593882940,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f009350536729_80978112 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f00b93cf10df0_57658369 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -117,7 +117,7 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
       </div>
       <div class="col-md-2" style="Text-align:center">
         <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/details?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
-">Details</a>
+">Dettagli</a>
       </div>
       <div class="col-md-2" style="Text-align:center">
         <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/modify?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
@@ -134,21 +134,83 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 ?>
     <?php }?>
 
-    <!-- Sezione PG In attesa di approvazione here -->
+    <br>
+    <br>
+    <!-- Sezione PG In attesa di approvazione per admin here -->
     <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == 'admin') {?>
     <div class="row pi-draggable">
+
+      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['proposte']->value, 'proposta');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['proposta']->value) {
+?>
+
+        <?php if ($_smarty_tpl->tpl_vars['proposta']->value->getTipoProposta() == "Creazione") {?>
+
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Nome</p>
+        <p style="color:White;"> Creazione </p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Classe</p>
+        <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->GetProprietario()->GetUsername();?>
+ </p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <p style="color:White;">Livello</p>
+        <p style="color:White;"> <?php echo $_smarty_tpl->tpl_vars['proposta']->value->getProposto()->getNome();?>
+ </p>
       </div>
       <div class="col-md-3" style="Text-align:center">
-        <button> Dettagli Approvazione </button>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?<?php echo $_smarty_tpl->tpl_vars['proposta']->value->getId();?>
+"> Dettagli Approvazione </a>
       </div>
+
+        <?php }?>
+
+        <?php if ($_smarty_tpl->tpl_vars['proposta']->value->getTipoProposta() == "Modifica") {?>
+
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;"> Modifica </p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->GetProprietario()->GetUsername();?>
+</p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getNome();?>
+</p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?<?php echo $_smarty_tpl->tpl_vars['proposta']->value->getId();?>
+"> Dettagli Approvazione </a>
+          </div>
+
+        <?php }?>
+
+        <?php if ($_smarty_tpl->tpl_vars['proposta']->value->getTipoProposta() == "Cancellazione") {?>
+
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;"> Cancellazione </p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->GetProprietario()->GetUsername();?>
+</p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['proposta']->value->getModificato()->getNome();?>
+</p>
+          </div>
+          <div class="col-md-3" style="Text-align:center">
+            <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/vediproposta?<?php echo $_smarty_tpl->tpl_vars['proposta']->value->getId();?>
+"> Dettagli Approvazione </a>
+          </div>
+
+        <?php }?>
+
+      <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
     </div>
     <?php }?>
     <!-- Fine Sezione -->

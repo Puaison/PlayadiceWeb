@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-05 10:43:14
+/* Smarty version 3.1.34-dev-7, created on 2020-07-05 10:20:43
   from 'C:\xampp\htdocs\playadice\templates\NuovoGioco.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0192a2cb4779_74752743',
+  'unifunc' => 'content_5f018d5b8aea90_56723334',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '53e6242679f2313534e8da540a7dbda84d483151' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\NuovoGioco.tpl',
-      1 => 1593938591,
+      1 => 1593937241,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0192a2cb4779_74752743 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f018d5b8aea90_56723334 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,7 +55,7 @@ function content_5f0192a2cb4779_74752743 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class="card ">
 
-    <form method="post"  class="" action="newgioco">
+    <form method="post" id="newgioco" class="" action="newgioco">
         <div class="py-5">
             <div class="container ">
                 <div class="col-md-12">
@@ -63,8 +63,8 @@ function content_5f0192a2cb4779_74752743 (Smarty_Internal_Template $_smarty_tpl)
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Gioco</b></label>
                         <div class="col-10">
                             <input type="text" name="Nome" class="form-control" maxlength="40" size="40"
-                                    <?php if (isset($_smarty_tpl->tpl_vars['prec']->value['Nome'])) {?>
-                                        value="<?php echo $_smarty_tpl->tpl_vars['prec']->value['Nome'];?>
+                                    <?php if (!empty($_smarty_tpl->tpl_vars['gioco']->value->getNome())) {?>
+                                        value="<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getNome();?>
 "
                                     <?php }?>
                                    placeholder="Inserisci qui il Nome"></div>

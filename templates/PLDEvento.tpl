@@ -112,8 +112,10 @@
                                                                 {else}
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                <a type="submit" href="../evento/booking?{$results[0]->getId()}" class="btn btn-primary">Si
-                                                                </a>
+                                                                <form action="../evento/booking?{$results[0]->getId()}" method="post">
+                                                                <button type="submit"  class="btn btn-primary">Si
+                                                                </button>
+                                                            </form>
                                                             </div>
                                                             {/if}
                                                         </div>
@@ -122,7 +124,7 @@
                                             </div>
                                         {else}
                                         <div class="col text-right">
-                                            <a type="button" class="btn btn-primary "   href="#" draggable="true" disabled>Già Prenotato</a>
+                                            <a type="button" class="btn btn-primary "  href="#" draggable="true" disabled>Già Prenotato</a>
                                         </div>
                                         </div>
                                     {/if}
