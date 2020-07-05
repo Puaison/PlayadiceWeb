@@ -145,7 +145,7 @@ class EGioco extends EObject
      */
     function validateCategoria() : bool
     {
-        if($this->Categoria== EGiocoCategoria::Strategia && $this->Categoria== EGiocoCategoria::Party )
+        if($this->Categoria== EGiocoCategoria::Strategia || $this->Categoria== EGiocoCategoria::Party )
             return true;
         else
             return false;

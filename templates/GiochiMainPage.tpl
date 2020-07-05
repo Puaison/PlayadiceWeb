@@ -43,7 +43,7 @@
     </form>
     {if $Tipo}
     <div class="col-md-2">
-      <a class="btn-primary btn" href="">Crea Nuovo</a>
+      <a class="btn-primary btn" href="/playadice/catalogo/newgioco">Crea Nuovo</a>
     </div>
     {/if}
 

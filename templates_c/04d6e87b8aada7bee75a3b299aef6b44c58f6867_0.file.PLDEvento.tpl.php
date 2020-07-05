@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 17:34:09
+/* Smarty version 3.1.34-dev-7, created on 2020-07-04 19:12:06
   from 'C:\xampp\htdocs\playadice\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f00a171522a80_42626093',
+  'unifunc' => 'content_5f00b866037037_36502127',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04d6e87b8aada7bee75a3b299aef6b44c58f6867' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEvento.tpl',
-      1 => 1593876527,
+      1 => 1593882725,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f00a171522a80_42626093 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f00b866037037_36502127 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -50,20 +50,36 @@ function content_5f00a171522a80_42626093 (Smarty_Internal_Template $_smarty_tpl)
 
 
 
+
 <!-- Navbar here -->
 
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <hr> <?php if ($_smarty_tpl->tpl_vars['error']->value) {?>
     <div class="alert alert-warning text-center">
-
         <br>Prenotazione avvenuta con successo <br></div> <?php }?>
+
+<?php $_smarty_tpl->_assignInScope('prenotazioni', $_smarty_tpl->tpl_vars['results']->value[0]->getPrenotazioni());
+$_smarty_tpl->_assignInScope('check', false);
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['prenotazioni']->value, 'value');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['value']->value) {
+?>
+    <?php $_smarty_tpl->_assignInScope('nome', $_smarty_tpl->tpl_vars['value']->value->getUtente()->getUsername());?>
+    <?php if (($_smarty_tpl->tpl_vars['nome']->value == $_smarty_tpl->tpl_vars['Username']->value)) {?>
+        <?php $_smarty_tpl->_assignInScope('check', true);?>
+    <?php }
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 
 <div class="py-5">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 p-0"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg" style="" h="100" w="100"> </div>
+            <div class="col-lg-6 order-2 order-lg-1 p-0">
+                <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg" style="" h="100" w="100">
+            </div>
             <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card ">
                     <div class="card-body">
@@ -73,7 +89,6 @@ function content_5f00a171522a80_42626093 (Smarty_Internal_Template $_smarty_tpl)
 </h6>
                         <h6 class="card-subtitle my-2 text-"><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getLuogo();?>
 </h6>
-
                         <div class="row">
                             <?php $_smarty_tpl->_assignInScope('fasce', $_smarty_tpl->tpl_vars['results']->value[0]->getFasce());?>
                             <?php if (!empty(($_smarty_tpl->tpl_vars['fasce']->value))) {?>
@@ -107,73 +122,72 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
                         <p class="card-text mt-sm-3"><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getTesto();?>
 </p>
-
                         <div class='row '>
-                            <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
+                            <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "admin") {?>
                             <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete?<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
 ">Annulla</a></div>
                             <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify?<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
-">Modifica</a></div><?php }?>
-
-                            <?php if (boolval($_smarty_tpl->tpl_vars['results']->value[0]->getFlag())) {?>
-                            <?php if (!$_smarty_tpl->tpl_vars['check']->value) {?>
-
-                        <div class="col">
-                            <!-- Button trigger modal -->
-                            <div class="text-right">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" href="#prenotati">
-                                Prenotati
-                            </button>
-                            </div>
-                            <!-- Modal -->
-                            <div class="text-center">
-                            <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="prenotati">Ciao <?php echo $_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl);?>
-</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Vuoi prenotarti a questo evento?
-                                        </div>
-                                        <?php if ($_smarty_tpl->tpl_vars['Username']->value == "Ospite") {?>
-                                        <div class="modal-body">
-                                            Devi aver effettuato il Login per farlo!
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <a type="submit" href="../utente/login" class="btn btn-primary">Login</a></div>
-                                            <?php } else { ?>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <a type="submit" href="../evento/booking?<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
-" class="btn btn-primary">Si
-                                            </a>
-                                        </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
+">Modifica</a></div>
                             <?php }?>
-                            </div>
+                            <?php if (boolval($_smarty_tpl->tpl_vars['results']->value[0]->getFlag())) {?>
+                                    <?php if (!$_smarty_tpl->tpl_vars['check']->value) {?>
+                                        <div class="col">
+                                            <!-- Button trigger modal -->
+                                            <div class="text-right">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" href="#prenotati">
+                                                Prenotati
+                                            </button>
+                                            </div>
+                                            <!-- Modal -->
+                                            <div class="text-center">
 
-                            <?php } else { ?>
-                            <div class="col text-right">
-                            <a type="button" class="btn btn-primary "   href="#" draggable="true" disabled>Già Prenotato</a>
-                            </div>
-
+                                                <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="prenotati">Ciao <?php echo $_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl);?>
+</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Vuoi prenotarti a questo evento?
+                                                            </div>
+                                                            <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "ospite") {?>
+                                                            <div class="modal-body">
+                                                                Devi aver effettuato il Login per farlo!
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <a type="submit" href="../utente/login" class="btn btn-primary">Login</a>
+                                                            </div>
+                                                                <?php } else { ?>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <a type="submit" href="../evento/booking?<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
+" class="btn btn-primary">Si
+                                                                </a>
+                                                            </div>
+                                                            <?php }?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php } else { ?>
+                                        <div class="col text-right">
+                                            <a type="button" class="btn btn-primary "   href="#" draggable="true" disabled>Già Prenotato</a>
+                                        </div>
+                                        </div>
+                                    <?php }?>
+                            <?php }?>
 
                         </div>
+
+
                     </div>
-                    </div>
-                    <?php }?>
-                    <?php }?>
+
+
                 </div>
             </div>
 
