@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="../../bootstrap.min.js"></script>
+    <script src="../bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
@@ -21,14 +21,14 @@
 
 <div class="card ">
 
-    <form method="post" id="c_form-h" class="" action="../updateEvento/{$results[0]->getId()}">
+    <form method="post" id="c_form-h" class="" action="../evento/updateEvento/{$results[0]->getId()}">
         <div class="py-5">
             <div class="container ">
                 <div class="col-md-12">
                     <div class="form-group row">
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
                         <div class="col-10">
-                            <input type="text" name="nome" class="form-control " placeholder="{$results[0]->getNome()}"> </div>
+                            <input type="text" name="nome" class="form-control " value="{$results[0]->getNome()}"> </div>
                     </div>
                     <div class="form-group row">
                         <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>

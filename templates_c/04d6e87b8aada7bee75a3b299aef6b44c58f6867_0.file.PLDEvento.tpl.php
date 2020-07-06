@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-05 10:46:24
+/* Smarty version 3.1.34-dev-7, created on 2020-07-06 12:24:58
   from 'C:\xampp\htdocs\playadice\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f01936093e298_63570135',
+  'unifunc' => 'content_5f02fbfae39960_64658605',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04d6e87b8aada7bee75a3b299aef6b44c58f6867' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEvento.tpl',
-      1 => 1593938783,
+      1 => 1594031098,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f01936093e298_63570135 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f02fbfae39960_64658605 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -49,15 +49,20 @@ function content_5f01936093e298_63570135 (Smarty_Internal_Template $_smarty_tpl)
 
 
 
-
+<?php if (headers_sent()) {?>
+ciao
+<?php }?>
 
 <!-- Navbar here -->
 
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<hr> <?php if ($_smarty_tpl->tpl_vars['error']->value) {?>
+<hr> <?php if ($_smarty_tpl->tpl_vars['check']->value) {?>
     <div class="alert alert-warning text-center">
         <br>Prenotazione avvenuta con successo <br></div> <?php }?>
+<hr> <?php if ($_smarty_tpl->tpl_vars['error']->value) {?>
+    <div class="alert alert-warning text-center">
+        <br>Ti sei già prenotato! <br></div> <?php }?>
 
 <?php $_smarty_tpl->_assignInScope('prenotazioni', $_smarty_tpl->tpl_vars['results']->value[0]->getPrenotazioni());
 $_smarty_tpl->_assignInScope('check', false);

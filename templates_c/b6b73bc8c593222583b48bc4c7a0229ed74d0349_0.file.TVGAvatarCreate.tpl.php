@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 17:57:12
-  from 'D:\XAMPP2\htdocs\playadice\templates\TVGAvatarCreate.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-06 11:00:59
+  from 'C:\xampp\htdocs\playadice\templates\TVGAvatarCreate.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f00a6d8930752_33429572',
+  'unifunc' => 'content_5f02e84bd2cd45_45929570',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '05411445f67775c2344a779f58cae77e86a657cc' => 
+    'b6b73bc8c593222583b48bc4c7a0229ed74d0349' => 
     array (
-      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGAvatarCreate.tpl',
-      1 => 1593878202,
+      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\TVGAvatarCreate.tpl',
+      1 => 1593882858,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f00a6d8930752_33429572 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f02e84bd2cd45_45929570 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 

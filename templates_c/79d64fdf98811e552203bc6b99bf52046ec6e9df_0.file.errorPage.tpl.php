@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-05 10:27:08
+/* Smarty version 3.1.34-dev-7, created on 2020-07-06 11:31:21
   from 'C:\xampp\htdocs\playadice\templates\errorPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f018edcbb7ab4_76375325',
+  'unifunc' => 'content_5f02ef693adf31_50234369',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '79d64fdf98811e552203bc6b99bf52046ec6e9df' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\errorPage.tpl',
-      1 => 1593937628,
+      1 => 1594027880,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f018edcbb7ab4_76375325 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f02ef693adf31_50234369 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +52,7 @@ function content_5f018edcbb7ab4_76375325 (Smarty_Internal_Template $_smarty_tpl)
 <div class="container text-center well">
     <h3>Ooooops! Something went wrong!</h3>
     <p><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
-, Perfavore torna nella <a href="/playadice/">home</a>
+, Per favore torna nella <a href="/playadice/">home</a>
     </p>
 
 </div>

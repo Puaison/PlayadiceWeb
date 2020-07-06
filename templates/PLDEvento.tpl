@@ -18,14 +18,19 @@
 {user->getModeratore assign='Tipo'}
 
 
-
+{if headers_sent()}
+ciao
+{/if}
 
 <!-- Navbar here -->
 
 {include file="navbar.tpl"}
-<hr> {if $error}
+<hr> {if $check}
     <div class="alert alert-warning text-center">
         <br>Prenotazione avvenuta con successo <br></div> {/if}
+<hr> {if $error}
+    <div class="alert alert-warning text-center">
+        <br>Ti sei già prenotato! <br></div> {/if}
 
 {$prenotazioni=$results[0]->getPrenotazioni()}
 {$check=false}

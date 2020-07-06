@@ -12,17 +12,19 @@ class VEvento extends VObject
             'type' => true
         );
     }
-    function showAll(EUtente &$user, $eventi)
+    function showAll(EUtente &$user, $eventi, $check=null)
     {
 
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('results', $eventi);
+        $this->smarty->assign('check', $check);
         $this->smarty->display('PLDCalendario.tpl');
 
     }
-    function show(EUtente &$user, $evento, $error = null){
+    function show(EUtente &$user, $evento, $check = null , $error = null){
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('results', $evento);
+        $this->smarty->assign('check', $check);
         $this->smarty->assign('error', $error);
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->display('PLDEvento.tpl');

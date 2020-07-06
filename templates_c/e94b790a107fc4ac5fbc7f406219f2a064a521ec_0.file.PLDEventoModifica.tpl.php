@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 18:25:42
+/* Smarty version 3.1.34-dev-7, created on 2020-07-05 11:31:29
   from 'C:\xampp\htdocs\playadice\templates\PLDEventoModifica.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f00ad86239e17_66778208',
+  'unifunc' => 'content_5f019df12cfc38_37408633',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e94b790a107fc4ac5fbc7f406219f2a064a521ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEventoModifica.tpl',
-      1 => 1593854789,
+      1 => 1593941487,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f00ad86239e17_66778208 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f019df12cfc38_37408633 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +31,7 @@ function content_5f00ad86239e17_66778208 (Smarty_Internal_Template $_smarty_tpl)
  src="//code.jquery.com/jquery-1.11.0.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="../../bootstrap.min.js"><?php echo '</script'; ?>
+ src="../bootstrap.min.js"><?php echo '</script'; ?>
 >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
@@ -51,7 +51,7 @@ function content_5f00ad86239e17_66778208 (Smarty_Internal_Template $_smarty_tpl)
 
 <div class="card ">
 
-    <form method="post" id="c_form-h" class="" action="../updateEvento/<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
+    <form method="post" id="c_form-h" class="" action="../evento/updateEvento/<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
 ">
         <div class="py-5">
             <div class="container ">
@@ -59,7 +59,7 @@ function content_5f00ad86239e17_66778208 (Smarty_Internal_Template $_smarty_tpl)
                     <div class="form-group row">
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
                         <div class="col-10">
-                            <input type="text" name="nome" class="form-control " placeholder="<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getNome();?>
+                            <input type="text" name="nome" class="form-control " value="<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getNome();?>
 "> </div>
                     </div>
                     <div class="form-group row">

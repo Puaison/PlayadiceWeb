@@ -25,7 +25,7 @@
 
 <div class="container text-center well">
     <h3>Ooooops! Something went wrong!</h3>
-    <p>{$error}, Perfavore torna nella <a href="/playadice/">home</a>
+    <p>{$error}, Per favore torna nella <a href="/playadice/">home</a>
     </p>
 
 </div>
