@@ -25,29 +25,37 @@ class CGiocoInfo
     {
         $vGiocoinfo = new VGiocoInfo();
         $user = CSession::getUserFromSession();
+        $gioco=FPersistantManager::getInstance()->search("gioco","Id",$idgioco)[0];
         $recensione=new ERecensione();
         $recensione->getEGioco()->setId($idgioco);
         $recensione->getEUtente()->setUsername($creatore);
         FPersistantManager::getInstance()->remove($recensione);
+        $allrec=FPersistantManager::getInstance()->search("recensione", "IdGioco",$idgioco);
+        $gioco->setRecensioni($allrec);
+        $gioco->CalcolaVotoMedio();
+        FPersistantManager::getInstance()->update($gioco);
+
 
         header("Location: /playadice/giocoinfo/showgiocoinfo?$idgioco");
 
     }
-    static function newrecensione()
+    static function newrecensione(int $IdGioco)
     {
             if ($_SERVER['REQUEST_METHOD'] == 'GET') // se il metodo e' get...
             { //...carica la pagina per l'inserimento di una nuova recensione(verificando che non abbia già recensito)
                 $vGiocoInfo = new VGiocoInfo();
                 $user = CSession::getUserFromSession();
                 //if di controllo
+                //Il gioco richiesto non esiste
 
-                    $vGiocoInfo->showFormNewRecensione($user);
+                $gioco=FPersistantManager::getInstance()->search("gioco","Id",$IdGioco)[0];
+                    $vGiocoInfo->showFormNewRecensione($user,$gioco);
 
                 //else
                     //$vCatalogo->showErrorPage($user, 'Non hai i permessi per accedere a questa sezione!');
             }
             else if ($_SERVER['REQUEST_METHOD'] == 'POST')
-                CCatalogo::insertnewrecensione();
+                CGiocoInfo::insertnewrecensione();
             else
                 header('Location: HTTP/1.1 Invalid HTTP method detected');
     }
@@ -55,19 +63,23 @@ class CGiocoInfo
     private function insertnewrecensione()
     {
         $user=CSession::getUserFromSession();
-        $vCatalogo = new VCatalogo();
-        $newgioco = $vCatalogo->createGioco();
+        $vGiocoInfo = new VGiocoInfo();
+        $newrecensione = $vGiocoInfo->createRecensione();
 
         // TODO  SERVE CONTROLLARE queSTO? if($user->getModeratore())
-        if($vCatalogo->validateNuovoGioco($newgioco))
-        {
-            FPersistantManager::getInstance()->store($newgioco);
-            $newGioco2=FPersistantManager::getInstance()->search("gioco","Last","")[0];
-            $newgioco->getInfo()->setId($newGioco2->getId());
-            FPersistantManager::getInstance()->store($newgioco->getInfo());
-            header('Location: /playadice/catalogo/catalogocompleto');
-        }
-        else
-            $vCatalogo->showFormNewGioco($user,$newgioco);
+        //if($vCatalogo->validateNuovoGioco($newgioco)) vari controlli di validazione
+        //{
+            FPersistantManager::getInstance()->store($newrecensione);
+            $allrec=FPersistantManager::getInstance()->search("recensione", "IdGioco",$newrecensione->getEGioco()->getId());
+            $gioco=FPersistantManager::getInstance()->search("gioco","Id",$newrecensione->getEGioco()->getId())[0];
+            $gioco->setRecensioni($allrec);
+            $gioco->CalcolaVotoMedio();
+            FPersistantManager::getInstance()->update($gioco);
+            $idgioco=$gioco->getId();
+
+        header("Location: /playadice/giocoinfo/showgiocoinfo?$idgioco");
+        //}
+        //else
+            //$vCatalogo->showFormNewGioco($user,$newgioco);
     }
 }

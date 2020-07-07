@@ -57,7 +57,7 @@
                         </div>
                         <p class="card-text mt-sm-3">{$gioco->getInfo()->getDescrizione()}</p>
                         <div class="row justify-content-center">
-                            <a class="btn btn-primary ">Inserisci recensione</a>
+                            <a class="btn btn-primary " href="/playadice/giocoinfo/newrecensione?{$gioco->getId()}">Inserisci recensione</a>
                         </div>
 
                         <!--
@@ -81,6 +81,7 @@
     </div>
 
 </div>
+{if   $gioco->getRecensioni() }
 {foreach from=$gioco->getRecensioni() item=$rec}
     <div class="container py-4">
         <div class="card">
@@ -97,6 +98,7 @@
 
             </div></div></div>
 {/foreach}
+{/if}
 
 
 </body>

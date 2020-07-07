@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.34-dev-7, created on 2020-07-07 20:18:36
+  from 'C:\xampp\htdocs\playadice\templates\NuovaRecensione.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.34-dev-7',
+  'unifunc' => 'content_5f04bc7c2fdf10_33523594',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '784813a21e61c528a45fa7b4589e75242e0c0b6a' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\NuovaRecensione.tpl',
+      1 => 1594145911,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:navbar.tpl' => 1,
+  ),
+),false)) {
+function content_5f04bc7c2fdf10_33523594 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -18,9 +42,11 @@
 
 <body class="">
 
-{user->getUsername assign='Username'}
+<?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
 
-{include file="navbar.tpl"}
+
+<?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <div class="container text-center ">
     <div class="col-sm-3">
@@ -35,7 +61,8 @@
 -->
 
         <!-- FORM -->
-        <form class="form-horizontal" method="post" action="newrecensione?{$gioco->getId()}">
+        <form class="form-horizontal" method="post" action="newrecensione?<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
+">
             <!-- Voto -->
             <div class="form-group row">
                 <label for="user" class="col-md-5 col-form-label">Voto:</label>
@@ -61,10 +88,12 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Invia</button>
             </div>
-            <input type="hidden" name="IdGioco" value="{$gioco->getId()}">
+            <input type="hidden" name="IdGioco" value="<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
+">
         </form>
 
 </div>
 </div>
 </body>
-</html>
+</html><?php }
+}

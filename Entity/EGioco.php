@@ -17,7 +17,7 @@ class EGioco extends EObject
     private $GiocoInfo;
 
     /** Lista di ERecensioni effettuate sul EGioco */
-    private $Recensioni=array();
+    private $Recensioni;
 
     /****************************************** COSTRUTTORE **************************************************/
 
@@ -27,6 +27,7 @@ class EGioco extends EObject
     public function __construct()
     {
         parent::__construct();
+        $this->Recensioni=array();
         $this->GiocoInfo=new EGiocoInfo();
     }
 
@@ -173,14 +174,19 @@ class EGioco extends EObject
         $array=array();
         $array=$this->Recensioni;
 
-        foreach ($array as $rec)
-        {
-            $voto=$rec->getVoto();
-            $somma=$somma+$voto;
+        if(!empty($array)) {
+            foreach ($array as $rec) {
+                $voto = $rec->getVoto();
+                $somma = $somma + $voto;
+            }
+            $numerorec = count($array);
+            $votomedio = $somma / $numerorec;
+            $this->VotoMedio = $votomedio;
         }
-        $numerorec=count($array);
-        $votomedio=$somma/$numerorec;
-        $this->VotoMedio=$votomedio;
+        else {
+            $votomedio=0;
+            $this->VotoMedio=0;
+        }
         return $votomedio;
 
     }
