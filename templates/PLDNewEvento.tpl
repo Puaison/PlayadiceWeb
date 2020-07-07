@@ -22,7 +22,7 @@
 {include file="navbar.tpl"}
 
 
-<div class="card ">
+
 
     <form method="post" id="c_form-h" class="" action="store">
         <div class="py-5">
@@ -118,7 +118,7 @@
         </div>
     </form>
 
-</div>
+
 
 </body>
 </html>

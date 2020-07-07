@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 18:06:40
+/* Smarty version 3.1.34-dev-7, created on 2020-07-07 12:05:58
   from 'C:\xampp\htdocs\playadice\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f00a9108d23e0_48877357',
+  'unifunc' => 'content_5f044906752ec6_82326652',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0068d291dd41580fd3d2866b15d2e2351700254c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDCalendario.tpl',
-      1 => 1593854697,
+      1 => 1594116358,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f00a9108d23e0_48877357 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f044906752ec6_82326652 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -75,6 +75,10 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 ">
                             <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
 </a>
+                            <?php $_smarty_tpl->_assignInScope('fascia', $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getFasce());?>
+                        <?php if ($_smarty_tpl->tpl_vars['fascia']->value) {?>
+                        <span><?php echo $_smarty_tpl->tpl_vars['fascia']->value[0]->getDataStr();?>
+</span><?php }?>
                     </div>
                 </div>
             </div>

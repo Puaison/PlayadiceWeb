@@ -29,6 +29,13 @@ class FAvatar
                 WHERE UsernameUtente = :UsernameUtente;";
     }
 
+    static function searchAvatarByOrderingUsernameUtente() : string
+    {
+        return "SELECT *
+                FROM avatar
+                WHERE LOCATE( :OrderingUsernameUtente , UsernameUtente) > 0;";
+    }
+
     static function storeAvatar() : string
     {
         return "INSERT INTO avatar(Livello, Nome , UsernameUtente, Classe, Razza)

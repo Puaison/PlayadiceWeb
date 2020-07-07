@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 18:06:44
+/* Smarty version 3.1.34-dev-7, created on 2020-07-05 11:19:57
   from 'C:\xampp\htdocs\playadice\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f00a9149a78b6_72072210',
+  'unifunc' => 'content_5f019b3d164f76_21782822',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f00a9149a78b6_72072210 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f019b3d164f76_21782822 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
