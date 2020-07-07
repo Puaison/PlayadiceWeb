@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="Implementati sistemi di controllo di accesso alle pagine relative agli eventi tramite URL">
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/assets/67.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/CEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CEvento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateTables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CreateTables.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FPrenotazione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPrenotazione.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VEvento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/PLDCalendario.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDCalendario.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/PLDEvento.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDEvento.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PLDEventoModifica.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDEventoModifica.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/4ec4e6d97ce13de9465c62027cc1b678ec160042_0.file.PLDNewEvento.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/4ec4e6d97ce13de9465c62027cc1b678ec160042_0.file.PLDNewEvento.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/e94b790a107fc4ac5fbc7f406219f2a064a521ec_0.file.PLDEventoModifica.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/e94b790a107fc4ac5fbc7f406219f2a064a521ec_0.file.PLDEventoModifica.tpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +80,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -93,18 +92,18 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\XAMPP2\htdocs\playadice" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Foundation" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Controller" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\playadice\templates" />
       <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020" />
       <recent name="C:\xampp\htdocs\Progetto Web\Progetto Cicerone 2020\templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\XAMPP2\htdocs\playadice" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Foundation" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Controller" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.mainviewant.php">
@@ -214,14 +213,9 @@
       <workItem from="1593951936407" duration="595000" />
       <workItem from="1594026018351" duration="5939000" />
       <workItem from="1594045701251" duration="2173000" />
-      <workItem from="1594112780432" duration="3748000" />
-    </task>
-    <task id="LOCAL-00030" summary="EData.php EFascia.php 1.0 con phpdocs">
-      <created>1589124521265</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1589124521265</updated>
+      <workItem from="1594112780432" duration="4771000" />
+      <workItem from="1594118319114" duration="748000" />
+      <workItem from="1594129369226" duration="3119000" />
     </task>
     <task id="LOCAL-00031" summary="EPrenotazione.php 1.0 con php docs">
       <created>1589296958710</created>
@@ -559,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594032118426</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Casi D'Uso Calendario terminati (v.1.0)">
+      <created>1594116565261</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1594116565262</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +590,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Navbar Aggiunta" />
     <MESSAGE value="Terminata PLDNewEvento.tpl" />
     <MESSAGE value="CSession e test" />
     <MESSAGE value="Index.php, rinominazione mainpage" />
@@ -614,7 +614,8 @@
     <MESSAGE value="Aggioramento Evento" />
     <MESSAGE value="Controlli URL evento" />
     <MESSAGE value="Implementati sistemi di controllo di accesso alle pagine relative agli eventi tramite URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementati sistemi di controllo di accesso alle pagine relative agli eventi tramite URL" />
+    <MESSAGE value="Casi D'Uso Calendario terminati (v.1.0)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Casi D'Uso Calendario terminati (v.1.0)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -677,11 +678,11 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="205" y="97" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594115975454">
+    <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594116563527">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921707426" />
-    <state x="205" y="97" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594115975454" />
+    <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594116563527" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878565443" />
     <state x="744" y="353" key="EditFileWatcherDialog" timestamp="1593614981790">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -770,11 +771,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2" timestamp="1594032126079">
+    <state x="214" y="303" key="Vcs.Push.Dialog.v2" timestamp="1594116572707">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592921712667" />
-    <state x="655" y="335" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594032126079" />
+    <state x="214" y="303" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594116572707" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878610274" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
       <screen x="0" y="0" width="1920" height="1080" />

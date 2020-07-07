@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-07 11:50:45
+/* Smarty version 3.1.34-dev-7, created on 2020-07-07 16:18:40
   from 'C:\xampp\htdocs\playadice\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f04457556eee8_81418657',
+  'unifunc' => 'content_5f048440b11571_19685546',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04d6e87b8aada7bee75a3b299aef6b44c58f6867' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEvento.tpl',
-      1 => 1594115444,
+      1 => 1594131520,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f04457556eee8_81418657 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f048440b11571_19685546 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -83,7 +83,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <div class="container">
         <div class="row">
             <div class="col-lg-6 order-2 order-lg-1 p-0">
-                <img class="img-fluid d-block" src="https://static.pingendo.com/cover-moon.svg" style="" h="100" w="100">
+                <img class="img-fluid d-block" src="../templates/assets/<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
+.png" style="" h="100" w="100">
             </div>
             <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card ">
@@ -94,11 +95,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </h6>
                         <h6 class="card-subtitle my-2 text-"><?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getLuogo();?>
 </h6>
+                        <div class="row justify-content-center">
+                        <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getLuogo()->getVia();?>
+%20<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getLuogo()->getCitta();?>
++(<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getLuogo()->getNome();?>
+)&amp;;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="520" height="400" frameborder="0"></iframe>
+                        <a href='http://maps-generator.com/it'>Maps-Generator</a>
+                        <?php echo '<script'; ?>
+ type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5155081843cd47bdd51e595e649f398d71de3958'><?php echo '</script'; ?>
+>
+                        </div>
                         <div class="row">
                             <?php $_smarty_tpl->_assignInScope('fasce', $_smarty_tpl->tpl_vars['results']->value[0]->getFasce());?>
                             <?php if (!empty(($_smarty_tpl->tpl_vars['fasce']->value))) {?>
 
-                            <div class="col-xl-12 text-center border-secondary  "><b>orari</b></div>
+                            <div class="col-xl-12 text-center border-secondary  "><b>Orari</b></div>
                             <div class="col-xl-6 text-center "><b>Inizio </b></div>
 
                             <div class="col-xl-6 text-center "><b>Fine </b></div>
