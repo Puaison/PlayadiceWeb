@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-05 21:22:53
+/* Smarty version 3.1.34-dev-7, created on 2020-07-07 18:40:27
   from 'C:\xampp\htdocs\playadice\templates\GiocoInfo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f02288d0fa6d9_86042119',
+  'unifunc' => 'content_5f04a57b09cb86_82506502',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cd8d22795db6450e0f289afbd273285f33572649' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\GiocoInfo.tpl',
-      1 => 1593976971,
+      1 => 1594140024,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f02288d0fa6d9_86042119 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f04a57b09cb86_82506502 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -95,6 +95,9 @@ function content_5f02288d0fa6d9_86042119 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                         <p class="card-text mt-sm-3"><?php echo $_smarty_tpl->tpl_vars['gioco']->value->getInfo()->getDescrizione();?>
 </p>
+                        <div class="row justify-content-center">
+                            <a class="btn btn-primary ">Inserisci recensione</a>
+                        </div>
 
                         <!--
                         <div class='row '>
@@ -117,24 +120,34 @@ function content_5f02288d0fa6d9_86042119 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 
 </div>
-<div class="container py-4">
-<div class="card">
-    <div class="px-5 col-lg-6 flex-column  order-1 order-lg-2" >
-        <div class="row justify-content-center">
-            <b> <h4>Prima riga</h4></b></div>
-        <div class="row"> commento molto lungo ma da provare per vedere come viene quindi adesso inizerò a scrivere conse insensate giusto per vedere come reagisce il div mi piacciono le rane morte ciao
-        </div>
-        <div class="row">
-            <div class="col-12"/>
-            <div class="col"> Utente</div>
-        </div>
+<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['gioco']->value->getRecensioni(), 'rec');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['rec']->value) {
+?>
+    <div class="container py-4">
+        <div class="card">
+            <div class="px-5  flex-column  order-1 order-lg-2" >
+                <div class="row text-left">
+                    <b> <h4>Voto:  <?php echo $_smarty_tpl->tpl_vars['rec']->value->getVoto();?>
+</h4></b></div>
+                <div class="row"><?php echo $_smarty_tpl->tpl_vars['rec']->value->getCommento();?>
 
-    </div></div></div>
+                </div>
+                <div class="row py-4">
+                    <div class="col-md-3"></div>
+                    <div class="col"><b>Utente:<?php echo $_smarty_tpl->tpl_vars['rec']->value->getEUtente()->getUsername();?>
+</b></div>
+                    <div class="col"><a class="btn btn-primary" href="/playadice/giocoinfo/removerecensione?<?php echo $_smarty_tpl->tpl_vars['rec']->value->getEUtente()->getUsername();?>
+?<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
+">Elimina</a></div>
+                </div>
 
-<div class="container py-4">
-    <div class="card">
-        <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
-            <div class="row justify-content-center">Prova</div></div></div></div>
+            </div></div></div>
+<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 
 </body>

@@ -105,7 +105,7 @@ class EGioco extends EObject
 
     /**
      * //TODO Problemi con questo metodo perchè gli passo un array
-     * @param ERecensione ...$recensioni Recensioni che devono essere aggiunte al gioc
+     * @param Recensioni che devono essere aggiunte al gioc
      */
     function setRecensioni($recensioni) {
 
@@ -113,6 +113,15 @@ class EGioco extends EObject
     }
     /********************************************** ALTRE FUNZIONI ************************************************/
 
+
+    /**
+     * Metodo che aggiunge una recensione al Gioco
+     * @param ERecensione $rec La recensione da aggiungere
+     */
+    function addRecensione(ERecensione $rec) {
+        $this->Recensioni[]=$rec;
+        FPersistantManager::getInstance()->store($rec);
+    }
     /**TODO IMPLEMENTARE QUESTA FUNZIONE NEL LOGIN
      * @return bool
      */
@@ -153,14 +162,7 @@ class EGioco extends EObject
 
     }
 
-    /**
-     * Metodo che aggiunge una recensione al Gioco
-     * @param ERecensione $rec La recensione da aggiungere
-     */
-    function addRecensione(ERecensione $rec) {
-        $this->Recensioni[]=$rec;
-        FPersistantManager::getInstance()->store($rec);
-    }
+
 
     /**
      * Metodo che calcola il vgoto medio riprendendo tutte le recensioni
@@ -178,6 +180,7 @@ class EGioco extends EObject
         }
         $numerorec=count($array);
         $votomedio=$somma/$numerorec;
+        $this->VotoMedio=$votomedio;
         return $votomedio;
 
     }

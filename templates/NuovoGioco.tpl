@@ -33,10 +33,11 @@
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Gioco</b></label>
                         <div class="col-10">
                             <input type="text" name="Nome" class="form-control" maxlength="40" size="40"
+                                   placeholder="Inserisci qui il Nome"
                                     {if isset($prec.Nome)}
                                         value="{$prec.Nome}"
                                     {/if}
-                                   placeholder="Inserisci qui il Nome"></div>
+                                   ></div>
                         {if ! $check.Nome}
                         <div class="alert alert-warning">
                             <small >

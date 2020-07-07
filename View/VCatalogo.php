@@ -86,9 +86,9 @@ class VCatalogo extends VObject
 
     function showFormNewGioco(EUtente $user, EGioco $gioco=null)
     {
-        //if() {
-          //  $gioco = new EGioco();
-        //}
+        if(!$gioco) {
+            $gioco = new EGioco();
+        }
 
         //$gioco->setNome("aaggagaga");
             $this->smarty->assign('prec', $_POST);

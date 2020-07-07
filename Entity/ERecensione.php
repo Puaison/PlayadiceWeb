@@ -30,6 +30,8 @@ class ERecensione
     public function __construct()
     {
         //parent::__construct();
+        $this->Gioco=new EGioco();
+        $this->Utente=new EUtente();
     }
 
     /********************************************** GETTER ************************************************/
