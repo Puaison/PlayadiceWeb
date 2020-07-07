@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-06 12:24:58
+/* Smarty version 3.1.34-dev-7, created on 2020-07-07 11:50:45
   from 'C:\xampp\htdocs\playadice\templates\PLDEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f02fbfae39960_64658605',
+  'unifunc' => 'content_5f04457556eee8_81418657',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04d6e87b8aada7bee75a3b299aef6b44c58f6867' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEvento.tpl',
-      1 => 1594031098,
+      1 => 1594115444,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f02fbfae39960_64658605 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f04457556eee8_81418657 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -49,20 +49,19 @@ function content_5f02fbfae39960_64658605 (Smarty_Internal_Template $_smarty_tpl)
 
 
 
-<?php if (headers_sent()) {?>
-ciao
-<?php }?>
-
 <!-- Navbar here -->
 
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-<hr> <?php if ($_smarty_tpl->tpl_vars['check']->value) {?>
+if ($_smarty_tpl->tpl_vars['check']->value) {?><hr>
     <div class="alert alert-warning text-center">
-        <br>Prenotazione avvenuta con successo <br></div> <?php }?>
-<hr> <?php if ($_smarty_tpl->tpl_vars['error']->value) {?>
+        <br>Prenotazione avvenuta con successo <br></div> <?php }
+if ($_smarty_tpl->tpl_vars['error']->value) {?><hr>
     <div class="alert alert-warning text-center">
-        <br>Ti sei già prenotato! <br></div> <?php }?>
+        <br>Ti sei già prenotato! <br></div> <?php }
+if ($_smarty_tpl->tpl_vars['book']->value) {?><hr>
+    <div class="alert alert-warning text-center">
+        <br>Eliminazione Prenotazione effettuata con successo <br></div> <?php }?>
+
 
 <?php $_smarty_tpl->_assignInScope('prenotazioni', $_smarty_tpl->tpl_vars['results']->value[0]->getPrenotazioni());
 $_smarty_tpl->_assignInScope('check', false);
@@ -72,6 +71,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['value']->value) {
 ?>
     <?php $_smarty_tpl->_assignInScope('nome', $_smarty_tpl->tpl_vars['value']->value->getUtente()->getUsername());?>
     <?php if (($_smarty_tpl->tpl_vars['nome']->value == $_smarty_tpl->tpl_vars['Username']->value)) {?>
+        <?php $_smarty_tpl->_assignInScope('id', $_smarty_tpl->tpl_vars['value']->value->getId());?>
         <?php $_smarty_tpl->_assignInScope('check', true);?>
     <?php }
 }
@@ -183,8 +183,32 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                             </div>
                                         <?php } else { ?>
                                         <div class="col text-right">
-                                            <a type="button" class="btn btn-primary "  href="#" draggable="true" disabled>Già Prenotato</a>
+                                            <button type="button" class="btn btn-primary " data-toggle="modal" href="#sprenotati" >Già Prenotato</button>
                                         </div>
+                                            <!-- Modal -->
+                                            <div class="text-center">
+
+                                                <div class="modal fade" id="sprenotati" tabindex="-1" role="dialog" aria-labelledby="sprenotati" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="sprenotati">Ciao <?php echo $_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl);?>
+</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Vuoi disdire la tua prenotazione?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <form action="../evento/delBooking?<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+" method="post">
+                                                                    <button type="submit"  class="btn btn-primary">Si
+                                                                    </button>
+                                                                </form>
+                                                            </div>
                                         </div>
                                     <?php }?>
                             <?php }?>

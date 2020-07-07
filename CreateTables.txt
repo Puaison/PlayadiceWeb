@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `luogo` (
   `Nome` varchar(45) NOT NULL,
   `Citta` varchar(45) NOT NULL,
   `Via` varchar(45) NOT NULL,
-  `Cap` int(6) UNSIGNED NOT NULL
+  `Cap` int(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

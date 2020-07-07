@@ -58,6 +58,8 @@ class FPrenotazione
     static function bindValues(PDOStatement &$stmt, EPrenotazione &$prenotazione)
     {
         $result = var_export($stmt, true);
+        if (strpos($result, ":Id") !==false and !empty($prenotazione->getId()))
+            $stmt -> bindValue(':Id', $prenotazione->getId(), PDO::PARAM_INT);
         if (strpos($result, ":UserName") !== false)
             $stmt -> bindValue(':UserName',$prenotazione->getUtente()->getUsername(), PDO::PARAM_STR);
         if (strpos($result, ":IdEvento") !== false)

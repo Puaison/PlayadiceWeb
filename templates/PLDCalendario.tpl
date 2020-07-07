@@ -40,6 +40,9 @@
                     <div class="my-auto text-center">
                             <a class="px-5" href="../evento/show?{$results[k]->getId()}">
                             {$results[k]->getNome()}</a>
+                            {$fascia=$results[k]->getFasce()}
+                        {if $fascia}
+                        <span>{$fascia[0]->getDataStr()}</span>{/if}
                     </div>
                 </div>
             </div>

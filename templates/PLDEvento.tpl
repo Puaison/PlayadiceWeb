@@ -18,25 +18,26 @@
 {user->getModeratore assign='Tipo'}
 
 
-{if headers_sent()}
-ciao
-{/if}
-
 <!-- Navbar here -->
 
 {include file="navbar.tpl"}
-<hr> {if $check}
+{if $check}<hr>
     <div class="alert alert-warning text-center">
         <br>Prenotazione avvenuta con successo <br></div> {/if}
-<hr> {if $error}
+{if $error}<hr>
     <div class="alert alert-warning text-center">
         <br>Ti sei già prenotato! <br></div> {/if}
+{if $book}<hr>
+    <div class="alert alert-warning text-center">
+        <br>Eliminazione Prenotazione effettuata con successo <br></div> {/if}
+
 
 {$prenotazioni=$results[0]->getPrenotazioni()}
 {$check=false}
 {foreach from=$prenotazioni item=$value}
     {$nome=$value->getUtente()->getUsername()}
     {if ($nome == $Username)}
+        {$id=$value->getId()}
         {$check=true}
     {/if}
 {/foreach}
@@ -129,8 +130,30 @@ ciao
                                             </div>
                                         {else}
                                         <div class="col text-right">
-                                            <a type="button" class="btn btn-primary "  href="#" draggable="true" disabled>Già Prenotato</a>
+                                            <button type="button" class="btn btn-primary " data-toggle="modal" href="#sprenotati" >Già Prenotato</button>
                                         </div>
+                                            <!-- Modal -->
+                                            <div class="text-center">
+
+                                                <div class="modal fade" id="sprenotati" tabindex="-1" role="dialog" aria-labelledby="sprenotati" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="sprenotati">Ciao {user->getUsername}</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Vuoi disdire la tua prenotazione?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <form action="../evento/delBooking?{$id}" method="post">
+                                                                    <button type="submit"  class="btn btn-primary">Si
+                                                                    </button>
+                                                                </form>
+                                                            </div>
                                         </div>
                                     {/if}
                             {/if}

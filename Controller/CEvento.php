@@ -35,7 +35,7 @@ class CEvento
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         $evento = FPersistantManager ::getInstance() -> search("Evento", "Id", $id);
         if ($evento)
-            $vEvento -> show($user, $evento, null);
+            $vEvento -> show($user, $evento);
         else
             $vEvento -> showErrorPage($user, "L'evento che stai cercando non esiste");
 
@@ -112,6 +112,21 @@ class CEvento
 
         }
     }
+    static function delBooking($id){
+        $vEvento = new VEvento();
+        $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
+        if ($_SERVER['REQUEST_METHOD'] == 'GET')
+            $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $prenotazione = FPersistantManager::getInstance() -> search("Prenotazione", "Id", $id);
+            $str = $prenotazione[0] -> getIdEvento();
+            FPersistantManager::getInstance() -> remove($prenotazione[0]);
+            $evento= FPersistantManager::getInstance() -> search("Evento", "Id", $str);
+            $vEvento -> show($user, $evento, "", "",true);
+        }
+        }
+
 
     /**
      * Metodo che permette l'update di un evento dopo la modifica da parte dell'admin
@@ -179,7 +194,7 @@ class CEvento
     }
 
     /**
-     * Metodo che permette il salvataggio nel db di un evento dopo la modifica da parte dell'admin
+     * Metodo che permette l'eliminazione  di un evento da parte dell'admin
      *
      */
 
@@ -197,8 +212,16 @@ class CEvento
                     $fasce = $evento[0] -> getFasce();
                     foreach ($fasce as $value) {
                         FPersistantManager ::getInstance() -> remove($value);
-                        header('Location: /playadice/evento/showAll');
+
                     }
+                    if ($evento[0]->getFlag()){
+                        $prenotazioni =$evento[0]->getPrenotazioni();
+                        foreach ($prenotazioni as $value) {
+                            FPersistantManager ::getInstance() -> remove($value);
+                        }
+
+                    }
+                    header('Location: /playadice/evento/showAll');
 
                 }
                 else
