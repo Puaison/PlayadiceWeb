@@ -32,7 +32,11 @@
             <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card ">
                     <div class="card-body">
+
                         <h5 class="card-title"><b>{$gioco->getNome()}</b></h5>
+                        {if $UtenteType == "admin"}
+                        <a class="btn btn-primary" href="">Modifica</a>
+                        {/if}
                         <h6 class="card-subtitle my-2 text-muted">Della: {$gioco->getInfo()->getCasaEditrice()}</h6>
                         <h6 class="card-subtitle my-2 text-muted">{$gioco->getCategoria()}</h6>
                         <h6 class="card-subtitle my-2 text-center">
@@ -57,17 +61,14 @@
                         </div>
                         <p class="card-text mt-sm-3">{$gioco->getInfo()->getDescrizione()}</p>
                         <div class="row justify-content-center">
-                            <a class="btn btn-primary " href="/playadice/giocoinfo/newrecensione?{$gioco->getId()}">Inserisci recensione</a>
-                        </div>
-
-                        <!--
-                        <div class='row '>
-                            {if $UtenteType == "admin"}
-                            <div class="col"> <a class="btn btn-primary" href="">Modifica</a></div>
+                            {if $UtenteType=="ospite"}
+                                <a class="btn btn-primary " href="/playadice/utente/login">Logga per recensire</a>
+                            {elseif $recensito}
+                                        <a class="btn btn-block" href="">Hai già recensito</a>
+                                {else}
+                                <a class="btn btn-primary " href="/playadice/giocoinfo/newrecensione?{$gioco->getId()}">Inserisci recensione</a>
                             {/if}
-
                         </div>
-                        -->
 
 
                     </div>
@@ -81,7 +82,8 @@
     </div>
 
 </div>
-{if   $gioco->getRecensioni() }
+<!-- Sezione per le recensioni -->
+{if   !empty($gioco->getRecensioni()) }
 {foreach from=$gioco->getRecensioni() item=$rec}
     <div class="container py-4">
         <div class="card">
@@ -93,7 +95,9 @@
                 <div class="row py-4">
                     <div class="col-md-3"></div>
                     <div class="col"><b>Utente:{$rec->getEUtente()->getUsername()}</b></div>
+                    {if $Username == $rec->getEUtente()->getUsername() || $UtenteType == 'admin'}
                     <div class="col"><a class="btn btn-primary" href="/playadice/giocoinfo/removerecensione?{$rec->getEUtente()->getUsername()}?{$gioco->getId()}">Elimina</a></div>
+                    {/if}
                 </div>
 
             </div></div></div>

@@ -10,6 +10,7 @@ class VAvatar extends VObject
 
     function showdetails(EUtente &$user, $avatar)
     {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
 
         $this->smarty->assign('avatar', $avatar);
@@ -20,6 +21,7 @@ class VAvatar extends VObject
 
     function showmodify(EUtente &$user, $avatar)
     {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
 
         $this->smarty->assign('avatar', $avatar);
@@ -30,6 +32,7 @@ class VAvatar extends VObject
 
     function showcreate(EUtente &$user)
     {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
 
         $this->smarty->display('TVGAvatarCreate.tpl');
@@ -37,6 +40,7 @@ class VAvatar extends VObject
 
     function showproposta(EUtente $user, $proposta )
     {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
 
         $this->smarty->assign('proposta', $proposta);

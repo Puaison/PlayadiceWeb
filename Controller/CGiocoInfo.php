@@ -11,11 +11,22 @@ class CGiocoInfo
             $giocoExists = FPersistantManager::getInstance()->exists("gioco", "Id", $id); // si verifica che il gioco inserito matchi una entry nel db
             if($giocoExists)
             {
+                //$gioco=new EGioco();
                 $gioco = FPersistantManager::getInstance()->search("gioco", "Id" ,$id)[0];
                 $gioco->setInfo(FPersistantManager::getInstance()->search("giocoinfo", "IdGioco" ,$gioco->getId())[0]);
                 $recensioni=FPersistantManager::getInstance()->search("recensione","IdGioco",$gioco->getId());
-                $gioco->setRecensioni($recensioni);
-                $vGiocoinfo->showinfo($user,$gioco);
+                $recensito=false;
+                if($recensioni)//Se c'è almeno una recensione
+                {
+                    $gioco->setRecensioni($recensioni);
+                    foreach ($recensioni as $recensione)
+                    {
+                        if($user->getUsername()==$recensione->getEUtente()->getUsername())
+                            $recensito=true;
+                    }
+
+                }
+                $vGiocoinfo->showinfo($user,$gioco,$recensito);
 
             }
             else
@@ -31,9 +42,10 @@ class CGiocoInfo
         $recensione->getEUtente()->setUsername($creatore);
         FPersistantManager::getInstance()->remove($recensione);
         $allrec=FPersistantManager::getInstance()->search("recensione", "IdGioco",$idgioco);
-        $gioco->setRecensioni($allrec);
-        $gioco->CalcolaVotoMedio();
-        FPersistantManager::getInstance()->update($gioco);
+        //NON SERVEif($allrec!=NULL)
+            $gioco->setRecensioni($allrec);
+            $gioco->CalcolaVotoMedio();
+            FPersistantManager::getInstance()->update($gioco);
 
 
         header("Location: /playadice/giocoinfo/showgiocoinfo?$idgioco");

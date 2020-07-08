@@ -15,7 +15,7 @@ class VEvento extends VObject
     }
     function showAll(EUtente &$user, $eventi, $check=null)
     {
-
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('results', $eventi);
         $this->smarty->assign('check', $check);

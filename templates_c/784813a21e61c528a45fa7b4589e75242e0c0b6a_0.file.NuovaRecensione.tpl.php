@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-07 20:18:36
+/* Smarty version 3.1.34-dev-7, created on 2020-07-08 13:09:31
   from 'C:\xampp\htdocs\playadice\templates\NuovaRecensione.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f04bc7c2fdf10_33523594',
+  'unifunc' => 'content_5f05a96b05e714_14936729',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '784813a21e61c528a45fa7b4589e75242e0c0b6a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\NuovaRecensione.tpl',
-      1 => 1594145911,
+      1 => 1594206312,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f04bc7c2fdf10_33523594 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f05a96b05e714_14936729 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +80,7 @@ function content_5f04bc7c2fdf10_33523594 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="form-group row">
                 <!-- Commento -->
-                <label class="col-sm-5 col-form-label col">Coomento:</label>
+                <label class="col-sm-5 col-form-label col">Commento:</label>
                 <div class="col-lg-5">
                     <textarea class="form-control border-primary" name="Commento" placeholder="Dicci cosa ne pensi" maxlength="500"></textarea>
                 </div>

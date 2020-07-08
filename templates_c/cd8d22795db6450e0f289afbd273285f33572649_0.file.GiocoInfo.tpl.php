@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-07 20:13:00
+/* Smarty version 3.1.34-dev-7, created on 2020-07-08 14:45:37
   from 'C:\xampp\htdocs\playadice\templates\GiocoInfo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f04bb2c599ee5_66576733',
+  'unifunc' => 'content_5f05bff1c07585_10242845',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cd8d22795db6450e0f289afbd273285f33572649' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\GiocoInfo.tpl',
-      1 => 1594145576,
+      1 => 1594212333,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f04bb2c599ee5_66576733 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f05bff1c07585_10242845 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -64,8 +64,12 @@ function content_5f04bb2c599ee5_66576733 (Smarty_Internal_Template $_smarty_tpl)
             <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card ">
                     <div class="card-body">
+
                         <h5 class="card-title"><b><?php echo $_smarty_tpl->tpl_vars['gioco']->value->getNome();?>
 </b></h5>
+                        <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "admin") {?>
+                        <a class="btn btn-primary" href="">Modifica</a>
+                        <?php }?>
                         <h6 class="card-subtitle my-2 text-muted">Della: <?php echo $_smarty_tpl->tpl_vars['gioco']->value->getInfo()->getCasaEditrice();?>
 </h6>
                         <h6 class="card-subtitle my-2 text-muted"><?php echo $_smarty_tpl->tpl_vars['gioco']->value->getCategoria();?>
@@ -96,18 +100,15 @@ function content_5f04bb2c599ee5_66576733 (Smarty_Internal_Template $_smarty_tpl)
                         <p class="card-text mt-sm-3"><?php echo $_smarty_tpl->tpl_vars['gioco']->value->getInfo()->getDescrizione();?>
 </p>
                         <div class="row justify-content-center">
-                            <a class="btn btn-primary " href="/playadice/giocoinfo/newrecensione?<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
+                            <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "ospite") {?>
+                                <a class="btn btn-primary " href="/playadice/utente/login">Logga per recensire</a>
+                            <?php } elseif ($_smarty_tpl->tpl_vars['recensito']->value) {?>
+                                        <a class="btn btn-block" href="">Hai già recensito</a>
+                                <?php } else { ?>
+                                <a class="btn btn-primary " href="/playadice/giocoinfo/newrecensione?<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
 ">Inserisci recensione</a>
-                        </div>
-
-                        <!--
-                        <div class='row '>
-                            <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "admin") {?>
-                            <div class="col"> <a class="btn btn-primary" href="">Modifica</a></div>
                             <?php }?>
-
                         </div>
-                        -->
 
 
                     </div>
@@ -121,7 +122,8 @@ function content_5f04bb2c599ee5_66576733 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 
 </div>
-<?php if ($_smarty_tpl->tpl_vars['gioco']->value->getRecensioni()) {
+<!-- Sezione per le recensioni -->
+<?php if (!empty($_smarty_tpl->tpl_vars['gioco']->value->getRecensioni())) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['gioco']->value->getRecensioni(), 'rec');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['rec']->value) {
@@ -139,9 +141,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['rec']->value) {
                     <div class="col-md-3"></div>
                     <div class="col"><b>Utente:<?php echo $_smarty_tpl->tpl_vars['rec']->value->getEUtente()->getUsername();?>
 </b></div>
+                    <?php if ($_smarty_tpl->tpl_vars['Username']->value == $_smarty_tpl->tpl_vars['rec']->value->getEUtente()->getUsername() || $_smarty_tpl->tpl_vars['UtenteType']->value == 'admin') {?>
                     <div class="col"><a class="btn btn-primary" href="/playadice/giocoinfo/removerecensione?<?php echo $_smarty_tpl->tpl_vars['rec']->value->getEUtente()->getUsername();?>
 ?<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
 ">Elimina</a></div>
+                    <?php }?>
                 </div>
 
             </div></div></div>

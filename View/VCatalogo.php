@@ -79,6 +79,7 @@ class VCatalogo extends VObject
      */
     function showCatalogo(EUtente $user,$array)
     {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('results',$array );
         $this->smarty->display('GiochiMainPage.tpl');
@@ -89,7 +90,7 @@ class VCatalogo extends VObject
         if(!$gioco) {
             $gioco = new EGioco();
         }
-
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         //$gioco->setNome("aaggagaga");
             $this->smarty->assign('prec', $_POST);
         $this->smarty->assign('gioco', $gioco);

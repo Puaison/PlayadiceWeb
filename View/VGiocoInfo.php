@@ -34,18 +34,20 @@ class VGiocoInfo extends VObject
      */
     function showFormNewRecensione(EUtente $user,EGioco $gioco)
     {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->assign('gioco',$gioco);
         $this->smarty->registerObject('user', $user);
         $this->smarty->display('NuovaRecensione.tpl');
 
     }
 
-    function showinfo(EUtente $user, EGioco $gioco)
+    function showinfo(EUtente $user, EGioco $gioco,bool $recensito)
     {
-        //$this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
         //$this->smarty->registerObject('gioco',$gioco);
         $this->smarty->assign('gioco',$gioco );
+        $this->smarty->assign('recensito',$recensito );
         $this->smarty->display('GiocoInfo.tpl');
     }
 
