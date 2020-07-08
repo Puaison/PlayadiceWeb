@@ -2,11 +2,16 @@
         <div class="container">
                 <ul class="navbar-nav">
                         <ul class="navbar-nav">
-                                <a class="nav-link" href="/playadice"> &nbsp;Benvenuto {$Username} </a>
+                                <a class="nav-link" href=""> &nbsp;Benvenuto {$Username} </a>
                                 <a class="nav-link space" href=""> &nbsp;Spazio43</a>
+                                <a class="nav-link" href="/playadice"> &nbsp;Home</a>
                                 <a class="nav-link" href="/playadice/evento/showAll"> &nbsp;Eventi</a>
                                 <a class="nav-link" href="/playadice/catalogo/catalogocompleto"> &nbsp;Giochi</a>
-                                <a class="nav-link" href="/playadice/ricerca/ShowPersonal"> &nbsp;AreaTWG</a>
+                                <a class="nav-link" href="/playadice/ricerca/ShowPersonal">   &nbsp;AreaTWG</a>
+                                {if $UtenteType == "admin"}
+                                        <a class="nav-link" href="">&nbsp;Pannello admin</a>
+                                {/if}
+
                         </ul>
                 </ul>
         </div>

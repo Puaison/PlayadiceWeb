@@ -53,7 +53,7 @@
             </div>
             <div class="form-group row">
                 <!-- Commento -->
-                <label class="col-sm-5 col-form-label col">Coomento:</label>
+                <label class="col-sm-5 col-form-label col">Commento:</label>
                 <div class="col-lg-5">
                     <textarea class="form-control border-primary" name="Commento" placeholder="Dicci cosa ne pensi" maxlength="500"></textarea>
                 </div>

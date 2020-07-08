@@ -104,6 +104,7 @@ class VUtente extends VObject
 
         $user = new EOspite();
 
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('error', $error);
 
@@ -123,6 +124,7 @@ class VUtente extends VObject
 
         $user = new EOspite();
 
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
         //TODO DA LEVARE $this->smarty->assign('error', $error);
         $this->smarty->assign('check', $this->check);
