@@ -81,5 +81,58 @@ class ELuogo extends EObject
     {
         return $string= $this->getNome(). " "."<br> VIA: " . $this->getVia() . " | CITTA': " . $this->getCitta() . " | CAP: ". $this->getCap()."</<br>";
     }
+    /**
+     * Metodo che controlla se la via del luogo inserita è lungo meno di 45  caratteri e ha solo numeri, lettere e spazi
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateVia() : bool
+    {
+        if ($this->via && strlen($this->via)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->via))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    /**
+     * Metodo che controlla se il nome del luogo inserito è lungo meno di 45  caratteri e ha solo numeri, lettere e spazi
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateNome() : bool
+    {
+        if ($this->nome && strlen($this->nome)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->nome))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    /**
+     * Metodo che controlla se la città del luogo inserito è lungo meno di 45  caratteri e ha solo numeri, lettere e spazi
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateCitta() : bool
+    {
+        if ($this->via && strlen($this->via)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->via))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    /**
+     * Metodo che controlla se la città del luogo inserito è lungo  5  caratteri e ha solo numeri
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateCap() : bool
+    {
+            if ($this->cap && strlen($this->cap)=5 && is_integer($this->cap))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
 
 }

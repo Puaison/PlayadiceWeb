@@ -178,6 +178,33 @@ class EEvento extends EObject
         return ($a->getPosizione()<$b->getCategory())?-1:1;
     }
     /**
+     * Metodo che controlla se il nome dell'evento inserito è lungo meno di 45  caratteri e ha solo numeri, lettere e spazi
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateNome() : bool
+    {
+        if ($this->nomeEvento && strlen($this->nomeEvento)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->nomeEvento))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    /**
+     * Metodo che controlla se la descrizione dell'evento inserito è lungo meno di 200  caratteri
+     * @return bool true se le condizioni sono rispettate, false altrimenti
+     */
+    function validateTesto() : bool
+    {
+        if ($this->testo && strlen($this->testo)<=200)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    /**
      * Metodo che restituisce l'informazioni dell'evento in forma di stringa
      * @return string
      */

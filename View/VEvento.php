@@ -6,10 +6,11 @@ class VEvento extends VObject
         parent::__construct();
 
         $this->check = array(
-            'name' => true,
-            'mail' => true,
-            'pwd' => true,
-            'type' => true
+            'Nome' => true,
+            'Descrizione' => true,
+            'Luogo' => true,
+            'Fascia' => true
+
         );
     }
     function showAll(EUtente &$user, $eventi, $check=null)
@@ -96,6 +97,40 @@ class VEvento extends VObject
 
 
         return $evento;
+    }
+    /**
+     * Verifica che un utente abbia rispettato i vincoli per l'inserimento dei parametri
+     * del nuovo evento
+     * @param EEvento $evento l'oggetto evento da controllare
+     * @return true se non si sono commessi errori, false altrimenti
+     */
+    function validateNuovoGioco(EEvento $evento): bool
+    {
+        $this->check['Nome']=$evento->validateNome();
+        $this->check['Descrizione']=$evento->validateTesto();
+        $luogo=$evento->getLuogo();
+        if($luogo->validateCap() && $luogo->validateCitta() && $luogo->validateNome() && $luogo->validateVia()){
+            $this->check['Luogo']=true;
+        }
+        $fasce=$evento->getFasce();
+        foreach ($fasce as $value){
+
+        }
+        $this->check['Descrizione']=$evento->getInfo()->validateDescrizione();
+        $this->check['NumeroMax']=$evento->getInfo()->validateNumMax();
+        $this->check['NumeroMin']=$evento->getInfo()->validateNumMin();
+        $this->check['CasaEditrice']=$evento->getInfo()->validateCasaEditrice();
+
+        if($this->check['Nome'] && $this->check['Categoria']
+            && $this->check['Descrizione'] && $this->check['NumeroMax']
+            && $this->check['NumeroMin'] && $this->check['CasaEditrice'])
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 
