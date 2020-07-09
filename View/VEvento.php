@@ -8,8 +8,10 @@ class VEvento extends VObject
         $this->check = array(
             'Nome' => true,
             'Descrizione' => true,
-            'Luogo' => true,
-            'Fascia' => true
+            'NomeLuogo' => true,
+            'Via' => true,
+            'Cap' => true,
+            'Citta' => true,
 
         );
     }
@@ -33,20 +35,20 @@ class VEvento extends VObject
 
     }
     function create(EUtente &$user){
-
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
+        $this->smarty->assign('check', $this->check);
+        $this->smarty->assign('prec', $_POST);
         $this->smarty->registerObject('user', $user);
         $this->smarty->display('PLDNewEvento.tpl');
 
     }
-    function new(EUtente &$user)
-    {
-        $this -> smarty -> registerObject('user', $user);
-        $this -> smarty -> display('PLDNewEvento.tpl');
-    }
 
-    function modify(EUtente &$user, $evento){
+    function modify(EUtente &$user, $evento=null){
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('check', $this->check);
         $this->smarty->assign('results', $evento);
+        $this->smarty->assign('prec', $_POST);
         $this->smarty->display('PLDEventoModifica.tpl');
 
     }
@@ -105,26 +107,21 @@ class VEvento extends VObject
      * @param EEvento $evento l'oggetto evento da controllare
      * @return true se non si sono commessi errori, false altrimenti
      */
-    function validateNuovoGioco(EEvento $evento): bool
+    function validateNuovoEvento(EEvento $evento): bool
     {
         $this->check['Nome']=$evento->validateNome();
         $this->check['Descrizione']=$evento->validateTesto();
         $luogo=$evento->getLuogo();
-        if($luogo->validateCap() && $luogo->validateCitta() && $luogo->validateNome() && $luogo->validateVia()){
-            $this->check['Luogo']=true;
+        if($luogo){
+            $this->check['NomeLuogo']=$luogo->validateNome();
+            $this->check['Cap']=$luogo->validateCap();
+            $this->check['Via']=$luogo->validateVia();
+            $this->check['Citta']=$luogo->validateCitta();
         }
-        $fasce=$evento->getFasce();
-        foreach ($fasce as $value){
 
-        }
-        $this->check['Descrizione']=$evento->getInfo()->validateDescrizione();
-        $this->check['NumeroMax']=$evento->getInfo()->validateNumMax();
-        $this->check['NumeroMin']=$evento->getInfo()->validateNumMin();
-        $this->check['CasaEditrice']=$evento->getInfo()->validateCasaEditrice();
-
-        if($this->check['Nome'] && $this->check['Categoria']
-            && $this->check['Descrizione'] && $this->check['NumeroMax']
-            && $this->check['NumeroMin'] && $this->check['CasaEditrice'])
+        if($this->check['Nome'] && $this->check['Descrizione']
+            && $this->check['NomeLuogo'] && $this->check['Cap']
+            && $this->check['Via'] && $this->check['Citta'])
         {
             return true;
         }

@@ -139,7 +139,8 @@ class CEvento
         $user = CSession ::getUserFromSession();
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
-        } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        }
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $evento = $vEvento -> createEvento();
             $fasce = $evento -> getFasce();
             $luogo = $evento -> getLuogo();
@@ -147,48 +148,60 @@ class CEvento
             $luogoOld = $eventoOld[0] -> getLuogo();
             $luogo -> setId($luogoOld -> getId());
             $evento -> setId($eventoOld[0] -> getId());
-            FPersistantManager ::getInstance() -> update($luogo);
-
-            FPersistantManager ::getInstance() -> update($evento);
-
-            $fasceOld = $eventoOld[0] -> getFasce();
-            for ($i = 0; $i < count($fasce); $i++) {
-                if (isset($fasceOld[$i])) {
-                    $fasce[$i] -> setId($fasceOld[$i] -> getId());
-                    $fasce[$i] -> setIdEvento($fasceOld[$i] -> getIdEvento());
-                    FPersistantManager ::getInstance() -> update($fasce[$i]);
-                } else {
-                    $fasce[$i] -> setIdEvento($eventoOld[0] -> getId());
-                    FPersistantManager ::getInstance() -> store($fasce[$i]);
+            if($vEvento->validateNuovoEvento($evento)){
+                FPersistantManager ::getInstance() -> update($luogo);
+                FPersistantManager ::getInstance() -> update($evento);
+                $fasceOld = $eventoOld[0] -> getFasce();
+                for ($i = 0; $i < count($fasce); $i++) {
+                    if (isset($fasceOld[$i])) {
+                        $fasce[$i] -> setId($fasceOld[$i] -> getId());
+                        $fasce[$i] -> setIdEvento($fasceOld[$i] -> getIdEvento());
+                        FPersistantManager ::getInstance() -> update($fasce[$i]);
+                    } else {
+                        $fasce[$i] -> setIdEvento($eventoOld[0] -> getId());
+                        FPersistantManager ::getInstance() -> store($fasce[$i]);
+                    }
                 }
+                $str = $evento -> getId();
+                header("Location: /playadice/evento/show?$str");
             }
-            $str = $evento -> getId();
-            header("Location: /playadice/evento/show?$str");
+            else {
+                $array[]=$evento;
+                $vEvento->modify($user, $array);
+            }
+
         }
     }
-
+    /**
+     * Metodo che permette il salvataggio nel db di un evento dopo la modifica da parte dell'admin
+     *
+     */
     static function store()
     {
-        /**
-         * Metodo che permette il salvataggio nel db di un evento dopo la modifica da parte dell'admin
-         *
-         */
+
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession();
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
         } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $evento = $vEvento -> createEvento();
-            $luogo = $evento -> getLuogo();
-            FPersistantManager ::getInstance() -> store($luogo);
-            FPersistantManager ::getInstance() -> store($evento);
-            $fasce = $evento -> getFasce();
+            if($vEvento->validateNuovoEvento($evento)){
+                $luogo = $evento -> getLuogo();
+                FPersistantManager ::getInstance() -> store($luogo);
+                FPersistantManager ::getInstance() -> store($evento);
+                $fasce = $evento -> getFasce();
 
-            foreach ($fasce as $value) {
-                FPersistantManager ::getInstance() -> store($value);
+                foreach ($fasce as $value) {
+                    FPersistantManager ::getInstance() -> store($value);
 
+                }
+                header('Location: /playadice/evento/showAll');
             }
-            header('Location: /playadice/evento/showAll');
+            else
+
+                $vEvento->create($user);
+
+
 
         }
     }

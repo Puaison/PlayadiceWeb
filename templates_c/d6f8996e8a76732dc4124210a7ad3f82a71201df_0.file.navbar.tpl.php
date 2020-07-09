@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 11:21:05
-  from 'D:\XAMPP2\htdocs\playadice\templates\navbar.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 11:06:18
+  from 'C:\xampp\htdocs\playadice\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f06e18190b3a9_96073959',
+  'unifunc' => 'content_5f06de0a151526_87813651',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd6f8996e8a76732dc4124210a7ad3f82a71201df' => 
+    'b8305bcb080adcf3c796877fb77daef7eb759b86' => 
     array (
-      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\navbar.tpl',
-      1 => 1594284313,
+      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\navbar.tpl',
+      1 => 1594285514,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f06e18190b3a9_96073959 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06de0a151526_87813651 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container">
                 <ul class="navbar-nav">
