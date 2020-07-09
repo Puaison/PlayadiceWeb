@@ -32,6 +32,8 @@ class CGiocoInfo
             else
                 $vGiocoinfo->showErrorPage($user,'Il gioco che vuoi visualizzare non esiste');
     }
+
+
     static function removerecensione(string $creatore, int $idgioco)
     {
         $vGiocoinfo = new VGiocoInfo();
@@ -77,21 +79,20 @@ class CGiocoInfo
         $user=CSession::getUserFromSession();
         $vGiocoInfo = new VGiocoInfo();
         $newrecensione = $vGiocoInfo->createRecensione();
-
+        $gioco=FPersistantManager::getInstance()->search("gioco","Id",$newrecensione->getEGioco()->getId())[0];
         // TODO  SERVE CONTROLLARE queSTO? if($user->getModeratore())
-        //if($vCatalogo->validateNuovoGioco($newgioco)) vari controlli di validazione
-        //{
+        if($vGiocoInfo->validateRecensione($newrecensione))
+        {
             FPersistantManager::getInstance()->store($newrecensione);
             $allrec=FPersistantManager::getInstance()->search("recensione", "IdGioco",$newrecensione->getEGioco()->getId());
-            $gioco=FPersistantManager::getInstance()->search("gioco","Id",$newrecensione->getEGioco()->getId())[0];
+            //$gioco=FPersistantManager::getInstance()->search("gioco","Id",$newrecensione->getEGioco()->getId())[0];
             $gioco->setRecensioni($allrec);
             $gioco->CalcolaVotoMedio();
             FPersistantManager::getInstance()->update($gioco);
             $idgioco=$gioco->getId();
-
-        header("Location: /playadice/giocoinfo/showgiocoinfo?$idgioco");
-        //}
-        //else
-            //$vCatalogo->showFormNewGioco($user,$newgioco);
+            header("Location: /playadice/giocoinfo/showgiocoinfo?$idgioco");
+        }
+        else
+            $vGiocoInfo->showFormNewRecensione($user,$gioco);
     }
 }

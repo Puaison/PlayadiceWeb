@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-08 13:09:31
+/* Smarty version 3.1.34-dev-7, created on 2020-07-08 15:52:19
   from 'C:\xampp\htdocs\playadice\templates\NuovaRecensione.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f05a96b05e714_14936729',
+  'unifunc' => 'content_5f05cf93e39f50_50906109',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '784813a21e61c528a45fa7b4589e75242e0c0b6a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\NuovaRecensione.tpl',
-      1 => 1594206312,
+      1 => 1594216306,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f05a96b05e714_14936729 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f05cf93e39f50_50906109 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -77,6 +77,13 @@ function content_5f05a96b05e714_14936729 (Smarty_Internal_Template $_smarty_tpl)
 
                     </select>
                 </div>
+                <?php if (!$_smarty_tpl->tpl_vars['check']->value['Voto']) {?>
+                    <div class="alert alert-warning">
+                        <small >
+                            Scegli un voto dalla lista
+                        </small>
+                    </div>
+                <?php }?>
             </div>
             <div class="form-group row">
                 <!-- Commento -->
@@ -84,6 +91,13 @@ function content_5f05a96b05e714_14936729 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="col-lg-5">
                     <textarea class="form-control border-primary" name="Commento" placeholder="Dicci cosa ne pensi" maxlength="500"></textarea>
                 </div>
+                <?php if (!$_smarty_tpl->tpl_vars['check']->value['Commento']) {?>
+                    <div class="alert alert-warning">
+                        <small >
+                            Massimo 500 caratteri
+                        </small>
+                    </div>
+                <?php }?>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Invia</button>
