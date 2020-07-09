@@ -20,10 +20,6 @@
 
 <!-- Navbar here -->
 {include file="navbar.tpl"}
-
-
-
-
     <form method="post" id="c_form-h" class="" action="store">
         <div class="py-5">
             <div class="container ">
@@ -31,7 +27,17 @@
                     <div class="form-group row">
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
                         <div class="col-10">
-                            <input type="text" name="nome" class="form-control" placeholder="Inserisci qui il Testo"> </div>
+                            <input type="text" name="nome" class="form-control" placeholder="Inserisci qui il Testo" maxlength="45" size="45"
+                                    {if isset($prec.nome)}
+                                        value="{$prec.nome}"
+                                    {/if}> </div>
+                        {if ! $check.Nome}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Lunghezza massima 45 Caratteri.
+                                </small>
+                            </div>
+                        {/if}
                     </div>
                     <div class="form-group row">
                         <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
@@ -51,20 +57,63 @@
                             <div class=" form-group row">
                                 <label for="name-input " class="my-auto px-4 "><b>Nome</b></label>
                                 <div class="col-4 ">
-                                    <input type="text" name="nomeluogo" class="form-control" placeholder="Nome del Luogo">
+                                    <input type="text" name="nomeluogo" class="form-control" placeholder="Nome del Luogo" maxlength="45" size="45"
+                                            {if isset($prec.nomeluogo)}
+                                                value="{$prec.nomeluogo}"
+                                            {/if}>
                                 </div>
+                                {if ! $check.NomeLuogo}
+                                    <div class="alert alert-warning">
+                                        <small >
+                                            Lunghezza massima 45 Caratteri.
+                                        </small>
+                                    </div>
+                                {/if}
                                 <label for="name-input " class="my-auto"><b>Via</b></label>
                                 <div class="col ">
-                                    <input type="text" name="via" class="form-control" placeholder="Via xxxxxx, #civico"> </div>
+                                    <input type="text" name="via" class="form-control" placeholder="Via xxxxxx, #civico"
+                                           maxlength="45" size="45"
+                                            {if isset($prec.via)}
+                                                value="{$prec.via}"
+                                            {/if}> </div>
                             </div>
+                            {if ! $check.Via}
+                                <div class="alert alert-warning">
+                                    <small >
+                                        Lunghezza massima 45 Caratteri.
+                                    </small>
+                                </div>
+                            {/if}
                             <div class=" form-group row ">
                                 <label for="name-input " class="my-auto px-4 "><b>Città</b></label>
                                 <div class="col-5  px-4 ">
-                                    <input type="text" name="citta" class="form-control" placeholder="Città">
+                                    <input type="text" name="citta" class="form-control" placeholder="Città"
+                                           maxlength="45" size="45"
+                                            {if isset($prec.citta)}
+                                                value="{$prec.citta}"
+                                            {/if}>
                                 </div>
+                                {if ! $check.Citta}
+                                    <div class="alert alert-warning">
+                                        <small >
+                                            Lunghezza massima 45 Caratteri.
+                                        </small>
+                                    </div>
+                                {/if}
                                 <label for="name-input " class="my-auto"><b>CAP</b></label>
                                 <div class="col  ">
-                                    <input type="text" name="cap" class="form-control" placeholder="CAP"> </div>
+                                    <input type="text" name="cap" class="form-control" placeholder="CAP"
+                                           maxlength="5" size="5"
+                                            {if isset($prec.cap)}
+                                                value="{$prec.cap}"
+                                            {/if}> </div>
+                                {if ! $check.Cap}
+                                    <div class="alert alert-warning">
+                                        <small >
+                                            Lunghezza massima 5 Caratteri Numerici
+                                        </small>
+                                    </div>
+                                {/if}
                             </div>
                         </div>
                     </div>
@@ -108,8 +157,18 @@
                             <input type="checkbox" class="custom-checkbox" id="checkbox input" value="1" name="prenotazione"></div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1"><b>Descrizione</b></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="testo" rows="3"></textarea>
+                        <label for="testo"><b>Descrizione</b></label>
+                        <div class="text-left">
+                        <textarea class="form-control" id="testo" name="testo" rows="3"
+                                  maxlength="200" size="200">{if isset($prec.testo)}{$prec.testo}{/if}
+                        </textarea></div>
+                        {if ! $check.Descrizione}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Lunghezza massima 200 Caratteri Numerici
+                                </small>
+                            </div>
+                        {/if}
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary " >Submit</button></div>

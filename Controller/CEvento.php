@@ -179,16 +179,22 @@ class CEvento
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
         } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $evento = $vEvento -> createEvento();
-            $luogo = $evento -> getLuogo();
-            FPersistantManager ::getInstance() -> store($luogo);
-            FPersistantManager ::getInstance() -> store($evento);
-            $fasce = $evento -> getFasce();
+            if($vEvento->validateNuovoEvento($evento)){
+                $luogo = $evento -> getLuogo();
+                FPersistantManager ::getInstance() -> store($luogo);
+                FPersistantManager ::getInstance() -> store($evento);
+                $fasce = $evento -> getFasce();
 
-            foreach ($fasce as $value) {
-                FPersistantManager ::getInstance() -> store($value);
+                foreach ($fasce as $value) {
+                    FPersistantManager ::getInstance() -> store($value);
 
+                }
+                header('Location: /playadice/evento/showAll');
             }
-            header('Location: /playadice/evento/showAll');
+            else
+                $vEvento->create($user);
+
+
 
         }
     }

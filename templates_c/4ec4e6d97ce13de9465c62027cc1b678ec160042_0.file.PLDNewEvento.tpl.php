@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-07 16:00:30
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 12:22:15
   from 'C:\xampp\htdocs\playadice\templates\PLDNewEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f047ffe110444_64353235',
+  'unifunc' => 'content_5f06efd734d7c6_42470839',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4ec4e6d97ce13de9465c62027cc1b678ec160042' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDNewEvento.tpl',
-      1 => 1594115966,
+      1 => 1594290134,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f047ffe110444_64353235 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06efd734d7c6_42470839 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,10 +50,6 @@ function content_5f047ffe110444_64353235 (Smarty_Internal_Template $_smarty_tpl)
 <!-- Navbar here -->
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
-
-
-
     <form method="post" id="c_form-h" class="" action="store">
         <div class="py-5">
             <div class="container ">
@@ -61,7 +57,18 @@ function content_5f047ffe110444_64353235 (Smarty_Internal_Template $_smarty_tpl)
                     <div class="form-group row">
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
                         <div class="col-10">
-                            <input type="text" name="nome" class="form-control" placeholder="Inserisci qui il Testo"> </div>
+                            <input type="text" name="nome" class="form-control" placeholder="Inserisci qui il Testo" maxlength="45" size="45"
+                                    <?php if (isset($_smarty_tpl->tpl_vars['prec']->value['nome'])) {?>
+                                        value="<?php echo $_smarty_tpl->tpl_vars['prec']->value['nome'];?>
+"
+                                    <?php }?>> </div>
+                        <?php if (!$_smarty_tpl->tpl_vars['check']->value['Nome']) {?>
+                            <div class="alert alert-warning">
+                                <small >
+                                    Lunghezza massima 45 Caratteri.
+                                </small>
+                            </div>
+                        <?php }?>
                     </div>
                     <div class="form-group row">
                         <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
@@ -81,20 +88,67 @@ function content_5f047ffe110444_64353235 (Smarty_Internal_Template $_smarty_tpl)
                             <div class=" form-group row">
                                 <label for="name-input " class="my-auto px-4 "><b>Nome</b></label>
                                 <div class="col-4 ">
-                                    <input type="text" name="nomeluogo" class="form-control" placeholder="Nome del Luogo">
+                                    <input type="text" name="nomeluogo" class="form-control" placeholder="Nome del Luogo" maxlength="45" size="45"
+                                            <?php if (isset($_smarty_tpl->tpl_vars['prec']->value['nomeluogo'])) {?>
+                                                value="<?php echo $_smarty_tpl->tpl_vars['prec']->value['nomeluogo'];?>
+"
+                                            <?php }?>>
                                 </div>
+                                <?php if (!$_smarty_tpl->tpl_vars['check']->value['NomeLuogo']) {?>
+                                    <div class="alert alert-warning">
+                                        <small >
+                                            Lunghezza massima 45 Caratteri.
+                                        </small>
+                                    </div>
+                                <?php }?>
                                 <label for="name-input " class="my-auto"><b>Via</b></label>
                                 <div class="col ">
-                                    <input type="text" name="via" class="form-control" placeholder="Via xxxxxx, #civico"> </div>
+                                    <input type="text" name="via" class="form-control" placeholder="Via xxxxxx, #civico"
+                                           maxlength="45" size="45"
+                                            <?php if (isset($_smarty_tpl->tpl_vars['prec']->value['via'])) {?>
+                                                value="<?php echo $_smarty_tpl->tpl_vars['prec']->value['via'];?>
+"
+                                            <?php }?>> </div>
                             </div>
+                            <?php if (!$_smarty_tpl->tpl_vars['check']->value['Via']) {?>
+                                <div class="alert alert-warning">
+                                    <small >
+                                        Lunghezza massima 45 Caratteri.
+                                    </small>
+                                </div>
+                            <?php }?>
                             <div class=" form-group row ">
                                 <label for="name-input " class="my-auto px-4 "><b>Città</b></label>
                                 <div class="col-5  px-4 ">
-                                    <input type="text" name="citta" class="form-control" placeholder="Città">
+                                    <input type="text" name="citta" class="form-control" placeholder="Città"
+                                           maxlength="45" size="45"
+                                            <?php if (isset($_smarty_tpl->tpl_vars['prec']->value['citta'])) {?>
+                                                value="<?php echo $_smarty_tpl->tpl_vars['prec']->value['citta'];?>
+"
+                                            <?php }?>>
                                 </div>
+                                <?php if (!$_smarty_tpl->tpl_vars['check']->value['Citta']) {?>
+                                    <div class="alert alert-warning">
+                                        <small >
+                                            Lunghezza massima 45 Caratteri.
+                                        </small>
+                                    </div>
+                                <?php }?>
                                 <label for="name-input " class="my-auto"><b>CAP</b></label>
                                 <div class="col  ">
-                                    <input type="text" name="cap" class="form-control" placeholder="CAP"> </div>
+                                    <input type="text" name="cap" class="form-control" placeholder="CAP"
+                                           maxlength="5" size="5"
+                                            <?php if (isset($_smarty_tpl->tpl_vars['prec']->value['cap'])) {?>
+                                                value="<?php echo $_smarty_tpl->tpl_vars['prec']->value['cap'];?>
+"
+                                            <?php }?>> </div>
+                                <?php if (!$_smarty_tpl->tpl_vars['check']->value['Cap']) {?>
+                                    <div class="alert alert-warning">
+                                        <small >
+                                            Lunghezza massima 5 Caratteri Numerici
+                                        </small>
+                                    </div>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -149,8 +203,20 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
                             <input type="checkbox" class="custom-checkbox" id="checkbox input" value="1" name="prenotazione"></div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1"><b>Descrizione</b></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="testo" rows="3"></textarea>
+                        <label for="testo"><b>Descrizione</b></label>
+                        <div class="text-left">
+                        <textarea class="form-control" id="testo" name="testo" rows="3"
+                                  maxlength="200" size="200"><?php if (isset($_smarty_tpl->tpl_vars['prec']->value['testo'])) {
+echo $_smarty_tpl->tpl_vars['prec']->value['testo'];
+}?>
+                        </textarea></div>
+                        <?php if (!$_smarty_tpl->tpl_vars['check']->value['Descrizione']) {?>
+                            <div class="alert alert-warning">
+                                <small >
+                                    Lunghezza massima 200 Caratteri Numerici
+                                </small>
+                            </div>
+                        <?php }?>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary " >Submit</button></div>

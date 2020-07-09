@@ -92,7 +92,7 @@ class VCatalogo extends VObject
         }
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         //$gioco->setNome("aaggagaga");
-            $this->smarty->assign('prec', $_POST);
+        $this->smarty->assign('prec', $_POST);
         $this->smarty->assign('gioco', $gioco);
         $this->smarty->assign('check', $this->check);
         $this->smarty->registerObject('user', $user);
