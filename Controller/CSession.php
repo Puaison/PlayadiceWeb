@@ -25,7 +25,7 @@ class CSession
     /**
      * Restituisce l'utente della sessione corrispondente alla connessione che ha richiamato
      * il metodo. Se la sessione è effettivamente attiva, restituirà l'utente corrispondente,
-     * altrimenti restituirà un semplice utente guest.
+     * altrimenti restituirà un semplice utente ospite.
      * @return EUtente
      */
     static function getUserFromSession() : EUtente

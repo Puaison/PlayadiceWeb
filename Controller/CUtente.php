@@ -52,10 +52,8 @@ class CUtente
             header('Location: Invalid HTTP method detected');
     }
 
-
     static function register()
     {
-
         $vUser = new VUtente();
         $loggedUser = $vUser->createUser(); // viene creato un utente con i parametri della form
 

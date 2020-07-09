@@ -20,7 +20,7 @@ class EAvatar extends EObject {
     private $Classe;
 
     /**
-     *
+     * Stringa con la Razza dell'avatar
      */
     private $Razza;
 
@@ -41,13 +41,11 @@ class EAvatar extends EObject {
         $this->Classe="Default";
         $this->Razza="Default";
         $this->Proprietario=null;
-
     }
 
     /****************************************** GETTER **************************************************/
     /**
-     *
-     * @return string
+     * @return string contenente il nome
      */
     public function getNome() : string
     {
@@ -58,7 +56,7 @@ class EAvatar extends EObject {
 
     /**
      *
-     * @return int
+     * @return int contenente il livello
      */
     public function getLivello() : int
     {
@@ -68,8 +66,7 @@ class EAvatar extends EObject {
     }
 
     /**
-     *
-     * @return string
+     * @return string contenente la classe dell'avatar
      */
     public function getClasse() : string
     {
@@ -79,8 +76,7 @@ class EAvatar extends EObject {
     }
 
     /**
-     *
-     * @return array
+     * @return string contenente la razza dell'avatar
      */
     public function getRazza() : string
     {
@@ -90,8 +86,7 @@ class EAvatar extends EObject {
     }
 
     /**
-     *
-     * @return EUtente
+     * @return EUtente che rappresenta il proprietario dell'avatar
      */
     public function getProprietario() : ?EUtente
     {
@@ -136,8 +131,8 @@ class EAvatar extends EObject {
     }
 
     /**
-     * Imposta l'inventario dell'avatar
-     * @param string raz array contenente oggetti di tipo VoceInventario
+     * Imposta la razza dell'avatar
+     * @param string razza dell'avatar
      */
     public function setRazza(string $raz)
     {
@@ -155,6 +150,47 @@ class EAvatar extends EObject {
         {
             $this->Proprietario=$User;
         }
+    }
+    /********************************************** Validazione ************************************************/
+    /********* Metodi che usano espressioni regolari per controllare se i campi dell'avatar abbiano effettivamente senso in quanto tali *******/
+    function validateNome() : bool
+    {
+        if ($this->Nome && strlen($this->Nome)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Nome))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    function validateRazza() : bool
+    {
+        if ($this->Razza && strlen($this->Razza)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Razza))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    function validateClasse() : bool
+    {
+        if ($this->Classe && strlen($this->Classe)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Classe))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    function validateLivello() : bool
+    {
+        if ($this->Livello && $this->Livello<=60 && $this->Livello>=(-10))
+        {
+            return true;
+        }
+        else
+            return false;
     }
     /********************************************** ALTRO ************************************************/
     public function tostring() :string

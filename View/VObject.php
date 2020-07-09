@@ -2,8 +2,8 @@
 /**
  * La classe VObject contiene gli attributi e le funzioni base adoperati in tutto il package View.
  * Oltre ad un metodo per la visualizzazione di una pagina di errore, il costruttore istanzia l'oggetto
- * Smarty adoperato alla visualizzazione dei template .tpl.
- * @author gruppo2
+ * Smarty adoperato alla visualizzazione dei template
+ * @author Gruppo DelSignore/Marottoli/Perozzi
  * @package View
  *
  */
@@ -18,7 +18,6 @@ class VObject
     protected function __construct()
     {
         $this->smarty = SmartyConfig::configure();
-        // l'array è istanziato con indici i campi delle varie form, i cui valori sono di default a false (no errori)
     }
 
     /**
@@ -34,7 +33,8 @@ class VObject
             $this->smarty->registerObject('user', $utente);
             $this->smarty->assign('uType', lcfirst(substr(get_class($utente), 1)));
         }
-        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
+
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($utente), 1)));
         $this->smarty->assign('error', $error);
         $this->smarty->display('errorPage.tpl');
     }

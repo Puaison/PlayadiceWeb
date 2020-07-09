@@ -33,6 +33,7 @@ class VEvento extends VObject
 
     }
     function create(EUtente &$user){
+
         $this->smarty->registerObject('user', $user);
         $this->smarty->display('PLDNewEvento.tpl');
 

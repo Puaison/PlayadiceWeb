@@ -2,14 +2,17 @@
 
 /**
  *
- * Il Controller CSong implementa le funzionalitÃ  'Gestione Brano'.
- * Un musicista puÃ² creare un brano, ed insieme ai moderatori puÃ² modificarlo o rimuoverlo.
+ * Il Controller CAvatar implementa le funzionalità  'Gestione Avatar'.
+ * Un utente può, insieme agli admin, crearlo modificarlo o rimuoverlo.
  *
  * @author Gruppo DelSignore/Marottoli/Perozzi
  * @package Controller
  */
 class CAvatar
 {
+    /**
+     * Funzione che dato l'ID di un avatar, permette di visualizzarne i dettagli
+     */
     static function details($id = 0)
     {
         $vAvatar = new VAvatar();
@@ -24,10 +27,13 @@ class CAvatar
             $vAvatar->showdetails($user, $SelectedAvatar[0]);
             }
         }
-        else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
+        else // se l'utente e' ospite, viene reindirizzato ad una pagina di errore
             $vAvatar->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 
+    /**
+     * Funzione che dato l'ID di un avatar, permette di visualizzarne la pagina per la modifica
+     */
     static function modify($id = 0)
     {
         $vAvatar = new VAvatar();
@@ -70,6 +76,9 @@ class CAvatar
             $vAvatar->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 
+    /**
+     * Funzione che dato l'ID di un avatar e la compilazione di un form, permette la creazione di una proposta per la modifica dello stesso
+     */
     static function submitchanges($id)
     {
         $vAvatar = new VAvatar();
@@ -79,8 +88,10 @@ class CAvatar
         {
             $Modificato=(FPersistantManager::getInstance()->search("Avatar","IdAvatar",$id))[0];
             $SubmittedAvatar=$vAvatar->CreateFromModifyForm();
-            $Proposta = new EProposta();
 
+            if($vAvatar->ValidateAvatar($SubmittedAvatar))
+            {
+            $Proposta = new EProposta();
             $Proposta->setTipoProposta("Modifica");
             $Proposta->setProposto($SubmittedAvatar);
             $Proposta->setModificato($Modificato);
@@ -88,11 +99,17 @@ class CAvatar
             FPersistantManager::getInstance()->store($SubmittedAvatar);
             FPersistantManager::getInstance()->store($Proposta);
             CRicerca::ShowPersonal("Proposta di modifica salvata con successo");
+            }
+            else
+                $vAvatar->showmodify($user,(FPersistantManager::getInstance()->search("Avatar","IdAvatar",$id))[0]);
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
             $vAvatar->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 
+    /**
+     * Funzione che permette di visualizzare la pagina per la creazione di un nuovo avatar
+     */
     static function create()
     {
         $vAvatar = new VAvatar();
@@ -106,6 +123,9 @@ class CAvatar
             $vAvatar->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 
+    /**
+     * Funzione che permette la creazione di una proposta per la nascita di un nuovo Avatar, con dati presi da form
+     */
     static function submitnewavatar()
     {
         $vAvatar = new VAvatar();
@@ -114,6 +134,8 @@ class CAvatar
         if (get_class($user) != EOspite::class) // se l'utente non e' ospite
         {
             $SubmittedAvatar=$vAvatar->CreateFromForm();
+            if($vAvatar->ValidateAvatar($SubmittedAvatar))
+            {
             $Proposta = new EProposta();
             $Proposta->setTipoProposta("Creazione");
             $Proposta->setProposto($SubmittedAvatar);
@@ -122,12 +144,18 @@ class CAvatar
             FPersistantManager::getInstance()->store($SubmittedAvatar);
             FPersistantManager::getInstance()->store($Proposta);
             CRicerca::ShowPersonal("Proposta di creazione salvata con successo");
-
+            }
+            else
+                $vAvatar->showcreate($user,$SubmittedAvatar);
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
             $vAvatar->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 
+
+    /**
+     * Funzione che permette la creazione di una proposta per la cancellazione di un Avatar esistente
+     */
     static function delete($id = 0)
     {
         $vAvatar = new VAvatar();
@@ -194,6 +222,9 @@ class CAvatar
             $vAvatar->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 
+    /**
+     * Funzione che permette la visualizzazione di una pagina con i dati di una specifica proposta
+     */
     static function vediproposta($id = 0)
     {
         $vAvatar = new VAvatar();

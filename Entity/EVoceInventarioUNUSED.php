@@ -3,7 +3,7 @@
 /**
  *
  */
-class EVoceInventario extends EObject {
+class EVoceInventarioUNUSED extends EObject {
 
     /**
      * Nome della voce inventario

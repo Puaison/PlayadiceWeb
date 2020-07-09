@@ -27,7 +27,7 @@ class FUtente
 				VALUES(:Username, :Nome, :Cognome, :Password, :Email,  :Moderatore)";
     }
     /**
-     * Query che effettua l'aggiornamento di un utente nella table users
+     * Query che effettua l'aggiornamento di un utente nella table utente
      * @return string contenente la query sql
      */
     static function updateUtente() : string
@@ -38,7 +38,6 @@ class FUtente
     }
     /**
      * Elimina un utente dal db .
-     *
      */
     static function removeUtente() : string
     {

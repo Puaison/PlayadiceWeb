@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-07 18:06:10
-  from 'C:\xampp\htdocs\playadice\templates\GiochiMainPage.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 12:05:42
+  from 'D:\XAMPP2\htdocs\playadice\templates\GiochiMainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f049d7239b603_94414121',
+  'unifunc' => 'content_5f06ebf6928fc2_84151965',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '96371ae495c63e61052ec983501c12d942d4f166' => 
+    'a47f36a33e0f9adae1422ac40fa067552ff08b45' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\GiochiMainPage.tpl',
-      1 => 1593953924,
+      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\GiochiMainPage.tpl',
+      1 => 1593980918,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f049d7239b603_94414121 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06ebf6928fc2_84151965 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 

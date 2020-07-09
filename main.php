@@ -95,5 +95,9 @@ $smarty->registerObject('user', $user);
 $smarty->display('Test2.tpl');
 */
 
+$objectspending = FPersistantManager::getInstance()->search("avatar", "AllProposed" , "");
+
+var_dump($objectspending);
+
 
 ?>

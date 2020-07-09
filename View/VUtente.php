@@ -4,13 +4,12 @@ include_once 'View/VObject.php';
 /**
  * La classe VUtente si occupa dell'input-output per quanto riguarda la gestione di un utente. In particolare:
  * - Costruisce da una form un oggetto EUtente e ne verifica la validità
- * - Permette al client di visualizzare pagine relative all'utente (login-signup-profilo)
- * @author gruppo2
+ * - Permette di visualizzare pagine relative all'utente (login-signup)
+ * @author Gruppo DelSignore/Marottoli/Perozzi
  * @package View
  */
 class VUtente extends VObject
 {
-
     function __construct()
     {
         parent::__construct();
@@ -69,7 +68,6 @@ class VUtente extends VObject
 
     /**
      * Verifica che un utente abbia inserito valori validi per nomi e cognomi
-     *
      * @return true se non si sono commessi errori, false altrimenti
      */
     function validateSignUp(EUtente $user): bool
@@ -113,7 +111,6 @@ class VUtente extends VObject
 
     /**
      * Mostra la pagina di signup
-     *
      * @param bool $error
      *            facoltativo se e' stato rilevato un errore
      */

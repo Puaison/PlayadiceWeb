@@ -11,7 +11,7 @@ class FrontController
      * La funzione run effettua il dispatching verso i metodi di un determinato controller.
      * Un URL ha il seguente formato:
      *                  /playadice/controller/method/(params)
-     * dove i parametri possono essere per un massimo di tre e possono essere delimitati da metacaratteri come '&' o '?'
+     * dove i parametri possono essere per un massimo di tre e possono essere delimitati da caratteri come '&' o '?'
      * Se l'URL non e' valida, l'utente viene reindirizzato alla pagina principale
      */
     function run()
@@ -30,7 +30,7 @@ class FrontController
                     $param1 = $resources[4];
                 if(isset($resources[5])) // se anche un secondo parametro e' definito
                     $param2 = $resources[5];
-                if(isset($resources[6]))
+                if(isset($resources[6])) // se anche un terzo parametro e' definito
                     $param3 = $resources[6];
 
                 if($param3) // se tutti i parametri sono definiti...

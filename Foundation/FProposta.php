@@ -1,8 +1,7 @@
 <?php
 
 /**
- * La classe FUser fornisce query per gli oggetti EUser
- * @author gruppo2
+ * La classe FProposta fornisce query per gli oggetti EProposta
  * @package Foundation
  */
 class FProposta

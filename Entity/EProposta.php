@@ -1,29 +1,29 @@
 <?php
 
 /**
- * 
+ * La classe proposta ha la funzione di mantenere in modo compatto le informazioni per la
+ * gestione di un avatar che è rimasta sospesa a tempo indeterminato
  */
 class EProposta extends EObject {
 
     /**
-     * Riferimento all'avatar della proposta
+     * Riferimento all'avatar che va a essere modificato
      */
     private ?EAvatar $Modificato;
 
     /**
-     * Riferimento all'avatar proposto
+     * Riferimento all'avatar proposto per la modifica
      */
     private ?EAvatar $Proposto;
 
     /**
      * Tipo della proposta descritto da una stringa
      * Possibilita: Crea/Mod1ifica/Cancella
-     * TODO:ENUM
      */
     private string $TipoProposta;
 
     /**
-     * Default constructor
+     * Costruttore di default
      */
     public function __construct()
     {
@@ -33,8 +33,7 @@ class EProposta extends EObject {
     /****************************************** GETTER **************************************************/
 
     /**
-     *
-     * @return EAvatar
+     * @return EAvatar che va a essere modificato
      */
     public function getModificato() : ?EAvatar
     {
@@ -45,7 +44,7 @@ class EProposta extends EObject {
 
     /**
      *
-     * @return EAvatar
+     * @return EAvatar proposto per la modifica
      */
     public function getProposto() : ?EAvatar
     {
@@ -55,8 +54,7 @@ class EProposta extends EObject {
     }
 
     /**
-     *
-     * @return string
+     * @return string Tipo della proposta (Possibilita: Crea/Mod1ifica/Cancella)
      */
     public function getTipoProposta() : string
     {
@@ -101,6 +99,7 @@ class EProposta extends EObject {
     }
 
     /**
+     * Funzione che cambia l'avatar iniziale affinchè i suoi valori corrispondano all'avatar proposto
      */
     public function approvaProposta()
     {

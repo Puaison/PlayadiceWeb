@@ -10,9 +10,9 @@ class VRicerca extends VObject
 
 
     /**
-     * Ritorna la coppia chiave-valore scelta dall'utente nella ricerca avanzata. Tale coppia
-     * e' contenuta nell'array globale $_GET.
-     * @return array avente come valori la chiave e il valore
+     * Ritorna la coppia valore-chiave scelta dall'utente nella ricerca
+     * Tale coppia e' contenuta nell'array globale $_POST
+     * @return array avente come valori il Valore e la Chiave di ricerca
      */
     function getStringAndKey(): array
     {
@@ -31,6 +31,7 @@ class VRicerca extends VObject
     }
 
     /**
+     * Funzione che mostra il template con i risultati della ricerca effettuata
      */
     function showSearchResult(EUtente &$user, $array, $array2, $Notify)
     {

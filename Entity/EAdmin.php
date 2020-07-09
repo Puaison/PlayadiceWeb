@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * Semplice classe che identifica un amministratore
+ */
 class EAdmin extends EUtente
 {
 

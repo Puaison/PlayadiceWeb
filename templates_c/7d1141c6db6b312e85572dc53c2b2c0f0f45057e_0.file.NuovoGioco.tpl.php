@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-07 17:14:44
-  from 'C:\xampp\htdocs\playadice\templates\NuovoGioco.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 12:05:46
+  from 'D:\XAMPP2\htdocs\playadice\templates\NuovoGioco.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0491642cc0a1_58730134',
+  'unifunc' => 'content_5f06ebfaaeba72_81692367',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '53e6242679f2313534e8da540a7dbda84d483151' => 
+    '7d1141c6db6b312e85572dc53c2b2c0f0f45057e' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\NuovoGioco.tpl',
-      1 => 1594134882,
+      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\NuovoGioco.tpl',
+      1 => 1594284313,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0491642cc0a1_58730134 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06ebfaaeba72_81692367 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>

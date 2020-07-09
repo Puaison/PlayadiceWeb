@@ -102,7 +102,7 @@
         <a class="btn navbar-btn ml-md-2 btn-light text-dark {if $Username != $results[k]->GetProprietario()->GetUsername() && $UtenteType != 'admin'}disabled{/if}" href="/playadice/avatar/modify?{$results[k]->getId()}">Modifica</a>
       </div>
       <div class="col" style="Text-align:center">
-          <a class="btn navbar-btn ml-md-2 btn-light text-dark {if $Username != $results[k]->GetProprietario()->GetUsername() && $UtenteType != 'admin'}disabled"{/if} href="/playadice/avatar/delete?{$results[k]->getId()}">Elimina</a>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark {if $Username != $results[k]->GetProprietario()->GetUsername() && $UtenteType != 'admin'}disabled{/if}" href="/playadice/avatar/delete?{$results[k]->getId()}">Elimina</a>
       </div>
     </div>
     {/section}

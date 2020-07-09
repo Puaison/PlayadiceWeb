@@ -1,50 +1,15 @@
 <?php
 
 /**
- * La classe CSearch implementa la funzionalità di 'Ricerca'. Al suo interno presenta inoltre delle
- * costanti che definiscono chiavi (ovvero risorse da ricercare) e valori (ovvero indici rispetto a cui cercare)
- * di default e avanzati.
- * @author gruppo2
+ * La classe CRicerca implementa la funzionalità di 'Ricerca'
+ * @author Gruppo DelSignore/Marottoli/Perozzi
  * @package Controller
  */
 class CRicerca
 {
-    /** Chiave di default: Ricerca di canzoni */
-    const KEY_DEFAULT = 'Song';
-    /** Chiave avanzata: Ricerca di utenti */
-    const KEY_ADVANCED = 'User';
-    /** Valore base: Ricerca per genere */
-    const VALUE_DEFAULT = 'Genre';
-    /** Valore avanzato: Ricerca per nome */
-    const VALUE_ADVANCED = 'Name';
-
     /**
-     * Questo metodo implementa il caso d'uso 'Ricerca Semplice' e fornisce una ricerca delle
-     * canzoni rispetto al genere musicale. Tale ricerca puo' essere effettuata da qualunque tipologia
-     * di utente.
-
-    static function simple()
-    {
-        $vSearch = new VSearch();
-        $user = CSession::getUserFromSession();
-
-
-        $string = $vSearch->getSearchValue();
-
-        if($string)
-        { // se l'utente ha inviato tramite GET un valore, si cerca nel DB
-            $objects = FPersistantManager::getInstance()->search(CSearch::KEY_DEFAULT, CSearch::VALUE_DEFAULT, $string);
-            $vSearch->showSearchResult($user, $objects, CSearch::KEY_DEFAULT, CSearch::VALUE_DEFAULT, $string);
-        }
-        else
-            header('Location: /deepmusic/index');
-
-    }
-     */
-
-    /**
-     * Questo metodo implementa il caso d'uso 'Ricerca Avanzata'. Un utente puo' infatti ricercare
-     * canzoni o utenti in base al nome o al genere musicale. Questo tipo di ricerca e' possibile
+     * Un utente puo' ricercare avatar in base al nome o all'username del proprietario.
+     * Questa ricerca e' possibile
      * solo per gli utenti che sono registrati.
      */
     static function Search()
@@ -56,12 +21,24 @@ class CRicerca
         {
                 list($string,$key)=$vRicerca->getStringAndKey();
                 $objects = FPersistantManager::getInstance()->search("Avatar", $key , $string);
+                if ($objects != null )
+                {
+                    $objectspending = FPersistantManager::getInstance()->search("avatar", "AllProposed" , "");
+                    if ($objectspending != null )
+                    {
+                        $intersect = array_uintersect($objects, $objectspending, function($a, $b) { return ($a < $b) ? -1 : (($a == $b) ? 0 : 1); });
+                        $objects = array_udiff($objects, $intersect, function($a, $b) {if ($a==$b){ return 0;} return ($a>$b)?1:-1;});
+                    }
+                }
                 $vRicerca->showSearchResult($user, $objects,null,null);
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
             $vRicerca->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 
+    /**
+     * Funzione che mostra la pagina con i propri avatar. Situata in questa classe in quanto affine per funzionamento
+     */
     static function ShowPersonal(string $notify = NULL)
     {
         $vRicerca = new VRicerca();
@@ -70,10 +47,22 @@ class CRicerca
         {
             $string=$user->getUsername();
             $objects = FPersistantManager::getInstance()->search("Avatar", "UsernameUtente" , $string);
+
+            if ($objects != null )
+            {
+                $objectspending = FPersistantManager::getInstance()->search("avatar", "AllProposed" , "");
+                if ($objectspending != null )
+                {
+                $intersect = array_uintersect($objects, $objectspending, function($a, $b) { return ($a < $b) ? -1 : (($a == $b) ? 0 : 1); });
+                $objects = array_udiff($objects, $intersect, function($a, $b) {if ($a==$b){ return 0;} return ($a>$b)?1:-1;});
+                }
+            }
+
             $proposte= FPersistantManager::getInstance()->search("Proposta", "All" , "");
             $vRicerca->showSearchResult($user, $objects,$proposte,$notify);
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
+
             $vRicerca->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 

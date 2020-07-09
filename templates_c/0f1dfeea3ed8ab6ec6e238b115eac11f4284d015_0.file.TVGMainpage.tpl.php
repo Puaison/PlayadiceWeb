@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-06 11:00:58
-  from 'C:\xampp\htdocs\playadice\templates\TVGMainpage.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 11:24:04
+  from 'D:\XAMPP2\htdocs\playadice\templates\TVGMainpage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f02e84a73b4e9_32822215',
+  'unifunc' => 'content_5f06e234dad2b2_55884521',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f78c02662978575bfd8ef5305af4599db402bcff' => 
+    '0f1dfeea3ed8ab6ec6e238b115eac11f4284d015' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\TVGMainpage.tpl',
-      1 => 1594026042,
+      0 => 'D:\\XAMPP2\\htdocs\\playadice\\templates\\TVGMainpage.tpl',
+      1 => 1594286637,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f02e84a73b4e9_32822215 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06e234dad2b2_55884521 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -141,7 +141,7 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
 ">Modifica</a>
       </div>
       <div class="col" style="Text-align:center">
-          <a class="btn navbar-btn ml-md-2 btn-light text-dark <?php if ($_smarty_tpl->tpl_vars['Username']->value != $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->GetProprietario()->GetUsername() && $_smarty_tpl->tpl_vars['UtenteType']->value != 'admin') {?>disabled"<?php }?> href="/playadice/avatar/delete?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+        <a class="btn navbar-btn ml-md-2 btn-light text-dark <?php if ($_smarty_tpl->tpl_vars['Username']->value != $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->GetProprietario()->GetUsername() && $_smarty_tpl->tpl_vars['UtenteType']->value != 'admin') {?>disabled<?php }?>" href="/playadice/avatar/delete?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
 ">Elimina</a>
       </div>
     </div>

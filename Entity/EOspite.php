@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * Classe che caratterizza un utente di tipo ospite in quanto tale
+ */
 class EOspite extends EUtente
 {
     /****************************************** COSTRUTTORE **************************************************/

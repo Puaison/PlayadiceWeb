@@ -1,8 +1,7 @@
 <?php
 
 /**
- * La classe FUser fornisce query per gli oggetti EUser
- * @author gruppo2
+ * La classe FAvatar fornisce query per gli oggetti EAvatar
  * @package Foundation
  */
 class FAvatar
@@ -36,13 +35,24 @@ class FAvatar
                 WHERE LOCATE( :OrderingUsernameUtente , UsernameUtente) > 0;";
     }
 
+    /**
+     * @return string Sql valido per tutti gli avatar che si trovano in una proposta come "Proposti"
+     */
+    static function searchAvatarByAllProposed() : string
+    {
+        return "SELECT *
+                FROM avatar,proposta
+                WHERE IDAvatar = IDProposto";
+    }
+
     static function storeAvatar() : string
     {
         return "INSERT INTO avatar(Livello, Nome , UsernameUtente, Classe, Razza)
 				VALUES(:Livello, :Nome, :Proprietario, :Classe, :Razza)";
     }
+
     /**
-     * Query che effettua l'aggiornamento di un utente nella table users
+     * Query che effettua l'aggiornamento di un Avatar nella table avatar
      * @return string contenente la query sql
      */
     static function updateAvatar() : string
@@ -52,8 +62,7 @@ class FAvatar
                 WHERE IdAvatar = :IdAvatar ;";
     }
     /**
-     * Elimina un utente dal db .
-     *
+     * Elimina un avatar dal db .
      */
     static function removeAvatar() : string
     {

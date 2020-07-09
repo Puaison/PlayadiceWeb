@@ -1,5 +1,4 @@
 <?php
-//require_once 'inc.php';
 /**
  * La classe EObject caratterizza un oggetto Entity a partire dal suo Id.
  * @package Entity
@@ -18,7 +17,7 @@ class EObject
     }
 
     /**
-     * @return int l'identifier dell'oggetto
+     * @return int l'identificatore dell'oggetto
      */
     function getId() : int {
         if(!$this->id)
@@ -27,7 +26,7 @@ class EObject
     }
 
     /**
-     * @param int $id l'identificativo dell'oggetto Entity
+     * @param int $id l'identificatore dell'oggetto Entity
      */
     function setId(int $id) {
         $this->id = $id;
