@@ -50,6 +50,13 @@
 
                     </select>
                 </div>
+                {if ! $check.Voto}
+                    <div class="alert alert-warning">
+                        <small >
+                            Scegli un voto dalla lista
+                        </small>
+                    </div>
+                {/if}
             </div>
             <div class="form-group row">
                 <!-- Commento -->
@@ -57,6 +64,13 @@
                 <div class="col-lg-5">
                     <textarea class="form-control border-primary" name="Commento" placeholder="Dicci cosa ne pensi" maxlength="500"></textarea>
                 </div>
+                {if ! $check.Commento}
+                    <div class="alert alert-warning">
+                        <small >
+                            Massimo 500 caratteri
+                        </small>
+                    </div>
+                {/if}
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Invia</button>

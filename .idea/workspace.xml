@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates_c/555686cb53629661b8cfc5ce0458ede07659ee4d_0.file.Register.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/03e97eb2d74e07aa366120c6c193bba6cdfa7e29_0.file.TVGAvatarApprovazione.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/CGiocoInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CGiocoInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VAvatar.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VAvatar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VCatalogo.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VCatalogo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VEvento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/ERecensione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/ERecensione.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/VGiocoInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VGiocoInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VObject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VUtente.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/GiocoInfo.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/GiocoInfo.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/NuovaRecensione.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/NuovaRecensione.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/784813a21e61c528a45fa7b4589e75242e0c0b6a_0.file.NuovaRecensione.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/784813a21e61c528a45fa7b4589e75242e0c0b6a_0.file.NuovaRecensione.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/cd8d22795db6450e0f289afbd273285f33572649_0.file.GiocoInfo.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/cd8d22795db6450e0f289afbd273285f33572649_0.file.GiocoInfo.tpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,14 +221,7 @@
       <workItem from="1594112780432" duration="4771000" />
       <workItem from="1594118319114" duration="748000" />
       <workItem from="1594129369226" duration="3119000" />
-      <workItem from="1594205002900" duration="6199000" />
-    </task>
-    <task id="LOCAL-00032" summary="EPrenotazione.php 1.0 con php docs">
-      <created>1589297217515</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1589297217515</updated>
+      <workItem from="1594205002900" duration="10738000" />
     </task>
     <task id="LOCAL-00033" summary="EPrenotazione.php 1.0 con php docs">
       <created>1589297297952</created>
@@ -573,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594146826486</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Modifica NavBar(aggiunta panel admin e Home) e aggiunta in ogni Vclass il tipo di Utente">
+      <created>1594212457910</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1594212457911</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +597,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CSession e test" />
     <MESSAGE value="Index.php, rinominazione mainpage" />
     <MESSAGE value="FPersistantManager.php richiede il config per accesso al DB" />
     <MESSAGE value="Poche cose" />
@@ -629,7 +621,8 @@
     <MESSAGE value="Implementati sistemi di controllo di accesso alle pagine relative agli eventi tramite URL" />
     <MESSAGE value="Casi D'Uso Calendario terminati (v.1.0)" />
     <MESSAGE value="Casi D'Uso recensione funzionanti. Adesso si devono implementare le funzioni di controllo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Casi D'Uso recensione funzionanti. Adesso si devono implementare le funzioni di controllo" />
+    <MESSAGE value="Modifica NavBar(aggiunta panel admin e Home) e aggiunta in ogni Vclass il tipo di Utente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifica NavBar(aggiunta panel admin e Home) e aggiunta in ogni Vclass il tipo di Utente" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -692,10 +685,10 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594146825839">
+    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594212457024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594146825839" />
+    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594212457024" />
     <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594116563527" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878565443" />
     <state x="744" y="353" key="EditFileWatcherDialog" timestamp="1593614981790">
@@ -751,9 +744,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="332" y="111" key="MergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593600954455" />
-    <state x="746" y="322" key="MultipleFileMergeDialog" timestamp="1593600958769">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="746" y="310" key="MultipleFileMergeDialog" timestamp="1594214986093">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="746" y="310" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594214986093" />
     <state x="746" y="322" key="MultipleFileMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593600958769" />
     <state x="994" y="417" key="MultipleFileMergeDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593527328002" />
     <state x="788" y="331" key="NewPhpClassDialog" timestamp="1593543323807">
@@ -785,10 +779,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1594146828806">
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1594212460435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594146828806" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594212460435" />
     <state x="214" y="303" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594116572707" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878610274" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
@@ -805,10 +799,10 @@
     <state x="725" y="360" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592919545964" />
     <state x="725" y="374" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352751088" />
     <state x="966" y="484" key="com.intellij.ide.util.TipDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593522212063" />
-    <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594205011069">
+    <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594214972405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594205011069" />
+    <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594214972405" />
     <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594026038334" />
     <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593535942610" />
     <state x="3840" y="613" width="1936" height="1085" maximized="true" key="dock-window-1" timestamp="1590929747423">

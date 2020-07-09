@@ -18,7 +18,7 @@ class ERecensione
     /** Il Commento associato*/
     private $Commento;
 
-    /** Il Gioco associato(deve essere passato solo per riferimento)*/
+    /** Il Gioco associato*/
     private $Gioco;
 
 
@@ -80,7 +80,7 @@ class ERecensione
      *
      * @param  EUtente l'Utente che ha recensito
      */
-    public function setEUtente(EUtente &$user) {
+    public function setEUtente(EUtente $user) {
 
         $this->Utente=$user;
 
@@ -90,7 +90,7 @@ class ERecensione
      *
      * @param  EGioco Il Gioco a cui la recensione è associata
      */
-    public function setEGioco(EGioco &$gioco) {
+    public function setEGioco(EGioco $gioco) {
 
         $this->Gioco=$gioco;
 
@@ -122,9 +122,9 @@ class ERecensione
      * Metodo che controlla se il voto inserito è compreso tra 0 e 5;
      * @return  bool true se le condizioni sono state rispettate. Falso altrimenti
      */
-    public function VotoValido():bool {
+    public function validateVoto():bool {
         $voto=$this->Voto;
-        if($voto>=0 && $voto<=5)//Voto compreso tra 0 e 5
+        if($voto==1 || $voto==2 || $voto==3 || $voto==4 || $voto==5)//Voto compreso tra 0 e 5
             return true;
         else
             return false;
@@ -134,10 +134,10 @@ class ERecensione
      * Metodo che controlla se il commento inserito ha meno di 500 caratteri;
      * @return  bool true se le condizioni sono state rispettate. Falso altrimenti
      */
-    public function CommentoValido():bool {
+    public function validateCommento():bool {
         $commento=$this->Commento;
         $lenght=(strlen($commento));
-        if($lenght<=500)
+        if($lenght<=500 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Commento))
             return true;
         else
             return false;

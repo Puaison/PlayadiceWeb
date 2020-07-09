@@ -6,6 +6,11 @@ class VGiocoInfo extends VObject
     function __construct()
     {
         parent::__construct();
+        $this->check = array(
+            'Esistente' => false,
+            'Voto' => true,
+            'Commento' => true
+        );
     }
 
     /**
@@ -21,11 +26,27 @@ class VGiocoInfo extends VObject
         if(isset($_POST['Commento']))
             $recensione->setCommento($_POST['Commento']);
         $recensione->setEUtente(CSession::getUserFromSession());
-        if(isset($_POST['IdGioco']))
-            $recensione->getEGioco()->setId($_POST['IdGioco']);
-
 
         return $recensione;
+    }
+
+    /**
+     * Verifica che un una recensione appena creata rispetti tutti i parametri
+     * @param ERecensione $recensione La nuova recensione da controllare
+     * @return true se non si sono commessi errori, false altrimenti
+     */
+    function validateRecensione(ERecensione $recensione): bool
+    {
+        $this->check['Voto']=$recensione->validateVoto();
+        $this->check['Commento']=$recensione->validateCommento();
+        if($this->check['Voto'] && $this->check['Commento'])
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     /**
      * Mostra il Catalogo di Giochi
@@ -37,6 +58,7 @@ class VGiocoInfo extends VObject
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->assign('gioco',$gioco);
         $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('check', $this->check);
         $this->smarty->display('NuovaRecensione.tpl');
 
     }
@@ -45,9 +67,10 @@ class VGiocoInfo extends VObject
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
-        //$this->smarty->registerObject('gioco',$gioco);
         $this->smarty->assign('gioco',$gioco );
-        $this->smarty->assign('recensito',$recensito );
+        $this->check['Esistente']=$recensito;
+        $this->smarty->assign('check', $this->check);
+        //$this->smarty->assign('recensito',$recensito );
         $this->smarty->display('GiocoInfo.tpl');
     }
 
