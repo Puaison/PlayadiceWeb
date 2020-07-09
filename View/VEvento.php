@@ -43,7 +43,7 @@ class VEvento extends VObject
 
     }
 
-    function modify(EUtente &$user, $evento){
+    function modify(EUtente &$user, $evento=null){
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('check', $this->check);

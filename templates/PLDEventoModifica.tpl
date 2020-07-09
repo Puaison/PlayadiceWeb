@@ -21,7 +21,7 @@
 
 <div class="card ">
 
-    <form method="post" id="c_form-h" class="" action="../evento/updateEvento/{$results[0]->getId()}">
+    <form method="post" id="c_form-h" class="" action="updateEvento?{$results[0]->getId()}">
         <div class="py-5">
             <div class="container ">
                 <div class="col-md-12">
@@ -29,6 +29,13 @@
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
                         <div class="col-10">
                             <input type="text" name="nome" class="form-control " value="{$results[0]->getNome()}"> </div>
+                        {if ! $check.Nome}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Lunghezza massima 45 Caratteri.
+                                </small>
+                            </div>
+                        {/if}
                     </div>
                     <div class="form-group row">
                         <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
@@ -49,19 +56,47 @@
                                 <label for="name-input " class="my-auto px-4 "><b>Nome</b></label>
                                 <div class="col-4 ">
                                     <input type="text" name="nomeluogo" class="form-control" value="{$results[0]->getLuogo()->getNome()}">
+                                    {if ! $check.NomeLuogo}
+                                        <div class="alert alert-warning">
+                                            <small >
+                                                Lunghezza massima 45 Caratteri.
+                                            </small>
+                                        </div>
+                                    {/if}
                                 </div>
                                 <label for="name-input " class="my-auto"><b>Via</b></label>
                                 <div class="col ">
                                     <input type="text" name="via" class="form-control" value="{$results[0]->getLuogo()->getVia()}"> </div>
+                                {if ! $check.Via}
+                                    <div class="alert alert-warning">
+                                        <small >
+                                            Lunghezza massima 45 Caratteri.
+                                        </small>
+                                    </div>
+                                {/if}
                             </div>
                             <div class=" form-group row ">
                                 <label for="name-input " class="my-auto px-4 "><b>Città</b></label>
                                 <div class="col-5  px-4 ">
                                     <input type="text" name="citta" class="form-control" value="{$results[0]->getLuogo()->getCitta()}">
+                                    {if ! $check.Citta}
+                                        <div class="alert alert-warning">
+                                            <small >
+                                                Lunghezza massima 45 Caratteri.
+                                            </small>
+                                        </div>
+                                    {/if}
                                 </div>
                                 <label for="name-input " class="my-auto"><b>CAP</b></label>
                                 <div class="col  ">
                                     <input type="text" name="cap" class="form-control" value="{$results[0]->getLuogo()->getCap()}"> </div>
+                                {if ! $check.Cap}
+                                    <div class="alert alert-warning">
+                                        <small >
+                                            Lunghezza massima 5 Caratteri Numerici
+                                        </small>
+                                    </div>
+                                {/if}
                             </div>
                         </div>
                     </div>
@@ -125,6 +160,13 @@
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"><b>Descrizione</b></label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" name="testo" rows="3" >{$results[0]->getTesto()}</textarea>
+                        {if ! $check.Descrizione}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Lunghezza massima 200 Caratteri Numerici
+                                </small>
+                            </div>
+                        {/if}
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary " >Submit</button></div>

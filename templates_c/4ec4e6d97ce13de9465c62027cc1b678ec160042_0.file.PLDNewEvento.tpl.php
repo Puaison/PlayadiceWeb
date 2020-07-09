@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 12:22:15
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 12:42:57
   from 'C:\xampp\htdocs\playadice\templates\PLDNewEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f06efd734d7c6_42470839',
+  'unifunc' => 'content_5f06f4b1190e77_81768978',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4ec4e6d97ce13de9465c62027cc1b678ec160042' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDNewEvento.tpl',
-      1 => 1594290134,
+      1 => 1594290464,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f06efd734d7c6_42470839 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f06f4b1190e77_81768978 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -204,12 +204,11 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
                     </div>
                     <div class="form-group">
                         <label for="testo"><b>Descrizione</b></label>
-                        <div class="text-left">
                         <textarea class="form-control" id="testo" name="testo" rows="3"
                                   maxlength="200" size="200"><?php if (isset($_smarty_tpl->tpl_vars['prec']->value['testo'])) {
 echo $_smarty_tpl->tpl_vars['prec']->value['testo'];
 }?>
-                        </textarea></div>
+                        </textarea>
                         <?php if (!$_smarty_tpl->tpl_vars['check']->value['Descrizione']) {?>
                             <div class="alert alert-warning">
                                 <small >

@@ -126,7 +126,8 @@ class ELuogo extends EObject
      */
    function validateCap() : bool
     {
-        if($this->cap && strlen($this->cap)==5 && is_integer($this->cap))
+
+        if($this->cap && strlen($this->cap)==5 && is_numeric($this->cap))
         {
             return true;
         }
