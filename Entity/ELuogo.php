@@ -124,15 +124,15 @@ class ELuogo extends EObject
      * Metodo che controlla se la città del luogo inserito è lungo  5  caratteri e ha solo numeri
      * @return bool true se le condizioni sono rispettate, false altrimenti
      */
-    function validateCap() : bool
+   /*function validateCap() : bool
     {
-            if ($this->cap && strlen($this->cap)=5 && is_integer($this->cap))
+        if (($this->cap) && strlen($this->cap)=5 && is_integer($this->cap))
         {
             return true;
         }
         else
             return false;
-    }
+    }*/
 
 
 }
