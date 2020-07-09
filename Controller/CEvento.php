@@ -149,7 +149,6 @@ class CEvento
             $luogo -> setId($luogoOld -> getId());
             $evento -> setId($eventoOld[0] -> getId());
             if($vEvento->validateNuovoEvento($evento)){
-                echo ("ciao");
                 FPersistantManager ::getInstance() -> update($luogo);
                 FPersistantManager ::getInstance() -> update($evento);
                 $fasceOld = $eventoOld[0] -> getFasce();
@@ -167,7 +166,8 @@ class CEvento
                 header("Location: /playadice/evento/show?$str");
             }
             else {
-                $vEvento->modify($user, $evento);
+                $array[]=$evento;
+                $vEvento->modify($user, $array);
             }
 
         }

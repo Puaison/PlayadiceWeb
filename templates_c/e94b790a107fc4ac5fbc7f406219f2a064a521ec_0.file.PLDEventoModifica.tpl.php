@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 13:48:37
+/* Smarty version 3.1.34-dev-7, created on 2020-07-09 15:21:21
   from 'C:\xampp\htdocs\playadice\templates\PLDEventoModifica.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0704154217d5_90193953',
+  'unifunc' => 'content_5f0719d16cb980_96037500',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e94b790a107fc4ac5fbc7f406219f2a064a521ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDEventoModifica.tpl',
-      1 => 1594295315,
+      1 => 1594300878,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0704154217d5_90193953 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0719d16cb980_96037500 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +50,6 @@ function content_5f0704154217d5_90193953 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
 <div class="card ">
-
     <form method="post" id="c_form-h" class="" action="updateEvento?<?php echo $_smarty_tpl->tpl_vars['results']->value[0]->getId();?>
 ">
         <div class="py-5">

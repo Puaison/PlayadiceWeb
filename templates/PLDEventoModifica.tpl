@@ -20,7 +20,6 @@
 {include file="navbar.tpl"}
 
 <div class="card ">
-
     <form method="post" id="c_form-h" class="" action="updateEvento?{$results[0]->getId()}">
         <div class="py-5">
             <div class="container ">

@@ -48,6 +48,7 @@ class VEvento extends VObject
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('check', $this->check);
         $this->smarty->assign('results', $evento);
+        $this->smarty->assign('prec', $_POST);
         $this->smarty->display('PLDEventoModifica.tpl');
 
     }
