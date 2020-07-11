@@ -25,28 +25,32 @@
 <!-- Navbar here -->
 {include file="navbar.tpl"}
 <!-- Sezione Ricerca here -->
-<div class="column" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
-  <div class="container" style="background-color:#E3E3E3">
+<<div class="container-fluid" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
 
-    <!-- FORM -->
-    <form method="post" id="Ricercaform" action="search">
-      <div class="row">
-        <label for="Parametro">Parametro:</label><br>
-        <input type="text" id="Parametro" name="Parametro">
-        <label for="Tipo">Scegli un tipo di ricerca:</label>
-        <select id="Tipo" name="TipoRicerca" form="Ricercaform">
-          <option value="Nome">Nome</option>
-          <option value="Categoria">Categoria</option>
-        </select>
-        <button href="/playadice/ricerca/Search" > Cerca </button>
+  <div class="container-fluid">
+    <div class="row justify-content-center" style=" margin-top: 15px; margin-bottom: 15px ">
+      <div class="col-sm-8 align-self-center" >
+        <!-- FORM -->
+        <form method="post" id="Ricercaform" action="search">
+          <div class="row">
+            <label for="Parametro" style="color: white; margin-left: 4px; margin-right: 4px">Parametro:</label><br>
+            <input type="text" id="Parametro" name="Parametro">
+            <label for="Tipo" style="color: white; margin-left: 8px; margin-right: 4px">Scegli un tipo di ricerca:</label>
+            <select id="Tipo" name="TipoRicerca" form="Ricercaform">
+              <option value="Nome">Nome</option>
+              <option value="Categoria">Categoria</option>
+            </select>
+            <button class="btn btn-primary"  style="margin-left: 4px; margin-right: 4px" > Cerca </button>
+          </div>
+        </form>
+
       </div>
-    </form>
-    {if $Tipo}
-    <div class="col-md-2">
-      <a class="btn-primary btn" href="/playadice/catalogo/newgioco">Crea Nuovo</a>
+      {if $Tipo}
+      <div class="col-md-2">
+        <a class="btn-primary btn" href="/playadice/catalogo/newgioco">Crea Nuovo</a>
+      </div>
+      {/if}
     </div>
-    {/if}
-
   </div>
   <!-- Catalogo -->
 
@@ -70,7 +74,7 @@
           <p style="color:White;">{$results[k]->getNome()}</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <p style="color:White;">{$results[k]->getVotoMedio()}</p>
+          <p style="color:White;">{if $results[k]->getVotoMedio()==0}Ancora nessun voto{else} {$results[k]->getVotoMedio()}{/if}</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
           <p style="color:White;">{$results[k]->getCategoria()}</p>

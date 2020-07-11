@@ -30,13 +30,13 @@
         <div class="container py-5">
                 <div class="container py-5">
                         <div class="row">
-                                <img class="img-fluid d-block pi-draggable" src="https://static.pingendo.com/img-placeholder-1.svg">
+                                <img class="img-fluid d-block pi-draggable" src="templates/assets/Giocodatavolo.jpg">
                                 <div class="card pi-draggable">
                                         <div class="card-body">
-                                                <h5 class="card-title"><b>Titolo Sezione</b></h5>
-                                                <h6 class="card-subtitle my-2 text-muted">Sottotitolo</h6>
-                                                <p class="card-text">Messagino</p>
-                                                <a href="#" class="card-link">Link alla sezione</a>
+                                                <h5 class="card-title"><b>Top 5 Games</b></h5>
+                                                <h6 class="card-subtitle my-2 text-muted"></h6>
+
+                                                <a href="" class="btn btn-primary">Link alla sezione</a>
                                         </div>
                                 </div>
                         </div>

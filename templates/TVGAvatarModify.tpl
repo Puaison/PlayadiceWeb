@@ -111,7 +111,7 @@
       <br>
 
       <div class="justify-content-center" style="text-align: center"  >
-        <button style="width: 50% ; margin-left: 20px;margin-right: 20px;" type="submit" href="/playadice/avatar/submitchanges?{$avatar->getId()}"> Modifica </button>
+        <button style="width: 50% ; margin-left: 20px;margin-right: 20px;" type="submit" class="btn btn-primary" href="/playadice/avatar/submitchanges?{$avatar->getId()}"> Modifica </button>
       </div>
 
     </form>

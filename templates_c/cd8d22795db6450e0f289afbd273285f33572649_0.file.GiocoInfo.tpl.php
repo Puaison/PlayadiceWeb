@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-11 14:55:19
+/* Smarty version 3.1.34-dev-7, created on 2020-07-11 16:20:35
   from 'C:\xampp\htdocs\playadice\templates\GiocoInfo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f09b6b7c3abf9_94442398',
+  'unifunc' => 'content_5f09cab3393ad7_08968839',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cd8d22795db6450e0f289afbd273285f33572649' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\GiocoInfo.tpl',
-      1 => 1594214975,
+      1 => 1594477232,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f09b6b7c3abf9_94442398 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f09cab3393ad7_08968839 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +68,8 @@ function content_5f09b6b7c3abf9_94442398 (Smarty_Internal_Template $_smarty_tpl)
                         <h5 class="card-title"><b><?php echo $_smarty_tpl->tpl_vars['gioco']->value->getNome();?>
 </b></h5>
                         <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "admin") {?>
-                        <a class="btn btn-primary" href="">Modifica</a>
+                        <a class="btn btn-primary" href="/playadice/catalogo/modificagioco?<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
+">Modifica</a>
                         <?php }?>
                         <h6 class="card-subtitle my-2 text-muted">Della: <?php echo $_smarty_tpl->tpl_vars['gioco']->value->getInfo()->getCasaEditrice();?>
 </h6>

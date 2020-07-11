@@ -11,9 +11,11 @@ class CGiocoInfo
             $giocoExists = FPersistantManager::getInstance()->exists("gioco", "Id", $id); // si verifica che il gioco inserito matchi una entry nel db
             if($giocoExists)
             {
-                //$gioco=new EGioco();
+                // Se recupero tutto insieme oopure no sostituisce le due righe subito successive$gioco=FPersistantManager::getInstance()->search("gioco", "Id" ,$id)[0];
+
                 $gioco = FPersistantManager::getInstance()->search("gioco", "Id" ,$id)[0];
                 $gioco->setInfo(FPersistantManager::getInstance()->search("giocoinfo", "IdGioco" ,$gioco->getId())[0]);
+
                 $recensioni=FPersistantManager::getInstance()->search("recensione","IdGioco",$gioco->getId());
                 $recensito=false;
                 if($recensioni)//Se c'è almeno una recensione
@@ -74,7 +76,7 @@ class CGiocoInfo
                 header('Location: HTTP/1.1 Invalid HTTP method detected');
     }
 
-    private function insertnewrecensione(int $IdGioco)
+    static function insertnewrecensione(int $IdGioco)
     {
         $user=CSession::getUserFromSession();
         $vGiocoInfo = new VGiocoInfo();

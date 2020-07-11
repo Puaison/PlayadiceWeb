@@ -81,4 +81,65 @@ class CCatalogo
             $vCatalogo->showErrorPage($user, 'Non hai diritti per esguire questo comando');
         }
     }
+
+    static function modificagioco($IdGioco)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') // se il metodo e' get...
+        {
+            $vCatalogo = new VCatalogo();
+            $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
+            $gioco = FPersistantManager ::getInstance() -> search("gioco", "Id", $IdGioco)[0];
+            if (get_class($user) == EAdmin::class) {
+                if ($gioco) {
+                    $gioco->setInfo(FPersistantManager::getInstance()->search("giocoinfo", "IdGioco" ,$gioco->getId())[0]);
+                    $vCatalogo->showFormModificaGioco($user, $gioco);
+                }
+                else // se il gioco cercato non esiste, si viene reindirizzati ad una pagina di errore
+                    $vCatalogo -> showErrorPage($user, "Il Gioco che stai cercando non esiste");
+
+            }
+            else // se l'utente non è un admin
+                $vCatalogo -> showErrorPage($user, 'Non hai i poteri per accedere a questa sezione');
+        }
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST')
+            CGiocoInfo::eseguimodifica($IdGioco);
+        else
+            header('Location: HTTP/1.1 Invalid HTTP method detected');
+    }
+
+    static function eseguimodifica()
+    {
+        $vCatalogo=new VCatalogo();
+        $gioco=$vCatalogo->createGioco();
+        $giocodb= FPersistantManager::getInstance()->search("gioco", "Id" ,$gioco->getId())[0];
+        $gioco->setVotoMedio($giocodb->getVotoMedio());
+        FPersistantManager::getInstance()->update($gioco);
+        FPersistantManager::getInstance()->update($gioco->getInfo());
+        $IdGioco=$gioco->getId();
+        header("Location: /playadice/giocoinfo/showgiocoinfo?$IdGioco");
+
+    }
+
+    /**
+     * Un utente puo' ricercare avatar in base al nome o all'username del proprietario.
+     * Questa ricerca e' possibile
+     * solo per gli utenti che sono registrati.
+     */
+    static function Search()
+    {
+        $vCatalogo = new VCatalogo();
+        $user = CSession::getUserFromSession();
+
+            list($string,$key)=$vCatalogo->getStringAndKey();
+            if(strlen($string)==0)
+            {
+                $objects = FPersistantManager::getInstance()->search("gioco", "BestRate" ,"");
+            }
+            else
+                $objects = FPersistantManager::getInstance()->search("gioco", $key , $string);
+            $vCatalogo->showCatalogo($user,$objects);
+
+
+    }
+
 }

@@ -105,6 +105,8 @@ class FGioco
             $gioco->setVotoMedio($row['VotoMedio']);
         else
             $gioco->setVotoMedio(0);
+        //if(FPersistantManager::getInstance()->exists("giocoinfo", "IdGioco",$gioco->getId()))
+            //$gioco->setInfo(FPersistantManager::getInstance()->search("giocoinfo", "IdGioco",$gioco->getId())[0]);
 
         return $gioco;
     }

@@ -35,7 +35,7 @@
 
                         <h5 class="card-title"><b>{$gioco->getNome()}</b></h5>
                         {if $UtenteType == "admin"}
-                        <a class="btn btn-primary" href="">Modifica</a>
+                        <a class="btn btn-primary" href="/playadice/catalogo/modificagioco?{$gioco->getId()}">Modifica</a>
                         {/if}
                         <h6 class="card-subtitle my-2 text-muted">Della: {$gioco->getInfo()->getCasaEditrice()}</h6>
                         <h6 class="card-subtitle my-2 text-muted">{$gioco->getCategoria()}</h6>
