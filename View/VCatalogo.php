@@ -17,19 +17,46 @@ class VCatalogo extends VObject
     }
 
     /**
+     * Ritorna la coppia valore-chiave scelta dall'utente nella ricerca
+     * Tale coppia e' contenuta nell'array globale $_POST
+     * @return array avente come valori il Valore e la Chiave di ricerca
+     */
+    function getStringAndKey(): array
+    {
+        $string =($_POST['Parametro']);
+        $key =($_POST['TipoRicerca']);
+
+        if ($key=="Categoria")
+            $key="Categoria";
+        if ($key=="Nome")
+            $key="Nome";
+
+        if (($_POST['Parametro'])=="")
+            $string="";
+
+        return array($string,$key);
+    }
+
+    /**
      * Funzione che permette la creazione di un gioco con i valori prelevati da una form
      * @return EGioco l'utente ottenuto dai campi della form
      */
     function createGioco() : EGioco
     {
         $gioco = new EGioco();
+        $giocoinfo=new EGiocoInfo();
 
+        if(isset($_POST['IdGioco']))
+        {
+            $gioco->setId((int)$_POST['IdGioco']);
+            $giocoinfo->setId((int)$_POST['IdGioco']);
+        }
         if(isset($_POST['Nome']))
             $gioco->setNome($_POST['Nome']);
         if(isset($_POST['Categoria']))
             $gioco->setCategoria($_POST['Categoria']);
 
-        $giocoinfo=new EGiocoInfo();
+
 
 
         if(isset($_POST['Descrizione']))
@@ -90,13 +117,38 @@ class VCatalogo extends VObject
         if(!$gioco) {
             $gioco = new EGioco();
         }
+
+
+
+
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
-        //$gioco->setNome("aaggagaga");
         $this->smarty->assign('prec', $_POST);
         $this->smarty->assign('gioco', $gioco);
         $this->smarty->assign('check', $this->check);
         $this->smarty->registerObject('user', $user);
         $this->smarty->display('NuovoGioco.tpl');
+    }
+    function showFormModificaGioco(EUtente $user, EGioco $gioco)
+    {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
+        $this->smarty->assign('gioco', $gioco);
+        $this->smarty->registerObject('user', $user);
+        $this->smarty->display('ModificaGioco.tpl');
+    }
+    /**
+     * Funzione che mostra il template con i risultati della ricerca effettuata
+     */
+    function showSearchResult(EUtente &$user, $array)
+    {
+
+
+        $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
+
+        $this->smarty->assign('results', $array);
+
+        //mostro il contenuto della pagine
+        $this->smarty->display('GiochiMainPage.tpl');
     }
 
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-11 15:02:32
+/* Smarty version 3.1.34-dev-7, created on 2020-07-11 18:15:47
   from 'C:\xampp\htdocs\playadice\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f09b868342750_07643697',
+  'unifunc' => 'content_5f09e5b3279682_49611928',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49f384d45902eb0502ef61f28b6545da703a020a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\index.tpl',
-      1 => 1594472061,
+      1 => 1594482441,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f09b868342750_07643697 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f09e5b3279682_49611928 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -56,13 +56,13 @@ function content_5f09b868342750_07643697 (Smarty_Internal_Template $_smarty_tpl)
         <div class="container py-5">
                 <div class="container py-5">
                         <div class="row">
-                                <img class="img-fluid d-block pi-draggable" src="https://static.pingendo.com/img-placeholder-1.svg">
+                                <img class="img-fluid d-block pi-draggable" src="templates/assets/Giocodatavolo.jpg">
                                 <div class="card pi-draggable">
                                         <div class="card-body">
-                                                <h5 class="card-title"><b>Titolo Sezione</b></h5>
-                                                <h6 class="card-subtitle my-2 text-muted">Sottotitolo</h6>
-                                                <p class="card-text">Messagino</p>
-                                                <a href="#" class="card-link">Link alla sezione</a>
+                                                <h5 class="card-title"><b>Top 5 Games</b></h5>
+                                                <h6 class="card-subtitle my-2 text-muted"></h6>
+
+                                                <a href="" class="btn btn-primary">Link alla sezione</a>
                                         </div>
                                 </div>
                         </div>

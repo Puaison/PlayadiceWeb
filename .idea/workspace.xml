@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates_c/53e6242679f2313534e8da540a7dbda84d483151_0.file.NuovoGioco.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/784813a21e61c528a45fa7b4589e75242e0c0b6a_0.file.NuovaRecensione.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/cd8d22795db6450e0f289afbd273285f33572649_0.file.GiocoInfo.tpl.php" afterDir="false" />
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="Risolto bug che non faceva recensire">
+      <change afterPath="$PROJECT_DIR$/templates/ModificaGioco.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/assets/GiochiDaTavolo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/assets/Giocodatavolo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/03e97eb2d74e07aa366120c6c193bba6cdfa7e29_0.file.TVGAvatarApprovazione.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/b6b73bc8c593222583b48bc4c7a0229ed74d0349_0.file.TVGAvatarCreate.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/db5a3811503e47a26d394ffd07373547c804ad4e_0.file.ModificaGioco.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CCatalogo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CCatalogo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/CGiocoInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CGiocoInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EGioco.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EGioco.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FGioco.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FGioco.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VCatalogo.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VCatalogo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VGiocoInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VGiocoInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/GiochiMainPage.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/GiochiMainPage.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/GiocoInfo.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/GiocoInfo.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/TVGAvatarModify.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/TVGAvatarModify.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/53e6242679f2313534e8da540a7dbda84d483151_0.file.NuovoGioco.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/53e6242679f2313534e8da540a7dbda84d483151_0.file.NuovoGioco.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/96371ae495c63e61052ec983501c12d942d4f166_0.file.GiochiMainPage.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/96371ae495c63e61052ec983501c12d942d4f166_0.file.GiochiMainPage.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/cd8d22795db6450e0f289afbd273285f33572649_0.file.GiocoInfo.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/cd8d22795db6450e0f289afbd273285f33572649_0.file.GiocoInfo.tpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +110,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\playadice\templates\assets" />
       <recent name="D:\XAMPP2\htdocs\playadice" />
       <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
       <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Foundation" />
@@ -219,13 +236,6 @@
       <workItem from="1594129369226" duration="3119000" />
       <workItem from="1594205002900" duration="6199000" />
       <workItem from="1594295443026" duration="3820000" />
-    </task>
-    <task id="LOCAL-00036" summary="EPrenotazione.php 1.0 con php docs">
-      <created>1589466416987</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1589466416988</updated>
     </task>
     <task id="LOCAL-00037" summary="Alter Create tables">
       <created>1590078526964</created>
@@ -563,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594472043955</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Risolto bug che non faceva recensire">
+      <created>1594472650196</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1594472650196</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +626,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Primo template funzionante per il progetto wooooo" />
     <MESSAGE value="Spostamento Cartelle" />
     <MESSAGE value="Cambi ai riferimenti" />
     <MESSAGE value="Login.tpl" />
@@ -634,7 +650,8 @@
     <MESSAGE value="Implementati controlli form Creazione Nuovo Evento" />
     <MESSAGE value="Implementati controlli form Modifica ma non funzionanti" />
     <MESSAGE value="Implementato l'installer. Cancellare il vecchio config.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementato l'installer. Cancellare il vecchio config.php" />
+    <MESSAGE value="Risolto bug che non faceva recensire" />
+    <option name="LAST_COMMIT_MESSAGE" value="Risolto bug che non faceva recensire" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -701,10 +718,10 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594472042175">
+    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594475344179">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594472042175" />
+    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594475344179" />
     <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594295355707" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878565443" />
     <state x="92" y="92" width="1736" height="896" key="DiffContextDialog" timestamp="1594285101703">
@@ -798,10 +815,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1594472045780">
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1594472651992">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594472045780" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594472651992" />
     <state x="214" y="303" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594295358937" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878610274" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">

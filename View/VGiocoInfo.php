@@ -9,7 +9,8 @@ class VGiocoInfo extends VObject
         $this->check = array(
             'Esistente' => false,
             'Voto' => true,
-            'Commento' => true
+            'Commento' => true,
+            'Categoria'=>true
         );
     }
 

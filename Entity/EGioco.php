@@ -213,6 +213,20 @@ class EGioco extends EObject
 
     }
 
+    //Vedere se tenere(perchè carico tutto nel FGioco
+    static function  getGiocoCompleto(int $IdGioco):bool
+    {
+        $gioco=new EGioco();
+        if(FPersistantManager::getInstance()->exists("gioco", "Id" ,$IdGioco))
+            $gioco = FPersistantManager::getInstance()->search("gioco", "Id" ,$IdGioco)[0];
+        else
+            return false;
+        if(FPersistantManager::getInstance()->exists("giocoinfo", "IdGioco" ,$IdGioco))
+            $gioco->setInfo(FPersistantManager::getInstance()->search("giocoinfo", "IdGioco" ,$gioco->getId())[0]);
+        else
+            return false;
+    }
+
 
 
 }
