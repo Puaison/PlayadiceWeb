@@ -69,16 +69,17 @@ class CGiocoInfo
                     //$vCatalogo->showErrorPage($user, 'Non hai i permessi per accedere a questa sezione!');
             }
             else if ($_SERVER['REQUEST_METHOD'] == 'POST')
-                CGiocoInfo::insertnewrecensione();
+                CGiocoInfo::insertnewrecensione($IdGioco);
             else
                 header('Location: HTTP/1.1 Invalid HTTP method detected');
     }
 
-    private function insertnewrecensione()
+    private function insertnewrecensione(int $IdGioco)
     {
         $user=CSession::getUserFromSession();
         $vGiocoInfo = new VGiocoInfo();
         $newrecensione = $vGiocoInfo->createRecensione();
+        $newrecensione->getEGioco()->setId($IdGioco);
         $gioco=FPersistantManager::getInstance()->search("gioco","Id",$newrecensione->getEGioco()->getId())[0];
         // TODO  SERVE CONTROLLARE queSTO? if($user->getModeratore())
         if($vGiocoInfo->validateRecensione($newrecensione))
