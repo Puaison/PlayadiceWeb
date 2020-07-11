@@ -16,6 +16,18 @@ class CSession
     static function startSession(EUtente &$user)
     {
         session_start();
+
+        $inactive = 3600; // inactive in seconds
+        if( !isset($_SESSION['timeout']) )
+            $_SESSION['timeout'] = time() + $inactive;
+
+        $session_life = time() - $_SESSION['timeout'];
+
+        if($session_life > $inactive)
+        {  session_destroy(); header("Location:index.php");     }
+
+        $_SESSION['timeout']=time();
+
         // i suoi dati sono memorizzati all'interno della sessione
         $_SESSION['Name'] =  $user->getNome();
         $_SESSION['Username'] = $user->getUsername();
@@ -31,14 +43,24 @@ class CSession
     static function getUserFromSession() : EUtente
     {
         if (session_status() == PHP_SESSION_NONE) {//controlla se non è già stata recuperata una sessione nella stessa chiamata
+
             session_start();
+
+            $inactive = 3600; // inactive in seconds
+            if( !isset($_SESSION['timeout']) )
+                $_SESSION['timeout'] = time() + $inactive;
+
+            $session_life = time() - $_SESSION['timeout'];
+
+            if($session_life > $inactive)
+            {  session_destroy(); header("Location:index.php");     }
+
+            $_SESSION['timeout']=time();
         }
         
         if(isset($_SESSION['Username']))
         {
             $uType= 'E'.ucfirst($_SESSION['type']); // determina la entity della tipologia di utente
-
-
 
             $user = new $uType();
 
