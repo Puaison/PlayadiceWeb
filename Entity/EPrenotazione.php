@@ -53,6 +53,7 @@ class EPrenotazione extends EObject
      * @return DateTime
      */
     function getData(): DateTime {return $this->giornoPrenotazione;}
+    function getDataStr(): string {return date_format($this->giornoPrenotazione,"d/m/Y H:i:s");}
 
     /**
      * Metodo che restituisce le informazioni della prenotazione in forma di stringa

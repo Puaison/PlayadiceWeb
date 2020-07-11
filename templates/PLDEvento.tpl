@@ -55,6 +55,14 @@
                         <h5 class="card-title"><b>{$results[0]->getNome()}</b></h5>
                         <h6 class="card-subtitle my-2 text-muted">{$results[0]->getCategoria()}</h6>
                         <h6 class="card-subtitle my-2 text-">{$results[0]->getLuogo()}</h6>
+                        {if boolval($results[0]->getFlag()) && $UtenteType == "admin"}
+                        <form action="/playadice/evento/prenotazioni?{$results[0]->getId()}" method="post">
+                            <button type="submit"  class="btn btn-primary">Prenotazioni
+                            </button>
+                        </form>
+
+                        {/if}
+
                         <div class="row justify-content-center">
                         <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q={$results[0]->getLuogo()->getVia()}%20{$results[0]->getLuogo()->getCitta()}+({$results[0]->getLuogo()->getNome()})&amp;;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="520" height="400" frameborder="0"></iframe>
                         <a href='http://maps-generator.com/it'>Maps-Generator</a>
@@ -83,87 +91,7 @@
                             {/if}
                         </div>
                         <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
-                        <div class='row '>
-                            {if $UtenteType == "admin"}
-                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete?{$results[0]->getId()}">Annulla</a></div>
-                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify?{$results[0]->getId()}">Modifica</a></div>
-                            {/if}
-                            {if boolval($results[0]->getFlag())}
-                                    {if !$check}
-                                        <div class="col">
-                                            <!-- Button trigger modal -->
-                                            <div class="text-right">
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" href="#prenotati">
-                                                Prenotati
-                                            </button>
-                                            </div>
-                                            <!-- Modal -->
-                                            <div class="text-center">
 
-                                                <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="prenotati">Ciao {user->getUsername}</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                Vuoi prenotarti a questo evento?
-                                                            </div>
-                                                            {if $UtenteType == "ospite"}
-                                                            <div class="modal-body">
-                                                                Devi aver effettuato il Login per farlo!
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                <a type="submit" href="../utente/login" class="btn btn-primary">Login</a>
-                                                            </div>
-                                                                {else}
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                <form action="../evento/booking?{$results[0]->getId()}" method="post">
-                                                                <button type="submit"  class="btn btn-primary">Si
-                                                                </button>
-                                                            </form>
-                                                            </div>
-                                                            {/if}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {else}
-                                        <div class="col text-right">
-                                            <button type="button" class="btn btn-primary " data-toggle="modal" href="#sprenotati" >Già Prenotato</button>
-                                        </div>
-                                            <!-- Modal -->
-                                            <div class="text-center">
-
-                                                <div class="modal fade" id="sprenotati" tabindex="-1" role="dialog" aria-labelledby="sprenotati" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="sprenotati">Ciao {user->getUsername}</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                Vuoi disdire la tua prenotazione?
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                <form action="../evento/delBooking?{$id}" method="post">
-                                                                    <button type="submit"  class="btn btn-primary">Si
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                        </div>
-                                    {/if}
-                            {/if}
-
-                        </div>
 
 
                     </div>

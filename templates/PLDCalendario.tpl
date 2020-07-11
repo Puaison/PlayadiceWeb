@@ -29,23 +29,56 @@
     <div class="container">
         <div class="row ">
             <div class="col pb-3" > Ultimi Eventi</div>
+            <form method="POST"  action="../evento/order">
+                <select name="option" required>
+                    <option value="Data">Data</option>
+                    <option value="Luogo">Luogo</option>
+                </select>
+                <input type="submit" class="btn btn-primary " value="Submit">
+            </form>
             {if $Tipo}
             <a class="col pb-3" href="../evento/create"> Crea un Evento</a>{/if}
 
             {section name=k loop=$results}
+                {if !empty($results[k]->getStartDate())}
+                {$data=$results[k]->getStartDate()}{/if}
+                {if $data> date_create()}
             <div class="col-md-12">
-                <div class="row">
-                    <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
+                <div class="row border">
+                    <span class="col- border"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></span>
 
-                    <div class="my-auto text-center">
+                    <span class="col text-center border ">
                             <a class="px-5" href="../evento/show?{$results[k]->getId()}">
-                            {$results[k]->getNome()}</a>
+                                {$results[k]->getNome()}</a></span>
                             {$fascia=$results[k]->getFasce()}
                         {if $fascia}
-                        <span>{$fascia[0]->getDataStr()}</span>{/if}
-                    </div>
+                        <span class="col text-center border">{$fascia[0]->getDataStr()}</span>{/if}
+                        <span class="col text-center border">{$results[k]->getLuogo()->getNome()}</span>
+
                 </div>
             </div>
+                {/if}
+            {/section}
+            <div class="col pb-3" > Eventi Passati</div>
+            {section name=k loop=$results}
+                {if !empty($results[k]->getStartDate())}
+                    {$data=$results[k]->getStartDate()}{/if}
+                {if $data< date_create()}
+                    <div class="col-md-12">
+                        <div class="row border">
+                            <span class="col- border"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></span>
+
+                            <span class="col text-center border ">
+                            <a class="px-5" href="../evento/show?{$results[k]->getId()}">
+                                {$results[k]->getNome()}</a></span>
+                            {$fascia=$results[k]->getFasce()}
+                            {if $fascia}
+                                <span class="col text-center border">{$fascia[0]->getDataStr()}</span>{/if}
+                            <span class="col text-center border">{$results[k]->getLuogo()->getNome()}</span>
+
+                        </div>
+                    </div>
+                {/if}
             {/section}
         </div>
     </div>
