@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-11 18:15:47
+/* Smarty version 3.1.34-dev-7, created on 2020-07-11 22:35:33
   from 'C:\xampp\htdocs\playadice\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f09e5b3279682_49611928',
+  'unifunc' => 'content_5f0a2295230895_61123601',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49f384d45902eb0502ef61f28b6545da703a020a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\index.tpl',
-      1 => 1594482441,
+      1 => 1594499730,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f09e5b3279682_49611928 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0a2295230895_61123601 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -57,12 +57,32 @@ function content_5f09e5b3279682_49611928 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="container py-5">
                         <div class="row">
                                 <img class="img-fluid d-block pi-draggable" src="templates/assets/Giocodatavolo.jpg">
-                                <div class="card pi-draggable">
-                                        <div class="card-body">
-                                                <h5 class="card-title"><b>Top 5 Games</b></h5>
-                                                <h6 class="card-subtitle my-2 text-muted"></h6>
+                                <div class="card pi-draggable text-center">
+                                        <div class="card-body "><?php if (!empty($_smarty_tpl->tpl_vars['giochi']->value)) {?>
 
-                                                <a href="" class="btn btn-primary">Link alla sezione</a>
+                                                <h5 class="card-title"><b>Top 5 Games</b></h5>
+
+                                                        <ol class=""><h6>
+                                                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['giochi']->value, 'gioco');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['gioco']->value) {
+?>
+                                                        <li><?php echo $_smarty_tpl->tpl_vars['gioco']->value->getNome();?>
+</li>
+                                                        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></h6>
+                                                        </ol>
+                                                        <?php } else { ?>
+                                                        Nessun gioco da mostrare
+                                                        <?php }?>
+
+
+                                                <h6 class="card-subtitle my-2 text-muted">prova</h6>
+
+                                                <a href="/playadice/catalogo/catalogocompleto" class="btn btn-primary justify-content-center">Vai al catalogo</a>
                                         </div>
                                 </div>
                         </div>
@@ -112,13 +132,13 @@ function content_5f09e5b3279682_49611928 (Smarty_Internal_Template $_smarty_tpl)
                                         <h4> <b>Antonio M. Marottoli</b> </h4>
                                         <p class="mb-0">CEO e fondatore</p>
                                 </div>
-                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-2.svg" alt="Card image cap" width="200">
+                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="templates/assets/LucaDelSignore.jpg" alt="Card image cap" width="200">
                                         <h4> <b>Luca Del Signore</b> </h4>
                                         <p class="mb-0">Il Presidentissimo</p>
                                 </div>
                                 <div class="col-lg-4 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-3.svg" width="200">
-                                        <h4> <b>Antonio Corsi alias Barba</b> </h4>
-                                        <p class="mb-0">Una persona a caso</p>
+                                        <h4> <b>Alessio Perozzi</b> </h4>
+                                        <p class="mb-0">Detto "Esperozzi"</p>
                                 </div>
                         </div>
                 </div>

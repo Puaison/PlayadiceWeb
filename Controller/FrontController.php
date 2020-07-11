@@ -44,20 +44,26 @@ class FrontController
             }
             else // se il metodo non esiste, si viene reindirizzati alla pagina principale
             {
+                $vObject=new VObject();
                 $user = CSession::getUserFromSession();
-                $smarty = SmartyConfig::configure();
-                $smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
-                $smarty->registerObject('user', $user);
-                $smarty->display('index.tpl');
+                $giochi=FPersistantManager::getInstance()->search('gioco','BestFive','');
+                $vObject->showIndex($user,$giochi);
+
             }
         }
         else // se la classe non esiste, si viene reindirizzati alla pagina principale
         {
+            $vObject=new VObject();
+            $user = CSession::getUserFromSession();
+            $giochi=FPersistantManager::getInstance()->search('gioco','BestFive','');
+            $vObject->showIndex($user,$giochi);
+            /*Vecchia implementazione
             $user = CSession::getUserFromSession();
             $smarty = SmartyConfig::configure();
             $smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
             $smarty->registerObject('user', $user);
             $smarty->display('index.tpl');
+            */
         }
         exit;
     }

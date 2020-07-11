@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="" />
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="piccole modifiche">
+      <change afterPath="$PROJECT_DIR$/templates/assets/LucaDelSignore.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/FrontController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Foundation/FGioco.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FGioco.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VObject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,13 +223,6 @@
       <workItem from="1594129369226" duration="3119000" />
       <workItem from="1594205002900" duration="6199000" />
       <workItem from="1594295443026" duration="3820000" />
-    </task>
-    <task id="LOCAL-00039" summary="La funzione Exists adesso restituisce un intero con il numero di ricorrenze">
-      <created>1590335291792</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1590335291792</updated>
     </task>
     <task id="LOCAL-00040" summary="Aggiunta di FAvatar.php e modifiche su EAvatar.php">
       <created>1590683179597</created>
@@ -558,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594496345382</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="piccole modifiche">
+      <created>1594496665253</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1594496665253</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -697,10 +706,10 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594484431911">
+    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594496702735">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594484431911" />
+    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594496702735" />
     <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594295355707" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878565443" />
     <state x="92" y="92" width="1736" height="896" key="DiffContextDialog" timestamp="1594285101703">
@@ -794,10 +803,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1594484435471">
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1594496675899">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594484435471" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594496675899" />
     <state x="214" y="303" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594295358937" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878610274" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">

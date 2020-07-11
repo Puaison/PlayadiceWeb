@@ -73,7 +73,7 @@ class CUtente
     static function logout()
     {
         CSession::destroySession();
-        header('Location: /playadice/home');
+        header('Location: /playadice/index');
     }
 
     /**
