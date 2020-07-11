@@ -2,7 +2,7 @@
         <div class="container">
                 <ul class="navbar-nav">
                         <ul class="navbar-nav">
-                                <a class="nav-link" href=""> &nbsp;Benvenuto {$Username} </a>
+                                <span class="nav-link" href=""> &nbsp;Benvenuto {$Username} </span>
                                 <a class="nav-link space" href=""> &nbsp;Spazio43</a>
                                 <a class="nav-link" href="/playadice"> &nbsp;Home</a>
                                 <a class="nav-link" href="/playadice/evento/showAll"> &nbsp;Eventi</a>
@@ -11,7 +11,6 @@
                                 {if $UtenteType == "admin"}
                                         <a class="nav-link" href="">&nbsp;Pannello admin</a>
                                 {/if}
-
                         </ul>
                 </ul>
         </div>

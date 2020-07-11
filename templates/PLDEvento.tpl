@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
-
-
     <title>{$results[0]->getNome()}</title>
 </head>
 <body>
@@ -91,7 +89,88 @@
                             {/if}
                         </div>
                         <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
+                        {$data=$results[0]->getStartDate()}
+                        {if $data>date_create()}
+                        <div class='row '>
+                            {if $UtenteType == "admin"}
+                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete?{$results[0]->getId()}">Annulla</a></div>
+                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify?{$results[0]->getId()}">Modifica</a></div>
+                            {/if}
+                            {if boolval($results[0]->getFlag())}
+                                    {if !$check}
+                                        <div class="col">
+                                            <!-- Button trigger modal -->
+                                            <div class="text-right">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" href="#prenotati">
+                                                Prenotati
+                                            </button>
+                                            </div>
+                                            <!-- Modal -->
+                                            <div class="text-center">
+                                                <div class="modal fade" id="prenotati" tabindex="-1" role="dialog" aria-labelledby="prenotati" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="prenotati">Ciao {user->getUsername}</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Vuoi prenotarti a questo evento?
+                                                            </div>
+                                                            {if $UtenteType == "ospite"}
+                                                            <div class="modal-body">
+                                                                Devi aver effettuato il Login per farlo!
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <a type="submit" href="../utente/login" class="btn btn-primary">Login</a>
+                                                            </div>
+                                                                {else}
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <form action="../evento/booking?{$results[0]->getId()}" method="post">
+                                                                <button type="submit"  class="btn btn-primary">Si
+                                                                </button>
+                                                            </form>
+                                                            </div>
+                                                            {/if}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {else}
+                                        <div class="col text-right">
+                                            <button type="button" class="btn btn-primary " data-toggle="modal" href="#sprenotati" >Già Prenotato</button>
+                                        </div>
+                                            <!-- Modal -->
+                                            <div class="text-center">
 
+                                                <div class="modal fade" id="sprenotati" tabindex="-1" role="dialog" aria-labelledby="sprenotati" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="sprenotati">Ciao {user->getUsername}</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Vuoi disdire la tua prenotazione?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <form action="../evento/delBooking?{$id}" method="post">
+                                                                    <button type="submit"  class="btn btn-primary">Si
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                        </div>
+                                    {/if}
+                            {/if}
+
+                        </div>
 
 
                     </div>
@@ -101,6 +180,7 @@
             </div>
 
         </div>
+                        {/if}
     </div>
 </div>
 

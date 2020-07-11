@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-09 12:42:57
+/* Smarty version 3.1.34-dev-7, created on 2020-07-11 22:35:26
   from 'C:\xampp\htdocs\playadice\templates\PLDNewEvento.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f06f4b1190e77_81768978',
+  'unifunc' => 'content_5f0a228e573961_66980469',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4ec4e6d97ce13de9465c62027cc1b678ec160042' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDNewEvento.tpl',
-      1 => 1594290464,
+      1 => 1594499717,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f06f4b1190e77_81768978 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0a228e573961_66980469 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,8 +76,11 @@ function content_5f06f4b1190e77_81768978 (Smarty_Internal_Template $_smarty_tpl)
                             <select class="form-control " name="categoria" id="inlineFormCustomSelect">
                                 <option selected="" value="Choose...">Choose...</option>
                                 <option value="Torneo">Torneo</option>
-                                <option value="Free Play">Free Play</option>
-
+                                <option value="Gioco Libero">Gioco Libero</option>
+                                <option value="Giochi Di Ruolo">Giochi Di Ruolo</option>
+                                <option value="Dimostrazione">Dimostrazione</option>
+                                <option value="Altro">Fiera</option>
+                                <option value="Altro">Altro</option>
                             </select>
                         </div>
                     </div>
