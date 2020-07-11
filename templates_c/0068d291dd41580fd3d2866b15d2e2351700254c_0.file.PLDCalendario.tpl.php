@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-11 12:59:57
+/* Smarty version 3.1.34-dev-7, created on 2020-07-11 19:06:08
   from 'C:\xampp\htdocs\playadice\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f099bada4b6a5_18003559',
+  'unifunc' => 'content_5f09f180f3e297_90089982',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0068d291dd41580fd3d2866b15d2e2351700254c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDCalendario.tpl',
-      1 => 1594142425,
+      1 => 1594487168,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f099bada4b6a5_18003559 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f09f180f3e297_90089982 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -56,6 +56,13 @@ function content_5f099bada4b6a5_18003559 (Smarty_Internal_Template $_smarty_tpl)
     <div class="container">
         <div class="row ">
             <div class="col pb-3" > Ultimi Eventi</div>
+            <form method="POST"  action="../evento/order">
+                <select name="option" required>
+                    <option value="Data">Data</option>
+                    <option value="Luogo">Luogo</option>
+                </select>
+                <input type="submit" class="btn btn-primary " value="Submit">
+            </form>
             <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
             <a class="col pb-3" href="../evento/create"> Crea un Evento</a><?php }?>
 
@@ -66,22 +73,64 @@ $_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
 if ($__section_k_0_total !== 0) {
 for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_0_iteration <= $__section_k_0_total; $__section_k_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
 ?>
+                <?php if (!empty($_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getStartDate())) {?>
+                <?php $_smarty_tpl->_assignInScope('data', $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getStartDate());
+}?>
+                <?php if ($_smarty_tpl->tpl_vars['data']->value > date_create()) {?>
             <div class="col-md-12">
-                <div class="row">
-                    <div class="col-"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></div>
+                <div class="row border">
+                    <span class="col- border"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></span>
 
-                    <div class="my-auto text-center">
+                    <span class="col text-center border ">
                             <a class="px-5" href="../evento/show?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
 ">
-                            <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
-</a>
+                                <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
+</a></span>
                             <?php $_smarty_tpl->_assignInScope('fascia', $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getFasce());?>
                         <?php if ($_smarty_tpl->tpl_vars['fascia']->value) {?>
-                        <span><?php echo $_smarty_tpl->tpl_vars['fascia']->value[0]->getDataStr();?>
+                        <span class="col text-center border"><?php echo $_smarty_tpl->tpl_vars['fascia']->value[0]->getDataStr();?>
 </span><?php }?>
-                    </div>
+                        <span class="col text-center border"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getLuogo()->getNome();?>
+</span>
+
                 </div>
             </div>
+                <?php }?>
+            <?php
+}
+}
+?>
+            <div class="col pb-3" > Eventi Passati</div>
+            <?php
+$__section_k_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['results']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_k_1_total = $__section_k_1_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
+if ($__section_k_1_total !== 0) {
+for ($__section_k_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_1_iteration <= $__section_k_1_total; $__section_k_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
+?>
+                <?php if (!empty($_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getStartDate())) {?>
+                    <?php $_smarty_tpl->_assignInScope('data', $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getStartDate());
+}?>
+                <?php if ($_smarty_tpl->tpl_vars['data']->value < date_create()) {?>
+                    <div class="col-md-12">
+                        <div class="row border">
+                            <span class="col- border"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></span>
+
+                            <span class="col text-center border ">
+                            <a class="px-5" href="../evento/show?<?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getId();?>
+">
+                                <?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
+</a></span>
+                            <?php $_smarty_tpl->_assignInScope('fascia', $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getFasce());?>
+                            <?php if ($_smarty_tpl->tpl_vars['fascia']->value) {?>
+                                <span class="col text-center border"><?php echo $_smarty_tpl->tpl_vars['fascia']->value[0]->getDataStr();?>
+</span><?php }?>
+                            <span class="col text-center border"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getLuogo()->getNome();?>
+</span>
+
+                        </div>
+                    </div>
+                <?php }?>
             <?php
 }
 }

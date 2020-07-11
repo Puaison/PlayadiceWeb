@@ -2,12 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates_c/53e6242679f2313534e8da540a7dbda84d483151_0.file.NuovoGioco.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/784813a21e61c528a45fa7b4589e75242e0c0b6a_0.file.NuovaRecensione.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/cd8d22795db6450e0f289afbd273285f33572649_0.file.GiocoInfo.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/PLDPrenotazioni.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/1568a11b55b425dd88943620e3e3b40df8167879_0.file.PLDPrenotazioni.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/1ab602ff3ca0c9654a9cd0f4953adf4333fd6b85_0.file.TVGAvatarModify.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/36d426443e22d2dab169cbe997404618d186596a_0.file.TVGAvatarDetails.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/79d64fdf98811e552203bc6b99bf52046ec6e9df_0.file.errorPage.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/b6b73bc8c593222583b48bc4c7a0229ed74d0349_0.file.TVGAvatarCreate.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/CGiocoInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CGiocoInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CEvento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EEvento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EFascia.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EFascia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EPrenotazione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EPrenotazione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VEvento.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VEvento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PLDCalendario.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDCalendario.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/PLDEvento.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDEvento.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/0068d291dd41580fd3d2866b15d2e2351700254c_0.file.PLDCalendario.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/96371ae495c63e61052ec983501c12d942d4f166_0.file.GiochiMainPage.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/96371ae495c63e61052ec983501c12d942d4f166_0.file.GiochiMainPage.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/f78c02662978575bfd8ef5305af4599db402bcff_0.file.TVGMainpage.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/f78c02662978575bfd8ef5305af4599db402bcff_0.file.TVGMainpage.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/f7cde22e67172b46f639058d00963c373408923f_0.file.Login.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/f7cde22e67172b46f639058d00963c373408923f_0.file.Login.tpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +32,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/Smarty/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -219,6 +233,13 @@
       <workItem from="1594129369226" duration="3119000" />
       <workItem from="1594205002900" duration="6199000" />
       <workItem from="1594295443026" duration="3820000" />
+    </task>
+    <task id="LOCAL-00035" summary="Prove sulle recensioni e i giochi">
+      <created>1589303612765</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1589303612765</updated>
     </task>
     <task id="LOCAL-00036" summary="EPrenotazione.php 1.0 con php docs">
       <created>1589466416987</created>
@@ -556,14 +577,7 @@
       <option name="project" value="LOCAL" />
       <updated>1594295357099</updated>
     </task>
-    <task id="LOCAL-00084" summary="Implementato l'installer. Cancellare il vecchio config.php">
-      <created>1594472043953</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1594472043955</updated>
-    </task>
-    <option name="localTasksCounter" value="85" />
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,9 +598,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -606,9 +618,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Poche cose" />
     <MESSAGE value="Primo template funzionante per il progetto wooooo" />
     <MESSAGE value="Spostamento Cartelle" />
     <MESSAGE value="Cambi ai riferimenti" />
@@ -633,8 +647,7 @@
     <MESSAGE value="codice commentate" />
     <MESSAGE value="Implementati controlli form Creazione Nuovo Evento" />
     <MESSAGE value="Implementati controlli form Modifica ma non funzionanti" />
-    <MESSAGE value="Implementato l'installer. Cancellare il vecchio config.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementato l'installer. Cancellare il vecchio config.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementati controlli form Modifica ma non funzionanti" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -677,10 +690,6 @@
     </state>
     <state x="508" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593543338786" />
     <state x="677" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593530807341" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594466147290">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594466147290" />
     <state x="761" y="416" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1" timestamp="1589100413640">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -701,10 +710,10 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594472042175">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594295355707">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594472042175" />
+    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594146825839" />
     <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594295355707" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878565443" />
     <state x="92" y="92" width="1736" height="896" key="DiffContextDialog" timestamp="1594285101703">
@@ -769,10 +778,10 @@
     </state>
     <state x="746" y="322" key="MultipleFileMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593600958769" />
     <state x="994" y="417" key="MultipleFileMergeDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593527328002" />
-    <state x="788" y="319" key="NewPhpClassDialog" timestamp="1594462277117">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="788" y="331" key="NewPhpClassDialog" timestamp="1593543323807">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="788" y="319" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594462277117" />
+    <state x="788" y="319" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589117821960" />
     <state x="788" y="331" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593543323807" />
     <state x="1050" y="429" key="NewPhpClassDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1590935158938" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1593525071337">
@@ -798,10 +807,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1594472045780">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="214" y="303" key="Vcs.Push.Dialog.v2" timestamp="1594295358937">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594472045780" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594146828806" />
     <state x="214" y="303" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594295358937" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878610274" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
@@ -818,11 +827,11 @@
     <state x="725" y="360" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592919545964" />
     <state x="725" y="374" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352751088" />
     <state x="966" y="484" key="com.intellij.ide.util.TipDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593522212063" />
-    <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594205011069">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594477454206">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594205011069" />
-    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594026038334" />
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594477454206" />
     <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593535942610" />
     <state x="3840" y="613" width="1936" height="1085" maximized="true" key="dock-window-1" timestamp="1590929747423">
       <screen x="3840" y="591" width="1920" height="1020" />
@@ -856,7 +865,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/View/VUtente.php</url>
-          <line>21</line>
+          <line>22</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

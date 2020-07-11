@@ -215,39 +215,102 @@ class CEvento
     {
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
-        if (get_class($user) == EAdmin::class) {
-            if (is_numeric($id)) {
-                $evento = FPersistantManager ::getInstance() -> search("Evento", "Id", $id);
-                if ($evento){
-                    $luogo = $evento[0] -> getLuogo();
-                    FPersistantManager ::getInstance() -> remove($evento[0]);
-                    FPersistantManager ::getInstance() -> remove($luogo);
-                    $fasce = $evento[0] -> getFasce();
-                    foreach ($fasce as $value) {
-                        FPersistantManager ::getInstance() -> remove($value);
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
+        } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-                    }
-                    if ($evento[0]->getFlag()){
-                        $prenotazioni =$evento[0]->getPrenotazioni();
-                        foreach ($prenotazioni as $value) {
+            if (get_class($user) == EAdmin::class) {
+                if (is_numeric($id)) {
+                    $evento = FPersistantManager ::getInstance() -> search("Evento", "Id", $id);
+                    if ($evento) {
+                        $luogo = $evento[0] -> getLuogo();
+                        FPersistantManager ::getInstance() -> remove($evento[0]);
+                        FPersistantManager ::getInstance() -> remove($luogo);
+                        $fasce = $evento[0] -> getFasce();
+                        foreach ($fasce as $value) {
                             FPersistantManager ::getInstance() -> remove($value);
+
                         }
+                        if ($evento[0] -> getFlag()) {
+                            $prenotazioni = $evento[0] -> getPrenotazioni();
+                            foreach ($prenotazioni as $value) {
+                                FPersistantManager ::getInstance() -> remove($value);
+                            }
 
-                    }
-                    header('Location: /playadice/evento/showAll');
+                        }
+                        header('Location: /playadice/evento/showAll');
 
-                }
-                else
+                    } else
+                        header('Location: /playadice/evento/showAll');
+
+                } else
                     header('Location: /playadice/evento/showAll');
 
             } else
-                header('Location: /playadice/evento/showAll');
+                $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
+        }
 
-        } else
+    }
+    static function order(){
+        $vEvento = new VEvento(); // crea la view
+        $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
+        $eventi = FPersistantManager ::getInstance() -> search("Evento", "All", ''); // carica tutti gli eventi
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
+        }
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if($_POST['option']=="Data"){
+            foreach ($eventi as $value){
+                if(empty($value->getFasce())){
+                    $array[]=$value;
+                    unset($eventi[array_search($value,$eventi)]);
+                }
+            }
+            usort($eventi, "EEvento::dateSorter");
+            if (!empty($array)){
+                foreach ($array as $value){
+                    array_push($eventi,$value);
+                }
+
+            }
+
+
+            $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
+        }
+        else if($_POST['option']=="Luogo"){
+            foreach ($eventi as $value){
+                if(empty($value->getLuogo())){
+                    $array2[]=$value;
+                    unset($eventi[array_search($value,$eventi)]);
+                }
+            }
+            usort($eventi, "EEvento::placeSorter");
+            if (!empty($array)){
+                foreach ($array as $value){
+                    array_push($eventi,$value);
+                }
+
+            }
+            $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
+
+        }
+    }
+}
+    static function prenotazioni($id){
+        $vEvento = new VEvento();
+        $user = CSession ::getUserFromSession();
+
+        if ($_SERVER['REQUEST_METHOD'] == 'GET')
+            $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $evento = FPersistantManager ::getInstance() -> search("Evento", "Id", $id);
+            $vEvento->prenotazioni($user,$evento[0]);
+
+        }
 
 
     }
+
 }
 
 

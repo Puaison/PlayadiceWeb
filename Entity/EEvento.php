@@ -133,9 +133,9 @@ class EEvento extends EObject
      * @return DateTime
      */
     function getStartDate():DateTime{
-        $fascia=$this->listaFasce;
-        $fascia=$fascia[0];
-        return $fascia->getData();
+        $fasci=$this->listaFasce;
+        $data=($fasci[0])->getData();
+        return $data;
     }
 
     /**
@@ -158,14 +158,6 @@ class EEvento extends EObject
      */
     function getPrenotazioni():array{return $this->listaPrenotazioni;}
 
-    /** Metodo che restituisce la posizione giornaliera dell'evento
-     * @return string
-     */
-    function getPosizione():string
-    {
-        $oggi = $this -> getStartDate();
-        return $oggi -> getPosizione();
-    }
 
     /**
      * Metodo utilizzato per il sorting degli eventi
@@ -173,9 +165,13 @@ class EEvento extends EObject
      * @param $b
      * @return int
      */
-    function eventSorter(EEvento $a, EEvento $b){
-        if ($a->getPosizione()==$b->getPosizione()) return 0;
-        return ($a->getPosizione()<$b->getCategory())?-1:1;
+    function dateSorter(EEvento $a, EEvento $b){
+        if ($a->getStartDate()==$b->getStartDate()) return 0;
+        return ($a->getStartDate()<$b->getStartDate())?-1:1;
+    }
+    function placeSorter(EEvento $a, EEvento $b){
+        if ($a->getLuogo()->getNome()==$b->getLuogo()->getNome()) return 0;
+        return ($a->getLuogo()->getNome()<$b->getLuogo()->getNome())?-1:1;
     }
     /**
      * Metodo che controlla se il nome dell'evento inserito è lungo meno di 45  caratteri e ha solo numeri, lettere e spazi

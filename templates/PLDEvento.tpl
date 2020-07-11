@@ -55,6 +55,14 @@
                         <h5 class="card-title"><b>{$results[0]->getNome()}</b></h5>
                         <h6 class="card-subtitle my-2 text-muted">{$results[0]->getCategoria()}</h6>
                         <h6 class="card-subtitle my-2 text-">{$results[0]->getLuogo()}</h6>
+                        {if boolval($results[0]->getFlag()) && $UtenteType == "admin"}
+                        <form action="/playadice/evento/prenotazioni?{$results[0]->getId()}" method="post">
+                            <button type="submit"  class="btn btn-primary">Prenotazioni
+                            </button>
+                        </form>
+
+                        {/if}
+
                         <div class="row justify-content-center">
                         <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q={$results[0]->getLuogo()->getVia()}%20{$results[0]->getLuogo()->getCitta()}+({$results[0]->getLuogo()->getNome()})&amp;;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="520" height="400" frameborder="0"></iframe>
                         <a href='http://maps-generator.com/it'>Maps-Generator</a>

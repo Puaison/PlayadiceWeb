@@ -75,4 +75,5 @@ class EFascia extends EObject
     public function __toString(){
         return $string="DATA DI INIZIO: ". date_format($this->inizio,"d/m/Y H:i:s")." | DURATA: ". $this->durata->format("%Y,%M,%d,%H,%i,%s");
         }
+
 }
