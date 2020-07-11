@@ -509,13 +509,13 @@ INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
 VALUES ('Darksidon',7,5,'Come arrivare 22/0 alla fine di una partita');
 -- ----------------------
 INSERT INTO `luogo`(`Id`, `Nome`, `Citta`, `Via`, `Cap`)
-VALUES ('1','Fumetteria Grande Inverno','L Aquila','Via del Beato Cesidio #35','67100');
+VALUES ('1','Fumetteria Grande Inverno','L Aquila','Via del Beato Cesidio, 35','67100');
 
 INSERT INTO `luogo`(`Id`, `Nome`, `Citta`, `Via`, `Cap`)
-VALUES ('2','Palazzo Dell Emiciclo','L Aquila','Via Michele Iacobucci #4,','67100');
+VALUES ('2','Palazzo Dell Emiciclo','L Aquila','Via Michele Iacobucci, 4,','67100');
 
 INSERT INTO `luogo`(`Id`, `Nome`, `Citta`, `Via`, `Cap`)
-VALUES ('3','Mura di Lucca','Lucca','Piazza S. Romano #1','55100');
+VALUES ('3','Mura di Lucca','Lucca','Piazza S. Romano, 1','55100');
 -- ----------------------
 INSERT INTO `evento`(`Id`, `Nome`, `Flag`, `IdLuogo`, `Categoria`, `Testo`)
 VALUES ('1','Serata Playadice','0','1','Gioco Libero','Venite a giocare con noi, vi seguiremo in una avventura tra i giochi più famosi della nostra associazione');
