@@ -23,8 +23,9 @@ class FPersistantManager
     {
         try {
             global $address, $admin, $pass, $database;
-            $this->db = new PDO ("mysql:host=$address;dbname=$database", $admin); //TODO  MODIFY
-            //$this->db = new PDO ("mysql:host=127.0.0.1;dbname=playadice", "root"); //TODO  MODIFY
+                //$this->db = new PDO ("mysql:host=$address;dbname=$database", $admin); //TODO  MODIFY SOSTITUIRE CON QUELLO SOTTO
+                $this->db = new PDO ("mysql:host=$address;dbname=$database", $admin, $pass);
+
 
         } catch (PDOException $e) {
             echo "Errore : " . $e->getMessage();

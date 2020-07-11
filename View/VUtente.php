@@ -54,9 +54,9 @@ class VUtente extends VObject
     function validateLogin(EUtente $user): bool
     {
         $this->check['Esistente']=$user->validateEsistenza();
-        $this->check['Username']=$user->validateUsername();
-        $this->check['Password']=$user->validatePassword();
-        if($this->check['Username'] && $this->check['Password'] && $this->check['Esistente'])
+        //$this->check['Username']=$user->validateUsername();
+        //$this->check['Password']=$user->validatePassword();
+        if($this->check['Esistente'])
         {
             return true;
         }
@@ -105,6 +105,7 @@ class VUtente extends VObject
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('error', $error);
+        $this->smarty->assign('check', $this->check);
 
         $this->smarty->display('Login.tpl');
     }
