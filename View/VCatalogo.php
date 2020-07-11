@@ -1,8 +1,14 @@
 <?php
 
 
+/**
+ * Class VCatalogo
+ */
 class VCatalogo extends VObject
 {
+    /**
+     * VCatalogo constructor.
+     */
     function __construct()
     {
         parent::__construct();
@@ -112,6 +118,11 @@ class VCatalogo extends VObject
         $this->smarty->display('GiochiMainPage.tpl');
     }
 
+    /**
+     * @param EUtente $user
+     * @param EGioco|null $gioco
+     * @throws SmartyException
+     */
     function showFormNewGioco(EUtente $user, EGioco $gioco=null)
     {
         if(!$gioco) {
@@ -128,6 +139,12 @@ class VCatalogo extends VObject
         $this->smarty->registerObject('user', $user);
         $this->smarty->display('NuovoGioco.tpl');
     }
+
+    /**
+     * @param EUtente $user
+     * @param EGioco $gioco
+     * @throws SmartyException
+     */
     function showFormModificaGioco(EUtente $user, EGioco $gioco)
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
