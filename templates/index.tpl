@@ -31,7 +31,7 @@
                 <div class="container py-5">
                         <div class="row">
                                 <img class="img-fluid d-block pi-draggable" src="templates/assets/Giocodatavolo.jpg">
-                                <div class="card pi-draggable text-center">
+                                <div class="card pi-draggable ">
                                         <div class="card-body ">{if   !empty($giochi) }
 
                                                 <h5 class="card-title"><b>Top 5 Games</b></h5>
@@ -44,9 +44,6 @@
                                                         {else}
                                                         Nessun gioco da mostrare
                                                         {/if}
-
-
-                                                <h6 class="card-subtitle my-2 text-muted">prova</h6>
 
                                                 <a href="/playadice/catalogo/catalogocompleto" class="btn btn-primary justify-content-center">Vai al catalogo</a>
                                         </div>

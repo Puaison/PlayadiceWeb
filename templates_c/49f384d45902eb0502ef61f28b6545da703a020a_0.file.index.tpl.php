@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-11 22:35:33
+/* Smarty version 3.1.34-dev-7, created on 2020-07-11 22:54:21
   from 'C:\xampp\htdocs\playadice\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0a2295230895_61123601',
+  'unifunc' => 'content_5f0a26fdbb01e1_40840277',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49f384d45902eb0502ef61f28b6545da703a020a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\index.tpl',
-      1 => 1594499730,
+      1 => 1594500860,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0a2295230895_61123601 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0a26fdbb01e1_40840277 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -57,7 +57,7 @@ function content_5f0a2295230895_61123601 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="container py-5">
                         <div class="row">
                                 <img class="img-fluid d-block pi-draggable" src="templates/assets/Giocodatavolo.jpg">
-                                <div class="card pi-draggable text-center">
+                                <div class="card pi-draggable ">
                                         <div class="card-body "><?php if (!empty($_smarty_tpl->tpl_vars['giochi']->value)) {?>
 
                                                 <h5 class="card-title"><b>Top 5 Games</b></h5>
@@ -78,9 +78,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></h6>
                                                         <?php } else { ?>
                                                         Nessun gioco da mostrare
                                                         <?php }?>
-
-
-                                                <h6 class="card-subtitle my-2 text-muted">prova</h6>
 
                                                 <a href="/playadice/catalogo/catalogocompleto" class="btn btn-primary justify-content-center">Vai al catalogo</a>
                                         </div>
