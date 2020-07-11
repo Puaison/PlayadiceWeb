@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `evento` (
   `Nome` varchar(45) NOT NULL,
   `Flag` tinyint(1) NOT NULL,
   `IdLuogo` int(5) UNSIGNED NOT NULL,
-  `Categoria` varchar(45) NOT NULL,
+  `Categoria` enum('Gioco Libero','Giochi Di Ruolo','Dimostrazione','Torneo','Fiera','Altro') NOT NULL,
   `Testo` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -351,11 +351,222 @@ ALTER TABLE `recensione`
 -- //////////////////////////////Inserimento Ennuple Standard////////////////////////////////////////
 -- --------------------------------------------------------
 
-INSERT INTO `utente` (`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`) VALUES
-('Esperozzi', 'Alessio', 'bbb', 'ccc', 'ddd', 0);
+INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
+VALUES ('Pantaleone','Alessio','Perozzi','playadice','Mrgeostellar@gmail.com',1);
 
-INSERT INTO `utente` (`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`) VALUES
-('Pantaleone', 'Alessandro', 'bbb', 'ccc', 'ddd', 0);
+INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
+VALUES ('Puaison','Luca','Del Signore','playadice','Luca.Delsignore@student.univaq.it',1);
+
+INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
+VALUES ('Badibba','Antonio','Marottoli','playadice','Antonio.Marottoli@student.univaq.it',1);
+-- --------------------------------------------------------------------------------------
+INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
+VALUES ('Esperozzi','Jace','Beleren','playadice','JaceBeleren@gmail.com',0);
+
+INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
+VALUES ('Miriairim','Miriana','Del Vecchio','playadice','Mirik98@gmail.com',0);
+
+INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
+VALUES ('Fusari','Alessio','Fusari','playadice','AlessioFusari71@gmail.com',0);
+
+INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
+VALUES ('Darksidon','Lorenzo','Del Re','playadice','DarkSidon@gmail.com',0);
+-- --------------------------------------------------------------------------------------
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Esperozzi','1','Stregone','8','Dragonide','Nihmradil');
+
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Esperozzi','2','Studioso','3','Elfo','Aerendir');
+
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Esperozzi','3','Meccanico','8','Androide','Abraxis-17');
+
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Miriairim','4','Barbaro','8','Tiefling','Vellista');
+
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Miriairim','5','Sicario','17','Ghouling','Myricae');
+
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Miriairim','6','Ladro','1','Umano','Fanny McMillan');
+
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Miriairim','7','Solarian','8','Lashunta','Zhalali');
+
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Darksidon','8','Ranger','20','Elfo','Legolas');
+
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Darksidon','9','Guerriero','20','Nano','Ghibli');
+
+INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
+VALUES ('Darksidon','10','Paladino','20','Umano','Aragorn');
+-- --------------------------------------------------------------------------------------
+INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
+VALUES (1,'7 Wonders','4','Strategia');
+
+INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
+VALUES (1,'You are the leader of one of the 7 great cities of the Ancient World. Gather resources, develop commercial routes, and affirm your military supremacy. Build your city and erect an architectural wonder which will transcend future times.',2,7,'Repos Production');
+
+INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
+VALUES (2,'Bananagrams','4.5','Famiglia');
+
+INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
+VALUES (2,'Bananagrams is a fast and fun word game that requires no pencil, paper or board, and the tiles come in a fabric banana-shaped carrying pouch. One hand can be played in as little as five minutes.',1,8,'Bananagrams, Inc');
+
+INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
+VALUES (3,'Bang','2.5','Party');
+
+INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
+VALUES (3,'The card game BANG! recreates an old-fashioned spaghetti western shoot-out, with each player randomly receiving a Character card to determine special abilities, and a secret Role card to determine their goal.',4,7,'dV Giochi');
+
+INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
+VALUES (4,'Catan','2.66667','Strategia');
+
+INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
+VALUES (4,'In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. On each turn dice are rolled to determine what resources the island produces. Players collect these resources (cards)—wood, grain, brick, sheep, or stone—to build up their civilizations to get to 10 victory points and win the game.',3,4,'KOSMOS');
+
+INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
+VALUES (5,'Carcassonne','3.66667','Famiglia');
+
+INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
+VALUES (5,'Carcassonne is a tile-placement game in which the players draw and place a tile with a piece of southern French landscape on it. The tile might feature a city, a road, a cloister, grassland or some combination thereof, and it must be placed adjacent to tiles that have already been played, in such a way that cities are connected to cities, roads to roads, etcetera. ',2,5,'Hans im Glück');
+
+INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
+VALUES (6,'Just One','3','Party');
+
+INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
+VALUES (6,'Just One is a cooperative party game in which you play together to discover as many mystery words as possible. Find the best clue to help your teammate. Be unique, as all identical clues will be cancelled!',3,6,'Repos Production');
+
+INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
+VALUES (7,'Pictomania','3','Famiglia');
+
+INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
+VALUES (7,'Is she drawing an elk or a moose! Is he drawing a pegasus or a unicorn! These are the types of questions you will probably be asking yourself during a game of Pictomania!',2,6,'Cranio Creations');
+
+-- -------------------------------------------------------------------------
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Esperozzi',1,5,'Molto bello e coinvolgente');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Esperozzi',2,5,'Molto bello e coinvolgente');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Esperozzi',4,4,'Bello ma non Eccezionale');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Esperozzi',5,4,'Bello ma non Eccezionale');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Esperozzi',7,3,'Nella Media');
+-- ----------------------
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Miriairim',1,5,'Uno dei miei preferiti!');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Miriairim',3,1,'Questo gioco proprio non lo sopporto...');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Miriairim',4,2,'Non un granchè');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Miriairim',7,3,'Carino ma con margine di miglioramento');
+-- ----------------------
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Fusari',1,5,'Super!');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Fusari',2,4,'Assai sfizioso');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Fusari',3,4,'Sfiziosissimo!');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Fusari',4,2,'Appena passabile');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Fusari',5,4,'Molto sfizioso');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Fusari',6,2,'Appena passabile');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Fusari',7,1,'Orripilante');
+-- ----------------------
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Darksidon',1,1,'Bannabile');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Darksidon',3,2,'Vomitevole. No scherzo, si fa per goliardia');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Darksidon',5,3,'Decente, ma il mio falegname lo faceva meglio');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Darksidon',6,4,'Croccante');
+
+INSERT INTO `recensione`(`Creatore`, `IdGioco`, `Voto`, `Commento`)
+VALUES ('Darksidon',7,5,'Come arrivare 22/0 alla fine di una partita');
+-- ----------------------
+INSERT INTO `luogo`(`Id`, `Nome`, `Citta`, `Via`, `Cap`)
+VALUES ('1','Fumetteria Grande Inverno','L Aquila','Via del Beato Cesidio #35','67100');
+
+INSERT INTO `luogo`(`Id`, `Nome`, `Citta`, `Via`, `Cap`)
+VALUES ('2','Palazzo Dell Emiciclo','L Aquila','Via Michele Iacobucci #4,','67100');
+
+INSERT INTO `luogo`(`Id`, `Nome`, `Citta`, `Via`, `Cap`)
+VALUES ('3','Mura di Lucca','Lucca','Piazza S. Romano #1','55100');
+-- ----------------------
+INSERT INTO `evento`(`Id`, `Nome`, `Flag`, `IdLuogo`, `Categoria`, `Testo`)
+VALUES ('1','Serata Playadice','0','1','Gioco Libero','Venite a giocare con noi, vi seguiremo in una avventura tra i giochi più famosi della nostra associazione');
+
+INSERT INTO `evento`(`Id`, `Nome`, `Flag`, `IdLuogo`, `Categoria`, `Testo`)
+VALUES ('2','Playadice In Fiera','0','2','Altro','Anche quest anno il Playadice partecipa alla fiera estiva ludica a L Aquila. Venite a trovarci!');
+
+INSERT INTO `evento`(`Id`, `Nome`, `Flag`, `IdLuogo`, `Categoria`, `Testo`)
+VALUES ('3','Lucca Comics & Games 2020','1','3','Fiera','Abbiamo deciso di partecipare anche noi all iniziativa lanciata dagli organizzatori del Lucca Comics & Games. Venite a partecipare al nostro campfire');
+
+INSERT INTO `evento`(`Id`, `Nome`, `Flag`, `IdLuogo`, `Categoria`, `Testo`)
+VALUES ('4','Torneo Showdown di Magic','1','1','Torneo','Come ogni sabato, i nostri giocatori si sfideranno per provare chi sia il giocatore più forte. Prenotati e mettiti alla prova!');
+
+INSERT INTO `evento`(`Id`, `Nome`, `Flag`, `IdLuogo`, `Categoria`, `Testo`)
+VALUES ('5','Draft Friday Magic Night','1','1','Torneo','FridayNightMagic è il classico rituale evento del venerdì sera. Per questa volta abbiamo deciso di organizzare un evento draft, prenotati ora!');
+
+INSERT INTO `evento`(`Id`, `Nome`, `Flag`, `IdLuogo`, `Categoria`, `Testo`)
+VALUES ('6','Serata TWG','0','1','Giochi Di Ruolo','Per questa serata abbiamo ben 2 oneshot nuove da farvi provare. Venire a partecipare a "DragonHeist" e "Il fato di Leon" assieme ai nostri fidati Masters Barba e Angelo');
+
+INSERT INTO `evento`(`Id`, `Nome`, `Flag`, `IdLuogo`, `Categoria`, `Testo`)
+VALUES ('7','Premier GiocoAccattivanteX','0','1','Dimostrazione','I creatori di Dobble vengono a trovarci per farci provare la loro nuova uscita in anteprima: GiocoAccattivanteX. Vieni anche tu ad assistere in anteprima assoluta!');
+-- ----------------------
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("1","1","00,00,0,02,0,0","08/07/2020 21:00:00");
+
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("2","2","00,00,0,06,0,0","06/09/2019 17:00:00");
+
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("3","2","00,00,0,06,0,0","07/09/2019 17:00:00");
+
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("4","2","00,00,0,06,0,0","08/09/2019 17:00:00");
+
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("5","3","00,00,0,13,0,0","29/10/2020 10:00:00");
+
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("6","3","00,00,0,13,0,0","30/10/2020 10:00:00");
+
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("7","4","00,00,0,05,0,0","30/07/2020 20:00:00");
+
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("8","5","00,00,0,03,0,0","24/07/2020 20:00:00");
+
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("9","6","00,00,0,05,0,0","31/07/2020 20:00:00");
+
+INSERT INTO `fascia`(`Id`, `IdEvento`, `Durata`, `DataInizio`)
+VALUES ("10","7","00,00,0,04,0,0","05/07/2020 16:00:00");
 
 
 COMMIT;

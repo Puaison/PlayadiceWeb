@@ -91,7 +91,7 @@
                                         <p class="mb-0">Il Presidentissimo</p>
                                 </div>
                                 <div class="col-lg-4 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-3.svg" width="200">
-                                        <h4> <b>Antonio Corsi alias Barba</b> </h4>
+                                        <h4> <b>Alessio Perozzi</b> </h4>
                                         <p class="mb-0">Una persona a caso</p>
                                 </div>
                         </div>

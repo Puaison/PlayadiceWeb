@@ -45,8 +45,11 @@
                             <select class="form-control " name="categoria" id="inlineFormCustomSelect">
                                 <option selected="" value="Choose...">Choose...</option>
                                 <option value="Torneo">Torneo</option>
-                                <option value="Free Play">Free Play</option>
-
+                                <option value="Gioco Libero">Gioco Libero</option>
+                                <option value="Giochi Di Ruolo">Giochi Di Ruolo</option>
+                                <option value="Dimostrazione">Dimostrazione</option>
+                                <option value="Altro">Fiera</option>
+                                <option value="Altro">Altro</option>
                             </select>
                         </div>
                     </div>
