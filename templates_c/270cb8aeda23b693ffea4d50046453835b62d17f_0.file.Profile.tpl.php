@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 13:15:13
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 13:34:57
   from 'C:\xampp\htdocs\playadice\templates\Profile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0af0c1db1183_73614595',
+  'unifunc' => 'content_5f0af561404ec1_66872510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '270cb8aeda23b693ffea4d50046453835b62d17f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\Profile.tpl',
-      1 => 1594552512,
+      1 => 1594553696,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0af0c1db1183_73614595 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0af561404ec1_66872510 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -96,6 +96,9 @@ function content_5f0af0c1db1183_73614595 (Smarty_Internal_Template $_smarty_tpl)
 
 
                 </div>
+                <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == 'admin') {?>
+                    <div class="col-xl-6 text-center py-4 text-center "><b><a class="btn btn-primary" href="/playadice/admin/openAdminPanel" >AdminPanel</a> </b></div>
+                <?php }?>
             </div>
 
         </div>

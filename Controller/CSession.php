@@ -9,7 +9,7 @@
 class CSession
 {
     /**
-     * Funzione che da inizio alla sessione. I dati dell'utente come id, nome, e tipologia di
+     * Funzione che da inizio alla sessione. I dati dell'utente come Username e tipologia di
      * utente sono salvati all'interno dell'array session.
      * @param EUtente $user l'utente di cui memorizzare i dati
      */
