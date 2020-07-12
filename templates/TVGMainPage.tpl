@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,24 +16,24 @@
   <title>TVG Home</title>
 </head>
 
-<body class="">
-
+<body>
 {user->getUsername assign='Username'}
 
   <!-- Navbar here -->
-  {include file="navbar.tpl"}
+{include file="navbar.tpl"}
 
 <!-- Alert-->
 {if $notify != "NoNotify" }
   <div class="alert alert-warning">
-    <strong>Attenzione!</strong><br> {$notify} </div>
+    <strong>Attenzione!</strong><br> {$notify}
+  </div>
 {/if}
 
   <!-- Sezione Ricerca here -->
-<div class="container-fluid" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
+<div class="container-fluid" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat; min-height: 1000px">
 
   <div class="container-fluid">
-    <div class="row justify-content-center" style=" margin-top: 15px; margin-bottom: 15px ">
+    <div class="row justify-content-center" style="margin-bottom: 15px ">
       <div class="col-sm-8 align-self-center" >
         <!-- FORM -->
         <form method="post" id="Ricercaform" action="search">
@@ -51,9 +50,16 @@
         </form>
       </div>
 
-      <div class="col-sm-4">
+      <div>
         <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/avatar/create" style=" margin-top: 5px; margin-bottom: 5px "> Crea un Nuovo Personaggio </a>
       </div>
+
+      {if $UtenteType eq 'admin'}
+        <div>
+          <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/ricerca/SearchAll" style=" margin-top: 5px; margin-bottom: 5px "> VediTutti </a>
+        </div>
+      {/if}
+
     </div>
   </div>
 
