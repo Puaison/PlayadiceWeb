@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-11 21:15:48
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 11:39:01
   from 'C:\xampp\htdocs\playadice\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0a0fe475de96_21258965',
+  'unifunc' => 'content_5f0ada35af5699_62113090',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b8305bcb080adcf3c796877fb77daef7eb759b86' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\navbar.tpl',
-      1 => 1594494947,
+      1 => 1594545322,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f0a0fe475de96_21258965 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0ada35af5699_62113090 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container">
                 <ul class="navbar-nav">
@@ -35,7 +35,6 @@ function content_5f0a0fe475de96_21258965 (Smarty_Internal_Template $_smarty_tpl)
                                 <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "admin") {?>
                                         <a class="nav-link" href="">&nbsp;Pannello admin</a>
                                 <?php }?>
-
                         </ul>
                 </ul>
         </div>
