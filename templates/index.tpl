@@ -31,12 +31,21 @@
                 <div class="container py-5">
                         <div class="row">
                                 <img class="img-fluid d-block pi-draggable" src="templates/assets/Giocodatavolo.jpg">
-                                <div class="card pi-draggable">
-                                        <div class="card-body">
-                                                <h5 class="card-title"><b>Top 5 Games</b></h5>
-                                                <h6 class="card-subtitle my-2 text-muted"></h6>
+                                <div class="card pi-draggable ">
+                                        <div class="card-body ">{if   !empty($giochi) }
 
-                                                <a href="" class="btn btn-primary">Link alla sezione</a>
+                                                <h5 class="card-title"><b>Top 5 Games</b></h5>
+
+                                                        <ol class=""><h6>
+                                                        {foreach from=$giochi item=$gioco}
+                                                        <li>{$gioco->getNome()}</li>
+                                                        {/foreach}</h6>
+                                                        </ol>
+                                                        {else}
+                                                        Nessun gioco da mostrare
+                                                        {/if}
+
+                                                <a href="/playadice/catalogo/catalogocompleto" class="btn btn-primary justify-content-center">Vai al catalogo</a>
                                         </div>
                                 </div>
                         </div>
@@ -86,13 +95,13 @@
                                         <h4> <b>Antonio M. Marottoli</b> </h4>
                                         <p class="mb-0">CEO e fondatore</p>
                                 </div>
-                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-2.svg" alt="Card image cap" width="200">
+                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="templates/assets/LucaDelSignore.jpg" alt="Card image cap" width="200">
                                         <h4> <b>Luca Del Signore</b> </h4>
                                         <p class="mb-0">Il Presidentissimo</p>
                                 </div>
                                 <div class="col-lg-4 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-3.svg" width="200">
                                         <h4> <b>Alessio Perozzi</b> </h4>
-                                        <p class="mb-0">Una persona a caso</p>
+                                        <p class="mb-0">Detto "Esperozzi"</p>
                                 </div>
                         </div>
                 </div>
