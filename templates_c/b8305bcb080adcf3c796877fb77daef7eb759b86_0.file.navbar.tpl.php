@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-11 11:02:27
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 10:33:51
   from 'C:\xampp\htdocs\playadice\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0980236b8b66_41658398',
+  'unifunc' => 'content_5f0acaefcb3915_79424144',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b8305bcb080adcf3c796877fb77daef7eb759b86' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\navbar.tpl',
-      1 => 1594285514,
+      1 => 1594542823,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f0980236b8b66_41658398 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0acaefcb3915_79424144 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container">
                 <ul class="navbar-nav">
@@ -32,8 +32,8 @@ function content_5f0980236b8b66_41658398 (Smarty_Internal_Template $_smarty_tpl)
                                 <a class="nav-link" href="/playadice/evento/showAll"> &nbsp;Eventi</a>
                                 <a class="nav-link" href="/playadice/catalogo/catalogocompleto"> &nbsp;Giochi</a>
                                 <a class="nav-link" href="/playadice/ricerca/ShowPersonal">   &nbsp;AreaTWG</a>
-                                <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "admin") {?>
-                                        <a class="nav-link" href="">&nbsp;Pannello admin</a>
+                                <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value != "ospite") {?>
+                                        <a class="nav-link" href="/playadice/utente/openProfile">&nbsp;Profile</a>
                                 <?php }?>
 
                         </ul>

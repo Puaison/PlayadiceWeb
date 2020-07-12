@@ -409,7 +409,7 @@ INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `Cas
 VALUES (1,'You are the leader of one of the 7 great cities of the Ancient World. Gather resources, develop commercial routes, and affirm your military supremacy. Build your city and erect an architectural wonder which will transcend future times.',2,7,'Repos Production');
 
 INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
-VALUES (2,'Bananagrams','4.5','Famiglia');
+VALUES (2,'Bananagrams','4.5','Party');
 
 INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
 VALUES (2,'Bananagrams is a fast and fun word game that requires no pencil, paper or board, and the tiles come in a fabric banana-shaped carrying pouch. One hand can be played in as little as five minutes.',1,8,'Bananagrams, Inc');
@@ -427,7 +427,7 @@ INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `Cas
 VALUES (4,'In Catan (formerly The Settlers of Catan), players try to be the dominant force on the island of Catan by building settlements, cities, and roads. On each turn dice are rolled to determine what resources the island produces. Players collect these resources (cards)—wood, grain, brick, sheep, or stone—to build up their civilizations to get to 10 victory points and win the game.',3,4,'KOSMOS');
 
 INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
-VALUES (5,'Carcassonne','3.66667','Famiglia');
+VALUES (5,'Carcassonne','3.66667','Party');
 
 INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
 VALUES (5,'Carcassonne is a tile-placement game in which the players draw and place a tile with a piece of southern French landscape on it. The tile might feature a city, a road, a cloister, grassland or some combination thereof, and it must be placed adjacent to tiles that have already been played, in such a way that cities are connected to cities, roads to roads, etcetera. ',2,5,'Hans im Glück');
@@ -439,7 +439,7 @@ INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `Cas
 VALUES (6,'Just One is a cooperative party game in which you play together to discover as many mystery words as possible. Find the best clue to help your teammate. Be unique, as all identical clues will be cancelled!',3,6,'Repos Production');
 
 INSERT INTO `gioco`(`Id`, `Nome`, `VotoMedio`, `Categoria`)
-VALUES (7,'Pictomania','3','Famiglia');
+VALUES (7,'Pictomania','3','Party');
 
 INSERT INTO `giocoinfo`(`IdGioco`, `Descrizione`, `NumeroMin`, `NumeroMax`, `CasaEditrice`)
 VALUES (7,'Is she drawing an elk or a moose! Is he drawing a pegasus or a unicorn! These are the types of questions you will probably be asking yourself during a game of Pictomania!',2,6,'Cranio Creations');

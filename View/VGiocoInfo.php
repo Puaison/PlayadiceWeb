@@ -64,7 +64,7 @@ class VGiocoInfo extends VObject
 
     }
 
-    function showinfo(EUtente $user, EGioco $gioco,bool $recensito)
+    function showInfo(EUtente $user, EGioco $gioco,bool $recensito)
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);

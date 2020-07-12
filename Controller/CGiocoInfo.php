@@ -28,7 +28,7 @@ class CGiocoInfo
                     }
 
                 }
-                $vGiocoinfo->showinfo($user,$gioco,$recensito);
+                $vGiocoinfo->showInfo($user,$gioco,$recensito);
 
             }
             else

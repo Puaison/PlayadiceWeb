@@ -8,8 +8,8 @@
                                 <a class="nav-link" href="/playadice/evento/showAll"> &nbsp;Eventi</a>
                                 <a class="nav-link" href="/playadice/catalogo/catalogocompleto"> &nbsp;Giochi</a>
                                 <a class="nav-link" href="/playadice/ricerca/ShowPersonal">   &nbsp;AreaTWG</a>
-                                {if $UtenteType == "admin"}
-                                        <a class="nav-link" href="">&nbsp;Pannello admin</a>
+                                {if $UtenteType != "ospite"}
+                                        <a class="nav-link" href="/playadice/utente/openProfile">&nbsp;Profile</a>
                                 {/if}
 
                         </ul>

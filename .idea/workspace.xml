@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/PLDEvento.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/PLDEvento.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/04d6e87b8aada7bee75a3b299aef6b44c58f6867_0.file.PLDEvento.tpl.php" afterDir="false" />
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="Implementato EventiPassati in PLDCalendario.tpl.&#10;Implementata visualizzazione prenotazioni singolo evento e creazione PLDPrenotazioni.tpl">
+      <change afterPath="$PROJECT_DIR$/templates/Profile.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/270cb8aeda23b693ffea4d50046453835b62d17f_0.file.Profile.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CCatalogo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CCatalogo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CGiocoInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CGiocoInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CSession.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CSession.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreateTables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CreateTables.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VGiocoInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VGiocoInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/VUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VUtente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +22,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/Smarty/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -61,6 +73,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1b1sSlXwN45z6KDdWDtA6oy4m8U" />
@@ -87,18 +100,18 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\XAMPP2\htdocs\playadice" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Foundation" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Controller" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\playadice\templates" />
       <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020" />
       <recent name="C:\xampp\htdocs\Progetto Web\Progetto Cicerone 2020\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\XAMPP2\htdocs\playadice" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Foundation" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Controller" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.mainviewant.php">
@@ -213,6 +226,7 @@
       <workItem from="1594129369226" duration="3119000" />
       <workItem from="1594205002900" duration="6199000" />
       <workItem from="1594295443026" duration="3820000" />
+      <workItem from="1594541096519" duration="3278000" />
     </task>
     <task id="LOCAL-00036" summary="EPrenotazione.php 1.0 con php docs">
       <created>1589466416987</created>
@@ -561,7 +575,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -578,7 +592,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -598,7 +614,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -670,6 +685,10 @@
     </state>
     <state x="508" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593543338786" />
     <state x="677" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593530807341" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594541379131">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594541379131" />
     <state x="761" y="416" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1" timestamp="1589100413640">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -690,10 +709,10 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594487267055">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="585" y="129" width="1246" height="811" key="CommitChangelistDialog2" timestamp="1594541721445">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594146825839" />
+    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594541721445" />
     <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594487267055" />
     <state x="780" y="174" width="923" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878565443" />
     <state x="92" y="92" width="1736" height="896" key="DiffContextDialog" timestamp="1594285101703">
@@ -787,10 +806,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="214" y="303" key="Vcs.Push.Dialog.v2" timestamp="1594487346619">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1594541729427">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594146828806" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594541729427" />
     <state x="214" y="303" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594487346619" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593878610274" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
@@ -807,10 +826,10 @@
     <state x="725" y="360" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592919545964" />
     <state x="725" y="374" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1589352751088" />
     <state x="966" y="484" key="com.intellij.ide.util.TipDialog/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593522212063" />
-    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594489012510">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594501132311">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594205011069" />
+    <state x="769" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594501132311" />
     <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594489012510" />
     <state x="1025" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1593535942610" />
     <state x="3840" y="613" width="1936" height="1085" maximized="true" key="dock-window-1" timestamp="1590929747423">
@@ -821,10 +840,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="485" y="167" width="1348" height="710" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593939877331" />
-    <state x="649" y="311" key="git4idea.merge.GitPullDialog" timestamp="1589295097279">
+    <state x="649" y="311" key="git4idea.merge.GitPullDialog" timestamp="1594501124055">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="649" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589295097279" />
+    <state x="649" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594501124055" />
     <state x="701" y="173" key="refactoring.ChangeSignatureDialog" timestamp="1589112701555">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

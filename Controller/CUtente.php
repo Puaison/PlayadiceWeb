@@ -81,7 +81,7 @@ class CUtente
      * siano corrette: in tal caso, l'applicazione lo riporterà verso la sua pagina, altrimenti
      * restituirà la schermata di login, con un messaggio di errore
      */
-    private function authentication()
+    static function authentication()
     {
         $vUser = new VUtente();
         $loggedUser = $vUser->createUser();
@@ -107,6 +107,22 @@ class CUtente
         }
         else
             $vUser->showLogin();
+    }
+
+    static function openProfile()
+    {
+        $vUtente=new VUtente();
+        $user=CSession::getUserFromSession();
+        $user=FPersistantManager::getInstance()->search('utente','UserName',$user->getUsername())[0];
+        $vUtente->showProfile($user);
+    }
+
+    static function removeUtente()
+    {
+        $user=CSession::getUserFromSession();
+        CSession::destroySession();
+        FPersistantManager::getInstance()->remove($user);
+        header('Location: /playadice/index');
     }
 
 }
