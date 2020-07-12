@@ -183,9 +183,7 @@
                     </div>
                     <div class="form-group">
                         <label for="testo"><b>Descrizione</b></label>
-                        <textarea class="form-control" id="testo" name="testo" rows="3"
-                                  maxlength="200" size="200">{if isset($prec.testo)}{$prec.testo}{/if}
-                        </textarea>
+                        <textarea class="form-control" id="testo" name="testo" rows="3" maxlength="200" size="200">{if isset($prec.testo)}{$prec.testo}{/if}</textarea>
                         {if ! $check.Descrizione}
                             <div class="alert alert-warning">
                                 <small >

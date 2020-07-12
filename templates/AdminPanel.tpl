@@ -69,6 +69,7 @@
           <span class="align-middle" style="color: whitesmoke">Email:</span>
         </div>
         <div class="col" style="Text-align:center"></div>
+        <div class="col" style="Text-align:center"></div>
       </div>
 
       {section name=k loop=$results}
