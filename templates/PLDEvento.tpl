@@ -93,7 +93,7 @@
                         {if $data>date_create()}
                         <div class='row '>
                             {if $UtenteType == "admin"}
-                            <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/delete?{$results[0]->getId()}">Annulla</a></div>
+                            <div class="col"> <form action="/playadice/evento/delete?{$results[0]->getId()}" method="post"> <button class="btn btn-primary" type="submit" >Annulla</button></form></div>
                             <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify?{$results[0]->getId()}">Modifica</a></div>
                             {/if}
                             {if boolval($results[0]->getFlag())}

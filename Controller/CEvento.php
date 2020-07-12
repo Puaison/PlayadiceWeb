@@ -195,7 +195,9 @@ class CEvento
                     FPersistantManager ::getInstance() -> store($value);
 
                 }
-                header('Location: /playadice/evento/showAll');
+
+                $vEvento->upload($user);
+
             }
             else
 
@@ -310,7 +312,6 @@ class CEvento
 
 
     }
-
 }
 
 

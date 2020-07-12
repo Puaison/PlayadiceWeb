@@ -143,6 +143,12 @@ class VEvento extends VObject
         $this->smarty->display('PLDPrenotazioni.tpl');
 
     }
+    function upload($utenti){
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($utenti), 1)));
+        $this->smarty->registerObject('user', $utenti);
+        $this->smarty->display('upload.tpl');
+
+    }
 
 
 }
