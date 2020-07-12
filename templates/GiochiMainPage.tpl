@@ -25,10 +25,12 @@
 <!-- Navbar here -->
 {include file="navbar.tpl"}
 <!-- Sezione Ricerca here -->
-<<div class="container-fluid" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
+<div class="container-fluid" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
+
+  <br>
 
   <div class="container-fluid">
-    <div class="row justify-content-center" style=" margin-top: 15px; margin-bottom: 15px ">
+    <div class="row justify-content-center" style=" margin-bottom: 15px ">
       <div class="col-sm-8 align-self-center" >
         <!-- FORM -->
         <form method="post" id="Ricercaform" action="search">
@@ -69,7 +71,10 @@
     </div>
 
     {section name=k loop=$results}
-      <div class="row pi-draggable">
+
+      <div class="container-fluid" style="background: black;height: 2px"></div>
+
+      <div class="row pi-draggable" style=" margin-bottom: 10px ; margin-top: 10px ">
         <div class="col-md-2" style="Text-align:center">
           <p style="color:White;">{$results[k]->getNome()}</p>
         </div>
@@ -93,10 +98,10 @@
     <div class="col-md-2" style="Text-align:center">
       <p style="color:White;">NESSUN RISULTATO</p>
     </div>
-
-
   {/if}
   <!-- Fine Sezione -->
+  <br>
+  <br>
 </div>
 <!-- Sezione Our Team -->
 
