@@ -63,7 +63,7 @@
                                         <div class="card-body ">
                                                 <h5 class="card-title"><b>Evento in arrivo</b></h5>
                                                 <div class="col">{if !empty($evento)}
-                                                        {$evento->getNome()}
+                                                                {$evento->getNome()}
                                                         {/if}</div>
                                                 <div class="col">{$fascia=$evento->getFasce()}
                                                         {$fascia[0]->getDataStr()}</div>
