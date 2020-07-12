@@ -37,6 +37,23 @@ class CRicerca
     }
 
     /**
+     * Funzione dedicata agli admin che mostra la pagina con tutti gli propri avatar
+     */
+    static function SearchAll()
+    {
+        $vRicerca = new VRicerca();
+        $user = CSession::getUserFromSession();
+
+        if (get_class($user) == EAdmin::class) // se l'utente e' admin
+        {
+            $objects = FPersistantManager::getInstance()->search("Avatar", "All" , "");
+            $vRicerca->showSearchResult($user, $objects,null,null);
+        }
+        else // se l'utente e' non admin, viene reindirizzato ad una pagina di errore
+            $vRicerca->showErrorPage($user, 'Non hai i permessi per fare questa azione');
+    }
+
+    /**
      * Funzione che mostra la pagina con i propri avatar. Situata in questa classe in quanto affine per funzionamento
      */
     static function ShowPersonal(string $notify = NULL)
