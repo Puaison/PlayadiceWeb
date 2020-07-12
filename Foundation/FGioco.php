@@ -49,7 +49,7 @@ class FGioco
                 ORDER BY VotoMedio DESC;";
     }
 
-    static function searchGiocoByBest5Rate() : string
+    static function searchGiocoByBestFive() : string
     {
         return "SELECT *
                 FROM gioco

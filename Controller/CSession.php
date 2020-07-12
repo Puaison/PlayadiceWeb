@@ -29,7 +29,7 @@ class CSession
         $_SESSION['timeout']=time();
 
         // i suoi dati sono memorizzati all'interno della sessione
-        $_SESSION['Name'] =  $user->getNome();
+        //$_SESSION['Name'] =  $user->getNome();
         $_SESSION['Username'] = $user->getUsername();
         $_SESSION['type'] = lcfirst(substr(get_class($user), 1));
     }
@@ -64,7 +64,7 @@ class CSession
 
             $user = new $uType();
 
-            $user->setNome($_SESSION['Name']);
+            //$user->setNome($_SESSION['Name']);
             $user->setUsername($_SESSION['Username']);
         }
         else

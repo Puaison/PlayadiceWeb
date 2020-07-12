@@ -6,6 +6,11 @@
  */
 class FAvatar
 {
+    static function searchAvatarByAll() : string
+    {
+        return "SELECT *
+                FROM avatar;";
+    }
 
     static function searchAvatarByNome() : string
     {

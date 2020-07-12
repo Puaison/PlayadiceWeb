@@ -1,8 +1,14 @@
 <?php
 
 
+/**
+ * Class CCatalogo
+ */
 class CCatalogo
 {
+    /**
+     *
+     */
     static function catalogocompleto()
     {
         $vCatalogo = new VCatalogo();
@@ -38,7 +44,10 @@ class CCatalogo
             header('Location: HTTP/1.1 Invalid HTTP method detected');
     }
 
-    private function insertnewgioco()
+    /**
+     *
+     */
+    static function insertnewgioco()
     {
         $user=CSession::getUserFromSession();
         $vCatalogo = new VCatalogo();
@@ -57,6 +66,9 @@ class CCatalogo
             $vCatalogo->showFormNewGioco($user,$newgioco);
     }
 
+    /**
+     * @param int $id
+     */
     static function remove(int $id)
     {
         $vCatalogo = new VCatalogo();
@@ -82,6 +94,9 @@ class CCatalogo
         }
     }
 
+    /**
+     * @param $IdGioco
+     */
     static function modificagioco($IdGioco)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') // se il metodo e' get...
@@ -107,6 +122,9 @@ class CCatalogo
             header('Location: HTTP/1.1 Invalid HTTP method detected');
     }
 
+    /**
+     *
+     */
     static function eseguimodifica()
     {
         $vCatalogo=new VCatalogo();
@@ -125,7 +143,7 @@ class CCatalogo
      * Questa ricerca e' possibile
      * solo per gli utenti che sono registrati.
      */
-    static function Search()
+    static function search()
     {
         $vCatalogo = new VCatalogo();
         $user = CSession::getUserFromSession();
@@ -140,6 +158,25 @@ class CCatalogo
             $vCatalogo->showCatalogo($user,$objects);
 
 
+    }
+    static function utenteRemoved(EUtente $user)
+    {
+        $giochi=FPersistantManager::getInstance()->search("gioco","BestRate","");
+        foreach ($giochi as $gioco) {
+            $recensioni = FPersistantManager::getInstance()->search("recensione", "IdGioco", $gioco->getId());
+            if ($recensioni)//Se c'è almeno una recensione
+            {
+                //$gioco->setRecensioni($recensioni);
+                foreach ($recensioni as $recensione) {
+                    if ($user->getUsername() == $recensione->getEUtente()->getUsername())
+                    {
+                        FPersistantManager::getInstance()->remove($recensione);
+
+                    }
+                }
+
+            }
+        }
     }
 
 }
