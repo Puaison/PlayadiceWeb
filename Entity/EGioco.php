@@ -169,7 +169,7 @@ class EGioco extends EObject
      * Metodo che calcola il vgoto medio riprendendo tutte le recensioni
      * @return float Il VotoMedio calcolato sulle recensioni del Gioco
      */
-    function CalcolaVotoMedio() :float {
+    function CalcolaVotoMedio() :void {
         $somma=0;
         $array=array();
         $array=$this->Recensioni;
@@ -187,7 +187,6 @@ class EGioco extends EObject
             $votomedio=0;
             $this->VotoMedio=0;
         }
-        return $votomedio;
 
     }
 
