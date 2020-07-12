@@ -68,7 +68,7 @@ class FEvento
     static function searchEventobyLast() : string
     {
         return "SELECT *
-                FROM gioco
+                FROM evento
                 ORDER BY Id DESC limit 1;";
     }
 

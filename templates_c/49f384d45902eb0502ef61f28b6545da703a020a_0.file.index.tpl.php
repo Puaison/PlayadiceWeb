@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 12:21:57
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 15:12:37
   from 'C:\xampp\htdocs\playadice\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0ae44539d296_91047089',
+  'unifunc' => 'content_5f0b0c45c7d576_70930824',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49f384d45902eb0502ef61f28b6545da703a020a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\index.tpl',
-      1 => 1594546002,
+      1 => 1594559540,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0ae44539d296_91047089 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0b0c45c7d576_70930824 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -95,9 +95,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></h6>
                                 <img class="img-fluid d-block pi-draggable" src="templates/assets/67.png" style="height: 456px; width: 810px;">
                                 <div class="card pi-draggable ">
                                         <div class="card-body ">
-                                                <h5 class="card-title"><b>Sezione Eventi</b></h5>
+                                                <h5 class="card-title"><b>Evento in arrivo</b></h5>
+                                                <div class="col"><?php if (!empty($_smarty_tpl->tpl_vars['evento']->value)) {?>
+                                                                <?php echo $_smarty_tpl->tpl_vars['evento']->value->getNome();?>
 
-                                                <a href="" class="btn btn-primary justify-content-center">Vai agli eventi</a>
+                                                        <?php }?></div>
+                                                <div class="col"><?php $_smarty_tpl->_assignInScope('fascia', $_smarty_tpl->tpl_vars['evento']->value->getFasce());?>
+                                                        <?php echo $_smarty_tpl->tpl_vars['fascia']->value[0]->getDataStr();?>
+</div>
+                                                <div class="col"><?php echo $_smarty_tpl->tpl_vars['evento']->value->getLuogo()->getNome();?>
+</div>
+
+                                                <a href="./evento/show?<?php echo $_smarty_tpl->tpl_vars['evento']->value->getId();?>
+" class="btn btn-primary justify-content-center">Vai agli eventi</a>
                                         </div>
                                 </div>
                         </div>

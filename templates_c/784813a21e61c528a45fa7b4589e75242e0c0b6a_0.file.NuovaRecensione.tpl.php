@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 13:15:57
-  from 'C:\xampp\htdocs\playadice\templates\ModificaPassword.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 17:41:12
+  from 'C:\xampp\htdocs\playadice\templates\NuovaRecensione.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0af0ed111640_22735194',
+  'unifunc' => 'content_5f0b2f18e76992_13163463',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '140d706c75bd079e8cfe21d07e0ca3b68e7a5528' => 
+    '784813a21e61c528a45fa7b4589e75242e0c0b6a' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\ModificaPassword.tpl',
-      1 => 1594552512,
+      0 => 'C:\\xampp\\htdocs\\playadice\\templates\\NuovaRecensione.tpl',
+      1 => 1594216306,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0af0ed111640_22735194 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0b2f18e76992_13163463 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -37,10 +37,10 @@ function content_5f0af0ed111640_22735194 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
     <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
     <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-    <title>Modifica <?php echo $_smarty_tpl->tpl_vars['utente']->value->getUsername();?>
-</title>
+    <title>Nuova Recensione</title>
 </head>
-<body>
+
+<body class="">
 
 <?php $_smarty_tpl->assign('Username',$_smarty_tpl->smarty->registered_objects['user'][0]->getUsername(array(),$_smarty_tpl));?>
 
@@ -48,53 +48,66 @@ function content_5f0af0ed111640_22735194 (Smarty_Internal_Template $_smarty_tpl)
 <?php $_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<div class="container text-center">
+<div class="container text-center ">
     <div class="col-sm-3">
-
     </div>
-        <h2>Register</h2>
+
+        <h2>Nuova Recensione</h2>
+    <!--if $error
         <hr>
-        <form method="post" enctype="multipart/form-data" action="modifymypassword">
+        <div class="alert alert-warning">
+             Errore
+            <strong>Attenzione!</strong><br>Username o Password errati. <br>Per favore riprova. </div>
+-->
 
-
+        <!-- FORM -->
+        <form class="form-horizontal" method="post" action="newrecensione?<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
+">
+            <!-- Voto -->
             <div class="form-group row">
-                <label for="mail" class="col-sm-5 col-form-label ">Password attuale:</label>
+                <label for="user" class="col-md-5 col-form-label">Voto:</label>
                 <div class="col-lg-5">
-                    <input type="password" class="form-control " id="mail" name="OldPassword"  maxlength="20">
+                    <select class="form-control " name="Voto">
+                        <option selected="" value="Choose...">Choose...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+
+                    </select>
                 </div>
-                <?php if (!$_smarty_tpl->tpl_vars['check']->value['OldPassword']) {?>
+                <?php if (!$_smarty_tpl->tpl_vars['check']->value['Voto']) {?>
                     <div class="alert alert-warning">
                         <small >
-                            Password attuale non corretta
+                            Scegli un voto dalla lista
                         </small>
                     </div>
                 <?php }?>
-
             </div>
             <div class="form-group row">
-                <label for="nome" class="col-sm-5 col-form-label ">Nuova Password:</label>
+                <!-- Commento -->
+                <label class="col-sm-5 col-form-label col">Commento:</label>
                 <div class="col-lg-5">
-                    <input type="password" class="form-control " id="mail" name="Password"  maxlength="20">
+                    <textarea class="form-control border-primary" name="Commento" placeholder="Dicci cosa ne pensi" maxlength="500"></textarea>
                 </div>
-                <?php if (!$_smarty_tpl->tpl_vars['check']->value['Password']) {?>
+                <?php if (!$_smarty_tpl->tpl_vars['check']->value['Commento']) {?>
                     <div class="alert alert-warning">
-                        <small>
-                            6-20 Caratteri Alphanumerici.
+                        <small >
+                            Massimo 500 caratteri
                         </small>
                     </div>
                 <?php }?>
-
             </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Invia</button>
+            </div>
+            <input type="hidden" name="IdGioco" value="<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
+">
         </form>
 
 </div>
-    <div class="col-sm-3">
-
-    </div>
-
+</div>
 </body>
-</html>
-<?php }
+</html><?php }
 }
