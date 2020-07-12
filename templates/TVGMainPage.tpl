@@ -30,11 +30,14 @@
 {/if}
 
   <!-- Sezione Ricerca here -->
-<div class="container-fluid" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat; min-height: 1000px">
+<div class="container-fluid" draggable="false" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat; min-height: 1000px">
 
   <div class="container-fluid">
+
+    <br>
+
     <div class="row justify-content-center" style="margin-bottom: 15px ">
-      <div class="col-sm-8 align-self-center" >
+      <div class="col-sm-8 align-self-center"  >
         <!-- FORM -->
         <form method="post" id="Ricercaform" action="search">
           <div class="row">

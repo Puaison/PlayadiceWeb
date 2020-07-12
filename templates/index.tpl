@@ -25,8 +25,10 @@
 <!-- Navbar here -->
 {include file="navbar.tpl"}
 
-<!-- Sezione immagini here -->
+
 <div class="column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
+
+        <!-- Sezione Giochi da tavolo here -->
         <div class="container py-5">
                 <div class="container py-5">
                         <div class="row">
@@ -51,31 +53,33 @@
                         </div>
                 </div>
         </div>
+
+        <!-- Sezione Eventi here -->
         <div class="container py-5">
                 <div class="container py-5">
                         <div class="row">
-                                <img class="img-fluid d-block pi-draggable" src="https://static.pingendo.com/img-placeholder-1.svg">
-                                <div class="card pi-draggable">
-                                        <div class="card-body">
-                                                <h5 class="card-title"><b>Titolo Sezione</b></h5>
-                                                <h6 class="card-subtitle my-2 text-muted">Sottotitolo</h6>
-                                                <p class="card-text">Messagino</p>
-                                                <a href="#" class="card-link">Link alla sezione</a>
+                                <img class="img-fluid d-block pi-draggable" src="templates/assets/67.png" style="height: 456px; width: 810px;">
+                                <div class="card pi-draggable ">
+                                        <div class="card-body ">
+                                                <h5 class="card-title"><b>Sezione Eventi</b></h5>
+
+                                                <a href="" class="btn btn-primary justify-content-center">Vai agli eventi</a>
                                         </div>
                                 </div>
                         </div>
                 </div>
         </div>
+
+        <!-- Sezione GDR here -->
         <div class="container py-5">
                 <div class="container py-5">
                         <div class="row">
-                                <img class="img-fluid d-block pi-draggable" src="https://static.pingendo.com/img-placeholder-1.svg">
-                                <div class="card pi-draggable">
-                                        <div class="card-body">
-                                                <h5 class="card-title"><b>Titolo Sezione</b></h5>
-                                                <h6 class="card-subtitle my-2 text-muted">Sottotitolo</h6>
-                                                <p class="card-text">Messagino</p>
-                                                <a href="#" class="card-link">Link alla sezione</a>
+                                <img class="img-fluid d-block pi-draggable" src="templates/assets/gdr.jpg" style="height: 456px; width: 810px;">
+                                <div class="card pi-draggable ">
+                                        <div class="card-body ">
+                                                <h5 class="card-title"><b>Sezione TWG</b></h5>
+
+                                                <a href="/playadice/ricerca/showpersonal" class="btn btn-primary justify-content-center">Vai ai tuoi personaggi</a>
                                         </div>
                                 </div>
                         </div>
@@ -91,7 +95,7 @@
                                 </div>
                         </div>
                         <div class="row">
-                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-1.svg" alt="Card image cap" width="200">
+                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="templates/assets/Badibba.jpg" alt="Card image cap" width="200">
                                         <h4> <b>Antonio M. Marottoli</b> </h4>
                                         <p class="mb-0">CEO e fondatore</p>
                                 </div>
@@ -99,7 +103,7 @@
                                         <h4> <b>Luca Del Signore</b> </h4>
                                         <p class="mb-0">Il Presidentissimo</p>
                                 </div>
-                                <div class="col-lg-4 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-3.svg" width="200">
+                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="templates/assets/AlessioPerozzi.jpg" alt="Card image cap" width="200">
                                         <h4> <b>Alessio Perozzi</b> </h4>
                                         <p class="mb-0">Detto "Esperozzi"</p>
                                 </div>
