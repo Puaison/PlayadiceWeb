@@ -163,7 +163,7 @@ class CCatalogo
 
     }
     static function utenteRemoved()
-    {
+    {//TODO COME VIETO L'ACCESSO A QUESTA FUNZIONE?
         $giochi=FPersistantManager::getInstance()->search("gioco","BestRate","");
         if($giochi) {//se ci sono dei giochi
             foreach ($giochi as $gioco) {
@@ -181,7 +181,6 @@ class CCatalogo
 
             }
         }
-        echo("sono entrato");
     }
 
 }

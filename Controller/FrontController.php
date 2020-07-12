@@ -47,7 +47,7 @@ class FrontController
                 $vObject=new VObject();
                 $user = CSession::getUserFromSession();
                 $giochi=FPersistantManager::getInstance()->search('gioco','BestFive','');
-                $evento=FPersistantManager::getInstance()->search('evento','all','');
+                $eventi=FPersistantManager::getInstance()->search('evento','all','');
                 foreach ($eventi as $value){
                     if(empty($value->getFasce())){
                         $array[]=$value;
@@ -85,13 +85,6 @@ class FrontController
 
             }
             $vObject->showIndex($user,$giochi,$eventi[0]);
-            /*Vecchia implementazione
-            $user = CSession::getUserFromSession();
-            $smarty = SmartyConfig::configure();
-            $smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
-            $smarty->registerObject('user', $user);
-            $smarty->display('index.tpl');
-            */
         }
         exit;
     }

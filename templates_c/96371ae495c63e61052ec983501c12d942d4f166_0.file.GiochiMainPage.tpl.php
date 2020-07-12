@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 12:30:58
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 16:43:15
   from 'C:\xampp\htdocs\playadice\templates\GiochiMainPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0ae662866191_37956329',
+  'unifunc' => 'content_5f0b218342c8c6_00854518',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '96371ae495c63e61052ec983501c12d942d4f166' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\GiochiMainPage.tpl',
-      1 => 1594549778,
+      1 => 1594559540,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0ae662866191_37956329 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0b218342c8c6_00854518 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -54,8 +54,10 @@ function content_5f0ae662866191_37956329 (Smarty_Internal_Template $_smarty_tpl)
 <!-- Sezione Ricerca here -->
 <div class="container-fluid" draggable="true" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat;">
 
+  <br>
+
   <div class="container-fluid">
-    <div class="row justify-content-center" style=" margin-top: 15px; margin-bottom: 15px ">
+    <div class="row justify-content-center" style=" margin-bottom: 15px ">
       <div class="col-sm-8 align-self-center" >
         <!-- FORM -->
         <form method="post" id="Ricercaform" action="search">
@@ -102,7 +104,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
 if ($__section_k_0_total !== 0) {
 for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_0_iteration <= $__section_k_0_total; $__section_k_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
 ?>
-      <div class="row pi-draggable">
+
+      <div class="container-fluid" style="background: black;height: 2px"></div>
+
+      <div class="row pi-draggable" style=" margin-bottom: 10px ; margin-top: 10px ">
         <div class="col-md-2" style="Text-align:center">
           <p style="color:White;"><?php echo $_smarty_tpl->tpl_vars['results']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]->getNome();?>
 </p>
@@ -134,10 +139,10 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
     <div class="col-md-2" style="Text-align:center">
       <p style="color:White;">NESSUN RISULTATO</p>
     </div>
-
-
   <?php }?>
   <!-- Fine Sezione -->
+  <br>
+  <br>
 </div>
 <!-- Sezione Our Team -->
 
