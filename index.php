@@ -9,7 +9,6 @@ if(CSession::checkPopulateApplication())
 {
     CSession::unsetCookie();
     header('Location: /playadice/index');
-    //SampleUsers::generateUserPool(3, 3, 3);TODO CREARE UN SEEDER
 
 }
 elseif(file_exists('config.inc.php'))

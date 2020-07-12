@@ -76,8 +76,6 @@ class VUtente extends VObject
     function validateLogin(EUtente $user): bool
     {
         $this->check['Esistente']=$user->validateEsistenza();
-        //$this->check['Username']=$user->validateUsername();
-        //$this->check['Password']=$user->validatePassword();
         if($this->check['Esistente'])
         {
             return true;
