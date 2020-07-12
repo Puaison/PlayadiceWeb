@@ -154,6 +154,15 @@ class EUtente
             return false;
     }
 
+    function checkPassword(): bool
+    {
+        $user = FPersistantManager::getInstance()->search("utente", "UserName", $this->getUsername());
+        if($this->getPassword() == $user[0]->getPassword())
+            return true;
+        else
+            return false;
+    }
+
     function validateUsername() : bool
     {
         if ($this->Username && preg_match('/^[a-zA-Z0-9_-]{6,20}$/', $this->Username))

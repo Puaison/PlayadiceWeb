@@ -126,4 +126,112 @@ class CUtente
         header('Location: /playadice/index');
     }
 
+    /**
+     * Metodo che implementa il caso d'uso di login. Se richiamato tramite GET, fornisce
+     * la pagina di login, se richiamato tramite POST cerca di autenticare l'utente attraverso
+     * i valori che quest'ultimo ha fornito
+     */
+    static function modifyMyUtente()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') // se il metodo e' get...
+        { //...carica la pagina del login, se l'utente e' effettivamente un guest
+            $vUtente = new VUtente();
+            $utente = CSession::getUserFromSession();
+            if(get_class($utente)!=EOspite::class) // se l'utente in sessione non è un ospite, accede alla form di modifica
+            {
+                $utente=FPersistantManager::getInstance()->search('utente','UserName', $utente->getUsername())[0];
+                $vUtente->showFormModify($utente);
+            }
+            else
+                $vUtente->showErrorPage($utente, 'Devi essere loggato per modificare i tuoi dati');
+        }
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST')
+            CUtente::executeModify();
+        else
+            header('Location: HTTP/1.1 Invalid HTTP method detected');
+    }
+    static function executeModify()
+    {
+        $user=CSession::getUserFromSession();
+        $vUtente=new VUtente();
+        $user=FPersistantManager::getInstance()->search('utente','UserName',$user->getUsername())[0];
+        $userModified=$vUtente->createUser();
+        if($vUtente->validateModify($userModified))
+        {
+
+            //if($userModified->getUsername()==$user->getUsername()){
+
+                $user->setNome($userModified->getNome());
+                $user->setCognome($userModified->getCognome());
+                $user->setEmail($userModified->getMail());
+                FPersistantManager::getInstance()->update($user);
+                $vUtente->showProfile($user);
+
+            //}
+            //else
+                //$vUtente->showErrorPage($user,'Non sei lo stesso utente oggetto della modifica');
+
+
+        }
+        else
+            $vUtente->showFormModify($user);
+
+    }
+
+    /**
+     * Metodo che implementa il caso d'uso di login. Se richiamato tramite GET, fornisce
+     * la pagina di login, se richiamato tramite POST cerca di autenticare l'utente attraverso
+     * i valori che quest'ultimo ha fornito
+     */
+    static function modifyMyPassword()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') // se il metodo e' get...
+        { //...carica la pagina del login, se l'utente e' effettivamente un guest
+            $vUtente = new VUtente();
+            $utente = CSession::getUserFromSession();
+            if(get_class($utente)!=EOspite::class) // se l'utente in sessione non è un ospite, accede alla form di modifica
+            {
+                $utente=FPersistantManager::getInstance()->search('utente','UserName', $utente->getUsername())[0];
+                $vUtente->showFormModifyPassword($utente);
+            }
+            else
+                $vUtente->showErrorPage($utente, 'Devi essere loggato per modificare la tua password');
+        }
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST')
+            CUtente::executeModifyPassword();
+        else
+            header('Location: HTTP/1.1 Invalid HTTP method detected');
+    }
+    static function executeModifyPassword()
+    {
+        $user=CSession::getUserFromSession();
+        $vUtente=new VUtente();
+        $user=FPersistantManager::getInstance()->search('utente','UserName',$user->getUsername())[0];
+        $NewPassword=$vUtente->createNewPassword();
+        $newUser=new EUtente();
+        $newUser->setUsername($user->getUsername());
+        $oldUser=new EUtente();
+        $oldUser->setUsername($user->getUsername());
+        $oldUser->setPassword($NewPassword['OldPassword']);
+        $newUser->setPassword($NewPassword['Password']);
+        if($vUtente->validateNewPassword($newUser,$oldUser))
+        {
+
+
+
+                $user->setPassword($newUser->getPassword());
+                FPersistantManager::getInstance()->update($user);
+                $vUtente->showProfile($user);
+
+
+
+
+        }
+        else
+            $vUtente->showFormModifyPassword($user);
+
+    }
+
+
+
 }

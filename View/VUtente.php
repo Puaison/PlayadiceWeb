@@ -21,6 +21,7 @@ class VUtente extends VObject
             'Password' => true,
             'Nome' => true,
             'Cognome' => true,
+            'OldPassword'=>true
         );
     }
 
@@ -46,6 +47,27 @@ class VUtente extends VObject
 
         return $user;
     }
+    function createNewPassword()
+    {
+        $array=array();
+
+        if(isset($_POST['OldPassword']))
+            $array['OldPassword']=($_POST['OldPassword']);
+        if(isset($_POST['Password']))
+            $array['Password']=($_POST['Password']);
+        return $array;
+    }
+    function validateNewPassword(EUtente $newUser,EUtente $oldUser)
+    {
+        //Se la password vecchia non è corretta, devo notificarlo
+        $this->check['OldPassword']=$oldUser->checkPassword();
+        $this->check['Password']=$newUser->validatePassword();
+        if($this->check['Password'] && $this->check['Password'] )
+            return true;
+        else
+            return false;
+    }
+
     /**
      * Verifica che un utente abbia rispettato i vincoli per l'inserimento dei parametri di login
      * @param EUtente $user l'oggetto Utente da controllare
@@ -57,6 +79,26 @@ class VUtente extends VObject
         //$this->check['Username']=$user->validateUsername();
         //$this->check['Password']=$user->validatePassword();
         if($this->check['Esistente'])
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /**
+     * Verifica che un utente abbia rispettato i vincoli per l'inserimento dei parametri di login
+     * @param EUtente $user l'oggetto Utente da controllare
+     * @return true se non si sono commessi errori, false altrimenti
+     */
+    function validateModify(EUtente $user): bool
+    {
+        $this->check['Nome']=$user->validateNome();
+        $this->check['Cognome']=$user->validateCognome();
+        $this->check['Mail']=$user->validateMail();
+        if($this->check['Nome'] && $this->check['Cognome'] && $this->check['Mail'])
         {
             return true;
         }
@@ -135,5 +177,23 @@ class VUtente extends VObject
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('utente',$user);
         $this->smarty->display('Profile.tpl');
+    }
+
+    function showFormModify(EUtente $user)
+    {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
+        $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('utente',$user);
+        $this->smarty->assign('check', $this->check);
+        $this->smarty->display('ModificaUtente.tpl');
+    }
+
+    function showFormModifyPassword(EUtente $user)
+    {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
+        $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('utente',$user);
+        $this->smarty->assign('check', $this->check);
+        $this->smarty->display('ModificaPassword.tpl');
     }
 }
