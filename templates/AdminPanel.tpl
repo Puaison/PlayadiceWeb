@@ -90,6 +90,17 @@
           <div class="col" style="Text-align:center">
             <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/admin/Ban?{$results[k]->GetUsername()}">BanHammer</a>
           </div>
+
+          {if $results[k]->getModeratore()}
+          <div class="col" style="Text-align:center">
+            <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/admin/RevocaAdmin?{$results[k]->GetUsername()}">Revoca Privilegi</a>
+          </div>
+          {else}
+          <div class="col" style="Text-align:center">
+            <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/admin/RendiAdmin?{$results[k]->GetUsername()}">Rendi Admin</a>
+          </div>
+          {/if}
+
         </div>
 
       {/section}
