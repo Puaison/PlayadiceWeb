@@ -61,9 +61,15 @@
                                 <img class="img-fluid d-block pi-draggable" src="templates/assets/67.png" style="height: 456px; width: 810px;">
                                 <div class="card pi-draggable ">
                                         <div class="card-body ">
-                                                <h5 class="card-title"><b>Sezione Eventi</b></h5>
+                                                <h5 class="card-title"><b>Evento in arrivo</b></h5>
+                                                <div class="col">{if !empty($evento)}
+                                                        {$evento->getNome()}
+                                                        {/if}</div>
+                                                <div class="col">{$fascia=$evento->getFasce()}
+                                                        {$fascia[0]->getDataStr()}</div>
+                                                <div class="col">{$evento->getLuogo()->getNome()}</div>
 
-                                                <a href="" class="btn btn-primary justify-content-center">Vai agli eventi</a>
+                                                <a href="./evento/show?{$evento->getId()}" class="btn btn-primary justify-content-center">Vai agli eventi</a>
                                         </div>
                                 </div>
                         </div>

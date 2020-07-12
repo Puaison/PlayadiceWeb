@@ -38,10 +38,11 @@ class VObject
         $this->smarty->assign('error', $error);
         $this->smarty->display('errorPage.tpl');
     }
-    function showIndex(EUtente $user, $giochi)
+    function showIndex(EUtente $user, $giochi, $evento)
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->assign('giochi',$giochi);
+        $this->smarty->assign('evento',$evento);
         $this->smarty->registerObject('user', $user);
         $this->smarty->display('index.tpl');
     }

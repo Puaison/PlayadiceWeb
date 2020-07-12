@@ -6,6 +6,11 @@
  */
 class FUtente
 {
+    static function searchUtenteByAll() : string
+    {
+        return "SELECT *
+                FROM Utente;";
+    }
 
     static function searchUtenteByNome() : string
     {
@@ -19,6 +24,13 @@ class FUtente
         return "SELECT *
                 FROM Utente
                 WHERE :UserName = UserName";
+    }
+
+    static function searchUtenteByUserNameLocate() : string
+    {
+        return "SELECT *
+                FROM Utente
+                WHERE LOCATE( :UserNameLocate , UserName ) > 0;";
     }
 
     static function storeUtente() : string

@@ -51,7 +51,7 @@ class FEvento
                 WHERE Id = :Id ;";
     }
     /**
-     * Elimina un utente dal db .
+     * Elimina un evento dal db .
      *
      */
     static function removeEvento() : string
@@ -60,6 +60,16 @@ class FEvento
                 FROM evento
                 WHERE Id = :Id;"; //query sql
 
+    }
+    /**
+     * Metodo che permette di prelevare dal dp l'ultimo evento inserito.
+     *
+     */
+    static function searchEventobyLast() : string
+    {
+        return "SELECT *
+                FROM gioco
+                ORDER BY Id DESC limit 1;";
     }
 
 

@@ -47,7 +47,21 @@ class FrontController
                 $vObject=new VObject();
                 $user = CSession::getUserFromSession();
                 $giochi=FPersistantManager::getInstance()->search('gioco','BestFive','');
-                $vObject->showIndex($user,$giochi);
+                $evento=FPersistantManager::getInstance()->search('evento','all','');
+                foreach ($eventi as $value){
+                    if(empty($value->getFasce())){
+                        $array[]=$value;
+                        unset($eventi[array_search($value,$eventi)]);
+                    }
+                }
+                usort($eventi, "EEvento::dateSorter");
+                if (!empty($array)){
+                    foreach ($array as $value){
+                        array_push($eventi,$value);
+                    }
+
+                }
+                $vObject->showIndex($user,$giochi,$eventi[0]);
 
             }
         }
@@ -56,7 +70,21 @@ class FrontController
             $vObject=new VObject();
             $user = CSession::getUserFromSession();
             $giochi=FPersistantManager::getInstance()->search('gioco','BestFive','');
-            $vObject->showIndex($user,$giochi);
+            $eventi=FPersistantManager::getInstance()->search('evento','all','');
+            foreach ($eventi as $value){
+                if(empty($value->getFasce()) || ($value->getStartDate())<date_create()){
+                    $array[]=$value;
+                    unset($eventi[array_search($value,$eventi)]);
+                }
+            }
+            usort($eventi, "EEvento::dateSorter");
+            if (!empty($array)){
+                foreach ($array as $value){
+                    array_push($eventi,$value);
+                }
+
+            }
+            $vObject->showIndex($user,$giochi,$eventi[0]);
             /*Vecchia implementazione
             $user = CSession::getUserFromSession();
             $smarty = SmartyConfig::configure();
