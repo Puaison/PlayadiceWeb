@@ -29,6 +29,8 @@
         <div class="py-5">
             <div class="container ">
                 <div class="col-md-12">
+
+                    <!-- Nome Gioco -->
                     <div class="form-group row">
                         <input type="hidden" name="IdGioco" value="{$gioco->getId()}">
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Gioco</b></label>
@@ -41,65 +43,76 @@
                                    ></div>
                     </div>
 
+                    <!-- Nome Categoria -->
                     <div class="form-group row">
                         <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
                         <div class="col-10 ">
                             <select class="form-control " name="Categoria" id="inlineFormCustomSelect">
                                 <option value="Strategia"{if $gioco->getCategoria()=="Strategia"} selected{/if}}>Strategia</option>
                                 <option value="Party"{if $gioco->getCategoria()=="Party"} selected{/if}>Party</option>
-
                             </select>
+                        </div>
                     </div>
-                            <div class=" form-group row">
-                                <label for="name-input " class="my-auto px-4 "><b>Descrizione</b></label>
-                                <div class="col-4 ">
-                                    <textarea name="Descrizione"  class="form-control" placeholder="Piccola descrizione del gioco" maxlength="3000" size="400">
-                                        {if isset($gioco->getInfo()->getDescrizione())}
-                                            {$gioco->getInfo()->getDescrizione()}
-                                        {/if}
-                                    </textarea>
-                                </div>
 
-                            </div>
+                    <!-- Descrizione -->
+                    <div class="container-fluid row" >
 
-                            <div class="form-group row"
-                                <label for="name-input " class="my-auto"><b>Numero Minimo di giocatori</b></label>
-                                <div class="col ">
-                                    <input type="text" name="NumeroMin" class="form-control" size="2"
-                                            {if isset($gioco->getInfo()->getMin())}
-                                        value="{$gioco->getInfo()->getMin()}"
-                                            {/if}>
-                                </div>
-
-                                <label for="name-input " class="my-auto px-4 "><b>Numero Massimo di giocatori</b></label>
-                                <div class="col-5  px-4 ">
-                                    <input type="text" name="NumeroMax" class="form-control" size="2"
-                                            {if isset($gioco->getInfo()->getMax())}
-                                        value="{$gioco->getInfo()->getMax()}"
-                                            {/if}>
-                                </div>
-
+                        <div class="col-2 align-self-center">
+                        <label for="name-input" class="my-auto px-4 text-left"><b>Descrizione</b></label>
                         </div>
 
-                        <div class="form-group row">
-                                <label for="name-input " class="my-auto"><b>Casa Editrice</b></label>
-                                <div class="col  ">
-                                    <input type="text" name="CasaEditrice" class="form-control" placeholder="CasaEditrice" maxlength="40" size="40"
-                                            {if isset($gioco->getInfo()->getCasaEditrice())}
-                                        value="{$gioco->getInfo()->getCasaEditrice()}"
-                                            {/if}> </div>
-
+                        <div class="col">
+                            <textarea name="Descrizione" class="form-control" placeholder="Piccola descrizione del gioco" maxlength="3000" style="min-height: 100px">{if isset($gioco->getInfo()->getDescrizione())}{$gioco->getInfo()->getDescrizione()}{/if}</textarea>
                         </div>
-            </div>
-        </div>
 
-        </div>
-
-                    <div class="text-right">
-                        <button type="submit" class="btn btn-primary " >Submit</button>
                     </div>
-                </div>
+
+                    <!-- MinMax players -->
+                    <div class="form-group row" style="margin-top: 10px">
+
+                        <label for="name-input " class="my-auto"><b>Numero Minimo di giocatori</b></label>
+                        <div class="col ">
+                            <input type="text" name="NumeroMin" class="form-control" size="2"
+                                    {if isset($gioco->getInfo()->getMin())}
+                                value="{$gioco->getInfo()->getMin()}"
+                                    {/if}>
+                        </div>
+
+                        <label for="name-input " class="my-auto px-4 "><b>Numero Massimo di giocatori</b></label>
+                        <div class="col-5  px-4 ">
+                            <input type="text" name="NumeroMax" class="form-control" size="2"
+                                    {if isset($gioco->getInfo()->getMax())}
+                                value="{$gioco->getInfo()->getMax()}"
+                                    {/if}>
+                        </div>
+
+                    </div>
+
+                    <!-- CasaEditrice -->
+                    <div class="form-group row">
+                            <label for="name-input " class="my-auto"><b>Casa Editrice</b></label>
+                            <div class="col  ">
+                                <input type="text" name="CasaEditrice" class="form-control" placeholder="CasaEditrice" maxlength="40" size="40"
+                                        {if isset($gioco->getInfo()->getCasaEditrice())}
+                                    value="{$gioco->getInfo()->getCasaEditrice()}"
+                                        {/if}> </div>
+
+                    </div>
+               </div>
+           </div>
+        </div>
+
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary " >Submit</button>
+        </div>
+
+        <div class="justify-content-around" style="text-align: center"  >
+            <button type="submit" class="btn btn-primary" style="width: 60%; margin-left: 20px;margin-right: 20px;">Submit</button>
+        </div>
     </form>
+
+    <br>
+    <br>
 
 </div>
 
