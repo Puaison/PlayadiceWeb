@@ -42,7 +42,7 @@
 
                             <div class="col-xl-6 text-center "><b><a class="btn btn-primary" href="">Modifica</a> </b></div>
 
-                            <div class="col-xl-6 text-center "><b><a class="btn btn-primary" href="">Elimina</a> </b></div>
+                            <div class="col-xl-6 text-center "><b><a class="btn btn-primary" href="/playadice/utente/removemyutente">Elimina</a> </b></div>
 
 
 

@@ -117,11 +117,12 @@ class CUtente
         $vUtente->showProfile($user);
     }
 
-    static function removeUtente()
+    static function removeMyUtente()
     {
         $user=CSession::getUserFromSession();
         CSession::destroySession();
         FPersistantManager::getInstance()->remove($user);
+        CCatalogo::utenteRemoved();
         header('Location: /playadice/index');
     }
 
