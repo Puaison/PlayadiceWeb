@@ -29,7 +29,7 @@ class EFascia extends EObject
      * Metodo per impostare la data di inizio
      * @param DateTime $date
      */
-    public function setFine( $data){
+    public function setFine($data){
         $this->fine=$data;
     }
     public function setData($date){

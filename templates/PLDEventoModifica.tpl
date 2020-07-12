@@ -27,14 +27,14 @@
                     <div class="form-group row">
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Evento</b></label>
                         <div class="col-10">
-                            <input type="text" name="nome" class="form-control " value="{$results[0]->getNome()}"> </div>
+                            <input type="text" name="nome" class="form-control " value="{$results[0]->getNome()}">
                         {if ! $check.Nome}
-                            <div class="alert alert-warning">
-                                <small >
-                                    Lunghezza massima 45 Caratteri.
-                                </small>
+                            <div class="alert alert-warning" style="width: 40%; font-size: 11px;">
+
+                                Lunghezza massima 45 Caratteri.
+
                             </div>
-                        {/if}
+                        {/if}</div>
                     </div>
                     <div class="form-group row">
                         <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
@@ -55,47 +55,55 @@
                                 <label for="name-input " class="my-auto px-4 "><b>Nome</b></label>
                                 <div class="col-4 ">
                                     <input type="text" name="nomeluogo" class="form-control" value="{$results[0]->getLuogo()->getNome()}">
-                                    {if ! $check.NomeLuogo}
-                                        <div class="alert alert-warning">
-                                            <small >
-                                                Lunghezza massima 45 Caratteri.
-                                            </small>
-                                        </div>
-                                    {/if}
+
                                 </div>
                                 <label for="name-input " class="my-auto"><b>Via</b></label>
                                 <div class="col ">
                                     <input type="text" name="via" class="form-control" value="{$results[0]->getLuogo()->getVia()}"> </div>
+
+                            </div>
+                            <div class="form-group row">
+                                {if ! $check.NomeLuogo}
+                                    <div class="alert alert-warning" style="width: 30%; font-size: 11px;">
+
+                                        Il nome del luogo non può essere vuoto e deve contenere massimo 45 caratteri
+
+                                    </div>
+                                {/if}
                                 {if ! $check.Via}
-                                    <div class="alert alert-warning">
-                                        <small >
-                                            Lunghezza massima 45 Caratteri.
-                                        </small>
+                                    <div class="col-sm-3"></div>
+                                    <div class="alert alert-warning" style="width: 30%; font-size: 11px;">
+
+                                        La Via non può essere vuota e deve contenere massimo 45 caratteri
+
                                     </div>
                                 {/if}
                             </div>
-                            <div class=" form-group row ">
+                            <div class="form-group row">
                                 <label for="name-input " class="my-auto px-4 "><b>Città</b></label>
                                 <div class="col-5  px-4 ">
                                     <input type="text" name="citta" class="form-control" value="{$results[0]->getLuogo()->getCitta()}">
-                                    {if ! $check.Citta}
-                                        <div class="alert alert-warning">
-                                            <small >
-                                                Lunghezza massima 45 Caratteri.
-                                            </small>
-                                        </div>
-                                    {/if}
+
                                 </div>
                                 <label for="name-input " class="my-auto"><b>CAP</b></label>
                                 <div class="col  ">
                                     <input type="text" name="cap" class="form-control" value="{$results[0]->getLuogo()->getCap()}"> </div>
-                                {if ! $check.Cap}
-                                    <div class="alert alert-warning">
-                                        <small >
-                                            Lunghezza massima 5 Caratteri Numerici
-                                        </small>
-                                    </div>
-                                {/if}
+                                <div class=" form-group row ">
+                                    {if ! $check.Citta}
+                                        <div class="alert alert-warning" style="width: 30%; font-size: 11px;">
+                                            La Città non può essere vuota e deve contenere massimo 45 caratteri
+
+                                        </div>
+                                    {/if}
+                                    <div class="col  "></div>
+
+                                    {if ! $check.Cap}
+                                        <div class="alert alert-warning" style="width: 30%; font-size: 11px;">
+
+                                            Il Cap non può essere vuoto e deve contenere 5 caratteri numerici
+
+                                        </div>
+                                    {/if}</div>
                             </div>
                         </div>
                     </div>
@@ -106,6 +114,14 @@
                         <div class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Aggiungi una Fascia</b></label>
 
                         </div>
+                        {if !$check.Fasce}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Errore in una fascia, inserire nel formato dd/mm/yyyy hh:mm:ss o una data inserita è già passata o
+                                    la data di fine è precedente a quella d'inizio
+                                </small>
+                            </div>
+                        {/if}
 
                         {for $foo=1 to 10}
                             {$fasce=$results[0]->getFasce()}
@@ -119,11 +135,16 @@
                                 <div class="form-group row">
                                     <label  class="col-2 col-form-label"><b>Giorno di Inizio</b></label>
                                     <div class="col-10">
-                                        <input type="text" name="{$foo}" class="form-control" id="example-date-input" value="{$fasce[$numfascia]->getDataStr()}">
+                                        <input type="text" name="{$foo}" class="form-control" id="example-date-input" placeholder="gg/mm/aaaa HH:mm:ss" {if isset($prec.$foo)}
+                                               value="{$prec.$foo}"
+                                               {else}value="{$fasce[$numfascia]->getDataStr()}{/if}">
                                     </div>
                                     <label  class="col-2 col-form-label"><b>Giorno di Fine</b></label>
                                     <div class="col-10">
-                                        <input type="text" name="{$foo+11}" class="form-control" id="example-date-input" value="{$fasce[$numfascia]->getDataFine()}" >
+                                        <input type="text" name="{$foo+11}" class="form-control" id="example-date-input" placeholder="gg/mm/aaaa HH:mm:ss" {$name=$foo+11}
+                                                {if isset($prec.$name)}
+                                            value="{$prec.$name}"
+                                               {else} value="{$fasce[$numfascia]->getDataFine()}" {/if}>
                                     </div>
                                 </div>
                             </div>

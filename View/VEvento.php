@@ -82,17 +82,14 @@ class VEvento extends VObject
 
         for($foo=1; $foo<=10; $foo++){
             $finale=$foo+11;
+            $fascia=new EFascia();
+            $inizio=(date_create_from_format("d/m/Y H:i:s",$_POST["$foo"]));
+            $fine=(date_create_from_format("d/m/Y H:i:s",$_POST["$finale"]));
+            $fascia->setData($inizio);
+            $fascia->setDuratafromDate($fine);
+            $fascia->setFine($fine);
+            $evento->newFascia($fascia);
 
-            if(!empty($_POST["$foo"]) and !empty($_POST["$finale"]))
-            {
-                $fascia=new EFascia();
-                $inizio=(date_create_from_format("d/m/Y H:i:s",$_POST["$foo"]));
-                $fine=(date_create_from_format("d/m/Y H:i:s",$_POST["$finale"]));
-                $fascia->setData($inizio);
-                $fascia->setDuratafromDate($fine);
-                $fascia->setFine($fine);
-                $evento->newFascia($fascia);
-            }
         }
         if(isset($_POST['prenotazione']))
             $evento->setFlag($_POST['prenotazione']);
