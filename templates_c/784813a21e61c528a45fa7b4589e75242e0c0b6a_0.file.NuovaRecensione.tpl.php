@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 17:41:12
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 17:33:57
   from 'C:\xampp\htdocs\playadice\templates\NuovaRecensione.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0b2f18e76992_13163463',
+  'unifunc' => 'content_5f0b2d653f3271_93614178',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '784813a21e61c528a45fa7b4589e75242e0c0b6a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\NuovaRecensione.tpl',
-      1 => 1594216306,
+      1 => 1594284428,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0b2f18e76992_13163463 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0b2d653f3271_93614178 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>

@@ -50,7 +50,7 @@ class CCatalogo
         $vCatalogo = new VCatalogo();
         $newgioco = $vCatalogo->createGioco();
 
-        if (get_class($user) == EAdmin::class) {// TODO  SERVE CONTROLLARE queSTO? if($user->getModeratore())
+        if (get_class($user) == EAdmin::class) {
             if ($vCatalogo->validateNuovoGioco($newgioco)) {
                 FPersistantManager::getInstance()->store($newgioco);
                 $newGioco2 = FPersistantManager::getInstance()->search("gioco", "Last", "")[0];

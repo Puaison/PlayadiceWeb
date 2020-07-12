@@ -23,7 +23,6 @@ class FPersistantManager
     {
         try {
             global $address, $admin, $pass, $database;
-                //$this->db = new PDO ("mysql:host=$address;dbname=$database", $admin); //TODO  MODIFY SOSTITUIRE CON QUELLO SOTTO
                 $this->db = new PDO ("mysql:host=$address;dbname=$database", $admin, $pass);
 
 
