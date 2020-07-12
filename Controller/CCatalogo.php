@@ -159,23 +159,24 @@ class CCatalogo
 
 
     }
-    static function utenteRemoved(EUtente $user)
+    static function utenteRemoved()
     {
         $giochi=FPersistantManager::getInstance()->search("gioco","BestRate","");
         foreach ($giochi as $gioco) {
             $recensioni = FPersistantManager::getInstance()->search("recensione", "IdGioco", $gioco->getId());
             if ($recensioni)//Se c'è almeno una recensione
             {
+                $gioco->setRecensioni($recensioni);
+                $gioco->CalcolaVotoMedio();
+                FPersistantManager::getInstance()->update($gioco);
                 //$gioco->setRecensioni($recensioni);
-                foreach ($recensioni as $recensione) {
-                    if ($user->getUsername() == $recensione->getEUtente()->getUsername())
-                    {
-                        FPersistantManager::getInstance()->remove($recensione);
-
-                    }
-                }
-
             }
+            else
+            {
+                $gioco->setVotoMedio(0);
+                FPersistantManager::getInstance()->update($gioco);
+            }
+
         }
     }
 
