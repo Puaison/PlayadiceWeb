@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 11:46:06
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 12:31:23
   from 'C:\xampp\htdocs\playadice\templates\PLDCalendario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0adbded3f393_03796046',
+  'unifunc' => 'content_5f0ae67b519785_06809635',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0068d291dd41580fd3d2866b15d2e2351700254c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\PLDCalendario.tpl',
-      1 => 1594499794,
+      1 => 1594549882,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0adbded3f393_03796046 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0ae67b519785_06809635 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -56,6 +56,8 @@ function content_5f0adbded3f393_03796046 (Smarty_Internal_Template $_smarty_tpl)
     <div class="container">
         <div class="row ">
             <div class="col pb-3" > Ultimi Eventi</div>
+            <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
+                <a class="col pb-3" href="../evento/create"> Crea un Evento</a><?php }?>
             <form method="POST"  action="../evento/order">
                 <select name="option" required>
                     <option value="Data">Data</option>
@@ -63,8 +65,7 @@ function content_5f0adbded3f393_03796046 (Smarty_Internal_Template $_smarty_tpl)
                 </select>
                 <input type="submit" class="btn btn-primary " value="Submit">
             </form>
-            <?php if ($_smarty_tpl->tpl_vars['Tipo']->value) {?>
-            <a class="col pb-3" href="../evento/create"> Crea un Evento</a><?php }?>
+
 
             <?php
 $__section_k_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['results']->value) ? count($_loop) : max(0, (int) $_loop));

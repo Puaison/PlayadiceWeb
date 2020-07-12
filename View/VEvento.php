@@ -12,6 +12,7 @@ class VEvento extends VObject
             'Via' => true,
             'Cap' => true,
             'Citta' => true,
+            'Fasce' => true,
 
         );
     }
@@ -118,10 +119,15 @@ class VEvento extends VObject
             $this->check['Via']=$luogo->validateVia();
             $this->check['Citta']=$luogo->validateCitta();
         }
+        $fasce=$evento->getFasce();
+        foreach ($fasce as $value){
+            $check=$value->validateStart() and $value->validateEnd();
+            $this->check['Fasce']=  $check and $this->check['Fasce'];
+        }
 
         if($this->check['Nome'] && $this->check['Descrizione']
             && $this->check['NomeLuogo'] && $this->check['Cap']
-            && $this->check['Via'] && $this->check['Citta'])
+            && $this->check['Via'] && $this->check['Citta'] && $this->check['Fasce'])
         {
             return true;
         }

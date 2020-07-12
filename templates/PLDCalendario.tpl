@@ -29,6 +29,8 @@
     <div class="container">
         <div class="row ">
             <div class="col pb-3" > Ultimi Eventi</div>
+            {if $Tipo}
+                <a class="col pb-3" href="../evento/create"> Crea un Evento</a>{/if}
             <form method="POST"  action="../evento/order">
                 <select name="option" required>
                     <option value="Data">Data</option>
@@ -36,8 +38,7 @@
                 </select>
                 <input type="submit" class="btn btn-primary " value="Submit">
             </form>
-            {if $Tipo}
-            <a class="col pb-3" href="../evento/create"> Crea un Evento</a>{/if}
+
 
             {section name=k loop=$results}
                 {if !empty($results[k]->getStartDate())}

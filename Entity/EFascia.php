@@ -29,16 +29,22 @@ class EFascia extends EObject
      * Metodo per impostare la data di inizio
      * @param DateTime $date
      */
-    public function setFine(DateTime $data){
+    public function setFine( $data){
         $this->fine=$data;
     }
-    public function setData(DateTime $date){
+    public function setData($date){
         $this->inizio=$date;}
     /**
      * Metodo per impostare la durata dell'evento
      * @param DateTime $date data di fine dell'evento per il calcolo della durata
      */
-    public function setDuratafromDate(DateTime $date){$this->durata=date_diff($date,$this->inizio);}
+    public function setDuratafromDate($date){if (is_bool($date)){
+        $this->durata=$date;}
+        else{
+            $this->durata=date_diff($date,$this->inizio);
+        }
+
+    }
     public function setDurata(DateInterval $dateinterval){$this->durata=$dateinterval;}
     public function setIdEvento(int $idevento){$this->idEvento=$idevento;}
     /**                                        METODI GET
@@ -55,9 +61,6 @@ class EFascia extends EObject
         $inizio=clone $this->inizio;
         $durata=clone $this->durata;
         $diff=date_format(date_add($inizio,$durata),"d/m/Y H:i:s");
-
-
-
         return $diff;
         }
     /**
@@ -75,5 +78,35 @@ class EFascia extends EObject
     public function __toString(){
         return $string="DATA DI INIZIO: ". date_format($this->inizio,"d/m/Y H:i:s")." | DURATA: ". $this->durata->format("%Y,%M,%d,%H,%i,%s");
         }
+    /**
+     *
+     * Metodo per la validazione della data di inizio
+     * @return boolean
+     */
+    public function validateStart(){
+        $oggi=date_create();
+
+        if (is_bool($this->inizio) or $this->inizio<$oggi or $this->inizio>$this->fine){
+            return false;
+        }
+        else
+            return true;
+
+    }
+    /**
+     *
+     * Metodo per la validazione della data di fine
+     * @return boolean
+     */
+    public function validateEnd(){
+        $oggi=date_create();
+        if (is_bool($this->fine) or $this->fine<$oggi or $this->fine<$this->inizio){
+            return false;
+        }
+        else
+            return true;
+
+    }
+
 
 }
