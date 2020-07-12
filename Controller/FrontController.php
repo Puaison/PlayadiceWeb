@@ -47,7 +47,7 @@ class FrontController
                 $vObject=new VObject();
                 $user = CSession::getUserFromSession();
                 $giochi=FPersistantManager::getInstance()->search('gioco','BestFive','');
-                $evento=FPersistantManager::getInstance()->search('evento','all','');
+                $eventi=FPersistantManager::getInstance()->search('evento','all','');
                 foreach ($eventi as $value){
                     if(empty($value->getFasce())){
                         $array[]=$value;
