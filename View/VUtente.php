@@ -128,4 +128,12 @@ class VUtente extends VObject
         $this->smarty->assign('check', $this->check);
         $this->smarty->display('Register.tpl');
     }
+
+    function showProfile(EUtente $user)
+    {
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
+        $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('utente',$user);
+        $this->smarty->display('Profile.tpl');
+    }
 }
