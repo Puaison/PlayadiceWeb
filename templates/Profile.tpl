@@ -61,6 +61,9 @@
 
 
                 </div>
+                {if $UtenteType eq 'admin'}
+                    <div class="col-xl-6 text-center py-4 text-center "><b><a class="btn btn-primary" href="/playadice/admin/openAdminPanel" >AdminPanel</a> </b></div>
+                {/if}
             </div>
 
         </div>
