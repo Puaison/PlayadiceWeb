@@ -40,9 +40,11 @@
                             </b></b></h6>
                         <div class="row">
 
-                            <div class="col-xl-6 text-center "><b><a class="btn btn-primary" href="">Modifica</a> </b></div>
+                            <div class="col-xl-4 text-center "><b><a class="btn btn-primary" href="/playadice/utente/modifyMyUtente">Modifica Dati</a> </b></div>
 
-                            <div class="col-xl-6 text-center "><b><a class="btn btn-primary" href="/playadice/utente/removemyutente">Elimina</a> </b></div>
+                            <div class="col-xl-4  "><b><a class="btn btn-primary" href="/playadice/utente/modifymypassword">Modifica Password</a> </b></div>
+
+                            <div class="col-xl-4 text-center "><b><a class="btn btn-primary" href="/playadice/utente/removemyutente">Elimina</a> </b></div>
 
 
 

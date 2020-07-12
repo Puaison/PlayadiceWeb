@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 11:20:50
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 13:15:13
   from 'C:\xampp\htdocs\playadice\templates\Profile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0ad5f2e45fa0_04173810',
+  'unifunc' => 'content_5f0af0c1db1183_73614595',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '270cb8aeda23b693ffea4d50046453835b62d17f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\Profile.tpl',
-      1 => 1594545595,
+      1 => 1594552512,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0ad5f2e45fa0_04173810 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0af0c1db1183_73614595 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -75,9 +75,11 @@ function content_5f0ad5f2e45fa0_04173810 (Smarty_Internal_Template $_smarty_tpl)
                             </b></b></h6>
                         <div class="row">
 
-                            <div class="col-xl-6 text-center "><b><a class="btn btn-primary" href="">Modifica</a> </b></div>
+                            <div class="col-xl-4 text-center "><b><a class="btn btn-primary" href="/playadice/utente/modifyMyUtente">Modifica Dati</a> </b></div>
 
-                            <div class="col-xl-6 text-center "><b><a class="btn btn-primary" href="/playadice/utente/removeutente">Elimina</a> </b></div>
+                            <div class="col-xl-4  "><b><a class="btn btn-primary" href="/playadice/utente/modifymypassword">Modifica Password</a> </b></div>
+
+                            <div class="col-xl-4 text-center "><b><a class="btn btn-primary" href="/playadice/utente/removemyutente">Elimina</a> </b></div>
 
 
 
