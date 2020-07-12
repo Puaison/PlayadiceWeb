@@ -85,13 +85,6 @@ class FrontController
 
             }
             $vObject->showIndex($user,$giochi,$eventi[0]);
-            /*Vecchia implementazione
-            $user = CSession::getUserFromSession();
-            $smarty = SmartyConfig::configure();
-            $smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
-            $smarty->registerObject('user', $user);
-            $smarty->display('index.tpl');
-            */
         }
         exit;
     }
