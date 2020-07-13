@@ -2,14 +2,17 @@
 
 
 /**
- * Class CCatalogo
+ * Il Controller CCatalogo implementa tutte le funzionalità del Caso D'Uso "Visualizzazione Catalogo Giochi".
+ * Un EUtente,EOspite o EAdmin può visionare il catalogo, ricercare giochi e visualizzarne i dettagli,
+ * ma soltanto un EAdmin può eliminare,modificare o creare un nuovo Gioco
  */
 class CCatalogo
 {
     /**
-     *
+     * Metodo che gestisce la funzionalità di esposizione dell'intero catalogo di Giochi
+     * (che verranno presentati in ordine decrescente secondo il VotoMedio registrato)
      */
-    static function catalogocompleto()
+    static function catalogoCompleto()
     {
         $vCatalogo = new VCatalogo();
         $user = CSession::getUserFromSession();
@@ -18,11 +21,11 @@ class CCatalogo
     }
 
     /**
-     * Metodo che implementa il caso d'uso di inserimento di un nuovo gioco. Se richiamato tramite GET, fornisce
-     * la form, se richiamato tramite POST si verifica che le informazioni inserite siano giuste e lo si
-     * salva nel catalogo
+     * Metodo che gestisce la funzionalità di inserimento di un nuovo gioco. Se richiamato tramite GET, fornisce
+     * la form(previa verifica che l'utente richiedente sia del tipo EAdmin), se richiamato tramite POST viene richiamata
+     * la funzione insertNewGioco responsabile
      */
-    static function newgioco()
+    static function newGioco()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') // se il metodo e' get...
         { //...carica la pagina per l'inserimento di un nuovo gioco(verificando che sia un admin)
@@ -36,15 +39,18 @@ class CCatalogo
                 $vCatalogo->showErrorPage($user, 'Non hai i permessi per accedere a questa sezione!');
         }
         else if ($_SERVER['REQUEST_METHOD'] == 'POST')
-            CCatalogo::insertnewgioco();
+            CCatalogo::insertNewGioco();
         else
             header('Location: HTTP/1.1 Invalid HTTP method detected');
     }
 
     /**
-     *
+     * Metodo che prende i dati passati via POST per la creazione di un nuovo Gioco
+     * e li salva nel DB. Controlla se l'utente che sta effettuando la richiesta sia un
+     * EAdmin e che tutti i campi siano stati inviati(e inseriti) correttamente;
+     * Altrimenti notifica l'Utente del problema
      */
-    static function insertnewgioco()
+    static function insertNewGioco()
     {
         $user = CSession::getUserFromSession();
         $vCatalogo = new VCatalogo();
@@ -64,9 +70,14 @@ class CCatalogo
     }
 
     /**
-     * @param int $id
+     * Metodo che esegue la cancellazione dal catalogo(e quindi anche dal DB)
+     * di un gioco. Si controlla che l'utente che ha richiesto la cancellazione sia un EAdmin,
+     * altrimenti si invia un messaggio d'errore; inoltre si verifica che il gioco che si vuole
+     * cancellare effettivamente esista, altrimenti si notifica l'utente che il gioco che vuole
+     * cancellare non esiste
+     * @param int $id l'identificativo del gioco, specificato nell'URL
      */
-    static function remove(int $id)
+    static function removeGioco(int $id)
     {
         $vCatalogo = new VCatalogo();
         $user = CSession::getUserFromSession();
@@ -89,9 +100,13 @@ class CCatalogo
     }
 
     /**
-     * @param $IdGioco
+     * Metodo che gestisce la funzionalità di modifica di un gioco. Se richiamato tramite GET, fornisce
+     * la form per la modifica (previa verifica che l'utente richiedente sia del tipo EAdmin) e che
+     * il gioco da modificare effettivamente esista(altrimenti vengono inviati messaggi di errore);
+     * se richiamato tramite POST viene passato il comando alla funzione eseguiModificaGioco responsabile
+     * di controllare e eseguire il cambiamento
      */
-    static function modificagioco($IdGioco)
+    static function modificaGioco($IdGioco)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') // se il metodo e' get...
         {
@@ -104,7 +119,7 @@ class CCatalogo
                     $vCatalogo->showFormModificaGioco($user, $gioco);
                 }
                 else // se il gioco cercato non esiste, si viene reindirizzati ad una pagina di errore
-                    $vCatalogo -> showErrorPage($user, "Il Gioco che stai cercando non esiste");
+                    $vCatalogo -> showErrorPage($user, "Il Gioco che vuoi modificare non esiste");
 
             }
             else // se l'utente non è un admin
@@ -117,7 +132,10 @@ class CCatalogo
     }
 
     /**
-     *
+     * Metodo che prende i dati passati via POST per la modifica del gioco,esegue la modifica
+     * e controlla se l'utente che sta effettuando la richiesta sia un
+     * EAdmin, che ilgioco esista e che tutti i campi siano stati inviati(e inseriti) correttamente;
+     * Altrimenti notifica l'Utente del problema
      */
     static function eseguiModifica()
     {
@@ -142,26 +160,30 @@ class CCatalogo
     }
 
     /**
-     * Un utente puo' ricercare avatar in base al nome o all'username del proprietario.
-     * Questa ricerca e' possibile
-     * solo per gli utenti che sono registrati.
+     * Questo metodo gestisce la funzionalità di ricerca dei giochi;
+     * è possibile ricercare i giochi per Nome e Categoria
      */
     static function search()
     {
         $vCatalogo = new VCatalogo();
         $user = CSession::getUserFromSession();
 
-            list($string,$key)=$vCatalogo->getStringAndKey();
-            if(strlen($string)==0)
-            {
-                $objects = FPersistantManager::getInstance()->search("gioco", "BestRate" ,"");
-            }
-            else
-                $objects = FPersistantManager::getInstance()->search("gioco", $key , $string);
-            $vCatalogo->showCatalogo($user,$objects);
-
-
+        list($string,$key)=$vCatalogo->getStringAndKey();
+        if(strlen($string)==0)
+        {
+            $objects = FPersistantManager::getInstance()->search("gioco", "AlphabeticOrder" ,"");
+        }
+        else
+            $objects = FPersistantManager::getInstance()->search("gioco", $key , $string);
+        $vCatalogo->showCatalogo($user,$objects);
     }
+
+    /**
+     * Funzione che deve essere richiamata ogni volta che un oggetto EUtente viene eliminato dal DB.
+     * Permette il ricalcolo del voto medio di ogni Gioco, poichè quando l'utente viene cancellato,
+     * anche le sue recensioni vengono eliminate senza che il Voto Medio venga aggiornato.
+     *
+     */
     static function utenteRemoved()
     {//TODO COME VIETO L'ACCESSO A QUESTA FUNZIONE?
         $giochi=FPersistantManager::getInstance()->search("gioco","BestRate","");

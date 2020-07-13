@@ -1,9 +1,21 @@
 <?php
 
 
+/**
+ * Il Controller CGiocoInfo implementa tutte le funzionalità del Caso D'Uso "Inserisci Recensione".
+ * Un EUtente,EOspite o EAdmin può visionare le informazioni del gioco,
+ * ma soltanto gli utenti registrati (EUtente, EAdmin) possono recensire UNA SOLA VOLTA;inoltre ogni Utente può cancellare la propria recensione.
+ * Gli Admin possono eliminare tutte le recensioni.
+ */
 class CGiocoInfo
 {
-    static function showgiocoinfo(int $id)
+    /**
+     * Metodo che permette di visionare le informazioni complete del gioco e
+     * tutte le sue recensioni associate. Inoltre controlla che il gioco richiesto
+     * tramite URL; altrimenti segnala il problema all'utente
+     * @param int $id l'identificativo del gioco, specificato nell'URL
+     */
+    static function showGiocoInfo(int $id)
     {
         $vGiocoinfo = new VGiocoInfo();
         $user = CSession::getUserFromSession();
@@ -36,7 +48,18 @@ class CGiocoInfo
     }
 
 
-    static function removerecensione(string $creatore, int $idgioco)
+    /**
+     * Metodo che gestisce la funzionalità di eliminazione della Recensione; in ordine:
+     * 1)Si Verifica che chi ha richiesto la rimozione della recensione sia il suo creatore o un EAdmin;
+     * 2)Si controlla che il gioco da cui si voglia effettivamente eliminare la recensione esista;
+     * 3)Si controlla che la recensione che si vuole eliminare esista effettivamente;
+     * Se tutto questi controlli sono andati a buon fine, viene eseguita la rimozione della recensione dal DB
+     * e conseguentemente il ricalcolo del VotoMedio del gioco; altrimenti viene notificato l'utente del
+     * problema a cui si è andati incontro
+     * @param string $creatore Username dell'Utente che ha effettuato la recensione, specificato nell'URL
+     * @param int $idgioco l'identificativo del gioco, specificato nell'URL
+     */
+    static function removeRecensione(string $creatore, int $idgioco)
     {
         $vGiocoinfo = new VGiocoInfo();
         $user = CSession::getUserFromSession();
@@ -75,7 +98,15 @@ class CGiocoInfo
             $vGiocoinfo->showErrorPage($user,'Non hai i permessi per rimuovere questa recensione');
 
     }
-    static function newrecensione(int $IdGioco)
+
+    /**
+     * Metodo che gestisce la funzionalità di inserimento di una nuova recensione. Se richiamato tramite GET, fornisce
+     * la form(previa verifica che l'utente sia loggato,che non abbia ancora recensito quel gioco e che quest'ultimo
+     * esista effettivamente); se richiamato tramite POST viene lasciato il comando alla funzione insertNewRecensione,
+     * la quale si occupa di verificare la validità della recensione che si vuole inserire e di salvarla nel DB
+     * @param int $IdGioco l'identificativo del gioco, specificato nell'URL
+     */
+    static function newRecensione(int $IdGioco)
     {
         $user=CSession::getUserFromSession();
         $vGiocoInfo = new VGiocoInfo();
@@ -110,7 +141,19 @@ class CGiocoInfo
             $vGiocoInfo->showErrorPage($user,'Non puoi accedere a questa sezione. Devi prima loggare');
     }
 
-    static function insertnewrecensione(int $IdGioco)
+    /**
+     * Metodo che inserisce nel db la recensione effettuta; ma prima fa diversi controlli; in ordine:
+     * 1)Si Verifica che chi ha richiesto la rimozione sia loggato(EUtente);
+     * 2)Si controlla che il gioco su cui si voglia effettuare la recensione esista;
+     * 3)Si controlla che l'utente in sessione non abbia già recensito;
+     * 4)Si controlla che tutti i parametri inseriti sono corretti
+     * Se tutto questi controlli sono andati a buon fine, viene effettuato l'inserimento della recensione
+     * (creata con le informazioni passate tramite il metodo Post) nel DB
+     * e conseguentemente il ricalcolo del VotoMedio del gioco; altrimenti viene notificato l'utente del
+     * problema a cui si è andati incontro
+     * @param int $IdGioco l'identificativo del gioco, specificato nell'URL
+     */
+    static function insertNewRecensione(int $IdGioco)
     {
         $user=CSession::getUserFromSession();
         $vGiocoInfo = new VGiocoInfo();
