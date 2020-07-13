@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="../bootstrap.min.js"></script>
+    <script src="../Pld/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
@@ -40,7 +40,7 @@
                         <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
                         <div class="col-10 ">
                             <select class="form-control " name="categoria" id="inlineFormCustomSelect">
-                                <option selected="" value="Choose...">Choose...</option>
+                                <option selected="" placeholder="Choose...">Choose...</option>
                                 <option value="Torneo">Torneo</option>
                                 <option value="Gioco Libero">Gioco Libero</option>
                                 <option value="Giochi Di Ruolo">Giochi Di Ruolo</option>

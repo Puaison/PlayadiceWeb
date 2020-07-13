@@ -45,7 +45,7 @@
                         <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
                         <div class="col-10 ">
                             <select class="form-control " name="categoria" id="inlineFormCustomSelect">
-                                <option selected="" value="Choose...">Choose...</option>
+                                <option selected="" placeholder="Choose...">Choose...</option>
                                 <option value="Torneo">Torneo</option>
                                 <option value="Gioco Libero">Gioco Libero</option>
                                 <option value="Giochi Di Ruolo">Giochi Di Ruolo</option>
