@@ -64,7 +64,7 @@
                             {if $UtenteType=="ospite"}
                                 <a class="btn btn-primary " href="/playadice/utente/login">Logga per recensire</a>
                             {elseif $check.Esistente}
-                                        <a class="btn btn-block" href="">Hai già recensito</a>
+                                        <button class="btn btn-primary" href="" disabled>Hai già recensito</button>
                                 {else}
                                 <a class="btn btn-primary " href="/playadice/giocoinfo/newrecensione?{$gioco->getId()}">Inserisci recensione</a>
                             {/if}

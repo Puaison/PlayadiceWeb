@@ -28,7 +28,7 @@
 <div class="py-5">
     <div class="container">
         <div class="row ">
-            <div class="col pb-3" > Ultimi Eventi</div>
+            <div class="col pb-3" > Prossimi Eventi</div>
             {if $Tipo}
                 <a class="col pb-3" href="../evento/create"> Crea un Evento</a>{/if}
             <form method="POST"  action="../evento/order">
