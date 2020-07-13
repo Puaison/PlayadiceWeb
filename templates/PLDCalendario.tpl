@@ -28,7 +28,7 @@
 <div class="py-5">
     <div class="container">
         <div class="row ">
-            <div class="col pb-3" > Ultimi Eventi</div>
+            <div class="col pb-3" > Prossimi Eventi</div>
             {if $Tipo}
                 <a class="col pb-3" href="../evento/create"> Crea un Evento</a>{/if}
             <form method="POST"  action="../evento/order">
@@ -67,7 +67,7 @@
                 {if $data< date_create()}
                     <div class="col-md-12">
                         <div class="row border">
-                            <span class="col- border"><img class="img-fluid d-block pi-draggable " src="https://static.pingendo.com/img-placeholder-1.svg" width="100" height="100"></span>
+                            <span class="col- border"><img class="img-fluid d-block pi-draggable " src="../templates/assets/{$results[k]->getId()}.png" width="100" height="100"></span>
 
                             <span class="col text-center border ">
                             <a class="px-5" href="../evento/show?{$results[k]->getId()}">
