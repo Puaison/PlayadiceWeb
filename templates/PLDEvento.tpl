@@ -22,9 +22,13 @@
 {if $check}<hr>
     <div class="alert alert-warning text-center">
         <br>Prenotazione avvenuta con successo <br></div> {/if}
-{if $error}<hr>
+{if is_null($error)}
+    {else}
+{if $error==true}<hr>
     <div class="alert alert-warning text-center">
-        <br>Ti sei già prenotato! <br></div> {/if}
+        <br>Ti sei già prenotato! <br></div>
+{else}<div class="alert alert-warning text-center">
+    <br>Hai già disdetto la prenotazione<br></div>{/if}{/if}
 {if $book}<hr>
     <div class="alert alert-warning text-center">
         <br>Eliminazione Prenotazione effettuata con successo <br></div> {/if}
@@ -161,7 +165,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                <form action="../evento/delBooking?{$id}" method="post">
+                                                                <form action="../evento/delBooking?{$id}?{$results[0]->getId()}" method="post">
                                                                     <button type="submit"  class="btn btn-primary">Si
                                                                     </button>
                                                                 </form>

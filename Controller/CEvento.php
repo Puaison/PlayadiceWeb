@@ -112,7 +112,8 @@ class CEvento
 
         }
     }
-    static function delBooking($id){
+    static function delBooking($id,$evento){
+        $evento= FPersistantManager::getInstance() -> search("Evento", "Id", $evento);
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         if ($_SERVER['REQUEST_METHOD'] == 'GET')
@@ -120,10 +121,13 @@ class CEvento
         else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $prenotazione = FPersistantManager::getInstance() -> search("Prenotazione", "Id", $id);
-            $str = $prenotazione[0] -> getIdEvento();
+            if($prenotazione){
             FPersistantManager::getInstance() -> remove($prenotazione[0]);
-            $evento= FPersistantManager::getInstance() -> search("Evento", "Id", $str);
-            $vEvento -> show($user, $evento, "", "",true);
+            $vEvento -> show($user, $evento, "", null,true);}
+            else{
+                $vEvento -> show($user, $evento, "", false,"");
+
+            }
         }
         }
 

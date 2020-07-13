@@ -69,7 +69,7 @@
                                                         {$fascia[0]->getDataStr()}</div>
                                                 <div class="col">{$evento->getLuogo()->getNome()}</div>
 
-                                                <a href="./evento/show?{$evento->getId()}" class="btn btn-primary justify-content-center">Vai all'evento</a>
+                                                <a href="./evento/show?{$evento->getId()}" class="btn btn-primary justify-content-center">Vai all'<evento></evento></a>
                                         </div>
                                 </div>
                         </div>
