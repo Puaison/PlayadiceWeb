@@ -6,12 +6,20 @@
  */
 class FUtente
 {
+    /**
+     * Query che restituisce tutti gli utenti nella table "utente"
+     * @return string contenente la query SQL
+     */
     static function searchUtenteByAll() : string
     {
         return "SELECT *
                 FROM Utente;";
     }
 
+    /**
+     * Query che restituisce tutti gli utenti nella table "utente"
+     * @return string contenente la query SQL
+     */
     static function searchUtenteByNome() : string
     {
         return "SELECT *
@@ -33,6 +41,10 @@ class FUtente
                 WHERE LOCATE( :UserNameLocate , UserName ) > 0;";
     }
 
+    /**
+     * Query che effettua il salvataggio di un utente nella table "utente" del DB
+     * @return string contenente la query SQL
+     */
     static function storeUtente() : string
     {
         return "INSERT INTO utente(UserName, Nome , Cognome, Password, Email, Moderatore)
@@ -50,6 +62,7 @@ class FUtente
     }
     /**
      * Elimina un utente dal db .
+     * @return string contente la query sql
      */
     static function removeUtente() : string
     {
@@ -60,7 +73,13 @@ class FUtente
     }
 
 
-    static function bindValues(PDOStatement &$stmt, EUtente &$user)
+    /**
+     * Metodo che, partendo da un oggetto EUtente,associa i suoi
+     * attributi ai campi di una query sql per la table "utente"
+     * @param PDOStatement $stmt lo statement(query) contenente i campi da riempire
+     * @param EUtente $user L'oggetto da cui prelevare i dati
+     */
+    static function bindValues(PDOStatement &$stmt, EUtente $user)
     {
         $result = var_export($stmt, true);
         if( strpos( $result, ":Username" ) !== false)
@@ -78,9 +97,11 @@ class FUtente
     }
 
     /**
-     * Crea una Entity da una row del database
-     * @param array $row avente come indici i campi della table da cui e' stata prelevata l'entry
-     * @return EUtente | EAdmin
+     * Metodo che partendo da ciò che è stato recuperato
+     * dal database, crea un Oggetto EUtente/EAdmin
+     * @param array $row contenente le informazioni recuperate dal DB
+     * attraverso una relazione chiave(il nome dei campi all'interno del db) - valore
+     * @return EUtente|EAdmin
      */
     static function createObjectFromRow($row)
     {

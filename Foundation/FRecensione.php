@@ -1,9 +1,16 @@
 <?php
 
 
+/**
+ *La classe FRecensione fornisce query per gli oggetti ERecensione
+ */
 class FRecensione
 {
 
+    /**
+     * Query che ricerca tutte le recensioni associate ad un Gioco
+     * @return stringstring contenente la query SQL
+     */
     static function searchRecensioneByIdGioco() : string
     {
         return "SELECT *
@@ -11,20 +18,32 @@ class FRecensione
                 WHERE IdGioco=:IdGioco;";
     }
 
-    //TODO funzione da eliminare perchè le stringhe non hanno gli id
-    static function searchRecensioneById() : string
+    /**
+     * Query che ricerca tutte le recensioni associate ad un utente
+     * @return stringstring contenente la query SQL
+     */
+    static function searchRecensioneByCreatore() : string
     {
         return "SELECT *
                 FROM recensione
-                WHERE Id=:Id;";
+                WHERE Creatore=:Creatore;";
     }
 
+    /**
+     * Query che effettua il salvataggio di una recensione nella table "recensione" del DB
+     * @return string string contenente la query SQL
+     */
     static function storeRecensione() : string
     {
         return "INSERT INTO recensione(Creatore, IdGioco,Voto,Commento)
 				VALUES(:Creatore, :IdGioco, :Voto, :Commento);";
     }
 
+    /**
+     * Query che permette la rimozione di una Recensione
+     * di un utente associata ad un gioco
+     * @return string string contenente la query SQL
+     */
     static function removeRecensione() : string
     {
         return "DELETE 
@@ -34,7 +53,13 @@ class FRecensione
     }
 
 
-    static function bindValues(PDOStatement &$stmt, ERecensione &$recensione)
+    /**
+     * Metodo che, partendo da un oggetto ERecensione,associa i suoi
+     * attributi ai campi di una query sql per la table "recensione"
+     * @param PDOStatement $stmt lo statement(query) contenente i campi da riempire
+     * @param ERecensione $recensione L'oggetto da cui prelevare i dati
+     */
+    static function bindValues(PDOStatement &$stmt, ERecensione $recensione)
     {
         $result = var_export($stmt, true);
 
@@ -49,6 +74,13 @@ class FRecensione
 
     }
 
+    /**
+     * Metodo che partendo da ciò che è stato recuperato
+     * dal database, crea un Oggetto ERecensione
+     * @param array $row contenente le informazioni recuperate dal DB
+     * attraverso una relazione chiave(il nome dei campi all'interno del db) - valore
+     * @return ERecensione
+     */
     static function createObjectFromRow($row)
     {
 
@@ -63,8 +95,12 @@ class FRecensione
         $recensione->setVoto($row['Voto']);
         $recensione->setCommento($row['Commento']);
 
-        //$Pippo = FPersistantManager::getInstance()->search("Gioco","Id",($row['IdGioco']));
-        //$recensione->setEGioco($Pippo[0]);
+        /* Queste due righe permettono un Eager Loading
+         dell'oggetto EGioco associata alla Recensione in questione.
+        Noi invece facciamo Lazy Loading
+        $Pippo = FPersistantManager::getInstance()->search("Gioco","Id",($row['IdGioco']));
+        $recensione->setEGioco($Pippo[0]);
+        */
         return $recensione;
     }
 }

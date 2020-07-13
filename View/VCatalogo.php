@@ -2,12 +2,23 @@
 
 
 /**
- * Class VCatalogo
+ * La classe VCatalogo si occupa dell'input-output di tutti i giochi e delle loro informazioni princiapli.
+ * Ovvero:
+ * - dai dati inseriti dall'utente(admin) costruisce un oggetto EGioco(accertandosi attraverso
+ * le funzioni di validazione dell'Entity che i dati inseriti siano validi)
+ * - predispone e visualizza le varie pagine HTML per mostrare
+ * la lista giochi e per la creazione/rimozione/modifica di un gioco.
  */
 class VCatalogo extends VObject
 {
     /**
-     * VCatalogo constructor.
+     * In questa classe, l'array check controlla:
+     * 1) 'Nome' - dice se il Nome del gioco inserito è valido
+     * 2) 'Categoria' - dice se la Categoria del gioco inserito è valido
+     * 3) 'Descrizione' - dice se la Descrizione del gioco inserito è valido
+     * 4) 'NumeroMax' - dice se il NumeroMax di giocatori del gioco inseirito è valido
+     * 5) 'NumeroMin' - dice se il NumeroMin di giocatori del gioco inseirito è valido
+     * 6) 'CasaEditrice' - dice se la Casa Editrice del gioco inserito è valido
      */
     function __construct()
     {
@@ -45,7 +56,7 @@ class VCatalogo extends VObject
 
     /**
      * Funzione che permette la creazione di un gioco con i valori prelevati da una form
-     * @return EGioco l'utente ottenuto dai campi della form
+     * @return EGioco il gioco ottenuto dai campi della form
      */
     function createGioco() : EGioco
     {
@@ -79,8 +90,8 @@ class VCatalogo extends VObject
     }
 
     /**
-     * Verifica che un utente abbia rispettato i vincoli per l'inserimento dei parametri
-     * del nuovo Gioco
+     * Verifica che un gioco rispetti tutti i parametri;
+     * richiama le funzioni di validazione presenti in Entity
      * @param EGioco $gioco l'oggetto gioco da controllare
      * @return true se non si sono commessi errori, false altrimenti
      */
@@ -108,7 +119,7 @@ class VCatalogo extends VObject
     /**
      * Mostra il Catalogo di Giochi
      * @param EUtente $user l'utente della sessione
-     * @param array $array contenente i risultati della ricerca | NULL se nessun oggetto e' stato costruito
+     * @param array $array contenente i risultati della ricerca | NULL se non c'è nessun gioco da mostrare
      */
     function showCatalogo(EUtente $user,$array)
     {
@@ -119,19 +130,15 @@ class VCatalogo extends VObject
     }
 
     /**
-     * @param EUtente $user
-     * @param EGioco|null $gioco
-     * @throws SmartyException
+     * Mostra la Form per la creazione di un nuovo gioco
+     * @param EUtente $user l'utente di sessione
+     * @param EGioco|null $gioco TODO gioco appena isneito?
      */
     function showFormNewGioco(EUtente $user, EGioco $gioco=null)
     {
         if(!$gioco) {
             $gioco = new EGioco();
         }
-
-
-
-
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->assign('prec', $_POST);
         $this->smarty->assign('gioco', $gioco);
@@ -141,9 +148,9 @@ class VCatalogo extends VObject
     }
 
     /**
-     * @param EUtente $user
-     * @param EGioco $gioco
-     * @throws SmartyException
+     * Mostra la Form per la modifica del gioco
+     * @param EUtente $user l'utente di sessione
+     * @param EGioco $gioco il gioco da modificare
      */
     function showFormModificaGioco(EUtente $user, EGioco $gioco)
     {
@@ -151,21 +158,6 @@ class VCatalogo extends VObject
         $this->smarty->assign('gioco', $gioco);
         $this->smarty->registerObject('user', $user);
         $this->smarty->display('ModificaGioco.tpl');
-    }
-    /**
-     * Funzione che mostra il template con i risultati della ricerca effettuata
-     */
-    function showSearchResult(EUtente &$user, $array)
-    {
-
-
-        $this->smarty->registerObject('user', $user);
-        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
-
-        $this->smarty->assign('results', $array);
-
-        //mostro il contenuto della pagine
-        $this->smarty->display('GiochiMainPage.tpl');
     }
 
 }

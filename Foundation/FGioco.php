@@ -2,25 +2,38 @@
 
 /**
  * La classe FGioco fornisce query per gli oggetti EGioco
- * @package Foundation
  */
 
 class FGioco
 {
 
+    /**
+     * Query che effettua il salvataggio di un gioco nella table "gioco" del DB
+     * @return string contenente la query SQL
+     */
     static function storeGioco() : string
     {
         return "INSERT INTO gioco(Nome, Categoria)
 				VALUES(:Nome, :Categoria);";
     }
 
+    /**
+     * Query che permette la ricerca(per corrispondenza)
+     * di giochi usando come chiave di ricerca il Nome
+     * @return string contenente la query SQL
+     */
     static function searchGiocoByNome() : string
     {
         return "SELECT *
                 FROM gioco
-                WHERE LOCATE( :Nome , Nome ) > 0;";
+                WHERE LOCATE( :Nome , Nome ) > 0
+                ORDER BY VotoMedio DESC;";
     }
 
+    /**
+     * Query che permette la ricerca di un gioco usando il suo Id
+     * @return string contenente la query SQL
+     */
     static function searchGiocoById() : string
     {
         return "SELECT *
@@ -28,6 +41,11 @@ class FGioco
                 WHERE LOCATE( :Id , Id ) > 0;";
     }
 
+    /**
+     * Query che permette di ricercare giochi a
+     * partire dalla Categoria
+     * @return string contenente la query SQL
+     */
     static function searchGiocoByCategoria() : string
     {
         return "SELECT *
@@ -35,6 +53,10 @@ class FGioco
                 WHERE LOCATE( :Categoria , Categoria ) > 0;";
     }
 
+    /**
+     * Query che permette di avere il gioco inserito per ultimo nel DB
+     * @return string contenente la query SQL
+     */
     static function searchGiocoByLast() : string
     {
         return "SELECT *
@@ -42,6 +64,11 @@ class FGioco
                 ORDER BY Id DESC limit 1;";
     }
 
+    /**
+     * Query che permette di ottenere tutti i giochi ordinati
+     * decrescentemente per voto medio
+     * @return string contenente la query SQL
+     */
     static function searchGiocoByBestRate() : string
     {
         return "SELECT *
@@ -49,6 +76,11 @@ class FGioco
                 ORDER BY VotoMedio DESC;";
     }
 
+    /**
+     * Query che restituisce i 5 Giochi con
+     * il voto più alto(sempre in ordine decrescente)
+     * @return string contenente la query SQL
+     */
     static function searchGiocoByBestFive() : string
     {
         return "SELECT *
@@ -56,6 +88,10 @@ class FGioco
                 ORDER BY VotoMedio DESC limit 5;";
     }
 
+    /**
+     * Query che restituisce tutti i giochi ordinati alfabeticamente
+     * @return string contenente la query SQL
+     */
     static function searchGiocoByAlphabeticOrder() : string
     {
         return "SELECT *
@@ -63,6 +99,11 @@ class FGioco
                 ORDER BY Nome;";
     }
 
+    /**
+     * Query che rimuove un gioco(identificato dal suo id)
+     * dalla table "gioco"
+     * @return string contenente la query SQL
+     */
     static function removeGioco() : string
     {
         return "DELETE 
@@ -71,6 +112,10 @@ class FGioco
 
     }
 
+    /**
+     * Query che effettua l'aggiornamento di un gioco nella table "gioco"
+     * @return string contenente la query SQL
+     */
     static function updateGioco() : string
     {
         return "UPDATE gioco
@@ -78,7 +123,13 @@ class FGioco
                 WHERE Id = :Id ;";
     }
 
-    static function bindValues(PDOStatement &$stmt, EGioco &$gioco)
+    /**
+     * Metodo che, partendo da un oggetto EGioco,associa i suoi
+     * attributi ai campi di una query sql per la table "gioco"
+     * @param PDOStatement $stmt lo statement(query) contenente i campi da riempire
+     * @param EGioco $gioco L'oggetto da cui prelevare i dati
+     */
+    static function bindValues(PDOStatement &$stmt, EGioco $gioco)
     {
         $result = var_export($stmt, true);
 
@@ -93,6 +144,14 @@ class FGioco
 
 
     }
+
+    /**
+     * Metodo che partendo da ciò che è stato recuperato
+     * dal database, crea un Oggetto EGioco
+     * @param array $row contenente le informazioni recuperate dal DB
+     * attraverso una relazione chiave(il nome dei campi all'interno del db) - valore
+     * @return EGioco
+     */
     static function createObjectFromRow($row)
     {
 
@@ -105,8 +164,13 @@ class FGioco
             $gioco->setVotoMedio($row['VotoMedio']);
         else
             $gioco->setVotoMedio(0);
-        //if(FPersistantManager::getInstance()->exists("giocoinfo", "IdGioco",$gioco->getId()))
-            //$gioco->setInfo(FPersistantManager::getInstance()->search("giocoinfo", "IdGioco",$gioco->getId())[0]);
+        /* Queste due righe permettono un Eager Loading
+         dell'oggetto EGiocoInfo associato al Gioco in questione.
+        Noi invece facciamo Lazy Loading
+
+        if(FPersistantManager::getInstance()->exists("giocoinfo", "IdGioco",$gioco->getId()))
+            $gioco->setInfo(FPersistantManager::getInstance()->search("giocoinfo", "IdGioco",$gioco->getId())[0]);
+        */
 
         return $gioco;
     }

@@ -1,20 +1,40 @@
 <?php
 
 
+/**
+ * La classe FGiocoInfo fornisce query per gli oggetti EGiocoInfo
+ */
 class FGiocoInfo
 {
 
+    /**
+     * Query che effettua il salvataggio di un
+     * giocoinfo nella table "giocoinfo" del DB
+     * @return string contenente la query SQL
+     */
     static function storeGiocoInfo() : string
     {
         return "INSERT INTO giocoinfo(IdGioco,Descrizione,NumeroMin,NumeroMax,CasaEditrice)
 				VALUES( :IdGioco, :Descrizione, :NumeroMin, :NumeroMax, :CasaEditrice);";
     }
+
+    /**
+     * Query che permette di recuperare un giocoinfo
+     * partendo dall'Id del gioco a cui è associato
+     * @return string contenente la query SQL
+     */
     static function searchGiocoInfoByIdGioco() : string
     {
         return "SELECT *
                 FROM giocoinfo
                 WHERE IdGioco=:IdGioco;";
     }
+
+    /**
+     * Query che permette di aggiornare un giocoinfo
+     * nella table "giocoinfo"
+     * @return string contenente la query SQL
+     */
     static function updateGiocoInfo() : string
     {
         return "UPDATE giocoinfo
@@ -23,8 +43,13 @@ class FGiocoInfo
     }
 
 
-
-    static function bindValues(PDOStatement &$stmt, EGiocoInfo &$giocoInfo)
+    /**
+     * Metodo che, partendo da un oggetto EGiocoInfo,associa i suoi
+     * attributi ai campi di una query sql per la table "giocoinfo"
+     * @param PDOStatement $stmt lo statement(query) contenente i campi da riempire
+     * @param EGiocoInfo $giocoInfo L'oggetto da cui prelevare i dati
+     */
+    static function bindValues(PDOStatement &$stmt, EGiocoInfo $giocoInfo)
     {
         $result = var_export($stmt, true);
 
@@ -41,6 +66,14 @@ class FGiocoInfo
 
 
     }
+
+    /**
+     * Metodo che partendo da ciò che è stato recuperato
+     * dal database, crea un Oggetto EGiocoInfo
+     * @param array $row contenente le informazioni recuperate dal DB
+     * attraverso una relazione chiave(il nome dei campi all'interno del db) - valore
+     * @return EGiocoInfo
+     */
     static function createObjectFromRow($row)
     {
 
