@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="../bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
     <title>Crea Evento</title>
+
 </head>
 
 <body>
@@ -132,7 +134,7 @@
 
 
                     <div>
-                        <span class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Aggiungi una Fascia</b></label>
+                        <span class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Aggiungi una Fascia (Minimo 1)</b></label>
                         </span>
                         {if !$check.Fasce}
                             <div class="alert alert-warning">
@@ -144,11 +146,7 @@
                         {/if}
 
                         {for $foo=1 to 10}
-                            <a class="btn    btn-primary" data-toggle="collapse" href="#{$foo}" role="button" aria-expanded="false" aria-controls="#{$foo}">
-                                +
-                            </a>
-
-                        <div class="collapse" id="{$foo}">
+                        <div class={if $foo>1}"collapse"{/if} id="{$foo}">
                             <div class="form-group row">
                                 <label  class="col-2 col-form-label"><b>Giorno di Inizio</b></label>
                                 <div class="col-10">
@@ -170,6 +168,9 @@
 
 
                         </div>
+                            {if $foo>1}<a class="btn   btn-primary" data-toggle="collapse" href="#{$foo}" role="button" name="bottone" aria-expanded="false" aria-controls="#{$foo}">
+                                +
+                            </a>{/if}
                          {/for}
 
                     </div>
@@ -198,6 +199,7 @@
             </div>
         </div>
     </form>
+
 
 
 

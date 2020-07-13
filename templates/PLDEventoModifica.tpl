@@ -114,7 +114,7 @@
 
 
                     <div>
-                        <div class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Aggiungi una Fascia</b></label>
+                        <div class="form-group row"> <label for="name-input" class="col-2 col-form-label"><b>Aggiungi una Fascia (Minimo 1)</b></label>
 
                         </div>
                         {if !$check.Fasce}
@@ -131,10 +131,8 @@
                             {$numfascia=$foo-1}
                             {if !empty($fasce[$numfascia])}
 
-                            <a class="btn    btn-primary" data-toggle="collapse" href="#{$foo}" role="button" aria-expanded="false" aria-controls="#{$foo}">
-                                +
-                            </a>
-                            <div class="collapse" id="{$foo}">
+
+                            <div class={if $foo>1}"collapse"{/if} id="{$foo}">
                                 <div class="form-group row">
                                     <label  class="col-2 col-form-label"><b>Giorno di Inizio</b></label>
                                     <div class="col-10">
@@ -151,12 +149,13 @@
                                     </div>
                                 </div>
                             </div>
+                                {if $foo>1}<a class="btn   btn-primary" data-toggle="collapse" href="#{$foo}" role="button" name="bottone" aria-expanded="false" aria-controls="#{$foo}">
+                                        +
+                                    </a>{/if}
 
 
                             {else}
-                                <a class="btn    btn-primary" data-toggle="collapse" href="#{$foo}" role="button" aria-expanded="false" aria-controls="#{$foo}">
-                                    +
-                                </a>
+
                             <div class="collapse" id="{$foo}">
                                 <div class="form-group row">
                                     <label  class="col-2 col-form-label"><b>Giorno di Inizio</b></label>
@@ -173,6 +172,9 @@
 
                             </div>
                             {/if}
+                            {if $foo>1}<a class="btn   btn-primary" data-toggle="collapse" href="#{$foo}" role="button" name="bottone" aria-expanded="false" aria-controls="#{$foo}">
+                                    +
+                                </a>{/if}
                         {/for}
                     </div>
                     <div class="form-group row">
