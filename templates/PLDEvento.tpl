@@ -48,7 +48,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 order-2 order-lg-1 p-0">
-                <img class="img-fluid d-block" src="../templates/assets/{$results[0]->getId()}.png" style="" h="100" w="100">
+                <img class="img-fluid d-block" src="../Resources/assets/EventImages/{$results[0]->getId()}.png" style="" h="100" w="100">
             </div>
             <div class="px-5 col-lg-6 flex-column align-items-start justify-content-center order-1 order-lg-2" >
                 <div class="card ">
