@@ -112,7 +112,8 @@ class CEvento
 
         }
     }
-    static function delBooking($id){
+    static function delBooking($id,$evento){
+        $evento= FPersistantManager::getInstance() -> search("Evento", "Id", $evento);
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         if ($_SERVER['REQUEST_METHOD'] == 'GET')
@@ -120,10 +121,13 @@ class CEvento
         else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $prenotazione = FPersistantManager::getInstance() -> search("Prenotazione", "Id", $id);
-            $str = $prenotazione[0] -> getIdEvento();
+            if($prenotazione){
             FPersistantManager::getInstance() -> remove($prenotazione[0]);
-            $evento= FPersistantManager::getInstance() -> search("Evento", "Id", $str);
-            $vEvento -> show($user, $evento, "", "",true);
+            $vEvento -> show($user, $evento, "", null,true);}
+            else{
+                $vEvento -> show($user, $evento, "", false,"");
+
+            }
         }
         }
 
@@ -152,15 +156,18 @@ class CEvento
                 FPersistantManager ::getInstance() -> update($luogo);
                 FPersistantManager ::getInstance() -> update($evento);
                 $fasceOld = $eventoOld[0] -> getFasce();
-                for ($i = 0; $i < count($fasce); $i++) {
-                    if (isset($fasceOld[$i])) {
+                for ($i = 0; $i<10; $i++) {
+                    if (!empty($fasceOld[$i]) and !empty($fasce[$i])) {
                         $fasce[$i] -> setId($fasceOld[$i] -> getId());
                         $fasce[$i] -> setIdEvento($fasceOld[$i] -> getIdEvento());
                         FPersistantManager ::getInstance() -> update($fasce[$i]);
-                    } else {
+
+                    } else if (empty($fasceOld[$i]) and !empty($fasce[$i])){
                         $fasce[$i] -> setIdEvento($eventoOld[0] -> getId());
-                        FPersistantManager ::getInstance() -> store($fasce[$i]);
-                    }
+                        FPersistantManager ::getInstance() -> store($fasce[$i]);}
+                    else if (!empty($fasceOld[$i]) and empty($fasce[$i])){
+                        FPersistantManager ::getInstance() -> remove($fasceOld[$i]);
+                        }
                 }
                 $str = $evento -> getId();
                 header("Location: /playadice/evento/show?$str");

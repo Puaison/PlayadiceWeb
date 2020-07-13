@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
   <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
-  <title>TVG Home</title>
+  <title>TWG Home</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
 {/if}
 
   <!-- Sezione Ricerca here -->
-<div class="container-fluid" draggable="false" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(https://static.pingendo.com/cover-bubble-dark.svg);  background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat; min-height: 1000px">
+<div class="container-fluid" draggable="false" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url('../templates/assets/BG.png'); background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat; min-height: 1000px">
 
   <div class="container-fluid">
 

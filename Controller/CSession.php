@@ -63,9 +63,12 @@ class CSession
             $uType= 'E'.ucfirst($_SESSION['type']); // determina la entity della tipologia di utente
 
             $user = new $uType();
-
-            //$user->setNome($_SESSION['Name']);
             $user->setUsername($_SESSION['Username']);
+            if (! FPersistantManager::getInstance()->exists("utente","UserName",$_SESSION['Username']) )
+            {
+                session_destroy(); // distrugge la sessione
+                $user = new EOspite();
+            }
         }
         else
         {

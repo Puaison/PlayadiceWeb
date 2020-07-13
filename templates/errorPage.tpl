@@ -23,6 +23,8 @@
 
 {include file="navbar.tpl"}
 
+<br>
+
 <div class="container text-center well">
     <h3>Ooooops! Something went wrong!</h3>
     <p>{$error}, Per favore torna nella <a href="/playadice/">home</a>

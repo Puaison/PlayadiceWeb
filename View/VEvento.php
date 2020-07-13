@@ -83,14 +83,36 @@ class VEvento extends VObject
         for($foo=1; $foo<=10; $foo++){
             $finale=$foo+11;
             $fascia=new EFascia();
-            $inizio=(date_create_from_format("d/m/Y H:i:s",$_POST["$foo"]));
-            $fine=(date_create_from_format("d/m/Y H:i:s",$_POST["$finale"]));
-            $fascia->setData($inizio);
-            $fascia->setDuratafromDate($fine);
-            $fascia->setFine($fine);
-            $evento->newFascia($fascia);
+            if (!empty($_POST["$foo"]) && !empty($_POST["$finale"]) && $foo==1){
+                $inizio=(date_create_from_format("d/m/Y H:i:s",$_POST["$foo"]));
+                $fine=(date_create_from_format("d/m/Y H:i:s",$_POST["$finale"]));
+                $fascia->setData($inizio);
+                $fascia->setDuratafromDate($fine);
+                $fascia->setFine($fine);
+                $evento->newFascia($fascia);
+            }
 
-        }
+                else if (empty($_POST["$foo"]) && empty($_POST["$finale"]) && $foo==1){
+                    $inizio=(date_create_from_format("d/m/Y H:i:s",$_POST["$foo"]));
+                    $fine=(date_create_from_format("d/m/Y H:i:s",$_POST["$finale"]));
+                    $fascia->setData($inizio);
+                    $fascia->setDuratafromDate($fine);
+                    $fascia->setFine($fine);
+                    $evento->newFascia($fascia);
+
+                }
+                else if (!empty($_POST["$foo"]) && !empty($_POST["$finale"])){
+                    $inizio=(date_create_from_format("d/m/Y H:i:s",$_POST["$foo"]));
+                    $fine=(date_create_from_format("d/m/Y H:i:s",$_POST["$finale"]));
+                    $fascia->setData($inizio);
+                    $fascia->setDuratafromDate($fine);
+                    $fascia->setFine($fine);
+                    $evento->newFascia($fascia);
+                }
+
+
+                }
+
         if(isset($_POST['prenotazione']))
             $evento->setFlag($_POST['prenotazione']);
         if(isset($_POST['testo']))
@@ -119,7 +141,7 @@ class VEvento extends VObject
         $fasce=$evento->getFasce();
         foreach ($fasce as $value){
             $check=$value->validateStart() and $value->validateEnd();
-            $this->check['Fasce']=  $check and $this->check['Fasce'];
+            $this->check['Fasce']=  ($check and $this->check['Fasce']);
         }
 
         if($this->check['Nome'] && $this->check['Descrizione']
