@@ -41,7 +41,7 @@ class CCatalogo
         else if ($_SERVER['REQUEST_METHOD'] == 'POST')
             CCatalogo::insertNewGioco();
         else
-            header('Location: HTTP/1.1 Invalid HTTP method detected');
+            header('Location: /playadice/catalogo/catalogocompleto');
     }
 
     /**
@@ -128,7 +128,7 @@ class CCatalogo
         else if ($_SERVER['REQUEST_METHOD'] == 'POST')
             CGiocoInfo::eseguiModifica($IdGioco);
         else
-            header('Location: HTTP/1.1 Invalid HTTP method detected');
+            header('Location: /playadice/catalogo/catalogocompleto');
     }
 
     /**
@@ -182,10 +182,9 @@ class CCatalogo
      * Funzione che deve essere richiamata ogni volta che un oggetto EUtente viene eliminato dal DB.
      * Permette il ricalcolo del voto medio di ogni Gioco, poichè quando l'utente viene cancellato,
      * anche le sue recensioni vengono eliminate senza che il Voto Medio venga aggiornato.
-     *
      */
     static function utenteRemoved()
-    {//TODO COME VIETO L'ACCESSO A QUESTA FUNZIONE?
+    {
         $giochi=FPersistantManager::getInstance()->search("gioco","BestRate","");
         if($giochi) {//se ci sono dei giochi
             foreach ($giochi as $gioco) {
@@ -195,12 +194,10 @@ class CCatalogo
                     $gioco->setRecensioni($recensioni);
                     $gioco->CalcolaVotoMedio();
                     FPersistantManager::getInstance()->update($gioco);
-                    //$gioco->setRecensioni($recensioni);
                 } else {
                     $gioco->setVotoMedio(0);
                     FPersistantManager::getInstance()->update($gioco);
                 }
-
             }
         }
     }

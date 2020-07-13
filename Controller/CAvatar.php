@@ -20,7 +20,7 @@ class CAvatar
         if (get_class($user) != EOspite::class) // se l'utente non e' ospite
         {
             if(! $SelectedAvatar=FPersistantManager::getInstance()->exists("Avatar","IdAvatar","$id"))
-                $vAvatar->showErrorPage($user, 'Stai smanettando con le url eh? Birichino!');
+                $vAvatar->showErrorPage($user, 'Non smanettare con le url');
             else
             {
             $SelectedAvatar=FPersistantManager::getInstance()->search("Avatar","IdAvatar","$id");
@@ -230,7 +230,7 @@ class CAvatar
         $vAvatar = new VAvatar();
         $user = CSession::getUserFromSession();
 
-        if (get_class($user) == EAdmin::class) // se l'utente non e' ospite
+        if (get_class($user) == EAdmin::class) // se l'utente e' admin
         {
             $proposta=FPersistantManager::getInstance()->search("Proposta","Id","$id");
             $vAvatar->showproposta($user,$proposta[0]);

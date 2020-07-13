@@ -44,7 +44,7 @@ class CAdmin
                     {
                         $Banned = FPersistantManager::getInstance()->search('utente', 'UserName', $Username)[0];
                         FPersistantManager::getInstance()->remove($Banned);
-                        CCatalogo::utenteRemoved();
+                        CCatalogo::utenteRemoved();  //Aggiorna i voti medi dei giochi perchè alcuni voti potrebbero essere spariti
                         CAdmin::openAdminPanel();
                     }
                     else

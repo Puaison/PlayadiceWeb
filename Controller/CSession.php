@@ -2,7 +2,7 @@
 /**
  * La classe CSession regola la sessione dell'utente nella navigazione dell'applicazione.
  * Le sue funzionalità permettono di iniziare, terminare e riprendere una sessione di un particolare
- * utente, costruendo/ricostruendo i suoi parametri principali (quali nome, tipologia...)
+ * utente, costruendo/ricostruendo i suoi parametri principali (quali username, tipologia...)
  * @author Gruppo DelSignore/Marottoli/Perozzi
  * @package Controller
  */
@@ -17,6 +17,7 @@ class CSession
     {
         session_start();
 
+        /* TODO REMOVE
         $inactive = 3600; // inactive in seconds
         if( !isset($_SESSION['timeout']) )
             $_SESSION['timeout'] = time() + $inactive;
@@ -27,9 +28,9 @@ class CSession
         {  session_destroy(); header("Location:index.php");     }
 
         $_SESSION['timeout']=time();
+        */
 
         // i suoi dati sono memorizzati all'interno della sessione
-        //$_SESSION['Name'] =  $user->getNome();
         $_SESSION['Username'] = $user->getUsername();
         $_SESSION['type'] = lcfirst(substr(get_class($user), 1));
     }

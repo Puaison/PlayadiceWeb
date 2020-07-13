@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Lo scopo di questa classe e' quello di fornire un accesso unico al DBMS, incapsulando
- * al proprio interno i metodi statici di tutte le altre classi Foundation, cosi che l'accesso
+ * Lo scopo di questa classe e' quello di fornire un accesso unico al DBMS, recuperando le query e generando oggetti attraverso
+ * metodi statici di tutte le altre classi Foundation, cosi che l'accesso
  * ai dati persistenti da parte degli strati superiore dell'applicazione sia piu' intuitivo.
  */
 class FPersistantManager
@@ -42,7 +42,7 @@ class FPersistantManager
     }
 
     /**
-     * Metodo reso privato per evitare la clonazione dell'oggetto.
+     * Metodo reso privato per evitare la clonazione dell'oggetto. (Rottura Singleton)
      */
     private function __clone()
     {
@@ -63,12 +63,10 @@ class FPersistantManager
     /****************************************** SEARCH **************************************************/
 
     /**
-     * Effettua una ricerca sul database secondo vari parametri. Tale metodo e' scaturito a seguito
-     * di una ricerca da parte dell'utente, puo' essere relativa a canzoni o musicisti secondo diversi
-     * parametri, come nome o genere musicale.
+     * Effettua una ricerca sul database secondo vari parametri.
      * @param string $key la table da cui prelevare i dati
-     * @param string $value il valore per cui cercare i valori
-     * @param string $str il dato richiesto dall'utente
+     * @param string $value il metodo da richiamare nelle classi foundation
+     * @param string $str il dato secondo cui fare la search
      * @return array|NULL i risultati ottenuti dalla ricerca. Se la richiesta non ha match, ritorna NULL.
      */
     function search(string $key, string $value, string $str)
@@ -118,13 +116,11 @@ class FPersistantManager
     /****************************************** Exists(?) **************************************************/
 
     /**
-     * Effettua una ricerca sul database secondo vari parametri. Tale metodo e' scaturito a seguito
-     * di una ricerca da parte dell'utente, puo' essere relativa a canzoni o musicisti secondo diversi
-     * parametri, come nome o genere musicale.
+     * Effettua un controllo di esistenza sul database secondo vari parametri.
      * @param string $key la table da cui prelevare i dati
      * @param string $value il valore per cui cercare i valori
      * @param string $str il dato richiesto dall'utente
-     * @return boolean i risultati ottenuti dalla ricerca. Se la richiesta non ha match, ritorna false.
+     * @return boolean True se esiste almeno una corrispondenza. Se la richiesta non ha match, ritorna false.
      */
     function exists(string $key, string $value, string $str)
     {
@@ -202,15 +198,6 @@ class FPersistantManager
         return $result;
     }
 
-    /**
-     * Esegue una INSERT sul database
-     *
-     * @param mixed $obj
-     *            l'oggetto da salvare
-     * @param string $sql
-     *            la stringa contenente il comando SQL
-     * @return boolean l'esito della transazione
-     */
     private function execStore(&$obj, string $sql)
     {
 
@@ -268,12 +255,13 @@ class FPersistantManager
         }
     }
     /******************************************* UPDATE *******************************************/
-    /*
-     * Metodo che permette di aggiornare informazioni sul database, relative
-     * ad una singola ennupla.
+
+    /**
+     * Metodo che permette di aggiornare informazioni sul database,
+     * relative ad un oggetto;
      * @param $obj l'oggetto da aggiornare
-     * @bool true se l'update ha avuto successo, false altrimenti
-     **/
+     * @return true se l'update ha avuto successo, false altrimenti
+     */
     function update($obj) : bool
     {
         $sql='';
@@ -294,12 +282,6 @@ class FPersistantManager
         return $result;
     }
 
-    /**
-     * Esegue una UPDATE sul database
-     * @param mixed $obj l'oggetto da salvare
-     * @param string $sql la stringa contenente il comando SQL
-     * @return bool l'esito della transazione
-     */
     private function execUpdate(&$obj, string $sql) : bool
     {
         $this->db->beginTransaction(); //inizio della transazione
@@ -342,6 +324,7 @@ class FPersistantManager
     /**
      * Metodo che cancella dal database una entry di un particolare
      * oggetto Entity.
+     * @param $obj l'oggetto da rimuovere
      * @return bool se l'operazione ha avuto successo o meno.
      */
     function remove($obj) : bool
@@ -368,10 +351,6 @@ class FPersistantManager
 
     }
 
-    /**
-     * Rimuove una entry dal database.
-     * @return bool l'esito dell'operazione
-     */
     private function execRemove(&$obj, string $sql) : bool {
         //$this->db->beginTransaction(); //inizio della transazione: TODO SE CE LO METTO NON FUNZIONA
         $stmt = $this->db->prepare($sql); //a partire dalla stringa sql viene creato uno statement
@@ -400,6 +379,7 @@ class FPersistantManager
     /**
      * Associa ai campi della query i corrispondenti valori dell'oggetto
      * @param PDOStatement $stmt lo statement contenente i campi da riempire
+     * @param mixed $obj L'oggetto con cui fare il BindValues
      */
     private function bindValues(PDOStatement &$stmt, &$obj)
     {
@@ -433,8 +413,5 @@ class FPersistantManager
         }
 
         return $obj;
-    }
-    public function lastInsertId ($table) {
-        return $this->db->lastInsertId($table);
     }
 }

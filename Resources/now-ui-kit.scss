@@ -869,3 +869,14 @@ html,body {
 .space {
    visibility: hidden;
 }
+
+.FlexContainer {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-content: stretch;
+}
+
+.Flex-item {
+  flex-grow: 2;
+}

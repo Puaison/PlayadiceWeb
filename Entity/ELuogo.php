@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Class ELuogo caratterizza i luoghi dove si tengono gli Eventi (rappresentati da
- * EEvento.
+ * Class ELuogo caratterizza un luogo.
  */
 class ELuogo extends EObject
 {
@@ -19,6 +18,9 @@ class ELuogo extends EObject
      */
     private $cap;
 
+    /**
+     * Nome del Luogo
+     */
     private $nome;
 
     /**
@@ -29,9 +31,9 @@ class ELuogo extends EObject
         parent::__construct();
     }
 
-    /**                                               METODI SET
-     *
-     *
+   ///                                           METODI SET
+
+    /**
      * Metodo che imposta la Via dove si terrà l'Evento
      * @param String $address L'indirizzo
      */
@@ -50,20 +52,22 @@ class ELuogo extends EObject
      */
     public function setCap($cap){$this->cap=$cap;}
 
+
+     //                                              METODI GET
     /**
-     *
-     *
-     *                                                 METODI GET
-     *
      * Metodo che fornisce la Via del Luogo
      * @return string la via
      */
     public  function getVia():string {return $this->via;}
+
+    /**
+     * Metodo che fornisce il Nome del Luogo
+     * @return string il nome
+     */
     public function getNome():string {return $this->nome;}
     /**
      * Metodo che fornisce la città del Luogo
      * @return string la cittò
-     *
      */
     public function getCitta():string {return $this->citta;}
 
@@ -121,7 +125,7 @@ class ELuogo extends EObject
             return false;
     }
     /**
-     * Metodo che controlla se la città del luogo inserito è lungo  5  caratteri e ha solo numeri
+     * Metodo che controlla se il cap del luogo inserito è lungo  5  caratteri e ha solo numeri
      * @return bool true se le condizioni sono rispettate, false altrimenti
      */
    function validateCap() : bool

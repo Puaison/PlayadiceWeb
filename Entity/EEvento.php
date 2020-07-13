@@ -28,51 +28,41 @@ class EEvento extends EObject
      * @var array lista delle prenotazioni all'evento
      */
     private $listaPrenotazioni=array();
+    /**
+     * @var string Descrizione dell'evento
+     */
     private $testo;
+
     /**
      * EEvento constructor. Inizializza un oggetto Evento Vuoto
      */
-
     function __construct()
     {
         parent ::__construct();
     }
-    /**
-     *                                                    METODI SET
-     *
-     * Metodo per settare interamente un evento
-     * @param int $eventId
-     * @param string $name
-     * @param string $category
-     * @param int $flag
-     * @param EFascia ...$fascia
-     */
-    function setEvento(int $eventId, string $name, string $category, bool $flag,ELuogo $location, array $fascia, String $testo)
-    {
-        $this ->luogoEvento = $location;
-        $this -> id = $eventId;
-        $this -> nomeEvento = $name;
-        $this -> categoria = $category;
-        $this -> flagPrenotazione = $flag;
-        $this->listaFasce=$fascia;
-        $this->testo=$testo;
-    }
+
+
+     ////////        METODI SET
+
+
     /**
      * Metodo per impostare il testo dell'evento
-     *
+     * @param string $testo
      */
     function setTesto(string $testo){$this->testo=$testo;}
+
     /**
-     *
      * Metodo per impostare la categoria
      * @param string $category
      */
     function setCategoria(string $category){$this->categoria=$category;}
+
     /**
      * Metodo per impostare il nome dell'evento
-     * @param strin $nome
+     * @param string $nome
      */
     function setNome(string $nome){$this->nomeEvento=$nome;}
+
     /**
      * Metodo per impostare la possibilità di prenotazione
      * @param bool $flag
@@ -80,26 +70,31 @@ class EEvento extends EObject
    function setFlag(int $flag){
         $this->flagPrenotazione=$flag;
     }
+
     /**
      * Metodo per impostare il luogo dell'evento
      * @param ELuogo $place
      */
     function setLuogo(ELuogo $place){$this->luogoEvento=$place;}
+
     /**
      * Metodo per inserire una nuova fascia oraria nell'array
      * @param EFascia $fascia
      */
     function newFascia(EFascia $fascia){array_push($this->listaFasce,$fascia);}
+
     /**
      * Metodo per inserire una prenotazione nell'array
      * @param EPrenotazione $prenotazione
      */function newPrenotazione(EPrenotazione $prenotazione){array_push($this->listaPrenotazioni,$prenotazione);}
+
+
+    ////////                                                    METODI GET
+
     /**
-     *                                                       METODI GET
-     *
-     * Metodo che restituisce il nome dell'evento in formato stringa
-     * @return string
-     */
+    * Metodo che restituisce il nome dell'evento in formato stringa
+    * @return string
+    */
     function getNome(): string {return $this->nomeEvento;}
 
     /**
@@ -109,7 +104,6 @@ class EEvento extends EObject
     function getTesto(): string {return $this->testo;}
 
     /**
-     *
      *  Metodo che restituisce la categoria dell'evento
      * @return string
      */
@@ -140,7 +134,7 @@ class EEvento extends EObject
 
     /**
      * Metodo che resstituisce la data di fine dell'evento
-     * @return DataTime
+     * @return DateTime
      */
     function getEndDate():DateTime{
         $fascia=$this->listaFasce[count($this->listaFasce)-1];
@@ -160,7 +154,7 @@ class EEvento extends EObject
 
 
     /**
-     * Metodo utilizzato per il sorting degli eventi
+     * Metodo utilizzato per il sorting degli eventi per data
      * @param $a
      * @param $b
      * @return int
@@ -169,6 +163,13 @@ class EEvento extends EObject
         if ($a->getStartDate()==$b->getStartDate()) return 0;
         return ($a->getStartDate()<$b->getStartDate())?-1:1;
     }
+
+    /**
+     * Metodo utilizzato per il sorting degli eventi per luogo
+     * @param $a
+     * @param $b
+     * @return int
+     */
     function placeSorter(EEvento $a, EEvento $b){
         if ($a->getLuogo()->getNome()==$b->getLuogo()->getNome()) return 0;
         return ($a->getLuogo()->getNome()<$b->getLuogo()->getNome())?-1:1;

@@ -4,9 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
-  <link rel="stylesheet" href="../Pld/assets/css/nucleo-icons.css" type="text/css">
-  <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+  <link rel="stylesheet" href="../Resources/now-ui-kit.css" type="text/css">
+  <link rel="stylesheet" href="../Resources/assets/css/nucleo-icons.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <title>Dettagli Avatar</title>
 
@@ -32,7 +31,7 @@
   <!-- Navbar here -->
   {include file="navbar.tpl"}
 
-  <div class="column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url('../templates/assets/BG.png'); background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat; min-height: 1000px">
+  <div class="column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url('../Resources/assets/BG.png'); background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat; min-height: 1000px">
     <!-- Sezione Dettagli pg -->
     <div class="grid-container">
 

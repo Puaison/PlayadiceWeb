@@ -47,6 +47,10 @@ class VUtente extends VObject
 
         return $user;
     }
+
+    /**
+     * Funzione che ritorna un array (A partire da form) contenente vecchia e nuova password
+     */
     function createNewPassword()
     {
         $array=array();
@@ -57,6 +61,10 @@ class VUtente extends VObject
             $array['Password']=($_POST['Password']);
         return $array;
     }
+
+    /**
+     * Funzione che controlla la validità della password vecchia coincide con quella nuova
+     */
     function validateNewPassword(EUtente $newUser,EUtente $oldUser)
     {
         //Se la password vecchia non è corretta, devo notificarlo
@@ -169,6 +177,9 @@ class VUtente extends VObject
         $this->smarty->display('Register.tpl');
     }
 
+    /**
+     * Funzione che visualizza il pannello profilo privato
+     */
     function showProfile(EUtente $user)
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
@@ -177,6 +188,9 @@ class VUtente extends VObject
         $this->smarty->display('Profile.tpl');
     }
 
+    /**
+     * Funzione che visualizza il pannello modifica profilo
+     */
     function showFormModify(EUtente $user)
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
@@ -186,6 +200,9 @@ class VUtente extends VObject
         $this->smarty->display('ModificaUtente.tpl');
     }
 
+    /**
+     * Funzione che visualizza il pannello modifica profilo (password)
+     */
     function showFormModifyPassword(EUtente $user)
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));

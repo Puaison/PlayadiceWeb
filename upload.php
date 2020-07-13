@@ -1,6 +1,3 @@
-
-
-
 <?php
 require('autoload.php');
 if(file_exists('config.inc.php'))

@@ -9,6 +9,7 @@ class VAdmin extends VObject
     }
 
     /**
+     * Funzione che visualizza il pannello admin
      */
     function ShowAdminPanel(EUtente $utente, $results)
     {
@@ -19,6 +20,11 @@ class VAdmin extends VObject
 
         $this->smarty->display('AdminPanel.tpl');
     }
+
+    /**
+     * Funzione che restituisce l'username di un utente a partire da una form
+     * @return  string con l'username (parametro) inserito nella form
+     */
     function getUserFromForm()
     {
         $string= "default";

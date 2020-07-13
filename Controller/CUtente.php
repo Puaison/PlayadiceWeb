@@ -27,7 +27,7 @@ class CUtente
         else if ($_SERVER['REQUEST_METHOD'] == 'POST')
             CUtente::authentication();
         else
-            header('Location: HTTP/1.1 Invalid HTTP method detected');
+            header('Location: playadice/index.php');
     }
 
     /**
@@ -49,7 +49,7 @@ class CUtente
         else if ($_SERVER['REQUEST_METHOD'] == 'POST')
             CUtente::register();
         else
-            header('Location: Invalid HTTP method detected');
+            header('Location: playadice/index.php');
     }
 
     static function register()
@@ -137,8 +137,8 @@ class CUtente
     }
 
     /**
-     * Metodo che implementa il caso d'uso di login. Se richiamato tramite GET, fornisce
-     * la pagina di login, se richiamato tramite POST cerca di autenticare l'utente attraverso
+     * Metodo che implementa il caso d'uso di modifica delle informazioni. Se richiamato tramite GET, fornisce
+     * la pagina di modifica, se richiamato tramite POST modifica l'utente attraverso
      * i valori che quest'ultimo ha fornito
      */
     static function modifyMyUtente()
@@ -158,7 +158,7 @@ class CUtente
         else if ($_SERVER['REQUEST_METHOD'] == 'POST')
             CUtente::executeModify();
         else
-            header('Location: HTTP/1.1 Invalid HTTP method detected');
+            header('Location: /playadice/index');
     }
     static function executeModify()
     {
@@ -183,14 +183,13 @@ class CUtente
     }
 
     /**
-     * Metodo che implementa il caso d'uso di login. Se richiamato tramite GET, fornisce
-     * la pagina di login, se richiamato tramite POST cerca di autenticare l'utente attraverso
-     * i valori che quest'ultimo ha fornito
+     * Metodo che implementa il caso d'uso di modifica della password. Se richiamato tramite GET, fornisce
+     * la pagina di modifica, se richiamato tramite POST modifica (dopo una analisi) la password attraverso il valore passato
      */
     static function modifyMyPassword()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') // se il metodo e' get...
-        { //...carica la pagina del login, se l'utente e' effettivamente un guest
+        { //...carica la pagina del login, se l'utente e' effettivamente un ospite
             $vUtente = new VUtente();
             $utente = CSession::getUserFromSession();
             if(get_class($utente)!=EOspite::class) // se l'utente in sessione non è un ospite, accede alla form di modifica
@@ -204,8 +203,9 @@ class CUtente
         else if ($_SERVER['REQUEST_METHOD'] == 'POST')
             CUtente::executeModifyPassword();
         else
-            header('Location: HTTP/1.1 Invalid HTTP method detected');
+            header('Location: /playadice/index');
     }
+
     static function executeModifyPassword()
     {
         $user=CSession::getUserFromSession();

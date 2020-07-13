@@ -4,33 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-        <link rel="stylesheet" href="Pld/now-ui-kit.css" type="text/css">
-        <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
-        <link rel="stylesheet" href="../Pld/now-ui-kit.css" type="text/css">
-        <link rel="stylesheet" href="Pld/assets/css/nucleo-icons.css" type="text/css">
-        <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+        <link rel="stylesheet" href="Resources/now-ui-kit.css" type="text/css">
         <title>Playadice Home</title>
-
-        <style>
-                .FlexContainer
-                {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                        align-content: stretch;
-                }
-                .Flex-item
-                {
-                        flex-grow: 2;
-                };
-        </style>
-
 </head>
 
 <body class="">
@@ -46,7 +21,7 @@
         <div class="container py-5 FlexContainer">
 
                                 <div style="margin-right: 3px">
-                                        <img class="img-fluid d-block" src="templates/assets/Giocodatavolo.jpg" style="max-width: 800px">
+                                        <img class="img-fluid d-block" src="Resources/assets/Giocodatavolo.jpg" style="max-width: 800px">
                                 </div>
 
                                 <div class="card pi-draggable Flex-item" style="align-items: center; justify-items: center">
@@ -72,7 +47,7 @@
         <div class="container py-5 FlexContainer">
 
                 <div style="margin-right: 3px">
-                        <img class="img-fluid d-block" src="templates/assets/67.png" style="max-width: 800px">
+                        <img class="img-fluid d-block" src="Resources/assets/67.png" style="max-width: 800px">
                 </div>
 
                 <div class="card pi-draggable Flex-item" style="align-items: center; justify-items: center">
@@ -94,7 +69,7 @@
         <div class="container py-5 FlexContainer">
 
                 <div style="margin-right: 3px">
-                        <img class="img-fluid d-block" src="templates/assets/gdr.jpg" style="max-width: 800px">
+                        <img class="img-fluid d-block" src="Resources/assets/gdr.jpg" style="max-width: 800px">
                 </div>
 
                 <div class="card pi-draggable Flex-item" style="align-items: center; justify-items: center">
@@ -114,15 +89,15 @@
                                 </div>
                         </div>
                         <div class="row">
-                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="templates/assets/Badibba.jpg" alt="Card image cap" width="200">
+                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="Resources/assets/Badibba.jpg" alt="Card image cap" width="200">
                                         <h4> <b>Antonio M. Marottoli</b> </h4>
                                         <p class="mb-0">CEO e fondatore</p>
                                 </div>
-                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="templates/assets/LucaDelSignore.jpg" alt="Card image cap" width="200">
+                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="Resources/assets/LucaDelSignore.jpg" alt="Card image cap" width="200">
                                         <h4> <b>Luca Del Signore</b> </h4>
                                         <p class="mb-0">Il Presidentissimo</p>
                                 </div>
-                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="templates/assets/AlessioPerozzi.jpg" alt="Card image cap" width="200">
+                                <div class="col-lg-4 col-md-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="Resources/assets/AlessioPerozzi.jpg" alt="Card image cap" width="200">
                                         <h4> <b>Alessio Perozzi</b> </h4>
                                         <p class="mb-0">Esperozzi</p>
                                 </div>

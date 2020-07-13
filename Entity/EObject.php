@@ -1,11 +1,10 @@
 <?php
 /**
  * La classe EObject caratterizza un oggetto Entity a partire dal suo Id.
- * @package Entity
  */
 class EObject
 {
-    /** l'id che identifica l'oggetto */
+    /** l'id che identifica l'oggetto*/
     protected $id;
 
     /**

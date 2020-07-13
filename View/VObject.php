@@ -12,7 +12,7 @@ class VObject
     /** l'oggetto smarty incaricato di visualizzare i template */
     protected $smarty;
 
-    /** un array avente come indice i campi delle form di cui controllare gli errori. Ogni classe lo definira' secondo le sue esigenze */
+    /** un array avente come indice i campi delle form di cui controllare gli errori. Ogni classe lo definira' secondo le sue esigenze se necessario */
     protected $check;
 
     public function __construct()
@@ -38,6 +38,7 @@ class VObject
         $this->smarty->assign('error', $error);
         $this->smarty->display('errorPage.tpl');
     }
+
     function showIndex(EUtente $user, $giochi, $evento)
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));

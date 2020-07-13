@@ -132,7 +132,7 @@ class CGiocoInfo
                 } else if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     CGiocoInfo::insertnewrecensione($IdGioco);
                 else
-                    header('Location: HTTP/1.1 Invalid HTTP method detected');
+                    header('Location: HTTP/1.1 Invalid HTTP method detected'); // TODO Luca sistema il redirect
             }
             else
                 $vGiocoInfo->showErrorPage($user,'Il Gioco che vuoi recensire non esiste');

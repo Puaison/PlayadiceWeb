@@ -2,7 +2,7 @@
 
 
 /**
- * Class EPrenotazione Rappresenta la prenotazione che un utante può fare ad un evento
+ * Class EPrenotazione Rappresenta la prenotazione che un utente può fare ad un evento
  */
 class EPrenotazione extends EObject
 {
@@ -14,12 +14,14 @@ class EPrenotazione extends EObject
      * @var EUtente Utente che ha effettuato la prenotazione
      */
     private  $utente;
+    /**
+     * @var int Evento al quale la prenotazione si riferisce
+     */
     private  $idEvento;
 
     /**
      * EPrenotazione constructor.Inizializza un oggetto Prenotazione vuoro
      */
-
     function __construct()
     {
         $this->giornoPrenotazione = date_create();
@@ -27,14 +29,18 @@ class EPrenotazione extends EObject
     }
 
 
-    /**
-     *
-     *                                                   METODI SET
+
+     ///                                                  METODI SET
+    ///
+     /**
      * Metodo per impostare l'utente
      * @param EUtente $utente l'utente
      */
-
     function setUtente(EUtente $utente){$this->utente=$utente;}
+    /**
+     * Metodo per impostare l'evento associato'
+     * @param int $idEvento l'evento a cui si riferisce
+     */
     function setIdEvento(int $idEvento){$this->idEvento=$idEvento;}
     /**
      * Metodo per impostare la data di creazione della prenotazione
@@ -47,12 +53,21 @@ class EPrenotazione extends EObject
      * @return EUtente
      */
     function getUtente():EUtente{return $this->utente;}
+    /**
+     * Metodo per recuperare l'evento associato'
+     * @param int $idEvento l'evento a cui si riferisce
+     */
     function getIdEvento(): int {return $this->idEvento;}
     /**
      * Metodo che restituisce la data di creazione della prenotazione
      * @return DateTime
      */
     function getData(): DateTime {return $this->giornoPrenotazione;}
+
+    /**
+     * Metodo che restituisce la data in un formato viabile per visualizzazione
+     * @return string
+     */
     function getDataStr(): string {return date_format($this->giornoPrenotazione,"d/m/Y H:i:s");}
 
     /**

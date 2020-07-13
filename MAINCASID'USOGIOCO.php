@@ -1,4 +1,0 @@
-<?php
-/**
- * VISIONARE I GIOCHI
- */

@@ -3,8 +3,7 @@
 
 /**
  * La classe ERecensione rappresenta le recensioni che L'Utente effettua su un EGioco.
- * Dovrà quindi avere il riferimento all'EUtente che ha recensito, il voto e il commento immessi.
- * @package Entity
+ * Dovrà quindi avere il riferimento all'EUtente che ha recensito e all'EGioco su cui è stata fatta la recensione.
  */
 
 class ERecensione
@@ -37,7 +36,6 @@ class ERecensione
     /********************************************** GETTER ************************************************/
 
     /**
-     *
      * @return EUtente l'Utente che ha recensito
      */
     public function getEUtente() : EUtente {
@@ -47,7 +45,6 @@ class ERecensione
     }
 
     /**
-     *
      * @return EGioco Il gioco a cui la recensione è associata
      */
     public function getEGioco() : EGioco {
@@ -57,7 +54,6 @@ class ERecensione
     }
 
     /**
-     *
      * @return int Il voto della recensione
      */
     public function getVoto() : int {
@@ -67,7 +63,6 @@ class ERecensione
     }
 
     /**
-     *
      * @return string Il Commento della recensione
      */
     public function getCommento() : string {
@@ -77,7 +72,6 @@ class ERecensione
     }
     /****************************************** SETTER **************************************************/
     /**
-     *
      * @param  EUtente l'Utente che ha recensito
      */
     public function setEUtente(EUtente $user) {
@@ -87,7 +81,6 @@ class ERecensione
     }
 
     /**
-     *
      * @param  EGioco Il Gioco a cui la recensione è associata
      */
     public function setEGioco(EGioco $gioco) {
@@ -97,7 +90,6 @@ class ERecensione
     }
 
     /**
-     *
      * @param  int Il voto della recensione
      */
     public function setVoto(int $voto) {
@@ -107,7 +99,6 @@ class ERecensione
     }
 
     /**
-     *
      * @param string Il Commento della recensione
      */
     public function setCommento(string $commento)  {

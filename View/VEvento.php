@@ -16,6 +16,10 @@ class VEvento extends VObject
 
         );
     }
+
+    /**
+     * Funzione che visualizza tutti gli eventi
+     */
     function showAll(EUtente &$user, $eventi, $check=null)
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
@@ -25,6 +29,10 @@ class VEvento extends VObject
         $this->smarty->display('PLDCalendario.tpl');
 
     }
+
+    /**
+     * Funzione che visualizza il singolo evento
+     */
     function show(EUtente &$user, $evento, $check = null , $error = null , $book = null){
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('results', $evento);
@@ -35,6 +43,10 @@ class VEvento extends VObject
         $this->smarty->display('PLDEvento.tpl');
 
     }
+
+    /**
+     * Funzione che visualizza la form di creazione evento
+     */
     function create(EUtente &$user){
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->assign('check', $this->check);
@@ -44,6 +56,9 @@ class VEvento extends VObject
 
     }
 
+    /**
+     * Funzione che visualizza la form di modifica evento
+     */
     function modify(EUtente &$user, $evento=null){
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
@@ -53,6 +68,10 @@ class VEvento extends VObject
         $this->smarty->display('PLDEventoModifica.tpl');
 
     }
+
+    /**
+     * Funzione che crea l'oggetto EEvento a partire dalla form
+     */
     function createEvento() : EEvento
     {
 
@@ -121,6 +140,7 @@ class VEvento extends VObject
 
         return $evento;
     }
+
     /**
      * Verifica che un utente abbia rispettato i vincoli per l'inserimento dei parametri
      * del nuovo evento
@@ -155,6 +175,10 @@ class VEvento extends VObject
             return false;
         }
     }
+
+    /**
+     * Funzione che visualizza le prenotazioni di un evento
+     */
     function prenotazioni($utenti, $evento){
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($utenti), 1)));
         $this->smarty->registerObject('user', $utenti);
@@ -162,6 +186,10 @@ class VEvento extends VObject
         $this->smarty->display('PLDPrenotazioni.tpl');
 
     }
+
+    /**
+     * Funzione che visualizza la schermata di upload immagine
+     */
     function upload($utenti){
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($utenti), 1)));
         $this->smarty->registerObject('user', $utenti);

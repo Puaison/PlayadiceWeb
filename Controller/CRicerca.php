@@ -1,14 +1,14 @@
 <?php
 
 /**
- * La classe CRicerca implementa la funzionalità di 'Ricerca'
+ * La classe CRicerca implementa la funzionalità di 'Ricerca Avatars'
  * @author Gruppo DelSignore/Marottoli/Perozzi
  * @package Controller
  */
 class CRicerca
 {
     /**
-     * Un utente puo' ricercare avatar in base al nome o all'username del proprietario.
+     * Un utente puo' ricercare avatar in base al nome dell'avatar o all'username del proprietario.
      * Questa ricerca e' possibile
      * solo per gli utenti che sono registrati.
      */
@@ -37,7 +37,7 @@ class CRicerca
     }
 
     /**
-     * Funzione dedicata agli admin che mostra la pagina con tutti gli propri avatar
+     * Funzione dedicata agli admin che mostra la pagina con tutti gli avatar
      */
     static function SearchAll()
     {
@@ -79,7 +79,6 @@ class CRicerca
             $vRicerca->showSearchResult($user, $objects,$proposte,$notify);
         }
         else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
-
             $vRicerca->showErrorPage($user, 'Devi essere loggato per entrare in questa area');
     }
 

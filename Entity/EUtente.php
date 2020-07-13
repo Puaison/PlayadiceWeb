@@ -129,6 +129,11 @@ class EUtente
             return false;
     }
 
+    /**
+     * Metodo che verifica se l'email dell'istanza sia corretta. Una password corretta
+     * deve contenere almeno un numero, almeno una lettera minuscola e almeno una lettera maiuscola
+     * @return bool true se la mail e' corretta, false altrimenti
+     */
     function validateMail() : bool
     {
         if($this->Mail && filter_var($this->Mail, FILTER_VALIDATE_EMAIL) && strlen($this->Mail)<=40)
@@ -140,9 +145,9 @@ class EUtente
     }
 
     /**
-     * Metodo che verifica se l'email dell'istanza sia corretta. Una password corretta
-     * deve contenere almeno un numero, almeno una lettera minuscola e almeno una lettera maiuscola
-     * @return bool true se la password e' corretta, false altrimenti
+     * Metodo che verifica se la password dell'istanza sia corretta. Una password corretta
+     * deve contenere almeno 6 caratteri tutti ALFAnumerici
+     * @return true se la password e' corretta
      */
     function validatePassword() : bool
     {
@@ -154,6 +159,10 @@ class EUtente
             return false;
     }
 
+    /**
+     * Metodo che controlla la coerenza della password con il database
+     * @return true se corrispondono
+     */
     function checkPassword(): bool
     {
         $user = FPersistantManager::getInstance()->search("utente", "UserName", $this->getUsername());
@@ -163,6 +172,11 @@ class EUtente
             return false;
     }
 
+
+    /**
+     * Metodo che controlla se lo username dell'utente inserito è lungo meno di 20 (più di 6) caratteri alfanumerici
+     * @return true se le condizioni sono rispettate
+     */
     function validateUsername() : bool
     {
         if ($this->Username && preg_match('/^[a-zA-Z0-9_-]{6,20}$/', $this->Username))
@@ -173,6 +187,10 @@ class EUtente
             return false;
     }
 
+    /**
+     * Metodo che controlla se il nome dell'utente inserito è lungo meno di 20 caratteri alfanumerici
+     * @return true se le condizioni sono rispettate
+     */
     function validateNome() : bool
     {
         if (ctype_alpha($this->Nome) && strlen($this->Nome)<=20)
@@ -185,6 +203,10 @@ class EUtente
             return false;
     }
 
+    /**
+     * Metodo che controlla se il cognome dell'utente inserito è lungo meno di 30 caratteri alfanumerici
+     * @return true se le condizioni sono rispettate
+     */
     function validateCognome() : bool
     {
         if (ctype_alpha($this->Cognome) && strlen($this->Cognome)<=30)

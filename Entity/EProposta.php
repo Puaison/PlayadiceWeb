@@ -67,7 +67,7 @@ class EProposta extends EObject {
 
     /**
      * Imposta Il personaggio che presumibilmente andrà modificato
-     * @param EAvatar $Mod livello dell'avatar
+     * @param EAvatar $Mod id dell'avatar
      */
     public function setModificato(?EAvatar $Mod)
     {
@@ -78,7 +78,7 @@ class EProposta extends EObject {
 
     /**
      * Imposta Il personaggio che viene proposto
-     * @param EAvatar $Prop livello dell'avatar
+     * @param EAvatar $Prop id dell'avatar
      */
     public function setProposto(?EAvatar $Prop)
     {

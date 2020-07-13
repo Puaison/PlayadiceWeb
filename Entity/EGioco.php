@@ -1,7 +1,8 @@
 <?php
 
-
-
+/**
+ * La classe EGioco rappresenta l'entità e le informazioni principali del gioco
+ */
 class EGioco extends EObject
 {
     /** Il Nome del Gioco */
@@ -123,6 +124,7 @@ class EGioco extends EObject
         $this->Recensioni[]=$rec;
         FPersistantManager::getInstance()->store($rec);
     }
+
     /**TODO IMPLEMENTARE QUESTA FUNZIONE NEL LOGIN
      * @return bool
      */

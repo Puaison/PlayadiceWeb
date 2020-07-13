@@ -6,6 +6,7 @@ class CProposta
     /**
      * Funzione che permette solo agli admin l'approvazione di una determinata proposta
      */
+
     static function approva($PropostaId = 0)
     {
         $vAvatar = new VAvatar();

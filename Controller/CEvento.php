@@ -6,7 +6,6 @@
  * Permetta la visualizzazione totale degli eventi, del singolo evento, la creazione, modifica e cancellazione da parte
  * di un amministratore e la possibilità di prenotarsi da parte di un utente registrato e loggato
  *
- *
  * @author Gruppo DelSignore/Marottoli/Perozzi
  * @package Controller
  */
@@ -52,26 +51,26 @@ class CEvento
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         if (get_class($user) == EAdmin::class) // se l'utente non e' ospite
             $vEvento -> create($user);
-        else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
+        else // se l'utente e' non admin, viene reindirizzato ad una pagina di errore
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
     }
 
     /**
      * Metodo che permette la modifica di un nuovo evento da parte dell'admin
-     *
      */
     static function modify($id)
     {
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         $evento = FPersistantManager ::getInstance() -> search("Evento", "Id", $id);
-        if (get_class($user) == EAdmin::class) {
+        if (get_class($user) == EAdmin::class)//  se l'utente e' admin
+        {
             if ($evento)
                 $vEvento -> modify($user, $evento);
-            else // se l'utente e' guest, viene reindirizzato ad una pagina di errore
+            else //Se l'evento non esiste
                 $vEvento -> showErrorPage($user, "L'evento che stai cercando non esiste");
 
-        } // se l'utente è un admin
+        } // se l'utente non è un admin
         else
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
 
@@ -103,40 +102,45 @@ class CEvento
                     $check = false;
             }
             if ($check) {
-                $fp = FPersistantManager ::getInstance() -> store($prenotazione);
+                FPersistantManager ::getInstance() -> store($prenotazione);
                 $evento[0] -> newPrenotazione($prenotazione);
-                $vEvento -> show($user, $evento, $fp);
+                $vEvento -> show($user, $evento, $check);
             } else {
                 $vEvento -> show($user, $evento, "", $error = true);
             }
-
         }
     }
-    static function delBooking($id,$evento){
+
+    /**
+     * Metodo che elimina la prenotazione ad un evento da parte di un utente registrato (Solo post)
+     */
+    static function delBooking($id,$evento)
+    {
         $evento= FPersistantManager::getInstance() -> search("Evento", "Id", $evento);
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         if ($_SERVER['REQUEST_METHOD'] == 'GET')
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
-        else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
             $prenotazione = FPersistantManager::getInstance() -> search("Prenotazione", "Id", $id);
-            if($prenotazione){
-            FPersistantManager::getInstance() -> remove($prenotazione[0]);
-            $vEvento -> show($user, $evento, "", null,true);}
-            else{
+            if($prenotazione)
+            {
+                FPersistantManager::getInstance() -> remove($prenotazione[0]);
+                $vEvento -> show($user, $evento, "", null,true);
+            }
+            else
+            {
                 $vEvento -> show($user, $evento, "", false,"");
-
             }
         }
-        }
+    }
 
 
     /**
      * Metodo che permette l'update di un evento dopo la modifica da parte dell'admin
      *
      */
-
     static function updateEvento($id)
     {
         $vEvento = new VEvento();
@@ -200,18 +204,11 @@ class CEvento
 
                 foreach ($fasce as $value) {
                     FPersistantManager ::getInstance() -> store($value);
-
                 }
-
                 $vEvento->upload($user);
-
             }
             else
-
                 $vEvento->create($user);
-
-
-
         }
     }
 
@@ -260,6 +257,10 @@ class CEvento
         }
 
     }
+
+    /**
+     * Metodo che permette l'ordinamento degli eventi da passare alla view
+     */
     static function order(){
         $vEvento = new VEvento(); // crea la view
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
@@ -280,10 +281,7 @@ class CEvento
                 foreach ($array as $value){
                     array_push($eventi,$value);
                 }
-
             }
-
-
             $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
         }
         else if($_POST['option']=="Luogo"){
@@ -298,13 +296,15 @@ class CEvento
                 foreach ($array as $value){
                     array_push($eventi,$value);
                 }
-
             }
             $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
-
         }
     }
 }
+
+    /**
+     * Metodo che rimanda alla pagina delle prenotazioni
+     */
     static function prenotazioni($id){
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession();
@@ -314,19 +314,6 @@ class CEvento
         else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $evento = FPersistantManager ::getInstance() -> search("Evento", "Id", $id);
             $vEvento->prenotazioni($user,$evento[0]);
-
         }
-
-
     }
 }
-
-
-/*if(! $SelectedAvatar=FPersistantManager::getInstance()->exists("Avatar","IdAvatar","$id"))
-    $vAvatar->showErrorPage($user, 'Stai smanettando con le url eh? Birichino!');
-else
-{
-    $SelectedAvatar=FPersistantManager::getInstance()->search("Avatar","IdAvatar","$id");
-    $vAvatar->showdetails($user, $SelectedAvatar[0]);
-}
-}*/
