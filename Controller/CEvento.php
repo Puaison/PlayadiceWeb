@@ -156,15 +156,18 @@ class CEvento
                 FPersistantManager ::getInstance() -> update($luogo);
                 FPersistantManager ::getInstance() -> update($evento);
                 $fasceOld = $eventoOld[0] -> getFasce();
-                for ($i = 0; $i < count($fasce); $i++) {
-                    if (isset($fasceOld[$i])) {
+                for ($i = 0; $i<10; $i++) {
+                    if (!empty($fasceOld[$i]) and !empty($fasce[$i])) {
                         $fasce[$i] -> setId($fasceOld[$i] -> getId());
                         $fasce[$i] -> setIdEvento($fasceOld[$i] -> getIdEvento());
                         FPersistantManager ::getInstance() -> update($fasce[$i]);
-                    } else {
+
+                    } else if (empty($fasceOld[$i]) and !empty($fasce[$i])){
                         $fasce[$i] -> setIdEvento($eventoOld[0] -> getId());
-                        FPersistantManager ::getInstance() -> store($fasce[$i]);
-                    }
+                        FPersistantManager ::getInstance() -> store($fasce[$i]);}
+                    else if (!empty($fasceOld[$i]) and empty($fasce[$i])){
+                        FPersistantManager ::getInstance() -> remove($fasceOld[$i]);
+                        }
                 }
                 $str = $evento -> getId();
                 header("Location: /playadice/evento/show?$str");
