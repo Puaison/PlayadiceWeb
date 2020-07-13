@@ -2,7 +2,7 @@
         <div class="container">
                 <ul class="navbar-nav">
                         <ul class="navbar-nav">
-                                <a class="nav-link" href=""> &nbsp;Benvenut&nbsp{$Username} </a>
+                                <a class="nav-link" href=""> &nbsp;Benvenuto&nbsp{$Username} </a>
                                 <a class="nav-link space" href=""> &nbsp;</a>
                                 <a class="nav-link" href="/playadice"> &nbsp;Home</a>
                                 <a class="nav-link" href="/playadice/evento/showAll"> &nbsp;Eventi</a>

@@ -38,10 +38,24 @@ class CAdmin
         {
             if($Username)
             {
-                $Banned=FPersistantManager::getInstance()->search('utente','UserName',$Username)[0];
-                FPersistantManager::getInstance()->remove($Banned);
-                CCatalogo::utenteRemoved();
-                CAdmin::openAdminPanel();
+                if($Username != $utente->getUsername()) // se non sto tentando di cancellarmi in quanto admin
+                {
+                    if(FPersistantManager::getInstance()->exists('utente','UserName',$Username))  //Se esiste l'utente che voglio bannare
+                    {
+                        $Banned = FPersistantManager::getInstance()->search('utente', 'UserName', $Username)[0];
+                        FPersistantManager::getInstance()->remove($Banned);
+                        CCatalogo::utenteRemoved();
+                        CAdmin::openAdminPanel();
+                    }
+                    else
+                    {
+                        $vAdmin->showErrorPage($utente,"Utente non esistente");
+                    }
+                }
+                else
+                {
+                    $vAdmin->showErrorPage($utente,"Non puoi Bannare te stesso");
+                }
             }
             else
             {
@@ -63,16 +77,16 @@ class CAdmin
         {
             if($Username) // se ci sta il parametro
             {
-                $NewAdmin = new EAdmin();
-                $Promoted = FPersistantManager::getInstance()->search('utente','UserName',$Username)[0];
-                $NewAdmin ->setNome($Promoted->getNome());
-                $NewAdmin ->setCognome($Promoted->getCognome());
-                $NewAdmin ->setUsername($Promoted->getUsername());
-                $NewAdmin ->setPassword($Promoted->getPassword());
-                $NewAdmin ->setEmail($Promoted->getmail());
+                    $NewAdmin = new EAdmin();
+                    $Promoted = FPersistantManager::getInstance()->search('utente', 'UserName', $Username)[0];
+                    $NewAdmin->setNome($Promoted->getNome());
+                    $NewAdmin->setCognome($Promoted->getCognome());
+                    $NewAdmin->setUsername($Promoted->getUsername());
+                    $NewAdmin->setPassword($Promoted->getPassword());
+                    $NewAdmin->setEmail($Promoted->getmail());
 
-                FPersistantManager::getInstance()->update($NewAdmin);
-                CAdmin::openAdminPanel();
+                    FPersistantManager::getInstance()->update($NewAdmin);
+                    CAdmin::openAdminPanel();
             }
             else
             {
