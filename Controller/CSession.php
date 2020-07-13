@@ -15,7 +15,7 @@ class CSession
      */
     static function startSession(EUtente &$user)
     {
-        session_start();
+        session_start( ['gc_maxlifetime' => 300]);
 
         /* TODO REMOVE
         $inactive = 3600; // inactive in seconds
@@ -45,7 +45,7 @@ class CSession
     {
         if (session_status() == PHP_SESSION_NONE) {//controlla se non è già stata recuperata una sessione nella stessa chiamata
 
-            session_start();
+            session_start(['gc_maxlifetime' => 300]);
 
             $inactive = 3600; // inactive in seconds
             if( !isset($_SESSION['timeout']) )
