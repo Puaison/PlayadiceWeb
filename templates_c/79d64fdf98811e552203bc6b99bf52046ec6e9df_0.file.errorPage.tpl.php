@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 18:36:38
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 18:04:03
   from 'C:\xampp\htdocs\playadice\templates\errorPage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0b3c1627ed21_86796280',
+  'unifunc' => 'content_5f0b34730fe3a7_96116712',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '79d64fdf98811e552203bc6b99bf52046ec6e9df' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\errorPage.tpl',
-      1 => 1594027880,
+      1 => 1594142425,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0b3c1627ed21_86796280 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0b34730fe3a7_96116712 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

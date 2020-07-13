@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 17:33:53
+/* Smarty version 3.1.34-dev-7, created on 2020-07-13 11:47:50
   from 'C:\xampp\htdocs\playadice\templates\GiocoInfo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0b2d61686083_57864180',
+  'unifunc' => 'content_5f0c2dc6e66a72_31822521',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cd8d22795db6450e0f289afbd273285f33572649' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\GiocoInfo.tpl',
-      1 => 1594487283,
+      1 => 1594633310,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0b2d61686083_57864180 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0c2dc6e66a72_31822521 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -104,7 +104,7 @@ function content_5f0b2d61686083_57864180 (Smarty_Internal_Template $_smarty_tpl)
                             <?php if ($_smarty_tpl->tpl_vars['UtenteType']->value == "ospite") {?>
                                 <a class="btn btn-primary " href="/playadice/utente/login">Logga per recensire</a>
                             <?php } elseif ($_smarty_tpl->tpl_vars['check']->value['Esistente']) {?>
-                                        <a class="btn btn-block" href="">Hai già recensito</a>
+                                        <button class="btn btn-primary" href="" disabled>Hai già recensito</button>
                                 <?php } else { ?>
                                 <a class="btn btn-primary " href="/playadice/giocoinfo/newrecensione?<?php echo $_smarty_tpl->tpl_vars['gioco']->value->getId();?>
 ">Inserisci recensione</a>

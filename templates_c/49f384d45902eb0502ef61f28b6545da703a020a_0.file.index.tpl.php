@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-12 15:12:37
+/* Smarty version 3.1.34-dev-7, created on 2020-07-13 11:47:04
   from 'C:\xampp\htdocs\playadice\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0b0c45c7d576_70930824',
+  'unifunc' => 'content_5f0c2d9889c1f7_72131530',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49f384d45902eb0502ef61f28b6545da703a020a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\playadice\\templates\\index.tpl',
-      1 => 1594559540,
+      1 => 1594633310,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5f0b0c45c7d576_70930824 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0c2d9889c1f7_72131530 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -107,7 +107,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></h6>
 </div>
 
                                                 <a href="./evento/show?<?php echo $_smarty_tpl->tpl_vars['evento']->value->getId();?>
-" class="btn btn-primary justify-content-center">Vai agli eventi</a>
+" class="btn btn-primary justify-content-center">Vai all'evento</a>
                                         </div>
                                 </div>
                         </div>
