@@ -47,7 +47,7 @@
         <div class="container py-5 FlexContainer">
 
                 <div style="margin-right: 3px">
-                        <img class="img-fluid d-block" src="Resources/assets/67.png" style="max-width: 800px">
+                        <img class="img-fluid d-block" src="Resources/assets/evento.png" style="max-width: 800px">
                 </div>
 
                 <div class="card pi-draggable Flex-item" style="align-items: center; justify-items: center">
@@ -60,7 +60,7 @@
                                         {$fascia[0]->getDataStr()}</div>
                                 <div class="col">{$evento->getLuogo()->getNome()}</div>
 
-                                <a href="./evento/show?{$evento->getId()}" class="btn btn-primary justify-content-center">Vai all'<evento></evento></a>
+                                <a href="./evento/show?{$evento->getId()}" class="btn btn-primary justify-content-center">Vai all'evento</a>
                         </div>
                 </div>
         </div>

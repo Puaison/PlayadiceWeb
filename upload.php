@@ -3,7 +3,7 @@ require('autoload.php');
 if(file_exists('config.inc.php'))
     require_once 'config.inc.php';
 
-$target_dir = "templates/assets/";
+$target_dir = "Resources/assets/EventImages/";
 $evento=FPersistantManager::getInstance()->search("evento","last","");
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
