@@ -16,12 +16,21 @@
 {user->getUsername assign='Username'}
 <!-- Navbar here -->
 {include file="navbar.tpl"}
+{if $error}
+    {$error}
+{/if}
 
-<form action="../upload.php" method="post" enctype="multipart/form-data">
+<form action="upload?{$results}" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
 </form>
+{if $check}
+    <form action="showAll" method="post" >
+        <input type="submit" value="Non caricare" name="submit">
+    </form>
+{/if}
+
 
 </body>
 </html>
