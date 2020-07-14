@@ -18,6 +18,12 @@
                         <p>Questa applicazione richiede che i cookie siano abilitati</p>
                 </div> {if $version} <h2> Installation </h2>
                         <hr>
+                        {if $errorMessage}
+                                <div class="alert alert-warning">
+                                        <!-- Notifica l'errore che ha riscontrato-->
+                                        <strong>Attenzione!</strong><br>{$errorMessage}<br>Conttata il tuo Web Master per maggiori informazioni
+                                </div>
+                        {/if}
                         <form class="form-horizontal" method="post" action="install">
                                 <div class="form-group">
                                         <label class="control-label " for="user">Username(per accedere al tuo DataBase):</label> <input type="text" class="form-control" id="user" placeholder="Enter username" name="admin">
