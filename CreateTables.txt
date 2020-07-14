@@ -355,7 +355,7 @@ INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Modera
 VALUES ('Pantaleone','Alessio','Perozzi','playadice','Mrgeostellar@gmail.com',1);
 
 INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
-VALUES ('Puaison','Luca','Del Signore','playadice','Luca.Delsignore@student.univaq.it',1);
+VALUES ('Puaison','Luca','Rotili','playadice','Luca.Delsignore@student.univaq.it',1);
 
 INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
 VALUES ('Badibba','Antonio','Marottoli','playadice','Antonio.Marottoli@student.univaq.it',1);
@@ -364,13 +364,13 @@ INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Modera
 VALUES ('Esperozzi','Jace','Beleren','playadice','JaceBeleren@gmail.com',0);
 
 INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
-VALUES ('Miriairim','Miriana','Del Vecchio','playadice','Mirik98@gmail.com',0);
+VALUES ('Miriairim','Miriana','Vecchio','playadice','Mirik98@gmail.com',0);
 
 INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
 VALUES ('Fusari','Alessio','Fusari','playadice','AlessioFusari71@gmail.com',0);
 
 INSERT INTO `utente`(`UserName`, `Nome`, `Cognome`, `Password`, `Email`, `Moderatore`)
-VALUES ('Darksidon','Lorenzo','Del Re','playadice','DarkSidon@gmail.com',0);
+VALUES ('Darksidon','Lorenzo','Rotterdam','playadice','DarkSidon@gmail.com',0);
 -- --------------------------------------------------------------------------------------
 INSERT INTO `avatar`(`UsernameUtente`, `IdAvatar`, `Classe`, `Livello`, `Razza`, `Nome`)
 VALUES ('Esperozzi','1','Stregone','8','Dragonide','Nihmradil');
