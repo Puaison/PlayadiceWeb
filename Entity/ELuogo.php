@@ -48,7 +48,7 @@ class ELuogo extends EObject
 
     /**
      * Metodo che imposta il CAP della Cittò
-     * @param string  $cap il Cap
+     * @param int $cap il Cap
      */
     public function setCap($cap){$this->cap=$cap;}
 
