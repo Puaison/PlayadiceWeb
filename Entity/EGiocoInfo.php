@@ -32,7 +32,7 @@ class EGiocoInfo extends EObject
      *
      * @return string La Descrizione del gioco
      */
-    public function getDescrizione() : string {
+    public function getDescrizione() : ?string {
 
         return $this->Descrizione;
 
@@ -42,7 +42,7 @@ class EGiocoInfo extends EObject
      *
      * @return int Il numero massimo di giocatori del gioco
      */
-    public function getMax() : int {
+    public function getMax() : ?int {
 
         return $this->NumeroMax;
 
@@ -52,7 +52,7 @@ class EGiocoInfo extends EObject
      *
      * @return int Il numero minimo di giocatori del gioco
      */
-    public function getMin() : int {
+    public function getMin() : ?int {
 
         return $this->NumeroMin;
 
@@ -61,7 +61,7 @@ class EGiocoInfo extends EObject
      *
      * @return string La Casa Editrice del gioco
      */
-    public function getCasaEditrice() : string {
+    public function getCasaEditrice() : ?string {
 
         return $this->CasaEditrice;
 

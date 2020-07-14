@@ -95,7 +95,7 @@ class VCatalogo extends VObject
      * @param EGioco $gioco l'oggetto gioco da controllare
      * @return true se non si sono commessi errori, false altrimenti
      */
-    function validateNuovoGioco(EGioco $gioco): bool
+    function validateGioco(EGioco $gioco): bool
     {
         $this->check['Nome']=$gioco->validateNome();
         $this->check['Categoria']=$gioco->validateCategoria();
@@ -140,7 +140,6 @@ class VCatalogo extends VObject
             $gioco = new EGioco();
         }
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
-        $this->smarty->assign('prec', $_POST);
         $this->smarty->assign('gioco', $gioco);
         $this->smarty->assign('check', $this->check);
         $this->smarty->registerObject('user', $user);
@@ -156,6 +155,7 @@ class VCatalogo extends VObject
     {
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->assign('gioco', $gioco);
+        $this->smarty->assign('check', $this->check);
         $this->smarty->registerObject('user', $user);
         $this->smarty->display('ModificaGioco.tpl');
     }
