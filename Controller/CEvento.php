@@ -114,24 +114,20 @@ class CEvento
     /**
      * Metodo che elimina la prenotazione ad un evento da parte di un utente registrato (Solo post)
      */
-    static function delBooking($id,$evento)
+    static function delBooking($id, $evento)
     {
-        $evento= FPersistantManager::getInstance() -> search("Evento", "Id", $evento);
+        $evento = FPersistantManager ::getInstance() -> search("Evento", "Id", $evento);
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         if ($_SERVER['REQUEST_METHOD'] == 'GET')
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
-        else if ($_SERVER['REQUEST_METHOD'] == 'POST')
-        {
-            $prenotazione = FPersistantManager::getInstance() -> search("Prenotazione", "Id", $id);
-            if($prenotazione)
-            {
-                FPersistantManager::getInstance() -> remove($prenotazione[0]);
-                $vEvento -> show($user, $evento, "", null,true);
-            }
-            else
-            {
-                $vEvento -> show($user, $evento, "", false,"");
+        else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $prenotazione = FPersistantManager ::getInstance() -> search("Prenotazione", "Id", $id);
+            if ($prenotazione) {
+                FPersistantManager ::getInstance() -> remove($prenotazione[0]);
+                $vEvento -> show($user, $evento, "", null, true);
+            } else {
+                $vEvento -> show($user, $evento, "", false, "");
             }
         }
     }
@@ -147,8 +143,7 @@ class CEvento
         $user = CSession ::getUserFromSession();
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
-        }
-        else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $evento = $vEvento -> createEvento();
             $fasce = $evento -> getFasce();
             $luogo = $evento -> getLuogo();
@@ -156,33 +151,32 @@ class CEvento
             $luogoOld = $eventoOld[0] -> getLuogo();
             $luogo -> setId($luogoOld -> getId());
             $evento -> setId($eventoOld[0] -> getId());
-            if($vEvento->validateNuovoEvento($evento)){
+            if ($vEvento -> validateNuovoEvento($evento)) {
                 FPersistantManager ::getInstance() -> update($luogo);
                 FPersistantManager ::getInstance() -> update($evento);
                 $fasceOld = $eventoOld[0] -> getFasce();
-                for ($i = 0; $i<10; $i++) {
+                for ($i = 0; $i < 10; $i++) {
                     if (!empty($fasceOld[$i]) and !empty($fasce[$i])) {
                         $fasce[$i] -> setId($fasceOld[$i] -> getId());
                         $fasce[$i] -> setIdEvento($fasceOld[$i] -> getIdEvento());
                         FPersistantManager ::getInstance() -> update($fasce[$i]);
 
-                    } else if (empty($fasceOld[$i]) and !empty($fasce[$i])){
+                    } else if (empty($fasceOld[$i]) and !empty($fasce[$i])) {
                         $fasce[$i] -> setIdEvento($eventoOld[0] -> getId());
-                        FPersistantManager ::getInstance() -> store($fasce[$i]);}
-                    else if (!empty($fasceOld[$i]) and empty($fasce[$i])){
+                        FPersistantManager ::getInstance() -> store($fasce[$i]);
+                    } else if (!empty($fasceOld[$i]) and empty($fasce[$i])) {
                         FPersistantManager ::getInstance() -> remove($fasceOld[$i]);
-                        }
+                    }
                 }
-                $str = $evento -> getId();
-                header("Location: /playadice/evento/show?$str");
-            }
-            else {
-                $array[]=$evento;
-                $vEvento->modify($user, $array);
+                $vEvento -> upload($user,$evento,"",true);
+            } else {
+                $array[] = $evento;
+                $vEvento -> modify($user, $array);
             }
 
         }
     }
+
     /**
      * Metodo che permette il salvataggio nel db di un evento dopo la modifica da parte dell'admin
      *
@@ -196,7 +190,7 @@ class CEvento
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
         } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $evento = $vEvento -> createEvento();
-            if($vEvento->validateNuovoEvento($evento)){
+            if ($vEvento -> validateNuovoEvento($evento)) {
                 $luogo = $evento -> getLuogo();
                 FPersistantManager ::getInstance() -> store($luogo);
                 FPersistantManager ::getInstance() -> store($evento);
@@ -205,10 +199,10 @@ class CEvento
                 foreach ($fasce as $value) {
                     FPersistantManager ::getInstance() -> store($value);
                 }
-                $vEvento->upload($user);
-            }
-            else
-                $vEvento->create($user);
+                $evento = FPersistantManager ::getInstance() -> search("evento", "last", "");
+                $vEvento -> upload($user,$evento[0]);
+            } else
+                $vEvento -> create($user);
         }
     }
 
@@ -244,6 +238,7 @@ class CEvento
                             }
 
                         }
+                        unlink("Resources/assets/EventImages/".$id.".png");
                         header('Location: /playadice/evento/showAll');
 
                     } else
@@ -261,51 +256,51 @@ class CEvento
     /**
      * Metodo che permette l'ordinamento degli eventi da passare alla view
      */
-    static function order(){
+    static function order()
+    {
         $vEvento = new VEvento(); // crea la view
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         $eventi = FPersistantManager ::getInstance() -> search("Evento", "All", ''); // carica tutti gli eventi
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
-        }
-        else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if($_POST['option']=="Data"){
-            foreach ($eventi as $value){
-                if(empty($value->getFasce())){
-                    $array[]=$value;
-                    unset($eventi[array_search($value,$eventi)]);
+        } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if ($_POST['option'] == "Data") {
+                foreach ($eventi as $value) {
+                    if (empty($value -> getFasce())) {
+                        $array[] = $value;
+                        unset($eventi[array_search($value, $eventi)]);
+                    }
                 }
-            }
-            usort($eventi, "EEvento::dateSorter");
-            if (!empty($array)){
-                foreach ($array as $value){
-                    array_push($eventi,$value);
+                usort($eventi, "EEvento::dateSorter");
+                if (!empty($array)) {
+                    foreach ($array as $value) {
+                        array_push($eventi, $value);
+                    }
                 }
-            }
-            $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
-        }
-        else if($_POST['option']=="Luogo"){
-            foreach ($eventi as $value){
-                if(empty($value->getLuogo())){
-                    $array2[]=$value;
-                    unset($eventi[array_search($value,$eventi)]);
+                $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
+            } else if ($_POST['option'] == "Luogo") {
+                foreach ($eventi as $value) {
+                    if (empty($value -> getLuogo())) {
+                        $array2[] = $value;
+                        unset($eventi[array_search($value, $eventi)]);
+                    }
                 }
-            }
-            usort($eventi, "EEvento::placeSorter");
-            if (!empty($array)){
-                foreach ($array as $value){
-                    array_push($eventi,$value);
+                usort($eventi, "EEvento::placeSorter");
+                if (!empty($array)) {
+                    foreach ($array as $value) {
+                        array_push($eventi, $value);
+                    }
                 }
+                $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
             }
-            $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
         }
     }
-}
 
     /**
      * Metodo che rimanda alla pagina delle prenotazioni
      */
-    static function prenotazioni($id){
+    static function prenotazioni($id)
+    {
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession();
 
@@ -313,7 +308,76 @@ class CEvento
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
         else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $evento = FPersistantManager ::getInstance() -> search("Evento", "Id", $id);
-            $vEvento->prenotazioni($user,$evento[0]);
+            $vEvento -> prenotazioni($user, $evento[0]);
         }
+    }
+
+    /**
+     * Metodo che rimanda alla pagina di upload delle immagini
+     */
+    static function upload($id)
+    {
+        $vEvento = new VEvento();
+        $user = CSession ::getUserFromSession();
+        $evento = FPersistantManager ::getInstance() -> search("Evento", "Id", $id);
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
+        } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (!empty( $_FILES["fileToUpload"]["name"])){
+                $target_dir = "Resources/assets/EventImages/";
+                $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                $_FILES["fileToUpload"]["name"] = $id. "." . $imageFileType;
+                $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                $uploadOk = 1;
+                $error = '';
+// Check if image file is a actual image or fake image
+                if (isset($_POST["submit"])) {
+                    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                    if ($check !== false) {
+                        $uploadOk = 1;
+                    } else {
+                        $error = "File is not an image.";
+                        $uploadOk = 0;
+                    }
+                }
+// Check if file already exists
+                if (file_exists($target_file)) {
+                    unlink($target_file);
+                    $uploadOk = 1;
+                }
+// Check file size
+                if ($_FILES["fileToUpload"]["size"] > 2000000000) {
+                    $error = $error . "\n" . "Sorry, your file is too large.";
+                    $uploadOk = 0;
+                }
+// Allow certain file formats
+                if ($imageFileType != "png") {
+                    $error = $error . "\n" . "Sorry, only PNG are allowed.";
+                    $uploadOk = 0;
+                }
+// Check if $uploadOk is set to 0 by an error
+                if ($uploadOk == 0) {
+                    $error = $error . "\n" . "Sorry, your file was not uploaded.";
+                    $vEvento -> upload($user, $evento[0], $error);
+// if everything is ok, try to upload file
+                } else {
+                    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                        header('Location: /playadice/evento/showAll');
+
+                    } else {
+                        $error = "Sorry, there was an error uploading your file.";
+                        $vEvento -> upload($user,$evento[0], $error,true);
+                    }
+                }
+            }
+            else{
+                $error="Devi inserire un'immagine";
+                $vEvento -> upload($user, $evento[0], $error,true);
+            }
+
+            }
+
+
     }
 }

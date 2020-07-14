@@ -190,9 +190,12 @@ class VEvento extends VObject
     /**
      * Funzione che visualizza la schermata di upload immagine
      */
-    function upload($utenti){
-        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($utenti), 1)));
-        $this->smarty->registerObject('user', $utenti);
+    function upload($utente, $evento, $error=null, $check=null){
+        $this->smarty->assign('UtenteType', lcfirst(substr(get_class($utente), 1)));
+        $this->smarty->registerObject('user', $utente);
+        $this->smarty->assign('error',$error);
+        $this->smarty->assign('check',$check);
+        $this->smarty->assign('results', $evento->getId());
         $this->smarty->display('upload.tpl');
 
     }
