@@ -9,26 +9,21 @@
 class CSession
 {
     /**
+     * Array dove vengono impostate le caratteristiche
+     * custom delle sessioni
+     */
+    const settings = array(
+    'gc_maxlifetime' => 300,
+    );
+
+    /**
      * Funzione che da inizio alla sessione. I dati dell'utente come Username e tipologia di
      * utente sono salvati all'interno dell'array session.
      * @param EUtente $user l'utente di cui memorizzare i dati
      */
     static function startSession(EUtente &$user)
     {
-        session_start( ['gc_maxlifetime' => 300]);
-
-        /* TODO REMOVE
-        $inactive = 3600; // inactive in seconds
-        if( !isset($_SESSION['timeout']) )
-            $_SESSION['timeout'] = time() + $inactive;
-
-        $session_life = time() - $_SESSION['timeout'];
-
-        if($session_life > $inactive)
-        {  session_destroy(); header("Location:index.php");     }
-
-        $_SESSION['timeout']=time();
-        */
+        session_start( self::settings);
 
         // i suoi dati sono memorizzati all'interno della sessione
         $_SESSION['Username'] = $user->getUsername();
@@ -37,7 +32,7 @@ class CSession
     
     /**
      * Restituisce l'utente della sessione corrispondente alla connessione che ha richiamato
-     * il metodo. Se la sessione è effettivamente attiva, restituirà l'utente corrispondente,
+     * il metodo. Se la sessione è effettivamente  ed ancora esistente restituirà l'utente corrispondente,
      * altrimenti restituirà un semplice utente ospite.
      * @return EUtente
      */
@@ -45,7 +40,7 @@ class CSession
     {
         if (session_status() == PHP_SESSION_NONE) {//controlla se non è già stata recuperata una sessione nella stessa chiamata
 
-            session_start(['gc_maxlifetime' => 300]);
+            session_start(self::settings);
 
             $inactive = 3600; // inactive in seconds
             if( !isset($_SESSION['timeout']) )
@@ -80,7 +75,7 @@ class CSession
     }
 
     /**
-     * Termina una sessione.
+     * Distrugge una sessione.
      */
     static function destroySession()
     {
@@ -89,23 +84,5 @@ class CSession
         session_unset(); // rimuove le variabili di sessione
         
         session_destroy(); // distrugge la sessione
-    }
-
-    static function populateApplication()
-    {
-        setcookie('install', 'ok', time()+3600);
-    }
-
-    static function checkPopulateApplication() : bool
-    {
-        if(isset($_COOKIE['install']))
-            return true;
-        else
-            return false;
-    }
-
-    static function unsetCookie()
-    {
-        setcookie('install', 'ok', time()-3600);
     }
 }

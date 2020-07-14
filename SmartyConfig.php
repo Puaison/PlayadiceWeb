@@ -1,6 +1,11 @@
 <?php
+
+/**
+ * Classe che imposta le librerie di Smarty e le sue Directory
+ */
 class SmartyConfig
 {
+
     static function configure() : Smarty
     {
         require_once('./Smarty/libs/Smarty.class.php');
