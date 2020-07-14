@@ -47,6 +47,21 @@
 <div class="py-5">
     <div class="container">
         <div class="row">
+            <form action="showAll" method="post">
+                <button type="submit"  class="btn btn-primary flex">Torna Indietro
+                </button>
+            </form>
+
+
+            {if boolval($results[0]->getFlag()) && $UtenteType == "admin"}
+            <form action="/playadice/evento/prenotazioni?{$results[0]->getId()}" method="post">
+                <button style="align-content: end" type="submit"  class="ml-lg-5 btn btn-primary">Prenotazioni
+                </button>
+            </form>
+
+        {/if}</div>
+        <div class="row"><div class="my-2"></div></div>
+        <div class="row">
             <div class="col-lg-6 order-2 order-lg-1 p-0">
                 <img class="img-fluid d-block" src="../Resources/assets/EventImages/{$results[0]->getId()}.png" style="" h="100" w="100">
             </div>
@@ -56,13 +71,7 @@
                         <h5 class="card-title"><b>{$results[0]->getNome()}</b></h5>
                         <h6 class="card-subtitle my-2 text-muted">{$results[0]->getCategoria()}</h6>
                         <h6 class="card-subtitle my-2 text-">{$results[0]->getLuogo()}</h6>
-                        {if boolval($results[0]->getFlag()) && $UtenteType == "admin"}
-                        <form action="/playadice/evento/prenotazioni?{$results[0]->getId()}" method="post">
-                            <button type="submit"  class="btn btn-primary">Prenotazioni
-                            </button>
-                        </form>
 
-                        {/if}
 
                         <div class="row justify-content-center">
                         <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q={$results[0]->getLuogo()->getVia()}%20{$results[0]->getLuogo()->getCitta()}+({$results[0]->getLuogo()->getNome()})&amp;;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="520" height="400" frameborder="0"></iframe>
@@ -92,6 +101,7 @@
                             {/if}
                         </div>
                         <p class="card-text mt-sm-3">{$results[0]->getTesto()}</p>
+
                         {$data=$results[0]->getStartDate()}
                         {if $data>date_create()}
                         <div class='row '>
@@ -100,7 +110,7 @@
                             <div class="col"> <a class="btn btn-primary" type="submit" href="/playadice/evento/modify?{$results[0]->getId()}">Modifica</a></div>
                             {/if}
                             {if boolval($results[0]->getFlag())}
-                                    {if !$check}
+                                    {if !$check or $book}
                                         <div class="col">
                                             <!-- Button trigger modal -->
                                             <div class="text-right">
@@ -169,21 +179,23 @@
                                                                     </button>
                                                                 </form>
                                                             </div>
+                                                            </div>
+                                                        {/if}
+                                                {/if}
+
+                                            </div>
+
+
                                         </div>
-                                    {/if}
-                            {/if}
-
-                        </div>
 
 
-                    </div>
+                                    </div>
+                                </div>
 
-
-                </div>
-            </div>
-
-        </div>
+                            </div>
+                        {else} <div class="col"> <form action="/playadice/evento/delete?{$results[0]->getId()}" method="post"> <button class="btn btn-primary" type="submit" >Annulla</button></form></div>
                         {/if}
+
     </div>
 </div>
 

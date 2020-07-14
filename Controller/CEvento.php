@@ -363,7 +363,7 @@ class CEvento
 // if everything is ok, try to upload file
                 } else {
                     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                        header('Location: /playadice/evento/showAll');
+                            header('Location: /playadice/evento/showAll');
 
                     } else {
                         $error = "Sorry, there was an error uploading your file.";
