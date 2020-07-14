@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="Tutte i casi d'uso del profilo implementate">
-      <change afterPath="$PROJECT_DIR$/Documentazione/Diagrammi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/0f1dfeea3ed8ab6ec6e238b115eac11f4284d015_0.file.TVGMainpage.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/59bcf369642f961a0eda253af0ea3f018d20f8f1_0.file.TVGAvatarApprovazione.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/6523d482590db283637248c07c9b8544ea7c78b2_0.file.errorPage.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/70e8fec491dc906ff6a49bbd8e0118bd8efaf9a2_0.file.ModificaGioco.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/80e694158c926402402e2a101a97be8543158e97_0.file.index.tpl.php" afterDir="false" />
+    <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="Aggiustato il form per i giochi. Inoltre">
+      <change afterPath="$PROJECT_DIR$/Documentazione/~$cumentazione di avvio.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Documentazione/~$i ha fatto cosa.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Documentazione/~WRL0005.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/270cb8aeda23b693ffea4d50046453835b62d17f_0.file.Profile.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/6bb2057823f560a232a0b1512bb321680b85b53e_0.file.AdminPanel.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/96371ae495c63e61052ec983501c12d942d4f166_0.file.GiochiMainPage.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/c9f829aa476d02b37239be77622a5056c42ed929_0.file.NewNuovoGioco.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/cd8d22795db6450e0f289afbd273285f33572649_0.file.GiocoInfo.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/db5a3811503e47a26d394ffd07373547c804ad4e_0.file.ModificaGioco.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chi ha fatto cosa.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documentazione/Chi ha fatto cosa.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentazione di avvio.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documentazione/Documentazione di avvio.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/5f33c551d9f627dc8cbd2f927c02f0b5c5f3e15a.home.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/cache/5f33c551d9f627dc8cbd2f927c02f0b5c5f3e15a.home.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/9bf8f9095ffa6b719a4ae27487d43232b23151a6.home.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/cache/9bf8f9095ffa6b719a4ae27487d43232b23151a6.home.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/f415062a05fdeb85b91b535d2058a9b331ed6e7e.home.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/cache/f415062a05fdeb85b91b535d2058a9b331ed6e7e.home.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/d6f8996e8a76732dc4124210a7ad3f82a71201df_0.file.navbar.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$cumentazione di avvio.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentazione/Chi ha fatto cosa.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documentazione/Chi ha fatto cosa.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates_c/d6f8996e8a76732dc4124210a7ad3f82a71201df_0.file.navbar.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/d6f8996e8a76732dc4124210a7ad3f82a71201df_0.file.navbar.tpl.php" afterDir="false" />
     </list>
+    <list id="9d0a1074-1335-4894-b0f9-3ca81cc4a34c" name="Revert &quot;Aggiornamento di chi ha fatto cosa&quot;" comment="Revert &quot;Aggiornamento di chi ha fatto cosa&quot;&#10;&#10;This reverts commit f31ad491" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,18 +102,18 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\XAMPP2\htdocs\playadice" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Foundation" />
+      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Controller" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\playadice\templates" />
       <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020\templates" />
       <recent name="C:\xampp\htdocs\Progetto-PW\Progetto Cicerone 2020" />
       <recent name="C:\xampp\htdocs\Progetto Web\Progetto Cicerone 2020\templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\XAMPP2\htdocs\playadice" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Foundation" />
-      <recent name="D:\XAMPP2\htdocs\Cicero\Progetto Cicerone 2020\Controller" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.mainviewant.php">
