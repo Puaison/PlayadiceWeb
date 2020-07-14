@@ -13,7 +13,7 @@ class EEvento extends EObject
      */
     private $categoria;
     /**
-     * @var bool flag che serve all'abilitazione delle prenotazioni
+     * @var int flag che serve all'abilitazione delle prenotazioni
      */
     private $flagPrenotazione;
     /**
@@ -112,7 +112,7 @@ class EEvento extends EObject
 
     /**
      * Metodo che restituiscei il valore del flag di prenotazione
-     * @return bool
+     * @return int
      */
     function getFlag():int{return $this->flagPrenotazione;}
 
