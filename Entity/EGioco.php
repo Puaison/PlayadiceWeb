@@ -37,35 +37,35 @@ class EGioco extends EObject
     /**
      * @return string Il Nome del Gioco
      */
-    function getNome() : string {
+    function getNome() : ?string {
         return $this->Nome;
     }
 
     /**
      * @return float Il voto medio del Gioco
      */
-    function getVotoMedio() : float {
+    function getVotoMedio() : ?float {
         return $this->VotoMedio;
     }
 
     /**
      * @return string La categoria del Gioco
      */
-    function getCategoria() : string {
+    function getCategoria() : ?string {
         return $this->Categoria;
     }
 
     /**
      * @return EGiocoInfo Le informazioni dettagliate del gioco
      */
-    function getInfo() : EGiocoInfo{
+    function getInfo() : ?EGiocoInfo{
         return $this->GiocoInfo;
     }
 
     /**
      * @return array Tutte le recensioni di quel gioco
      */
-    function getRecensioni() : array{
+    function getRecensioni() : ?array{
         return $this->Recensioni;
     }
 

@@ -57,7 +57,7 @@ class CCatalogo
         $newgioco = $vCatalogo->createGioco();
 
         if (get_class($user) == EAdmin::class) {
-            if ($vCatalogo->validateNuovoGioco($newgioco)) {
+            if ($vCatalogo->validateGioco($newgioco)) {
                 FPersistantManager::getInstance()->store($newgioco);
                 $newGioco2 = FPersistantManager::getInstance()->search("gioco", "Last", "")[0];
                 $newgioco->getInfo()->setId($newGioco2->getId());
@@ -142,14 +142,17 @@ class CCatalogo
         $vCatalogo=new VCatalogo();
         $user=CSession::getUserFromSession();
         if(get_class($user) == EAdmin::class) {
-            $gioco = $vCatalogo->createGioco();//TODO fare i controlli per la modifica?
-            if(FPersistantManager::getInstance()->exists('gioco','Id',$gioco->getId())) {
-                $giocodb = FPersistantManager::getInstance()->search("gioco", "Id", $gioco->getId())[0];
-                $gioco->setVotoMedio($giocodb->getVotoMedio());
-                FPersistantManager::getInstance()->update($gioco);
-                FPersistantManager::getInstance()->update($gioco->getInfo());
-                $IdGioco = $gioco->getId();
-                header("Location: /playadice/giocoinfo/showgiocoinfo?$IdGioco");
+            $gioco = $vCatalogo->createGioco();
+            if (FPersistantManager::getInstance()->exists('gioco', 'Id', $gioco->getId())) {
+                if($vCatalogo->validateGioco($gioco)) {
+                    $giocodb = FPersistantManager::getInstance()->search("gioco", "Id", $gioco->getId())[0];
+                    $gioco->setVotoMedio($giocodb->getVotoMedio());
+                    FPersistantManager::getInstance()->update($gioco);
+                    FPersistantManager::getInstance()->update($gioco->getInfo());
+                    $IdGioco = $gioco->getId();
+                    header("Location: /playadice/giocoinfo/showgiocoinfo?$IdGioco");
+                } else
+                        $vCatalogo->showFormModificaGioco($user,$gioco);
             }
             else
                 $vCatalogo->showErrorPage($user, 'Non esiste il gioco che vuoi modificare');

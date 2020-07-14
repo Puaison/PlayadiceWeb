@@ -26,10 +26,10 @@
         <div class="py-5">
             <div class="container ">
                 <div class="col-md-12">
-
+                    <!-- Id Gioco -->
+                    <input type="hidden" name="IdGioco" value="{$gioco->getId()}">
                     <!-- Nome Gioco -->
                     <div class="form-group row">
-                        <input type="hidden" name="IdGioco" value="{$gioco->getId()}">
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Gioco</b></label>
                         <div class="col-10">
                             <input type="text" name="Nome" class="form-control" maxlength="40" size="40"
@@ -37,7 +37,14 @@
                                     {if isset($gioco->getNome())}
                                         value="{$gioco->getNome()}"
                                     {/if}
-                                   ></div>
+                            ></div>
+                        {if ! $check.Nome}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Lunghezza massima 40.<br> Campo obbligatorio
+                                </small>
+                            </div>
+                        {/if}
                     </div>
 
                     <!-- Nome Categoria -->
@@ -49,18 +56,28 @@
                                 <option value="Party"{if $gioco->getCategoria()=="Party"} selected{/if}>Party</option>
                             </select>
                         </div>
+                        {if ! $check.Categoria}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Scegli una categoria.<br> Campo obbligatorio
+                                </small>
+                            </div>
+                        {/if}
                     </div>
 
                     <!-- Descrizione -->
                     <div class="container-fluid row" >
-
-                        <div class="col-2 align-self-center">
-                        <label for="name-input" class="my-auto px-4 text-left"><b>Descrizione</b></label>
-                        </div>
-
+                        <label for="name-input" class="col-2 col-form-label"><b>Descrizione</b></label>
                         <div class="col">
                             <textarea name="Descrizione" class="form-control" placeholder="Piccola descrizione del gioco" maxlength="3000" style="min-height: 100px">{if isset($gioco->getInfo()->getDescrizione())}{$gioco->getInfo()->getDescrizione()}{/if}</textarea>
                         </div>
+                        {if ! $check.Descrizione}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Massimo 3000 caratteri.<br> Campo obbligatorio
+                                </small>
+                            </div>
+                        {/if}
 
                     </div>
 
@@ -71,37 +88,58 @@
                         <div class="col ">
                             <input type="text" name="NumeroMin" class="form-control" size="2"
                                     {if isset($gioco->getInfo()->getMin())}
-                                value="{$gioco->getInfo()->getMin()}"
-                                    {/if}>
+                                        value="{$gioco->getInfo()->getMin()}"
+                                    {/if}
+                            >
                         </div>
+                        {if ! $check.NumeroMin}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Minimo 1,Massimo 99.<br> Campo obbligatorio
+                                </small>
+                            </div>
+                        {/if}
 
                         <label for="name-input " class="my-auto px-4 "><b>Numero Massimo di giocatori</b></label>
-                        <div class="col-5  px-4 ">
+                        <div class="col  px-4 ">
                             <input type="text" name="NumeroMax" class="form-control" size="2"
                                     {if isset($gioco->getInfo()->getMax())}
-                                value="{$gioco->getInfo()->getMax()}"
-                                    {/if}>
+                                        value="{$gioco->getInfo()->getMax()}"
+                                    {/if}
+                            >
                         </div>
+                        {if ! $check.NumeroMax}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Minimo1,Massimo 99.<br> Campo obbligatorio
+                                </small>
+                            </div>
+                        {/if}
 
                     </div>
 
                     <!-- CasaEditrice -->
                     <div class="form-group row">
-                            <label for="name-input " class="my-auto"><b>Casa Editrice</b></label>
-                            <div class="col  ">
-                                <input type="text" name="CasaEditrice" class="form-control" placeholder="CasaEditrice" maxlength="40" size="40"
-                                        {if isset($gioco->getInfo()->getCasaEditrice())}
-                                    value="{$gioco->getInfo()->getCasaEditrice()}"
-                                        {/if}> </div>
+                        <label for="name-input " class="my-auto"><b>Casa Editrice</b></label>
+                        <div class="col  ">
+                            <input type="text" name="CasaEditrice" class="form-control" placeholder="CasaEditrice" maxlength="40" size="40"
+                                    {if isset($gioco->getInfo()->getCasaEditrice())}
+                                        value="{$gioco->getInfo()->getCasaEditrice()}"
+                                    {/if}
+                            > </div>
+                        {if ! $check.CasaEditrice}
+                            <div class="alert alert-warning">
+                                <small >
+                                    Massimo 40 caratteri.<br> Campo obbligatorio
+                                </small>
+                            </div>
+                        {/if}
 
                     </div>
-               </div>
-           </div>
+                </div>
+            </div>
         </div>
 
-        <div class="text-right">
-            <button type="submit" class="btn btn-primary " >Submit</button>
-        </div>
 
         <div class="justify-content-around" style="text-align: center"  >
             <button type="submit" class="btn btn-primary" style="width: 60%; margin-left: 20px;margin-right: 20px;">Submit</button>
