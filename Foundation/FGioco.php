@@ -164,13 +164,6 @@ class FGioco
             $gioco->setVotoMedio($row['VotoMedio']);
         else
             $gioco->setVotoMedio(0);
-        /* Queste due righe permettono un Eager Loading
-         dell'oggetto EGiocoInfo associato al Gioco in questione.
-        Noi invece facciamo Lazy Loading
-
-        if(FPersistantManager::getInstance()->exists("giocoinfo", "IdGioco",$gioco->getId()))
-            $gioco->setInfo(FPersistantManager::getInstance()->search("giocoinfo", "IdGioco",$gioco->getId())[0]);
-        */
 
         return $gioco;
     }

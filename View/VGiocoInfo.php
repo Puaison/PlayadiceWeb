@@ -46,7 +46,8 @@ class VGiocoInfo extends VObject
     }
 
     /**
-     * Verifica che un una recensione rispetti tutti i parametri;
+     * Verifica che un una recensione rispetti tutti i parametri,
+     * notificando nell'array $this->Check eventuali campi errati;
      * richiama le funzioni di validazione presenti in Entity
      * @param ERecensione $recensione La nuova recensione da controllare
      * @return true se è una recensione valida, false altrimenti
@@ -66,7 +67,9 @@ class VGiocoInfo extends VObject
         }
     }
     /**
-     * Mostra la Form per inserire la nuova recensione
+     * Mostra la Form per inserire la nuova recensione.
+     * Inoltre grazie all'ausilio dell'array $this->>Check, è possiile
+     * segnalare i campi sbagliati
      * @param EUtente $user l'utente della sessione
      * @param EGioco $gioco il gioco su cui si vuole effettuare la recensione
      */

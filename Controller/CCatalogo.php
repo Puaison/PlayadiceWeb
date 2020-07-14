@@ -2,7 +2,7 @@
 
 
 /**
- * Il Controller CCatalogo implementa tutte le funzionalità del Caso D'Uso "Visualizzazione Catalogo Giochi".
+ * Il Controller CCatalogo implementa tutte le funzionalità del Caso D'Uso "Visualizza il Catalogo Di Giochi".
  * Un EUtente,EOspite o EAdmin può visionare il catalogo, ricercare giochi e visualizzarne i dettagli,
  * ma soltanto un EAdmin può eliminare,modificare o creare un nuovo Gioco
  */
@@ -10,7 +10,7 @@ class CCatalogo
 {
     /**
      * Metodo che gestisce la funzionalità di esposizione dell'intero catalogo di Giochi
-     * (che verranno presentati in ordine decrescente secondo il VotoMedio registrato)
+     * (che verranno presentati in ordine decrescente di VotoMedio)
      */
     static function catalogoCompleto()
     {
@@ -21,9 +21,9 @@ class CCatalogo
     }
 
     /**
-     * Metodo che gestisce la funzionalità di inserimento di un nuovo gioco. Se richiamato tramite GET, fornisce
-     * la form(previa verifica che l'utente richiedente sia del tipo EAdmin), se richiamato tramite POST viene richiamata
-     * la funzione insertNewGioco responsabile
+     * Metodo che implementa la funzionalità di inserimento di un nuovo gioco. Se richiamato tramite GET, fornisce
+     * la form(previa verifica che l'utente richiedente sia un EAdmin), se richiamato tramite POST viene lasciato il comando
+     * alla funzione insertNewGioco, responsabile di verificare la validità dei dati e di salvare il nuovo gioco nel DB
      */
     static function newGioco()
     {
@@ -45,10 +45,10 @@ class CCatalogo
     }
 
     /**
-     * Metodo che prende i dati passati via POST per la creazione di un nuovo Gioco
-     * e li salva nel DB. Controlla se l'utente che sta effettuando la richiesta sia un
-     * EAdmin e che tutti i campi siano stati inviati(e inseriti) correttamente;
-     * Altrimenti notifica l'Utente del problema
+     * Metodo che prende i dati passati via POST per la creazione di un nuovo Gioco.
+     * Controlla se l'utente che sta effettuando la richiesta sia un
+     * EAdmin e che tutti i campi siano stati inviati(e inseriti) correttamente, notificando l'utente di eventuali errori.
+     * Se tutti i vincoli sono stati rispettati, salva il Gioco nel DB
      */
     static function insertNewGioco()
     {
@@ -70,11 +70,10 @@ class CCatalogo
     }
 
     /**
-     * Metodo che esegue la cancellazione dal catalogo(e quindi anche dal DB)
-     * di un gioco. Si controlla che l'utente che ha richiesto la cancellazione sia un EAdmin,
+     * Metodo che implementa la funzionalità di cancellazione dal catalogo(e quindi anche dal DB)
+     * di un gioco. Si controlla che l'utente richiedente sia un EAdmin,
      * altrimenti si invia un messaggio d'errore; inoltre si verifica che il gioco che si vuole
-     * cancellare effettivamente esista, altrimenti si notifica l'utente che il gioco che vuole
-     * cancellare non esiste
+     * cancellare esista effettivamente, altrimenti si notifica l'utente che il gioco non esiste
      * @param int $id l'identificativo del gioco, specificato nell'URL
      */
     static function removeGioco(int $id)
@@ -100,11 +99,11 @@ class CCatalogo
     }
 
     /**
-     * Metodo che gestisce la funzionalità di modifica di un gioco. Se richiamato tramite GET, fornisce
-     * la form per la modifica (previa verifica che l'utente richiedente sia del tipo EAdmin) e che
-     * il gioco da modificare effettivamente esista(altrimenti vengono inviati messaggi di errore);
+     * Metodo che implementa la funzionalità di modifica di un gioco. Se richiamato tramite GET, fornisce
+     * la form per la modifica (previa verifica che l'utente richiedente sia un EAdmin) e che
+     * il gioco da modificare esista effettivamente (altrimenti vengono inviati messaggi di errore);
      * se richiamato tramite POST viene passato il comando alla funzione eseguiModificaGioco responsabile
-     * di controllare e eseguire il cambiamento
+     * di controllare e eseguire il cambiamento aggiornando il DB
      */
     static function modificaGioco($IdGioco)
     {
@@ -132,10 +131,9 @@ class CCatalogo
     }
 
     /**
-     * Metodo che prende i dati passati via POST per la modifica del gioco,esegue la modifica
-     * e controlla se l'utente che sta effettuando la richiesta sia un
-     * EAdmin, che ilgioco esista e che tutti i campi siano stati inviati(e inseriti) correttamente;
-     * Altrimenti notifica l'Utente del problema
+     * Metodo che prende i dati passati via POST per la modifica del gioco; controlla se l'utente che sta effettuando
+     * la richiesta sia un EAdmin, che il gioco esista e che tutti i campi siano stati inviati(e inseriti) correttamente;
+     * Dopodichè aggiorna il DB
      */
     static function eseguiModifica()
     {
@@ -163,10 +161,10 @@ class CCatalogo
     }
 
     /**
-     * Questo metodo gestisce la funzionalità di ricerca dei giochi;
+     * Questo metodo implementa la funzionalità di ricerca dei giochi;
      * è possibile ricercare i giochi per Nome e Categoria
      */
-    static function search()
+    static function searchGioco()
     {
         $vCatalogo = new VCatalogo();
         $user = CSession::getUserFromSession();
@@ -184,7 +182,7 @@ class CCatalogo
     /**
      * Funzione che deve essere richiamata ogni volta che un oggetto EUtente viene eliminato dal DB.
      * Permette il ricalcolo del voto medio di ogni Gioco, poichè quando l'utente viene cancellato,
-     * anche le sue recensioni vengono eliminate senza che il Voto Medio venga aggiornato.
+     * anche le sue recensioni vengono eliminate senza che il Voto Medio venga aggiornato automaticamente.
      */
     static function utenteRemoved()
     {

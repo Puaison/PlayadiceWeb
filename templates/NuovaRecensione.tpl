@@ -19,19 +19,13 @@
     </div>
 
         <h2>Nuova Recensione</h2>
-    <!--if $error
-        <hr>
-        <div class="alert alert-warning">
-             Errore
-            <strong>Attenzione!</strong><br>Username o Password errati. <br>Per favore riprova. </div>
--->
 
         <!-- FORM -->
         <form class="form-horizontal" method="post" action="newrecensione?{$gioco->getId()}">
             <!-- Voto -->
             <div class="form-group row">
                 <label for="user" class="col-md-5 col-form-label">Voto:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <select class="form-control " name="Voto">
                         <option selected="" value="Choose...">Choose...</option>
                         <option value="1">1</option>
@@ -45,7 +39,7 @@
                 {if ! $check.Voto}
                     <div class="alert alert-warning">
                         <small >
-                            Scegli un voto dalla lista
+                            Scegli un voto dalla lista<br>Campo obbligatorio
                         </small>
                     </div>
                 {/if}
@@ -53,13 +47,13 @@
             <div class="form-group row">
                 <!-- Commento -->
                 <label class="col-sm-5 col-form-label col">Commento:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <textarea class="form-control border-primary" name="Commento" placeholder="Dicci cosa ne pensi" maxlength="500"></textarea>
                 </div>
                 {if ! $check.Commento}
                     <div class="alert alert-warning">
                         <small >
-                            Massimo 500 caratteri
+                            Massimo 500 caratteri<br>Campo obbligatorio
                         </small>
                     </div>
                 {/if}

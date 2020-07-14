@@ -193,39 +193,37 @@ class EGioco extends EObject
     }
 
     /**
-     * //TODO vedere come fare uscire la descrizione della funzione
-     * Metodo che controlla se la recensione può essere effettuata
-     * @param ERecensione $nuovarec La Nuova Recensione che devo controllare che
-     * @return bool
+     * Metodo che controlla se un Utente può recensire un Gioco
+     * @param EUtente $user l'utente che vorrebe recensire
+     * @return bool true se non ha già recensito, false altrimenti
      */
-    function PossibileNuovaRecensione(ERecensione $nuovarec):bool {
+    function possibileNuovaRecensione(EUtente $user):bool {
         $array=array();
         $array=$this->Recensioni;
         foreach ($array as $rec)
         {
-            $commentatore=$rec->getEUtente()->getUsername();
-            if($commentatore==$nuovarec->getEUtente()->getUsername())
+            $creatore=$rec->getEUtente()->getUsername();
+            if($creatore==$user->getUsername())
                 return false;
         }
-        //TODO Aggiungo direttamente la recensione oppure controllavo soltanto?
-        $this->addRecensione($nuovarec);
         return true;
 
 
     }
 
-    //Vedere se tenere(perchè carico tutto nel FGioco
-    static function  getGiocoCompleto(int $IdGioco):bool
+    
+    static function  getGiocoCompleto(int $IdGioco):EGioco
     {
         $gioco=new EGioco();
         if(FPersistantManager::getInstance()->exists("gioco", "Id" ,$IdGioco))
             $gioco = FPersistantManager::getInstance()->search("gioco", "Id" ,$IdGioco)[0];
-        else
-            return false;
         if(FPersistantManager::getInstance()->exists("giocoinfo", "IdGioco" ,$IdGioco))
             $gioco->setInfo(FPersistantManager::getInstance()->search("giocoinfo", "IdGioco" ,$gioco->getId())[0]);
-        else
-            return false;
+        if(FPersistantManager::getInstance()->exists("recensione","IdGioco",$gioco->getId()))
+            $gioco->setRecensioni(FPersistantManager::getInstance()->search("recensione","IdGioco",$gioco->getId()));
+
+        return $gioco;
+
     }
 
 

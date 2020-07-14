@@ -23,18 +23,21 @@
         <div class="alert alert-warning">
             <!-- Errore form-->
             <strong>Attenzione!</strong><br>Username già utilizzato <br>Per favore sceglierne un altro. </div>
+            {elseif $error}
+            <div class="alert alert-warning">
+            <strong>Attenzione!</strong><br>Alcuni campi sono errati <br>Per favore riprova. </div>
         {/if}
         <form method="post" enctype="multipart/form-data" action="signup">
 
             <div class="form-group row">
                 <label for="user" class="col-sm-5 col-form-label">Username: </label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="text" class="form-control " id="user" name="Username" placeholder="Insert username..." maxlength="20">
                 </div>
                 {if ! $check.Username}
                     <div class="alert alert-warning">
                         <small >
-                            6-20 Caratteri Alphanumerici.
+                            6-20 Caratteri Alphanumerici.<br>Campo obbligatorio
                         </small>
                     </div>
                 {/if}
@@ -43,13 +46,13 @@
 
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-5 col-form-label ">Password:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="password" class="form-control " id="inputPassword" name="Password" placeholder="Password" maxlength="20">
                 </div>
                 {if ! $check.Password}
                     <div class="alert alert-warning">
                         <small>
-                            6-20 Caratteri Alphanumerici.
+                            6-20 Caratteri Alphanumerici.<br>Campo obbligatorio
                         </small>
                     </div>
                 {/if}
@@ -59,13 +62,13 @@
 
             <div class="form-group row">
                 <label for="mail" class="col-sm-5 col-form-label ">Email:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="text" class="form-control " id="mail" name="Mail" placeholder="Insert email..." maxlength="40">
                 </div>
                 {if ! $check.Mail}
                     <div class="alert alert-warning">
                         <small >
-                            Deve essere un'email(lunghezza max 40).
+                            Deve essere un'email(lunghezza max 40).<br>Campo obbligatorio
                         </small>
                     </div>
                 {/if}
@@ -73,13 +76,13 @@
             </div>
             <div class="form-group row">
                 <label for="nome" class="col-sm-5 col-form-label ">Nome:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="text" class="form-control " id="mail" name="Nome" placeholder="Insert Name..." maxlength="20">
                 </div>
                 {if ! $check.Nome}
                     <div class="alert alert-warning">
                         <small >
-                            Solo Caratteri(lunghezza max 20).
+                            Solo Caratteri(lunghezza max 20).<br>Campo obbligatorio
                         </small>
                     </div>
                 {/if}
@@ -87,13 +90,13 @@
             </div>
             <div class="form-group row">
                 <label for="cognome" class="col-sm-5 col-form-label ">Cognome:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="text" class="form-control " id="mail" name="Cognome" placeholder="Insert Surname..." maxlength="30">
                 </div>
                 {if ! $check.Cognome}
                     <div class="alert alert-warning">
                         <small>
-                            Solo Caratteri(lunghezza max 20).
+                            Solo Caratteri(lunghezza max 20).<br>Campo obbligatorio
                         </small>
                     </div>
                 {/if}

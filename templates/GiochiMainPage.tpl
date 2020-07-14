@@ -26,7 +26,7 @@
     <div class="row justify-content-center" style=" margin-bottom: 15px ">
       <div class="col-sm-8 align-self-center" >
         <!-- FORM -->
-        <form method="post" id="Ricercaform" action="search">
+        <form method="post" id="Ricercaform" action="searchGioco">
           <div class="row">
             <label for="Parametro" style="color: white; margin-left: 4px; margin-right: 4px">Parametro:</label><br>
             <input type="text" id="Parametro" name="Parametro">

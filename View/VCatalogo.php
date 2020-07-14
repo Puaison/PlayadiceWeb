@@ -90,8 +90,10 @@ class VCatalogo extends VObject
     }
 
     /**
-     * Verifica che un gioco rispetti tutti i parametri;
+     * Verifica che un gioco rispetti tutti i parametri,
+     * notificando nell'array $this->Check eventuali campi errati;
      * richiama le funzioni di validazione presenti in Entity
+     *
      * @param EGioco $gioco l'oggetto gioco da controllare
      * @return true se non si sono commessi errori, false altrimenti
      */
@@ -130,9 +132,11 @@ class VCatalogo extends VObject
     }
 
     /**
-     * Mostra la Form per la creazione di un nuovo gioco
+     * Mostra la Form per la creazione di un nuovo gioco.
+     * Inoltre grazie all'ausilio dell'array $this->>Check, è possiile
+     * segnalare i campi sbagliati
      * @param EUtente $user l'utente di sessione
-     * @param EGioco|null $gioco TODO gioco appena isneito?
+     * @param EGioco|null $gioco Dati appena inseriti che vengono riportati nella form
      */
     function showFormNewGioco(EUtente $user, EGioco $gioco=null)
     {
@@ -147,7 +151,9 @@ class VCatalogo extends VObject
     }
 
     /**
-     * Mostra la Form per la modifica del gioco
+     * Mostra la Form per la modifica del gioco.
+     * Inoltre grazie all'ausilio dell'array $this->>Check, è possiile
+     * segnalare i campi sbagliati
      * @param EUtente $user l'utente di sessione
      * @param EGioco $gioco il gioco da modificare
      */

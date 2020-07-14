@@ -49,7 +49,7 @@ class VUtente extends VObject
     }
 
     /**
-     * Funzione che ritorna un array (A partire da form) contenente vecchia e nuova password
+     * Funzione che ritorna un array contenente la password attuale e nuova password desiderata
      */
     function createNewPassword()
     {
@@ -63,7 +63,8 @@ class VUtente extends VObject
     }
 
     /**
-     * Funzione che controlla la validità della password vecchia coincide con quella nuova
+     * Funzione che controlla se l'utente ha inserito la password attuale corretta
+     * (per confermare la sua autenticità) e che la nuova password rispetta tutti i vincoli
      */
     function validateNewPassword(EUtente $newUser,EUtente $oldUser)
     {
@@ -77,7 +78,9 @@ class VUtente extends VObject
     }
 
     /**
-     * Verifica che un utente abbia rispettato i vincoli per l'inserimento dei parametri di login
+     * Verifica che un utente abbia rispettato i vincoli per l'inserimento dei parametri di login,
+     * notificando nell'array $this->Check eventuali campi errati;
+     * richiama le funzioni di validazione presenti in Entity
      * @param EUtente $user l'oggetto Utente da controllare
      * @return true se non si sono commessi errori, false altrimenti
      */
@@ -95,7 +98,9 @@ class VUtente extends VObject
     }
 
     /**
-     * Verifica che un utente abbia rispettato i vincoli per l'inserimento dei parametri di login
+     * Verifica che un utente abbia rispettato i vincoli per l'inserimento della modifica dei dati del profilo,
+     * notificando nell'array $this->Check eventuali campi errati;
+     * richiama le funzioni di validazione presenti in Entity
      * @param EUtente $user l'oggetto Utente da controllare
      * @return true se non si sono commessi errori, false altrimenti
      */
@@ -115,7 +120,9 @@ class VUtente extends VObject
     }
 
     /**
-     * Verifica che un utente abbia inserito valori validi per nomi e cognomi
+     * Verifica che un utente abbia inserito valori validi per la registrazione,
+     * notificando nell'array $this->Check eventuali campi errati;
+     * richiama le funzioni di validazione presenti in Entity
      * @return true se non si sono commessi errori, false altrimenti
      */
     function validateSignUp(EUtente $user): bool
@@ -138,7 +145,9 @@ class VUtente extends VObject
 
 
     /**
-     * Mostra la pagina di login
+     * Mostra la pagina di login.
+     * Inoltre grazie all'ausilio dell'array $this->>Check, è possiile
+     * segnalare i campi sbagliati
      *
      * @param bool $error
      *            facoltativo se è stato rilevato un errore
@@ -159,7 +168,9 @@ class VUtente extends VObject
     }
 
     /**
-     * Mostra la pagina di signup
+     * Mostra la pagina di signup.
+     * Inoltre grazie all'ausilio dell'array $this->>Check, è possiile
+     * segnalare i campi sbagliati
      * @param bool $error
      *            facoltativo se e' stato rilevato un errore
      */
@@ -172,7 +183,7 @@ class VUtente extends VObject
 
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
-        //TODO DA LEVARE $this->smarty->assign('error', $error);
+        $this->smarty->assign('error', $error);
         $this->smarty->assign('check', $this->check);
         $this->smarty->display('Register.tpl');
     }
@@ -189,7 +200,9 @@ class VUtente extends VObject
     }
 
     /**
-     * Funzione che visualizza il pannello modifica profilo
+     * Funzione che visualizza il pannello modifica profilo.
+     * Inoltre grazie all'ausilio dell'array $this->>Check, è possiile
+     * segnalare i campi sbagliati
      */
     function showFormModify(EUtente $user)
     {
@@ -201,7 +214,9 @@ class VUtente extends VObject
     }
 
     /**
-     * Funzione che visualizza il pannello modifica profilo (password)
+     * Funzione che visualizza il pannello modifica password.
+     * Inoltre grazie all'ausilio dell'array $this->>Check, è possiile
+     * segnalare i campi sbagliati
      */
     function showFormModifyPassword(EUtente $user)
     {
