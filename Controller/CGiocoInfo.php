@@ -155,5 +155,5 @@ class CGiocoInfo
         else
             $vGiocoInfo->showErrorPage($user,'Non hai i permessi per recensire;per favore logga');
     }
-    //TODO funzione che calcola il voto medio
+
 }

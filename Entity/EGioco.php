@@ -106,7 +106,6 @@ class EGioco extends EObject
     }
 
     /**
-     * //TODO Problemi con questo metodo perchè gli passo un array
      * @param Recensioni che devono essere aggiunte al gioc
      */
     function setRecensioni($recensioni) {
@@ -117,7 +116,8 @@ class EGioco extends EObject
 
 
     /**
-     * Metodo che aggiunge una recensione al Gioco
+     * Metodo che aggiunge una recensione all'array
+     * dentro l'oggetto EGioco
      * @param ERecensione $rec La recensione da aggiungere
      */
     function addRecensione(ERecensione $rec) {
@@ -125,18 +125,6 @@ class EGioco extends EObject
         FPersistantManager::getInstance()->store($rec);
     }
 
-    /**TODO IMPLEMENTARE QUESTA FUNZIONE NEL LOGIN
-     * @return bool
-     */
-    function validateEsistenza() : bool
-    {
-        if (!FPersistantManager::getInstance()->exists("gioco", "Id", $this->getId()))
-        {
-            return true;
-        }
-        else
-            return false;
-    }
 
     /**
      * Metodo che controlla se il nome del gioco inserito è lungo meno di 40  caratteri e ha solo numeri, lettere e spazi
@@ -168,8 +156,9 @@ class EGioco extends EObject
 
 
     /**
-     * Metodo che calcola il vgoto medio riprendendo tutte le recensioni
-     * @return float Il VotoMedio calcolato sulle recensioni del Gioco
+     * Metodo che calcola il voto medio del gioco
+     * (usando le recensioni in $this->Recensioni),
+     * salvandolo poi in $this->VotoMedio
      */
     function CalcolaVotoMedio() :void {
         $somma=0;
@@ -194,6 +183,7 @@ class EGioco extends EObject
 
     /**
      * Metodo che controlla se un Utente può recensire un Gioco
+     * (controlli eseguiti su $this->Recensioni)
      * @param EUtente $user l'utente che vorrebe recensire
      * @return bool true se non ha già recensito, false altrimenti
      */
@@ -211,7 +201,13 @@ class EGioco extends EObject
 
     }
 
-    
+
+    /**
+     * Metodo statico che permette di ottenere un oggetto EGioco comepleto
+     * (con EGiocoInfo e le Erecensioni) dal DB
+     * @param int $IdGioco l'identificativo del Gioco
+     * @return EGioco
+     */
     static function  getGiocoCompleto(int $IdGioco):EGioco
     {
         $gioco=new EGioco();

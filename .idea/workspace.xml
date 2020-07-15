@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e33789a-bf5f-474d-b9a3-af3c96b11c8e" name="Default Changelist" comment="Aggiustato il form per i giochi. Inoltre">
-      <change afterPath="$PROJECT_DIR$/Documentazione/~$cumentazione di avvio.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentazione/~$i ha fatto cosa.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentazione/~WRL0005.tmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/270cb8aeda23b693ffea4d50046453835b62d17f_0.file.Profile.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/6bb2057823f560a232a0b1512bb321680b85b53e_0.file.AdminPanel.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/96371ae495c63e61052ec983501c12d942d4f166_0.file.GiochiMainPage.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/c9f829aa476d02b37239be77622a5056c42ed929_0.file.NewNuovoGioco.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/53e6242679f2313534e8da540a7dbda84d483151_0.file.NuovoGioco.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/555686cb53629661b8cfc5ce0458ede07659ee4d_0.file.Register.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/784813a21e61c528a45fa7b4589e75242e0c0b6a_0.file.NuovaRecensione.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/79d64fdf98811e552203bc6b99bf52046ec6e9df_0.file.errorPage.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/b8305bcb080adcf3c796877fb77daef7eb759b86_0.file.navbar.tpl.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates_c/cd8d22795db6450e0f289afbd273285f33572649_0.file.GiocoInfo.tpl.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates_c/db5a3811503e47a26d394ffd07373547c804ad4e_0.file.ModificaGioco.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/f7cde22e67172b46f639058d00963c373408923f_0.file.Login.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentazione/Chi ha fatto cosa.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documentazione/Chi ha fatto cosa.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/49f384d45902eb0502ef61f28b6545da703a020a_0.file.index.tpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/d6f8996e8a76732dc4124210a7ad3f82a71201df_0.file.navbar.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates_c/d6f8996e8a76732dc4124210a7ad3f82a71201df_0.file.navbar.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/CGiocoInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CGiocoInfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entity/EGioco.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EGioco.php" afterDir="false" />
     </list>
     <list id="9d0a1074-1335-4894-b0f9-3ca81cc4a34c" name="Revert &quot;Aggiornamento di chi ha fatto cosa&quot;" comment="Revert &quot;Aggiornamento di chi ha fatto cosa&quot;&#10;&#10;This reverts commit f31ad491" />
     <option name="SHOW_DIALOG" value="false" />
@@ -234,20 +232,8 @@
       <workItem from="1594658046913" duration="117000" />
       <workItem from="1594670606113" duration="2951000" />
       <workItem from="1594729185878" duration="243000" />
-    </task>
-    <task id="LOCAL-00050" summary="Aggiunto testo ad EEvento.php&#10;Aggiornamenti tpl Antonio">
-      <created>1593183103974</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1593183103975</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Aggiunto il &quot;Testo&quot; di EEvento.php nel CreateTables.txt e in FEvento.php">
-      <created>1593183523001</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1593183523001</updated>
+      <workItem from="1594759456077" duration="10490000" />
+      <workItem from="1594798771386" duration="556000" />
     </task>
     <task id="LOCAL-00052" summary="Update FEvento.php">
       <created>1593183573345</created>
@@ -578,7 +564,21 @@
       <option name="project" value="LOCAL" />
       <updated>1594719290954</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Aggiunta documentazione">
+      <created>1594741965555</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1594741965555</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Miglioramenti al PHPDOC per la sezione giochi e deciso chi deve avere quali responsabilità">
+      <created>1594769911633</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1594769911633</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,8 +624,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Aggiunta bozza &quot;Modifica Evento&quot;" />
-    <MESSAGE value="Modifiche FEvento.php: esistenza Fasce e Prenotazioni" />
     <MESSAGE value="Modifiche Path relativi" />
     <MESSAGE value="Aggiunta funzionalità di Prenotazione" />
     <MESSAGE value="Aggioramento Evento" />
@@ -649,7 +647,9 @@
     <MESSAGE value="Modifica delle insert e della documentazione" />
     <MESSAGE value="maxtime delle sessione prima che il gc lo consideri da levare fissato a 5 minuti" />
     <MESSAGE value="Chi ha fatto cosa aggiornato" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chi ha fatto cosa aggiornato" />
+    <MESSAGE value="Aggiunta documentazione" />
+    <MESSAGE value="Miglioramenti al PHPDOC per la sezione giochi e deciso chi deve avere quali responsabilità" />
+    <option name="LAST_COMMIT_MESSAGE" value="Miglioramenti al PHPDOC per la sezione giochi e deciso chi deve avere quali responsabilità" />
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="236" width="923" height="689" key="#CLI_Interpreters" timestamp="1589463768748">
@@ -718,10 +718,10 @@
     </state>
     <state x="679" y="208" key="#testantonio.php/0.0.1920.1040@0.0.1920.1040" timestamp="1589303652156" />
     <state x="679" y="216" key="#testantonio.php/0.0.1920.1080@0.0.1920.1080" timestamp="1589353104236" />
-    <state x="780" y="174" width="1533" height="836" key="CommitChangelistDialog2" timestamp="1594719289607">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="585" y="129" width="1533" height="836" key="CommitChangelistDialog2" timestamp="1594769910549">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594674467507" />
+    <state x="585" y="129" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594769910549" />
     <state x="97" y="95" width="1246" height="811" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594487267055" />
     <state x="780" y="174" width="1533" height="836" key="CommitChangelistDialog2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1594719289607" />
     <state x="92" y="92" width="1736" height="896" key="DiffContextDialog" timestamp="1594285101703">
@@ -818,10 +818,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1055" y="455" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1589112796677" />
-    <state x="873" y="434" key="Vcs.Push.Dialog.v2" timestamp="1594719293035">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2" timestamp="1594769915290">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594674470687" />
+    <state x="655" y="323" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594769915290" />
     <state x="214" y="303" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594487346619" />
     <state x="873" y="434" key="Vcs.Push.Dialog.v2/3840.591.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1594719293035" />
     <state x="92" y="92" width="1736" height="896" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1588407242850">
@@ -870,16 +870,5 @@
     </state>
     <state x="623" y="226" width="672" height="160" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1594145623312" />
     <state x="623" y="235" width="672" height="160" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593938741663" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/View/VUtente.php</url>
-          <line>22</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
