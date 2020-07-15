@@ -14,11 +14,13 @@ class EOspite extends EUtente
     {
         parent::__construct();
 
+        /*
         unset($this->Mail);
         unset($this->Cognome);
         unset($this->Nome);
         unset($this->Password);
-
+        unset($this->Username);
+        */
         $this->Username="Ospite";
     }
 }

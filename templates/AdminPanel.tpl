@@ -83,9 +83,6 @@
           <div class="col" style="Text-align:center">
             <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/admin/Ban?{$results[k]->GetUsername()}">BanHammer</a>
           </div>
-          <div class="col" style="Text-align:center">
-            <a class="btn navbar-btn ml-md-2 btn-light text-dark" href="/playadice/admin/Ban?{$results[k]->GetUsername()}">Vedi Recensioni</a>
-          </div>
 
           {if $results[k]->getModeratore()}
           <div class="col" style="Text-align:center">

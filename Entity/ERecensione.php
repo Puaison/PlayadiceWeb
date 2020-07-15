@@ -9,7 +9,7 @@
 class ERecensione
 {
     /** L'Oggetto EUtente che ha recensito */
-    private $Utente;
+    private $Creatore;
 
     /** Il Voto associato */
     private $Voto;
@@ -18,7 +18,7 @@ class ERecensione
     private $Commento;
 
     /** Il Gioco associato*/
-    private $Gioco;
+    private $giocoAssociato;
 
 
     /****************************************** COSTRUTTORE **************************************************/
@@ -29,8 +29,8 @@ class ERecensione
     public function __construct()
     {
         //parent::__construct();
-        $this->Gioco=new EGioco();
-        $this->Utente=new EUtente();
+        $this->giocoAssociato=new EGioco();
+        $this->Creatore=new EUtente();
     }
 
     /********************************************** GETTER ************************************************/
@@ -40,7 +40,7 @@ class ERecensione
      */
     public function getEUtente() : EUtente {
 
-        return $this->Utente;
+        return $this->Creatore;
 
     }
 
@@ -49,7 +49,7 @@ class ERecensione
      */
     public function getEGioco() : EGioco {
 
-        return $this->Gioco;
+        return $this->giocoAssociato;
 
     }
 
@@ -76,7 +76,7 @@ class ERecensione
      */
     public function setEUtente(EUtente $user) {
 
-        $this->Utente=$user;
+        $this->Creatore=$user;
 
     }
 
@@ -85,7 +85,7 @@ class ERecensione
      */
     public function setEGioco(EGioco $gioco) {
 
-        $this->Gioco=$gioco;
+        $this->giocoAssociato=$gioco;
 
     }
 

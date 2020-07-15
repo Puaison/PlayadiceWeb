@@ -4,19 +4,19 @@
 class EUtente
 {
     /** Il Nome dell'utente */
-    protected string $Nome;
+    protected  $Nome;
 
     /** Il Cognome dell'utente */
-    protected string $Cognome;
+    protected  $Cognome;
 
     /** La Mail dell'utente */
-    protected string $Mail;
+    protected  $Mail;
 
     /** La password dell'utente */
-    protected string $Password;
+    protected  $Password;
 
     /** L'username dell'utente' */
-    protected string $Username;
+    protected  $Username;
 
     /****************************************** COSTRUTTORE **************************************************/
 
@@ -31,7 +31,7 @@ class EUtente
     /**
      * @return string Il Nome dell'utente
      */
-    function getNome() : string
+    function getNome() : ?string
     {
         return $this->Nome;
     }
@@ -39,7 +39,7 @@ class EUtente
     /**
      * @return string Il Cognome dell'utente
      */
-    function getCognome() : string
+    function getCognome() : ?string
     {
         return $this->Cognome;
     }
@@ -47,7 +47,7 @@ class EUtente
     /**
      * @return string La Mail dell'utente
      */
-    function getMail() : string
+    function getMail() : ?string
     {
         return $this->Mail;
     }
@@ -55,7 +55,7 @@ class EUtente
     /**
      * @return string La Password dell'utente
      */
-    function getPassword() : string
+    function getPassword() : ?string
     {
        return $this->Password;
     }
@@ -63,7 +63,7 @@ class EUtente
     /**
      * @return string L' Username dell'utente
      */
-    function getUsername() : string
+    function getUsername() : ?string
     {
         return $this->Username;
     }
@@ -209,7 +209,7 @@ class EUtente
      */
     function validateCognome() : bool
     {
-        if (ctype_alpha($this->Cognome) && strlen($this->Cognome)<=30)
+        if (preg_match('/^[a-zA-Z_ ]{1,30}$/', $this->Cognome))
         {
             strtolower($this->Cognome);
             ucfirst($this->Cognome);

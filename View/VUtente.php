@@ -173,16 +173,23 @@ class VUtente extends VObject
      * segnalare i campi sbagliati
      * @param bool $error
      *            facoltativo se e' stato rilevato un errore
+     * @param EUtente $userInserted le informazioni inserite nella prima richiesta
      */
-    function showSignUp(bool $error = NULL)
+    function showSignUp(bool $error = NULL, EUtente $userInserted=null)
     {
         if (! $error)
             $error = false;
 
-        $user = new EOspite();
+        if(!$userInserted) {
+            $userInserted = new EOspite();
+            $userInserted->setUsername("");
+        }
+        $user=new EOspite();
+
 
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
+        $this->smarty->assign('userInserted',$userInserted);
         $this->smarty->assign('error', $error);
         $this->smarty->assign('check', $this->check);
         $this->smarty->display('Register.tpl');

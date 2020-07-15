@@ -32,7 +32,10 @@
             <div class="form-group row">
                 <label for="user" class="col-sm-5 col-form-label">Username: </label>
                 <div class="col">
-                    <input type="text" class="form-control " id="user" name="Username" placeholder="Insert username..." maxlength="20">
+                    <input type="text" class="form-control " id="user" name="Username" placeholder="Insert username..." maxlength="20"
+                            {if isset($userInserted->getUsername())}
+                        value="{$userInserted->getUsername()}"
+                            {/if}>
                 </div>
                 {if ! $check.Username}
                     <div class="alert alert-warning">
@@ -63,7 +66,10 @@
             <div class="form-group row">
                 <label for="mail" class="col-sm-5 col-form-label ">Email:</label>
                 <div class="col">
-                    <input type="text" class="form-control " id="mail" name="Mail" placeholder="Insert email..." maxlength="40">
+                    <input type="text" class="form-control " id="mail" name="Mail" placeholder="Insert email..." maxlength="40"
+                            {if isset($userInserted->getMail())}
+                        value="{$userInserted->getMail()}"
+                            {/if}>
                 </div>
                 {if ! $check.Mail}
                     <div class="alert alert-warning">
@@ -77,7 +83,10 @@
             <div class="form-group row">
                 <label for="nome" class="col-sm-5 col-form-label ">Nome:</label>
                 <div class="col">
-                    <input type="text" class="form-control " id="mail" name="Nome" placeholder="Insert Name..." maxlength="20">
+                    <input type="text" class="form-control " id="mail" name="Nome" placeholder="Insert Name..." maxlength="20"
+                            {if isset($userInserted->getNome())}
+                        value="{$userInserted->getNome()}"
+                            {/if}>
                 </div>
                 {if ! $check.Nome}
                     <div class="alert alert-warning">
@@ -91,12 +100,15 @@
             <div class="form-group row">
                 <label for="cognome" class="col-sm-5 col-form-label ">Cognome:</label>
                 <div class="col">
-                    <input type="text" class="form-control " id="mail" name="Cognome" placeholder="Insert Surname..." maxlength="30">
+                    <input type="text" class="form-control " id="mail" name="Cognome" placeholder="Insert Surname..." maxlength="30"
+                            {if isset($userInserted->getCognome())}
+                        value="{$userInserted->getCognome()}"
+                            {/if}>
                 </div>
                 {if ! $check.Cognome}
                     <div class="alert alert-warning">
                         <small>
-                            Solo Caratteri(lunghezza max 20).<br>Campo obbligatorio
+                            Solo Caratteri(lunghezza max 30).<br>Campo obbligatorio
                         </small>
                     </div>
                 {/if}

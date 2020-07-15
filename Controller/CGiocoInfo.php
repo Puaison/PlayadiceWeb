@@ -55,7 +55,7 @@ class CGiocoInfo
                 $recensione->getEUtente()->setUsername($creatore);
                 $allGiocoRec = FPersistantManager::getInstance()->search("recensione", "IdGioco", $idgioco);
                 $gioco->setRecensioni($allGiocoRec);
-                $esiste=!$gioco->possibileNuovaRecensione();
+                $esiste=!$gioco->possibileNuovaRecensione($user);
                 if($esiste) {
                     FPersistantManager::getInstance()->remove($recensione);
                     $allGiocoRec = FPersistantManager::getInstance()->search("recensione", "IdGioco", $idgioco);

@@ -103,7 +103,7 @@ class CUtente
                 CSession::startSession($newUser);
                 header('Location: /playadice/index');
             } else
-                $vUser->showSignUp(true);
+                $vUser->showSignUp(true,$newUser);
         }
         else
             $vUser->showErrorPage($loggedUser,'Sei già loggato. Non puoi creare un nuovo account');
