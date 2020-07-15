@@ -59,7 +59,7 @@
                 {if $data< date_create()}
                     <div class="col-md-12">
                         <div class="row border">
-                            <span class="col- border"><img class="img-fluid d-block pi-draggable " src="../templates/assets/{$results[k]->getId()}.png" width="100" height="100"></span>
+                            <span class="col- border"><img class="img-fluid d-block pi-draggable " src="../Resources/assets/EventImages/{$results[k]->getId()}.png" width="100" height="100"></span>
 
                             <span class="col text-center border ">
                             <a class="px-5" href="../evento/show?{$results[k]->getId()}">
