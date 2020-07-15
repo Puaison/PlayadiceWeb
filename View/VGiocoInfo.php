@@ -54,7 +54,6 @@ class VGiocoInfo extends VObject
      */
     function validateRecensione(ERecensione $recensione): bool
     {
-        //TODO QUI CONTROLLO L'ESISTENZA DELLA RECENSIONE?
         $this->check['Voto']=$recensione->validateVoto();
         $this->check['Commento']=$recensione->validateCommento();
         if($this->check['Voto'] && $this->check['Commento'])
@@ -75,7 +74,6 @@ class VGiocoInfo extends VObject
      */
     function showFormNewRecensione(EUtente $user,EGioco $gioco)
     {
-        //TODO assegnare e vedere se ha già recensito?
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->assign('gioco',$gioco);
         $this->smarty->registerObject('user', $user);

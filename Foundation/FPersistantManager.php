@@ -352,7 +352,6 @@ class FPersistantManager
     }
 
     private function execRemove(&$obj, string $sql) : bool {
-        //$this->db->beginTransaction(); //inizio della transazione: TODO SE CE LO METTO NON FUNZIONA
         $stmt = $this->db->prepare($sql); //a partire dalla stringa sql viene creato uno statement
 
         try
