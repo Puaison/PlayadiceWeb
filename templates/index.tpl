@@ -17,7 +17,7 @@
 
 <div class="column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url(https://static.pingendo.com/cover-bubble-dark.svg); background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat; min-height: 1000px">
         {if !$cookieEnabled}
-                <div class="alert alert-warning">
+                <div class="alert alert-warning text-center">
                         <strong>Attenzione!</strong><br>Per utilizzare l'applicazione è necessario attivare i Cookie <br>Per favore, attiva i Cookie </div>
         {/if}
         <!-- Sezione Giochi da tavolo here -->
