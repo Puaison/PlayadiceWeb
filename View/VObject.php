@@ -38,6 +38,10 @@ class VObject
         $this->smarty->assign('error', $error);
         $this->smarty->display('errorPage.tpl');
     }
+    /**
+     * Mostra la HomePage del sito.
+     *
+     */
 
     function showIndex(EUtente $user, $giochi, $evento, $cookieEnabled=null)
     {
