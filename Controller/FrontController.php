@@ -61,7 +61,8 @@ class FrontController
                     }
 
                 }
-                $vObject->showIndex($user,$giochi,$eventi[0]);
+                $cookieEnabled=CSession::php_cookie_enable();
+                $vObject->showIndex($user, $giochi, $eventi[0], $cookieEnabled);
             }
         }
         else // se la classe non esiste, si viene reindirizzati alla pagina principale
@@ -83,7 +84,8 @@ class FrontController
                 }
 
             }
-            $vObject->showIndex($user,$giochi,$eventi[0]);
+            $cookieEnabled=CSession::php_cookie_enable();
+            $vObject->showIndex($user, $giochi, $eventi[0], $cookieEnabled);
         }
         exit;
     }
