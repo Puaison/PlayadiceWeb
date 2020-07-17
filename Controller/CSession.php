@@ -85,4 +85,16 @@ class CSession
         
         session_destroy(); // distrugge la sessione
     }
+
+    /**
+     * Metodo che permette di controllare se il browser dell'utente ha i Cookie abilitati.
+     */
+    static function php_cookie_enable()
+    {
+        setcookie('cookietest', 'cookie_value', time()+3600);
+        if (isset($_COOKIE['cookietest']))
+            return true;
+        else
+            return false;
+    }
 }

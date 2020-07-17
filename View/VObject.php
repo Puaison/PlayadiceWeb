@@ -38,9 +38,14 @@ class VObject
         $this->smarty->assign('error', $error);
         $this->smarty->display('errorPage.tpl');
     }
+    /**
+     * Mostra la HomePage del sito.
+     *
+     */
 
-    function showIndex(EUtente $user, $giochi, $evento)
+    function showIndex(EUtente $user, $giochi, $evento, $cookieEnabled=null)
     {
+        $this->smarty->assign('cookieEnabled',$cookieEnabled);
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->assign('giochi',$giochi);
         $this->smarty->assign('evento',$evento);

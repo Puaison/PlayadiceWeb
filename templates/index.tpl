@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="../Resources/now-ui-kit.css" type="text/css">
         <link rel="stylesheet" href="Resources/now-ui-kit.css" type="text/css">
+
         <title>Playadice Home</title>
 </head>
 
@@ -16,12 +18,15 @@
 {include file="navbar.tpl"}
 
 <div class="column" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)), url(https://static.pingendo.com/cover-bubble-dark.svg); background-position: center center, center center;  background-size: cover, cover;  background-repeat: repeat, repeat; min-height: 1000px">
-
+        {if !$cookieEnabled}
+                <div class="alert alert-warning text-center">
+                        <strong>Attenzione!</strong><br>Questo sito utilizza i Cookie per il suo corretto funzionamento.<br>Per favore, abilitali dalle impostazioni del tuo Browser</div>
+        {/if}
         <!-- Sezione Giochi da tavolo here -->
         <div class="container py-5 FlexContainer">
 
                                 <div style="margin-right: 3px">
-                                        <img class="img-fluid d-block" src="Resources/assets/Giocodatavolo.jpg" style="max-width: 800px">
+                                        <img class="img-fluid d-block" src="Resources/assets/Giocodatavolo.jpg"  style="max-width: 800px">
                                 </div>
 
                                 <div class="card pi-draggable Flex-item" style="align-items: center; justify-items: center">
