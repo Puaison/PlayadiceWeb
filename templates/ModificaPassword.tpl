@@ -24,7 +24,7 @@
 
             <div class="form-group row">
                 <label for="mail" class="col-sm-5 col-form-label ">Password attuale:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="password" class="form-control " id="mail" name="OldPassword"  maxlength="20">
                 </div>
                 {if ! $check.OldPassword}
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group row">
                 <label for="nome" class="col-sm-5 col-form-label ">Nuova Password:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="password" class="form-control " id="mail" name="Password"  maxlength="20">
                 </div>
                 {if ! $check.Password}

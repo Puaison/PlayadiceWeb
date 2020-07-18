@@ -24,7 +24,7 @@
 
             <div class="form-group row">
                 <label for="mail" class="col-sm-5 col-form-label ">Email:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="text" class="form-control " id="mail" name="Mail" placeholder="Insert email..." maxlength="40"
                             {if isset($utente->getMail())}
                         value="{$utente->getMail()}"
@@ -41,7 +41,7 @@
             </div>
             <div class="form-group row">
                 <label for="nome" class="col-sm-5 col-form-label ">Nome:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="text" class="form-control " id="mail" name="Nome" placeholder="Insert Name..." maxlength="20"
                             {if isset($utente->getNome())}
                         value="{$utente->getNome()}"
@@ -58,7 +58,7 @@
             </div>
             <div class="form-group row">
                 <label for="cognome" class="col-sm-5 col-form-label ">Cognome:</label>
-                <div class="col-lg-5">
+                <div class="col">
                     <input type="text" class="form-control " id="mail" name="Cognome" placeholder="Insert Surname..." maxlength="30"
                             {if isset($utente->getCognome())}
                         value="{$utente->getCognome()}"

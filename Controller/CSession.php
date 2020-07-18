@@ -17,7 +17,7 @@ class CSession
     'gc_maxlifetime' => 300,
 
     );
-    const inactive=1;
+    const inactive=3600;
 
 
     /**
