@@ -71,7 +71,7 @@ class VUtente extends VObject
         //Se la password vecchia non è corretta, devo notificarlo
         $this->check['OldPassword']=$oldUser->checkPassword();
         $this->check['Password']=$newUser->validatePassword();
-        if($this->check['Password'] && $this->check['Password'] )
+        if($this->check['OldPassword'] && $this->check['Password'] )
             return true;
         else
             return false;

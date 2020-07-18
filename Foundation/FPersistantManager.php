@@ -95,9 +95,7 @@ class FPersistantManager
             $stmt->bindValue(":".$value, $str, PDO::PARAM_STR);
             $stmt->execute();   //viene eseguita la query
             $stmt->setFetchMode(PDO::FETCH_ASSOC); // i risultati del db verranno salvati in un array con indici le colonne della table
-
             $obj = NULL; // l'oggetto di ritorno viene definito come NULL
-
             while($row = $stmt->fetch())
             { // per ogni tupla restituita dal db...
                 $obj[] = FPersistantManager::createObjectFromRow($className, $row); //...istanzio l'oggetto
@@ -285,14 +283,11 @@ class FPersistantManager
     private function execUpdate(&$obj, string $sql) : bool
     {
         $this->db->beginTransaction(); //inizio della transazione
-
         $stmt = $this->db->prepare($sql);
-
         //si prepara la query facendo un bind tra parametri e variabili dell'oggetto
         try
         {
             FPersistantManager::bindValues($stmt, $obj); //si associano i valori dell'oggetto alle entry della query
-
             if($stmt->execute()) //se la tupla e' alterata...
             {
                 $commit = $this->db->commit(); // effettua il commit
@@ -305,14 +300,12 @@ class FPersistantManager
             {
                 $this->db->rollBack();
                 $this->__destruct(); // chiude la connessione
-
                 return false; //...annulla la transazione e ritorna false
             }
         }
         catch (PDOException $e)
         {
             echo('Errore: '.$e->getMessage());
-
             $this->db->rollBack();
             $this->__destruct(); // chiude la connessione
 
@@ -353,7 +346,6 @@ class FPersistantManager
 
     private function execRemove(&$obj, string $sql) : bool {
         $stmt = $this->db->prepare($sql); //a partire dalla stringa sql viene creato uno statement
-
         try
         {
             //$Nick="badibba";

@@ -39,9 +39,7 @@ class CSession
     static function getUserFromSession() : EUtente
     {
         if (session_status() == PHP_SESSION_NONE) {//controlla se non è già stata recuperata una sessione nella stessa chiamata
-
             session_start(self::settings);
-
             $inactive = 3600; // inactive in seconds
             if( !isset($_SESSION['timeout']) )
                 $_SESSION['timeout'] = time() + $inactive;
@@ -50,7 +48,8 @@ class CSession
 
             if($session_life > $inactive)
 
-            { session_destroy();
+            {
+                session_destroy();
                 header("Location: /playadice/index");
             }
 
