@@ -24,6 +24,12 @@ class FrontController
         }
         else if ($resources[2]=="index")
         {
+            if (!empty($resources[3]))
+            {
+                header('Location: /playadice/index');
+            }
+            else
+            {
             $vObject = new VObject();
             $user = CSession ::getUserFromSession();
             $giochi = FPersistantManager ::getInstance() -> search('gioco', 'BestFive', '');
@@ -31,6 +37,7 @@ class FrontController
             $eventi = CEvento ::sort($eventi);
             $cookieEnabled = CSession ::php_cookie_enable();
             $vObject -> showIndex($user, $giochi, $eventi[0], $cookieEnabled);
+            }
         }
         else
             {
