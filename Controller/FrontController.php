@@ -18,7 +18,7 @@ class FrontController
     {
 
         $resources = preg_split("#[][&?/]#", $_SERVER['REQUEST_URI']); // individua le componenti dell'url
-        if (empty($resources[2]))
+        if (empty($resources[2]) or $resources[2]=="session")
         {
             header('Location: /playadice/index');
         }

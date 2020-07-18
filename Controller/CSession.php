@@ -14,6 +14,7 @@ class CSession
      */
     const settings = array(
     'gc_maxlifetime' => 300,
+        'cookie_lifetime'=>60,
     );
 
     /**
@@ -36,7 +37,7 @@ class CSession
      * altrimenti restituirà un semplice utente ospite.
      * @return EUtente
      */
-    static function getUserFromSession() : EUtente
+    static function getUserFromSession() :
     {
         if (session_status() == PHP_SESSION_NONE) {//controlla se non è già stata recuperata una sessione nella stessa chiamata
             session_start(self::settings);
