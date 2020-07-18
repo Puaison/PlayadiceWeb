@@ -880,3 +880,11 @@ html,body {
 .Flex-item {
   flex-grow: 2;
 }
+.avviso {
+  position: fixed;
+  bottom: 0px;
+  Left: 0px;
+  width: 100%;
+  height: 25%;
+  z-index:500;
+}
