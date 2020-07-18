@@ -1,16 +1,24 @@
-# Progetto-Cicerone-2020
-Progetto per Esame Univaq
+Installazione
+L'applicazione è stata svilupatta in PHP e provata su XAMPP, una piattaforma software che contiene strumenti quali:
+•	Server Apache
+•	Il DBMS MySQL
+•	PHP ( almeno Versione 7.4)
+Pertanto l'applicazione dovrà richiedere un'installazione di XAMPP, in particolare la cartella contenente l'applicativo dovrà essere posizionata nella cartella htdocs .E’ possibile raggiungere l'applicazione attraverso l'URL localhost/playadice/ . La prima volta che vi si accede verrà visualizzata una form di installazione, in cui verranno richiesti:
+•	nome utente del DBMS
+•	password del DBMS
+•	nome che si vuole dare al database
+Tali informazioni verranno salvati in un file di configurazione, config.inc.php, che sarà utilizzato dallo strato Foundation per comunicare con il dbms.
 
-#Info aggiuntive in Documentazione di avvio
+A disposizione vi sono già tre account Admin (tutte e 3 con la stessa password:playadice)
+•	Badibba
+•	Pantaleone
+•	Puaison
+E’ possibile cambiare la password.
+Ci sono anche quattro account Utente Registrato(la cui password è quella di sopra):
+•	Miriairim
+•	Fusari
+•	Esperozzi
+•	DarkSidon
 
-#Link UML e Relazioni
-#https://drive.google.com/file/d/1SxFitIuu2EDUP5yk3LXU4f0Mbimxgxak/view?usp=sharing
+Inoltre, è disponibile tutta la documentazione completa nella cartella "documentazione". Per il PHPDOC aprire il file index all'interno della suddetta.
 
-Domande:
-1) 
-
-
-TODO:
-1) UsernameUtente di avatar è foreign key che puù essere null  //FATTO
-1bis) EMod e EProp di Proposta è foreign key che puù essere null  //FATTO
-2) Tipo Proposta di proposta è adesso Tipo  //FATTO

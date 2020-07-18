@@ -3,9 +3,8 @@
     RewriteCond %{HTTPS} !on
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    RewriteEngine on
+    RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule . /playadice/index.php [L]
-   
 
 </IfModule>

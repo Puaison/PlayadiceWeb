@@ -380,4 +380,22 @@ class CEvento
 
 
     }
+    static function sort($eventi)
+    {
+        foreach ($eventi as $value){
+            if(empty($value->getFasce())){
+                $array[]=$value;
+                unset($eventi[array_search($value,$eventi)]);
+            }
+        }
+        usort($eventi, "EEvento::dateSorter");
+        if (!empty($array)){
+            foreach ($array as $value){
+                array_push($eventi,$value);
+            }
+
+        }
+        return $eventi;
+
+    }
 }
