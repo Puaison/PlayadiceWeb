@@ -17,7 +17,7 @@ class CSession
     'gc_maxlifetime' => 300,
 
     );
-    const inactive=100;
+    const inactive=1;
 
 
     /**
@@ -106,5 +106,16 @@ class CSession
         setcookie("PHPSESSID", "", time() - 3600, "/"); //Elimino il cookie di sessione
         session_unset(); // rimuove le variabili di sessione
         session_destroy(); // distrugge la sessione
+    }
+    /**
+     * Metodo che permette di controllare se il browser dell'utente ha i Cookie abilitati.
+     */
+    static function php_cookie_enable()
+    {
+        setcookie('cookietest', 'cookie_value', time()+3600);
+        if (isset($_COOKIE['cookietest']))
+            return true;
+        else
+            return false;
     }
 }

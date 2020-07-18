@@ -113,7 +113,7 @@ class FEvento
         }
 
         if ($evento->getFlag()!==0){
-            $prenotazioni= FPersistantManager::getInstance()->search("prenotazione","IdEvento",($row['Id']));
+            $prenotazioni= FPersistantManager::getInstance()->search("Prenotazione","IdEvento",($row['Id']));
             if (!empty($prenotazioni)){
                 foreach ($prenotazioni as $value){
                     $evento->newPrenotazione($value);

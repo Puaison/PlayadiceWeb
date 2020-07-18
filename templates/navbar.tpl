@@ -4,7 +4,7 @@
                         <ul class="navbar-nav">
                                 <span class="nav-link" href="">Benvenuto&nbsp{$Username}</span>
                                 <a class="nav-link space" href=""> &nbsp;</a>
-                                <a class="nav-link" href="/playadice"> &nbsp;Home</a>
+                                <a class="nav-link" href="/playadice/"> &nbsp;Home</a>
                                 <a class="nav-link" href="/playadice/evento/showAll"> &nbsp;Eventi</a>
                                 <a class="nav-link" href="/playadice/catalogo/catalogocompleto"> &nbsp;Giochi</a>
                                 <a class="nav-link" href="/playadice/ricerca/ShowPersonal">   &nbsp;AreaTWG</a>

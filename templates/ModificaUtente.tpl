@@ -17,7 +17,7 @@
     <div class="col-sm-3">
 
     </div>
-        <h2>Register</h2>
+        <h2>Modifica Utente</h2>
         <hr>
         <form method="post" enctype="multipart/form-data" action="modifymyutente">
 
