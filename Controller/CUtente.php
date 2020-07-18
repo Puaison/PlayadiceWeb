@@ -29,6 +29,15 @@ class CUtente
         else
             header('Location: playadice/index.php');
     }
+
+    /**
+     * Funzione che mostra la schermata di login con un messaggio di sessione scaduta
+     */
+    static function expiredSession()
+    {
+        $vUtente = new VUtente();
+        $vUtente->showLogin(false,true);
+    }
     /**
      * La funzione Authentication verifica che le credenziali di accesso inserite da un utente
      * siano corrette: in tal caso, l'applicazione lo riporterà verso la sua pagina, altrimenti

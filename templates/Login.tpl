@@ -27,10 +27,14 @@
         <div class="alert alert-warning">
             <!-- Errore-->
             <strong>Attenzione!</strong><br>Password errata. <br>Per favore riprova. </div>
+        {elseif $expiredsession}
+        <div class="alert alert-warning">
+            <!-- ExpiredSession-->
+            <strong>Attenzione!</strong><br>La tua sessione è scaduta. <br>Per favore rilogga. </div>
     {/if}
 
         <!-- FORM -->
-        <form class="form-horizontal" method="post" action="login">
+        <form class="form-horizontal" method="post" action="/playadice/utente/login">
             <!-- Nickname -->
             <div class="form-group row">
                 <label for="user" class="col-md-5 col-form-label">Username:</label>

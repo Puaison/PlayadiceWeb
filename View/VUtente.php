@@ -71,7 +71,7 @@ class VUtente extends VObject
         //Se la password vecchia non è corretta, devo notificarlo
         $this->check['OldPassword']=$oldUser->checkPassword();
         $this->check['Password']=$newUser->validatePassword();
-        if($this->check['Password'] && $this->check['Password'] )
+        if($this->check['Password'] && $this->check['OldPassword'] )
             return true;
         else
             return false;
@@ -151,17 +151,22 @@ class VUtente extends VObject
      *
      * @param bool $error
      *            facoltativo se è stato rilevato un errore
+     * @param bool $expiredsession
+     * ci dice se c'è bisogno di rifare il login.
      */
-    function showLogin(bool $error = NULL)
+    function showLogin(bool $error = NULL,bool $expiredsession=NULL)
     {
         if(!$error)
             $error = false;
+        if(!$expiredsession)
+            $expiredsession = false;
 
         $user = new EOspite();
 
         $this->smarty->assign('UtenteType', lcfirst(substr(get_class($user), 1)));
         $this->smarty->registerObject('user', $user);
         $this->smarty->assign('error', $error);
+        $this->smarty->assign('expiredsession', $expiredsession);
         $this->smarty->assign('check', $this->check);
 
         $this->smarty->display('Login.tpl');

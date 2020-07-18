@@ -6,6 +6,7 @@
  * @author Gruppo DelSignore/Marottoli/Perozzi
  * @package Controller
  */
+
 class CSession
 {
     /**
@@ -14,7 +15,10 @@ class CSession
      */
     const settings = array(
     'gc_maxlifetime' => 300,
+
     );
+    const inactive=100;
+
 
     /**
      * Funzione che da inizio alla sessione. I dati dell'utente come Username e tipologia di
@@ -26,6 +30,8 @@ class CSession
         session_start( self::settings);
 
         // i suoi dati sono memorizzati all'interno della sessione
+        $_SESSION['timeout'] = time() + self::inactive;
+        $_SESSION['Password'] = $user->getPassword();
         $_SESSION['Username'] = $user->getUsername();
         $_SESSION['type'] = lcfirst(substr(get_class($user), 1));
     }
@@ -42,16 +48,28 @@ class CSession
 
             session_start(self::settings);
 
-            $inactive = 3600; // inactive in seconds
-            if( !isset($_SESSION['timeout']) )
-                $_SESSION['timeout'] = time() + $inactive;
+            //$inactive = 10; // inactive in seconds
+            if (isset($_SESSION['timeout'])) {
+               // $_SESSION['timeout'] = time() + $inactive;
 
-            $session_life = time() - $_SESSION['timeout'];
+                $session_life = time() - $_SESSION['timeout'];
 
-            if($session_life > $inactive)
-            {  session_destroy(); header("Location:index.php");     }
 
-            $_SESSION['timeout']=time();
+                if ($session_life > self::inactive) {
+                    session_unset();
+                    session_destroy();
+                    setcookie("PHPSESSID", "", time() - 3600, "/");
+                    //$vUser=new VUtente();
+                    //$vUser->showLogin(false,true);
+                    header("Location: /playadice/utente/expiredSession");
+                    exit();
+
+
+                }
+                    $_SESSION['timeout'] = time() + self::inactive;
+
+                //$_SESSION['timeout'] = time();
+            }
         }
         
         if(isset($_SESSION['Username']))
@@ -60,14 +78,19 @@ class CSession
 
             $user = new $uType();
             $user->setUsername($_SESSION['Username']);
-            if (! FPersistantManager::getInstance()->exists("utente","UserName",$_SESSION['Username']) )
+            $user->setPassword($_SESSION['Password']);
+
+            if (! FPersistantManager::getInstance()->exists("utente","UserName",$_SESSION['Username']) || !$user->checkPassword() )
             {
+                session_unset();
                 session_destroy(); // distrugge la sessione
                 $user = new EOspite();
             }
         }
         else
         {
+            session_unset();
+            session_destroy();
             $user = new EOspite();
         }
         return $user;
@@ -80,9 +103,8 @@ class CSession
     static function destroySession()
     {
         session_start(); // recupera i parametri di sessione
-        
+        setcookie("PHPSESSID", "", time() - 3600, "/"); //Elimino il cookie di sessione
         session_unset(); // rimuove le variabili di sessione
-        
         session_destroy(); // distrugge la sessione
     }
 }
