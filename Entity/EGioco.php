@@ -132,7 +132,7 @@ class EGioco extends EObject
      */
     function validateNome() : bool
     {
-        if ($this->Nome && strlen($this->Nome)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Nome))
+        if ($this->Nome && strlen($this->Nome)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9 ])+$/ui', $this->Nome))
         {
             return true;
         }

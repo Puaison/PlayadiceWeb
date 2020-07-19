@@ -116,7 +116,7 @@ class EGiocoInfo extends EObject
      */
     function validateDescrizione() : bool
     {
-        if ($this->Descrizione && strlen($this->Descrizione)<=3000 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Descrizione))
+        if ($this->Descrizione && strlen($this->Descrizione)<=3000 && preg_match('/^(\p{L})|([a-zA-Z0-9 ])+$/', $this->Descrizione))
         {
             return true;
         }
@@ -158,7 +158,7 @@ class EGiocoInfo extends EObject
      */
     function validateCasaEditrice() : bool
     {
-        if ($this->CasaEditrice && strlen($this->CasaEditrice)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->CasaEditrice))
+        if ($this->CasaEditrice && strlen($this->CasaEditrice)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9 ])+$/', $this->CasaEditrice))
         {
             return true;
         }

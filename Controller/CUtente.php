@@ -267,7 +267,7 @@ class CUtente
             if ($vUtente->validateNewPassword($newUser, $oldUser)) {
                 $user->setPassword($newUser->getPassword());
                 FPersistantManager::getInstance()->update($user);
-                $vUtente->showProfile($user);
+                $vUtente->showLogin();
             } else
                 $vUtente->showFormModifyPassword($user);
         }

@@ -179,7 +179,7 @@ class EUtente
      */
     function validateUsername() : bool
     {
-        if ($this->Username && preg_match('/^[a-zA-Z0-9_-]{6,20}$/', $this->Username))
+        if ( preg_match('/^[a-zA-Z0-9_-]{6,20}$/', $this->Username))
         {
             return true;
         }
@@ -209,7 +209,7 @@ class EUtente
      */
     function validateCognome() : bool
     {
-        if (preg_match('/^[a-zA-Z_ ]{1,30}$/', $this->Cognome))
+        if (preg_match('/^[a-zA-Z ]{1,30}$/', $this->Cognome))
         {
             strtolower($this->Cognome);
             ucfirst($this->Cognome);

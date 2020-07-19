@@ -31,7 +31,7 @@
                     <!-- Nome Gioco -->
                     <div class="form-group row">
                         <label for="name-input" class="col-2 col-form-label"><b>Nome Gioco</b></label>
-                        <div class="col-10">
+                        <div class="col">
                             <input type="text" name="Nome" class="form-control" maxlength="40" size="40"
                                    placeholder="Inserisci qui il Nome"
                                     {if isset($gioco->getNome())}
@@ -50,7 +50,7 @@
                     <!-- Nome Categoria -->
                     <div class="form-group row">
                         <label for="category-input" class="col-2 col-form-label"><b>Categoria</b></label>
-                        <div class="col-10 ">
+                        <div class="col ">
                             <select class="form-control " name="Categoria" id="inlineFormCustomSelect">
                                 <option value="Strategia"{if $gioco->getCategoria()=="Strategia"} selected{/if}}>Strategia</option>
                                 <option value="Party"{if $gioco->getCategoria()=="Party"} selected{/if}>Party</option>
