@@ -100,13 +100,13 @@ class FPersistantManager
             { // per ogni tupla restituita dal db...
                 $obj[] = FPersistantManager::createObjectFromRow($className, $row); //...istanzio l'oggetto
             }
-            $this->__destruct(); // chiude la connessione
+            //$this->__destruct(); // chiude la connessione
 
             return $obj;
         }
         catch (PDOException $e)
         {
-            $this->__destruct(); // chiude la connessione
+            //$this->__destruct(); // chiude la connessione
             return null; // ritorna null se ci sono errori
         }
     }
@@ -153,13 +153,13 @@ class FPersistantManager
                 $found = $found + 1;
             }
 
-            $this->__destruct(); // chiude la connessione
+            //$this->__destruct(); // chiude la connessione
 
             return $found;
         }
         catch (PDOException $e)
         {
-            $this->__destruct(); // chiude la connessione
+            //$this->__destruct(); // chiude la connessione
             return null; // ritorna null se ci sono errori
         }
     }
@@ -215,22 +215,9 @@ class FPersistantManager
                 if (method_exists($obj, 'getId') && $obj->getId() == 0){ // ...se il valore e' di default si assegna l'id
                     $obj->setId($this->db->lastInsertId()); // assegna all'oggetto l'ultimo id dato dal dbms
                 }
-                if (is_a($obj,EEvento::class)){
-                    $fascia=$obj->getFasce();
-                    foreach ($fascia as $value){
-                        $value->setIdEvento($this->db->lastInsertId());
-
-                    }
-                    if ($obj->getFlag()!==false){
-                        $prenotazione =$obj->getPrenotazioni();
-                        foreach ($prenotazione as $value){
-                            $value->setIdEvento($this->db->lastInsertId());
-                        }
-                    }
-                }
                 $commit = $this->db->commit(); // effettua il commit
 
-                $this->__destruct(); // chiude la connessione
+                //$this->__destruct(); // chiude la connessione
 
                 return $commit; // ritorna il risultato del commit
             }
@@ -238,7 +225,7 @@ class FPersistantManager
             {
                 // ...altrimenti si effettua il rollback e si ritorna false
                 $this->db->rollBack();
-                $this->__destruct(); // chiude la connessione
+                //$this->__destruct(); // chiude la connessione
 
                 return false;
             }
@@ -247,7 +234,7 @@ class FPersistantManager
         {  // errore: rollback e return false
 
             $this->db->rollBack();
-            $this->__destruct(); // chiude la connessione
+            //$this->__destruct(); // chiude la connessione
 
             return false;
         }
@@ -292,14 +279,14 @@ class FPersistantManager
             {
                 $commit = $this->db->commit(); // effettua il commit
 
-                $this->__destruct(); // chiude la connessione
+                //$this->__destruct(); // chiude la connessione
 
                 return $commit; //...ritorna il risultato del commit
             }
             else //altrimenti l'update non ha avuto successo...
             {
                 $this->db->rollBack();
-                $this->__destruct(); // chiude la connessione
+                //$this->__destruct(); // chiude la connessione
                 return false; //...annulla la transazione e ritorna false
             }
         }
@@ -307,7 +294,7 @@ class FPersistantManager
         {
             echo('Errore: '.$e->getMessage());
             $this->db->rollBack();
-            $this->__destruct(); // chiude la connessione
+            //$this->__destruct(); // chiude la connessione
 
             return false;
         }
@@ -353,13 +340,13 @@ class FPersistantManager
             //FUtente::removeUtente();
             FPersistantManager::bindValues($stmt, $obj); //si associano i valori dell'oggetto alle entry della query
             $result = $stmt->execute(); //esegue lo statement
-            $this->__destruct(); // chiude la connessione
+            //$this->__destruct(); // chiude la connessione
             return $result; //ritorna il risultato
 
         }
         catch (PDOException $e)
         {
-            $this->__destruct();// chiude la connessione
+            //$this->__destruct();// chiude la connessione
             return FALSE;
             //ritorna false se ci sono errori
         }
