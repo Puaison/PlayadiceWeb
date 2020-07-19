@@ -128,7 +128,7 @@ class ERecensione
     public function validateCommento():bool {
         $commento=$this->Commento;
         $lenght=(strlen($commento));
-        if($lenght<=500 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Commento))
+        if($lenght<=500 && preg_match('/^(\p{L})|([a-zA-Z0-9 ])+$/', $this->Commento))
             return true;
         else
             return false;
