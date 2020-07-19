@@ -215,23 +215,8 @@ class FPersistantManager
                 if (method_exists($obj, 'getId') && $obj->getId() == 0){ // ...se il valore e' di default si assegna l'id
                     $obj->setId($this->db->lastInsertId()); // assegna all'oggetto l'ultimo id dato dal dbms
                 }
-                if (is_a($obj,EEvento::class)){
-                    $fascia=$obj->getFasce();
-                    foreach ($fascia as $value){
-                        $value->setIdEvento($this->db->lastInsertId());
-
-                    }
-                    if ($obj->getFlag()!==false){
-                        $prenotazione =$obj->getPrenotazioni();
-                        foreach ($prenotazione as $value){
-                            $value->setIdEvento($this->db->lastInsertId());
-                        }
-                    }
-                }
                 $commit = $this->db->commit(); // effettua il commit
-
                 $this->__destruct(); // chiude la connessione
-
                 return $commit; // ritorna il risultato del commit
             }
             else

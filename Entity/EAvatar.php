@@ -155,7 +155,7 @@ class EAvatar extends EObject {
     /********* Metodi che usano espressioni regolari per controllare se i campi dell'avatar abbiano effettivamente senso in quanto tali *******/
     function validateNome() : bool
     {
-        if ($this->Nome && strlen($this->Nome)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->Nome))
+        if ($this->Nome && strlen($this->Nome)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9])+$/ui', $this->Nome))
         {
             return true;
         }

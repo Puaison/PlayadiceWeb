@@ -51,8 +51,6 @@
                 <button type="submit"  class="btn btn-primary flex">Torna Indietro
                 </button>
             </form>
-
-
             {if boolval($results[0]->getFlag()) && $UtenteType == "admin"}
             <form action="/playadice/evento/prenotazioni?{$results[0]->getId()}" method="post">
                 <button style="align-content: end" type="submit"  class="ml-lg-5 btn btn-primary">Prenotazioni

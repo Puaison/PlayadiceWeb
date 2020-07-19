@@ -34,6 +34,11 @@
             </div>
             {/section}
         </div>
+        <div class="col"></div>
+        <form action="show?{$id}" method="post">
+            <button type="submit"  class="btn btn-primary flex">Torna Indietro
+            </button>
+        </form>
     </div>
 </div>
 

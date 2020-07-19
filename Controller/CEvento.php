@@ -86,11 +86,9 @@ class CEvento
     {
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
-
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
         } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
             $prenotazione = new EPrenotazione();
             $prenotazione -> setUtente($user);
             $prenotazione -> setIdEvento($id);
@@ -195,11 +193,12 @@ class CEvento
                 FPersistantManager ::getInstance() -> store($luogo);
                 FPersistantManager ::getInstance() -> store($evento);
                 $fasce = $evento -> getFasce();
-
                 foreach ($fasce as $value) {
+                    $evento = FPersistantManager ::getInstance() -> search("Evento", "Last", "");
+                    $value->setIdEvento($evento[0]->getId());
                     FPersistantManager ::getInstance() -> store($value);
                 }
-                $evento = FPersistantManager ::getInstance() -> search("evento", "last", "");
+                $evento = FPersistantManager ::getInstance() -> search("Evento", "Last", "");
                 $vEvento -> upload($user,$evento[0]);
             } else
                 $vEvento -> create($user);
@@ -303,7 +302,6 @@ class CEvento
     {
         $vEvento = new VEvento();
         $user = CSession ::getUserFromSession();
-
         if ($_SERVER['REQUEST_METHOD'] == 'GET')
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
         else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
