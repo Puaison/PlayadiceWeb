@@ -292,7 +292,7 @@ class FPersistantManager
             {
                 $commit = $this->db->commit(); // effettua il commit
 
-                $this->__destruct(); // chiude la connessione
+                //$this->__destruct(); // chiude la connessione
 
                 return $commit; //...ritorna il risultato del commit
             }
