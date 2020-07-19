@@ -91,7 +91,7 @@ class ELuogo extends EObject
      */
     function validateVia() : bool
     {
-        if ($this->via && strlen($this->via)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->via))
+        if ($this->via && strlen($this->via)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9])+$/ui', $this->via))
         {
             return true;
         }
@@ -104,7 +104,7 @@ class ELuogo extends EObject
      */
     function validateNome() : bool
     {
-        if ($this->nome && strlen($this->nome)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->nome))
+        if ($this->nome && strlen($this->nome)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9])+$/ui', $this->nome))
         {
             return true;
         }
@@ -117,7 +117,7 @@ class ELuogo extends EObject
      */
     function validateCitta() : bool
     {
-        if ($this->via && strlen($this->via)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->via))
+        if ($this->via && strlen($this->via)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9])+$/ui', $this->via))
         {
             return true;
         }

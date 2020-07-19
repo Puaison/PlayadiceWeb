@@ -180,7 +180,7 @@ class EEvento extends EObject
      */
     function validateNome() : bool
     {
-        if ($this->nomeEvento && strlen($this->nomeEvento)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9 -])+$/ui', $this->nomeEvento))
+        if ($this->nomeEvento && strlen($this->nomeEvento)<=40 && preg_match('/^(\p{L})|([a-zA-Z0-9][a-zA-Z0-9])+$/ui', $this->nomeEvento))
         {
             return true;
         }
