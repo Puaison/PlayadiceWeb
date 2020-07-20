@@ -19,6 +19,7 @@ class CEvento
         $vEvento = new VEvento(); // crea la view
         $user = CSession ::getUserFromSession(); // ottiene l'utente dalla sessione
         $eventi = FPersistantManager ::getInstance() -> search("Evento", "All", ''); // carica tutti gli eventi
+        $eventi=CEvento::sort($eventi, "date");
         $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
 
     }
@@ -264,32 +265,10 @@ class CEvento
             $vEvento -> showErrorPage($user, 'Non puoi accedere in questa area');
         } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($_POST['option'] == "Data") {
-                foreach ($eventi as $value) {
-                    if (empty($value -> getFasce())) {
-                        $array[] = $value;
-                        unset($eventi[array_search($value, $eventi)]);
-                    }
-                }
-                usort($eventi, "EEvento::dateSorter");
-                if (!empty($array)) {
-                    foreach ($array as $value) {
-                        array_push($eventi, $value);
-                    }
-                }
+                $eventi=CEvento::sort($eventi, "date");
                 $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
             } else if ($_POST['option'] == "Luogo") {
-                foreach ($eventi as $value) {
-                    if (empty($value -> getLuogo())) {
-                        $array2[] = $value;
-                        unset($eventi[array_search($value, $eventi)]);
-                    }
-                }
-                usort($eventi, "EEvento::placeSorter");
-                if (!empty($array)) {
-                    foreach ($array as $value) {
-                        array_push($eventi, $value);
-                    }
-                }
+                $eventi=CEvento::sort($eventi, "place");
                 $vEvento -> showAll($user, $eventi); // mostra la pagina degli eventi
             }
         }
@@ -378,15 +357,17 @@ class CEvento
 
 
     }
-    static function sort($eventi)
+    static function sort($eventi, $var)
     {
         foreach ($eventi as $value){
+
             if(empty($value->getFasce())){
                 $array[]=$value;
                 unset($eventi[array_search($value,$eventi)]);
+                $eventi=array_values($eventi);
             }
         }
-        usort($eventi, "EEvento::dateSorter");
+        usort($eventi, "EEvento::"."$var"."Sorter");
         if (!empty($array)){
             foreach ($array as $value){
                 array_push($eventi,$value);
@@ -395,5 +376,14 @@ class CEvento
         }
         return $eventi;
 
+    }
+    static function dropOld($eventi){
+        foreach($eventi as $value){
+            if (!(($value->getFasce()[0]->validateStart()))){
+                unset($eventi[array_search($value,$eventi)]);
+                $eventi=array_values($eventi);
+            }
+        }
+        return $eventi;
     }
 }

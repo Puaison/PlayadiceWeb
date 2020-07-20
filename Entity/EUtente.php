@@ -173,6 +173,7 @@ class EUtente
     }
 
 
+
     /**
      * Metodo che controlla se lo username dell'utente inserito è lungo meno di 20 (più di 6) caratteri alfanumerici
      * @return true se le condizioni sono rispettate

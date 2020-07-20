@@ -51,10 +51,7 @@ class CSession
             //$inactive = 10; // inactive in seconds
             if (isset($_SESSION['timeout'])) {
                // $_SESSION['timeout'] = time() + $inactive;
-
                 $session_life = time() - $_SESSION['timeout'];
-
-
                 if ($session_life > self::inactive) {
                     session_unset();
                     session_destroy();

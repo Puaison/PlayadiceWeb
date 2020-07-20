@@ -327,7 +327,7 @@ class FPersistantManager
             return $result = $this->execRemove($obj, $sql); // ... esegui la query
         }
         else
-            return NULL;
+            return null;
 
     }
 

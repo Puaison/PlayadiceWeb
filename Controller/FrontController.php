@@ -32,9 +32,10 @@ class FrontController
             {
             $vObject = new VObject();
             $user = CSession ::getUserFromSession();
-            $giochi = FPersistantManager ::getInstance() -> search('gioco', 'BestFive', '');
-            $eventi = FPersistantManager ::getInstance() -> search('evento', 'all', '');
-            $eventi = CEvento ::sort($eventi);
+            $giochi = FPersistantManager ::getInstance() -> search('Gioco', 'BestFive', '');
+            $eventi = FPersistantManager ::getInstance() -> search('Evento', 'All', '');
+            $eventi = CEvento ::sort($eventi,"date");
+            $eventi=CEvento::dropOld($eventi);
             $cookieEnabled = CSession ::php_cookie_enable();
             $vObject -> showIndex($user, $giochi, $eventi[0], $cookieEnabled);
             }

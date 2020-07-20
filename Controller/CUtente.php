@@ -19,7 +19,7 @@ class CUtente
             $utente = CSession::getUserFromSession();
             if(get_class($utente)!=EOspite::class) // se l'utente non è ospite, non puo accedere al login
             {
-                $vUtente->showErrorPage($utente, 'Why are you doing this? Yuo\'re already logged!');
+                $vUtente->showErrorPage($utente, 'Why are you doing this? You\'re already logged!');
             }
             else
                 $vUtente->showLogin();
@@ -85,7 +85,7 @@ class CUtente
             $vUtente = new VUtente();
             $utente = CSession::getUserFromSession();
             if (get_class($utente)!=EOspite::class) // se l'utente non è guest, non puo accedere al login
-                $vUtente->showErrorPage($utente, 'Yuo\'re already logged!');
+                $vUtente->showErrorPage($utente, 'You\'re already logged!');
             else
                 $vUtente->showSignUp();
         }
