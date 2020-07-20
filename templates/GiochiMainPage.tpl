@@ -72,7 +72,7 @@
           <p style="color:White;">{$results[k]->getNome()}</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
-          <p style="color:White;">{if $results[k]->getVotoMedio()==0}Ancora nessun voto{else} {$results[k]->getVotoMedio()}{/if}</p>
+          <p style="color:White;">{if $results[k]->getVotoMedio()==0}Ancora nessun voto{else} {$results[k]->getVotoMedio()|string_format:"%.2f" }{/if}</p>
         </div>
         <div class="col-md-2" style="Text-align:center">
           <p style="color:White;">{$results[k]->getCategoria()}</p>

@@ -84,7 +84,8 @@ class EGioco extends EObject
      * @param float $valore il valore del voto medio del gioco
      */
     function setVotoMedio(float $valore) {
-        $this->VotoMedio=$valore;
+        //round($valore,2);
+        $this->VotoMedio=$numberAsString = number_format($valore, 2);;
     }
 
 

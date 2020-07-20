@@ -38,7 +38,7 @@
                         <h6 class="card-subtitle my-2 text-center">
                             {if $gioco->getVotoMedio()==0}Ancora nessuna recensione
                             {else}
-                            Voto della community: {$gioco->getVotoMedio()}
+                            Voto della community: {$gioco->getVotoMedio()|string_format:"%.2f"}
                             {/if}</b></b></h6>
                         <div class="row">
 
