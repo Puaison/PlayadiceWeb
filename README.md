@@ -12,20 +12,20 @@ The main features of PlayadiceWeb include:
 - **People Management:** Register, update, and organize members or participants of the association.
 - **Events Management:** Schedule and track events, including attendance and participants.
 
-Project for the "Web Programming" Exam at Univaq. As a request of the Professor, we have not used any Framework and we have coded from scratch every single aspect of the Full-stack development (From the UI to the database), using the MVC architectural design pattern(adding a Layer called `Foundation layer` which has the responsability to generate the queries and comunicate with the Database) with an OOP paradigm.
+Project for the "Web Programming" Exam at Univaq. As a request of the Professor, we have not used any Framework and we have coded from scratch every single aspect of the Full-stack development (From the UI to the database), using the MVC architectural design pattern(adding a Layer called `Foundation layer` which has the responsability to generate the queries and comunicate with the Database) with an OOP paradigm. Moreover we have also followed the process of software engineering by studying at first the use cases and the scratch of the UI. 
 
 ## Getting Started
-
-1. **Clone the repository:**
+This app was developed using [XAMPP](https://www.apachefriends.org/it/download.html) version 7.4.3, so it is necessary first to install it with the modules `Server Apache`, `MySQL` and `PHP`.
+To install the app run these steps:
+1. **Clone the repository in folder xampp/htdocs:**
    ```bash
    git clone https://github.com/Puaison/PlayadiceWeb.git
-   cd PlayadiceWeb
    ```
-2. **Install dependencies:**  
-   *(The setup instructions depend on the technology stack used. Please refer to any included documentation or installation scripts.)*
+2. **Open XAMPP control Panel and start `Server Apache` and `MySQL` modules:**  
 
-3. **Run the application:**  
-   *(Running instructions will depend on the language and framework. Typical commands could include starting a development server, e.g., `npm start`, `python manage.py runserver`, or similar.)*
+3. **Open this link in Browser:** localhost/PlayadiceWeb/. You will see the installation screen
+4. **Insert in the form the credential of your DBMS (by default they are 'root' with no password) and give a name to the database**. These informations will be saved in a new configuration file called `config.inc.php` [inserire immagine]
+5. After the installation, from now on, by visiting localhost/PlayadiceWeb/, you should see the homepage of the site  [Inserire immagine]
 
 ## Features
 
@@ -34,22 +34,6 @@ Project for the "Web Programming" Exam at Univaq. As a request of the Professor,
 - Search and filtering capabilities
 - Event scheduling and participant tracking
 - Developed with web programming best practices
-
-## License
-
-Please refer to the repository and any upstream license for usage and distribution terms.
-
-
-Installazione
-L'applicazione è stata svilupatta in PHP e provata su XAMPP, una piattaforma software che contiene strumenti quali:
-•	Server Apache
-•	Il DBMS MySQL
-•	PHP ( almeno Versione 7.4)
-Pertanto l'applicazione dovrà richiedere un'installazione di XAMPP, in particolare la cartella contenente l'applicativo dovrà essere posizionata nella cartella htdocs .E’ possibile raggiungere l'applicazione attraverso l'URL localhost/playadice/ . La prima volta che vi si accede verrà visualizzata una form di installazione, in cui verranno richiesti:
-•	nome utente del DBMS
-•	password del DBMS
-•	nome che si vuole dare al database
-Tali informazioni verranno salvati in un file di configurazione, config.inc.php, che sarà utilizzato dallo strato Foundation per comunicare con il dbms.
 
 Inoltre, è disponibile tutta la documentazione completa nella cartella "documentazione". Per il PHPDOC aprire il file index all'interno della suddetta.
 
